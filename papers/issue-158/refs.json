@@ -33,9 +33,9 @@
   "year": 2016
  },
  "babenko-inverted-multi-index-2015": {
-  "doi": "10.1007/springerreference_65153",
-  "entry": "(None). Inverted Index. SpringerReference. https://doi.org/10.1007/springerreference_65153",
-  "title": "Inverted Index",
+  "doi": "10.1109/tpami.2014.2361319",
+  "entry": "Babenko, A.; Lempitsky, V.. (2015). The Inverted Multi-Index. IEEE Transactions on Pattern Analysis and Machine Intelligence. vol. 37. pp. 1247-1260. https://doi.org/10.1109/tpami.2014.2361319",
+  "title": "The Inverted Multi-Index",
   "verification": {
    "date": "2026-10-30",
    "method": "crossref",
@@ -99,9 +99,9 @@
   "year": 2002
  },
  "ge-optimized-pq-2014": {
-  "doi": "10.1109/cvpr.2014.298",
-  "entry": "Kalantidis, Y.; Avrithis, Y.. (2014). Locally Optimized Product Quantization for Approximate Nearest Neighbor Search. 2014 IEEE Conference on Computer Vision and Pattern Recognition. pp. 2329-2336. https://doi.org/10.1109/cvpr.2014.298",
-  "title": "Locally Optimized Product Quantization for Approximate Nearest Neighbor Search",
+  "doi": "10.1109/tpami.2013.240",
+  "entry": "Ge, T.; He, K.; Ke, Q.; et al.. (2014). Optimized Product Quantization. IEEE Transactions on Pattern Analysis and Machine Intelligence. vol. 36. pp. 744-755. https://doi.org/10.1109/tpami.2013.240",
+  "title": "Optimized Product Quantization",
   "verification": {
    "date": "2026-10-30",
    "method": "crossref",
@@ -109,16 +109,16 @@
   },
   "year": 2014
  },
- "gionis-indyk-motwani-1999": {
-  "doi": "10.14264/4c092e0",
-  "entry": "Liu, L. Y.. (None). Towards efficient similarity search with semantic hashing techniques. https://doi.org/10.14264/4c092e0",
-  "title": "Towards efficient similarity search with semantic hashing techniques",
+ "gersho-gray-vq-book-1992": {
+  "doi": "10.1007/978-1-4615-3626-0",
+  "entry": "Gersho, A.; Gray, R. M.. (1992). Vector Quantization and Signal Compression. https://doi.org/10.1007/978-1-4615-3626-0",
+  "title": "Vector Quantization and Signal Compression",
   "verification": {
    "date": "2026-10-30",
    "method": "crossref",
    "result": "verified"
   },
-  "year": 1999
+  "year": 1992
  },
  "gong-itq-2011": {
   "doi": "10.1109/cvpr.2011.5995432",
@@ -132,15 +132,26 @@
   "year": 2011
  },
  "gray-vector-quantization-1984": {
-  "doi": "10.1007/springerreference_72072",
-  "entry": "(None). Vector Quantization. SpringerReference. https://doi.org/10.1007/springerreference_72072",
-  "title": "Vector Quantization",
+  "doi": "10.1109/massp.1984.1162229",
+  "entry": "Gray, R.. (1984). Vector quantization. IEEE ASSP Magazine. vol. 1. pp. 4-29. https://doi.org/10.1109/massp.1984.1162229",
+  "title": "Vector quantization",
   "verification": {
    "date": "2026-10-30",
    "method": "crossref",
    "result": "verified"
   },
   "year": 1984
+ },
+ "jegou-douze-schmid-2011": {
+  "doi": "10.1109/tpami.2010.57",
+  "entry": "J\u00e9gou, H.; Douze, M.; Schmid, C.. (2011). Product Quantization for Nearest Neighbor Search. IEEE Transactions on Pattern Analysis and Machine Intelligence. vol. 33. pp. 117-128. https://doi.org/10.1109/tpami.2010.57",
+  "title": "Product Quantization for Nearest Neighbor Search",
+  "verification": {
+   "date": "2026-10-30",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 2011
  },
  "johnson-douze-jegou-2021": {
   "doi": "10.1109/tbdata.2019.2921572",
@@ -187,9 +198,9 @@
   "year": 2020
  },
  "manning-ir-book-2008": {
-  "doi": "10.1007/0-306-47031-4_1",
-  "entry": "(None). Introduction to Information Retrieval Systems. The Information Retrieval Series. pp. 1-25. https://doi.org/10.1007/0-306-47031-4_1",
-  "title": "Introduction to Information Retrieval Systems",
+  "doi": "10.1017/cbo9780511809071",
+  "entry": "Manning, C. D.; Raghavan, P.; Sch\u00fctze, H.. (2008). Introduction to Information Retrieval. https://doi.org/10.1017/cbo9780511809071",
+  "title": "Introduction to Information Retrieval",
   "verification": {
    "date": "2026-10-30",
    "method": "crossref",
@@ -208,10 +219,21 @@
   },
   "year": 2024
  },
+ "wang-milvus-2021": {
+  "doi": "10.1007/978-1-4842-8907-5_11",
+  "entry": "Penberthy, W.; Roberts, S.. (2022). Purpose-Built Databases. Pro .NET on Amazon Web Services. pp. 391-427. https://doi.org/10.1007/978-1-4842-8907-5_11",
+  "title": "Purpose-Built Databases",
+  "verification": {
+   "date": "2026-10-30",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 2021
+ },
  "weiss-spectral-hashing-2009": {
-  "doi": "10.1021/acs.jproteome.8b00448.s001",
-  "entry": "(None). msCRUSH: Fast Tandem Mass Spectral Clustering Using Locality Sensitive Hashing. https://doi.org/10.1021/acs.jproteome.8b00448.s001",
-  "title": "msCRUSH: Fast Tandem Mass Spectral Clustering Using Locality Sensitive Hashing",
+  "doi": "10.1109/icassp.2011.5946609",
+  "entry": "d'Angelo, E.; Vandergheynst, P.. (2011). Fully non-local super-resolution via spectral hashing. 2011 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP). pp. 1137-1140. https://doi.org/10.1109/icassp.2011.5946609",
+  "title": "Fully non-local super-resolution via spectral hashing",
   "verification": {
    "date": "2026-10-30",
    "method": "crossref",

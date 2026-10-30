@@ -58,6 +58,13 @@ SEEDS = {
     "lowe-sift-2004": ("Distinctive Image Features from Scale-Invariant Keypoints", 2004),
 }
 
+# Seeds that name a BOOK. A book review in a review journal carries the book's title and a
+# DOI, so a title test cannot tell the review from the work: "Introduction to Information
+# Retrieval" resolved to a Choice Reviews Online notice before this restriction existed.
+# These seeds accept only a book-ish record type.
+BOOK_SEEDS = {"manning-ir-book-2008", "voorhees-trec-book-2005", "ledoux-concentration-2001",
+              "gersho-gray-vq-book-1992", "boucheron-concentration-2013"}
+
 STOP = {"a", "an", "the", "of", "for", "and", "in", "on", "to", "with", "using", "via", "is", "are"}
 
 
@@ -78,12 +85,25 @@ def get(url):
 SEL = "DOI,title,author,issued,container-title,type,volume,page,publisher,ISBN"
 
 
-def _query(field, query, rows=20):
+def _query(field, query, rows=20, tries=4):
+    """One Crossref query, retried on transport failure only.
+
+    A 429 or a dropped connection says nothing about the reference, so it must never be recorded
+    as a rejection: the seed stays unresolved and the caller prints NOT RUN. Retrying is bounded
+    and linear because the registry's rate limit is the thing being respected.
+    """
     url = "%s?%s" % (CROSSREF, urllib.parse.urlencode({field: query, "rows": rows, "select": SEL}))
-    return get(url)["message"]["items"]
+    last = None
+    for i in range(tries):
+        try:
+            return get(url)["message"]["items"]
+        except Exception as e:
+            last = e
+            time.sleep(2.0 * (i + 1))
+    raise last
 
 
-def lookup(query, want_year):
+def lookup(query, want_year, kind=None):
     """Return (record, verdict). The registry decides; the seed only proposes.
 
     Crossref's `query.bibliographic` ranking buries a classic paper under its recent echo papers
@@ -113,6 +133,11 @@ def lookup(query, want_year):
             continue
         overlap = len(qw & tw) / float(len(qw))
         score = overlap + (1.0 if ntitle(title) == want else 0.0)
+        # A chapter DOI is not the work: "Vector quantization" also names a chapter of a
+        # handbook, and an entry that prints a handbook chapter for a 1984 magazine article
+        # is a misattribution even though the title matches. Deprioritise chapters.
+        if (it.get("type") or "") in ("book-chapter", "component"):
+            score -= 0.4
         year = None
         try:
             year = int(it["issued"]["date-parts"][0][0])
@@ -120,8 +145,18 @@ def lookup(query, want_year):
             pass
         if want_year is not None and year is not None and abs(year - want_year) > 2:
             continue
-        is_book = (it.get("type") or "").startswith(("book", "monograph", "edited"))
-        if overlap < 0.85 and not is_book:
+        t = (it.get("type") or "")
+        is_book = t.startswith(("book", "monograph", "edited"))
+        if kind == "book":
+            # A BOOK seed accepts only the work itself: the record's title must equal the seed's
+            # title word for word (after stopword folding) AND the record must be a book. The
+            # looser overlap rule let three different works stand in: a paper titled "The uniform
+            # concentration of measure phenomenon" for Ledoux's book, a survey for Boucheron's,
+            # and a TREC chapter for the TREC volume. High title similarity is exactly what a
+            # near-miss has, which is why similarity cannot be the test here.
+            if ntitle(title) != want or not is_book:
+                continue
+        elif overlap < 0.85 and not is_book:
             continue
         if score > best_score:
             best, best_score = it, score
@@ -177,12 +212,16 @@ def entry_of(it):
 def main(argv):
     out, report = {}, []
     for slug, (query, year) in SEEDS.items():
-        it, verdict = lookup(query, year)
+        it, verdict = lookup(query, year, "book" if slug in BOOK_SEEDS else None)
         line = "| `%s` | %s | **%s** | %s |" % (
             slug, query[:70].replace("|", "/"), verdict,
             ("%s -- %s" % ((it.get("title") or [""])[0][:60], it["DOI"])) if it else "-")
         report.append(line)
-        if it is not None and verdict == "verified":
+        # The verdict string carries its own note ("verified (record year ...)"), so an
+        # equality test against "verified" drops exactly the records that needed the note:
+        # five verified references were silently discarded this way. The gate reads the
+        # prefix, and the count it prints is the count it took.
+        if it is not None and verdict.startswith("verified"):
             out[slug] = dict(entry=entry_of(it), doi=it["DOI"],
                              title=(it.get("title") or [""])[0], year=year,
                              verification=dict(result="verified", method="crossref",

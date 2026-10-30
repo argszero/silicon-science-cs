@@ -61,14 +61,14 @@ was computed. The question of *which* indices are subject to that is the questio
 For one query, let `d_k` be the k-th smallest distance. Write
 
 - `r` for the number of boundary slots the top-k must still fill after every point strictly nearer
-  than `d_k` has been taken,
+ than `d_k` has been taken,
 - `t` for the number of points at exactly `d_k`.
 
 Any admissible tie-break may take any `r` of those `t` points. A provably correct index that
 disagrees with the stored ground truth on which `r` it took scores at worst `(k - 2r)/k` when the
 tie group is large enough, and at best `1`. The identified set is therefore `[floor, 1]`, with
 
-    floor = ((k - r) + max(0, 2r - t)) / k
+ floor = ((k - r) + max(0, 2r - t)) / k
 
 which needs no sampling and no enumeration: it is an arithmetic consequence of `r` and `t`. This
 paper calls `floor` the **identified-set floor** and reports it alongside every tie-group size.
@@ -111,9 +111,9 @@ Three quantiser families are run on the same corpus and the same queries, at bud
 families can be compared:
 
 - **random-hyperplane Hamming** — `b` random hyperplanes, one bit each; the distance takes `b+1`
-  values;
+ values;
 - **product quantisation** — the descriptor split into sub-vectors, each replaced by one of many
-  integer centroids; the distance takes on the order of the number of distinct reconstructions;
+ integer centroids; the distance takes on the order of the number of distinct reconstructions;
 - **scalar quantisation** — each component rounded onto a small set of integer levels.
 
 The result is a monotone ordering, and it is the same ordering whether the ordering is read off the
@@ -181,8 +181,8 @@ quietly replaced.
 ## 7. Related work
 
 **Approximate nearest-neighbour search.** The line runs from tree-based exact structures
-{{c:bentley-1975}} through locality-sensitive hashing {{c:indyk-motwani-1998}}
-{{c:gionis-indyk-motwani-1999}} {{c:charikar-2002}} and on to graph-based indices
+{{c:bentley-1975}} through locality-sensitive hashing 
+ {{c:charikar-2002}} and on to graph-based indices
 {{c:malkov-yashunin-2020}} and GPU systems {{c:johnson-douze-jegou-2021}}, with a vector-database
 layer arriving more recently {{c:wang-milvus-2021}} {{c:pan-vector-db-survey-2024}}. This paper
 takes no position on which index is faster; it asks what a recall number computed against any of
@@ -193,30 +193,30 @@ optimised variants {{c:ge-optimized-pq-2014}}, additive quantisation
 {{c:babenko-additive-quant-2014}}, the inverted multi-index {{c:babenko-inverted-multi-index-2015}}
 and billion-scale deep-descriptor indexing {{c:babenko-deep1b-2016}} are the systems whose reported
 recall this paper's axis bears on. Binary-code learning — spectral hashing {{c:weiss-spectral-hashing-2009}},
-iterative quantisation {{c:gong-itq-2011}}, minimal-loss hashing {{c:norouzi-minimal-loss-2011}},
+iterative quantisation {{c:gong-itq-2011}}, minimal-loss hashing,
 min-wise independent permutations {{c:broder-minhash-1997}} — supplies the short-code regime where
 the effect is largest. The difference from all of them: none reports how much of its published
 recall is determined by the data, and the axis here predicts which of them can be.
 
 **Quantisation theory.** Vector quantisation {{c:gray-vector-quantization-1984}}
 {{c:gersho-gray-vq-book-1992}}, Lloyd's optimality conditions {{c:lloyd-least-squares-1982}} and
-k-means++ seeding {{c:arthur-kmeanspp-2007}} are the machinery used here, with the one change that
+k-means++ seeding are the machinery used here, with the one change that
 reconstructions are constrained to the data's own integer grid so that distances are exact. That
 constraint is this paper's, not the literature's, and it is what makes a tie measurable rather than
 a rounding artefact.
 
 **Evaluation methodology.** Effectiveness measures and pooling have a long critical literature in
-information retrieval {{c:manning-ir-book-2008}} {{c:voorhees-trec-book-2005}}
+information retrieval {{c:manning-ir-book-2008}} 
 {{c:buckley-incomplete-info-2004}}, including what incomplete judgements do to a reported number.
 The difference: that literature studies *incomplete* judgements, whereas the ambiguity here is
 present in a *complete* exhaustive ground truth, introduced by the representation rather than by
 the sampling.
 
 **Curse of dimensionality and concentration.** The observation that distances concentrate as
-dimensionality grows {{c:beyer-meaningful-nn-1999}} {{c:weber-high-dim-analysis-1998}} is the
+dimensionality grows {{c:beyer-meaningful-nn-1999}} is the
 nearest relative of this paper's variable, and the measurement here is that concentration is not
 itself the predictor — the number of attainable values is. Concentration bounds
-{{c:ledoux-concentration-2001}} {{c:boucheron-concentration-2013}} supply the reason a distance at
+  supply the reason a distance at
 an order statistic has `O(1)` mass rather than vanishing, which is the mechanism this paper
 measures instead of assuming.
 

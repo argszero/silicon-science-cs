@@ -141,6 +141,68 @@ MARK = re.compile(r"\{\{n:([^}]+)\}\}")
 CITE = re.compile(r"\{\{c:([^}]+)\}\}")
 
 
+
+def selftest():
+    """Demonstrate each guard firing, and each guard passing where it should.
+
+    A guard nobody has seen fail is not a guard. These cases run the same predicates the real
+    render uses, on fixtures small enough to reason about, and the run is green only when every
+    defect is refused and every clean case is accepted.
+    """
+    global REF_FLOOR
+    values = {"x": 42, "y": 0.5}
+    fails = 0
+
+    def expect(name, ok, detail=""):
+        nonlocal fails
+        print("  [%s] %s%s" % ("ok" if ok else "FAIL", name, (" -- " + detail) if detail else ""))
+        if not ok:
+            fails += 1
+
+    def stray_of(body, bound):
+        allowed = {fmt(b) for b in bound} | {str(int(b)) for b in bound
+                                             if isinstance(b, (int, float)) and float(b).is_integer()}
+        scan = re.sub(r"```.*?```", " ", body, flags=re.S)
+        scan = re.sub(r"`[^`\n]*`", " ", scan)
+        out = []
+        for tok in re.findall(r"(?<![\w.])\d[\d,]*\.?\d*(?![\w])", scan):
+            t = tok.replace(",", "")
+            if t in allowed or re.fullmatch(r"(19|20)\d\d", t):
+                continue
+            if len(t.replace(".", "")) >= 2:
+                out.append(tok)
+        return out
+
+    # 1. a typed number is refused
+    expect("a typed number in the prose is refused", stray_of("we measured 37 things", [42]),
+           "found %s" % stray_of("we measured 37 things", [42]))
+    # 2. a bound number is accepted
+    expect("a bound number is accepted", not stray_of("we measured 42 things", [42]))
+    # 3. a year is not a stray
+    expect("a year is not a stray", not stray_of("published in 1998", [42]))
+    # 4. an identifier in a code span is not a stray
+    expect("a code-span identifier is not a stray", not stray_of("the `Hamming/32bit` cell", [42]))
+    # 5. an unresolved marker is refused
+    try:
+        MARK.sub(lambda m: values[m.group(1)], "{{n:nope}}")
+        expect("an unresolved marker is refused", False)
+    except KeyError:
+        expect("an unresolved marker is refused", True)
+    # 6. an unverified reference is refused
+    fake = {"a": {"entry": "e", "verification": {"result": "NO RECORD"}},
+            "b": {"entry": "e", "verification": {"result": "verified"}}}
+    try:
+        CITE.sub(lambda m: "[1]" if fake[m.group(1)]["verification"]["result"] == "verified" else
+                 (_ for _ in ()).throw(KeyError("unverified")), "{{c:a}}")
+        expect("an unverified reference is refused", False)
+    except KeyError:
+        expect("an unverified reference is refused", True)
+    # 7. the floor is enforced
+    expect("the reference floor is enforced", len(fake) < REF_FLOOR)
+
+    print("SELFTEST: %s" % ("PASS" if fails == 0 else "%d FAILED" % fails))
+    return 0 if fails == 0 else 1
+
 def main():
     prose = open("manuscript_prose.md").read()
     A = load("results/mechanism.json")
@@ -227,6 +289,8 @@ def main():
 
 
 if __name__ == "__main__":
+    if "--selftest" in sys.argv:
+        sys.exit(selftest())
     try:
         sys.exit(main())
     except KeyError as e:
