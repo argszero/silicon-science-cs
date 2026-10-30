@@ -22,7 +22,7 @@ PY=${PY:-python3}
 FAILED=0
 NOTRUN=0
 RUN_STEPS=0
-TOTAL_STEPS=6
+TOTAL_STEPS=8
 
 step() {
     _label=$1
@@ -108,11 +108,27 @@ step "the sampling-noise claim (P1 limb 2): can this data estimate it?" "" \
      "$PY check_noise.py"
 
 # ---- 6: the gates themselves can refuse --------------------------------------------------
-# Each of these runs the refusal paths of the guards used in steps 1 and 4, on fixtures. Without this
-# the guards are only asserted to exist; with it they are shown to bite on every reproduction.
+# Each of these runs the refusal paths of the guards used in steps 1, 4 and 8, on fixtures. Without
+# this the guards are only asserted to exist; with it they are shown to bite on every reproduction.
 step "the fixture guard and the claim gate can each refuse what they must" "" \
      "$PY verify_fixture.py --selftest >/dev/null && $PY check_claims.py --selftest >/dev/null && \
       echo '   both gates refuse as documented'"
+
+# ---- 7: the reference gate and the manuscript gate can each refuse -------------------------
+# The reference gate's fixtures are the eight misattributions it actually made once, and the
+# manuscript gate's include the two number shapes that made it report bound numbers as strays.
+# Both run offline: no registry is contacted, which is why this package needs no network at all.
+step "the reference gate and the manuscript gate can each refuse" "" \
+     "$PY build_refs.py --selftest >/dev/null && $PY make_manuscript.py --selftest >/dev/null && \
+      echo '   both gates refuse as documented'"
+
+# ---- 8: the manuscript is generated, and regenerates byte-identically ---------------------
+# Every number in the paper is a marker bound to the artefact, every citation is resolved by the
+# registry file, and the generator refuses to write the file at all when either is untrue. This step
+# then proves the paper is a function of (artefact, refs.json) rather than a second copy of them.
+step "the manuscript regenerates byte-identically from artefact and registry" "" \
+     "TMPM=\$(mktemp) && cp manuscript.md \"\$TMPM\" && $PY make_manuscript.py >/dev/null && \
+      cmp -s \"\$TMPM\" manuscript.md && rm -f \"\$TMPM\" && echo '   byte-identical'"
 
 printf '\n'
 if [ "$FAILED" -eq 0 ] && [ "$NOTRUN" -eq 0 ]; then

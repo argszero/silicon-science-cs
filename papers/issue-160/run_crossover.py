@@ -194,12 +194,20 @@ def main():
         T = ct.quantile(row["pts"], 1.0) * 1.0001
         rep, lo, hi = ct.identified_set(row["pts"], Q, T)
         exact.append(hi == lo and abs(rep - lo) <= 1e-9 * max(1.0, lo))
+    # Two different sets, two different names. `levels_needed(R, eps) == 1` holds for `R <= 1+eps`,
+    # not for `R == 1`: at eps=5% that is 12,664 rows, while only 11,972 rows have `p100 == p50`
+    # exactly. A single key called `flat_rows` holding the first while its note described the second
+    # was a label that lied about its own number (found 2026-10-31 while writing the manuscript).
     controls = dict(
         no_censoring_rows=len(exact),
         no_censoring_identified_and_exact_frac=round(sum(exact) / float(len(exact)), 6),
-        flat_rows=sum(1 for k in kept if ct.levels_needed(k["R"], 0.05) == 1),
-        flat_rows_levels=1,
-        note="a flat row (R=1) returns exactly one level; a timeout above the maximum prints the truth",
+        flat_rows_R_eq_1=sum(1 for k in kept if k["R"] == 1.0),
+        flat_rows_R_eq_1_frac=round(sum(1 for k in kept if k["R"] == 1.0) / float(len(kept)), 4),
+        rows_needing_one_level_at_eps_5=sum(1 for k in kept if ct.levels_needed(k["R"], 0.05) == 1),
+        note=("flat_rows_R_eq_1 counts rows whose ladder has no range at all (p100 == p50); "
+              "rows_needing_one_level_at_eps_5 counts rows the cost law certifies with a single "
+              "level, which is R <= 1.05 and is the larger set. A timeout above the maximum prints "
+              "the truth, which is what the no-censoring control checks."),
     )
 
     # The input's identity travels with the numbers: a reader must be able to see which bytes these
@@ -207,6 +215,10 @@ def main():
     # artefact a property of the machine that built it.
     out = dict(q=Q, source=MEMBER, kgrid=list(KGRID), eps=list(EPS),
                input=dict(member=MEMBER,
+                          interval_seconds=30,
+                          interval_note=("the trace aggregates every 30 seconds and publishes "
+                                         "percentiles of the per-interval MEAN (dataset footnote 7); "
+                                         "this is the unit of every range in this artefact"),
                           fixture=os.path.relpath(SRC, HERE) if os.environ.get("TRACE_CSV") is None
                           else "TRACE_CSV override: " + os.path.basename(SRC),
                           sha256_of_decompressed_bytes=src_digest),
@@ -237,9 +249,12 @@ def main():
         d = cost["K_at_%d" % int(eps * 100)]
         print("   eps=%2.0f%%  K median %4d  p90 %4d  (rows needing exactly 1 level: %.1f%%)"
               % (eps * 100, d["median"], d["p90"], 100 * d["frac_at_one"]))
-    print("\ncontrols: no-censoring exact on %d/%d rows (%.6f) | flat rows: %d"
-          % (sum(exact), len(exact), controls["no_censoring_identified_and_exact_frac"],
-             controls["flat_rows"]))
+    print("\ncontrols: no-censoring exact on %d/%d rows (%.6f)"
+          % (sum(exact), len(exact), controls["no_censoring_identified_and_exact_frac"]))
+    print("          flat rows (R == 1): %d (%.2f%%) | rows needing one level at eps=5%%: %d (%.2f%%)"
+          % (controls["flat_rows_R_eq_1"], 100 * controls["flat_rows_R_eq_1_frac"],
+             controls["rows_needing_one_level_at_eps_5"],
+             100 * controls["rows_needing_one_level_at_eps_5"] / float(len(kept))))
     if controls["no_censoring_identified_and_exact_frac"] < 1.0:
         print("CONTROL FAILED: a timeout above the maximum must identify the quantile exactly")
         return 1

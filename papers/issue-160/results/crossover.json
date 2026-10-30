@@ -77,11 +77,12 @@
   }
  ],
  "controls": {
-  "flat_rows": 12664,
-  "flat_rows_levels": 1,
+  "flat_rows_R_eq_1": 11972,
+  "flat_rows_R_eq_1_frac": 0.252,
   "no_censoring_identified_and_exact_frac": 1.0,
   "no_censoring_rows": 5000,
-  "note": "a flat row (R=1) returns exactly one level; a timeout above the maximum prints the truth"
+  "note": "flat_rows_R_eq_1 counts rows whose ladder has no range at all (p100 == p50); rows_needing_one_level_at_eps_5 counts rows the cost law certifies with a single level, which is R <= 1.05 and is the larger set. A timeout above the maximum prints the truth, which is what the no-censoring control checks.",
+  "rows_needing_one_level_at_eps_5": 12664
  },
  "cost": {
   "K_at_10": {
@@ -134,6 +135,8 @@
  ],
  "input": {
   "fixture": "fixture/function_durations_percentiles.anon.d01.csv.xz",
+  "interval_note": "the trace aggregates every 30 seconds and publishes percentiles of the per-interval MEAN (dataset footnote 7); this is the unit of every range in this artefact",
+  "interval_seconds": 30,
   "member": "function_durations_percentiles.anon.d01.csv",
   "sha256_of_decompressed_bytes": "6bb4e9a918dff8bf021158cbb9470107b47f0a2003412f789d03cb23dce3a5d2"
  },

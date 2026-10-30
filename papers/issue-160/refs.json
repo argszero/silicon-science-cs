@@ -1,0 +1,1322 @@
+{
+ "abate-whitt-1992": {
+  "doi": "10.1007/bf01158520",
+  "entry": "Abate, J.; Whitt, W.. (1992). The Fourier-series method for inverting transforms of probability distributions. Queueing Systems. vol. 10. pp. 5-87. https://doi.org/10.1007/bf01158520",
+  "title": "The Fourier-series method for inverting transforms of probability distributions",
+  "verification": {
+   "date": "2026-10-31",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 1992
+ },
+ "agresti-coull-1998": {
+  "doi": "10.2307/2685469",
+  "entry": "Agresti, A.; Coull, B. A.. (1998). Approximate Is Better than \"Exact\" for Interval Estimation of Binomial Proportions. The American Statistician. vol. 52. pp. 119. https://doi.org/10.2307/2685469",
+  "title": "Approximate Is Better than \"Exact\" for Interval Estimation of Binomial Proportions",
+  "verification": {
+   "date": "2026-10-31",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 1998
+ },
+ "andersen-borgan-gill-keiding-1993": {
+  "doi": "10.1007/978-1-4612-4348-9",
+  "entry": "Andersen, P. K.; Borgan, \u00d8.; Gill, R. D.; et al.. (1993). Statistical Models Based on Counting Processes. Springer Series in Statistics. https://doi.org/10.1007/978-1-4612-4348-9",
+  "title": "Statistical Models Based on Counting Processes",
+  "verification": {
+   "date": "2026-10-31",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 1993
+ },
+ "andersen-gill-1982": {
+  "doi": "10.1214/aos/1176345976",
+  "entry": "Andersen, P. K.; Gill, R. D.. (1982). Cox's Regression Model for Counting Processes: A Large Sample Study. The Annals of Statistics. vol. 10. pp. 1100-1120. https://doi.org/10.1214/aos/1176345976",
+  "title": "Cox's Regression Model for Counting Processes: A Large Sample Study",
+  "verification": {
+   "date": "2026-10-31",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 1982
+ },
+ "anderson-darling-1952": {
+  "doi": "10.1214/aoms/1177729437",
+  "entry": "Anderson, T. W.; Darling, D. A.. (1952). Asymptotic Theory of Certain \"Goodness of Fit\" Criteria Based on Stochastic Processes. The Annals of Mathematical Statistics. vol. 23. pp. 193-212. https://doi.org/10.1214/aoms/1177729437",
+  "title": "Asymptotic Theory of Certain \"Goodness of Fit\" Criteria Based on Stochastic Processes",
+  "verification": {
+   "date": "2026-10-31",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 1952
+ },
+ "andrews-soares-2010": {
+  "doi": "10.3982/ecta7502",
+  "entry": "(2010). Inference for Parameters Defined by Moment Inequalities Using Generalized Moment Selection. Econometrica. vol. 78. pp. 119-157. https://doi.org/10.3982/ecta7502",
+  "title": "Inference for Parameters Defined by Moment Inequalities Using Generalized Moment Selection",
+  "verification": {
+   "date": "2026-10-31",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 2010
+ },
+ "armbrust-2010": {
+  "doi": "10.1145/1721654.1721672",
+  "entry": "Armbrust, M.; Fox, A.; Griffith, R.; et al.. (2010). A view of cloud computing. Communications of the ACM. vol. 53. pp. 50-58. https://doi.org/10.1145/1721654.1721672",
+  "title": "A view of cloud computing",
+  "verification": {
+   "date": "2026-10-31",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 2010
+ },
+ "arnold-balakrishnan-1998": {
+  "doi": "10.1002/9781118150412",
+  "entry": "Arnold, B. C.; Balakrishnan, N.; Nagaraja, H. N.. (1998). Records. Wiley Series in Probability and Statistics. https://doi.org/10.1002/9781118150412",
+  "title": "Records",
+  "verification": {
+   "date": "2026-10-31",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 1998
+ },
+ "arnold-balakrishnan-nagaraja-2008": {
+  "doi": "10.1137/1.9780898719062",
+  "entry": "Arnold, B. C.; Balakrishnan, N.; Nagaraja, H. N.. (2008). A First Course in Order Statistics. https://doi.org/10.1137/1.9780898719062",
+  "title": "A First Course in Order Statistics",
+  "verification": {
+   "date": "2026-10-31",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 2008
+ },
+ "bahadur-1966": {
+  "doi": "10.1214/aoms/1177699450",
+  "entry": "Bahadur, R. R.. (1966). A Note on Quantiles in Large Samples. The Annals of Mathematical Statistics. vol. 37. pp. 577-580. https://doi.org/10.1214/aoms/1177699450",
+  "title": "A Note on Quantiles in Large Samples",
+  "verification": {
+   "date": "2026-10-31",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 1966
+ },
+ "balkema-dehaan-1974": {
+  "doi": "10.1214/aop/1176996548",
+  "entry": "Balkema, A. A.; de Haan, L.. (1974). Residual Life Time at Great Age. The Annals of Probability. vol. 2. pp. 792-804. https://doi.org/10.1214/aop/1176996548",
+  "title": "Residual Life Time at Great Age",
+  "verification": {
+   "date": "2026-10-31",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 1974
+ },
+ "barroso-2003": {
+  "doi": "10.1109/mm.2003.1196112",
+  "entry": "Barroso, L.; Dean, J.; Holzle, U.. (2003). Web search for a planet: the google cluster architecture. IEEE Micro. vol. 23. pp. 22-28. https://doi.org/10.1109/mm.2003.1196112",
+  "title": "Web search for a planet: the google cluster architecture",
+  "verification": {
+   "date": "2026-10-31",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 2003
+ },
+ "benson-2010": {
+  "doi": "10.1145/1879141.1879175",
+  "entry": "Benson, T.; Akella, A.; Maltz, D. A.. (2010). Network traffic characteristics of data centers in the wild. Proceedings of the 10th ACM SIGCOMM conference on Internet measurement. pp. 267-280. https://doi.org/10.1145/1879141.1879175",
+  "title": "Network traffic characteristics of data centers in the wild",
+  "verification": {
+   "date": "2026-10-31",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 2010
+ },
+ "beran-1982": {
+  "doi": "10.1214/aos/1176345704",
+  "entry": "Beran, R.. (1982). Estimated Sampling Distributions: The Bootstrap and Competitors. The Annals of Statistics. vol. 10. pp. 212-225. https://doi.org/10.1214/aos/1176345704",
+  "title": "Estimated Sampling Distributions: The Bootstrap and Competitors",
+  "verification": {
+   "date": "2026-10-31",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 1982
+ },
+ "beran-1987": {
+  "doi": "10.2307/2336685",
+  "entry": "Beran, R.. (1987). Prepivoting to Reduce Level Error of Confidence Sets. Biometrika. vol. 74. pp. 457. https://doi.org/10.2307/2336685",
+  "title": "Prepivoting to Reduce Level Error of Confidence Sets",
+  "verification": {
+   "date": "2026-10-31",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 1987
+ },
+ "berger-1985": {
+  "doi": "10.1007/978-1-4757-4286-2",
+  "entry": "Berger, J. O.. (1985). Statistical Decision Theory and Bayesian Analysis. Springer Series in Statistics. https://doi.org/10.1007/978-1-4757-4286-2",
+  "title": "Statistical Decision Theory and Bayesian Analysis",
+  "verification": {
+   "date": "2026-10-31",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 1985
+ },
+ "bickel-freedman-1981": {
+  "doi": "10.1214/aos/1176345637",
+  "entry": "Bickel, P. J.; Freedman, D. A.. (1981). Some Asymptotic Theory for the Bootstrap. The Annals of Statistics. vol. 9. pp. 1196-1217. https://doi.org/10.1214/aos/1176345637",
+  "title": "Some Asymptotic Theory for the Bootstrap",
+  "verification": {
+   "date": "2026-10-31",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 1981
+ },
+ "bodik-2010": {
+  "doi": "10.1145/1807128.1807166",
+  "entry": "Bodik, P.; Fox, A.; Franklin, M. J.; et al.. (2010). Characterizing, modeling, and generating workload spikes for stateful services. Proceedings of the 1st ACM symposium on Cloud computing. pp. 241-252. https://doi.org/10.1145/1807128.1807166",
+  "title": "Characterizing, modeling, and generating workload spikes for stateful services",
+  "verification": {
+   "date": "2026-10-31",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 2010
+ },
+ "box-1976": {
+  "doi": "10.1080/01621459.1976.10480949",
+  "entry": "Box, G. E. P.. (1976). Science and Statistics. Journal of the American Statistical Association. vol. 71. pp. 791-799. https://doi.org/10.1080/01621459.1976.10480949",
+  "title": "Science and Statistics",
+  "verification": {
+   "date": "2026-10-31",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 1976
+ },
+ "bronson-metastable-2021": {
+  "doi": "10.1145/3458336.3465286",
+  "entry": "Bronson, N.; Aghayev, A.; Charapko, A.; et al.. (2021). Metastable failures in distributed systems. Proceedings of the Workshop on Hot Topics in Operating Systems. pp. 221-227. https://doi.org/10.1145/3458336.3465286",
+  "title": "Metastable failures in distributed systems",
+  "verification": {
+   "date": "2026-10-31",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 2021
+ },
+ "brown-cai-dasgupta-2001": {
+  "doi": "10.1214/ss/1009213286",
+  "entry": "Brown, L. D.; Cai, T. T.; DasGupta, A.. (2001). Interval Estimation for a Binomial Proportion. Statistical Science. vol. 16. pp. 101-133. https://doi.org/10.1214/ss/1009213286",
+  "title": "Interval Estimation for a Binomial Proportion",
+  "verification": {
+   "date": "2026-10-31",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 2001
+ },
+ "bugni-2010": {
+  "doi": "10.3982/ecta8056",
+  "entry": "(2010). Bootstrap Inference in Partially Identified Models Defined by Moment Inequalities: Coverage of the Identified Set. Econometrica. vol. 78. pp. 735-753. https://doi.org/10.3982/ecta8056",
+  "title": "Bootstrap Inference in Partially Identified Models Defined by Moment Inequalities: Coverage of the Identified Set",
+  "verification": {
+   "date": "2026-10-31",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 2010
+ },
+ "calzarossa-1993": {
+  "doi": "10.1109/5.236191",
+  "entry": "Calzarossa, M.; Serazzi, G.. (1993). Workload characterization: a survey. Proceedings of the IEEE. vol. 81. pp. 1136-1150. https://doi.org/10.1109/5.236191",
+  "title": "Workload characterization: a survey",
+  "verification": {
+   "date": "2026-10-31",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 1993
+ },
+ "chen-hall-1993": {
+  "doi": "10.1214/aos/1176349256",
+  "entry": "Chen, S. X.; Hall, P.. (1993). Smoothed Empirical Likelihood Confidence Intervals for Quantiles. The Annals of Statistics. vol. 21. pp. 1166-1181. https://doi.org/10.1214/aos/1176349256",
+  "title": "Smoothed Empirical Likelihood Confidence Intervals for Quantiles",
+  "verification": {
+   "date": "2026-10-31",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 1993
+ },
+ "chernozhukov-hong-tamer-2007": {
+  "doi": "10.1111/j.1468-0262.2007.00794.x",
+  "entry": "Chernozhukov, V.; Hong, H.; Tamer, E.. (2007). Estimation and Confidence Regions for Parameter Sets in Econometric Models. Econometrica. vol. 75. pp. 1243-1284. https://doi.org/10.1111/j.1468-0262.2007.00794.x",
+  "title": "Estimation and Confidence Regions for Parameter Sets in Econometric Models",
+  "verification": {
+   "date": "2026-10-31",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 2007
+ },
+ "clopper-pearson-1934": {
+  "doi": "10.1093/biomet/26.4.404",
+  "entry": "CLOPPER, C. J.; PEARSON, E. S.. (1934). THE USE OF CONFIDENCE OR FIDUCIAL LIMITS ILLUSTRATED IN THE CASE OF THE BINOMIAL. Biometrika. vol. 26. pp. 404-413. https://doi.org/10.1093/biomet/26.4.404",
+  "title": "THE USE OF CONFIDENCE OR FIDUCIAL LIMITS ILLUSTRATED IN THE CASE OF THE BINOMIAL",
+  "verification": {
+   "date": "2026-10-31",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 1934
+ },
+ "coles-2001": {
+  "doi": "10.1007/978-1-4471-3675-0",
+  "entry": "Coles, S.. (2001). An Introduction to Statistical Modeling of Extreme Values. Springer Series in Statistics. https://doi.org/10.1007/978-1-4471-3675-0",
+  "title": "An Introduction to Statistical Modeling of Extreme Values",
+  "verification": {
+   "date": "2026-10-31",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 2001
+ },
+ "cox-1972": {
+  "doi": "10.1111/j.2517-6161.1972.tb00899.x",
+  "entry": "Cox, D. R.. (1972). Regression Models and Life-Tables. Journal of the Royal Statistical Society Series B: Statistical Methodology. vol. 34. pp. 187-202. https://doi.org/10.1111/j.2517-6161.1972.tb00899.x",
+  "title": "Regression Models and Life-Tables",
+  "verification": {
+   "date": "2026-10-31",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 1972
+ },
+ "david-nagaraja-2003": {
+  "doi": "10.1002/0471722162",
+  "entry": "David, H. A.; Nagaraja, H. N.. (2003). Order Statistics. Wiley Series in Probability and Statistics. https://doi.org/10.1002/0471722162",
+  "title": "Order Statistics",
+  "verification": {
+   "date": "2026-10-31",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 2003
+ },
+ "davison-1984": {
+  "doi": "10.1007/978-94-017-3069-3_34",
+  "entry": "Davison, A. C.. (1984). Modelling Excesses over High Thresholds, with an Application. Statistical Extremes and Applications. pp. 461-482. https://doi.org/10.1007/978-94-017-3069-3_34",
+  "title": "Modelling Excesses over High Thresholds, with an Application",
+  "verification": {
+   "date": "2026-10-31",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 1984
+ },
+ "davison-smith-1990": {
+  "doi": "10.1111/j.2517-6161.1990.tb01796.x",
+  "entry": "Davison, A. C.; Smith, R. L.. (1990). Models for Exceedances Over High Thresholds. Journal of the Royal Statistical Society Series B: Statistical Methodology. vol. 52. pp. 393-425. https://doi.org/10.1111/j.2517-6161.1990.tb01796.x",
+  "title": "Models for Exceedances Over High Thresholds",
+  "verification": {
+   "date": "2026-10-31",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 1990
+ },
+ "dean-barroso-2013": {
+  "doi": "10.1145/2408776.2408794",
+  "entry": "Dean, J.; Barroso, L. A.. (2013). The tail at scale. Communications of the ACM. vol. 56. pp. 74-80. https://doi.org/10.1145/2408776.2408794",
+  "title": "The tail at scale",
+  "verification": {
+   "date": "2026-10-31",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 2013
+ },
+ "diciccio-romano-1988": {
+  "doi": "10.1111/j.2517-6161.1988.tb01732.x",
+  "entry": "Diciccio, T. J.; Romano, J. P.. (1988). A Review of Bootstrap Confidence Intervals. Journal of the Royal Statistical Society Series B: Statistical Methodology. vol. 50. pp. 338-354. https://doi.org/10.1111/j.2517-6161.1988.tb01732.x",
+  "title": "A Review of Bootstrap Confidence Intervals",
+  "verification": {
+   "date": "2026-10-31",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 1988
+ },
+ "dvoretzky-kiefer-wolfowitz-1956": {
+  "doi": "10.1214/aoms/1177728174",
+  "entry": "Dvoretzky, A.; Kiefer, J.; Wolfowitz, J.. (1956). Asymptotic Minimax Character of the Sample Distribution Function and of the Classical Multinomial Estimator. The Annals of Mathematical Statistics. vol. 27. pp. 642-669. https://doi.org/10.1214/aoms/1177728174",
+  "title": "Asymptotic Minimax Character of the Sample Distribution Function and of the Classical Multinomial Estimator",
+  "verification": {
+   "date": "2026-10-31",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 1956
+ },
+ "efron-1979": {
+  "doi": "10.1214/aos/1176344552",
+  "entry": "Efron, B.. (1979). Bootstrap Methods: Another Look at the Jackknife. The Annals of Statistics. vol. 7. pp. 1-26. https://doi.org/10.1214/aos/1176344552",
+  "title": "Bootstrap Methods: Another Look at the Jackknife",
+  "verification": {
+   "date": "2026-10-31",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 1979
+ },
+ "efron-1987": {
+  "doi": "10.1080/01621459.1987.10478410",
+  "entry": "Efron, B.. (1987). Better Bootstrap Confidence Intervals. Journal of the American Statistical Association. vol. 82. pp. 171-185. https://doi.org/10.1080/01621459.1987.10478410",
+  "title": "Better Bootstrap Confidence Intervals",
+  "verification": {
+   "date": "2026-10-31",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 1987
+ },
+ "efron-1988": {
+  "doi": "10.1080/01621459.1988.10478612",
+  "entry": "Efron, B.. (1988). Logistic Regression, Survival Analysis, and the Kaplan-Meier Curve. Journal of the American Statistical Association. vol. 83. pp. 414-425. https://doi.org/10.1080/01621459.1988.10478612",
+  "title": "Logistic Regression, Survival Analysis, and the Kaplan-Meier Curve",
+  "verification": {
+   "date": "2026-10-31",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 1988
+ },
+ "efron-tibshirani-1993": {
+  "doi": "10.1201/9780429246593",
+  "entry": "Efron, B.; Tibshirani, R.. (1994). An Introduction to the Bootstrap. https://doi.org/10.1201/9780429246593",
+  "title": "An Introduction to the Bootstrap",
+  "verification": {
+   "date": "2026-10-31",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 1994
+ },
+ "eivy-2017": {
+  "doi": "10.1109/mcc.2017.32",
+  "entry": "Eivy, A.; Weinman, J.. (2017). Be Wary of the Economics of \"Serverless\" Cloud Computing. IEEE Cloud Computing. vol. 4. pp. 6-12. https://doi.org/10.1109/mcc.2017.32",
+  "title": "Be Wary of the Economics of \"Serverless\" Cloud Computing",
+  "verification": {
+   "date": "2026-10-31",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 2017
+ },
+ "escobar-meeker-2006": {
+  "doi": "10.1214/088342306000000321",
+  "entry": "Escobar, L. A.; Meeker, W. Q.. (2006). A Review of Accelerated Test Models. Statistical Science. vol. 21. pp. 552-577. https://doi.org/10.1214/088342306000000321",
+  "title": "A Review of Accelerated Test Models",
+  "verification": {
+   "date": "2026-10-31",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 2006
+ },
+ "fisher-tippett-1928": {
+  "doi": "10.1017/s0305004100015681",
+  "entry": "Fisher, R. A.; Tippett, L. H. C.. (1928). Limiting forms of the frequency distribution of the largest or smallest member of a sample. Mathematical Proceedings of the Cambridge Philosophical Society. vol. 24. pp. 180-190. https://doi.org/10.1017/s0305004100015681",
+  "title": "Limiting forms of the frequency distribution of the largest or smallest member of a sample",
+  "verification": {
+   "date": "2026-10-31",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 1928
+ },
+ "gentleman-geyer-1994": {
+  "doi": "10.1093/biomet/81.3.618",
+  "entry": "GENTLEMAN, R.; GEYER, C. J.. (1994). Maximum likelihood for interval censored data: Consistency and computation. Biometrika. vol. 81. pp. 618-623. https://doi.org/10.1093/biomet/81.3.618",
+  "title": "Maximum likelihood for interval censored data: Consistency and computation",
+  "verification": {
+   "date": "2026-10-31",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 1994
+ },
+ "georges-2007": {
+  "doi": "10.1145/1297027.1297033",
+  "entry": "Georges, A.; Buytaert, D.; Eeckhout, L.. (2007). Statistically rigorous java performance evaluation. Proceedings of the 22nd annual ACM SIGPLAN conference on Object-oriented programming systems, languages and applications. pp. 57-76. https://doi.org/10.1145/1297027.1297033",
+  "title": "Statistically rigorous java performance evaluation",
+  "verification": {
+   "date": "2026-10-31",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 2007
+ },
+ "glasserman-2000": {
+  "doi": "10.1287/mnsc.46.10.1349.12274",
+  "entry": "Glasserman, P.; Heidelberger, P.; Shahabuddin, P.. (2000). Variance Reduction Techniques for Estimating Value-at-Risk. Management Science. vol. 46. pp. 1349-1364. https://doi.org/10.1287/mnsc.46.10.1349.12274",
+  "title": "Variance Reduction Techniques for Estimating Value-at-Risk",
+  "verification": {
+   "date": "2026-10-31",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 2000
+ },
+ "gnedenko-1943": {
+  "doi": "10.2307/1968974",
+  "entry": "Gnedenko, B.. (1943). Sur La Distribution Limite Du Terme Maximum D'Une Serie Aleatoire. The Annals of Mathematics. vol. 44. pp. 423. https://doi.org/10.2307/1968974",
+  "title": "Sur La Distribution Limite Du Terme Maximum D'Une Serie Aleatoire",
+  "verification": {
+   "date": "2026-10-31",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 1943
+ },
+ "grimshaw-1993": {
+  "doi": "10.1080/00401706.1993.10485040",
+  "entry": "Grimshaw, S. D.. (1993). Computing Maximum Likelihood Estimates for the Generalized Pareto Distribution. Technometrics. vol. 35. pp. 185-191. https://doi.org/10.1080/00401706.1993.10485040",
+  "title": "Computing Maximum Likelihood Estimates for the Generalized Pareto Distribution",
+  "verification": {
+   "date": "2026-10-31",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 1993
+ },
+ "gumbel-1958": {
+  "doi": "10.7312/gumb92958",
+  "entry": "Gumbel, E. J.. (1958). Statistics of Extremes. https://doi.org/10.7312/gumb92958",
+  "title": "Statistics of Extremes",
+  "verification": {
+   "date": "2026-10-31",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 1958
+ },
+ "gunawi-2014": {
+  "doi": "10.1145/2670979.2670986",
+  "entry": "Gunawi, H. S.; Hao, M.; Leesatapornwongsa, T.; et al.. (2014). What Bugs Live in the Cloud? A Study of 3000+ Issues in Cloud Systems. Proceedings of the ACM Symposium on Cloud Computing. pp. 1-14. https://doi.org/10.1145/2670979.2670986",
+  "title": "What Bugs Live in the Cloud? A Study of 3000+ Issues in Cloud Systems",
+  "verification": {
+   "date": "2026-10-31",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 2014
+ },
+ "halfin-whitt-1981": {
+  "doi": "10.1287/opre.29.3.567",
+  "entry": "Halfin, S.; Whitt, W.. (1981). Heavy-Traffic Limits for Queues with Many Exponential Servers. Operations Research. vol. 29. pp. 567-588. https://doi.org/10.1287/opre.29.3.567",
+  "title": "Heavy-Traffic Limits for Queues with Many Exponential Servers",
+  "verification": {
+   "date": "2026-10-31",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 1981
+ },
+ "hall-1986": {
+  "doi": "10.1214/aos/1176350169",
+  "entry": "Hall, P.. (1986). On the Number of Bootstrap Simulations Required to Construct a Confidence Interval. The Annals of Statistics. vol. 14. pp. 1453-1462. https://doi.org/10.1214/aos/1176350169",
+  "title": "On the Number of Bootstrap Simulations Required to Construct a Confidence Interval",
+  "verification": {
+   "date": "2026-10-31",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 1986
+ },
+ "harchol-balter-2013": {
+  "doi": "10.1017/cbo9781139226424",
+  "entry": "Harchol-Balter, M.. (2013). Performance Modeling and Design of Computer Systems. https://doi.org/10.1017/cbo9781139226424",
+  "title": "Performance Modeling and Design of Computer Systems",
+  "verification": {
+   "date": "2026-10-31",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 2013
+ },
+ "heidelberger-1981": {
+  "doi": "10.1145/358598.358630",
+  "entry": "Heidelberger, P.; Welch, P. D.. (1981). A spectral method for confidence interval generation and run length control in simulations. Communications of the ACM. vol. 24. pp. 233-245. https://doi.org/10.1145/358598.358630",
+  "title": "A spectral method for confidence interval generation and run length control in simulations",
+  "verification": {
+   "date": "2026-10-31",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 1981
+ },
+ "heitjan-rubin-1991": {
+  "doi": "10.1214/aos/1176348396",
+  "entry": "Heitjan, D. F.; Rubin, D. B.. (1991). Ignorability and Coarse Data. The Annals of Statistics. vol. 19. pp. 2244-2253. https://doi.org/10.1214/aos/1176348396",
+  "title": "Ignorability and Coarse Data",
+  "verification": {
+   "date": "2026-10-31",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 1991
+ },
+ "hellerstein-serverless-2019": {
+  "doi": null,
+  "entry": "Joseph M. Hellerstein; Jose Faleiro; Joseph E. Gonzalez; et al.. (2018). Serverless Computing: One Step Forward, Two Steps Back. arXiv preprint 1812.03651v1. http://arxiv.org/abs/1812.03651v1",
+  "title": "Serverless Computing: One Step Forward, Two Steps Back",
+  "verification": {
+   "date": "2026-10-31",
+   "method": "arxiv",
+   "result": "verified"
+  },
+  "year": 2018
+ },
+ "hoeffding-1963": {
+  "doi": "10.1080/01621459.1963.10500830",
+  "entry": "Hoeffding, W.. (1963). Probability Inequalities for Sums of Bounded Random Variables. Journal of the American Statistical Association. vol. 58. pp. 13-30. https://doi.org/10.1080/01621459.1963.10500830",
+  "title": "Probability Inequalities for Sums of Bounded Random Variables",
+  "verification": {
+   "date": "2026-10-31",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 1963
+ },
+ "hoefler-belli-2015": {
+  "doi": "10.1145/2807591.2807644",
+  "entry": "Hoefler, T.; Belli, R.. (2015). Scientific benchmarking of parallel computing systems. Proceedings of the International Conference for High Performance Computing, Networking, Storage and Analysis. pp. 1-12. https://doi.org/10.1145/2807591.2807644",
+  "title": "Scientific benchmarking of parallel computing systems",
+  "verification": {
+   "date": "2026-10-31",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 2015
+ },
+ "horowitz-manski-2000": {
+  "doi": "10.1080/01621459.2000.10473902",
+  "entry": "Horowitz, J. L.; Manski, C. F.. (2000). Nonparametric Analysis of Randomized Experiments with Missing Covariate and Outcome Data. Journal of the American Statistical Association. vol. 95. pp. 77-84. https://doi.org/10.1080/01621459.2000.10473902",
+  "title": "Nonparametric Analysis of Randomized Experiments with Missing Covariate and Outcome Data",
+  "verification": {
+   "date": "2026-10-31",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 2000
+ },
+ "hosking-1990": {
+  "doi": "10.1111/j.2517-6161.1990.tb01775.x",
+  "entry": "Hosking, J. R. M.. (1990). L-Moments: Analysis and Estimation of Distributions Using Linear Combinations of Order Statistics. Journal of the Royal Statistical Society Series B: Statistical Methodology. vol. 52. pp. 105-124. https://doi.org/10.1111/j.2517-6161.1990.tb01775.x",
+  "title": "L-Moments: Analysis and Estimation of Distributions Using Linear Combinations of Order Statistics",
+  "verification": {
+   "date": "2026-10-31",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 1990
+ },
+ "hosking-wallis-1987": {
+  "doi": "10.1080/00401706.1987.10488243",
+  "entry": "Hosking, J. R.; Wallis, J. R.. (1987). Parameter and Quantile Estimation for the Generalized Pareto Distribution. Technometrics. vol. 29. pp. 339-349. https://doi.org/10.1080/00401706.1987.10488243",
+  "title": "Parameter and Quantile Estimation for the Generalized Pareto Distribution",
+  "verification": {
+   "date": "2026-10-31",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 1987
+ },
+ "imbens-manski-2004": {
+  "doi": "10.1920/wp.cem.2003.0903",
+  "entry": "Manski, C. F.; Imbens, G.. (2003). Confidence intervals for partially identified parameters. Working Paper Series. https://doi.org/10.1920/wp.cem.2003.0903",
+  "title": "Confidence intervals for partially identified parameters",
+  "verification": {
+   "date": "2026-10-31",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 2003
+ },
+ "iosup-cloud-2011": {
+  "doi": "10.1109/tpds.2011.66",
+  "entry": "Iosup, A.; Ostermann, S.; Yigitbasi, M. N.; et al.. (2011). Performance Analysis of Cloud Computing Services for Many-Tasks Scientific Computing. IEEE Transactions on Parallel and Distributed Systems. vol. 22. pp. 931-945. https://doi.org/10.1109/tpds.2011.66",
+  "title": "Performance Analysis of Cloud Computing Services for Many-Tasks Scientific Computing",
+  "verification": {
+   "date": "2026-10-31",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 2011
+ },
+ "jonas-berkeley-serverless-2019": {
+  "doi": null,
+  "entry": "Eric Jonas; Johann Schleier-Smith; Vikram Sreekanti; et al.. (2019). Cloud Programming Simplified: A Berkeley View on Serverless Computing. arXiv preprint 1902.03383v1. http://arxiv.org/abs/1902.03383v1",
+  "title": "Cloud Programming Simplified: A Berkeley View on Serverless Computing",
+  "verification": {
+   "date": "2026-10-31",
+   "method": "arxiv",
+   "result": "verified"
+  },
+  "year": 2019
+ },
+ "kalbfleisch-prentice-2002": {
+  "doi": "10.1002/9781118032985",
+  "entry": "Kalbfleisch, J. D.; Prentice, R. L.. (2002). The Statistical Analysis of Failure Time Data. Wiley Series in Probability and Statistics. https://doi.org/10.1002/9781118032985",
+  "title": "The Statistical Analysis of Failure Time Data",
+  "verification": {
+   "date": "2026-10-31",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 2002
+ },
+ "kanev-2015": {
+  "doi": "10.1145/2872887.2750392",
+  "entry": "Kanev, S.; Darago, J. P.; Hazelwood, K.; et al.. (2015). Profiling a warehouse-scale computer. ACM SIGARCH Computer Architecture News. vol. 43. pp. 158-169. https://doi.org/10.1145/2872887.2750392",
+  "title": "Profiling a warehouse-scale computer",
+  "verification": {
+   "date": "2026-10-31",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 2015
+ },
+ "kaplan-meier-1958": {
+  "doi": "10.1080/01621459.1958.10501452",
+  "entry": "Kaplan, E. L.; Meier, P.. (1958). Nonparametric Estimation from Incomplete Observations. Journal of the American Statistical Association. vol. 53. pp. 457-481. https://doi.org/10.1080/01621459.1958.10501452",
+  "title": "Nonparametric Estimation from Incomplete Observations",
+  "verification": {
+   "date": "2026-10-31",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 1958
+ },
+ "katz-2002": {
+  "doi": "10.1016/s0309-1708(02)00056-8",
+  "entry": "Katz, R. W.; Parlange, M. B.; Naveau, P.. (2002). Statistics of extremes in hydrology. Advances in Water Resources. vol. 25. pp. 1287-1304. https://doi.org/10.1016/s0309-1708(02)00056-8",
+  "title": "Statistics of extremes in hydrology",
+  "verification": {
+   "date": "2026-10-31",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 2002
+ },
+ "kingman-1961": {
+  "doi": "10.1017/s0305004100036094",
+  "entry": "Kingman, J. F. C.. (1961). The single server queue in heavy traffic. Mathematical Proceedings of the Cambridge Philosophical Society. vol. 57. pp. 902-904. https://doi.org/10.1017/s0305004100036094",
+  "title": "The single server queue in heavy traffic",
+  "verification": {
+   "date": "2026-10-31",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 1961
+ },
+ "kingman-1962": {
+  "doi": "10.1111/j.2517-6161.1962.tb00465.x",
+  "entry": "Kingman, J. F. C.. (1962). On Queues in Heavy Traffic. Journal of the Royal Statistical Society Series B: Statistical Methodology. vol. 24. pp. 383-392. https://doi.org/10.1111/j.2517-6161.1962.tb00465.x",
+  "title": "On Queues in Heavy Traffic",
+  "verification": {
+   "date": "2026-10-31",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 1962
+ },
+ "koenker-bassett-1978": {
+  "doi": "10.2307/1913643",
+  "entry": "Koenker, R.; Bassett, G.. (1978). Regression Quantiles. Econometrica. vol. 46. pp. 33. https://doi.org/10.2307/1913643",
+  "title": "Regression Quantiles",
+  "verification": {
+   "date": "2026-10-31",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 1978
+ },
+ "kohavi-online-2013": {
+  "doi": "10.1145/2487575.2488217",
+  "entry": "Kohavi, R.; Deng, A.; Frasca, B.; et al.. (2013). Online controlled experiments at large scale. Proceedings of the 19th ACM SIGKDD international conference on Knowledge discovery and data mining. pp. 1168-1176. https://doi.org/10.1145/2487575.2488217",
+  "title": "Online controlled experiments at large scale",
+  "verification": {
+   "date": "2026-10-31",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 2013
+ },
+ "lagakos-1979": {
+  "doi": "10.2307/2529941",
+  "entry": "Lagakos, S. W.. (1979). General Right Censoring and Its Impact on the Analysis of Survival Data. Biometrics. vol. 35. pp. 139. https://doi.org/10.2307/2529941",
+  "title": "General Right Censoring and Its Impact on the Analysis of Survival Data",
+  "verification": {
+   "date": "2026-10-31",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 1979
+ },
+ "lawless-2003": {
+  "doi": "10.1002/9781118033005",
+  "entry": "Lawless, J. F.. (2002). Statistical Models and Methods for Lifetime Data. Wiley Series in Probability and Statistics. https://doi.org/10.1002/9781118033005",
+  "title": "Statistical Models and Methods for Lifetime Data",
+  "verification": {
+   "date": "2026-10-31",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 2002
+ },
+ "lehmann-casella-1998": {
+  "doi": "10.1007/b98854",
+  "entry": "(1998). Theory of Point Estimation. Springer Texts in Statistics. https://doi.org/10.1007/b98854",
+  "title": "Theory of Point Estimation",
+  "verification": {
+   "date": "2026-10-31",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 1998
+ },
+ "leitner-chaos-2016": {
+  "doi": "10.1145/2885497",
+  "entry": "Leitner, P.; Cito, J.. (2016). Patterns in the Chaos\u2014A Study of Performance Variation and Predictability in Public IaaS Clouds. ACM Transactions on Internet Technology. vol. 16. pp. 1-23. https://doi.org/10.1145/2885497",
+  "title": "Patterns in the Chaos\u2014A Study of Performance Variation and Predictability in Public IaaS Clouds",
+  "verification": {
+   "date": "2026-10-31",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 2016
+ },
+ "lenk-iaas-2011": {
+  "doi": "10.1109/cloud.2011.80",
+  "entry": "Lenk, A.; Menzel, M.; Lipsky, J.; et al.. (2011). What Are You Paying For? Performance Benchmarking for Infrastructure-as-a-Service Offerings. 2011 IEEE 4th International Conference on Cloud Computing. pp. 484-491. https://doi.org/10.1109/cloud.2011.80",
+  "title": "What Are You Paying For? Performance Benchmarking for Infrastructure-as-a-Service Offerings",
+  "verification": {
+   "date": "2026-10-31",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 2011
+ },
+ "lin-wei-1989": {
+  "doi": "10.1080/01621459.1989.10478874",
+  "entry": "Lin, D. Y.; Wei, L. J.. (1989). The Robust Inference for the Cox Proportional Hazards Model. Journal of the American Statistical Association. vol. 84. pp. 1074-1078. https://doi.org/10.1080/01621459.1989.10478874",
+  "title": "The Robust Inference for the Cox Proportional Hazards Model",
+  "verification": {
+   "date": "2026-10-31",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 1989
+ },
+ "lloyd-2018": {
+  "doi": "10.1109/ic2e.2018.00039",
+  "entry": "Lloyd, W.; Ramesh, S.; Chinthalapati, S.; et al.. (2018). Serverless Computing: An Investigation of Factors Influencing Microservice Performance. 2018 IEEE International Conference on Cloud Engineering (IC2E). pp. 159-169. https://doi.org/10.1109/ic2e.2018.00039",
+  "title": "Serverless Computing: An Investigation of Factors Influencing Microservice Performance",
+  "verification": {
+   "date": "2026-10-31",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 2018
+ },
+ "manski-2003": {
+  "doi": "10.1007/b97478",
+  "entry": "(2003). Partial Identification of Probability Distributions. Springer Series in Statistics. https://doi.org/10.1007/b97478",
+  "title": "Partial Identification of Probability Distributions",
+  "verification": {
+   "date": "2026-10-31",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 2003
+ },
+ "manski-2007": {
+  "doi": "10.1111/j.1468-2354.2007.00467.x",
+  "entry": "Manski, C. F.. (2007). PARTIAL IDENTIFICATION OF COUNTERFACTUAL CHOICE PROBABILITIES*. International Economic Review. vol. 48. pp. 1393-1410. https://doi.org/10.1111/j.1468-2354.2007.00467.x",
+  "title": "PARTIAL IDENTIFICATION OF COUNTERFACTUAL CHOICE PROBABILITIES*",
+  "verification": {
+   "date": "2026-10-31",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 2007
+ },
+ "martinussen-scheike-2006": {
+  "doi": "10.1007/0-387-33960-4",
+  "entry": "(2006). Dynamic Regression Models for Survival Data. Statistics for Biology and Health. https://doi.org/10.1007/0-387-33960-4",
+  "title": "Dynamic Regression Models for Survival Data",
+  "verification": {
+   "date": "2026-10-31",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 2006
+ },
+ "massart-1990": {
+  "doi": "10.1214/aop/1176990746",
+  "entry": "Massart, P.. (1990). The Tight Constant in the Dvoretzky-Kiefer-Wolfowitz Inequality. The Annals of Probability. vol. 18. pp. 1269-1283. https://doi.org/10.1214/aop/1176990746",
+  "title": "The Tight Constant in the Dvoretzky-Kiefer-Wolfowitz Inequality",
+  "verification": {
+   "date": "2026-10-31",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 1990
+ },
+ "mcgrath-2017": {
+  "doi": "10.1109/icdcsw.2017.36",
+  "entry": "McGrath, G.; Brenner, P. R.. (2017). Serverless Computing: Design, Implementation, and Performance. 2017 IEEE 37th International Conference on Distributed Computing Systems Workshops (ICDCSW). pp. 405-410. https://doi.org/10.1109/icdcsw.2017.36",
+  "title": "Serverless Computing: Design, Implementation, and Performance",
+  "verification": {
+   "date": "2026-10-31",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 2017
+ },
+ "molinari-2020": {
+  "doi": "10.1016/bs.hoe.2020.05.002",
+  "entry": "(2020). Microeconometrics with partial identification. Handbook of Econometrics. pp. 355-486. https://doi.org/10.1016/bs.hoe.2020.05.002",
+  "title": "Microeconometrics with partial identification",
+  "verification": {
+   "date": "2026-10-31",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 2020
+ },
+ "mosteller-1946": {
+  "doi": "10.1214/aoms/1177730881",
+  "entry": "Mosteller, F.. (1946). On Some Useful \"Inefficient\" Statistics. The Annals of Mathematical Statistics. vol. 17. pp. 377-408. https://doi.org/10.1214/aoms/1177730881",
+  "title": "On Some Useful \"Inefficient\" Statistics",
+  "verification": {
+   "date": "2026-10-31",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 1946
+ },
+ "mytkowicz-2009": {
+  "doi": "10.1145/1508284.1508275",
+  "entry": "Mytkowicz, T.; Diwan, A.; Hauswirth, M.; et al.. (2009). Producing wrong data without doing anything obviously wrong!. ACM SIGPLAN Notices. vol. 44. pp. 265-276. https://doi.org/10.1145/1508284.1508275",
+  "title": "Producing wrong data without doing anything obviously wrong!",
+  "verification": {
+   "date": "2026-10-31",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 2009
+ },
+ "nelson-applied-life-1982": {
+  "doi": "10.1002/0471725234",
+  "entry": "Nelson, W.. (1982). Applied Life Data Analysis. Wiley Series in Probability and Statistics. https://doi.org/10.1002/0471725234",
+  "title": "Applied Life Data Analysis",
+  "verification": {
+   "date": "2026-10-31",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 1982
+ },
+ "newcombe-1998": {
+  "doi": "10.1002/(sici)1097-0258(19980430)17:8<857::aid-sim777>3.0.co;2-e",
+  "entry": "Newcombe, R. G.. (1998). Two-sided confidence intervals for the single proportion: comparison of seven methods. Statistics in Medicine. vol. 17. pp. 857-872. https://doi.org/10.1002/(sici)1097-0258(19980430)17:8<857::aid-sim777>3.0.co;2-e",
+  "title": "Two-sided confidence intervals for the single proportion: comparison of seven methods",
+  "verification": {
+   "date": "2026-10-31",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 1998
+ },
+ "newey-mcfadden-1994": {
+  "doi": "10.1016/s1573-4412(05)80005-4",
+  "entry": "Newey, W. K.; McFadden, D.. (1994). Chapter 36 Large sample estimation and hypothesis testing. Handbook of Econometrics. pp. 2111-2245. https://doi.org/10.1016/s1573-4412(05)80005-4",
+  "title": "Chapter 36 Large sample estimation and hypothesis testing",
+  "verification": {
+   "date": "2026-10-31",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 1994
+ },
+ "ousterhout-ramcloud-2015": {
+  "doi": "10.1145/2806887",
+  "entry": "Ousterhout, J.; Gopalan, A.; Gupta, A.; et al.. (2015). The RAMCloud Storage System. ACM Transactions on Computer Systems. vol. 33. pp. 1-55. https://doi.org/10.1145/2806887",
+  "title": "The RAMCloud Storage System",
+  "verification": {
+   "date": "2026-10-31",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 2015
+ },
+ "ousterhout-ramcloud-case-2011": {
+  "doi": "10.1145/1965724.1965751",
+  "entry": "Ousterhout, J.; Agrawal, P.; Erickson, D.; et al.. (2011). The case for RAMCloud. Communications of the ACM. vol. 54. pp. 121-130. https://doi.org/10.1145/1965724.1965751",
+  "title": "The case for RAMCloud",
+  "verification": {
+   "date": "2026-10-31",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 2011
+ },
+ "pickands-1975": {
+  "doi": "10.1214/aos/1176343003",
+  "entry": "III, J. P.. (1975). Statistical Inference Using Extreme Order Statistics. The Annals of Statistics. vol. 3. pp. 119-131. https://doi.org/10.1214/aos/1176343003",
+  "title": "Statistical Inference Using Extreme Order Statistics",
+  "verification": {
+   "date": "2026-10-31",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 1975
+ },
+ "prentice-1978": {
+  "doi": "10.2307/2530374",
+  "entry": "Prentice, R. L.; Kalbfleisch, J. D.; Peterson, A. V.; et al.. (1978). The Analysis of Failure Times in the Presence of Competing Risks. Biometrics. vol. 34. pp. 541. https://doi.org/10.2307/2530374",
+  "title": "The Analysis of Failure Times in the Presence of Competing Risks",
+  "verification": {
+   "date": "2026-10-31",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 1978
+ },
+ "rao-linear-inference-1973": {
+  "doi": "10.1002/9780470316436",
+  "entry": "Rao, C. R.. (1973). Linear Statistical Inference and its Applications. Wiley Series in Probability and Statistics. https://doi.org/10.1002/9780470316436",
+  "title": "Linear Statistical Inference and its Applications",
+  "verification": {
+   "date": "2026-10-31",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 1973
+ },
+ "reiman-1984": {
+  "doi": "10.1287/moor.9.3.441",
+  "entry": "Reiman, M. I.. (1984). Open Queueing Networks in Heavy Traffic. Mathematics of Operations Research. vol. 9. pp. 441-458. https://doi.org/10.1287/moor.9.3.441",
+  "title": "Open Queueing Networks in Heavy Traffic",
+  "verification": {
+   "date": "2026-10-31",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 1984
+ },
+ "reiss-1989": {
+  "doi": "10.1007/978-1-4613-9620-8",
+  "entry": "Reiss, R. D.. (1989). Approximate Distributions of Order Statistics. Springer Series in Statistics. https://doi.org/10.1007/978-1-4613-9620-8",
+  "title": "Approximate Distributions of Order Statistics",
+  "verification": {
+   "date": "2026-10-31",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 1989
+ },
+ "romano-shaikh-2008": {
+  "doi": "10.1016/j.jspi.2008.03.015",
+  "entry": "Romano, J. P.; Shaikh, A. M.. (2008). Inference for identifiable parameters in partially identified econometric models. Journal of Statistical Planning and Inference. vol. 138. pp. 2786-2807. https://doi.org/10.1016/j.jspi.2008.03.015",
+  "title": "Inference for identifiable parameters in partially identified econometric models",
+  "verification": {
+   "date": "2026-10-31",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 2008
+ },
+ "rosenbaum-2002": {
+  "doi": "10.1007/978-1-4757-3692-2",
+  "entry": "Rosenbaum, P. R.. (2002). Observational Studies. Springer Series in Statistics. https://doi.org/10.1007/978-1-4757-3692-2",
+  "title": "Observational Studies",
+  "verification": {
+   "date": "2026-10-31",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 2002
+ },
+ "rubin-1976": {
+  "doi": "10.1093/biomet/63.3.581",
+  "entry": "RUBIN, D. B.. (1976). Inference and missing data. Biometrika. vol. 63. pp. 581-592. https://doi.org/10.1093/biomet/63.3.581",
+  "title": "Inference and missing data",
+  "verification": {
+   "date": "2026-10-31",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 1976
+ },
+ "rubino-rare-event-2009": {
+  "doi": "10.1002/9780470745403",
+  "entry": "(2009). Rare Event Simulation using Monte Carlo Methods. https://doi.org/10.1002/9780470745403",
+  "title": "Rare Event Simulation using Monte Carlo Methods",
+  "verification": {
+   "date": "2026-10-31",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 2009
+ },
+ "serfling-1980": {
+  "doi": "10.1002/9780470316481",
+  "entry": "Serfling, R. J.. (1980). Approximation Theorems of Mathematical Statistics. Wiley Series in Probability and Statistics. https://doi.org/10.1002/9780470316481",
+  "title": "Approximation Theorems of Mathematical Statistics",
+  "verification": {
+   "date": "2026-10-31",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 1980
+ },
+ "shahrad-serverless-wild-2020": {
+  "doi": null,
+  "entry": "Mohammad Shahrad; Rodrigo Fonseca; \u00cd\u00f1igo Goiri; et al.. (2020). Serverless in the Wild: Characterizing and Optimizing the Serverless Workload at a Large Cloud Provider. arXiv preprint 2003.03423v3. http://arxiv.org/abs/2003.03423v3",
+  "title": "Serverless in the Wild: Characterizing and Optimizing the Serverless Workload at a Large Cloud Provider",
+  "verification": {
+   "date": "2026-10-31",
+   "method": "arxiv",
+   "result": "verified"
+  },
+  "year": 2020
+ },
+ "singh-1981": {
+  "doi": "10.1214/aos/1176345636",
+  "entry": "Singh, K.. (1981). On the Asymptotic Accuracy of Efron's Bootstrap. The Annals of Statistics. vol. 9. pp. 1187-1195. https://doi.org/10.1214/aos/1176345636",
+  "title": "On the Asymptotic Accuracy of Efron's Bootstrap",
+  "verification": {
+   "date": "2026-10-31",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 1981
+ },
+ "smith-1987": {
+  "doi": "10.1214/aos/1176350499",
+  "entry": "Smith, R. L.. (1987). Estimating Tails of Probability Distributions. The Annals of Statistics. vol. 15. pp. 1174-1207. https://doi.org/10.1214/aos/1176350499",
+  "title": "Estimating Tails of Probability Distributions",
+  "verification": {
+   "date": "2026-10-31",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 1987
+ },
+ "smith-1990": {
+  "doi": "10.1007/0-306-48738-1_16",
+  "entry": "Smith, C. U.; Williams, L. G.. (None). Software Performance Engineering. UML for Real. pp. 343-365. https://doi.org/10.1007/0-306-48738-1_16",
+  "title": "Software Performance Engineering",
+  "verification": {
+   "date": "2026-10-31",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 1990
+ },
+ "stigler-1973": {
+  "doi": "10.1214/aos/1176342412",
+  "entry": "Stigler, S. M.. (1973). The Asymptotic Distribution of the Trimmed Mean. The Annals of Statistics. vol. 1. pp. 472-477. https://doi.org/10.1214/aos/1176342412",
+  "title": "The Asymptotic Distribution of the Trimmed Mean",
+  "verification": {
+   "date": "2026-10-31",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 1973
+ },
+ "tamer-2010": {
+  "doi": "10.1057/9780230226203.1251",
+  "entry": "Manski, C. F.. (None). partial identification in econometrics. The New Palgrave Dictionary of Economics. pp. 300-306. https://doi.org/10.1057/9780230226203.1251",
+  "title": "partial identification in econometrics",
+  "verification": {
+   "date": "2026-10-31",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 2010
+ },
+ "tille-2006": {
+  "doi": "10.1007/0-387-34240-0",
+  "entry": "(2006). Sampling Algorithms. Springer Series in Statistics. https://doi.org/10.1007/0-387-34240-0",
+  "title": "Sampling Algorithms",
+  "verification": {
+   "date": "2026-10-31",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 2006
+ },
+ "tsiatis-2006": {
+  "doi": "10.1007/0-387-37345-4",
+  "entry": "(2006). Semiparametric Theory and Missing Data. Springer Series in Statistics. https://doi.org/10.1007/0-387-37345-4",
+  "title": "Semiparametric Theory and Missing Data",
+  "verification": {
+   "date": "2026-10-31",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 2006
+ },
+ "tukey-1962": {
+  "doi": "10.1214/aoms/1177704711",
+  "entry": "Tukey, J. W.. (1962). The Future of Data Analysis. The Annals of Mathematical Statistics. vol. 33. pp. 1-67. https://doi.org/10.1214/aoms/1177704711",
+  "title": "The Future of Data Analysis",
+  "verification": {
+   "date": "2026-10-31",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 1962
+ },
+ "turnbull-1976": {
+  "doi": "10.1111/j.2517-6161.1976.tb01597.x",
+  "entry": "Turnbull, B. W.. (1976). The Empirical Distribution Function with Arbitrarily Grouped, Censored and Truncated Data. Journal of the Royal Statistical Society Series B: Statistical Methodology. vol. 38. pp. 290-295. https://doi.org/10.1111/j.2517-6161.1976.tb01597.x",
+  "title": "The Empirical Distribution Function with Arbitrarily Grouped, Censored and Truncated Data",
+  "verification": {
+   "date": "2026-10-31",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 1976
+ },
+ "vandervaart-wellner-1996": {
+  "doi": "10.1007/978-1-4757-2545-2",
+  "entry": "van der Vaart, A. W.; Wellner, J. A.. (1996). Weak Convergence and Empirical Processes. Springer Series in Statistics. https://doi.org/10.1007/978-1-4757-2545-2",
+  "title": "Weak Convergence and Empirical Processes",
+  "verification": {
+   "date": "2026-10-31",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 1996
+ },
+ "verma-borg-2015": {
+  "doi": "10.1145/2741948.2741964",
+  "entry": "Verma, A.; Pedrosa, L.; Korupolu, M.; et al.. (2015). Large-scale cluster management at Google with Borg. Proceedings of the Tenth European Conference on Computer Systems. pp. 1-17. https://doi.org/10.1145/2741948.2741964",
+  "title": "Large-scale cluster management at Google with Borg",
+  "verification": {
+   "date": "2026-10-31",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 2015
+ },
+ "wald-1943": {
+  "doi": "10.1214/aoms/1177731491",
+  "entry": "Wald, A.. (1943). An Extension of Wilks' Method for Setting Tolerance Limits. The Annals of Mathematical Statistics. vol. 14. pp. 45-55. https://doi.org/10.1214/aoms/1177731491",
+  "title": "An Extension of Wilks' Method for Setting Tolerance Limits",
+  "verification": {
+   "date": "2026-10-31",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 1943
+ },
+ "welch-1983": {
+  "doi": "10.1287/opre.31.6.983",
+  "entry": "Law, A. M.. (1983). Feature Article\u2014Statistical Analysis of Simulation Output Data. Operations Research. vol. 31. pp. 983-1029. https://doi.org/10.1287/opre.31.6.983",
+  "title": "Feature Article\u2014Statistical Analysis of Simulation Output Data",
+  "verification": {
+   "date": "2026-10-31",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 1983
+ },
+ "whitt-1993": {
+  "doi": "10.1111/j.1937-5956.1993.tb00094.x",
+  "entry": "WHITT, W.. (1993). APPROXIMATIONS FOR THE GI/G/m QUEUE. Production and Operations Management. vol. 2. pp. 114-161. https://doi.org/10.1111/j.1937-5956.1993.tb00094.x",
+  "title": "APPROXIMATIONS FOR THE GI/G/m QUEUE",
+  "verification": {
+   "date": "2026-10-31",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 1993
+ },
+ "wilks-1941": {
+  "doi": "10.1214/aoms/1177731788",
+  "entry": "Wilks, S. S.. (1941). Determination of Sample Sizes for Setting Tolerance Limits. The Annals of Mathematical Statistics. vol. 12. pp. 91-96. https://doi.org/10.1214/aoms/1177731788",
+  "title": "Determination of Sample Sizes for Setting Tolerance Limits",
+  "verification": {
+   "date": "2026-10-31",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 1941
+ },
+ "wilks-1948": {
+  "doi": "10.1007/springerreference_65446",
+  "entry": "(None). Order Statistics. SpringerReference. https://doi.org/10.1007/springerreference_65446",
+  "title": "Order Statistics",
+  "verification": {
+   "date": "2026-10-31",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 1948
+ },
+ "wilson-1927": {
+  "doi": "10.1080/01621459.1927.10502953",
+  "entry": "Wilson, E. B.. (1927). Probable Inference, the Law of Succession, and Statistical Inference. Journal of the American Statistical Association. vol. 22. pp. 209-212. https://doi.org/10.1080/01621459.1927.10502953",
+  "title": "Probable Inference, the Law of Succession, and Statistical Inference",
+  "verification": {
+   "date": "2026-10-31",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 1927
+ },
+ "woodroofe-1985": {
+  "doi": "10.1214/aos/1176346584",
+  "entry": "Woodroofe, M.. (1985). Estimating a Distribution Function with Truncated Data. The Annals of Statistics. vol. 13. pp. 163-177. https://doi.org/10.1214/aos/1176346584",
+  "title": "Estimating a Distribution Function with Truncated Data",
+  "verification": {
+   "date": "2026-10-31",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 1985
+ },
+ "woodside-2007": {
+  "doi": "10.1109/fose.2007.32",
+  "entry": "Woodside, M.; Franks, G.; Petriu, D. C.. (2007). The Future of Software Performance Engineering. Future of Software Engineering (FOSE '07). pp. 171-187. https://doi.org/10.1109/fose.2007.32",
+  "title": "The Future of Software Performance Engineering",
+  "verification": {
+   "date": "2026-10-31",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 2007
+ }
+}
