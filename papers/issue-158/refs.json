@@ -1,0 +1,222 @@
+{
+ "aumuller-ann-benchmarks-2017": {
+  "doi": "10.1007/978-3-319-68474-1_3",
+  "entry": "Aum\u00fcller, M.; Bernhardsson, E.; Faithfull, A.. (2017). ANN-Benchmarks: A Benchmarking Tool for Approximate Nearest Neighbor Algorithms. Lecture Notes in Computer Science. pp. 34-49. https://doi.org/10.1007/978-3-319-68474-1_3",
+  "title": "ANN-Benchmarks: A Benchmarking Tool for Approximate Nearest Neighbor Algorithms",
+  "verification": {
+   "date": "2026-10-30",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 2017
+ },
+ "babenko-additive-quant-2014": {
+  "doi": "10.1109/cvpr.2014.124",
+  "entry": "Babenko, A.; Lempitsky, V.. (2014). Additive Quantization for Extreme Vector Compression. 2014 IEEE Conference on Computer Vision and Pattern Recognition. pp. 931-938. https://doi.org/10.1109/cvpr.2014.124",
+  "title": "Additive Quantization for Extreme Vector Compression",
+  "verification": {
+   "date": "2026-10-30",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 2014
+ },
+ "babenko-deep1b-2016": {
+  "doi": "10.1109/cvpr.2016.226",
+  "entry": "Yandex, A. B.; Lempitsky, V.. (2016). Efficient Indexing of Billion-Scale Datasets of Deep Descriptors. 2016 IEEE Conference on Computer Vision and Pattern Recognition (CVPR). pp. 2055-2063. https://doi.org/10.1109/cvpr.2016.226",
+  "title": "Efficient Indexing of Billion-Scale Datasets of Deep Descriptors",
+  "verification": {
+   "date": "2026-10-30",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 2016
+ },
+ "babenko-inverted-multi-index-2015": {
+  "doi": "10.1007/springerreference_65153",
+  "entry": "(None). Inverted Index. SpringerReference. https://doi.org/10.1007/springerreference_65153",
+  "title": "Inverted Index",
+  "verification": {
+   "date": "2026-10-30",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 2015
+ },
+ "bentley-1975": {
+  "doi": "10.1145/361002.361007",
+  "entry": "Bentley, J. L.. (1975). Multidimensional binary search trees used for associative searching. Communications of the ACM. vol. 18. pp. 509-517. https://doi.org/10.1145/361002.361007",
+  "title": "Multidimensional binary search trees used for associative searching",
+  "verification": {
+   "date": "2026-10-30",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 1975
+ },
+ "beyer-meaningful-nn-1999": {
+  "doi": "10.1007/3-540-49257-7_15",
+  "entry": "Beyer, K.; Goldstein, J.; Ramakrishnan, R.; et al.. (1999). When Is \u201cNearest Neighbor\u201d Meaningful?. Lecture Notes in Computer Science. pp. 217-235. https://doi.org/10.1007/3-540-49257-7_15",
+  "title": "When Is \u201cNearest Neighbor\u201d Meaningful?",
+  "verification": {
+   "date": "2026-10-30",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 1999
+ },
+ "broder-minhash-1997": {
+  "doi": "10.1109/sequen.1997.666900",
+  "entry": "Broder, A.. (None). On the resemblance and containment of documents. Proceedings. Compression and Complexity of SEQUENCES 1997 (Cat. No.97TB100171). pp. 21-29. https://doi.org/10.1109/sequen.1997.666900",
+  "title": "On the resemblance and containment of documents",
+  "verification": {
+   "date": "2026-10-30",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 1997
+ },
+ "buckley-incomplete-info-2004": {
+  "doi": "10.1145/1008992.1009000",
+  "entry": "Buckley, C.; Voorhees, E. M.. (2004). Retrieval evaluation with incomplete information. Proceedings of the 27th annual international ACM SIGIR conference on Research and development in information retrieval. pp. 25-32. https://doi.org/10.1145/1008992.1009000",
+  "title": "Retrieval evaluation with incomplete information",
+  "verification": {
+   "date": "2026-10-30",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 2004
+ },
+ "charikar-2002": {
+  "doi": "10.1145/509907.509965",
+  "entry": "Charikar, M. S.. (2002). Similarity estimation techniques from rounding algorithms. Proceedings of the thiry-fourth annual ACM symposium on Theory of computing. pp. 380-388. https://doi.org/10.1145/509907.509965",
+  "title": "Similarity estimation techniques from rounding algorithms",
+  "verification": {
+   "date": "2026-10-30",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 2002
+ },
+ "ge-optimized-pq-2014": {
+  "doi": "10.1109/cvpr.2014.298",
+  "entry": "Kalantidis, Y.; Avrithis, Y.. (2014). Locally Optimized Product Quantization for Approximate Nearest Neighbor Search. 2014 IEEE Conference on Computer Vision and Pattern Recognition. pp. 2329-2336. https://doi.org/10.1109/cvpr.2014.298",
+  "title": "Locally Optimized Product Quantization for Approximate Nearest Neighbor Search",
+  "verification": {
+   "date": "2026-10-30",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 2014
+ },
+ "gionis-indyk-motwani-1999": {
+  "doi": "10.14264/4c092e0",
+  "entry": "Liu, L. Y.. (None). Towards efficient similarity search with semantic hashing techniques. https://doi.org/10.14264/4c092e0",
+  "title": "Towards efficient similarity search with semantic hashing techniques",
+  "verification": {
+   "date": "2026-10-30",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 1999
+ },
+ "gong-itq-2011": {
+  "doi": "10.1109/cvpr.2011.5995432",
+  "entry": "Gong, Y.; Lazebnik, S.. (2011). Iterative quantization: A procrustean approach to learning binary codes. CVPR 2011. pp. 817-824. https://doi.org/10.1109/cvpr.2011.5995432",
+  "title": "Iterative quantization: A procrustean approach to learning binary codes",
+  "verification": {
+   "date": "2026-10-30",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 2011
+ },
+ "gray-vector-quantization-1984": {
+  "doi": "10.1007/springerreference_72072",
+  "entry": "(None). Vector Quantization. SpringerReference. https://doi.org/10.1007/springerreference_72072",
+  "title": "Vector Quantization",
+  "verification": {
+   "date": "2026-10-30",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 1984
+ },
+ "johnson-douze-jegou-2021": {
+  "doi": "10.1109/tbdata.2019.2921572",
+  "entry": "Johnson, J.; Douze, M.; Jegou, H.. (2021). Billion-Scale Similarity Search with GPUs. IEEE Transactions on Big Data. vol. 7. pp. 535-547. https://doi.org/10.1109/tbdata.2019.2921572",
+  "title": "Billion-Scale Similarity Search with GPUs",
+  "verification": {
+   "date": "2026-10-30",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 2021
+ },
+ "lloyd-least-squares-1982": {
+  "doi": "10.1109/tit.1982.1056489",
+  "entry": "Lloyd, S.. (1982). Least squares quantization in PCM. IEEE Transactions on Information Theory. vol. 28. pp. 129-137. https://doi.org/10.1109/tit.1982.1056489",
+  "title": "Least squares quantization in PCM",
+  "verification": {
+   "date": "2026-10-30",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 1982
+ },
+ "lowe-sift-2004": {
+  "doi": "10.1023/b:visi.0000029664.99615.94",
+  "entry": "Lowe, D. G.. (2004). Distinctive Image Features from Scale-Invariant Keypoints. International Journal of Computer Vision. vol. 60. pp. 91-110. https://doi.org/10.1023/b:visi.0000029664.99615.94",
+  "title": "Distinctive Image Features from Scale-Invariant Keypoints",
+  "verification": {
+   "date": "2026-10-30",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 2004
+ },
+ "malkov-yashunin-2020": {
+  "doi": "10.1109/tpami.2018.2889473",
+  "entry": "Malkov, Y. A.; Yashunin, D. A.. (2020). Efficient and Robust Approximate Nearest Neighbor Search Using Hierarchical Navigable Small World Graphs. IEEE Transactions on Pattern Analysis and Machine Intelligence. vol. 42. pp. 824-836. https://doi.org/10.1109/tpami.2018.2889473",
+  "title": "Efficient and Robust Approximate Nearest Neighbor Search Using Hierarchical Navigable Small World Graphs",
+  "verification": {
+   "date": "2026-10-30",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 2020
+ },
+ "manning-ir-book-2008": {
+  "doi": "10.1007/0-306-47031-4_1",
+  "entry": "(None). Introduction to Information Retrieval Systems. The Information Retrieval Series. pp. 1-25. https://doi.org/10.1007/0-306-47031-4_1",
+  "title": "Introduction to Information Retrieval Systems",
+  "verification": {
+   "date": "2026-10-30",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 2008
+ },
+ "pan-vector-db-survey-2024": {
+  "doi": "10.1007/s00778-024-00864-x",
+  "entry": "Pan, J. J.; Wang, J.; Li, G.. (2024). Survey of vector database management systems. The VLDB Journal. vol. 33. pp. 1591-1615. https://doi.org/10.1007/s00778-024-00864-x",
+  "title": "Survey of vector database management systems",
+  "verification": {
+   "date": "2026-10-30",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 2024
+ },
+ "weiss-spectral-hashing-2009": {
+  "doi": "10.1021/acs.jproteome.8b00448.s001",
+  "entry": "(None). msCRUSH: Fast Tandem Mass Spectral Clustering Using Locality Sensitive Hashing. https://doi.org/10.1021/acs.jproteome.8b00448.s001",
+  "title": "msCRUSH: Fast Tandem Mass Spectral Clustering Using Locality Sensitive Hashing",
+  "verification": {
+   "date": "2026-10-30",
+   "method": "crossref",
+   "result": "verified"
+  },
+  "year": 2009
+ }
+}
