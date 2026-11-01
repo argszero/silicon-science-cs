@@ -137,6 +137,77 @@ def check_table(rates, depth2=None):
     return check_prose_rates(text, rates, depth2)
 
 
+# The two forms the body writes a rate-with-interval in, and why both are needed.
+#
+#   adjacent  `13.3% [12.0, 14.7]`            -- the interval sits against the number
+#   distant   `13.3% of the 2,427 edges ... [12.0, 14.7]`   -- the interval closes the sentence
+#
+# and in either form markdown emphasis may stand between the `%` and the `[`. The first version of
+# this rule read the adjacent, unemphasised form only, so five of the body's statements -- the
+# abstract's three and §7.1's two bold ones -- were outside the window of a check that exists to
+# certify exactly them. A rule that certifies the cases it happens to parse is the defect.
+#
+# One regex, two branches, so the matches cannot overlap and each statement is counted once. The
+# distant branch refuses to cross a `%`, a `[`, or a sentence end, so it can only pair a number with
+# the interval that closes its own sentence.
+RATE = re.compile(
+    r"(\d+\.\d)\s*%\**\s*"
+    r"(?:\[(\d+\.\d+),\s*(\d+\.\d+)\]"
+    r"|(?:(?!\d+\.\d\s*%)(?!\[)(?![.!?]\s)(?!\n[ \t]*\n)[\s\S]){1,160}?"
+    r"\[(\d+\.\d+),\s*(\d+\.\d+)\])")
+
+
+def rate_statements(body):
+    """Every rate-with-interval statement in `body`: form, (share, lo, hi), the matched text, span."""
+    out = []
+    for m in RATE.finditer(body):
+        if m.group(2) is not None:
+            form, triple = "adjacent", (float(m.group(1)), float(m.group(2)), float(m.group(3)))
+        else:
+            form, triple = "distant", (float(m.group(1)), float(m.group(4)), float(m.group(5)))
+        out.append({"form": form, "triple": triple,
+                    "text": " ".join(m.group(0).split())[:70],
+                    "raw": m.group(0), "span": (m.start(), m.end())})
+    return out
+
+
+def plant_prose(body, held):
+    """Doctor one statement of EACH form in the real body, and require the gate to refuse it.
+
+    Counting more matches does not prove a widened pattern: a rule that reads five more sentences and
+    compares them against the wrong set is greener and no better. So each form is planted with a
+    share off by 0.3 in the manuscript's own text, the doctored body goes back through
+    `rate_statements` -- the same extractor the gate uses -- and the doctored triple must be a value
+    no artifact holds. The plant fails if the extractor stops seeing the statement after the doctor,
+    which is the other way this could go quietly wrong.
+    """
+    ok = True
+    for want in ("adjacent", "distant"):
+        st = [x for x in rate_statements(body) if x["form"] == want]
+        if not st:
+            print("  [FAIL] no %s-form statement exists in the body, so this form is unproven"
+                  % want)
+            ok = False
+            continue
+        first = st[0]
+        wrong_share = round(first["triple"][0] + 0.3, 1)
+        doctored = (body[:first["span"][0]]
+                    + first["raw"].replace("%.1f" % first["triple"][0], "%.1f" % wrong_share, 1)
+                    + body[first["span"][1]:])
+        seen = rate_statements(doctored)
+        hit = [x for x in seen if x["triple"][0] == wrong_share]
+        if not hit:
+            print("  [FAIL] the %s-form plant lost its own statement: the extractor reads %d "
+                  "statements after doctoring" % (want, len(seen)))
+            ok = False
+            continue
+        good = hit[0]["triple"] not in held
+        print("  [plant %s] %s form: %s -> %.1f%% is refused by the same comparison"
+              % ("ok" if good else "FAIL", want, first["text"][:48], wrong_share))
+        ok = ok and good
+    return ok
+
+
 def check_prose_rates(text, rates, depth2=None):
     """Every rate the body prints must be a rate some artifact holds -- in the whole body, not §7.
 
@@ -150,7 +221,8 @@ def check_prose_rates(text, rates, depth2=None):
     281, and 281/906 = 31.0 % while 153/906 = 16.9 %, so the count and its own percentage refute each
     other in a sentence no gate read. Two rules now cover the whole body:
 
-      * every `X% [a, b]` triple must be a (share, lower, upper) some artifact holds;
+      * every `X% [a, b]` triple must be a (share, lower, upper) some artifact holds -- in **both**
+        forms the body writes it in (see RATE below):
       * every sentence that mentions pins must have all its whole numbers held by depth2.json's own
         summary fields, because that sentence is pricing a certificate and the artifact owns both
         the certificate and the baseline.
@@ -192,17 +264,15 @@ def check_prose_rates(text, rates, depth2=None):
             if isinstance(v.get("price_delta_points"), float):
                 pins_pct.add(v["price_delta_points"])
     body = text.replace(render_table(rates), "")        # the table is checked above
-    pat = re.compile(r"(\d+\.\d)\s*%\s*\[(\d+\.\d+),\s*(\d+\.\d+)\]")
     total, bad = 0, 0
-    for m in pat.finditer(body):
+    for st in rate_statements(body):
         total += 1
-        triple = (float(m.group(1)), float(m.group(2)), float(m.group(3)))
-        if triple not in held:
+        if st["triple"] not in held:
             bad += 1
-            near = sorted(held, key=lambda h: abs(h[0] - triple[0]))[:1]
-            print("  [FAIL] the body prints %s%% [%s, %s], which no artifact holds "
-                  "(nearest rate the artifacts hold: %.1f%% [%.1f, %.1f])"
-                  % (m.group(1), m.group(2), m.group(3), near[0][0], near[0][1], near[0][2]))
+            near = sorted(held, key=lambda h: abs(h[0] - st["triple"][0]))[:1]
+            print("  [FAIL] the body prints %s, which no artifact holds (%s form); nearest rate "
+                  "the artifacts hold: %.1f%% [%.1f, %.1f]"
+                  % (st["text"], st["form"], near[0][0], near[0][1], near[0][2]))
     if not depth2:
         print("  [FAIL] depth2.json could not be read, so the certificate's price sentence is not checked")
         return 1
@@ -230,8 +300,14 @@ def check_prose_rates(text, rates, depth2=None):
                       % (m.group(1), ", ".join("%.1f" % x for x in sorted(pins_pct))))
     if bad:
         return 1
-    print("  [ok]   PROSE: IN SYNC (%d rate-with-interval statements and %d pin-price integers "
-          "across the whole body, all of them the artifacts' own numbers)" % (total, ints))
+    if not plant_prose(body, held):
+        return 1
+    forms = {}
+    for st in rate_statements(body):
+        forms[st["form"]] = forms.get(st["form"], 0) + 1
+    print("  [ok]   PROSE: IN SYNC (%d rate-with-interval statements -- %d adjacent, %d distant -- "
+          "and %d pin-price integers across the whole body, all of them the artifacts' own numbers)"
+          % (total, forms.get("adjacent", 0), forms.get("distant", 0), ints))
     return 0
 
 

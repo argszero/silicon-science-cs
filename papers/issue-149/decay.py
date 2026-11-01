@@ -259,8 +259,15 @@ def paired_control(eco):
 
 
 def check():
-    """Known-answer plants: each is a case where a plausible implementation reports the wrong curve."""
+    """Known-answer plants: each is a case where a plausible implementation reports the wrong curve.
+
+    The denominator is printed, not implied. This program shipped seven plants and a verdict line
+    that read `PLANTS: ALL PASS` with no count, so a prose sentence quoting its plant total had
+    nothing to be bound to -- and the manuscript's sentence quoted a number for this program that
+    no run had ever printed. A verdict line that states `n/n` is what a document can cite.
+    """
     ok = True
+    fired = []          # one entry per plant, in the order the plants are declared below
 
     def mk(times_versions, spec):
         return {"versions": dict((v, {"published_at": t, "deps": {}, "prerelease": False,
@@ -274,6 +281,7 @@ def check():
     good = at1 == ["1.0.0"]
     print("  plant exact pin stays singleton at k=12                %s (%s)"
           % ("OK" if good else "FAILED", at1))
+    fired.append(bool(good))
     ok &= good
 
     # 2: an UNBOUNDED range decays -- a later publish enters the admissible set
@@ -281,6 +289,7 @@ def check():
     good = at2 == ["1.0.0", "1.0.1", "2.0.0"]
     print("  plant unbounded range grows at k=12                    %s (%d versions)"
           % ("OK" if good else "FAILED", len(at2 or [])))
+    fired.append(bool(good))
     ok &= good
 
     # 3: a CARET range stops at the major bound -- 2.0.0 must NOT enter
@@ -288,6 +297,7 @@ def check():
     good = at3 == ["1.0.0", "1.0.1"]
     print("  plant caret range saturates at the major bound          %s (%s)"
           % ("OK" if good else "FAILED", at3))
+    fired.append(bool(good))
     ok &= good
 
     # 4: the as-of read must not see the future: at k=0 only the first version exists
@@ -295,12 +305,14 @@ def check():
     good = at4 == ["1.0.0"]
     print("  plant as-of k=0 excludes every later publish            %s (%s)"
           % ("OK" if good else "FAILED", at4))
+    fired.append(bool(good))
     ok &= good
 
     # 5: a target ABSENT from the snapshot is UNKNOWN, never an empty (ambiguous) reading
     at5 = admissible_at(None, ">=1.0.0", d0, False)
     good = at5 is None
     print("  plant absent target is UNKNOWN, not ambiguous           %s" % ("OK" if good else "FAILED"))
+    fired.append(bool(good))
     ok &= good
 
     # 6: strata are read from the TEXT, and a compound range is not silently pooled
@@ -309,14 +321,18 @@ def check():
     good = got == ["caret", "tilde", "unbounded", "exact", "other"]
     print("  plant strata from the range text                       %s (%s)"
           % ("OK" if good else "FAILED", got))
+    fired.append(bool(good))
     ok &= good
 
     # 7: an empty denominator must read NOT RUN, never 0.0
     good = wilson(0, 0) is None
     print("  plant empty denominator is NOT RUN, not 0.0             %s" % ("OK" if good else "FAILED"))
+    fired.append(bool(good))
     ok &= good
 
-    print("PLANTS: %s" % ("ALL PASS" if ok else "FAILED"))
+    # the count and the denominator on one line, in the form the other two programs print
+    print("PLANTS: %d/%d %s" % (sum(1 for x in fired if x), len(fired),
+                                "ok" if ok else "FAILED"))
     return 0 if ok else 1
 
 

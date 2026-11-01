@@ -20,7 +20,18 @@
 #                          rates.json, so a hand-edited cell fails here rather than ageing
 #
 # usage: sh reproduce.sh [--fast]      --fast skips the depth-2 enumeration (step 4 reports NOT RUN)
-# The run states its own count, in the form the journal's stepgate reads: (9 steps).
+#
+# The step count is stated in three carriers -- this header's list, README.md and manuscript.md --
+# and all three are compared against the number of steps this run executed, in the step-list block
+# at the end of this script. The two documents state it as the literal `(9 steps)`.
+#
+# What the journal's tree-wide stepgate makes of that, stated exactly, because the earlier comment
+# here claimed more than was true: stepgate takes the script's own count from a literal `(N steps)`
+# on a line that also carries the verdict, or from one specific computed form. This script has
+# neither -- its verdict line prints `$NSTEPS`, which is derived at run time because a typed literal
+# is a copy that drifts -- so stepgate reports the two document claims as NOT CHECKED, not as
+# PASS. `NOT CHECKED` is not a pass, and this package does not read it as one: the three-carrier
+# comparison below is what owns the claim here, and it fires when any carrier disagrees.
 #
 # The list above is read back by this script at the end: the steps declared here and the steps
 # that actually ran are compared, and any disagreement fails the run. A header that stopped at

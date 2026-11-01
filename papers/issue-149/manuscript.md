@@ -23,10 +23,11 @@ multi-valued when written has no determination left to lose. We also price the a
 minimum certificate that recovers determination costs 31.0% of a lockfile's pins on npm and 95.8%
 on PyPI, because the certificate can never be smaller than the number of ambiguous edges unless two
 of those edges are functionally dependent — a closed form we prove under that condition and then
-test by exhaustive search on 389 npm and 65 PyPI declarations, where the condition fails in 34 of
-the 172 npm
-instances that have an ambiguous edge (19.8% [14.5, 26.4], from 7 declaring packages, one record
-each) and in none of PyPI's 63. This is a **case study** of two registries, measured once, in one
+test by exhaustive solution enumeration on the **292 npm and 63 PyPI** declarations whose closure
+enumerates exactly, where the condition fails in 34 of the 172 npm instances that have an ambiguous
+edge (19.8% [14.5, 26.4], from 7 declaring packages, one record each) and in none of the 63 PyPI
+instances — a null over a population from which 23 further declarations were dropped by the
+enumeration budget, and which therefore excludes its own largest candidates. This is a **case study** of two registries, measured once, in one
 snapshot, with one instrument; we claim no general law of package managers. The decision this
 speaks to is small and current: a maintainer choosing between `^1.3.0` and `1.3.0` today is choosing
 which stratum their consumers' installs will live in, and a tool author deciding whether a lockfile
@@ -126,11 +127,18 @@ This is where the paper's earlier construction ambition failed, and the failure 
 The registered plan was a *minimal distinguishing key*: a small set of packages whose recorded
 versions would pin the whole install, argued via a vertex-cover bound. Two instance populations are
 in play here and they are not the same set: the median below is taken over the **292 npm and 63 PyPI
-instances whose closure is small enough to enumerate exactly** (skipping 653 and 178 whose product of
-domains is too large at depth 1, and 48 and 0 with no feasible solution), while the confirming brute
-search quoted two paragraphs down covers **389 npm and 65 PyPI** entries of the depth-1 artifact
-(skipping 604 and 199 as too large to enumerate): the second set is wider because its certificate
-check does not need the full solution set.
+instances whose closure is small enough to enumerate exactly**, while the confirming brute search
+quoted two paragraphs down covers **389 npm and 65 PyPI** entries of the depth-1 artifact: the second
+set is wider because its certificate check does not need the full solution set.
+
+Both sets are closed against their own declaring populations, and the reasons are counted rather than
+dropped. The **292** npm instances are the 993 declaring npm versions less 653 whose product of
+domains is too large at depth 1, 48 with no feasible solution, and 0 dropped by the solution-enumeration
+budget; the **63** PyPI instances are the 264 declaring PyPI versions less 178 too large at depth 1, 0
+with no feasible solution, and **23 dropped by that budget**
+(`ecosystems.pypi.skipped.enumeration_truncated`, npm's is 0). The depth-1 set closes the same way:
+389 + 604 = 993 and 65 + 199 = 264.
+
 Enumerating solution sets exactly for the 292 and 63 gives a median `|K*|/|M|` of **1.0** in both
 ecosystems, and the identity `|K*| = |M|` holds in **138 of the 172** npm instances that have an
 ambiguous edge and in all 63 PyPI instances. The vertex-cover
@@ -150,10 +158,24 @@ under the condition it actually needs, with the condition measured rather than a
 kept in §6 and in `depth2.py --check`, where it is now a check on the detector instead of the only
 witness of the phenomenon.
 
+The PyPI zero needs its scope stated with it, because the scope is what it can bear. **A null over a
+population that excludes its own best candidates is not an estimate for PyPI.** `depth2.py` abandons
+an instance when its solution enumeration exceeds the budget
+(`if len(sols) > budget: truncated = True`), and the instances that hit that budget are those with the
+*largest* admissible sets — which is where a functional determiner is most plausible, since a
+determiner has to choose among more alternatives before it can save a record. So "0 of 63" is a
+reading about **63 of 264**, with 23 declarations effectively unread, and the paper claims nothing
+about them.
+
 So the coupling leg is reported at cost, not as a system: the certificate **is** the list of
 ambiguous edges, and the honest content of this section is the lemma and its price. The lemma is
-`|K*| = |M|`, proved in §3.1 and confirmed by exhaustive search on every declaration small enough
-to enumerate (389 npm, 65 PyPI; 604 and 199 skipped as too large, counted rather than dropped).
+**conditional**: §3.1 proves `|K*| = |M|` *for edges whose constraints are independent*, and the
+exhaustive search over the **292 npm and 63 PyPI** instances that enumerate exactly is what refutes
+the unconditional form -- `|K*| < |M|` in **34 of the 172** npm instances with an ambiguous edge
+(19.8 % [14.5, 26.4], 7 declaring packages, one record saved each) and in none of the 63. The
+separate brute certificate over the **389 npm and 65 PyPI** depth-1 entries tests that every
+ambiguity edge really is ambiguous; it is a wider population because it does not need the full
+solution set, and it is not the population the lemma is evaluated on.
 
 This is where our work meets the solver literature at a well-defined boundary. Formal models of
 resolution define which solution a solver returns [38]; hypergraph
@@ -196,7 +218,8 @@ is ambiguous over 20 versions, yet recording `mime-types` determines `mime-db`, 
 is the only package that declares it and each of its versions admits exactly one `mime-db`
 (`~1.29.0` → 1.29.0, `~1.30.0` → 1.30.0, …, exact `1.40.0` → 1.40.0). The 20 solutions are a
 bijection between the two domains, so one record covers both: `|K*| = 1 < |M| = 2`. The other 33
-exceptions are the same shape at larger closures, 6 of them in `@eslint/config-array` versions.
+exceptions are the same shape at larger closures; **11 of them** are `@eslint/config-array` versions
+(11 distinct versions, `M` from 3 to 5).
 
 The consequence is a price rather than a design. Recording the ambiguous edges costs **281 pins
 where a full lockfile costs 906 (31.0 %)** on the 292 npm instances, and **115 where a lockfile
@@ -344,8 +367,9 @@ that fail if the instrument reverts to a plausible wrong behaviour: identical cl
 count as a closure difference, a version published later must not be admissible as-of, an unparsed
 spec must return `None` rather than an empty set,`wilson(0,52)` must have a positive upper bound,
 an absent target must be `UNKNOWN`, an empty denominator must print `NOT RUN` and not `0.0`, and a
-caret range must saturate at its major bound. The guards pass 7/7, 3/3 and 7/7; the
-functional-dependence positive that the data does not contain is a plant, and is labelled as one
+caret range must saturate at its major bound. The plants pass 7/7 on `ambiguous.py`, 7/7 on
+`decay.py` and 7/7 on `depth2.py`, each program printing its own denominator on its verdict line;
+the functional-dependence positive that the data does not contain is a plant, and is labelled as one
 everywhere it appears (§3).
 
 **Decay.** A panel of declarations at least 12 months old is read at k = 0, 3, 6, 9, 12 months. The
