@@ -30,6 +30,35 @@ YEAR = re.compile(r"\((\d{4})\)\.")
 URL = re.compile(r"https://(?:doi\.org/|arxiv\.org/)\S+")
 DIFF = re.compile(r"\s--\sDifference:\s*(\S.*)$", re.S)
 
+# The house author component: `Family, I.`, with further initials after it. A bare family list is
+# NOT that component even though it is not empty -- which is the whole finding of this round: the
+# step's title claimed the house form while its only assertion was that the position in front of
+# the year was non-empty, and it was green over 82 entries printing `Kang; Tian; Hu.`. The one
+# form a record can legitimately fail to carry is a given name, and that case prints its own
+# marker rather than an initial this package would have invented.
+ET_AL = re.compile(r"^et al\.$")
+NO_GIVEN = re.compile(r"^[^,;]+ \(no given name in the record\)\.$")
+NO_AUTHOR_FIELD = re.compile(r"^\(no author field in the record\)\.$")
+
+
+def in_house_form(part):
+    """Is this one author component in the form the step's title claims?
+
+    A capital initial, not an ASCII one: `Maślanka, Ł.` is in the house form and a `[A-Z]` class
+    reports it as a defect -- which is how this predicate's first draft produced four failures
+    that were defects of the check. The initial is a single letter, in whatever script the
+    record's family name is written in, and it must be upper-case.
+    """
+    if ET_AL.match(part) or NO_GIVEN.match(part) or NO_AUTHOR_FIELD.match(part):
+        return True
+    family, sep, rest = part.partition(",")
+    if not sep or not family.strip():
+        return False
+    initials = [t for t in rest.replace(".", ". ").split() if t]
+    if not initials:
+        return False
+    return all(len(t) == 2 and t.endswith(".") and t[0].isupper() for t in initials)
+
 
 def window(text):
     """The References section, and nothing after it."""
@@ -72,8 +101,18 @@ def read_entry(block):
         authors = None
     else:
         authors = rest[:year.start()].strip().rstrip(",;")
+    author_parts, in_form = [], 0
     if year is not None and not authors:
         problems.append("the author position is empty in front of the year")
+    elif authors:
+        author_parts = [a.strip() for a in authors.split(";") if a.strip()]
+        off = [a for a in author_parts if not in_house_form(a)]
+        in_form = len(author_parts) - len(off)
+        if off:
+            problems.append("the author component is not the house form `Family, I.` (or `et al.`): "
+                            "%s -- a bare family list is a component that is present in the wrong "
+                            "form, which a presence test cannot tell apart from a correct one"
+                            % "; ".join(off))
     if year is not None and not rest[year.end():year.end() + 1].isspace():
         problems.append("the year is not closed by `(YYYY). ` before the title")
 
@@ -105,7 +144,8 @@ def read_entry(block):
 
     report = {
         "num": num,
-        "authors": None if authors is None else len(authors),
+        "authors": None if not author_parts else len(author_parts),
+        "in_form": in_form,
         "year": YEAR.search(rest).group(1) if year else "-",
         "middle": len(middle),
         "diff": len(diff.group(1).strip()) if diff else 0,
@@ -114,8 +154,54 @@ def read_entry(block):
     return report, problems
 
 
+def plant_bare_authors(text):
+    """Prove the form check fires on a bare family list, using the gate's own read.
+
+    The defect this round repaired was GREEN under this file: entries printing `Kang; Tian; Hu.`
+    passed, because the only assertion about the author component was that the position in front
+    of the year was not empty. So the plant doctors a copy of this manuscript -- one entry's
+    author run replaced by a bare family list -- and requires `read_entry`, the same read the gate
+    runs, to report a problem that names the form. A fixture calling a copy of the predicate would
+    be testing the copy, which is the failure this journal has paid for twice.
+    """
+    body, problem = window(text)
+    if problem:
+        print("   [FAIL] the plant cannot read the bibliography: %s" % problem)
+        return False
+    entries = blocks(body)
+    if not entries:
+        print("   [FAIL] the plant found no entries to doctor")
+        return False
+    block = entries[0]
+    head = ENTRY_HEAD.match(block)
+    rest = head.group(2)
+    year = YEAR.search(rest)
+    if year is None:
+        print("   [FAIL] the plant's entry has no year to anchor the author position")
+        return False
+
+    report, found = read_entry(block)
+    control_ok = not any("house form" in f for f in found)
+    if not control_ok:
+        print("   [FAIL] the control entry is not in the house form, so the plant proves nothing")
+        return False
+    print("   [ok] control: entry [%03d] as it stands passes the form check" % report["num"])
+
+    doctored = block[:head.start(2)] + "Kang; Tian; Hu. " + rest[year.start():]
+    report, found = read_entry(doctored)
+    hits = [f for f in found if "house form" in f]
+    if not hits:
+        print("   [FAIL] a bare family list in the author position is NOT refused -- the check "
+              "cannot fire on the defect it was widened for")
+        return False
+    print("   [ok] the same entry with `Kang; Tian; Hu.` is refused: %s" % hits[0][:96])
+    return True
+
+
 def main(argv):
-    path = argv[1] if len(argv) > 1 else DEFAULT
+    flags = [a for a in argv[1:] if a.startswith("--")]
+    args = [a for a in argv[1:] if not a.startswith("--")]
+    path = args[0] if args else DEFAULT
     try:
         text = open(path, encoding="utf-8").read()
     except OSError as exc:
@@ -144,7 +230,10 @@ def main(argv):
         # lengths, not counts: `authors=11` would read as eleven authors; and a component the read
         # could not locate prints `-`, never `0`, because "no authors" is a different claim from
         # "this entry failed before the author position was reached"
-        ach = "-" if report["authors"] is None else "%dch" % report["authors"]
+        # the column is the FORM, not a length: `authors=16ch` was a measurement of the string
+        # that a bare family list also passes, and the step's title claims the form
+        ach = ("-" if report["authors"] is None
+               else "%d/%d" % (report["in_form"], report["authors"]))
         print("[%03d] %-4s authors=%5s (%s) title+venue=%3dch url=%s diff=%3dch"
               % (report["num"], state, ach, report["year"], report["middle"],
                  "ok" if not any("link" in f for f in found) else "FAIL", report["diff"]))
@@ -164,14 +253,29 @@ def main(argv):
     # to check rather than turned into a threshold this file would have invented.
     distinct = len(set(r["text"] for r in reports if r["text"]))
 
+    total_parts = sum(r["authors"] or 0 for r in reports)
+    total_form = sum(r["in_form"] for r in reports)
+    in_form_entries = sum(1 for r in reports if r["authors"] and r["in_form"] == r["authors"])
+
+    rc = 0
+    if "--plant-authors" in argv:
+        print()
+        print("== plant: a bare family list in the author position")
+        ok = plant_bare_authors(text)
+        print("   author-form plant: %s" % ("GREEN -- the check fires on a bare family list"
+                                            if ok else "RED"))
+        rc = 1 if not ok else 0
+
     print()
+    print("author form: %d of %d entries print every author component in the house form "
+          "(%d of %d components)" % (in_form_entries, len(reports), total_form, total_parts))
     print("entries=%d distinct Difference: %d/%d problems=%d"
           % (len(reports), distinct, len(reports), problems))
     if problems:
         print("GATE: FAIL")
         return 1
     print("GATE: PASS")
-    return 0
+    return rc
 
 
 if __name__ == "__main__":

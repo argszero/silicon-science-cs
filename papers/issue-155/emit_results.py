@@ -38,7 +38,10 @@ def note(msg):
 # ==========================================================================
 
 def step_certificate():
-    print("== 1/6 certificate: DP floor vs independent brute force")
+    print("== analysis 1/6 certificate: DP floor vs independent brute force")
+# `analysis` and not a bare `n/6`: this program has six analyses and reproduce.sh has six steps,
+# and both used to print `== n/6`. A reader following the log met `== 6/6 cells that cannot
+# measure anything` and then `== 2/6 figure: ...`, a counter running backwards twice on one run.
     cert = {"distinct": {}, "ties": {}}
 
     d_pairs = d_bad = 0
@@ -107,7 +110,7 @@ def step_certificate():
 # ==========================================================================
 
 def step_threshold_distinct(n_max=7):
-    print("== 2/6 threshold, distinct ranks: min{k : floor(k)=0} vs each candidate")
+    print("== analysis 2/6 threshold, distinct ranks: min{k : floor(k)=0} vs each candidate")
     rows = []
     for n in range(4, n_max + 1):
         windows = 0
@@ -157,7 +160,7 @@ def step_threshold_distinct(n_max=7):
 # ==========================================================================
 
 def step_threshold_ties():
-    print("== 3/6 threshold, tied ranks: T1/T2/T3/LDS against required k")
+    print("== analysis 3/6 threshold, tied ranks: T1/T2/T3/LDS against required k")
     rows = []
     for n in [4, 5, 6]:
         for m in [2, 3, 4]:
@@ -201,7 +204,7 @@ def step_threshold_ties():
 # ==========================================================================
 
 def step_gap():
-    print("== 4/6 the discipline gap: frequency and magnitude")
+    print("== analysis 4/6 the discipline gap: frequency and magnitude")
     distinct = []
     for n in range(4, 8):
         hist = {}
@@ -260,7 +263,7 @@ def step_gap():
 # ==========================================================================
 
 def step_rules():
-    print("== 5/6 rank-band rule vs the floor, with the misaligned control")
+    print("== analysis 5/6 rank-band rule vs the floor, with the misaligned control")
     rows = []
     # n runs to 8 because that is the range registered criterion S3 names ("reported for every cell
     # to n = 8"). The earlier artifact stopped at 6, which made S3 a subset of what it promised --
@@ -349,7 +352,7 @@ def step_rules():
 # ==========================================================================
 
 def step_forced_cells():
-    print("== 6/6 cells that cannot measure anything, reported as such")
+    print("== analysis 6/6 cells that cannot measure anything, reported as such")
     # k=1: one queue admits exactly one assignment, so rule and floor coincide
     same = True
     for n in [4, 5]:

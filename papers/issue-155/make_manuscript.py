@@ -98,6 +98,95 @@ def resolve(res, path):
     return cur
 
 
+REFCHECK = os.path.join(HERE, "reference-check.md")
+REPRO = os.path.join(HERE, "reproduce.sh")
+
+# The word forms a count may be printed in. A count of the paper's own objects is written by a
+# `{{w:...}}` marker for the same reason a measurement is written by `{{n:...}}`: a number in
+# words is a number, and the round-2 review found the paper's bolded takeaway saying "Two of six
+# rule cells" beside a twelve-cell table -- a defect neither the digit scan nor the binding could
+# see, because both read tokens and this was spelled. `one` is deliberately absent: it is the
+# language's indefinite article and pronoun (`one direction`, `no one`), so a scan that fires on
+# it fires on prose rather than on arithmetic.
+WORD_FORM = {
+    0: "zero", 1: "one", 2: "two", 3: "three", 4: "four", 5: "five", 6: "six", 7: "seven",
+    8: "eight", 9: "nine", 10: "ten", 11: "eleven", 12: "twelve", 13: "thirteen",
+    14: "fourteen", 15: "fifteen", 16: "sixteen", 17: "seventeen", 18: "eighteen",
+    19: "nineteen", 20: "twenty", 30: "thirty", 40: "forty", 50: "fifty", 60: "sixty",
+}
+
+# A spelled cardinal is a count when it lands on one of these nouns, and the nouns are the ones
+# this package counts: cells in the rule table, entries in the bibliography, windows in the
+# enumeration, priors and criteria in the registration, steps in the reproduction script. The
+# nouns are not tuned to make this manuscript pass -- a noun earns its place by having a count
+# some artefact stores, which is what makes "print it from the artefact" a possible instruction.
+COUNTED_NOUNS = ("cell|cells|entry|entries|reference|references|window|windows|prior|priors|"
+                 "criterion|criteria|table|tables|figure|figures|step|steps|row|rows|limb|limbs|"
+                 "section|sections|queue|queues|pair|pairs")
+NUMBER_WORD = ("two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|thirteen|fourteen|"
+               "fifteen|sixteen|seventeen|eighteen|nineteen|twenty|thirty|forty|fifty|sixty")
+# Two constructions, and only two: a cardinal that MODIFIES a counted noun (`six-cell summary`,
+# `four informative cells`), and a partitive whose complement is that noun (`four of its cells`).
+# A cardinal that merely sits near such a noun is not a count of it -- `two properties of this
+# table` counts properties, and a rule that fires on it would be measuring adjacency instead of
+# arithmetic. The determiner list in the partitive is definite or possessive for the same reason:
+# `of this table` introduces a different noun, `of its cells` counts the cells.
+WORD_MODIFIER = re.compile(r"\b(%s)\b[-\s]+(?:[\w'-]+[-\s]+){0,1}(?:%s)\b"
+                           % (NUMBER_WORD, COUNTED_NOUNS), re.I)
+WORD_PARTITIVE = re.compile(r"\b(%s)\b\s+of\s+(?:the|its|these|those)\s+"
+                            r"(?:[\w'-]+\s+){0,2}(?:%s)\b" % (NUMBER_WORD, COUNTED_NOUNS), re.I)
+
+
+def typed_word_counts(text):
+    """Spelled counts in author-written prose, with the fragment that carried each one."""
+    hits = [m.group(0) for m in WORD_MODIFIER.finditer(text)]
+    hits += [m.group(0) for m in WORD_PARTITIVE.finditer(text)]
+    return sorted(set(hits))
+
+
+def skeleton_defects(prose):
+    """What an unexpected number in the prose looks like, in both carriers.
+
+    The unit is the SKELETON -- the prose before any substitution -- and the exemptions are the
+    lexical forms the paper legitimately writes: headings, section references, code spans (which
+    hold the formulas), four-digit years, and the markers. Scanning the skeleton is what makes
+    this a binding rather than a pool test: a scan of the substituted body accepts any typed
+    number that happens to equal a value some artefact emitted, which is exactly how a planted
+    `37` once passed. The word carrier is scanned here, on the same unit, because a count in
+    words is invisible to a token scan of digits -- the defect that survived round 2.
+    """
+    skel = re.sub(r"(?m)^#{1,6} .*$", " ", prose)
+    skel = re.sub(r"§\s?\d+(?:\.\d+)?", " ", skel)
+    skel = re.sub(r"`[^`]*`", " ", skel)
+    skel = re.sub(r"\b(?:19|20)\d{2}\b", " ", skel)
+    skel = re.sub(r"\{\{[^}]*\}\}", " ", skel)
+    typed = [t for t in re.findall(r"\d+(?:\.\d+)?", skel) if len(t.replace(".", "")) > 1]
+    return typed, typed_word_counts(skel)
+
+
+def count_refcheck_editions():
+    """Entries whose verdict in the committed report is an edition, read from its own rows.
+
+    The prose says how many entries carry an edition-year note. That count belongs to
+    `reference-check.md`, which is committed and offline, so it is read from the rows rather
+    than typed: the report's header table is a second copy of the same tally, and a copy is
+    what goes stale.
+    """
+    with open(REFCHECK, encoding="utf-8") as fh:
+        body = fh.read().split("## Entry-by-entry", 1)[-1]
+    return sum(1 for line in body.splitlines() if "VERIFIED-EDITION" in line)
+
+
+def declared_steps():
+    """The step count `reproduce.sh` declares. The script owns it; the prose quotes it."""
+    with open(REPRO, encoding="utf-8") as fh:
+        for line in fh:
+            m = re.match(r"TOTAL_STEPS=(\d+)\s*$", line.strip())
+            if m:
+                return int(m.group(1))
+    raise SystemExit("reproduce.sh declares no TOTAL_STEPS; the step count has no owner")
+
+
 def computed(res, key):
     """Values composed here from artifact rows only -- the prose never does arithmetic.
 
@@ -156,6 +245,36 @@ def computed(res, key):
     if key in ("p2_worst_min", "p2_worst_max"):
         v = [r["aligned_worst_ratio"] for r in res["rules"] if r["p2_lds_windows"]]
         return "%.2f" % (min(v) if key.endswith("min") else max(v))
+    # ---- how much of P2's aggregate one cell carries ------------------------
+    if key == "p2_minority_cells":
+        return sum(1 for r in res["rules"] if r["p2_lds_windows"] and r["p2_lds_fraction"] < 0.5)
+    if key == "p2_largest_cell_n":
+        rows = [r for r in res["rules"] if r["p2_lds_windows"]]
+        return max(rows, key=lambda r: r["p2_lds_windows"])["n"]
+    if key == "p2_largest_cell_windows":
+        rows = [r for r in res["rules"] if r["p2_lds_windows"]]
+        return max(r["p2_lds_windows"] for r in rows)
+    if key == "p2_majority_cells":
+        return sum(1 for r in res["rules"] if r["p2_lds_windows"] and r["p2_lds_fraction"] >= 0.5)
+    if key == "p2_minority_max_pct":
+        v = [100.0 * r["p2_lds_fraction"] for r in res["rules"]
+             if r["p2_lds_windows"] and r["p2_lds_fraction"] < 0.5]
+        return "%.1f" % max(v)
+    if key == "p2_largest_cell_share_pct":
+        rows = [r for r in res["rules"] if r["p2_lds_windows"]]
+        biggest = max(r["p2_lds_windows"] for r in rows)
+        return "%.1f" % (100.0 * biggest / res["rules_summary"]["p2_registered_windows"])
+    if key == "gap_min_nonzero":
+        return min(min(int(g) for g in row["histogram"] if int(g) > 0)
+                   for row in res["gap_distinct"] if row["nonzero"])
+    if key == "p2_largest_cell_pct":
+        rows = [r for r in res["rules"] if r["p2_lds_windows"]]
+        return "%.1f" % (100.0 * max(rows, key=lambda r: r["p2_lds_windows"])["p2_lds_fraction"])
+    # ---- counts owned by a committed artefact outside results.json ----------
+    if key == "ref_edition_count":
+        return count_refcheck_editions()
+    if key == "repro_steps":
+        return declared_steps()
     # ---- the zero-floor half of the gap --------------------------------------
     if key == "zero_floor_windows":
         return res["rules_summary"]["zero_floor_windows"]
@@ -182,7 +301,16 @@ def clean(text):
 
 
 def render_author(name):
-    """`Given Middle Family` -> `Family, G. M.` -- the form the house style admits."""
+    """`Given Middle Family` -> `Family, G. M.` -- the form the house style admits.
+
+    A component that already carries a comma is ALREADY in the house form and is passed through.
+    The placer formats from the record's own `given`/`family` fields, and re-splitting that string
+    on its last token would undo the split that made it faithful: `family="van Beethoven"` would
+    come back as `Beethoven, L. v.`, and a record whose Crossref fields are reversed would lose a
+    field rather than print it (see `place_refs.house_author`).
+    """
+    if "," in name:
+        return name.strip().rstrip(" ,")
     toks = [t for t in name.replace(".", ". ").split() if t]
     if not toks:
         return ""
@@ -248,6 +376,11 @@ def reference_list(entries):
     for e in entries:
         authors = [render_author(a).rstrip(" ,") for a in e.get("authors") or []]
         authors = [a for a in authors if a]
+        # A record whose author component carries no given name prints the family name and says
+        # so. Inventing an initial would fabricate an author; printing the bare family name alone
+        # is the defect the round-2 review counted on 82 entries, so the marker is what tells a
+        # reader that the record -- not this program -- is missing the name.
+        authors = [a if "," in a else "%s (no given name in the record)" % a for a in authors]
         # "; " between authors, not ", ": "Hui, Yang, Wang" is one person's name or three
         # authors depending on who reads it, and a reference list cannot afford that
         if len(authors) > 4:
@@ -433,16 +566,15 @@ def generate():
     # exactly how a planted `37` once passed. The exemptions are the lexical forms the
     # paper legitimately writes: headings, §-references, code spans (which hold the
     # formulas), four-digit years, and the markers themselves.
-    skel = re.sub(r"(?m)^#{1,6} .*$", " ", prose)
-    skel = re.sub(r"§\s?\d+(?:\.\d+)?", " ", skel)
-    skel = re.sub(r"`[^`]*`", " ", skel)
-    skel = re.sub(r"\b(?:19|20)\d{2}\b", " ", skel)
-    skel = re.sub(r"\{\{[^}]*\}\}", " ", skel)
-    typed = [t for t in re.findall(r"\d+(?:\.\d+)?", skel)
-             if len(t.replace(".", "")) > 1]
+    typed, typed_words = skeleton_defects(prose)
     if typed:
         print("TYPED NUMBERS IN THE PROSE (no marker produced them): %s" % sorted(set(typed)))
         print("  -> write it as a {{n:...}} marker bound to results.json, or it does not go in.")
+        return None, None
+    if typed_words:
+        print("TYPED COUNTS IN WORDS (no marker produced them): %s" % typed_words)
+        print("  -> a count of the paper's own objects is a number whether it is spelled or not:")
+        print("     write it as a {{w:...}} marker bound to the artefact that counts it.")
         return None, None
 
     bound = []          # every value a substitution produced, for the stray scan
@@ -473,6 +605,31 @@ def generate():
         s = pct(v)
         bound.append(s)
         return s
+
+    def sub_w(m):
+        """A count of the paper's own objects, printed as a word from the artefact that holds it."""
+        key = m.group(1)
+        try:
+            v = resolve(res, key)
+        except KeyError:
+            v = computed(res, key)
+        if not isinstance(v, int):
+            raise KeyError("{{w:%s}} needs an integer count, and this key holds %r" % (key, v))
+        if v not in WORD_FORM:
+            raise KeyError("{{w:%s}} = %d has no word form here; extend WORD_FORM rather than "
+                           "letting a digit into a sentence that counts in words" % (key, v))
+        # The word is not added to `bound`: the stray scan reads the skeleton, where the marker
+        # stands in for the word, so a generated word is never looked for among typed tokens.
+        return WORD_FORM[v]
+
+    body = re.sub(r"\{\{w:([^}]+)\}\}", sub_w, body)
+
+    def sub_W(m):
+        """The same word where it opens a sentence, so a generated count can start one."""
+        w = sub_w(m)
+        return w[:1].upper() + w[1:]
+
+    body = re.sub(r"\{\{W:([^}]+)\}\}", sub_W, body)
 
     body = re.sub(r"\{\{p:([^}]+)\}\}", sub_p, body)
 
@@ -583,12 +740,71 @@ def generate():
     return body, dict(entries=len(entries), cited=len(cited), bound=len(bound))
 
 
+ESCAPED = "**Two of six rule cells are informative.**"
+REPAIRED = ("**{{W:rules_informative_cells}} of the {{w:rules_summary.cells}} rule cells are "
+            "informative.**")
+
+
+def plant_word_scan():
+    """Prove the word carrier fires on the exact sentence that escaped at 7e8a949.
+
+    Three legs, because a plant that only asserts what already holds proves nothing:
+
+      1. the escaped sentence is REFUSED -- and named as a word count, not as a digit;
+      2. the repaired sentence, whose counts are markers, is ACCEPTED, so the rule has not
+         simply banned the paragraph it was written for;
+      3. the escaped sentence is refused when it is planted back into the real skeleton, at the
+         site the real takeaway occupies. A predicate tested on a string literal is not yet a
+         paper that cannot carry the sentence; leg 3 is the one that would have caught this in
+         round 2, and it fails loudly if the site it plants at has moved.
+    """
+    ok = True
+    words = typed_word_counts(ESCAPED)
+    typed, _ = skeleton_defects(ESCAPED)
+    if not words or typed:
+        print("   [FAIL] the sentence that escaped at 7e8a949 is not refused by the word carrier")
+        ok = False
+    else:
+        print("   [ok] the escaped sentence is refused, as a word count: %s" % words)
+
+    typed, words = skeleton_defects(REPAIRED)
+    if typed or words:
+        print("   [FAIL] the repaired sentence is refused too: %s %s -- the rule over-reaches"
+              % (typed, words))
+        ok = False
+    else:
+        print("   [ok] the repaired sentence passes: its counts are markers, not words")
+
+    prose = open(PROSE, encoding="utf-8").read()
+    if REPAIRED not in prose:
+        print("   [FAIL] the plant site is gone: the repaired takeaway is not in the prose, so "
+              "this plant no longer plants anything")
+        return False
+    doctored = prose.replace(REPAIRED, ESCAPED, 1)
+    typed, words = skeleton_defects(doctored)
+    if not words:
+        print("   [FAIL] the real skeleton carries the escaped sentence and is NOT refused")
+        ok = False
+    else:
+        print("   [ok] planted at its own site in the real prose, the same sentence is refused: %s"
+              % words)
+    return ok
+
+
 def main():
+    args = sys.argv[1:]
+    rc = 0
+    if "--plant-word" in args:
+        ok = plant_word_scan()
+        print("   word-count plant: %s" %
+              ("GREEN -- the scan fires on the sentence that escaped" if ok else "RED"))
+        rc = 1 if not ok else 0
+
     body, info = generate()
     if body is None:
         return 1
 
-    if "--check" in sys.argv[1:]:
+    if "--check" in args:
         if not os.path.exists(OUT):
             print("ARTIFACT ABSENT: manuscript.md -- run without --check to write it")
             return 1
@@ -599,7 +815,7 @@ def main():
             return 1
         print("MANUSCRIPT: IN SYNC (%d refs, %d cited, %d bound numbers)"
               % (info["entries"], info["cited"], info["bound"]))
-        return 0
+        return rc
 
     open(OUT, "w", encoding="utf-8").write(body)
     print("manuscript.md written: %d characters" % len(body))

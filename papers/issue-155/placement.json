@@ -2,6 +2,8 @@
   "counts": {
     "absent_or_ambiguous": 0,
     "attempted": 104,
+    "author_form_repaired": 95,
+    "author_no_given_name": 0,
     "by_section": {
       "1 Prior art": 3,
       "2 Background": 26,
@@ -62,9 +64,9 @@
     },
     {
       "authors": [
-        "Chen",
-        "Tian",
-        "Zhang"
+        "Chen, W.",
+        "Tian, Y.",
+        "Zhang, X."
       ],
       "claim": "uses packet scheduling to accelerate TCP in hybrid data centers",
       "doi": "10.1109/ton.2025.3550902",
@@ -78,10 +80,10 @@
     },
     {
       "authors": [
-        "Rajagopalan",
-        "Sivalingam",
-        "Shami",
-        "Lyonnais"
+        "Rajagopalan, S.",
+        "Sivalingam, K. M.",
+        "Shami, G.",
+        "Lyonnais, M."
       ],
       "claim": "analyses packets at line rate on a programmable data plane",
       "doi": "10.1109/ojcoms.2026.3686225",
@@ -95,11 +97,11 @@
     },
     {
       "authors": [
-        "Guo",
-        "Sun",
-        "Hu",
-        "Zhang",
-        "Lv"
+        "Guo, F.",
+        "Sun, S.",
+        "Hu, J.",
+        "Zhang, N.",
+        "Lv, Z."
       ],
       "claim": "proposes a lightweight programmable packet scheduling primitive",
       "doi": "10.1016/j.comnet.2024.110355",
@@ -113,11 +115,11 @@
     },
     {
       "authors": [
-        "Wang",
-        "Liu",
-        "Zhang",
-        "Guo",
-        "Zhang"
+        "Wang, X.",
+        "Liu, M.",
+        "Zhang, Y.",
+        "Guo, L.",
+        "Zhang, X."
       ],
       "claim": "schedules multi-tier service traffic with strict-priority queues",
       "doi": "10.1109/icccs65393.2025.11069454",
@@ -131,9 +133,9 @@
     },
     {
       "authors": [
-        "Li",
-        "Song",
-        "Zeng"
+        "Li, C.",
+        "Song, L.",
+        "Zeng, X."
       ],
       "claim": "schedules packets in a DPDK-based processing system",
       "doi": "10.3390/fi13030078",
@@ -147,8 +149,8 @@
     },
     {
       "authors": [
-        "Cui",
-        "Zhang"
+        "Cui, J.",
+        "Zhang, J."
       ],
       "claim": "gives a dynamic priority scheduling algorithm for performance-critical packets",
       "doi": "10.1109/cscwd61410.2024.10580504",
@@ -162,11 +164,11 @@
     },
     {
       "authors": [
-        "Elbediwy",
-        "Pontikakis",
-        "Ghaffari",
-        "David",
-        "Savaria"
+        "Elbediwy, M.",
+        "Pontikakis, B.",
+        "Ghaffari, A.",
+        "David, J.",
+        "Savaria, Y."
       ],
       "claim": "uses a dynamic ranking rule over a PIFO queue",
       "doi": "10.1109/tnsm.2023.3304894",
@@ -180,12 +182,12 @@
     },
     {
       "authors": [
-        "Mostafaei",
-        "Ezzati",
-        "Cuijpers",
-        "Schmid",
-        "R\u00e9tv\u00e1ri",
-        "Borst"
+        "Mostafaei, H.",
+        "Ezzati, M.",
+        "Cuijpers, P. J. L.",
+        "Schmid, S.",
+        "R\u00e9tv\u00e1ri, G.",
+        "Borst, S."
       ],
       "claim": "proposes a scalable programmable packet scheduling design",
       "doi": "10.1145/3749217",
@@ -199,9 +201,9 @@
     },
     {
       "authors": [
-        "Yu",
-        "Ruepp",
-        "Berger"
+        "Yu, H.",
+        "Ruepp, S.",
+        "Berger, M. S."
       ],
       "claim": "analyses FIFO-based round-robin multicast scheduling, the discipline this paper compares against",
       "doi": "10.1049/iet-com.2010.0378",
@@ -215,13 +217,13 @@
     },
     {
       "authors": [
-        "Liu",
-        "Gao",
-        "Chen",
-        "Chen",
-        "Cui",
-        "Qiao",
-        "Zhang"
+        "Liu, S.",
+        "Gao, S.",
+        "Chen, J.",
+        "Chen, J.",
+        "Cui, W.",
+        "Qiao, S.",
+        "Zhang, H."
       ],
       "claim": "proposes a software-defined programmable scheduling primitive",
       "doi": "10.1109/jsyst.2025.3567017",
@@ -235,10 +237,10 @@
     },
     {
       "authors": [
-        "Elbediwy",
-        "Pontikakis",
-        "David",
-        "Savaria"
+        "Elbediwy, M.",
+        "Pontikakis, B.",
+        "David, J.",
+        "Savaria, Y."
       ],
       "claim": "gives hardware for a dynamic ranking packet scheduler",
       "doi": "10.1109/access.2023.3286726",
@@ -252,15 +254,15 @@
     },
     {
       "authors": [
-        "Zhang",
-        "Li",
-        "Li",
-        "Liu",
-        "Suo",
-        "Chen",
-        "Hu",
-        "Zhao",
-        "Li"
+        "Zhang, S.",
+        "Li, W.",
+        "Li, Y.",
+        "Liu, Y.",
+        "Suo, L.",
+        "Chen, S.",
+        "Hu, Y.",
+        "Zhao, L.",
+        "Li, K."
       ],
       "claim": "makes buffer state part of a programmable packet scheduling building block",
       "doi": "10.1109/infocom55648.2025.11044448",
@@ -274,8 +276,8 @@
     },
     {
       "authors": [
-        "Tsanikidis",
-        "Ghaderi"
+        "Tsanikidis, C.",
+        "Ghaderi, J."
       ],
       "claim": "schedules packets to deadlines in multihop networks",
       "doi": "10.1145/3673660.3655069",
@@ -289,10 +291,10 @@
     },
     {
       "authors": [
-        "Jiang",
-        "Zhang",
-        "Liu",
-        "Zheng"
+        "Jiang, P.",
+        "Zhang, S.",
+        "Liu, Q.",
+        "Zheng, C."
       ],
       "claim": "implements packet scheduling on a P4 data plane",
       "doi": "10.1109/icccn52240.2021.9522193",
@@ -306,15 +308,15 @@
     },
     {
       "authors": [
-        "Quan",
-        "Xu",
-        "Liu",
-        "Cheng",
-        "Liu",
-        "Gao",
-        "Zhang",
-        "Shen",
-        "Zhuang"
+        "Quan, W.",
+        "Xu, Z.",
+        "Liu, M.",
+        "Cheng, N.",
+        "Liu, G.",
+        "Gao, D.",
+        "Zhang, H.",
+        "Shen, X.",
+        "Zhuang, W."
       ],
       "claim": "surveys programmable-data-plane forwarding",
       "doi": "10.1109/comst.2022.3217613",
@@ -351,10 +353,10 @@
     },
     {
       "authors": [
-        "Saqib",
-        "Elbiaze",
-        "Glitho",
-        "Ghamri-Doudane"
+        "Saqib, M.",
+        "Elbiaze, H.",
+        "Glitho, R. H.",
+        "Ghamri-Doudane, Y."
       ],
       "claim": "makes quality of service a programmable-data-plane function",
       "doi": "10.1109/tmlcn.2024.3475968",
@@ -368,9 +370,9 @@
     },
     {
       "authors": [
-        "Kang",
-        "Tian",
-        "Hu"
+        "Kang, L.",
+        "Tian, L.",
+        "Hu, Y."
       ],
       "claim": "makes the arrival rate an input to packet scheduling",
       "doi": "10.1109/iccect60629.2024.10545661",
@@ -384,17 +386,17 @@
     },
     {
       "authors": [
-        "Mei",
-        "Chen",
-        "Chen",
-        "Chen",
-        "Yao",
-        "Zhang",
-        "Wang",
-        "Huang",
-        "Chen",
-        "Fan",
-        "Xu"
+        "Mei, H.",
+        "Chen, S.",
+        "Chen, X.",
+        "Chen, Z.",
+        "Yao, R.",
+        "Zhang, Z.",
+        "Wang, H.",
+        "Huang, D.",
+        "Chen, W.",
+        "Fan, Y.",
+        "Xu, Y."
       ],
       "claim": "interleaves multiple priority queues for programmable scheduling, the line this paper measures",
       "doi": "10.1145/3789240.3829190",
@@ -408,9 +410,9 @@
     },
     {
       "authors": [
-        "Hussain",
-        "Patetta",
-        "Rivalan"
+        "Hussain, M. E.",
+        "Patetta, M.",
+        "Rivalan, J."
       ],
       "claim": "demonstrates programmable packet scheduling on FPGA switches",
       "doi": "10.1109/6gnet68413.2025.11314135",
@@ -424,17 +426,17 @@
     },
     {
       "authors": [
-        "Xing",
-        "Qiu",
-        "Hsu",
-        "Sui",
-        "Manaa",
-        "Shabtai",
-        "Piasetzky",
-        "Kadosh",
-        "Krishnamurthy",
-        "Ng",
-        "Chen"
+        "Xing, J.",
+        "Qiu, Y.",
+        "Hsu, K.",
+        "Sui, S.",
+        "Manaa, K.",
+        "Shabtai, O.",
+        "Piasetzky, Y.",
+        "Kadosh, M.",
+        "Krishnamurthy, A.",
+        "Ng, T. S. E.",
+        "Chen, A."
       ],
       "claim": "reports what a SmartNIC data plane can do at packet rate",
       "doi": "10.1145/3603269.3604882",
@@ -448,9 +450,9 @@
     },
     {
       "authors": [
-        "Vass",
-        "Sarkadi",
-        "Retvari"
+        "Vass, B.",
+        "Sarkadi, C.",
+        "Retvari, G."
       ],
       "claim": "gives SP-PIFO its theory and evaluation, and names the optimal queue mapping it approximates",
       "doi": "10.1109/infocomwkshps54753.2022.9798055",
@@ -464,7 +466,7 @@
     },
     {
       "authors": [
-        "Vass"
+        "Vass, B."
       ],
       "claim": "treats programmable packet scheduling with SP-PIFO as a problem with a heuristic",
       "doi": "10.36244/icj.2025.3.1",
@@ -478,8 +480,8 @@
     },
     {
       "authors": [
-        "Song",
-        "Hasan"
+        "Song, Y.",
+        "Hasan, M."
       ],
       "claim": "uses time as an input to forwarding decisions in programmable data planes",
       "doi": "10.1109/isorc65339.2025.00038",
@@ -493,9 +495,9 @@
     },
     {
       "authors": [
-        "Lv",
-        "Jiang",
-        "Yang"
+        "Lv, Q.",
+        "Jiang, X.",
+        "Yang, X."
       ],
       "claim": "reconciles programmable scheduling with a FIFO queue for time-sensitive traffic",
       "doi": "10.1186/s13677-023-00518-3",
@@ -509,18 +511,18 @@
     },
     {
       "authors": [
-        "Zhang",
-        "Chen",
-        "Yao",
-        "Sun",
-        "Mei",
-        "Wang",
-        "Chen",
-        "Fang",
-        "Fan",
-        "Shi",
-        "Liu",
-        "Xu"
+        "Zhang, Z.",
+        "Chen, S.",
+        "Yao, R.",
+        "Sun, R.",
+        "Mei, H.",
+        "Wang, H.",
+        "Chen, Z.",
+        "Fang, G.",
+        "Fan, Y.",
+        "Shi, W.",
+        "Liu, S.",
+        "Xu, Y."
       ],
       "claim": "virtualises the packet scheduler for hierarchical scheduling",
       "doi": "10.1145/3651890.3672270",
@@ -534,9 +536,9 @@
     },
     {
       "authors": [
-        "Lesens",
-        "Cohen",
-        "U\u00e7ar"
+        "Lesens, D.",
+        "Cohen, J. E.",
+        "U\u00e7ar, B."
       ],
       "claim": "decomposes a switch schedule, the matrix form of the assignment this paper enumerates",
       "doi": "10.23919/eusipco63174.2024.10715087",
@@ -562,9 +564,9 @@
     },
     {
       "authors": [
-        "Kubo",
-        "Okada",
-        "Oki"
+        "Kubo, T.",
+        "Okada, S.",
+        "Oki, E."
       ],
       "claim": "reports delay under combined input-output queueing",
       "doi": "10.1109/ojcoms.2026.3726416",
@@ -578,8 +580,8 @@
     },
     {
       "authors": [
-        "Lin",
-        "Rojas-Cessa"
+        "Lin, C.",
+        "Rojas-Cessa, R."
       ],
       "claim": "builds scalable switch fabrics whose scheduling problem is a matching one",
       "doi": "10.1109/lcomm.2007.061617",
@@ -593,10 +595,10 @@
     },
     {
       "authors": [
-        "Divanovic",
-        "Radonjic",
-        "Gardasevic",
-        "Radusinovic"
+        "Divanovic, S.",
+        "Radonjic, M.",
+        "Gardasevic, G.",
+        "Radusinovic, I."
       ],
       "claim": "reports weighted round-robin scheduling in a crosspoint-queued switch Fabric",
       "doi": "10.1109/telfor.2013.6716184",
@@ -610,8 +612,8 @@
     },
     {
       "authors": [
-        "Chang",
-        "Lee"
+        "Chang, G.",
+        "Lee, C. C."
       ],
       "claim": "analyses the cycle time of the deficit round robin packet scheduler",
       "doi": "10.1109/iccnc.2012.6167459",
@@ -625,9 +627,9 @@
     },
     {
       "authors": [
-        "Mukherjee",
-        "Kuri",
-        "Singh"
+        "Mukherjee, A.",
+        "Kuri, J.",
+        "Singh, C."
       ],
       "claim": "optimises deficit round robin for delay-constrained systems",
       "doi": "10.23919/wiopt66569.2025.11123403",
@@ -641,8 +643,8 @@
     },
     {
       "authors": [
-        "Sun",
-        "Li"
+        "Sun, S.",
+        "Li, X."
       ],
       "claim": "matches a switch with a round-robin scheme",
       "doi": "10.1109/icis46139.2019.8940224",
@@ -656,8 +658,8 @@
     },
     {
       "authors": [
-        "Liao",
-        "Wu"
+        "Liao, J.",
+        "Wu, P."
       ],
       "claim": "schedules by queue occupancy, a discipline distinct from the rank-band rule measured here",
       "doi": "10.1109/isita.2010.5648873",
@@ -671,8 +673,8 @@
     },
     {
       "authors": [
-        "Huang",
-        "Huang"
+        "Huang, Y.",
+        "Huang, L."
       ],
       "claim": "analyses matching algorithms for input-queued switches under heavy traffic",
       "doi": "10.1016/j.peva.2020.102143",
@@ -686,8 +688,8 @@
     },
     {
       "authors": [
-        "Xiao",
-        "Yeung"
+        "Xiao, J.",
+        "Yeung, K. L."
       ],
       "claim": "extends switch scheduling to multicast with variable packet size",
       "doi": "10.1109/ccece.2017.7946605",
@@ -701,8 +703,8 @@
     },
     {
       "authors": [
-        "Kang",
-        "Williams"
+        "Kang, W. N.",
+        "Williams, R. J."
       ],
       "claim": "approximates an input-queued switch under maximum-weight matching",
       "doi": "10.1287/12-ssy061",
@@ -716,9 +718,9 @@
     },
     {
       "authors": [
-        "Heisswolf",
-        "Konig",
-        "Becker"
+        "Heisswolf, J.",
+        "Konig, R.",
+        "Becker, J."
       ],
       "claim": "applies a round-robin discipline at a network-on-chip router",
       "doi": "10.1109/ispa.2012.93",
@@ -732,9 +734,9 @@
     },
     {
       "authors": [
-        "Gourgy",
-        "Szymanski",
-        "Down"
+        "Gourgy, A.",
+        "Szymanski, T. H.",
+        "Down, D. G."
       ],
       "claim": "compares what an output-queued switch does with what an input-queued one can imitate",
       "doi": "10.1109/tnet.2009.2014948",
@@ -748,9 +750,9 @@
     },
     {
       "authors": [
-        "Yu",
-        "Chen",
-        "Tian"
+        "Yu, X.",
+        "Chen, W.",
+        "Tian, Y."
       ],
       "claim": "approximates weighted fair queueing with calendar queues",
       "doi": "10.1109/iccc59590.2023.10507624",
@@ -764,10 +766,10 @@
     },
     {
       "authors": [
-        "Kitsuwan",
-        "Oki",
-        "Rojas-Cessa",
-        "Kishi"
+        "Kitsuwan, N.",
+        "Oki, E.",
+        "Rojas-Cessa, R.",
+        "Kishi, N."
       ],
       "claim": "analyses parallel iterative matching, the matching approach an output-queued abstraction would need",
       "doi": "10.1109/apcc.2009.5375476",
@@ -781,8 +783,8 @@
     },
     {
       "authors": [
-        "Assegie",
-        "Derebe Bizuneh"
+        "Assegie, T. A.",
+        "Derebe Bizuneh, H."
       ],
       "claim": "combines priority and weighted fair queueing in one device",
       "doi": "10.11591/ijeecs.v19.i1.pp241-247",
@@ -796,10 +798,10 @@
     },
     {
       "authors": [
-        "Gong",
-        "Xu",
-        "Liu",
-        "Maguluri"
+        "Gong, L.",
+        "Xu, J.",
+        "Liu, L.",
+        "Maguluri, S. T."
       ],
       "claim": "gives an iterative switching algorithm for input-queued switches",
       "doi": "10.1016/j.peva.2021.102197",
@@ -813,8 +815,8 @@
     },
     {
       "authors": [
-        "Liu",
-        "Li"
+        "Liu, G.",
+        "Li, Q."
       ],
       "claim": "schedules packets in high-speed networks with a weighted round-robin discipline",
       "doi": "10.19026/rjaset.7.498",
@@ -828,9 +830,9 @@
     },
     {
       "authors": [
-        "Lin",
-        "Hamdi",
-        "Muppala"
+        "Lin, D.",
+        "Hamdi, M.",
+        "Muppala, J."
       ],
       "claim": "makes the buffer's own access order part of the scheduling design",
       "doi": "10.1109/glocom.2010.5683309",
@@ -844,8 +846,8 @@
     },
     {
       "authors": [
-        "Rahimi",
-        "Pournaghshband"
+        "Rahimi, M.",
+        "Pournaghshband, V."
       ],
       "claim": "reports how low-priority traffic behaves under strict priority, the dequeue discipline modelled here",
       "doi": "10.1109/iccci.2016.7480023",
@@ -859,8 +861,8 @@
     },
     {
       "authors": [
-        "Jamali",
-        "Ghiasian"
+        "Jamali, M.",
+        "Ghiasian, A."
       ],
       "claim": "schedules a switch through per-output queues rather than one global order",
       "doi": "10.1049/iet-net.2018.5115",
@@ -874,8 +876,8 @@
     },
     {
       "authors": [
-        "Shortle",
-        "Fischer"
+        "Shortle, J. F.",
+        "Fischer, M. J."
       ],
       "claim": "approximates a two-class weighted fair queueing discipline",
       "doi": "10.1016/j.peva.2010.05.004",
@@ -889,10 +891,10 @@
     },
     {
       "authors": [
-        "Ghodsi",
-        "Sekar",
-        "Zaharia",
-        "Stoica"
+        "Ghodsi, A.",
+        "Sekar, V.",
+        "Zaharia, M.",
+        "Stoica, I."
       ],
       "claim": "extends fair queueing from links to packet-processing resources",
       "doi": "10.1145/2377677.2377679",
@@ -906,8 +908,8 @@
     },
     {
       "authors": [
-        "Vaisman",
-        "Gertsbakh"
+        "Vaisman, R.",
+        "Gertsbakh, I. B."
       ],
       "claim": "computes an optimal chain decomposition of a poset",
       "doi": "10.1007/s12469-022-00304-5",
@@ -921,7 +923,7 @@
     },
     {
       "authors": [
-        "Elizalde"
+        "Elizalde, S."
       ],
       "claim": "treats permutation statistics generationally",
       "doi": "10.23638/dmtcs-19-2-11",
@@ -935,8 +937,8 @@
     },
     {
       "authors": [
-        "Jiang",
-        "Wang"
+        "Jiang, H.",
+        "Wang, J."
       ],
       "claim": "analyses the number of descents, the statistic that sets the device threshold",
       "doi": "10.1016/j.spl.2024.110320",
@@ -950,9 +952,9 @@
     },
     {
       "authors": [
-        "Bercu",
-        "Bonnefont",
-        "Richou"
+        "Bercu, B.",
+        "Bonnefont, M.",
+        "Richou, A."
       ],
       "claim": "bounds the descents statistic's concentration",
       "doi": "10.1017/jpr.2023.86",
@@ -966,10 +968,10 @@
     },
     {
       "authors": [
-        "Bercu",
-        "Bonnefont",
-        "Fredes",
-        "Richou"
+        "Bercu, B.",
+        "Bonnefont, M.",
+        "Fredes, L.",
+        "Richou, A."
       ],
       "claim": "gives the joint distribution of descents and inverse descents, the two sides of this model",
       "doi": "10.1214/24-aap2138",
@@ -983,7 +985,7 @@
     },
     {
       "authors": [
-        "Dilworth"
+        "Dilworth, R. P."
       ],
       "claim": "is the decomposition theorem the free-merge threshold is a corollary of",
       "doi": "10.1007/978-0-8176-4842-8_10",
@@ -997,9 +999,9 @@
     },
     {
       "authors": [
-        "F",
-        "S",
-        "A. M"
+        "F, B.",
+        "S, A.",
+        "A. M, S."
       ],
       "claim": "generalises Dilworth's decomposition to partially ordered multisets, the tied-rank case here",
       "doi": "10.4314/aujst.v5i1.6",
@@ -1013,8 +1015,8 @@
     },
     {
       "authors": [
-        "Kociumaka",
-        "Seddighin"
+        "Kociumaka, T.",
+        "Seddighin, S."
       ],
       "claim": "maintains the increasing subsequence statistic under updates",
       "doi": "10.1145/3406325.3451026",
@@ -1028,8 +1030,8 @@
     },
     {
       "authors": [
-        "Itskovich",
-        "Levit"
+        "Itskovich, E. J.",
+        "Levit, V. E."
       ],
       "claim": "connects subsequence structure to the permutation's own statistics",
       "doi": "10.3390/a12110237",
@@ -1043,8 +1045,8 @@
     },
     {
       "authors": [
-        "B\u00f3na",
-        "DeJonge"
+        "B\u00f3na, M.",
+        "DeJonge, E."
       ],
       "claim": "characterises permutations by their increasing subsequence structure",
       "doi": "10.37236/9506",
@@ -1058,8 +1060,8 @@
     },
     {
       "authors": [
-        "Franz",
-        "Mulet"
+        "Franz, S.",
+        "Mulet, R."
       ],
       "claim": "revisits the longest-increasing-subsequence problem",
       "doi": "10.1088/1572-9494/ae9b87",
@@ -1073,7 +1075,7 @@
     },
     {
       "authors": [
-        "He"
+        "He, J."
       ],
       "claim": "gives a limit theorem for descents including the inverse statistic",
       "doi": "10.1214/21-aihp1167",
@@ -1087,9 +1089,9 @@
     },
     {
       "authors": [
-        "Cao",
-        "Huang",
-        "Su"
+        "Cao, N.",
+        "Huang, S.",
+        "Su, H."
       ],
       "claim": "computes the increasing subsequence statistic in parallel",
       "doi": "10.1145/3558481.3591078",
@@ -1103,7 +1105,7 @@
     },
     {
       "authors": [
-        "Corwin"
+        "Corwin, I."
       ],
       "claim": "is a commentary on the patience-sorting line of longest-increasing-subsequence results, where the decreasing-subsequence statistic lives",
       "doi": "10.1090/bull/1623",
@@ -1117,8 +1119,8 @@
     },
     {
       "authors": [
-        "Axenovich",
-        "Winter"
+        "Axenovich, M.",
+        "Winter, C."
       ],
       "claim": "studies posets combinatorially, adjacent machinery to the decomposition used here",
       "doi": "10.1007/s11083-024-09663-z",
@@ -1144,8 +1146,8 @@
     },
     {
       "authors": [
-        "Dukes",
-        "Mullins"
+        "Dukes, M.",
+        "Mullins, A."
       ],
       "claim": "relates permutation statistics through the Robinson-Schensted correspondence",
       "doi": "10.1007/s00026-024-00708-z",
@@ -1159,9 +1161,9 @@
     },
     {
       "authors": [
-        "Marciniak",
-        "Ma\u015blanka",
-        "\u015aniady"
+        "Marciniak, M.",
+        "Ma\u015blanka, \u0141.",
+        "\u015aniady, P."
       ],
       "claim": "gives limit theorems for the correspondence that maps permutations to tableaux",
       "doi": "10.1016/j.aam.2022.102478",
@@ -1175,8 +1177,8 @@
     },
     {
       "authors": [
-        "Felsner",
-        "Pergel"
+        "Felsner, S.",
+        "Pergel, M."
       ],
       "claim": "studies exactly the objects this model uses: networks of queues and stacks as sorting devices",
       "doi": "10.1007/978-3-540-87744-8_35",
@@ -1190,11 +1192,11 @@
     },
     {
       "authors": [
-        "Kiyomi",
-        "Ono",
-        "Otachi",
-        "Schweitzer",
-        "Tarui"
+        "Kiyomi, M.",
+        "Ono, H.",
+        "Otachi, Y.",
+        "Schweitzer, P.",
+        "Tarui, J."
       ],
       "claim": "computes the statistic in bounded space",
       "doi": "10.1007/s00224-018-09908-6",
@@ -1208,7 +1210,7 @@
     },
     {
       "authors": [
-        "Zhao"
+        "Zhao, W."
       ],
       "claim": "characterises which permutations a stack-sorting device can produce",
       "doi": "10.1016/j.disc.2025.114834",
@@ -1222,8 +1224,8 @@
     },
     {
       "authors": [
-        "Mitzenmacher",
-        "Seddighin"
+        "Mitzenmacher, M.",
+        "Seddighin, S."
       ],
       "claim": "computes the statistic in sublinear time",
       "doi": "10.1137/1.9781611976465.115",
@@ -1237,8 +1239,8 @@
     },
     {
       "authors": [
-        "Fiorini",
-        "Rexhep"
+        "Fiorini, S.",
+        "Rexhep, S."
       ],
       "claim": "relates a poset's width to its linear extensions",
       "doi": "10.1007/s11083-015-9346-z",
@@ -1252,9 +1254,9 @@
     },
     {
       "authors": [
-        "Barba",
-        "Bertazzi",
-        "Golden"
+        "Barba, A.",
+        "Bertazzi, L.",
+        "Golden, B. L."
       ],
       "claim": "applies competitive analysis to an online allocation problem",
       "doi": "10.3390/a17060237",
@@ -1268,8 +1270,8 @@
     },
     {
       "authors": [
-        "Dunke",
-        "Nickel"
+        "Dunke, F.",
+        "Nickel, S."
       ],
       "claim": "corrects the distributional analysis of lookahead",
       "doi": "10.1007/s10288-021-00479-w",
@@ -1283,8 +1285,8 @@
     },
     {
       "authors": [
-        "Dunke",
-        "Nickel"
+        "Dunke, F.",
+        "Nickel, S."
       ],
       "claim": "analyses online algorithms exactly under lookahead",
       "doi": "10.1007/s10288-020-00442-1",
@@ -1298,9 +1300,9 @@
     },
     {
       "authors": [
-        "Chen",
-        "Zhang",
-        "Xu"
+        "Chen, C.",
+        "Zhang, H.",
+        "Xu, Y."
       ],
       "claim": "treats lookahead as information in an online minimisation problem",
       "doi": "10.1007/s10878-020-00633-w",
@@ -1314,9 +1316,9 @@
     },
     {
       "authors": [
-        "Itoh",
-        "Miyazaki",
-        "Satake"
+        "Itoh, T.",
+        "Miyazaki, S.",
+        "Satake, M."
       ],
       "claim": "competitively analyses an online matching problem",
       "doi": "10.1142/s1793830921501561",
@@ -1330,8 +1332,8 @@
     },
     {
       "authors": [
-        "Pinson",
-        "Spieksma"
+        "Pinson, N.",
+        "Spieksma, F. C. R."
       ],
       "claim": "measures what lookahead buys in an online interval scheduling problem",
       "doi": "10.1007/s10878-019-00381-6",
@@ -1345,12 +1347,12 @@
     },
     {
       "authors": [
-        "B\u00f6hm",
-        "Chrobak",
-        "Je\u017c",
-        "Li",
-        "Sgall",
-        "Vesel\u00fd"
+        "B\u00f6hm, M.",
+        "Chrobak, M.",
+        "Je\u017c, \u0141.",
+        "Li, F.",
+        "Sgall, J.",
+        "Vesel\u00fd, P."
       ],
       "claim": "is the closest online-scheduling analogue of the foresight comparison here: what lookahead buys a packet scheduler",
       "doi": "10.1016/j.tcs.2019.01.013",
@@ -1364,8 +1366,8 @@
     },
     {
       "authors": [
-        "Lindermayr",
-        "Megow"
+        "Lindermayr, A.",
+        "Megow, N."
       ],
       "claim": "feeds a permutation prediction to a non-clairvoyant scheduler, the information shape this model computes exactly",
       "doi": "10.1145/3711872",
@@ -1379,9 +1381,9 @@
     },
     {
       "authors": [
-        "Zheng",
-        "Chen",
-        "Liu"
+        "Zheng, F.",
+        "Chen, Y.",
+        "Liu, M."
       ],
       "claim": "measures the value of initial lookahead in semi-online scheduling",
       "doi": "10.1051/ro/2024042",
@@ -1395,9 +1397,9 @@
     },
     {
       "authors": [
-        "Jiao",
-        "Yuan",
-        "Feng"
+        "Jiao, C.",
+        "Yuan, J.",
+        "Feng, Q."
       ],
       "claim": "schedules unit-length jobs online under batching constraints",
       "doi": "10.1142/s0217595919500246",
@@ -1411,10 +1413,10 @@
     },
     {
       "authors": [
-        "Nurmi",
-        "Lindgren",
-        "Szymkowiak",
-        "H\u00e4m\u00e4l\u00e4inen"
+        "Nurmi, A.",
+        "Lindgren, P.",
+        "Szymkowiak, T.",
+        "H\u00e4m\u00e4l\u00e4inen, T. D."
       ],
       "claim": "gives a hardware priority queue with constant-time removal, the device-side cost of the abstraction",
       "doi": "10.1109/dsd60849.2023.00070",
@@ -1440,8 +1442,8 @@
     },
     {
       "authors": [
-        "Das",
-        "Cristina Pinotti"
+        "Das, S. K.",
+        "Cristina Pinotti, M."
       ],
       "claim": "builds parallel priority queues on binomial heaps",
       "doi": "10.1016/s0167-8191(00)00064-8",
@@ -1455,7 +1457,7 @@
     },
     {
       "authors": [
-        "Carlsson"
+        "Carlsson, S."
       ],
       "claim": "implements a double-ended priority queue",
       "doi": "10.1016/0020-0190(87)90033-0",
@@ -1483,8 +1485,8 @@
     },
     {
       "authors": [
-        "Ding",
-        "Weiss"
+        "Ding, Y.",
+        "Weiss, M. A."
       ],
       "claim": "gives a double-ended heap structure",
       "doi": "10.1007/bf01179371",
@@ -1498,9 +1500,9 @@
     },
     {
       "authors": [
-        "Collinson",
-        "Bai",
-        "Sinnen"
+        "Collinson, S.",
+        "Bai, A.",
+        "Sinnen, O."
       ],
       "claim": "scales a hardware priority queue with multi-push",
       "doi": "10.1109/ipdpsw63119.2024.00038",
@@ -1514,7 +1516,7 @@
     },
     {
       "authors": [
-        "Michail"
+        "Michail, D."
       ],
       "claim": "packages priority-queue implementations as a library",
       "doi": "10.1016/j.softx.2021.100869",
@@ -1528,8 +1530,8 @@
     },
     {
       "authors": [
-        "Arvind",
-        "Rangan"
+        "Arvind, A.",
+        "Rangan, C. P."
       ],
       "claim": "simplifies double-ended priority-queue construction",
       "doi": "10.1016/s0020-0190(99)00014-9",
@@ -1543,8 +1545,8 @@
     },
     {
       "authors": [
-        "Ioannou",
-        "Katevenis"
+        "Ioannou, A.",
+        "Katevenis, M. G. H."
       ],
       "claim": "pipelines heap management for scheduling in high-speed networks",
       "doi": "10.1109/tnet.2007.892882",
@@ -1558,11 +1560,11 @@
     },
     {
       "authors": [
-        "Grimes",
-        "Rodriguez",
-        "Hassan",
-        "Spear",
-        "Palmieri"
+        "Grimes, O.",
+        "Rodriguez, M.",
+        "Hassan, A.",
+        "Spear, M.",
+        "Palmieri, R."
       ],
       "claim": "gives a strictly concurrent priority queue",
       "doi": "10.1145/3816782.3819208",
@@ -1576,7 +1578,7 @@
     },
     {
       "authors": [
-        "Sanders"
+        "Sanders, P."
       ],
       "claim": "makes a priority queue accessible in parallel at random",
       "doi": "10.1006/jpdc.1998.1429",
@@ -1590,9 +1592,9 @@
     },
     {
       "authors": [
-        "Magadum",
-        "Singh",
-        "Kushwaha"
+        "Magadum, P.",
+        "Singh, S.",
+        "Kushwaha, A. S."
       ],
       "claim": "reports flow completion time as the end-to-end cost of the scheduler",
       "doi": "10.1109/icccn65249.2025.11134021",
@@ -1606,8 +1608,8 @@
     },
     {
       "authors": [
-        "Wang",
-        "Kong"
+        "Wang, S.",
+        "Kong, C."
       ],
       "claim": "offloads packet handling to a SmartNIC in P4",
       "doi": "10.1109/icc59461.2026.11587563",
@@ -1633,9 +1635,9 @@
     },
     {
       "authors": [
-        "Hui",
-        "Yang",
-        "Wang"
+        "Hui, L.",
+        "Yang, W.",
+        "Wang, Y."
       ],
       "claim": "offloads a collective to a SmartNIC",
       "doi": "10.1109/ispa63168.2024.00030",
@@ -1649,9 +1651,9 @@
     },
     {
       "authors": [
-        "Mashreghi-Moghadam",
-        "Ould-Bachir",
-        "Savaria"
+        "Mashreghi-Moghadam, P.",
+        "Ould-Bachir, T.",
+        "Savaria, Y."
       ],
       "claim": "reports a packet-parsing architecture at terabit scale",
       "doi": "10.1109/iscas48785.2022.9937607",
@@ -1665,12 +1667,12 @@
     },
     {
       "authors": [
-        "Wang",
-        "Zhao",
-        "Zhang",
-        "Xu",
-        "Yue",
-        "Xie"
+        "Wang, F.",
+        "Zhao, G.",
+        "Zhang, Q.",
+        "Xu, H.",
+        "Yue, W.",
+        "Xie, L."
       ],
       "claim": "offloads packet processing to a SmartNIC",
       "doi": "10.1109/icpads56603.2022.00103",

@@ -242,7 +242,7 @@ Flow completion time is the end-to-end quantity a scheduler is judged by {{cite:
 implementation settings that dominate the achievable numbers are a templated parser at terabit scale
 {{cite:trimmer2022}}, a SmartNIC used for a collective {{cite:smartnicallreduce2024}}, an XDP path
 offloaded to a SmartNIC {{cite:xdp2023}}, and IP fragmentation offloaded to a SmartNIC in P4
-{{cite:frag2026}} {{cites:7 Measurement:recent}} {{cites:7 Measurement:earlier}}.
+{{cite:frag2026}}.
 
 One record in this area is not a research report but a retraction notice {{cite:noc2024}}, and we
 cite it as exactly that rather than as evidence for anything: it appears because a bibliography that
@@ -336,7 +336,8 @@ The magnitude is the number a reviewer will compute, so it is stated as its own 
 discipline gap never exceeds {{n:gap_summary.distinct_max_gap}} queues in the measured range** (the
 maximum is attained at n = {{n:gap_summary.distinct_max_gap_n}}). Frequent and small is a different
 finding from frequent and large, and the honest headline is the pair: on almost half the n = 7
-windows the default statistic is wrong, and by one or two queues.
+windows the default statistic is wrong, and by {{n:gap_min_nonzero}} or
+{{n:gap_summary.distinct_max_gap}} queues.
 
 ### 9.3 Ties: three candidates, and what survives
 
@@ -378,7 +379,7 @@ cell which cannot register a loss is visible as such rather than counted as a wi
 
 {{table:rules}}
 
-Two facts about this table matter more than its headline. First, the anti-rule control loses in every
+Two properties of this table matter more than its headline. First, the anti-rule control loses in every
 cell (on at least {{p:rules_summary.control_min_fraction}} % of windows), so no cell is measuring
 nothing. Second, **only {{n:rules_informative_cells}} of the {{n:rules_summary.cells}} cells can
 measure a gap at all.** When `k >= m` every rank owns a queue, the aligned map is injective by
@@ -433,18 +434,36 @@ that the corollary does not carry the operational conclusion, is a different eve
 failing, and merging the two would let the paper claim a refutation it did not register.
 
 **Registered `P2` — the deployed rule exceeds the floor in the *majority* of windows whenever
-`2 <= k < LDS`, with a worst per-cell overshoot above `1.3x`. Status: confirmed, both limbs — and
-only because the range the registration named was measured to its end.** On the registration's own
-population, the windows with `k < LDS`, {{n:p2_loses}} of {{n:p2_windows}} windows lose:
-{{n:p2_pooled_pct}} %. The worst per-cell ratio is {{n:p2_worst_max}} times the floor, far above the
-registered `1.3x`. So the deployed rule does lose in the majority of windows in the class the
-registration nominated, and it loses by more than the registration predicted.
+`2 <= k < LDS`, with a worst per-cell overshoot above `1.3x`. Status: confirmed on the aggregate,
+refuted in {{n:p2_minority_cells}} of its {{n:p2_cells}} cells — both limbs, and both readings stated
+at once.** On the registration's own population, the windows with `k < LDS`, {{n:p2_loses}} of
+{{n:p2_windows}} windows lose: {{n:p2_pooled_pct}} %. The worst per-cell ratio is {{n:p2_worst_max}}
+times the floor, far above the registered `1.3x`. So the deployed rule does lose in the majority of
+windows in the class the registration nominated, and it loses by more than the registration predicted.
+
+**The aggregate is a majority because the widest cell carries the weight, and the cell table says
+so.** The `n = {{n:p2_largest_cell_n}}` cell holds {{n:p2_largest_cell_windows}} of those
+{{n:p2_windows}} windows, {{n:p2_largest_cell_share_pct}} % of the population, and stands at
+{{n:p2_largest_cell_pct}} % itself. The share rises with `n` monotonically, from {{n:p2_min_pct}} % to
+{{n:p2_largest_cell_pct}} %, so the rule is in the majority in {{n:p2_majority_cells}} of the
+{{n:p2_cells}} cells and in the minority in the other {{n:p2_minority_cells}}, where it loses on
+between {{n:p2_min_pct}} % and {{n:p2_minority_max_pct}} % of windows.
+
+Both readings are printed because each answers a different question and neither is the whole datum.
+The registration said "the majority of windows" with no window-length qualifier, so the prior is
+**confirmed on the population it named** and **false in {{n:p2_minority_cells}} of its
+{{n:p2_cells}} cells**. A designer sizing a bank at a short window length should read the cell; a
+reader quoting the fidelity of the rule as a single number should read the pooled figure with its
+weighting beside it. The count of minority cells is itself a computed value rather than a
+reading: the four shares are compared against one half in `make_manuscript.py`, so the sentence cannot
+drift from the table beside it.
 
 That verdict is the second reading of this datum, not the first. The artifact originally stopped at
 `n = 6`, where the same population gave a minority in every cell, and an earlier draft of this section
 reported the frequency limb as **refuted**. Registered criterion S3 asks for every cell to `n = 8`
 with the maximum taken over all cells rather than over a convenient subset, so the cells were
-extended — and the verdict inverted. The share rises with `n` across the four informative cells:
+extended — and the verdict inverted. The share rises with `n` across the
+{{w:rules_informative_cells}} informative cells:
 
 {{table:rules_registered}}
 
@@ -475,7 +494,7 @@ best candidate were exact on fewer than `99` % of tie-bearing windows *and* the 
 required the same `k` on more than `50` % of windows, the direction was to be **downgraded to a case
 study** scoped to distinct ranks. The first condition failed — `T3` is exact — so the registered
 verdict is *continue*. The second condition is nevertheless true, and is reported in §9.4 as
-prominently as the first, because a falsifier whose two limbs are quoted together must have both limbs
+prominently as the first, because a falsifier whose limbs are quoted together must have both
 reported when only one of them fires.
 
 ## 11 Threats to validity
@@ -501,9 +520,11 @@ of {{n:gap_summary.distinct_max_gap}} queues on the gap is a **measured maximum 
 not a theorem; nothing here forbids a larger gap at larger n, and the proof of `runs(p) >= LDS` bounds
 the direction of the error, not its size.
 
-**Two of six rule cells are informative.** §9.5 reports the {{n:rules_informative_cells}}
-informative cells separately from the {{n:rules_forced_cells}} forced ones. A reader who takes the
-six-cell summary as a win rate is reading a number that four of its cells cannot earn.
+**{{W:rules_informative_cells}} of the {{w:rules_summary.cells}} rule cells are informative.**
+§9.5 reports those {{w:rules_informative_cells}} informative cells separately from the
+{{w:rules_forced_cells}} forced ones, and the rule table in §9.2 carries all
+{{w:rules_summary.cells}}. A reader who takes that table's body as a win rate is reading a number
+that {{w:rules_forced_cells}} of its cells cannot earn.
 
 **A caution about the instruments themselves.** Both defects found in this study were found by
 cross-checking two instruments, not by a guard. A guard whose answer is the same under the correct and
@@ -581,7 +602,8 @@ The package is one command, offline, with no sampling and no random seeds:
 ```
 
 Its last line is `REPRODUCE: ALL GREEN (6 steps)` and its exit status is the number of failed steps, so
-a failure accumulates rather than being masked by a later step. The six steps emit `results.json` from
+a failure accumulates rather than being masked by a later step. The {{w:repro_steps}} steps emit
+`results.json` from
 the model, redraw the figure from `results.json`, recompute every stored summary from the rows it
 summarises, check that the reference placement still resolves and still matches its committed artifact,
 check that this manuscript still matches what its generator produces, and read the bibliography back by
@@ -591,7 +613,7 @@ deliberately not covered.
 
 Citation integrity is part of the package rather than of the prose: `reference-check.md` records, for
 each of the {{nplaced}} references, the DOI, the Crossref record it resolves to, and an agreement score;
-seven entries carry an edition-year note rather than being smoothed over. Every reference is cited in
+{{w:ref_edition_count}} entries carry an edition-year note rather than being smoothed over. Every reference is cited in
 the body above, and `make_manuscript.py` refuses to write the paper if one is not — a bibliography entry
 the body never cites is padding, and the generator treats it as a failure rather than a style issue.
 

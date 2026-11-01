@@ -96,6 +96,16 @@ Two things this pipeline does that a query list does not:
   "PIFO" in its title). `fetch_seeds.py` fetches them by DOI and records *why the harvest missed each
   one*; `place_refs.py` refuses to run if a seed is missing or failed to resolve.
 
+**`fetch_given.py` uses the network for the same reason, and is kept out of the script the same
+way.** The query harvest kept each author's family name and discarded the given name, so 95 of the
+104 placed records reached the bibliography as a bare family list (`Kang; Tian; Hu.`) where the house
+form is `Family, I.`. `fetch_given.py` re-reads those DOIs and writes `given_names.json`, which is
+**committed**; `place_refs.py` reads the cache offline and refuses a DOI whose returned family names
+do not agree, in order, with the families the placement already holds, because a DOI that returns a
+different author list is a different work. Reproduction therefore still reaches no network: the cache
+is part of the package the way `seeds.json` is. Re-running the fetch is only needed when a placed
+record changes, and `fetch_given.py --audit` reads the cache without touching the network.
+
 **`verify_refs.py` uses the network and is therefore not a step of `reproduce.sh`.** `reference-check.md`
 is the stored result of a run made at the head; re-running the verifier is what a reviewer should do
 to check the citations, and it is deliberately kept out of the offline script so that "one command

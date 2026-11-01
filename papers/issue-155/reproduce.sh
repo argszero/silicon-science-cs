@@ -55,9 +55,9 @@ step "3/6 check: every stored summary recomputed from its rows" \
 step "4/6 references: the placement still resolves and still matches the committed artifact" \
      "$PY" place_refs.py --check
 step "5/6 manuscript: every number still binds, every reference is still cited, bytes unchanged" \
-     "$PY" make_manuscript.py --check
+     "$PY" make_manuscript.py --check --plant-word
 step "6/6 reference form: every entry prints the house components in the house order, read by entry block" \
-     "$PY" check_references.py
+     "$PY" check_references.py --plant-authors
 
 # ---- the step count is checked, not remembered -------------------------------
 printf '== step count\n'

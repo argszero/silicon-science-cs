@@ -25,6 +25,7 @@ import sys
 HERE = os.path.dirname(os.path.abspath(__file__))
 CAND = os.path.join(HERE, "candidates.json")
 SEEDS = os.path.join(HERE, "seeds.json")
+GIVEN = os.path.join(HERE, "given_names.json")
 OUT = os.path.join(HERE, "placement.json")
 
 # (key, title substring, section, the sentence this entry supports)
@@ -300,6 +301,104 @@ def load_seeds():
         return json.load(fh)
 
 
+def load_given():
+    """The committed given-name cache `fetch_given.py` writes, or None if absent."""
+    if not os.path.exists(GIVEN):
+        return None
+    with open(GIVEN, encoding="utf-8") as fh:
+        return json.load(fh)
+
+
+def needs_given_names(authors):
+    """Does this author list lack a given name? One predicate, shared with `fetch_given.py`.
+
+    A component carries a given name when its last token is longer than one character: `S. Even`
+    does (`Even`), and `F` or `A. M` do not -- the latter is all initials, so the record's family
+    field carries no family name either and the entry needs its record read, not reordered.
+    Two programs ask this question, and a second copy of it is how a cache comes to cover a
+    different record set than the one the placer repairs.
+    """
+    for a in authors or []:
+        toks = a.split()
+        if not toks:
+            continue
+        if len(toks) == 1 or len(toks[-1]) == 1:
+            return True
+    return False
+
+
+def house_author(family, given):
+    """`Family, G. M.` from the record's OWN two fields, never from a joined string.
+
+    The alternative -- joining to `Given Family` and letting the renderer split on the last
+    token -- loses information exactly where the registry is odd: `render_author` reads the last
+    token as the family name, so a record whose crossref fields carry the family in `given`
+    (`given="Balogun", family="F"`) comes back as `F, B.` from one path and as a bare `F` from
+    another, and a particle (`family="van Beethoven"`) loses its prefix. Keeping the two fields
+    apart until they are printed is what makes the component a reading of the record.
+    """
+    family = " ".join((family or "").split())
+    given = " ".join((given or "").split())
+    if not given:
+        return family
+    initials = " ".join(t[0] + "." for t in given.replace(".", ". ").split()
+                        if t and t[0].isalpha())
+    if not initials:
+        return family
+    return "%s, %s" % (family, initials)
+
+
+def overlay_given(placed, given_doc, problems):
+    """Put the given names back on the records whose author list is a bare family list.
+
+    Three outcomes, and they are different claims, so they are counted apart:
+
+      * merged  -- Crossref returned given names and its family names agree, in order, with
+                   the families this placement already holds. The two names must agree: a DOI
+                   that returns a different author list is a different work, and the failure
+                   mode this guards is a bibliography acquiring an author who never wrote it.
+      * marked  -- the record genuinely carries no given name; the family name is printed with
+                   a stated marker rather than with an initial this program would have invented.
+      * absent  -- the cache does not hold the DOI. That is a gap in a run, not a fact about a
+                   record, and it is reported as a problem rather than silently printed as a
+                   bare family list (which is exactly the defect being repaired).
+    """
+    recs = (given_doc or {}).get("records") or {}
+    merged = marked = 0
+    for p in placed:
+        authors = p.get("authors") or []
+        if not needs_given_names(authors):
+            continue                                    # already carries a given name
+        rec = recs.get(p["doi"])
+        if rec is None:
+            problems.append("%-22s %s is absent from given_names.json -- run fetch_given.py"
+                            % (p["key"], p["doi"]))
+            continue
+        families = rec.get("family") or []
+        if len(families) < len(authors) or \
+                [f.lower() for f in families[:len(authors)]] != [a.lower() for a in authors]:
+            problems.append("%-22s %s returns family list %r, the placement holds %r -- "
+                            "this DOI is not this author list" % (p["key"], p["doi"],
+                                                                  families[:len(authors)], authors))
+            continue
+        rebuilt, missing = [], 0
+        for i in range(len(authors)):
+            given = (rec.get("given_names") or [""] * len(families))[i] or ""
+            given = " ".join(given.split())
+            component = house_author(families[i], given)
+            if not given:
+                missing += 1
+            rebuilt.append(component)
+        p["authors"] = rebuilt
+        if missing:
+            p["author_note"] = ("%d of %d authors carry no given name in the record"
+                                % (missing, len(authors)))
+            marked += 1
+        else:
+            merged += 1
+    return merged, marked
+
+
 def resolve(key, title_sub, candidates):
     """DOI first when one is declared, else exact title, else unique substring.
 
@@ -374,6 +473,20 @@ def main():
             "resolved_by": "seed-doi",
         })
 
+    # ---- the author component: given names the harvest dropped ----------------
+    # `build_refs.py:norm()` kept `author[].family` and discarded `author[].given`, so 92 of
+    # the 104 placed records reached the bibliography as a bare family list. The renderer has
+    # printed the house form all along; the record was what was wrong, so the record is what
+    # gets repaired. The cache is committed and read offline -- reproduction never reaches the
+    # network, and `fetch_given.py` is the one step that ever did.
+    given_doc = load_given()
+    merged = marked = 0
+    if given_doc is None:
+        problems.append("given_names.json is missing -- run fetch_given.py; the cache is "
+                        "committed, so a reader never needs this step")
+    else:
+        merged, marked = overlay_given(placed, given_doc, problems)
+
     # every placed key unique, every placed entry names a section and a claim
     seen = set()
     for p in placed:
@@ -408,7 +521,9 @@ def main():
                    "attempted": len(PLACEMENT) + len(SEED_PLACEMENT),
                    "seeds": len(SEED_PLACEMENT),
                    "pruned": len(PRUNED),
-                   "absent_or_ambiguous": len(problems)},
+                   "absent_or_ambiguous": len(problems),
+                   "author_form_repaired": merged,
+                   "author_no_given_name": marked},
         "problems": problems,
     }
     payload = json.dumps(out, indent=2, sort_keys=True) + "\n"
@@ -445,6 +560,8 @@ def main():
     print("placed    : %d" % len(placed))
     for s in sorted(sections):
         print("   %-22s %d" % (s, sections[s]))
+    print("authors   : %d record(s) repaired from the given-name cache, %d marked as carrying "
+          "no given name" % (merged, marked))
     print("pruned    : %d" % len(PRUNED))
     for k, r in PRUNED:
         print("   %-22s %s" % (k, r))
