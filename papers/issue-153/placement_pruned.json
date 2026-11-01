@@ -1,0 +1,644 @@
+[
+ {
+  "doi": "10.1145/3658617.3697561",
+  "reason": "names no construct this section uses",
+  "theme": "lsm-compaction",
+  "title": "PULSE: Progressive Utilization of Log-Structured Techniques to Ease SSD Write Amplification in B-epsilon-tree"
+ },
+ {
+  "doi": "10.1109/iccd53106.2021.00020",
+  "reason": "names no construct this section uses",
+  "theme": "lsm-compaction",
+  "title": "Seer-SSD: Bridging Semantic Gap between Log-Structured File Systems and SSDs to Reduce SSD Write Amplification"
+ },
+ {
+  "doi": "10.1109/tc.2003.1252852",
+  "reason": "names no construct this section uses",
+  "theme": "lsm-compaction",
+  "title": "A novel reordering write buffer to improve write performance of log-structured file systems"
+ },
+ {
+  "doi": "10.14778/3749646.3749667",
+  "reason": "adjacent construct (same word, other object)",
+  "theme": "lsm-compaction",
+  "title": "DobLIX: A Dual-Objective Learned Index for Log-Structured Merge Trees"
+ },
+ {
+  "doi": "10.1145/3678015.3680489",
+  "reason": "names no construct this section uses",
+  "theme": "lsm-compaction",
+  "title": "OnionDisk: A Log-Structured Write-Optimal Virtual Block Device"
+ },
+ {
+  "doi": "10.1145/3779212.3790191",
+  "reason": "names no construct this section uses",
+  "theme": "lsm-compaction",
+  "title": "Nemo: A Low-Write-Amplification Cache for Tiny Objects on Log-Structured Flash Devices"
+ },
+ {
+  "doi": "10.1145/2723372.2737788",
+  "reason": "names no construct this section uses",
+  "theme": "lsm-compaction",
+  "title": "Optimizing Optimistic Concurrency Control for Tree-Structured, Log-Structured Databases"
+ },
+ {
+  "doi": "10.1145/3715010",
+  "reason": "names no construct this section uses",
+  "theme": "lsm-compaction",
+  "title": "WALSH: Write-Aggregating Log-Structured Hashing for Hybrid Memory"
+ },
+ {
+  "doi": "10.2139/ssrn.5099991",
+  "reason": "names no construct this section uses",
+  "theme": "lsm-compaction",
+  "title": "&lt;div&gt; Log Structured Hash Table Tree For Efficient&amp;nbsp;&lt;span&gt;CPU Utilization In ETCD&lt;/span&gt; &lt;/div&gt;"
+ },
+ {
+  "doi": "10.1007/978-1-4615-2221-8_4",
+  "reason": "names no construct this section uses",
+  "theme": "lsm-compaction",
+  "title": "Log-structured file systems"
+ },
+ {
+  "doi": "10.1007/s10617-014-9139-4",
+  "reason": "names no construct this section uses",
+  "theme": "lsm-compaction",
+  "title": "LSB-Tree: a log-structured B-Tree index structure for NAND flash SSDs"
+ },
+ {
+  "doi": "10.1145/3319647.3325828",
+  "reason": "names no construct this section uses",
+  "theme": "lsm-compaction",
+  "title": "Write optimization of log-structured flash file system for parallel I/O on manycore servers"
+ },
+ {
+  "doi": "10.5626/jok.2014.41.12.1026",
+  "reason": "names no construct this section uses",
+  "theme": "lsm-compaction",
+  "title": "Partial Garbage Collection Technique for Improving Write Performance of Log-Structured File Systems"
+ },
+ {
+  "doi": "10.1145/3358955.3364509",
+  "reason": "names no construct this section uses",
+  "theme": "lsm-compaction",
+  "title": "Write Amplification Versus Read Perspiration"
+ },
+ {
+  "doi": "10.1109/msst.2014.6855549",
+  "reason": "names no construct this section uses",
+  "theme": "lsm-compaction",
+  "title": "NAND flash architectures reducing write amplification through multi-write codes"
+ },
+ {
+  "doi": "10.3745/kipstd.2008.15-d.6.755",
+  "reason": "names no construct this section uses",
+  "theme": "lsm-compaction",
+  "title": "Log-Structured B-Tree for NAND Flash Memory"
+ },
+ {
+  "doi": "10.1145/3627703.3629582",
+  "reason": "names no construct this section uses",
+  "theme": "lsm-compaction",
+  "title": "CCL-BTree: A Crash-Consistent Locality-Aware B+-Tree for Reducing XPBuffer-Induced Write Amplification in Persistent Memory"
+ },
+ {
+  "doi": "10.1109/msst.2010.5496985",
+  "reason": "names no construct this section uses",
+  "theme": "lsm-compaction",
+  "title": "Write amplification reduction in NAND Flash through multi-write coding"
+ },
+ {
+  "doi": "10.21236/ada604306",
+  "reason": "names no construct this section uses",
+  "theme": "lsm-compaction",
+  "title": "The Design and Implementation of a Log-structured File System"
+ },
+ {
+  "doi": "10.15208/ati.2011.8",
+  "reason": "names no construct this section uses",
+  "theme": "lsm-compaction",
+  "title": "Improving data integrity and performance of cryptographic log structured file systems"
+ },
+ {
+  "doi": "10.1109/jiot.2021.3113994",
+  "reason": "names no construct this section uses",
+  "theme": "lsm-compaction",
+  "title": "MVLevelDB: Using Log-Structured Tree to Support Temporal Queries in IoT"
+ },
+ {
+  "doi": "10.1109/iccd56317.2022.00055",
+  "reason": "names no construct this section uses",
+  "theme": "lsm-compaction",
+  "title": "Log-ROC: Log Structured RAID on Open-Channel SSD"
+ },
+ {
+  "doi": "10.1201/b10798-7",
+  "reason": "names no construct this section uses",
+  "theme": "levels-tiering",
+  "title": "Storage Tiering and SLAs"
+ },
+ {
+  "doi": "10.1201/b10798-10",
+  "reason": "names no construct this section uses",
+  "theme": "levels-tiering",
+  "title": "Planning for Growth and Storage Tiering"
+ },
+ {
+  "doi": "10.1109/ccaa.2017.8229879",
+  "reason": "names no construct this section uses",
+  "theme": "levels-tiering",
+  "title": "Optimized utilization of disks in storage area network by storage tiering"
+ },
+ {
+  "doi": "10.1109/candar.2014.90",
+  "reason": "names no construct this section uses",
+  "theme": "levels-tiering",
+  "title": "A Hybrid Storage System Composed of On-the-Fly Automated Storage Tiering (OTF-AST) and Caching"
+ },
+ {
+  "doi": "10.2991/ijndc.2015.3.1.5",
+  "reason": "names no construct this section uses",
+  "theme": "levels-tiering",
+  "title": "A Distributed Storage System with Dynamic Tiering for iSCSI Environment"
+ },
+ {
+  "doi": "10.1109/icmla.2012.71",
+  "reason": "names no construct this section uses",
+  "theme": "levels-tiering",
+  "title": "Automated Storage Tiering Using Markov Chain Correlation Based Clustering"
+ },
+ {
+  "doi": "10.1109/cine.2016.28",
+  "reason": "names no construct this section uses",
+  "theme": "levels-tiering",
+  "title": "The Efficient Use of Storage Resources in SAN for Storage Tiering and Caching"
+ },
+ {
+  "doi": "10.1109/candar.2015.42",
+  "reason": "names no construct this section uses",
+  "theme": "levels-tiering",
+  "title": "On-the-Fly Automated Storage Tiering with Caching and both Proactive and Observational Migration"
+ },
+ {
+  "doi": "10.1109/iiai-aai.2014.135",
+  "reason": "names no construct this section uses",
+  "theme": "levels-tiering",
+  "title": "A Distributed Storage System with Dynamic Tiering for iSCSI Environment"
+ },
+ {
+  "doi": "10.1109/ucc.2011.74",
+  "reason": "names no construct this section uses",
+  "theme": "levels-tiering",
+  "title": "Performance Management for the Dynamic Storage Tiering by Virtual Volume Clustering"
+ },
+ {
+  "doi": "10.1016/j.peva.2023.102332",
+  "reason": "names no construct this section uses",
+  "theme": "levels-tiering",
+  "title": "Adaptive Intelligent Tiering for modern storage systems"
+ },
+ {
+  "doi": "10.15662/ijsrat.2025.0801007",
+  "reason": "the section's word occurs, but not as this section's construct",
+  "theme": "levels-tiering",
+  "title": "Intelligent Data Tiering and Automated Lifecycle Management for Enterprise Storage and Scalable Real-Time Analytics"
+ },
+ {
+  "doi": "10.1109/pdsw54622.2021.00009",
+  "reason": "names no construct this section uses",
+  "theme": "levels-tiering",
+  "title": "Data-Aware Storage Tiering for Deep Learning"
+ },
+ {
+  "doi": "10.1145/3468081.3471124",
+  "reason": "names no construct this section uses",
+  "theme": "levels-tiering",
+  "title": "An Adaptive Tiering Scheme for an Autonomous Distributed Storage System"
+ },
+ {
+  "doi": "10.1109/ccic68129.2026.11485937",
+  "reason": "names no construct this section uses",
+  "theme": "levels-tiering",
+  "title": "Green Cloud Storage Lifecycle using AI and AWS: AI-Powered Data Tiering"
+ },
+ {
+  "doi": "10.1109/access.2026.3732195",
+  "reason": "the section's word occurs, but not as this section's construct",
+  "theme": "levels-tiering",
+  "title": "Compression for Tiering: Enabling High-Tier Flash Storage for Hot Data via Cold Data Compression"
+ },
+ {
+  "doi": "10.1109/cluster68337.2026.00056",
+  "reason": "names no construct this section uses",
+  "theme": "levels-tiering",
+  "title": "Checkpoint Where It's Cheap: Energy Characterization and Energy-Aware Tiering for Checkpointing on Rabbit Near-Node Storage"
+ },
+ {
+  "doi": "10.33545/27076571.2025.v6.i1a.181",
+  "reason": "names no construct this section uses",
+  "theme": "levels-tiering",
+  "title": "Optimizing cloud storage costs using intelligent data tiering algorithms"
+ },
+ {
+  "doi": "10.1145/3803857",
+  "reason": "the section's word occurs, but not as this section's construct",
+  "theme": "levels-tiering",
+  "title": "Machine Learning-Based Caching and Tiering in Modern Data Storage Systems: A Survey"
+ },
+ {
+  "doi": "10.60087/jaigs.v8i1.442",
+  "reason": "names no construct this section uses",
+  "theme": "levels-tiering",
+  "title": "AI Driven Intelligent Storage Tiering for Generative AI Workloads in Hybrid Cloud Environments"
+ },
+ {
+  "doi": "10.1109/ccgrid54584.2022.00011",
+  "reason": "names no construct this section uses",
+  "theme": "levels-tiering",
+  "title": "Accelerating Deep Learning Training Through Transparent Storage Tiering"
+ },
+ {
+  "doi": "10.1145/3736587",
+  "reason": "the section's word occurs, but not as this section's construct",
+  "theme": "levels-tiering",
+  "title": "MTree: A Tiering-based Key-Value Store Powered by High-performance Hierarchical Data Management"
+ },
+ {
+  "doi": "10.1007/1-4020-0613-6_18300",
+  "reason": "names no construct this section uses",
+  "theme": "levels-tiering",
+  "title": "storage compaction"
+ },
+ {
+  "doi": "10.1109/sc2.2018.00011",
+  "reason": "names no construct this section uses",
+  "theme": "levels-tiering",
+  "title": "Hera Object Storage: A Seamless, Automated Multi-Tiering Solution on Top of OpenStack Swift"
+ },
+ {
+  "doi": "10.1109/cloud.2018.00069",
+  "reason": "names no construct this section uses",
+  "theme": "levels-tiering",
+  "title": "A Novel Automated Cloud Storage Tiering System through Hot-Cold Data Classification"
+ },
+ {
+  "doi": "10.2991/ijndc.k.191115.001",
+  "reason": "names no construct this section uses",
+  "theme": "levels-tiering",
+  "title": "Performance Evaluation of Data Migration Policies for a Distributed Storage System with Dynamic Tiering"
+ },
+ {
+  "doi": "10.1016/j.est.2021.102405",
+  "reason": "the section's word occurs, but not as this section's construct",
+  "theme": "levels-tiering",
+  "title": "Series of solid-solid phase change materials with ultra-high thermal stability and controllable phase change temperature: kilogram-leveled preparation and application investigation"
+ },
+ {
+  "doi": "10.1109/iccsc71566.2026.11650325",
+  "reason": "names no construct this section uses",
+  "theme": "levels-tiering",
+  "title": "Intelligent Tiering of Electronic Health Records in Hybrid HBase-Redis Storage Using a Multi-Agent System"
+ },
+ {
+  "doi": "10.1145/2504776.2504809",
+  "reason": "names no construct this section uses",
+  "theme": "levels-tiering",
+  "title": "A centralized storage system with automated data tiering for private cloud environment"
+ },
+ {
+  "doi": "10.1016/0010-4485(80)90105-0",
+  "reason": "names no construct this section uses",
+  "theme": "levels-tiering",
+  "title": "Storage compaction"
+ },
+ {
+  "doi": "10.1109/infocom55648.2025.11044776",
+  "reason": "the section's word occurs, but not as this section's construct",
+  "theme": "levels-tiering",
+  "title": "Leveled Product Codes for Optimal Block Repairs in Geo-distributed Storage Systems"
+ },
+ {
+  "doi": "10.55544/ijrah.3.1.28",
+  "reason": "the section's word occurs, but not as this section's construct",
+  "theme": "levels-tiering",
+  "title": "A Memory-Efficient Approach to Cost-Optimized Storage Tiering for Cloud Workloads"
+ },
+ {
+  "doi": "10.48175/ijarsct-38810",
+  "reason": "the section's word occurs, but not as this section's construct",
+  "theme": "levels-tiering",
+  "title": "ASTRA : Advanced Storage Tiering, Resilience, and Analytics Framework"
+ },
+ {
+  "doi": "10.2172/1422805",
+  "reason": "names no construct this section uses",
+  "theme": "levels-tiering",
+  "title": "A Dynamic Momentum Compaction Factor Lattice for Improvements to Stochastic Cooling in Storage Rings"
+ },
+ {
+  "doi": "10.1109/snpd.2019.8935656",
+  "reason": "names no construct this section uses",
+  "theme": "levels-tiering",
+  "title": "An Improvement of Migration Efficiency in a Distributed Storage System with Dynamic Tiering"
+ },
+ {
+  "doi": "10.1007/978-94-007-5860-5_126",
+  "reason": "names no construct this section uses",
+  "theme": "levels-tiering",
+  "title": "A Case Study for the Application of Storage Tiering Based on ILM through Data Value Analysis"
+ },
+ {
+  "doi": "10.1504/ijcc.2025.10071085",
+  "reason": "names no construct this section uses",
+  "theme": "levels-tiering",
+  "title": "Geo-Distributed Multi-Cloud Data Centre Storage Tiering and Selection with Zero-Suppressed Binary Decision Diagrams"
+ },
+ {
+  "doi": "10.1016/j.est.2026.121959",
+  "reason": "names no construct this section uses",
+  "theme": "levels-tiering",
+  "title": "Compaction response of goaf backfill utilized for thermal storage: An experimental investigation"
+ },
+ {
+  "doi": "10.1145/3779475.3779506",
+  "reason": "names no construct this section uses",
+  "theme": "levels-tiering",
+  "title": "An Association Rule-Based Time Series Tiering Algorithm for Hot and Cold Data in Distributed Storage Systems"
+ },
+ {
+  "doi": "10.1007/s41403-021-00261-8",
+  "reason": "names no construct this section uses",
+  "theme": "levels-tiering",
+  "title": "ProSPECT: Proactive Storage Using Provenance for Efficient Compute and Tiering"
+ },
+ {
+  "doi": "10.1016/0378-5173(94)90130-9",
+  "reason": "names no construct this section uses",
+  "theme": "levels-tiering",
+  "title": "The effect of pre-compaction processing and storage conditions on powder and compaction properties of some crystalline materials"
+ },
+ {
+  "doi": "10.3997/2214-4609.20140115",
+  "reason": "names no construct this section uses",
+  "theme": "levels-tiering",
+  "title": "Reservoir Compaction and Fluid Leakoff During Fluid Injection Operations"
+ },
+ {
+  "doi": "10.1504/ijcc.2025.147441",
+  "reason": "names no construct this section uses",
+  "theme": "levels-tiering",
+  "title": "Geo-distributed multi-cloud data centre storage tiering and selection with zero-suppressed binary decision diagrams"
+ },
+ {
+  "doi": "10.1063/1.1342591",
+  "reason": "names no construct this section uses",
+  "theme": "levels-tiering",
+  "title": "High accuracy momentum compaction measurement for the APS storage ring with undulator radiation"
+ },
+ {
+  "doi": "10.1109/icscds65426.2025.11167762",
+  "reason": "names no construct this section uses",
+  "theme": "levels-tiering",
+  "title": "Optimizing Data Tiering in SAP HANA using Native Storage Extension (NSE): A Performance Evaluation"
+ },
+ {
+  "doi": "10.1109/tpds.2022.3224865",
+  "reason": "adjacent construct (same word, other object)",
+  "theme": "levels-tiering",
+  "title": "RLTiering: A Cost-Driven Auto-Tiering System for Two-Tier Cloud Storage Using Deep Reinforcement Learning"
+ },
+ {
+  "doi": "10.17250/khisli.27.1.201004.003",
+  "reason": "the section's word occurs, but not as this section's construct",
+  "theme": "levels-tiering",
+  "title": "An Analysis of Leveled Writing Activities in Middle School English 1 Textbooks and Workbooks and the Perceptions of Middle School Students on the Leveled Writing Activities"
+ },
+ {
+  "doi": "10.1109/gcce.2017.8229472",
+  "reason": "names no construct this section uses",
+  "theme": "flash-write-amp",
+  "title": "A demand-based caching method for garbage collection in flash-memory embedded systems"
+ },
+ {
+  "doi": "10.1145/3617333",
+  "reason": "adjacent construct (same word, other object)",
+  "theme": "kv-engine",
+  "title": "Learning to Optimize LSM-trees: Towards A Reinforcement Learning based Key-Value Store for Dynamic Workloads"
+ },
+ {
+  "doi": "10.1109/tcad.2023.3348771",
+  "reason": "adjacent construct (same word, other object)",
+  "theme": "kv-engine",
+  "title": "A Semantic-Integrated LSM-Tree-Based Key\u2013Value Storage Engine for Blockchain Systems"
+ },
+ {
+  "doi": "10.1007/bfb0029564",
+  "reason": "names no construct this section uses",
+  "theme": "lookahead-online",
+  "title": "Competitive analysis of paging"
+ },
+ {
+  "doi": "10.1007/978-3-642-25591-5_56",
+  "reason": "names no construct this section uses",
+  "theme": "lookahead-online",
+  "title": "On the Best Possible Competitive Ratio for Multislope Ski Rental"
+ },
+ {
+  "doi": "10.1007/3-540-44676-1_8",
+  "reason": "names no construct this section uses",
+  "theme": "lookahead-online",
+  "title": "Buying a Constant Competitive Ratio for Paging"
+ },
+ {
+  "doi": "10.1109/tc.2002.1047757",
+  "reason": "names no construct this section uses",
+  "theme": "competitive-paging",
+  "title": "PC-OPT: optimal offline prefetching and caching for parallel I/O systems"
+ },
+ {
+  "doi": "10.1109/tit.2007.913566",
+  "reason": "adjacent construct (same word, other object)",
+  "theme": "competitive-paging",
+  "title": "Paging and Registration in Cellular Networks: Jointly Optimal Policies and an Iterative Algorithm"
+ },
+ {
+  "doi": "10.1109/infocom.2016.7524444",
+  "reason": "names no construct this section uses",
+  "theme": "competitive-paging",
+  "title": "An O(1)-competitive online caching algorithm for content centric networking"
+ },
+ {
+  "doi": "10.32920/ryerson.14638989.v1",
+  "reason": "adjacent construct (same word, other object)",
+  "theme": "competitive-paging",
+  "title": "SQLite Page Caching Algorithm"
+ },
+ {
+  "doi": "10.32920/ryerson.14638989.v2",
+  "reason": "names no construct this section uses",
+  "theme": "competitive-paging",
+  "title": "SQLite Page Caching Algorithm"
+ },
+ {
+  "doi": "10.32920/ryerson.14638989",
+  "reason": "adjacent construct (same word, other object)",
+  "theme": "competitive-paging",
+  "title": "SQLite Page Caching Algorithm"
+ },
+ {
+  "doi": "10.1137/1.9781611973099.133",
+  "reason": "names no construct this section uses",
+  "theme": "competitive-paging",
+  "title": "An O (log k )-competitive algorithm for generalized caching"
+ },
+ {
+  "doi": "10.1007/978-1-4612-4476-9_39",
+  "reason": "names no construct this section uses",
+  "theme": "competitive-paging",
+  "title": "Methodical Competitive Snoopy-Caching"
+ },
+ {
+  "doi": "10.1109/icc.2015.7248590",
+  "reason": "names no construct this section uses",
+  "theme": "competitive-paging",
+  "title": "Optimal caching placement of caching system with helpers"
+ },
+ {
+  "doi": "10.1109/access.2016.2640270",
+  "reason": "adjacent construct (same word, other object)",
+  "theme": "competitive-paging",
+  "title": "4-DMWM Approach for Caching Based Optimal D2D Pairing and Channel Allocation: Centralized and Distributed Algorithm Design"
+ },
+ {
+  "doi": "10.1049/pbte096e_ch15",
+  "reason": "adjacent construct (same word, other object)",
+  "theme": "competitive-paging",
+  "title": "Mobile edge caching: an optimal auction approach"
+ },
+ {
+  "doi": "10.1007/978-3-662-44777-2_18",
+  "reason": "names no construct this section uses",
+  "theme": "competitive-paging",
+  "title": "Competitive Algorithms for Restricted Caching and Matroid Caching"
+ },
+ {
+  "doi": "10.1109/access.2018.2835368",
+  "reason": "names no construct this section uses",
+  "theme": "competitive-paging",
+  "title": "LOCASS: Local Optimal Caching Algorithm With Social Selfishness for Mixed Cooperative and Selfish Devices"
+ },
+ {
+  "doi": "10.1145/1281500.1281619",
+  "reason": "names no construct this section uses",
+  "theme": "competitive-paging",
+  "title": "Irradiance caching algorithm"
+ },
+ {
+  "doi": "10.1109/spawc.2016.7536891",
+  "reason": "adjacent construct (same word, other object)",
+  "theme": "competitive-paging",
+  "title": "Optimal probabilistic caching with wireless caching helpers"
+ },
+ {
+  "doi": "10.1109/lnet.2020.3031961",
+  "reason": "names no construct this section uses",
+  "theme": "competitive-paging",
+  "title": "Adaptive Offline and Online Similarity-Based Caching"
+ },
+ {
+  "doi": "10.1109/tcomm.2019.2906305",
+  "reason": "names no construct this section uses",
+  "theme": "competitive-paging",
+  "title": "An Approximation Algorithm for Optimal Clique Cover Delivery in Coded Caching"
+ },
+ {
+  "doi": "10.1109/icc.2016.7511410",
+  "reason": "adjacent construct (same word, other object)",
+  "theme": "competitive-paging",
+  "title": "Optimal caching placement for D2D assisted wireless caching networks"
+ },
+ {
+  "doi": "10.21203/rs.3.rs-3166387/v1",
+  "reason": "adjacent construct (same word, other object)",
+  "theme": "competitive-paging",
+  "title": "Online Caching Algorithm for VR Video Streaming in Mobile Edge Caching System"
+ },
+ {
+  "doi": "10.1145/1401132.1401215",
+  "reason": "names no construct this section uses",
+  "theme": "competitive-paging",
+  "title": "Irradiance caching algorithm"
+ },
+ {
+  "doi": "10.1109/globecom38437.2019.9013745",
+  "reason": "adjacent construct (same word, other object)",
+  "theme": "competitive-paging",
+  "title": "JOCAR: A Jointly Optimal Caching and Routing Framework for Cooperative Edge Caching Networks"
+ },
+ {
+  "doi": "10.3724/sp.j.1087.2010.00121",
+  "reason": "names no construct this section uses",
+  "theme": "competitive-paging",
+  "title": "Data caching algorithm in metropolitan vehicle network"
+ },
+ {
+  "doi": "10.1109/icde53745.2022.00207",
+  "reason": "names no construct this section uses",
+  "theme": "competitive-paging",
+  "title": "Competitive Consistent Caching for Transactions"
+ },
+ {
+  "doi": "10.3390/e19070366",
+  "reason": "adjacent construct (same word, other object)",
+  "theme": "competitive-paging",
+  "title": "Content Delivery in Fog-Aided Small-Cell Systems with Offline and Online Caching: An Information\u2014Theoretic Analysis"
+ },
+ {
+  "doi": "10.1109/infcomw.2017.8116419",
+  "reason": "adjacent construct (same word, other object)",
+  "theme": "competitive-paging",
+  "title": "A delay-aware caching algorithm for wireless D2D caching networks"
+ },
+ {
+  "doi": "10.1016/0306-4379(90)90032-k",
+  "reason": "names no construct this section uses",
+  "theme": "competitive-paging",
+  "title": "Optimal view caching"
+ },
+ {
+  "doi": "10.51979/kssls.2012.05.48.129",
+  "reason": "the section's word occurs, but not as this section's construct",
+  "theme": "ski-rental",
+  "title": "Analysis of PLS Path Model between CRM Information Possessed by a Ski Rental Shop and Customer Behavior"
+ },
+ {
+  "doi": "10.1109/icess.2019.8782508",
+  "reason": "adjacent construct (same word, other object)",
+  "theme": "logstructured-fs",
+  "title": "Reinforcement Learning based Background Segment Cleaning for Log-structured File System on Mobile Devices"
+ },
+ {
+  "doi": "10.20944/preprints202510.1893.v1",
+  "reason": "adjacent construct (same word, other object)",
+  "theme": "logstructured-fs",
+  "title": "A Hardware-Assisted Log-Structured File System with Temporal Locality Optimization Under Resource Constraints"
+ },
+ {
+  "doi": "10.20944/preprints202510.1893.v2",
+  "reason": "adjacent construct (same word, other object)",
+  "theme": "logstructured-fs",
+  "title": "A Hardware-Assisted Log-Structured File System with Temporal Locality Optimization under Resource Constraints"
+ },
+ {
+  "doi": "10.1016/j.jnca.2024.103942",
+  "reason": "names no construct this section uses",
+  "theme": "data-placement",
+  "title": "Caching or not: An online cost optimization algorithm for geodistributed data analysis in cloud environments"
+ },
+ {
+  "doi": "10.1109/tc.2022.3191969",
+  "reason": "names no construct this section uses",
+  "theme": "data-placement",
+  "title": "PackCache: An Online Cost-Driven Data Caching Algorithm in the Cloud"
+ }
+]

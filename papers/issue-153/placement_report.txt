@@ -1,0 +1,13 @@
+PLACEMENT TALLY -- issue #153, stage 2
+
+harvested distinct          : 344
+named their construct       : 239
+pruned at placement         : 105  (reason: names no construct this section uses)
+unverifiable at Crossref    : 0  (dropped; never kept)
+PLACED (floor applies here) : 239
+  judgement from abstract   : 45
+  judgement title-only      : 194
+
+by section:
+  §2 Background                                  130
+  §7 Relation to online algorithms with lookahead 109
