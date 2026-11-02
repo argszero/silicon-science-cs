@@ -98,6 +98,71 @@ These cleared the screen and are real records; they are not cited because they n
 | `youyou2026are` | replication failures in public knowledge — 'replication' is the other sense |
 | `yusuf2021internationa` | financial reporting standards — adjacent construct |
 
+## Entries whose record carries no author
+
+54 of the 206 cited records carry no author field on Crossref, and their entries say so by naming the record that was read ("author not established on Crossref for this DOI") rather than by leaving the position empty or inventing an initial. The absence is a claim about a record, and it is checkable against the registry the entry names.
+
+| key | DOI | title |
+|---|---|---|
+| `acmm1999rilsan` | 10.1108/acmm.1999.12846dad.013 | Rilsan Coatings guarantee quality and durability in pipes and fittings |
+| `anon1963redundancy` | 10.1016/0026-2714(63)90356-1 | Redundancy and the detection of first failures |
+| `anon1964much` | 10.1016/0026-2714(64)90260-4 | How much does redundancy improve reliability? |
+| `anon1964optimum` | 10.1016/0026-2714(64)90183-0 | Optimum redundancy when components are subject to two kinds of failure |
+| `anon1969boost` | 10.1016/0026-2714(69)90122-x | Boost reliability in your op-amp circuit. Build in redundancy and get automatic compensation for internal failures |
+| `anon1976common` | 10.1016/0026-2714(76)90173-6 | Common-cause failure considerations in predicting HTGR cooling system reliability |
+| `anon1978effects` | 10.1016/0026-2714(78)90369-4 | Effects of Weibull hazard rate on common cause failure analysis of reliability networks |
+| `anon1979common` | 10.1016/0026-2714(79)90195-1 | A common cause-failure availability model |
+| `anon1980common` | 10.1016/0026-2714(80)90078-5 | Common-cause failure analysis of a three-state device system |
+| `anon1983linearly` | 10.1016/0026-2714(83)91230-1 | Linearly correlated intermittent failures |
+| `anon1985two` | 10.1016/0026-2714(85)90059-9 | A two (multicomponent) unit parallel system with standby and common cause failure |
+| `anon1988correlated` | 10.1016/0026-2714(88)90195-3 | Correlated failures in fault-tolerant computers |
+| `anon1988reliability` | 10.1016/0026-2714(88)90062-5 | Reliability of a system for Markov-dependent components |
+| `anon1990redundancy` | 10.1016/0026-2714(90)90489-a | Redundancy strategy for dependent subsystems |
+| `anon1990reliability` | 10.1016/0026-2714(90)90082-x | Reliability modelling of redundant computer systems with common-cause failures |
+| `anon1990ultrasonic` | 10.1016/0026-2714(90)90350-v | Does ultrasonic cleaning damage components? |
+| `anon1992availability` | 10.1016/0026-2714(92)90281-o | Availability of the crystallization system in the sugar industry under common-cause failure |
+| `anon1992redundancy` | 10.1016/0026-2714(92)90164-g | Redundancy optimization of k--n systems with common-cause failures |
+| `anon1998betaplus` | 10.1080/09617353.1998.11690672 | The Betaplus Common Cause Failure Model |
+| `anon2003appendix` | 10.1515/9783110917819.753 | Appendix A. Volume 2. Probability Theory and Extreme Value Theory |
+| `anon2003concepts` | 10.1201/9780203498798.ch2 | Concepts of Probability Theory For Sensitivity And Uncertainty Analysis |
+| `anon2004quantum` | 10.1201/9780203483930-21 | Quantum Physics-Based Probability Models with Applications to Reliability Analysis |
+| `anon2005reliability` | 10.1201/9781420056341.ch9 | Reliability |
+| `anon2005supplemental` | 10.1037/1082-989x.10.1.84.supp | Supplemental Material for Using Data Augmentation to Obtain Standard Errors and Conduct Hypothesis Tests in Latent Class and Latent Transition Analysis |
+| `anon2006estimation` | 10.1007/0-387-34471-3_8 | Estimation of the Probability of a Failure Set |
+| `anon2006random` | 10.1201/9781420011340-16 | Random-effect models for survival data |
+| `anon2009disk` | 10.1109/9780470545171.ch3 | Disk Drive Magnetic Recording |
+| `anon2013appendix` | 10.1515/9781400848560-011 | Appendix: Quoted Figures and Characters |
+| `anon2013emerging` | 10.4324/9781315071688-8 | An Emerging Consensus on Biodiversity Loss |
+| `anon2015complete` | 10.1158/2159-8290.cd-rw2015-024 | Complete Loss of Replication Repair Drives Ultra-Hypermutated Cancers |
+| `anon2017continuous` | 10.4324/9781315169620-10 | Continuous Availability and Replication |
+| `anon2019multi` | 10.1007/978-3-319-77525-8_100219 | Multi-data Center Replication |
+| `anon2022probability` | 10.1007/978-981-10-6946-8_300620 | Probability of Reliability |
+| `anon2024chapter` | 10.1515/9780691237701-006 | CHAPTER 5 Consensus or Quorum? |
+| `anon2026erasure` | 10.1017/9781316443354.004 | Erasure Channel Models and Bounds |
+| `auej2025erratum` | 10.21608/auej.2025.503058 | ERRATUM TO: NUMERICAL ANALYSIS OF ENHANCING LATENT HEAT STORAGE USING FINS AND CONDUCTIVE BARRIERS |
+| `b2007overview` | 10.1016/b978-008044465-9/50010-4 | Overview of Hard Disk Drive Components and Technology |
+| `b2011methods` | 10.1201/b11537-3 | Methods of Extreme Value Theory |
+| `b2015instantaneou` | 10.1201/b19348-5 | Instantaneous Availability Model of Discrete-Time System under General Probability Distribution |
+| `b2016bivariate` | 10.1201/b17163-12 | Bivariate Lower Bounds |
+| `b2016bivariate-2a76e` | 10.1201/b17163-10 | Bivariate Upper Bounds |
+| `b2016multivariate` | 10.1201/b17163-11 | Multivariate and Hybrid Upper Bounds |
+| `b2016multivariate-547ac` | 10.1201/b17163-13 | Multivariate and Hybrid Lower Bounds |
+| `bshost2024probability` | 10.1016/bs.host.2024.07.004 | Probability models applied to reliability and availability engineering |
+| `case2026application` | 10.1109/case69030.2026.11704386 | Application of Multi-Objective Optimization Method Based on Safety, Economy and Availability in Outage Scheduling of Nuclear Power Plant |
+| `cbms2004chapter` | 10.1214/cbms/1462106080 | Chapter 4: Semi-parametric estimation in the linear model for correlated data |
+| `cbo2012energy` | 10.1017/cbo9781139226608.014 | Energy Storage Systems |
+| `cbo2015large` | 10.1017/cbo9781316341414.016 | Large-Scale Energy Storage Systems |
+| `firdaus2025audit` | 10.37134/firdaus.vol4.1.9.2024 | Audit Quality and Financial Reporting Quality among Quoted Non-Financial Firms in Nigeria |
+| `jj2024consensus` | 10.2307/jj.7657716.8 | Consensus or Quorum? |
+| `ovs2013softwarepfle` | 10.9785/ovs.9783504380397.849 | I. Softwarepflege inklusive Service-Level-Agreement |
+| `pbtee2003appendix` | 10.1049/pbte048e_appendix3 | Appendix 3: Template for a typical service level agreement |
+| `rjfa2019financial` | 10.7176/rjfa/10-9-08 | Financial Reporting Quality and Financial Performance of Quoted Banks in Nigeria |
+| `rjfa2022financial` | 10.7176/rjfa/13-14-06 | Financial Reporting Quality and Share Values of the Quoted Non-Financial Firms in Nigeria |
+
+## Bracketed groups in the text that are not citations
+
+The prose writes the closed unit interval as `[0, 1]`, and writes a claim's citation cluster as a bracketed number list. A reader (and `refgate.py`, which calls it `AMBIGUOUS [0]`) sees the first as a citation to entry 0, which does not exist. It is an interval: `rho` is declared on `[0, 1]`, and every bracket group in this paper is either that interval or a generated cluster.
+
 ## A prior-art line this report does not cite, and why
 
 The copyset placement discipline — constrain which replicas may fail together, then compute the loss rate — originates in a USENIX ATC paper that carries **no DOI** and therefore has no Crossref record. The arXiv probe that could have corroborated it returned HTTP 429 (NOT RUN) on every attempt this round. It is consequently **not cited**: an unverifiable citation is not admissible here, and a rate limit does not establish that the record does not exist. What the manuscript does cite is the copyset placement literature that *is* indexed (see the `placement-under-correlation` claim), which makes the same design argument on the record.

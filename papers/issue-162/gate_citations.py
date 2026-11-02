@@ -25,6 +25,7 @@ Usage:
 from __future__ import annotations
 
 import argparse
+import html
 import json
 import os
 import re
@@ -166,6 +167,24 @@ def write_report(path, corpus, nums):
     for k in sorted(PRUNED):
         out.append("| `%s` | %s |" % (k, PRUNED[k]))
     out.append("")
+    noauthor = [r for r in recs if not (r.get("first_family") or "").strip()]
+    out.append("## Entries whose record carries no author\n")
+    out.append("%d of the %d cited records carry no author field on Crossref, and their entries say so "
+               "by naming the record that was read (\"author not established on Crossref for this "
+               "DOI\") rather than by leaving the position empty or inventing an initial. The absence "
+               "is a claim about a record, and it is checkable against the registry the entry names.\n"
+               % (len(noauthor), len(nums)))
+    out.append("| key | DOI | title |")
+    out.append("|---|---|---|")
+    for r in noauthor:
+        out.append("| `%s` | %s | %s |" % (r["key"], r["doi"], r["title"].replace("|", "/")))
+    out.append("")
+    out.append("## Bracketed groups in the text that are not citations\n")
+    out.append("The prose writes the closed unit interval as `[0, 1]`, and writes a claim's citation "
+               "cluster as a bracketed number list. A reader (and `refgate.py`, which calls it "
+               "`AMBIGUOUS [0]`) sees the first as a citation to entry 0, which does not exist. It is "
+               "an interval: `rho` is declared on `[0, 1]`, and every bracket group in this paper is "
+               "either that interval or a generated cluster.\n")
     out.append("## A prior-art line this report does not cite, and why\n")
     out.append("The copyset placement discipline — constrain which replicas may fail together, then "
                "compute the loss rate — originates in a USENIX ATC paper that carries **no DOI** and "
@@ -267,12 +286,12 @@ def entry_line(num, rec, claim=None):
     authors = (fam + initials) if fam else ""
     if not authors:
         authors = "author not established on Crossref for this DOI"
-    title = rec["title"].strip()
+    title = html.unescape(rec["title"]).strip()
     title = title[:1].upper() + title[1:]
     bits = ["[%d]" % num, authors + " (%s)." % rec.get("year", "n.d."), title]
-    if not title.endswith("."):
+    if not title.endswith((".", "?", "!")):
         bits[-1] = bits[-1] + "."
-    venue = (rec.get("venue") or "").strip()
+    venue = html.unescape(rec.get("venue") or "").strip()
     if venue:
         bits.append("*%s*." % venue)
     bits.append("https://doi.org/%s" % rec["doi"])
