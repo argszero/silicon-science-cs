@@ -18,8 +18,14 @@ time unicodedata urllib`. There is nothing to install and nothing to fetch.
 
 `reproduce.sh` runs, in order: the instrument's self-test; the reading, emitted to
 `nines_findings.json`; the citation gate, which renders `manuscript.md` and rewrites
-`reference-check.md`; and then a byte comparison of each of those three artefacts against the
-committed copy.
+`reference-check.md`; and a comparison of those three artefacts against the SHA-256 digests sealed in
+`artefacts.sha256`.
+
+**That last step deliberately does not use git.** It used to: `git diff --quiet` and `git ls-files`
+decide nothing in a `git archive` export, which carries no `.git` — so for every reader following
+this file, three steps reported NOT RUN while the author saw `[ok]`. A check only the author can run
+is not a check. The manifest travels inside the package and the comparison needs no git and no
+network.
 
 ## Expected output
 
@@ -28,8 +34,8 @@ reproduce.sh -- issue #162
 == 1 instrument self-test (controls + one plant each)
    [ok]   instrument self-test (controls + one plant each)
 ...
-STEPS RUN: 6
-REPRODUCE: ALL GREEN (6 steps)
+STEPS RUN: 4   NOT RUN: 0
+REPRODUCE: ALL GREEN (4 steps)
 ```
 
 The step count and the control/plant counts are printed by the programs, not asserted here: a count
@@ -64,6 +70,8 @@ see the third state.
 | `manuscript.md` | derived (`gate_citations.py --render`) | the paper with claims rendered as numbered clusters, the reading table rendered from the artefact, and the reference list generated |
 | `reference-check.md` | derived (`--report`) | the citation report: what was searched, what was refused and why, and what is cited |
 | `gate_citations.py` | authored | binds citations to claims, checks the floor, checks the prose's numbers against the artefact |
+| `seal_artefacts.py` | authored | `--seal` rewrites the digest manifest (a maintenance act); `--verify` only compares, and is what `reproduce.sh` runs |
+| `artefacts.sha256` | derived (`--seal`) | the SHA-256 of the three derived files, so byte identity is decidable without a `.git` |
 
 `nines.py` writes nothing unless `--emit` names a path, so a self-test can never replace the artefact a
 report describes. `manuscript.md` and `reference-check.md` are derived files: do not edit them,
