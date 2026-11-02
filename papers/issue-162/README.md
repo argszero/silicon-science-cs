@@ -58,7 +58,15 @@ to see the third state.
 | file | produced by | what it holds |
 |------|-------------|---------------|
 | `nines.py` | — | the instrument: the identified set, both attainment routes, the stated-dependence family, the controls and their plants |
-| `nines_findings.json` | `./nines.py --grid --emit nines_findings.json` | the 20-cell reading: quoted figure, identified set endpoints, both in nines, the span, and whether the set reaches total loss |
+| `nines_findings.json` | `./nines.py --grid --emit nines_findings.json` | the 20-cell reading: quoted figure, identified set endpoints, both in nines, the span, whether the set reaches total loss, and `rho_one_decade` — the stated dependence that costs the quote exactly one decade |
 
 `nines.py` writes nothing unless `--emit` names a path, so running the self-test can never replace
 the artefact a report describes.
+
+## What `rho` is, and is not
+
+`rho` is a **declared** parameter here and is never fitted: nothing in this package observes a
+dependence. The inverse `rho = (target - p**r)/(p - p**r)` answers a conditional — *if* the loss
+figure were to come out at `target`, what would have to be stated — and `rho_one_decade` reads that
+conditional in the unit the quote is made in. Calling either of them a measurement of a store would
+be the error this paper is about. The decision is also written into the artefact (`dependence`).

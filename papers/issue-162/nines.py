@@ -119,6 +119,62 @@ def mixture(p, r, rho):
 
 
 # ---------------------------------------------------------------------------
+# the inverse: what a stated dependence has to be, in the unit the quote is made in
+# ---------------------------------------------------------------------------
+#
+# Decision recorded with this leg, and it goes in the abstract rather than in a limitations section:
+# `rho` is a DECLARED parameter and is never fitted here. The inverse below answers "if the figure
+# were to come out at q, what would have to be stated" -- a conditional, not an estimate. Nothing in
+# this package observes a dependence, so a number produced by these functions is a property of the
+# quote, and calling it a measurement of a store would be the exact error the paper is about.
+
+def rho_for_prob(target, p, r):
+    """The stated dependence that puts `P(all r fail)` exactly on `target`.
+
+    `mixture` is affine in `rho`, so the inverse is closed:
+
+        rho = (target - p**r) / (p - p**r)
+
+    It lies in `[0, 1]` exactly when the target lies in `[p**r, p]` -- i.e. when the target is a
+    figure the independence quote can be made *worse* than. Outside that range no coupling in this
+    family reaches it: below `p**r` the `rho` would have to be negative (anti-correlated replication,
+    which would make the figure *better* than the quote), above `p` it would have to exceed full
+    correlation. Both are refused rather than clamped, because a clamp would silently answer a
+    question the family cannot.
+    """
+    p = Fraction(p)
+    target = Fraction(target)
+    if r < 2:
+        raise ValueError("r=1 has no dependence to state: the family is a single point")
+    if not (p ** r <= target <= p):
+        raise ValueError("target %.6e is outside [p**r, p] = [%.6e, %.6e]: rho would leave [0, 1]"
+                         % (float(target), float(p ** r), float(p)))
+    return (target - p ** r) / (p - p ** r)
+
+
+def rho_for_decades(decades, p, r):
+    """The stated dependence that costs exactly `decades` nines.
+
+    Costing `d` decades means a loss probability `10**d` times larger, so `target = 10**d * p**r`
+    and the closed form gives
+
+        rho = (10**d - 1) * p**r / (p - p**r)  ==  (10**d - 1) * p**(r-1) / (1 - p**(r-1)).
+
+    The second form is why this is the paper's quantity: at a realistic quote the denominator is `1`
+    to any precision, so one decade costs `rho ~ 9 * p**(r-1)` -- at `p = 1e-4, r = 5`, about
+    `9e-16`. Read forwards, a dependence nobody could rule out destroys the figure; read backwards,
+    **the quote asserts a bound on a quantity (`rho < ~9 p**(r-1)`) that no one measures**, and that
+    assertion is what "eleven nines" is actually buying.
+    """
+    p = Fraction(p)
+    if r < 2:
+        raise ValueError("r=1 has no dependence to state: the family is a single point")
+    if decades < 0:
+        raise ValueError("decades must be non-negative, got %r" % (decades,))
+    return rho_for_prob(Fraction(10) ** decades * p ** r, p, r)
+
+
+# ---------------------------------------------------------------------------
 # attainment, route 1: exhaustive enumeration of the polytope's integer points
 # ---------------------------------------------------------------------------
 
@@ -279,6 +335,9 @@ def reading(p_text, r):
         "span_nines": quoted_nines - worst_nines,
         "independent": mixture(p, r, Fraction(0)),
         "comonotone": mixture(p, r, Fraction(1)),
+        # The price of being wrong by one decade, in the unit the quote is made in. `None` at r=1,
+        # where there is no dependence to state; that is a boundary, not a small number.
+        "rho_one_decade": rho_for_decades(1, p, r) if r >= 2 else None,
     }
 
 
@@ -317,6 +376,12 @@ def emit_json(rows, path):
         "note": ("contains_zero means the identified set of P(all replicas fail) includes 0: a "
                  "total loss is not excluded by the marginals, so that end of the set is unbounded "
                  "in nines, which is why set_lo_nines is null there and not a large number"),
+        "dependence": ("rho is a DECLARED parameter and is never fitted in this package: no "
+                       "dependence is observed anywhere, so the inverse rho = (target - p**r)/(p - "
+                       "p**r) answers a conditional ('what would have to be stated'), never an "
+                       "estimate. rho_one_decade is the stated dependence that costs exactly one "
+                       "decade of the quoted figure; it is null at r=1, where the family is a "
+                       "single point and there is no dependence to state"),
     }
     with open(path, "w", encoding="utf-8") as fh:
         fh.write(json.dumps(payload, indent=1, sort_keys=True) + "\n")
@@ -456,6 +521,59 @@ def p_selector(rows, mutant=False):
         return pick["r"] != 1
     pick = widest_cell(rows)
     return pick is not None and pick["r"] >= 2
+
+
+def p_rho_endpoints(p_text, r, mutant=False):
+    """Does the inverse return exactly `rho = 0` at the quote and `rho = 1` at the marginal?
+
+    Mutant: the two ends swapped, which is the plausible mis-reading that the quoted figure is the
+    *worst* case rather than the best one this family can state.
+    """
+    p = frac(p_text)
+    at_quote = rho_for_prob(p ** r, p, r)
+    at_marginal = rho_for_prob(p, p, r)
+    if mutant:
+        at_quote, at_marginal = at_marginal, at_quote
+    return at_quote == 0 and at_marginal == 1
+
+
+def p_decade_price(p_text, r, d, mutant=False):
+    """Does costing `d` decades cost the closed form, and does the identity hold exactly?
+
+    Two things in one predicate on purpose: the landed nines (does the money buy the decade) and the
+    algebraic identity `rho*(1 - p**(r-1)) == (10**d - 1)*p**(r-1)` that makes the approximation
+    `rho ~ (10**d - 1)*p**(r-1)` legible as the factor by which the denominator differs from 1.
+    Mutant: `d+1` decades bought and `d` claimed, the off-by-one in the exponent that a paraphrase
+    of the formula produces.
+    """
+    p = frac(p_text)
+    dd = d + 1 if mutant else d
+    rho = rho_for_decades(dd, p, r)
+    if abs(nines(mixture(p, r, rho)) - (nines(p ** r) - d)) >= 1e-12:
+        return False
+    return rho * (1 - p ** (r - 1)) == (10 ** dd - 1) * p ** (r - 1)
+
+
+def p_rho_refuses_outside(p_text, r, mutant=False):
+    """Are targets outside `[p**r, p]` refused rather than clamped? Mutant: the range check gone.
+
+    A clamp would be worse than a wrong number: it would answer with a `rho` outside `[0, 1]` and
+    call it a stated dependence.
+    """
+    p = frac(p_text)
+    targets = (p ** r / 10, p * 2)
+    outs = []
+    for t in targets:
+        if mutant:
+            rho = (t - p ** r) / (p - p ** r)      # the same formula, check removed
+            outs.append(0 <= rho <= 1)             # "served" without being refused
+            continue
+        try:
+            rho_for_prob(t, p, r)
+            outs.append(False)                     # accepted -> it was not refused
+        except ValueError:
+            outs.append(True)
+    return all(outs)
 
 
 def mutant_refused(result):
@@ -649,6 +767,25 @@ def selftest(budget):
             p_selector(rows, mutant=True) is False,
             "under `worst - quoted` the argmax is r=1 with gap 0.0")
 
+    # ---- C11 the inverse: rho priced in the unit the quote is made in ----
+    print("\nC11 the inverse: what a stated dependence would have to be")
+    for (p_text, r) in (("1e-4", 5), ("1e-5", 3)):
+        p = frac(p_text)
+        h.control("p=%s r=%d: rho=0 exactly at the quote, rho=1 exactly at the marginal"
+                  % (p_text, r), p_rho_endpoints(p_text, r),
+                  "rho(p**r)=%s  rho(p)=%s" % (rho_for_prob(p ** r, p, r), rho_for_prob(p, p, r)))
+        h.control("p=%s r=%d: one decade costs rho=%.3e" % (p_text, r, float(rho_for_decades(1, p, r))),
+                  p_decade_price(p_text, r, 1),
+                  "closed form * (1 - p^(r-1)) == 9*p^(r-1), exactly")
+        h.control("p=%s r=%d: a target outside [p**r, p] is refused, not clamped" % (p_text, r),
+                  p_rho_refuses_outside(p_text, r))
+    h.plant("the two ends swapped is refused by the same comparison",
+            p_rho_endpoints("1e-4", 5, mutant=True) is False)
+    h.plant("one decade claimed where two were bought is refused",
+            p_decade_price("1e-4", 5, 1, mutant=True) is False)
+    h.plant("a range check removed, so a rho outside [0,1] is served, is refused",
+            p_rho_refuses_outside("1e-4", 5, mutant=True) is False)
+
     # ---- the sum of the controls ----
     print("\n== summary")
     print("   controls passed : %d" % h.passed)
@@ -704,6 +841,8 @@ def print_grid():
                  widest["set_hi_nines"]))
         print("  the same cell's stated-dependence family: rho=0 -> %.2e, rho=1 -> %.2e"
               % (float(widest["independent"]), float(widest["comonotone"])))
+        print("  one decade at that cell costs rho = %.3e -- so the quote asserts the stated "
+              "dependence is below that" % float(widest["rho_one_decade"]))
     return rows
 
 
