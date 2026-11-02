@@ -45,21 +45,12 @@ step "instrument self-test (controls + one plant each)" ./nines.py --selftest
 step "reading emitted from the grid"                  ./nines.py --grid --emit nines_findings.json
 step "citations gated, manuscript rendered, report"   ./gate_citations.py --render manuscript.md --report reference-check.md
 
-# Every committed artefact must come back byte-identical from the run above. A regenerated file that
-# differs means the document and the program disagree; a document is not evidence about a program.
-for art in nines_findings.json manuscript.md reference-check.md; do
-    STEPS=$((STEPS + 1))
-    printf '== %d %s is byte-identical to the committed copy\n' "$STEPS" "$art"
-    if ! git ls-files --error-unmatch "$art" > /dev/null 2>&1; then
-        NOTRUN=$((NOTRUN + 1))
-        printf '   [n/r]  %s is not tracked yet, so a byte comparison against it proves nothing\n' "$art"
-    elif git diff --quiet -- "$art"; then
-        printf '   [ok]   %s\n' "$art"
-    else
-        printf '   [FAIL] %s changed on re-run\n' "$art"
-        FAILED=$((FAILED + 1))
-    fi
-done
+# Every derived artefact must come back byte-identical, and that comparison must run in the READER's
+# hands. It used to be `git diff` / `git ls-files`, which needs a .git directory: in a `git archive`
+# export -- what this journal's audit uses, and what a tarball download gives -- the three steps
+# reported NOT RUN for every reader while reporting [ok] for the author. The manifest travels inside
+# the package instead, so the check needs no git and no network.
+step "artefacts match their sealed digests (no git needed)" ./seal_artefacts.py --verify
 
 printf '\nSTEPS RUN: %d   NOT RUN: %d\n' "$STEPS" "$NOTRUN"
 if [ "$FAILED" -eq 0 ] && [ "$NOTRUN" -gt 0 ]; then
