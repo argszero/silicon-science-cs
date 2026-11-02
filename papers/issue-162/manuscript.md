@@ -300,415 +300,415 @@ printed one is the one that cannot.
 
 ## References
 
-1. Achary R. (2021) Reliability and High Availability Analysis for Cloud Datacenter. *Cloud Reliability Engineering*. doi:10.1201/9781003030973-2
+[1] Achary, R. (2021). Reliability and High Availability Analysis for Cloud Datacenter. *Cloud Reliability Engineering*. https://doi.org/10.1201/9781003030973-2 Difference: publishes the figure as a commitment to a customer; this paper states what the commitment asserts about an unmeasured quantity. (supports `sla-promise`)
 
-2. Aguilera M.K. (2017) Multi-Data Center Replication Protocols. *Encyclopedia of Database Systems*. doi:10.1007/978-1-4899-7993-3_80641-1
+[2] Aguilera, M. K. (2017). Multi-Data Center Replication Protocols. *Encyclopedia of Database Systems*. https://doi.org/10.1007/978-1-4899-7993-3_80641-1 Difference: computes the durability figure from per-device rates under independence; this paper prices the independence step itself. (supports `durability-models`)
 
-3. Albano M. (2009) Distributed Erasure Coding in Data Centric Storage for wireless sensor networks. *2009 IEEE Symposium on Computers and Communications*. doi:10.1109/iscc.2009.5202250
+[3] Albano, M. (2009). Distributed Erasure Coding in Data Centric Storage for wireless sensor networks. *2009 IEEE Symposium on Computers and Communications*. https://doi.org/10.1109/iscc.2009.5202250 Difference: changes the redundancy arithmetic of the same model; this paper shows the identified set is unchanged by it. (supports `erasure-arithmetic`)
 
-4. Ali S.M. (2018) Fault Tolerance of Data Center under Multi-Correlated Failures. *2018 International Symposium on Recent Advances in Electrical Engineering (RAEE)*. doi:10.1109/raee.2018.8706892
+[4] Ali, S. M. (2018). Fault Tolerance of Data Center under Multi-Correlated Failures. *2018 International Symposium on Recent Advances in Electrical Engineering (RAEE)*. https://doi.org/10.1109/raee.2018.8706892 Difference: measures correlated failure in production systems; this paper asks what a quote computed without that measurement identifies. (supports `correlation-measured`)
 
-5. Amir Y. (1998) Optimal availability quorum systems: Theory and practice. *Information Processing Letters*. doi:10.1016/s0020-0190(98)00017-9
+[5] Amir, Y. (1998). Optimal availability quorum systems: Theory and practice. *Information Processing Letters*. https://doi.org/10.1016/s0020-0190(98)00017-9 Difference: designs quorums whose availability depends on correlated node failure; this paper asks what the availability figure identifies given only marginals. (supports `quorum-availability`)
 
-6. Amjad T. (2010) An Application of Bayesian Theorem for Optimal Replica Placement in Data Grids. *Informatics*. doi:10.2316/p.2010.724-051
+[6] Amjad, T. (2010). An Application of Bayesian Theorem for Optimal Replica Placement in Data Grids. *Informatics*. https://doi.org/10.2316/p.2010.724-051 Difference: assumes a dependence and constrains placement; this paper assumes none and reports what that leaves unidentified. (supports `placement-under-correlation`)
 
-7. Anastassiou G.A. (1997) Optimal Bounds on the Average of a Rounded off Observation in the Presence of a Single Moment Condition. *Distributions with given Marginals and Moment Problems*. doi:10.1007/978-94-011-5532-8_1
+[7] Anastassiou, G. A. (1997). Optimal Bounds on the Average of a Rounded off Observation in the Presence of a Single Moment Condition. *Distributions with given Marginals and Moment Problems*. https://doi.org/10.1007/978-94-011-5532-8_1 Difference: optimises under the bound for dependent risks; this paper asks which end of the bound the quoted figure sits at. (supports `bounds-stated-not-attained`)
 
-8. anon. (1964) How much does redundancy improve reliability?. *Microelectronics Reliability*. doi:10.1016/0026-2714(64)90260-4
+[8] author not established on Crossref for this DOI (1964). How much does redundancy improve reliability?. *Microelectronics Reliability*. https://doi.org/10.1016/0026-2714(64)90260-4 Difference: models common-cause failure to compute system reliability; this paper prices what an unstated dependence leaves open in the quote's unit. (supports `redundancy-defeated`)
 
-9. anon. (1964) Optimum redundancy when components are subject to two kinds of failure. *Microelectronics Reliability*. doi:10.1016/0026-2714(64)90183-0
+[9] author not established on Crossref for this DOI (1964). Optimum redundancy when components are subject to two kinds of failure. *Microelectronics Reliability*. https://doi.org/10.1016/0026-2714(64)90183-0 Difference: models common-cause failure to compute system reliability; this paper prices what an unstated dependence leaves open in the quote's unit. (supports `redundancy-defeated`)
 
-10. anon. (1979) A common cause-failure availability model. *Microelectronics Reliability*. doi:10.1016/0026-2714(79)90195-1
+[10] author not established on Crossref for this DOI (1979). A common cause-failure availability model. *Microelectronics Reliability*. https://doi.org/10.1016/0026-2714(79)90195-1 Difference: models common-cause failure to compute system reliability; this paper prices what an unstated dependence leaves open in the quote's unit. (supports `redundancy-defeated`)
 
-11. anon. (1983) Linearly correlated intermittent failures. *Microelectronics Reliability*. doi:10.1016/0026-2714(83)91230-1
+[11] author not established on Crossref for this DOI (1983). Linearly correlated intermittent failures. *Microelectronics Reliability*. https://doi.org/10.1016/0026-2714(83)91230-1 Difference: models common-cause failure to compute system reliability; this paper prices what an unstated dependence leaves open in the quote's unit. (supports `redundancy-defeated`)
 
-12. anon. (1988) Correlated failures in fault-tolerant computers. *Microelectronics Reliability*. doi:10.1016/0026-2714(88)90195-3
+[12] author not established on Crossref for this DOI (1988). Correlated failures in fault-tolerant computers. *Microelectronics Reliability*. https://doi.org/10.1016/0026-2714(88)90195-3 Difference: models common-cause failure to compute system reliability; this paper prices what an unstated dependence leaves open in the quote's unit. (supports `redundancy-defeated`)
 
-13. anon. (1988) Reliability of a system for Markov-dependent components. *Microelectronics Reliability*. doi:10.1016/0026-2714(88)90062-5
+[13] author not established on Crossref for this DOI (1988). Reliability of a system for Markov-dependent components. *Microelectronics Reliability*. https://doi.org/10.1016/0026-2714(88)90062-5 Difference: models common-cause failure to compute system reliability; this paper prices what an unstated dependence leaves open in the quote's unit. (supports `redundancy-defeated`)
 
-14. anon. (1990) Redundancy strategy for dependent subsystems. *Microelectronics Reliability*. doi:10.1016/0026-2714(90)90489-a
+[14] author not established on Crossref for this DOI (1990). Redundancy strategy for dependent subsystems. *Microelectronics Reliability*. https://doi.org/10.1016/0026-2714(90)90489-a Difference: models common-cause failure to compute system reliability; this paper prices what an unstated dependence leaves open in the quote's unit. (supports `redundancy-defeated`)
 
-15. anon. (1992) Redundancy optimization of k--n systems with common-cause failures. *Microelectronics Reliability*. doi:10.1016/0026-2714(92)90164-g
+[15] author not established on Crossref for this DOI (1992). Redundancy optimization of k--n systems with common-cause failures. *Microelectronics Reliability*. https://doi.org/10.1016/0026-2714(92)90164-g Difference: models common-cause failure to compute system reliability; this paper prices what an unstated dependence leaves open in the quote's unit. (supports `redundancy-defeated`)
 
-16. anon. (1998) The Betaplus Common Cause Failure Model. *Safety and Reliability*. doi:10.1080/09617353.1998.11690672
+[16] author not established on Crossref for this DOI (1998). The Betaplus Common Cause Failure Model. *Safety and Reliability*. https://doi.org/10.1080/09617353.1998.11690672 Difference: models common-cause failure to compute system reliability; this paper prices what an unstated dependence leaves open in the quote's unit. (supports `redundancy-defeated`)
 
-17. anon. (2003) Concepts of Probability Theory For Sensitivity And Uncertainty Analysis. *Sensitivity &amp; Uncertainty Analysis, Volume 1*. doi:10.1201/9780203498798.ch2
+[17] author not established on Crossref for this DOI (2003). Concepts of Probability Theory For Sensitivity And Uncertainty Analysis. *Sensitivity &amp; Uncertainty Analysis, Volume 1*. https://doi.org/10.1201/9780203498798.ch2 Difference: treats a quoted probability's assumptions as a sensitivity question inside a study; this paper makes the quoted number the object. (supports `assumption-sensitivity`)
 
-18. anon. (2006) Estimation of the Probability of a Failure Set. *Springer Series in Operations Research and Financial Engineering*. doi:10.1007/0-387-34471-3_8
+[18] author not established on Crossref for this DOI (2006). Estimation of the Probability of a Failure Set. *Springer Series in Operations Research and Financial Engineering*. https://doi.org/10.1007/0-387-34471-3_8 Difference: estimates far-tail probabilities by simulation or extrapolation; this paper declines to estimate and bounds instead. (supports `rare-event-cost`)
 
-19. anon. (2017) Continuous Availability and Replication. *Data Protection*. doi:10.4324/9781315169620-10
+[19] author not established on Crossref for this DOI (2017). Continuous Availability and Replication. *Data Protection*. https://doi.org/10.4324/9781315169620-10 Difference: publishes the figure as a commitment to a customer; this paper states what the commitment asserts about an unmeasured quantity. (supports `sla-promise`)
 
-20. anon. (2019) Multi-data Center Replication. *Encyclopedia of Big Data Technologies*. doi:10.1007/978-3-319-77525-8_100219
+[20] author not established on Crossref for this DOI (2019). Multi-data Center Replication. *Encyclopedia of Big Data Technologies*. https://doi.org/10.1007/978-3-319-77525-8_100219 Difference: computes the durability figure from per-device rates under independence; this paper prices the independence step itself. (supports `durability-models`)
 
-21. - V.R.I. (2020) Azure Storage Redundancy: Ensuring Availability and Durability in Hybrid Cloud Environments. *International Journal For Multidisciplinary Research*. doi:10.36948/ijfmr.2020.v02i04.39038
+[21] -, V. R. I. (2020). Azure Storage Redundancy: Ensuring Availability and Durability in Hybrid Cloud Environments. *International Journal For Multidisciplinary Research*. https://doi.org/10.36948/ijfmr.2020.v02i04.39038 Difference: publishes the figure as a commitment to a customer; this paper states what the commitment asserts about an unmeasured quantity. (supports `sla-promise`)
 
-22. Asmussen S. (2006) Improved algorithms for rare event simulation with heavy tails. *Advances in Applied Probability*. doi:10.1239/aap/1151337084
+[22] Asmussen, S. (2006). Improved algorithms for rare event simulation with heavy tails. *Advances in Applied Probability*. https://doi.org/10.1239/aap/1151337084 Difference: estimates far-tail probabilities by simulation or extrapolation; this paper declines to estimate and bounds instead. (supports `rare-event-cost`)
 
-23. AUBINEAU B. (2012) Cloud Storage. *Industrie du futur*. doi:10.51257/a-v1-h6010
+[23] Aubineau, B. (2012). Cloud Storage. *Industrie du futur*. https://doi.org/10.51257/a-v1-h6010 Difference: publishes the figure as a commitment to a customer; this paper states what the commitment asserts about an unmeasured quantity. (supports `sla-promise`)
 
-24. anon. (2016) Bivariate Lower Bounds. *Multivariate Bonferroni-Type Inequalities*. doi:10.1201/b17163-12
+[24] author not established on Crossref for this DOI (2016). Bivariate Lower Bounds. *Multivariate Bonferroni-Type Inequalities*. https://doi.org/10.1201/b17163-12 Difference: sharpens the intersection bound as a tool; this paper reads a quoted number against it and reports the distance in nines. (supports `bonferroni-lower`)
 
-25. anon. (2016) Bivariate Upper Bounds. *Multivariate Bonferroni-Type Inequalities*. doi:10.1201/b17163-10
+[25] author not established on Crossref for this DOI (2016). Bivariate Upper Bounds. *Multivariate Bonferroni-Type Inequalities*. https://doi.org/10.1201/b17163-10 Difference: sharpens the intersection bound as a tool; this paper reads a quoted number against it and reports the distance in nines. (supports `bonferroni-lower`)
 
-26. anon. (2016) Multivariate and Hybrid Upper Bounds. *Multivariate Bonferroni-Type Inequalities*. doi:10.1201/b17163-11
+[26] author not established on Crossref for this DOI (2016). Multivariate and Hybrid Upper Bounds. *Multivariate Bonferroni-Type Inequalities*. https://doi.org/10.1201/b17163-11 Difference: sharpens the intersection bound as a tool; this paper reads a quoted number against it and reports the distance in nines. (supports `bonferroni-lower`)
 
-27. anon. (2016) Multivariate and Hybrid Lower Bounds. *Multivariate Bonferroni-Type Inequalities*. doi:10.1201/b17163-13
+[27] author not established on Crossref for this DOI (2016). Multivariate and Hybrid Lower Bounds. *Multivariate Bonferroni-Type Inequalities*. https://doi.org/10.1201/b17163-13 Difference: sharpens the intersection bound as a tool; this paper reads a quoted number against it and reports the distance in nines. (supports `bonferroni-lower`)
 
-28. Badikov S. (2016) No-Arbitrage Bounds for the Forward Smile Given Marginals. *SSRN Electronic Journal*. doi:10.2139/ssrn.2755274
+[28] Badikov, S. (2016). No-Arbitrage Bounds for the Forward Smile Given Marginals. *SSRN Electronic Journal*. https://doi.org/10.2139/ssrn.2755274 Difference: names the same arithmetic as a fallacy in risk aggregation; this paper supplies the identified set that the fallacy is a misreading of. (supports `diversification-fallacy`)
 
-29. Bairavasundaram L.N. (2007) An analysis of latent sector errors in disk drives. *ACM SIGMETRICS Performance Evaluation Review*. doi:10.1145/1269899.1254917
+[29] Bairavasundaram, L. N. (2007). An analysis of latent sector errors in disk drives. *ACM SIGMETRICS Performance Evaluation Review*. https://doi.org/10.1145/1269899.1254917 Difference: measures correlated failure in production systems; this paper asks what a quote computed without that measurement identifies. (supports `correlation-measured`)
 
-30. Bairavasundaram L.N. (2008) An analysis of data corruption in the storage stack. *ACM Transactions on Storage*. doi:10.1145/1416944.1416947
+[30] Bairavasundaram, L. N. (2008). An analysis of data corruption in the storage stack. *ACM Transactions on Storage*. https://doi.org/10.1145/1416944.1416947 Difference: measures correlated failure in production systems; this paper asks what a quote computed without that measurement identifies. (supports `correlation-measured`)
 
-31. Balesdent M. (2014) Rare Event Probability Estimation in the Presence of Epistemic Uncertainty on Input Probability Distribution Parameters. *Methodology and Computing in Applied Probability*. doi:10.1007/s11009-014-9411-x
+[31] Balesdent, M. (2014). Rare Event Probability Estimation in the Presence of Epistemic Uncertainty on Input Probability Distribution Parameters. *Methodology and Computing in Applied Probability*. https://doi.org/10.1007/s11009-014-9411-x Difference: estimates far-tail probabilities by simulation or extrapolation; this paper declines to estimate and bounds instead. (supports `rare-event-cost`)
 
-32. Bansal S. (2011) A Dynamic Replica Placement Algorithm to Enhance Multiple Failures Capability in Distributed System. *International Journal of Distributed and Parallel systems*. doi:10.5121/ijdps.2011.2607
+[32] Bansal, S. (2011). A Dynamic Replica Placement Algorithm to Enhance Multiple Failures Capability in Distributed System. *International Journal of Distributed and Parallel systems*. https://doi.org/10.5121/ijdps.2011.2607 Difference: assumes a dependence and constrains placement; this paper assumes none and reports what that leaves unidentified. (supports `placement-under-correlation`)
 
-33. Barrera J. (2023) Communication Network Reliability under geographically correlated failures using Probabilistic Seismic Hazard Analysis. doi:10.36227/techrxiv.20954647.v2
+[33] Barrera, J. (2023). Communication Network Reliability under geographically correlated failures using Probabilistic Seismic Hazard Analysis. https://doi.org/10.36227/techrxiv.20954647.v2 Difference: measures correlated failure in production systems; this paper asks what a quote computed without that measurement identifies. (supports `correlation-measured`)
 
-34. Barros A.K. (2000) The Independence Assumption: Dependent Component Analysis. *Perspectives in Neural Computing*. doi:10.1007/978-1-4471-0443-8_4
+[34] Barros, A. K. (2000). The Independence Assumption: Dependent Component Analysis. *Perspectives in Neural Computing*. https://doi.org/10.1007/978-1-4471-0443-8_4 Difference: treats a quoted probability's assumptions as a sensitivity question inside a study; this paper makes the quoted number the object. (supports `assumption-sensitivity`)
 
-35. Basmadjian R. (2026) Availability, Load, and Energy Cost of Quorum-based Replication Protocols: A Comprehensive Survey. doi:10.2139/ssrn.6904050
+[35] Basmadjian, R. (2026). Availability, Load, and Energy Cost of Quorum-based Replication Protocols: A Comprehensive Survey. https://doi.org/10.2139/ssrn.6904050 Difference: designs quorums whose availability depends on correlated node failure; this paper asks what the availability figure identifies given only marginals. (supports `quorum-availability`)
 
-36. Belak C. (2014) Worst-case optimal investment with a random number of crashes. *Statistics &amp; Probability Letters*. doi:10.1016/j.spl.2014.03.021
+[36] Belak, C. (2014). Worst-case optimal investment with a random number of crashes. *Statistics &amp; Probability Letters*. https://doi.org/10.1016/j.spl.2014.03.021 Difference: names the same arithmetic as a fallacy in risk aggregation; this paper supplies the identified set that the fallacy is a misreading of. (supports `diversification-fallacy`)
 
-37. Benoit A. (2012) Optimal Algorithms and Approximation Algorithms for Replica Placement with Distance Constraints in Tree Networks. *2012 IEEE 26th International Parallel and Distributed Processing Symposium*. doi:10.1109/ipdps.2012.95
+[37] Benoit, A. (2012). Optimal Algorithms and Approximation Algorithms for Replica Placement with Distance Constraints in Tree Networks. *2012 IEEE 26th International Parallel and Distributed Processing Symposium*. https://doi.org/10.1109/ipdps.2012.95 Difference: assumes a dependence and constrains placement; this paper assumes none and reports what that leaves unidentified. (supports `placement-under-correlation`)
 
-38. Bernard C. (2013) Bounds on Capital Requirements for Bivariate Risk with Given Marginals and Partial Information on the Dependence. doi:10.2139/ssrn.2335391
+[38] Bernard, C. (2013). Bounds on Capital Requirements for Bivariate Risk with Given Marginals and Partial Information on the Dependence. https://doi.org/10.2139/ssrn.2335391 Difference: names the same arithmetic as a fallacy in risk aggregation; this paper supplies the identified set that the fallacy is a misreading of. (supports `diversification-fallacy`)
 
-39. Berner C. (2016) Strengthening quantitative risk assessments by systematic treatment of uncertain assumptions. *Reliability Engineering &amp; System Safety*. doi:10.1016/j.ress.2015.10.009
+[39] Berner, C. (2016). Strengthening quantitative risk assessments by systematic treatment of uncertain assumptions. *Reliability Engineering &amp; System Safety*. https://doi.org/10.1016/j.ress.2015.10.009 Difference: treats a quoted probability's assumptions as a sensitivity question inside a study; this paper makes the quoted number the object. (supports `assumption-sensitivity`)
 
-40. Bhattacharya A. (1991) Redundancy optimization problems for systems with dependent failure rates. *Microelectronics Reliability*. doi:10.1016/0026-2714(91)90296-j
+[40] Bhattacharya, A. (1991). Redundancy optimization problems for systems with dependent failure rates. *Microelectronics Reliability*. https://doi.org/10.1016/0026-2714(91)90296-j Difference: models common-cause failure to compute system reliability; this paper prices what an unstated dependence leaves open in the quote's unit. (supports `redundancy-defeated`)
 
-41. Bosse S. (2015) Optimizing IT Service Costs with Respect to the Availability Service Level Objective. *2015 10th International Conference on Availability, Reliability and Security*. doi:10.1109/ares.2015.11
+[41] Bosse, S. (2015). Optimizing IT Service Costs with Respect to the Availability Service Level Objective. *2015 10th International Conference on Availability, Reliability and Security*. https://doi.org/10.1109/ares.2015.11 Difference: publishes the figure as a commitment to a customer; this paper states what the commitment asserts about an unmeasured quantity. (supports `sla-promise`)
 
-42. Botev Z.I. (2016) An M-estimator for rare-event probability estimation. *2016 Winter Simulation Conference (WSC)*. doi:10.1109/wsc.2016.7822103
+[42] Botev, Z. I. (2016). An M-estimator for rare-event probability estimation. *2016 Winter Simulation Conference (WSC)*. https://doi.org/10.1109/wsc.2016.7822103 Difference: estimates far-tail probabilities by simulation or extrapolation; this paper declines to estimate and bounds instead. (supports `rare-event-cost`)
 
-43. Bürgi R. (2009) Risk Aggregation, Dependence Structure and Diversification Benefit. doi:10.2139/ssrn.1468526
+[43] Bürgi, R. (2009). Risk Aggregation, Dependence Structure and Diversification Benefit. https://doi.org/10.2139/ssrn.1468526 Difference: names the same arithmetic as a fallacy in risk aggregation; this paper supplies the identified set that the fallacy is a misreading of. (supports `diversification-fallacy`)
 
-44. Bush R. (2019) The Fallacy of Currency Diversification: <i>How Zero Correlation Can Still Add Risk</i>. *The Journal of Investing*. doi:10.3905/joi.2019.1.097
+[44] Bush, R. (2019). The Fallacy of Currency Diversification: <i>How Zero Correlation Can Still Add Risk</i>. *The Journal of Investing*. https://doi.org/10.3905/joi.2019.1.097 Difference: names the same arithmetic as a fallacy in risk aggregation; this paper supplies the identified set that the fallacy is a misreading of. (supports `diversification-fallacy`)
 
-45. Butucea C. (2018) Maximum entropy distribution of order statistics with given marginals. *Bernoulli*. doi:10.3150/16-bej868
+[45] Butucea, C. (2018). Maximum entropy distribution of order statistics with given marginals. *Bernoulli*. https://doi.org/10.3150/16-bej868 Difference: optimises under the bound for dependent risks; this paper asks which end of the bound the quoted figure sits at. (supports `bounds-stated-not-attained`)
 
-46. Chan H.P. (2012) Rare-Event Simulation of Heavy-Tailed Random Walks by Sequential Importance Sampling and Resampling. *Advances in Applied Probability*. doi:10.1239/aap/1354716593
+[46] Chan, H. P. (2012). Rare-Event Simulation of Heavy-Tailed Random Walks by Sequential Importance Sampling and Resampling. *Advances in Applied Probability*. https://doi.org/10.1239/aap/1354716593 Difference: estimates far-tail probabilities by simulation or extrapolation; this paper declines to estimate and bounds instead. (supports `rare-event-cost`)
 
-47. Chang T.Y. (2012) An Optimal Replica Placement Algorithm for Symphony P2P Networks. *2012 Fifth International Symposium on Parallel Architectures, Algorithms and Programming*. doi:10.1109/paap.2012.29
+[47] Chang, T. Y. (2012). An Optimal Replica Placement Algorithm for Symphony P2P Networks. *2012 Fifth International Symposium on Parallel Architectures, Algorithms and Programming*. https://doi.org/10.1109/paap.2012.29 Difference: assumes a dependence and constrains placement; this paper assumes none and reports what that leaves unidentified. (supports `placement-under-correlation`)
 
-48. Chan-Ik Park (1995) Efficient placement of parity and data to tolerate two disk failures in disk array systems. *IEEE Transactions on Parallel and Distributed Systems*. doi:10.1109/71.476189
+[48] Chan-Ik Park (1995). Efficient placement of parity and data to tolerate two disk failures in disk array systems. *IEEE Transactions on Parallel and Distributed Systems*. https://doi.org/10.1109/71.476189 Difference: computes the durability figure from per-device rates under independence; this paper prices the independence step itself. (supports `durability-models`)
 
-49. Charles D. (2009) Hierarchical Erasure coding for P2P storage. *2009 IEEE Pacific Rim Conference on Communications, Computers and Signal Processing*. doi:10.1109/pacrim.2009.5291245
+[49] Charles, D. (2009). Hierarchical Erasure coding for P2P storage. *2009 IEEE Pacific Rim Conference on Communications, Computers and Signal Processing*. https://doi.org/10.1109/pacrim.2009.5291245 Difference: changes the redundancy arithmetic of the same model; this paper shows the identified set is unchanged by it. (supports `erasure-arithmetic`)
 
-50. Chaubey M. (2015) Replicated Data Placement for Uncertain Scheduling. *2015 IEEE International Parallel and Distributed Processing Symposium Workshop*. doi:10.1109/ipdpsw.2015.50
+[50] Chaubey, M. (2015). Replicated Data Placement for Uncertain Scheduling. *2015 IEEE International Parallel and Distributed Processing Symposium Workshop*. https://doi.org/10.1109/ipdpsw.2015.50 Difference: assumes a dependence and constrains placement; this paper assumes none and reports what that leaves unidentified. (supports `placement-under-correlation`)
 
-51. Chen T. (1996) Multivariate Bonferroni-type lower bounds. *Journal of Applied Probability*. doi:10.2307/3215354
+[51] Chen, T. (1996). Multivariate Bonferroni-type lower bounds. *Journal of Applied Probability*. https://doi.org/10.2307/3215354 Difference: sharpens the intersection bound as a tool; this paper reads a quoted number against it and reports the distance in nines. (supports `bonferroni-lower`)
 
-52. Cheung K.C. (2010) Characterizing a comonotonic random vector by the distribution of the sum of its components. *Insurance: Mathematics and Economics*. doi:10.1016/j.insmatheco.2010.06.004
+[52] Cheung, K. C. (2010). Characterizing a comonotonic random vector by the distribution of the sum of its components. *Insurance: Mathematics and Economics*. https://doi.org/10.1016/j.insmatheco.2010.06.004 Difference: optimises under the bound for dependent risks; this paper asks which end of the bound the quoted figure sits at. (supports `bounds-stated-not-attained`)
 
-53. Chichilnisky G. (2009) Catastrophic Risk. doi:10.2139/ssrn.1375632
+[53] Chichilnisky, G. (2009). Catastrophic Risk. https://doi.org/10.2139/ssrn.1375632 Difference: names the same arithmetic as a fallacy in risk aggregation; this paper supplies the identified set that the fallacy is a misreading of. (supports `diversification-fallacy`)
 
-54. Cicalese F. (2017) How to find a joint probability distribution of minimum entropy (almost) given the marginals. *2017 IEEE International Symposium on Information Theory (ISIT)*. doi:10.1109/isit.2017.8006914
+[54] Cicalese, F. (2017). How to find a joint probability distribution of minimum entropy (almost) given the marginals. *2017 IEEE International Symposium on Information Theory (ISIT)*. https://doi.org/10.1109/isit.2017.8006914 Difference: optimises under the bound for dependent risks; this paper asks which end of the bound the quoted figure sits at. (supports `bounds-stated-not-attained`)
 
-55. Connors D. (1984) The variability of system failure probability. *Reliability Engineering*. doi:10.1016/0143-8174(84)90045-3
+[55] Connors, D. (1984). The variability of system failure probability. *Reliability Engineering*. https://doi.org/10.1016/0143-8174(84)90045-3 Difference: treats a quoted probability's assumptions as a sensitivity question inside a study; this paper makes the quoted number the object. (supports `assumption-sensitivity`)
 
-56. Cossette H. (2014) A note on the computation of sharp numerical bounds for the distribution of the sum, product or ratio of dependent risks. *Journal of Multivariate Analysis*. doi:10.1016/j.jmva.2014.04.023
+[56] Cossette, H. (2014). A note on the computation of sharp numerical bounds for the distribution of the sum, product or ratio of dependent risks. *Journal of Multivariate Analysis*. https://doi.org/10.1016/j.jmva.2014.04.023 Difference: optimises under the bound for dependent risks; this paper asks which end of the bound the quoted figure sits at. (supports `bounds-stated-not-attained`)
 
-57. Cronvall O. (2012) A study on the effect of flaw detection probability assumptions on risk reduction achieved by non-destructive inspection. *Reliability Engineering &amp; System Safety*. doi:10.1016/j.ress.2012.03.012
+[57] Cronvall, O. (2012). A study on the effect of flaw detection probability assumptions on risk reduction achieved by non-destructive inspection. *Reliability Engineering &amp; System Safety*. https://doi.org/10.1016/j.ress.2012.03.012 Difference: treats a quoted probability's assumptions as a sensitivity question inside a study; this paper makes the quoted number the object. (supports `assumption-sensitivity`)
 
-58. Dall’aglio G. (1991) Frechet Classes: The Beginnings. *Advances in Probability Distributions with Given Marginals*. doi:10.1007/978-94-011-3466-8_1
+[58] Dall’aglio, G. (1991). Frechet Classes: The Beginnings. *Advances in Probability Distributions with Given Marginals*. https://doi.org/10.1007/978-94-011-3466-8_1 Difference: states the class and its extremes for a given joint problem; this paper locates a published durability figure inside it. (supports `frechet-class`)
 
-59. de Guise P. (2020) Continuous Availability, Replication, and CDP. *Data Protection*. doi:10.1201/9780367463496-10
+[59] de Guise, P. (2020). Continuous Availability, Replication, and CDP. *Data Protection*. https://doi.org/10.1201/9780367463496-10 Difference: publishes the figure as a commitment to a customer; this paper states what the commitment asserts about an unmeasured quantity. (supports `sla-promise`)
 
-60. De Meyer H. (2007) On the transitivity of the comonotonic and countermonotonic comparison of random variables. *Journal of Multivariate Analysis*. doi:10.1016/j.jmva.2005.05.007
+[60] De Meyer, H. (2007). On the transitivity of the comonotonic and countermonotonic comparison of random variables. *Journal of Multivariate Analysis*. https://doi.org/10.1016/j.jmva.2005.05.007 Difference: optimises under the bound for dependent risks; this paper asks which end of the bound the quoted figure sits at. (supports `bounds-stated-not-attained`)
 
-61. Denuit M. (2007) Comonotonic bounds on the survival probabilities in the Lee–Carter model for mortality projection. *Journal of Computational and Applied Mathematics*. doi:10.1016/j.cam.2006.03.015
+[61] Denuit, M. (2007). Comonotonic bounds on the survival probabilities in the Lee–Carter model for mortality projection. *Journal of Computational and Applied Mathematics*. https://doi.org/10.1016/j.cam.2006.03.015 Difference: optimises under the bound for dependent risks; this paper asks which end of the bound the quoted figure sits at. (supports `bounds-stated-not-attained`)
 
-62. Djouama A. (2026) MobiCloud: Reliability-Aware Coordination and Adaptive Erasure Coding for Minimal Infrastructure Smartphone Storage Clusters. doi:10.2139/ssrn.7429824
+[62] Djouama, A. (2026). MobiCloud: Reliability-Aware Coordination and Adaptive Erasure Coding for Minimal Infrastructure Smartphone Storage Clusters. https://doi.org/10.2139/ssrn.7429824 Difference: changes the redundancy arithmetic of the same model; this paper shows the identified set is unchanged by it. (supports `erasure-arithmetic`)
 
-63. Dohmen K. (2002) Improved Inclusion-Exclusion Identities and Bonferroni Inequalities with Reliability Applications. *SIAM Journal on Discrete Mathematics*. doi:10.1137/s0895480101392630
+[63] Dohmen, K. (2002). Improved Inclusion-Exclusion Identities and Bonferroni Inequalities with Reliability Applications. *SIAM Journal on Discrete Mathematics*. https://doi.org/10.1137/s0895480101392630 Difference: sharpens the intersection bound as a tool; this paper reads a quoted number against it and reports the distance in nines. (supports `bonferroni-lower`)
 
-64. Dohmen K. (2003) 3 Bonferroni Inequalities via Abstract Tubes. *Lecture Notes in Mathematics*. doi:10.1007/978-3-540-39399-3_3
+[64] Dohmen, K. (2003). 3 Bonferroni Inequalities via Abstract Tubes. *Lecture Notes in Mathematics*. https://doi.org/10.1007/978-3-540-39399-3_3 Difference: sharpens the intersection bound as a tool; this paper reads a quoted number against it and reports the distance in nines. (supports `bonferroni-lower`)
 
-65. Dohmen K. (2003) Improved Bonferroni Inequalities via Abstract Tubes. *Lecture Notes in Mathematics*. doi:10.1007/b13785
+[65] Dohmen, K. (2003). Improved Bonferroni Inequalities via Abstract Tubes. *Lecture Notes in Mathematics*. https://doi.org/10.1007/b13785 Difference: sharpens the intersection bound as a tool; this paper reads a quoted number against it and reports the distance in nines. (supports `bonferroni-lower`)
 
-66. Dong H. (2024) Asynchronous Consensus Quorum Read: Pioneering Read Optimization for Asynchronous Consensus Protocols. *Electronics*. doi:10.3390/electronics13030481
+[66] Dong, H. (2024). Asynchronous Consensus Quorum Read: Pioneering Read Optimization for Asynchronous Consensus Protocols. *Electronics*. https://doi.org/10.3390/electronics13030481 Difference: designs quorums whose availability depends on correlated node failure; this paper asks what the availability figure identifies given only marginals. (supports `quorum-availability`)
 
-67. Durante F. (2008) Bounds for Trivariate Copulas with Given Bivariate Marginals. *Journal of Inequalities and Applications*. doi:10.1155/2008/161537
+[67] Durante, F. (2008). Bounds for Trivariate Copulas with Given Bivariate Marginals. *Journal of Inequalities and Applications*. https://doi.org/10.1155/2008/161537 Difference: optimises under the bound for dependent risks; this paper asks which end of the bound the quoted figure sits at. (supports `bounds-stated-not-attained`)
 
-68. Ekeland I. (2008) Comonotonic Measures of Multivariate Risks. doi:10.2139/ssrn.1115729
+[68] Ekeland, I. (2008). Comonotonic Measures of Multivariate Risks. https://doi.org/10.2139/ssrn.1115729 Difference: optimises under the bound for dependent risks; this paper asks which end of the bound the quoted figure sits at. (supports `bounds-stated-not-attained`)
 
-69. Ekisheva S. (2015) North American AC circuit outage rates and durations in assessment of transmission system reliability and availability. *2015 IEEE Power &amp; Energy Society General Meeting*. doi:10.1109/pesgm.2015.7285782
+[69] Ekisheva, S. (2015). North American AC circuit outage rates and durations in assessment of transmission system reliability and availability. *2015 IEEE Power &amp; Energy Society General Meeting*. https://doi.org/10.1109/pesgm.2015.7285782 Difference: measures correlated failure in production systems; this paper asks what a quote computed without that measurement identifies. (supports `correlation-measured`)
 
-70. Ekisheva S. (2017) Outage statistics, reliability and availability of DC circuits in North American Bulk Power System. *2017 IEEE Power &amp; Energy Society General Meeting*. doi:10.1109/pesgm.2017.8274442
+[70] Ekisheva, S. (2017). Outage statistics, reliability and availability of DC circuits in North American Bulk Power System. *2017 IEEE Power &amp; Energy Society General Meeting*. https://doi.org/10.1109/pesgm.2017.8274442 Difference: measures correlated failure in production systems; this paper asks what a quote computed without that measurement identifies. (supports `correlation-measured`)
 
-71. Embrechts P. (2010) Bounds for the sum of dependent risks having overlapping marginals. *Journal of Multivariate Analysis*. doi:10.1016/j.jmva.2009.07.004
+[71] Embrechts, P. (2010). Bounds for the sum of dependent risks having overlapping marginals. *Journal of Multivariate Analysis*. https://doi.org/10.1016/j.jmva.2009.07.004 Difference: optimises under the bound for dependent risks; this paper asks which end of the bound the quoted figure sits at. (supports `bounds-stated-not-attained`)
 
-72. Fiondella L. (2010) Estimating system reliability with correlated component failures. *International Journal of Reliability and Safety*. doi:10.1504/ijrs.2010.032445
+[72] Fiondella, L. (2010). Estimating system reliability with correlated component failures. *International Journal of Reliability and Safety*. https://doi.org/10.1504/ijrs.2010.032445 Difference: models common-cause failure to compute system reliability; this paper prices what an unstated dependence leaves open in the quote's unit. (supports `redundancy-defeated`)
 
-73. Fiondella L. (2014) Recovery block fault tolerance considering correlated failures. *2014 Reliability and Maintainability Symposium*. doi:10.1109/rams.2014.6798525
+[73] Fiondella, L. (2014). Recovery block fault tolerance considering correlated failures. *2014 Reliability and Maintainability Symposium*. https://doi.org/10.1109/rams.2014.6798525 Difference: models common-cause failure to compute system reliability; this paper prices what an unstated dependence leaves open in the quote's unit. (supports `redundancy-defeated`)
 
-74. Fiondella L. (2014) Reliability of two failure mode systems subject to correlated failures. *2014 Reliability and Maintainability Symposium*. doi:10.1109/rams.2014.6798438
+[74] Fiondella, L. (2014). Reliability of two failure mode systems subject to correlated failures. *2014 Reliability and Maintainability Symposium*. https://doi.org/10.1109/rams.2014.6798438 Difference: models common-cause failure to compute system reliability; this paper prices what an unstated dependence leaves open in the quote's unit. (supports `redundancy-defeated`)
 
-75. Flage R. (2020) Assumptions in quantitative risk assessments: When explicit and when tacit?. *Reliability Engineering &amp; System Safety*. doi:10.1016/j.ress.2020.106799
+[75] Flage, R. (2020). Assumptions in quantitative risk assessments: When explicit and when tacit?. *Reliability Engineering &amp; System Safety*. https://doi.org/10.1016/j.ress.2020.106799 Difference: treats a quoted probability's assumptions as a sensitivity question inside a study; this paper makes the quoted number the object. (supports `assumption-sensitivity`)
 
-76. Franklin P.H. (2017) Predicting disk drive failure using condition based monitoring. *2017 Annual Reliability and Maintainability Symposium (RAMS)*. doi:10.1109/ram.2017.7889647
+[76] Franklin, P. H. (2017). Predicting disk drive failure using condition based monitoring. *2017 Annual Reliability and Maintainability Symposium (RAMS)*. https://doi.org/10.1109/ram.2017.7889647 Difference: measures correlated failure in production systems; this paper asks what a quote computed without that measurement identifies. (supports `correlation-measured`)
 
-77. Fu Y. (2015) EC-FRM: An Erasure Coding Framework to Speed Up Reads for Erasure Coded Cloud Storage Systems. *2015 44th International Conference on Parallel Processing*. doi:10.1109/icpp.2015.57
+[77] Fu, Y. (2015). EC-FRM: An Erasure Coding Framework to Speed Up Reads for Erasure Coded Cloud Storage Systems. *2015 44th International Conference on Parallel Processing*. https://doi.org/10.1109/icpp.2015.57 Difference: changes the redundancy arithmetic of the same model; this paper shows the identified set is unchanged by it. (supports `erasure-arithmetic`)
 
-78. Galambos J. (1977) Bonferroni Inequalities. *The Annals of Probability*. doi:10.1214/aop/1176995765
+[78] Galambos, J. (1977). Bonferroni Inequalities. *The Annals of Probability*. https://doi.org/10.1214/aop/1176995765 Difference: sharpens the intersection bound as a tool; this paper reads a quoted number against it and reports the distance in nines. (supports `bonferroni-lower`)
 
-79. Galambos J. (1988) 1. Failure models via extreme value theory. *Advances in Applied Probability*. doi:10.1017/s000186780001764x
+[79] Galambos, J. (1988). 1. Failure models via extreme value theory. *Advances in Applied Probability*. https://doi.org/10.1017/s000186780001764x Difference: estimates far-tail probabilities by simulation or extrapolation; this paper declines to estimate and bounds instead. (supports `rare-event-cost`)
 
-80. Galambos J. (1988) 2. Inequalities in extreme value theory. *Advances in Applied Probability*. doi:10.1017/s0001867800017651
+[80] Galambos, J. (1988). 2. Inequalities in extreme value theory. *Advances in Applied Probability*. https://doi.org/10.1017/s0001867800017651 Difference: estimates far-tail probabilities by simulation or extrapolation; this paper declines to estimate and bounds instead. (supports `rare-event-cost`)
 
-81. Galichon A. (2011) A Stochastic Control Approach to No-Arbitrage Bounds Given Marginals, with an Application to Lookback Options. *SSRN Electronic Journal*. doi:10.2139/ssrn.1912477
+[81] Galichon, A. (2011). A Stochastic Control Approach to No-Arbitrage Bounds Given Marginals, with an Application to Lookback Options. *SSRN Electronic Journal*. https://doi.org/10.2139/ssrn.1912477 Difference: names the same arithmetic as a fallacy in risk aggregation; this paper supplies the identified set that the fallacy is a misreading of. (supports `diversification-fallacy`)
 
-82. Gan Y. (2024) Erasure Coding Based Optimization in Decentralized Distributed Storage Systems. *2024 International Conference on Networking, Architecture and Storage (NAS)*. doi:10.1109/nas63802.2024.10781352
+[82] Gan, Y. (2024). Erasure Coding Based Optimization in Decentralized Distributed Storage Systems. *2024 International Conference on Networking, Architecture and Storage (NAS)*. https://doi.org/10.1109/nas63802.2024.10781352 Difference: changes the redundancy arithmetic of the same model; this paper shows the identified set is unchanged by it. (supports `erasure-arithmetic`)
 
-83. Goel L. (1992) A warm standby redundant system with correlated failures and repairs. *Microelectronics Reliability*. doi:10.1016/0026-2714(92)90044-l
+[83] Goel, L. (1992). A warm standby redundant system with correlated failures and repairs. *Microelectronics Reliability*. https://doi.org/10.1016/0026-2714(92)90044-l Difference: models common-cause failure to compute system reliability; this paper prices what an unstated dependence leaves open in the quote's unit. (supports `redundancy-defeated`)
 
-84. Goel L. (1993) A two unit series system with correlated failures and repairs. *Microelectronics Reliability*. doi:10.1016/0026-2714(93)90010-v
+[84] Goel, L. (1993). A two unit series system with correlated failures and repairs. *Microelectronics Reliability*. https://doi.org/10.1016/0026-2714(93)90010-v Difference: models common-cause failure to compute system reliability; this paper prices what an unstated dependence leaves open in the quote's unit. (supports `redundancy-defeated`)
 
-85. Goel L. (1994) An inspection policy for unrevealed failures in a two-unit cold standby system subject to correlated failures and repairs. *Microelectronics Reliability*. doi:10.1016/0026-2714(94)90516-9
+[85] Goel, L. (1994). An inspection policy for unrevealed failures in a two-unit cold standby system subject to correlated failures and repairs. *Microelectronics Reliability*. https://doi.org/10.1016/0026-2714(94)90516-9 Difference: models common-cause failure to compute system reliability; this paper prices what an unstated dependence leaves open in the quote's unit. (supports `redundancy-defeated`)
 
-86. Gomes J. (1996) Extreme value theory for a thermal energy storage model. *Statistics &amp; Probability Letters*. doi:10.1016/0167-7152(95)00197-2
+[86] Gomes, J. (1996). Extreme value theory for a thermal energy storage model. *Statistics &amp; Probability Letters*. https://doi.org/10.1016/0167-7152(95)00197-2 Difference: estimates far-tail probabilities by simulation or extrapolation; this paper declines to estimate and bounds instead. (supports `rare-event-cost`)
 
-87. Gu R. (2015) CCF structural reliability estimation under statistical uncertainty. *2015 Annual Reliability and Maintainability Symposium (RAMS)*. doi:10.1109/rams.2015.7105172
+[87] Gu, R. (2015). CCF structural reliability estimation under statistical uncertainty. *2015 Annual Reliability and Maintainability Symposium (RAMS)*. https://doi.org/10.1109/rams.2015.7105172 Difference: treats a quoted probability's assumptions as a sensitivity question inside a study; this paper makes the quoted number the object. (supports `assumption-sensitivity`)
 
-88. Gudmundsson T. (2014) Markov Chain Monte Carlo for Computing Rare-Event Probabilities for a Heavy-Tailed Random Walk. *Journal of Applied Probability*. doi:10.1239/jap/1402578630
+[88] Gudmundsson, T. (2014). Markov Chain Monte Carlo for Computing Rare-Event Probabilities for a Heavy-Tailed Random Walk. *Journal of Applied Probability*. https://doi.org/10.1239/jap/1402578630 Difference: estimates far-tail probabilities by simulation or extrapolation; this paper declines to estimate and bounds instead. (supports `rare-event-cost`)
 
-89. HAIMAN G. (2003) EXTREMES OF MARKOV SEQUENCES. *Probability Theory and Extreme Value Theory*. doi:10.1515/9783110917826.666
+[89] Haiman, G. (2003). EXTREMES OF MARKOV SEQUENCES. *Probability Theory and Extreme Value Theory*. https://doi.org/10.1515/9783110917826.666 Difference: estimates far-tail probabilities by simulation or extrapolation; this paper declines to estimate and bounds instead. (supports `rare-event-cost`)
 
-90. Harada K. (1994) Probability analysis of a 2-out-of-n: F system with common cause failure, multiple failure and dependent failure. *Microelectronics Reliability*. doi:10.1016/0026-2714(94)90111-2
+[90] Harada, K. (1994). Probability analysis of a 2-out-of-n: F system with common cause failure, multiple failure and dependent failure. *Microelectronics Reliability*. https://doi.org/10.1016/0026-2714(94)90111-2 Difference: models common-cause failure to compute system reliability; this paper prices what an unstated dependence leaves open in the quote's unit. (supports `redundancy-defeated`)
 
-91. Heide J. (2016) Composite extension finite fields for distributed storage erasure coding. *2016 IEEE International Conference on Communications (ICC)*. doi:10.1109/icc.2016.7510828
+[91] Heide, J. (2016). Composite extension finite fields for distributed storage erasure coding. *2016 IEEE International Conference on Communications (ICC)*. https://doi.org/10.1109/icc.2016.7510828 Difference: changes the redundancy arithmetic of the same model; this paper shows the identified set is unchanged by it. (supports `erasure-arithmetic`)
 
-92. Helton J. (1996) Probability, conditional probability and complementary cumulative distribution functions in performance assessment for radioactive waste disposal. *Reliability Engineering &amp; System Safety*. doi:10.1016/s0951-8320(96)00072-5
+[92] Helton, J. (1996). Probability, conditional probability and complementary cumulative distribution functions in performance assessment for radioactive waste disposal. *Reliability Engineering &amp; System Safety*. https://doi.org/10.1016/s0951-8320(96)00072-5 Difference: treats a quoted probability's assumptions as a sensitivity question inside a study; this paper makes the quoted number the object. (supports `assumption-sensitivity`)
 
-93. Hoppe F.M. (1985) Iterating bonferroni bounds. *Statistics &amp; Probability Letters*. doi:10.1016/0167-7152(85)90048-3
+[93] Hoppe, F. M. (1985). Iterating bonferroni bounds. *Statistics &amp; Probability Letters*. https://doi.org/10.1016/0167-7152(85)90048-3 Difference: sharpens the intersection bound as a tool; this paper reads a quoted number against it and reports the distance in nines. (supports `bonferroni-lower`)
 
-94. Huang Z. (2019) On The Impacts of Tail Model Uncertainty in Rare-Event Estimation. *2019 Winter Simulation Conference (WSC)*. doi:10.1109/wsc40007.2019.9004933
+[94] Huang, Z. (2019). On The Impacts of Tail Model Uncertainty in Rare-Event Estimation. *2019 Winter Simulation Conference (WSC)*. https://doi.org/10.1109/wsc40007.2019.9004933 Difference: estimates far-tail probabilities by simulation or extrapolation; this paper declines to estimate and bounds instead. (supports `rare-event-cost`)
 
-95. Huber M. (2015) A Test of the Conditional Independence Assumption in Sample Selection Models. *Journal of Applied Econometrics*. doi:10.1002/jae.2431
+[95] Huber, M. (2015). A Test of the Conditional Independence Assumption in Sample Selection Models. *Journal of Applied Econometrics*. https://doi.org/10.1002/jae.2431 Difference: treats a quoted probability's assumptions as a sensitivity question inside a study; this paper makes the quoted number the object. (supports `assumption-sensitivity`)
 
-96. Hughes R. (1987) A new approach to common cause failure. *Reliability Engineering*. doi:10.1016/0143-8174(87)90044-8
+[96] Hughes, R. (1987). A new approach to common cause failure. *Reliability Engineering*. https://doi.org/10.1016/0143-8174(87)90044-8 Difference: models common-cause failure to compute system reliability; this paper prices what an unstated dependence leaves open in the quote's unit. (supports `redundancy-defeated`)
 
-97. Huo Y. (2021) Optimal Copyset in Distributed Object Storage. *2021 IEEE International Conference on Big Data (Big Data)*. doi:10.1109/bigdata52589.2021.9671908
+[97] Huo, Y. (2021). Optimal Copyset in Distributed Object Storage. *2021 IEEE International Conference on Big Data (Big Data)*. https://doi.org/10.1109/bigdata52589.2021.9671908 Difference: assumes a dependence and constrains placement; this paper assumes none and reports what that leaves unidentified. (supports `placement-under-correlation`)
 
-98. Ichikawa M. (1983) New formula for upper bound of probability of failure. *Reliability Engineering*. doi:10.1016/0143-8174(83)90012-4
+[98] Ichikawa, M. (1983). New formula for upper bound of probability of failure. *Reliability Engineering*. https://doi.org/10.1016/0143-8174(83)90012-4 Difference: treats a quoted probability's assumptions as a sensitivity question inside a study; this paper makes the quoted number the object. (supports `assumption-sensitivity`)
 
-99. Ichikawa M. (1984) Confidence limit of probability of failure based on stress-strength model. *Reliability Engineering*. doi:10.1016/0143-8174(84)90056-8
+[99] Ichikawa, M. (1984). Confidence limit of probability of failure based on stress-strength model. *Reliability Engineering*. https://doi.org/10.1016/0143-8174(84)90056-8 Difference: treats a quoted probability's assumptions as a sensitivity question inside a study; this paper makes the quoted number the object. (supports `assumption-sensitivity`)
 
-100. Ichikawa M. (1984) General formula for upper bound of probability of failure. *Reliability Engineering*. doi:10.1016/0143-8174(84)90035-0
+[100] Ichikawa, M. (1984). General formula for upper bound of probability of failure. *Reliability Engineering*. https://doi.org/10.1016/0143-8174(84)90035-0 Difference: treats a quoted probability's assumptions as a sensitivity question inside a study; this paper makes the quoted number the object. (supports `assumption-sensitivity`)
 
-101. Iliadis I. (2008) Reliability Assurance of RAID Storage Systems for a Wide Range of Latent Sector Errors. *2008 International Conference on Networking, Architecture, and Storage*. doi:10.1109/nas.2008.20
+[101] Iliadis, I. (2008). Reliability Assurance of RAID Storage Systems for a Wide Range of Latent Sector Errors. *2008 International Conference on Networking, Architecture, and Storage*. https://doi.org/10.1109/nas.2008.20 Difference: computes the durability figure from per-device rates under independence; this paper prices the independence step itself. (supports `durability-models`)
 
-102. Iliadis I. (2023) Reliability Evaluation of Erasure-coded Storage Systems with Latent Errors. *ACM Transactions on Storage*. doi:10.1145/3568313
+[102] Iliadis, I. (2023). Reliability Evaluation of Erasure-coded Storage Systems with Latent Errors. *ACM Transactions on Storage*. https://doi.org/10.1145/3568313 Difference: computes the durability figure from per-device rates under independence; this paper prices the independence step itself. (supports `durability-models`)
 
-103. Jiang J.R. (2026) Likelihood-Based Quantum Computing Monte Carlo for Rare-Event Probability Estimation. *2026 IEEE International Conference on Consumer Electronics - Taiwan (ICCE-Taiwan)*. doi:10.1109/icce-taiwan71481.2026.11652476
+[103] Jiang, J. R. (2026). Likelihood-Based Quantum Computing Monte Carlo for Rare-Event Probability Estimation. *2026 IEEE International Conference on Consumer Electronics - Taiwan (ICCE-Taiwan)*. https://doi.org/10.1109/icce-taiwan71481.2026.11652476 Difference: estimates far-tail probabilities by simulation or extrapolation; this paper declines to estimate and bounds instead. (supports `rare-event-cost`)
 
-104. Jimenez D. (2023) Resilience of a telecommunications network subjected to correlated geographical failures. doi:10.36227/techrxiv.22213948
+[104] Jimenez, D. (2023). Resilience of a telecommunications network subjected to correlated geographical failures. https://doi.org/10.36227/techrxiv.22213948 Difference: measures correlated failure in production systems; this paper asks what a quote computed without that measurement identifies. (supports `correlation-measured`)
 
-105. Jing Sun (2010) A new optimal replica placement strategy in Content Distribution Networks. *2010 International Conference on Intelligent Computing and Integrated Systems*. doi:10.1109/iciss.2010.5656943
+[105] Jing Sun (2010). A new optimal replica placement strategy in Content Distribution Networks. *2010 International Conference on Intelligent Computing and Integrated Systems*. https://doi.org/10.1109/iciss.2010.5656943 Difference: assumes a dependence and constrains placement; this paper assumes none and reports what that leaves unidentified. (supports `placement-under-correlation`)
 
-106. Jones H.W. (2025) Common Cause Failures Dominate and Defeat Redundancy. *2025 Annual Reliability and Maintainability Symposium (RAMS)*. doi:10.1109/rams48127.2025.10935209
+[106] Jones, H. W. (2025). Common Cause Failures Dominate and Defeat Redundancy. *2025 Annual Reliability and Maintainability Symposium (RAMS)*. https://doi.org/10.1109/rams48127.2025.10935209 Difference: models common-cause failure to compute system reliability; this paper prices what an unstated dependence leaves open in the quote's unit. (supports `redundancy-defeated`)
 
-107. Kaas R. (2002) A Simple Geometric Proof that Comonotonic Risks Have the Convex-Largest Sum. *ASTIN Bulletin*. doi:10.2143/ast.32.1.1015
+[107] Kaas, R. (2002). A Simple Geometric Proof that Comonotonic Risks Have the Convex-Largest Sum. *ASTIN Bulletin*. https://doi.org/10.2143/ast.32.1.1015 Difference: optimises under the bound for dependent risks; this paper asks which end of the bound the quoted figure sits at. (supports `bounds-stated-not-attained`)
 
-108. Kančev D. (2012) A new method for explicit modelling of single failure event within different common cause failure groups. *Reliability Engineering &amp; System Safety*. doi:10.1016/j.ress.2012.03.009
+[108] Kančev, D. (2012). A new method for explicit modelling of single failure event within different common cause failure groups. *Reliability Engineering &amp; System Safety*. https://doi.org/10.1016/j.ress.2012.03.009 Difference: models common-cause failure to compute system reliability; this paper prices what an unstated dependence leaves open in the quote's unit. (supports `redundancy-defeated`)
 
-109. Kim K. (2010) Assessing the Impact of Geographically Correlated Failures on Overlay-Based Data Dissemination. *2010 IEEE Global Telecommunications Conference GLOBECOM 2010*. doi:10.1109/glocom.2010.5685229
+[109] Kim, K. (2010). Assessing the Impact of Geographically Correlated Failures on Overlay-Based Data Dissemination. *2010 IEEE Global Telecommunications Conference GLOBECOM 2010*. https://doi.org/10.1109/glocom.2010.5685229 Difference: measures correlated failure in production systems; this paper asks what a quote computed without that measurement identifies. (supports `correlation-measured`)
 
-110. Kim J.J. (2021) Erasure-Coding-Based Storage and Recovery for Distributed Exascale Storage Systems. *Applied Sciences*. doi:10.3390/app11083298
+[110] Kim, J. J. (2021). Erasure-Coding-Based Storage and Recovery for Distributed Exascale Storage Systems. *Applied Sciences*. https://doi.org/10.3390/app11083298 Difference: changes the redundancy arithmetic of the same model; this paper shows the identified set is unchanged by it. (supports `erasure-arithmetic`)
 
-111. Knaeble B. (2026) Sensitivity Analysis of the Consistency Assumption. *Observational Studies*. doi:10.1353/obs.00012
+[111] Knaeble, B. (2026). Sensitivity Analysis of the Consistency Assumption. *Observational Studies*. https://doi.org/10.1353/obs.00012 Difference: treats a quoted probability's assumptions as a sensitivity question inside a study; this paper makes the quoted number the object. (supports `assumption-sensitivity`)
 
-112. Kounias S. (1989) Bonferroni bounds revisited. *Journal of Applied Probability*. doi:10.2307/3214031
+[112] Kounias, S. (1989). Bonferroni bounds revisited. *Journal of Applied Probability*. https://doi.org/10.2307/3214031 Difference: sharpens the intersection bound as a tool; this paper reads a quoted number against it and reports the distance in nines. (supports `bonferroni-lower`)
 
-113. Kulkarni R. (1994) Modelling common cause failures under data uncertainty of the system unavailability. *Microelectronics Reliability*. doi:10.1016/0026-2714(94)90046-9
+[113] Kulkarni, R. (1994). Modelling common cause failures under data uncertainty of the system unavailability. *Microelectronics Reliability*. https://doi.org/10.1016/0026-2714(94)90046-9 Difference: models common-cause failure to compute system reliability; this paper prices what an unstated dependence leaves open in the quote's unit. (supports `redundancy-defeated`)
 
-114. Kumar V. (2011) Multi-dimensional Grid Quorum Consensus for High Capacity and Availability in a Replica Control Protocol. *Communications in Computer and Information Science*. doi:10.1007/978-3-642-22577-2_10
+[114] Kumar, V. (2011). Multi-dimensional Grid Quorum Consensus for High Capacity and Availability in a Replica Control Protocol. *Communications in Computer and Information Science*. https://doi.org/10.1007/978-3-642-22577-2_10 Difference: designs quorums whose availability depends on correlated node failure; this paper asks what the availability figure identifies given only marginals. (supports `quorum-availability`)
 
-115. Kumar V. (2015) Circular Quorum Systems for Write Dominant Data Replication Protocols under Serial Isolation Using Quorum Consensus Approach. *Procedia Computer Science*. doi:10.1016/j.procs.2015.02.156
+[115] Kumar, V. (2015). Circular Quorum Systems for Write Dominant Data Replication Protocols under Serial Isolation Using Quorum Consensus Approach. *Procedia Computer Science*. https://doi.org/10.1016/j.procs.2015.02.156 Difference: designs quorums whose availability depends on correlated node failure; this paper asks what the availability figure identifies given only marginals. (supports `quorum-availability`)
 
-116. Leadbetter M.R. (1979) On dependent extreme value theory. *Advances in Applied Probability*. doi:10.1017/s0001867800031992
+[116] Leadbetter, M. R. (1979). On dependent extreme value theory. *Advances in Applied Probability*. https://doi.org/10.1017/s0001867800031992 Difference: estimates far-tail probabilities by simulation or extrapolation; this paper declines to estimate and bounds instead. (supports `rare-event-cost`)
 
-117. Leblanc H. (1984) Probability Functions and Their Assumption Sets — The Binary Case. *Foundations: Logic, Language, and Mathematics*. doi:10.1007/978-94-017-1592-8_6
+[117] Leblanc, H. (1984). Probability Functions and Their Assumption Sets — The Binary Case. *Foundations: Logic, Language, and Mathematics*. https://doi.org/10.1007/978-94-017-1592-8_6 Difference: states the class and its extremes for a given joint problem; this paper locates a published durability figure inside it. (supports `frechet-class`)
 
-118. Lee M.Y. (1997) Improved bivariate Bonferroni-type inequalities. *Statistics &amp; Probability Letters*. doi:10.1016/s0167-7152(96)00050-8
+[118] Lee, M. Y. (1997). Improved bivariate Bonferroni-type inequalities. *Statistics &amp; Probability Letters*. https://doi.org/10.1016/s0167-7152(96)00050-8 Difference: sharpens the intersection bound as a tool; this paper reads a quoted number against it and reports the distance in nines. (supports `bonferroni-lower`)
 
-119. Li J. (2006) Adaptive Erasure Resilient Coding in Distributed Storage. *2006 IEEE International Conference on Multimedia and Expo*. doi:10.1109/icme.2006.262470
+[119] Li, J. (2006). Adaptive Erasure Resilient Coding in Distributed Storage. *2006 IEEE International Conference on Multimedia and Expo*. https://doi.org/10.1109/icme.2006.262470 Difference: changes the redundancy arithmetic of the same model; this paper shows the identified set is unchanged by it. (supports `erasure-arithmetic`)
 
-120. Li X. (2011) Reliability analysis of deduplicated and erasure-coded storage. *ACM SIGMETRICS Performance Evaluation Review*. doi:10.1145/1925019.1925021
+[120] Li, X. (2011). Reliability analysis of deduplicated and erasure-coded storage. *ACM SIGMETRICS Performance Evaluation Review*. https://doi.org/10.1145/1925019.1925021 Difference: computes the durability figure from per-device rates under independence; this paper prices the independence step itself. (supports `durability-models`)
 
-121. Li J. (2022) Random Versus Copyset Placement: Data-Loss Models for Proactive-Tolerance Replica-Based Data Storage. *IEEE Transactions on Reliability*. doi:10.1109/tr.2021.3105675
+[121] Li, J. (2022). Random Versus Copyset Placement: Data-Loss Models for Proactive-Tolerance Replica-Based Data Storage. *IEEE Transactions on Reliability*. https://doi.org/10.1109/tr.2021.3105675 Difference: assumes a dependence and constrains placement; this paper assumes none and reports what that leaves unidentified. (supports `placement-under-correlation`)
 
-122. Lin X. (2003) Delay Optimization in Quorum Consensus. *Algorithmica*. doi:10.1007/s00453-003-1066-x
+[122] Lin, X. (2003). Delay Optimization in Quorum Consensus. *Algorithmica*. https://doi.org/10.1007/s00453-003-1066-x Difference: designs quorums whose availability depends on correlated node failure; this paper asks what the availability figure identifies given only marginals. (supports `quorum-availability`)
 
-123. Lin Y.F. (2008) A List-Based Strategy for Optimal Replica Placement in Data Grid Systems. *2008 37th International Conference on Parallel Processing*. doi:10.1109/icpp.2008.31
+[123] Lin, Y. F. (2008). A List-Based Strategy for Optimal Replica Placement in Data Grid Systems. *2008 37th International Conference on Parallel Processing*. https://doi.org/10.1109/icpp.2008.31 Difference: assumes a dependence and constrains placement; this paper assumes none and reports what that leaves unidentified. (supports `placement-under-correlation`)
 
-124. Liu W. (1994) A strong limit theorem under no assumption of independence, stationarity or various dependences. *Statistics &amp; Probability Letters*. doi:10.1016/0167-7152(94)90224-0
+[124] Liu, W. (1994). A strong limit theorem under no assumption of independence, stationarity or various dependences. *Statistics &amp; Probability Letters*. https://doi.org/10.1016/0167-7152(94)90224-0 Difference: sharpens the intersection bound as a tool; this paper reads a quoted number against it and reports the distance in nines. (supports `bonferroni-lower`)
 
-125. Liu J. (2016) A popularity-aware cost-effective replication scheme for high data durability in cloud storage. *2016 IEEE International Conference on Big Data (Big Data)*. doi:10.1109/bigdata.2016.7840627
+[125] Liu, J. (2016). A popularity-aware cost-effective replication scheme for high data durability in cloud storage. *2016 IEEE International Conference on Big Data (Big Data)*. https://doi.org/10.1109/bigdata.2016.7840627 Difference: computes the durability figure from per-device rates under independence; this paper prices the independence step itself. (supports `durability-models`)
 
-126. Loper J. (2026) Worst-case Chernoff bounds for sums of random variables with known means and unequal ranges. *Statistics &amp; Probability Letters*. doi:10.1016/j.spl.2026.110742
+[126] Loper, J. (2026). Worst-case Chernoff bounds for sums of random variables with known means and unequal ranges. *Statistics &amp; Probability Letters*. https://doi.org/10.1016/j.spl.2026.110742 Difference: optimises under the bound for dependent risks; this paper asks which end of the bound the quoted figure sits at. (supports `bounds-stated-not-attained`)
 
-127. Luo X. (2009) On the impact of erasure coding parameters to the reliability of distributed brick storage systems. *2009 International Conference on Cyber-Enabled Distributed Computing and Knowledge Discovery*. doi:10.1109/cyberc.2009.5342197
+[127] Luo, X. (2009). On the impact of erasure coding parameters to the reliability of distributed brick storage systems. *2009 International Conference on Cyber-Enabled Distributed Computing and Knowledge Discovery*. https://doi.org/10.1109/cyberc.2009.5342197 Difference: computes the durability figure from per-device rates under independence; this paper prices the independence step itself. (supports `durability-models`)
 
-128. Manne A.S. (1952) The Strong Independence Assumption--Gasoline Blends and Probability Mixtures. *Econometrica*. doi:10.2307/1907648
+[128] Manne, A. S. (1952). The Strong Independence Assumption--Gasoline Blends and Probability Mixtures. *Econometrica*. https://doi.org/10.2307/1907648 Difference: treats a quoted probability's assumptions as a sensitivity question inside a study; this paper makes the quoted number the object. (supports `assumption-sensitivity`)
 
-129. Martin B. (1987) A practical method of common cause failure modelling. *Reliability Engineering*. doi:10.1016/0143-8174(87)90003-5
+[129] Martin, B. (1987). A practical method of common cause failure modelling. *Reliability Engineering*. https://doi.org/10.1016/0143-8174(87)90003-5 Difference: models common-cause failure to compute system reliability; this paper prices what an unstated dependence leaves open in the quote's unit. (supports `redundancy-defeated`)
 
-130. Medina M.G. (2020) Impact of Large-Scale Correlated Failures on Multilevel Virtualized Networks. *2020 IEEE 21st International Conference on High Performance Switching and Routing (HPSR)*. doi:10.1109/hpsr48589.2020.9098972
+[130] Medina, M. G. (2020). Impact of Large-Scale Correlated Failures on Multilevel Virtualized Networks. *2020 IEEE 21st International Conference on High Performance Switching and Routing (HPSR)*. https://doi.org/10.1109/hpsr48589.2020.9098972 Difference: measures correlated failure in production systems; this paper asks what a quote computed without that measurement identifies. (supports `correlation-measured`)
 
-131. Melchers R. (2011) Application of extreme value theory to discriminate between failure modes. *Applications of Statistics and Probability in Civil Engineering*. doi:10.1201/b11332-350
+[131] Melchers, R. (2011). Application of extreme value theory to discriminate between failure modes. *Applications of Statistics and Probability in Civil Engineering*. https://doi.org/10.1201/b11332-350 Difference: estimates far-tail probabilities by simulation or extrapolation; this paper declines to estimate and bounds instead. (supports `rare-event-cost`)
 
-132. Menkens O. (2014) Worst-Case Scenario Portfolio Optimization Given the Probability of a Crash. *SSRN Electronic Journal*. doi:10.2139/ssrn.2397263
+[132] Menkens, O. (2014). Worst-Case Scenario Portfolio Optimization Given the Probability of a Crash. *SSRN Electronic Journal*. https://doi.org/10.2139/ssrn.2397263 Difference: names the same arithmetic as a fallacy in risk aggregation; this paper supplies the identified set that the fallacy is a misreading of. (supports `diversification-fallacy`)
 
-133. Mesfioui M. (2005) Bounds on the value-at-risk for the sum of possibly dependent risks. *Insurance: Mathematics and Economics*. doi:10.1016/j.insmatheco.2005.03.002
+[133] Mesfioui, M. (2005). Bounds on the value-at-risk for the sum of possibly dependent risks. *Insurance: Mathematics and Economics*. https://doi.org/10.1016/j.insmatheco.2005.03.002 Difference: optimises under the bound for dependent risks; this paper asks which end of the bound the quoted figure sits at. (supports `bounds-stated-not-attained`)
 
-134. Mills K.A. (2015) On Replica Placement in High-Availability Storage Under Correlated Failure. *Lecture Notes in Computer Science*. doi:10.1007/978-3-319-26626-8_26
+[134] Mills, K. A. (2015). On Replica Placement in High-Availability Storage Under Correlated Failure. *Lecture Notes in Computer Science*. https://doi.org/10.1007/978-3-319-26626-8_26 Difference: assumes a dependence and constrains placement; this paper assumes none and reports what that leaves unidentified. (supports `placement-under-correlation`)
 
-135. Mills K.A. (2016) Erratum to: On Replica Placement in High-Availability Storage Under Correlated Failure. *Lecture Notes in Computer Science*. doi:10.1007/978-3-319-26626-8_60
+[135] Mills, K. A. (2016). Erratum to: On Replica Placement in High-Availability Storage Under Correlated Failure. *Lecture Notes in Computer Science*. https://doi.org/10.1007/978-3-319-26626-8_60 Difference: assumes a dependence and constrains placement; this paper assumes none and reports what that leaves unidentified. (supports `placement-under-correlation`)
 
-136. Mills K.A. (2020) Algorithms for optimal replica placement under correlated failure in hierarchical failure domains. *Theoretical Computer Science*. doi:10.1016/j.tcs.2020.01.004
+[136] Mills, K. A. (2020). Algorithms for optimal replica placement under correlated failure in hierarchical failure domains. *Theoretical Computer Science*. https://doi.org/10.1016/j.tcs.2020.01.004 Difference: assumes a dependence and constrains placement; this paper assumes none and reports what that leaves unidentified. (supports `placement-under-correlation`)
 
-137. Müller A. (2001) Bounds for optimal stopping values of dependent random variables with given marginals. *Statistics &amp; Probability Letters*. doi:10.1016/s0167-7152(00)00220-0
+[137] Müller, A. (2001). Bounds for optimal stopping values of dependent random variables with given marginals. *Statistics &amp; Probability Letters*. https://doi.org/10.1016/s0167-7152(00)00220-0 Difference: optimises under the bound for dependent risks; this paper asks which end of the bound the quoted figure sits at. (supports `bounds-stated-not-attained`)
 
-138. Müller U.K. (2019) Refining the central limit theorem approximation via extreme value theory. *Statistics &amp; Probability Letters*. doi:10.1016/j.spl.2019.108564
+[138] Müller, U. K. (2019). Refining the central limit theorem approximation via extreme value theory. *Statistics &amp; Probability Letters*. https://doi.org/10.1016/j.spl.2019.108564 Difference: estimates far-tail probabilities by simulation or extrapolation; this paper declines to estimate and bounds instead. (supports `rare-event-cost`)
 
-139. Moghadamfarid A. (2025) Secure Decentralized Cloud Storage Assisted by Trusted Hardware and Erasure Coding. doi:10.2139/ssrn.5437322
+[139] Moghadamfarid, A. (2025). Secure Decentralized Cloud Storage Assisted by Trusted Hardware and Erasure Coding. https://doi.org/10.2139/ssrn.5437322 Difference: changes the redundancy arithmetic of the same model; this paper shows the identified set is unchanged by it. (supports `erasure-arithmetic`)
 
-140. Morio J. (2016) The formalism of rare event probability estimation in complex systems. *Estimation of Rare Event Probabilities in Complex Aerospace and Other Systems*. doi:10.1016/b978-0-08-100091-5.00003-4
+[140] Morio, J. (2016). The formalism of rare event probability estimation in complex systems. *Estimation of Rare Event Probabilities in Complex Aerospace and Other Systems*. https://doi.org/10.1016/b978-0-08-100091-5.00003-4 Difference: estimates far-tail probabilities by simulation or extrapolation; this paper declines to estimate and bounds instead. (supports `rare-event-cost`)
 
-141. Morio J. (2016) Introduction to rare event probability estimation. *Estimation of Rare Event Probabilities in Complex Aerospace and Other Systems*. doi:10.1016/b978-0-08-100091-5.00001-0
+[141] Morio, J. (2016). Introduction to rare event probability estimation. *Estimation of Rare Event Probabilities in Complex Aerospace and Other Systems*. https://doi.org/10.1016/b978-0-08-100091-5.00001-0 Difference: estimates far-tail probabilities by simulation or extrapolation; this paper declines to estimate and bounds instead. (supports `rare-event-cost`)
 
-142. Morio J. (2016) Synthesis of rare event probability estimation methods for input–output systems. *Estimation of Rare Event Probabilities in Complex Aerospace and Other Systems*. doi:10.1016/b978-0-08-100091-5.00014-9
+[142] Morio, J. (2016). Synthesis of rare event probability estimation methods for input–output systems. *Estimation of Rare Event Probabilities in Complex Aerospace and Other Systems*. https://doi.org/10.1016/b978-0-08-100091-5.00014-9 Difference: estimates far-tail probabilities by simulation or extrapolation; this paper declines to estimate and bounds instead. (supports `rare-event-cost`)
 
-143. Naiman D.Q. (1992) Inclusion-Exclusion-Bonferroni Identities and Inequalities for Discrete Tube-Like Problems via Euler Characteristics. *The Annals of Statistics*. doi:10.1214/aos/1176348512
+[143] Naiman, D. Q. (1992). Inclusion-Exclusion-Bonferroni Identities and Inequalities for Discrete Tube-Like Problems via Euler Characteristics. *The Annals of Statistics*. https://doi.org/10.1214/aos/1176348512 Difference: sharpens the intersection bound as a tool; this paper reads a quoted number against it and reports the distance in nines. (supports `bonferroni-lower`)
 
-144. Neumayer S. (2010) Network Reliability With Geographically Correlated Failures. *2010 Proceedings IEEE INFOCOM*. doi:10.1109/infcom.2010.5461984
+[144] Neumayer, S. (2010). Network Reliability With Geographically Correlated Failures. *2010 Proceedings IEEE INFOCOM*. https://doi.org/10.1109/infcom.2010.5461984 Difference: measures correlated failure in production systems; this paper asks what a quote computed without that measurement identifies. (supports `correlation-measured`)
 
-145. Nieuwhof G. (1985) Matching a failure probability distribution to test data. *Reliability Engineering*. doi:10.1016/0143-8174(85)90069-1
+[145] Nieuwhof, G. (1985). Matching a failure probability distribution to test data. *Reliability Engineering*. https://doi.org/10.1016/0143-8174(85)90069-1 Difference: treats a quoted probability's assumptions as a sensitivity question inside a study; this paper makes the quoted number the object. (supports `assumption-sensitivity`)
 
-146. Nikolov A.V. (1986) K-out-of-N:G system with multiple correlated failures. *Microelectronics Reliability*. doi:10.1016/0026-2714(86)90811-5
+[146] Nikolov, A. V. (1986). K-out-of-N:G system with multiple correlated failures. *Microelectronics Reliability*. https://doi.org/10.1016/0026-2714(86)90811-5 Difference: models common-cause failure to compute system reliability; this paper prices what an unstated dependence leaves open in the quote's unit. (supports `redundancy-defeated`)
 
-147. Nikolov A.V. (1986) N-unit parallel redundant system with multiple correlated failures. *Microelectronics Reliability*. doi:10.1016/0026-2714(86)90767-5
+[147] Nikolov, A. V. (1986). N-unit parallel redundant system with multiple correlated failures. *Microelectronics Reliability*. https://doi.org/10.1016/0026-2714(86)90767-5 Difference: models common-cause failure to compute system reliability; this paper prices what an unstated dependence leaves open in the quote's unit. (supports `redundancy-defeated`)
 
-148. Osrael J. (2006) A Replication Model for Trading Data Integrity against Availability. *2006 12th Pacific Rim International Symposium on Dependable Computing (PRDC'06)*. doi:10.1109/prdc.2006.12
+[148] Osrael, J. (2006). A Replication Model for Trading Data Integrity against Availability. *2006 12th Pacific Rim International Symposium on Dependable Computing (PRDC'06)*. https://doi.org/10.1109/prdc.2006.12 Difference: publishes the figure as a commitment to a customer; this paper states what the commitment asserts about an unmeasured quantity. (supports `sla-promise`)
 
-149. Osrael J. (2007) Availability/Consistency Balancing Replication Model. *2007 IEEE International Parallel and Distributed Processing Symposium*. doi:10.1109/ipdps.2007.370610
+[149] Osrael, J. (2007). Availability/Consistency Balancing Replication Model. *2007 IEEE International Parallel and Distributed Processing Symposium*. https://doi.org/10.1109/ipdps.2007.370610 Difference: publishes the figure as a commitment to a customer; this paper states what the commitment asserts about an unmeasured quantity. (supports `sla-promise`)
 
-150. anon. (2003) Appendix 3: Template for a typical service level agreement. *Telecommunications Quality of Service Management*. doi:10.1049/pbte048e_appendix3
+[150] author not established on Crossref for this DOI (2003). Appendix 3: Template for a typical service level agreement. *Telecommunications Quality of Service Management*. https://doi.org/10.1049/pbte048e_appendix3 Difference: publishes the figure as a commitment to a customer; this paper states what the commitment asserts about an unmeasured quantity. (supports `sla-promise`)
 
-151. Pei Dong X. (2018) Cascading Failure Risk Assessment in Power Grid Considering the Line Outage Rate. *The Journal of Engineering*. doi:10.1049/joe.2018.8356
+[151] Pei Dong, X. (2018). Cascading Failure Risk Assessment in Power Grid Considering the Line Outage Rate. *The Journal of Engineering*. https://doi.org/10.1049/joe.2018.8356 Difference: measures correlated failure in production systems; this paper asks what a quote computed without that measurement identifies. (supports `correlation-measured`)
 
-152. Peleg D. (1995) The Availability of Quorum Systems. *Information and Computation*. doi:10.1006/inco.1995.1169
+[152] Peleg, D. (1995). The Availability of Quorum Systems. *Information and Computation*. https://doi.org/10.1006/inco.1995.1169 Difference: designs quorums whose availability depends on correlated node failure; this paper asks what the availability figure identifies given only marginals. (supports `quorum-availability`)
 
-153. Peng F. (2013) Decentralized estimation with correlated additive noise: Does dependency always imply redundancy?. *2013 Asilomar Conference on Signals, Systems and Computers*. doi:10.1109/acssc.2013.6810368
+[153] Peng, F. (2013). Decentralized estimation with correlated additive noise: Does dependency always imply redundancy?. *2013 Asilomar Conference on Signals, Systems and Computers*. https://doi.org/10.1109/acssc.2013.6810368 Difference: names the same arithmetic as a fallacy in risk aggregation; this paper supplies the identified set that the fallacy is a misreading of. (supports `diversification-fallacy`)
 
-154. Perez G. (2023) Service Level Agreement (SLA). *Elgar Encyclopedia of Services*. doi:10.4337/9781802202595.service.level.agreement
+[154] Perez, G. (2023). Service Level Agreement (SLA). *Elgar Encyclopedia of Services*. https://doi.org/10.4337/9781802202595.service.level.agreement Difference: publishes the figure as a commitment to a customer; this paper states what the commitment asserts about an unmeasured quantity. (supports `sla-promise`)
 
-155. Phelps R.P. (2010) On the Reporting of Measurement Uncertainty and Reliability for U.S. Educational and Licensure Tests: Report to Ofqual. *SSRN Electronic Journal*. doi:10.2139/ssrn.2687370
+[155] Phelps, R. P. (2010). On the Reporting of Measurement Uncertainty and Reliability for U.S. Educational and Licensure Tests: Report to Ofqual. *SSRN Electronic Journal*. https://doi.org/10.2139/ssrn.2687370 Difference: treats a quoted probability's assumptions as a sensitivity question inside a study; this paper makes the quoted number the object. (supports `assumption-sensitivity`)
 
-156. Pijarski P. (2025) Outage Rates and Failure Removal Times for Power Lines and Transformers. *Applied Sciences*. doi:10.3390/app15148030
+[156] Pijarski, P. (2025). Outage Rates and Failure Removal Times for Power Lines and Transformers. *Applied Sciences*. https://doi.org/10.3390/app15148030 Difference: measures correlated failure in production systems; this paper asks what a quote computed without that measurement identifies. (supports `correlation-measured`)
 
-157. Qi J. (2021) Utility Outage Data Driven Interaction Networks for Cascading Failure Analysis and Mitigation. *IEEE Transactions on Power Systems*. doi:10.1109/tpwrs.2020.3015380
+[157] Qi, J. (2021). Utility Outage Data Driven Interaction Networks for Cascading Failure Analysis and Mitigation. *IEEE Transactions on Power Systems*. https://doi.org/10.1109/tpwrs.2020.3015380 Difference: measures correlated failure in production systems; this paper asks what a quote computed without that measurement identifies. (supports `correlation-measured`)
 
-158. Rahman P.A. (2017) Analysis of the mean time to data loss of nested disk arrays RAID-01 on basis of a specialized mathematical model. *IOP Conference Series: Materials Science and Engineering*. doi:10.1088/1757-899x/177/1/012088
+[158] Rahman, P. A. (2017). Analysis of the mean time to data loss of nested disk arrays RAID-01 on basis of a specialized mathematical model. *IOP Conference Series: Materials Science and Engineering*. https://doi.org/10.1088/1757-899x/177/1/012088 Difference: computes the durability figure from per-device rates under independence; this paper prices the independence step itself. (supports `durability-models`)
 
-159. Rahman P.A. (2018) Analysis of mean time to data loss of fault-tolerant disk arrays RAID-6 based on specialized Markov chain. *IOP Conference Series: Materials Science and Engineering*. doi:10.1088/1757-899x/327/2/022086
+[159] Rahman, P. A. (2018). Analysis of mean time to data loss of fault-tolerant disk arrays RAID-6 based on specialized Markov chain. *IOP Conference Series: Materials Science and Engineering*. https://doi.org/10.1088/1757-899x/327/2/022086 Difference: computes the durability figure from per-device rates under independence; this paper prices the independence step itself. (supports `durability-models`)
 
-160. Ramabhadran S. (2008) Durability of replicated distributed storage systems. *Proceedings of the 2008 ACM SIGMETRICS international conference on Measurement and modeling of computer systems*. doi:10.1145/1375457.1375514
+[160] Ramabhadran, S. (2008). Durability of replicated distributed storage systems. *Proceedings of the 2008 ACM SIGMETRICS international conference on Measurement and modeling of computer systems*. https://doi.org/10.1145/1375457.1375514 Difference: computes the durability figure from per-device rates under independence; this paper prices the independence step itself. (supports `durability-models`)
 
-161. Recsei E. (1987) Bonferroni-type inequalities. *Advances in Applied Probability*. doi:10.2307/1427431
+[161] Recsei, E. (1987). Bonferroni-type inequalities. *Advances in Applied Probability*. https://doi.org/10.2307/1427431 Difference: sharpens the intersection bound as a tool; this paper reads a quoted number against it and reports the distance in nines. (supports `bonferroni-lower`)
 
-162. Reiser B. (1985) A remark on Ichikawa's upper bound of probability of failure. *Reliability Engineering*. doi:10.1016/0143-8174(85)90095-2
+[162] Reiser, B. (1985). A remark on Ichikawa's upper bound of probability of failure. *Reliability Engineering*. https://doi.org/10.1016/0143-8174(85)90095-2 Difference: treats a quoted probability's assumptions as a sensitivity question inside a study; this paper makes the quoted number the object. (supports `assumption-sensitivity`)
 
-163. Rosenhaus M.B. (2004) Calculation of some Reliability Measures for Redundancy Systems with Different Types of Failures. *Quality and Reliability Engineering International*. doi:10.1002/qre.597
+[163] Rosenhaus, M. B. (2004). Calculation of some Reliability Measures for Redundancy Systems with Different Types of Failures. *Quality and Reliability Engineering International*. https://doi.org/10.1002/qre.597 Difference: models common-cause failure to compute system reliability; this paper prices what an unstated dependence leaves open in the quote's unit. (supports `redundancy-defeated`)
 
-164. Rüschendorf L. (1991) FréChet-Bounds and Their Applications. *Advances in Probability Distributions with Given Marginals*. doi:10.1007/978-94-011-3466-8_9
+[164] Rüschendorf, L. (1991). FréChet-Bounds and Their Applications. *Advances in Probability Distributions with Given Marginals*. https://doi.org/10.1007/978-94-011-3466-8_9 Difference: states the class and its extremes for a given joint problem; this paper locates a published durability figure inside it. (supports `frechet-class`)
 
-165. Rüschendorf L. (2012) Optimal Portfolio Diversification w.r.t. Extreme Risks. *Springer Series in Operations Research and Financial Engineering*. doi:10.1007/978-3-642-33590-7_13
+[165] Rüschendorf, L. (2012). Optimal Portfolio Diversification w.r.t. Extreme Risks. *Springer Series in Operations Research and Financial Engineering*. https://doi.org/10.1007/978-3-642-33590-7_13 Difference: names the same arithmetic as a fallacy in risk aggregation; this paper supplies the identified set that the fallacy is a misreading of. (supports `diversification-fallacy`)
 
-166. Russell J.W. (1998) The International Diversification Fallacy of Exchange-Listed Securities. *Financial Services Review*. doi:10.1016/s1057-0810(99)80005-5
+[166] Russell, J. W. (1998). The International Diversification Fallacy of Exchange-Listed Securities. *Financial Services Review*. https://doi.org/10.1016/s1057-0810(99)80005-5 Difference: names the same arithmetic as a fallacy in risk aggregation; this paper supplies the identified set that the fallacy is a misreading of. (supports `diversification-fallacy`)
 
-167. Saigo H. (2021) The independence assumption in the mixed randomized response model. *Statistics &amp; Probability Letters*. doi:10.1016/j.spl.2020.108986
+[167] Saigo, H. (2021). The independence assumption in the mixed randomized response model. *Statistics &amp; Probability Letters*. https://doi.org/10.1016/j.spl.2020.108986 Difference: treats a quoted probability's assumptions as a sensitivity question inside a study; this paper makes the quoted number the object. (supports `assumption-sensitivity`)
 
-168. Sakalauskas L. (2013) Multidimensional rare event probability estimation algorithm. *Computational Science and Techniques*. doi:10.15181/csat.v1i2.93
+[168] Sakalauskas, L. (2013). Multidimensional rare event probability estimation algorithm. *Computational Science and Techniques*. https://doi.org/10.15181/csat.v1i2.93 Difference: estimates far-tail probabilities by simulation or extrapolation; this paper declines to estimate and bounds instead. (supports `rare-event-cost`)
 
-169. Sakif M.S.I. (2024) Towards Benchmarking Erasure Coding Schemes in Object Storage System. doi:10.2139/ssrn.4713329
+[169] Sakif, M. S. I. (2024). Towards Benchmarking Erasure Coding Schemes in Object Storage System. https://doi.org/10.2139/ssrn.4713329 Difference: changes the redundancy arithmetic of the same model; this paper shows the identified set is unchanged by it. (supports `erasure-arithmetic`)
 
-170. Samuels S.M. (1989) Bonferroni-Type Probability Bounds as an Application of the Theory of Tchebycheff Systems. *Probability, Statistics, and Mathematics*. doi:10.1016/b978-0-12-058470-3.50026-4
+[170] Samuels, S. M. (1989). Bonferroni-Type Probability Bounds as an Application of the Theory of Tchebycheff Systems. *Probability, Statistics, and Mathematics*. https://doi.org/10.1016/b978-0-12-058470-3.50026-4 Difference: sharpens the intersection bound as a tool; this paper reads a quoted number against it and reports the distance in nines. (supports `bonferroni-lower`)
 
-171. Schay G. (1979) Optimal Joint Distributions of Several Random Variables with Given Marginals. *Studies in Applied Mathematics*. doi:10.1002/sapm1979612179
+[171] Schay, G. (1979). Optimal Joint Distributions of Several Random Variables with Given Marginals. *Studies in Applied Mathematics*. https://doi.org/10.1002/sapm1979612179 Difference: states the class and its extremes for a given joint problem; this paper locates a published durability figure inside it. (supports `frechet-class`)
 
-172. Scheu M.N. (2017) Influence of statistical uncertainty of component reliability estimations on offshore wind farm availability. *Reliability Engineering &amp; System Safety*. doi:10.1016/j.ress.2017.05.021
+[172] Scheu, M. N. (2017). Influence of statistical uncertainty of component reliability estimations on offshore wind farm availability. *Reliability Engineering &amp; System Safety*. https://doi.org/10.1016/j.ress.2017.05.021 Difference: treats a quoted probability's assumptions as a sensitivity question inside a study; this paper makes the quoted number the object. (supports `assumption-sensitivity`)
 
-173. Sharaf S. (2014) Enabling service-level agreement renegotiation through extending WS-Agreement specification. *Service Oriented Computing and Applications*. doi:10.1007/s11761-014-0159-5
+[173] Sharaf, S. (2014). Enabling service-level agreement renegotiation through extending WS-Agreement specification. *Service Oriented Computing and Applications*. https://doi.org/10.1007/s11761-014-0159-5 Difference: publishes the figure as a commitment to a customer; this paper states what the commitment asserts about an unmeasured quantity. (supports `sla-promise`)
 
-174. She B. (2025) Descriptor: United States Event-Correlated Power Outage Dataset (USECPO). *IEEE Data Descriptions*. doi:10.1109/ieeedata.2025.3598229
+[174] She, B. (2025). Descriptor: United States Event-Correlated Power Outage Dataset (USECPO). *IEEE Data Descriptions*. https://doi.org/10.1109/ieeedata.2025.3598229 Difference: measures correlated failure in production systems; this paper asks what a quote computed without that measurement identifies. (supports `correlation-measured`)
 
-175. Shi H. (2020) INEC: Fast and Coherent In-Network Erasure Coding. *SC20: International Conference for High Performance Computing, Networking, Storage and Analysis*. doi:10.1109/sc41405.2020.00070
+[175] Shi, H. (2020). INEC: Fast and Coherent In-Network Erasure Coding. *SC20: International Conference for High Performance Computing, Networking, Storage and Analysis*. https://doi.org/10.1109/sc41405.2020.00070 Difference: changes the redundancy arithmetic of the same model; this paper shows the identified set is unchanged by it. (supports `erasure-arithmetic`)
 
-176. Sibuya M. (1992) Sharp Bonferroni-Type Inequalities in Explicit Forms. *Probability Theory and Applications*. doi:10.1007/978-94-011-2817-9_11
+[176] Sibuya, M. (1992). Sharp Bonferroni-Type Inequalities in Explicit Forms. *Probability Theory and Applications*. https://doi.org/10.1007/978-94-011-2817-9_11 Difference: sharpens the intersection bound as a tool; this paper reads a quoted number against it and reports the distance in nines. (supports `bonferroni-lower`)
 
-177. Smith H. (2016) Reliability and Continuous Data Protection, Synchronous Replication. *Data Center Storage*. doi:10.1201/b10798-20
+[177] Smith, H. (2016). Reliability and Continuous Data Protection, Synchronous Replication. *Data Center Storage*. https://doi.org/10.1201/b10798-20 Difference: computes the durability figure from per-device rates under independence; this paper prices the independence step itself. (supports `durability-models`)
 
-178. Smith H. (2016) Reliability and Near-Continuous Data Protection, Asynchronous Replication. *Data Center Storage*. doi:10.1201/b10798-21
+[178] Smith, H. (2016). Reliability and Near-Continuous Data Protection, Asynchronous Replication. *Data Center Storage*. https://doi.org/10.1201/b10798-21 Difference: computes the durability figure from per-device rates under independence; this paper prices the independence step itself. (supports `durability-models`)
 
-179. Spencer T.H. (1994) Generalized Bonferroni inequalities. *Journal of Applied Probability*. doi:10.2307/3215034
+[179] Spencer, T. H. (1994). Generalized Bonferroni inequalities. *Journal of Applied Probability*. https://doi.org/10.2307/3215034 Difference: sharpens the intersection bound as a tool; this paper reads a quoted number against it and reports the distance in nines. (supports `bonferroni-lower`)
 
-180. Talapko D. (2012) Telecom datacenter power infrastructure availability comparison of DC and AC UPS. *Intelec 2012*. doi:10.1109/intlec.2012.6374509
+[180] Talapko, D. (2012). Telecom datacenter power infrastructure availability comparison of DC and AC UPS. *Intelec 2012*. https://doi.org/10.1109/intlec.2012.6374509 Difference: publishes the figure as a commitment to a customer; this paper states what the commitment asserts about an unmeasured quantity. (supports `sla-promise`)
 
-181. Tan X. (1989) Some inequalities of Bonferroni—Galambos type. *Statistics &amp; Probability Letters*. doi:10.1016/0167-7152(89)90075-8
+[181] Tan, X. (1989). Some inequalities of Bonferroni—Galambos type. *Statistics &amp; Probability Letters*. https://doi.org/10.1016/0167-7152(89)90075-8 Difference: sharpens the intersection bound as a tool; this paper reads a quoted number against it and reports the distance in nines. (supports `bonferroni-lower`)
 
-182. Tang Z. (2017) Quantitative Availability Analysis of Hierarchical Datacenter under Power Oversubscription. *2017 IEEE International Conference on Smart Computing (SMARTCOMP)*. doi:10.1109/smartcomp.2017.7947039
+[182] Tang, Z. (2017). Quantitative Availability Analysis of Hierarchical Datacenter under Power Oversubscription. *2017 IEEE International Conference on Smart Computing (SMARTCOMP)*. https://doi.org/10.1109/smartcomp.2017.7947039 Difference: publishes the figure as a commitment to a customer; this paper states what the commitment asserts about an unmeasured quantity. (supports `sla-promise`)
 
-183. Tiit E.M. (2002) Existence of Multivariate Distributions with Given Marginals. *Distributions With Given Marginals and Statistical Modelling*. doi:10.1007/978-94-017-0061-0_24
+[183] Tiit, E. M. (2002). Existence of Multivariate Distributions with Given Marginals. *Distributions With Given Marginals and Statistical Modelling*. https://doi.org/10.1007/978-94-017-0061-0_24 Difference: states the class and its extremes for a given joint problem; this paper locates a published durability figure inside it. (supports `frechet-class`)
 
-184. Tonon F. (2009) Bounds on Previsions and Conditional Probabilities on Joint Finite Spaces Under the Assumption of Independence in Imprecise Probability. *Volume 10: Mechanical Systems and Control, Parts A and B*. doi:10.1115/imece2009-12206
+[184] Tonon, F. (2009). Bounds on Previsions and Conditional Probabilities on Joint Finite Spaces Under the Assumption of Independence in Imprecise Probability. *Volume 10: Mechanical Systems and Control, Parts A and B*. https://doi.org/10.1115/imece2009-12206 Difference: optimises under the bound for dependent risks; this paper asks which end of the bound the quoted figure sits at. (supports `bounds-stated-not-attained`)
 
-185. Tsuchiya T. (2002) Byzantine quorum systems with maximum availability. *Information Processing Letters*. doi:10.1016/s0020-0190(01)00311-8
+[185] Tsuchiya, T. (2002). Byzantine quorum systems with maximum availability. *Information Processing Letters*. https://doi.org/10.1016/s0020-0190(01)00311-8 Difference: designs quorums whose availability depends on correlated node failure; this paper asks what the availability figure identifies given only marginals. (supports `quorum-availability`)
 
-186. Uezato Y. (2021) Accelerating XOR-based erasure coding using program optimization techniques. *Proceedings of the International Conference for High Performance Computing, Networking, Storage and Analysis*. doi:10.1145/3458817.3476204
+[186] Uezato, Y. (2021). Accelerating XOR-based erasure coding using program optimization techniques. *Proceedings of the International Conference for High Performance Computing, Networking, Storage and Analysis*. https://doi.org/10.1145/3458817.3476204 Difference: changes the redundancy arithmetic of the same model; this paper shows the identified set is unchanged by it. (supports `erasure-arithmetic`)
 
-187. van Renesse R. (2010) Replication Techniques for Availability. *Lecture Notes in Computer Science*. doi:10.1007/978-3-642-11294-2_2
+[187] van Renesse, R. (2010). Replication Techniques for Availability. *Lecture Notes in Computer Science*. https://doi.org/10.1007/978-3-642-11294-2_2 Difference: computes the durability figure from per-device rates under independence; this paper prices the independence step itself. (supports `durability-models`)
 
-188. Vukolić M. (2012) Byzantine Quorum Systems. *Synthesis Lectures on Distributed Computing Theory*. doi:10.1007/978-3-031-02007-0_5
+[188] Vukolić, M. (2012). Byzantine Quorum Systems. *Synthesis Lectures on Distributed Computing Theory*. https://doi.org/10.1007/978-3-031-02007-0_5 Difference: designs quorums whose availability depends on correlated node failure; this paper asks what the availability figure identifies given only marginals. (supports `quorum-availability`)
 
-189. Vukolić M. (2012) Classical Quorum-Based Emulations. *Synthesis Lectures on Distributed Computing Theory*. doi:10.1007/978-3-031-02007-0_4
+[189] Vukolić, M. (2012). Classical Quorum-Based Emulations. *Synthesis Lectures on Distributed Computing Theory*. https://doi.org/10.1007/978-3-031-02007-0_4 Difference: designs quorums whose availability depends on correlated node failure; this paper asks what the availability figure identifies given only marginals. (supports `quorum-availability`)
 
-190. Vukolić M. (2012) Latency-efficient Quorum Systems. *Synthesis Lectures on Distributed Computing Theory*. doi:10.1007/978-3-031-02007-0_6
+[190] Vukolić, M. (2012). Latency-efficient Quorum Systems. *Synthesis Lectures on Distributed Computing Theory*. https://doi.org/10.1007/978-3-031-02007-0_6 Difference: designs quorums whose availability depends on correlated node failure; this paper asks what the availability figure identifies given only marginals. (supports `quorum-availability`)
 
-191. Vukolić M. (2012) Probabilistic Quorum Systems. *Synthesis Lectures on Distributed Computing Theory*. doi:10.1007/978-3-031-02007-0_7
+[191] Vukolić, M. (2012). Probabilistic Quorum Systems. *Synthesis Lectures on Distributed Computing Theory*. https://doi.org/10.1007/978-3-031-02007-0_7 Difference: designs quorums whose availability depends on correlated node failure; this paper asks what the availability figure identifies given only marginals. (supports `quorum-availability`)
 
-192. Walker A.M. (1981) On the classical Bonferroni inequalities and the corresponding Galambos inequalities. *Journal of Applied Probability*. doi:10.2307/3213333
+[192] Walker, A. M. (1981). On the classical Bonferroni inequalities and the corresponding Galambos inequalities. *Journal of Applied Probability*. https://doi.org/10.2307/3213333 Difference: sharpens the intersection bound as a tool; this paper reads a quoted number against it and reports the distance in nines. (supports `bonferroni-lower`)
 
-193. Walter W. (1988) Marginal-frechet-bounds for multidimensional distribution functions. *Statistics*. doi:10.1080/02331888808802100
+[193] Walter, W. (1988). Marginal-frechet-bounds for multidimensional distribution functions. *Statistics*. https://doi.org/10.1080/02331888808802100 Difference: states the class and its extremes for a given joint problem; this paper locates a published durability figure inside it. (supports `frechet-class`)
 
-194. Wang R. (2013) Bounds for the sum of dependent risks and worst Value-at-Risk with monotone marginal densities. *Finance and Stochastics*. doi:10.1007/s00780-012-0200-5
+[194] Wang, R. (2013). Bounds for the sum of dependent risks and worst Value-at-Risk with monotone marginal densities. *Finance and Stochastics*. https://doi.org/10.1007/s00780-012-0200-5 Difference: optimises under the bound for dependent risks; this paper asks which end of the bound the quoted figure sits at. (supports `bounds-stated-not-attained`)
 
-195. Xian G. (2024) Examining SSD-correlated Failures within Racks in Production Data Centers. *2024 IEEE International Conference on High Performance Computing and Communications (HPCC)*. doi:10.1109/hpcc64274.2024.00065
+[195] Xian, G. (2024). Examining SSD-correlated Failures within Racks in Production Data Centers. *2024 IEEE International Conference on High Performance Computing and Communications (HPCC)*. https://doi.org/10.1109/hpcc64274.2024.00065 Difference: measures correlated failure in production systems; this paper asks what a quote computed without that measurement identifies. (supports `correlation-measured`)
 
-196. Xu Y. (2010) Characterizing the Spread of Correlated Failures in Large Wireless Networks. *2010 Proceedings IEEE INFOCOM*. doi:10.1109/infcom.2010.5462009
+[196] Xu, Y. (2010). Characterizing the Spread of Correlated Failures in Large Wireless Networks. *2010 Proceedings IEEE INFOCOM*. https://doi.org/10.1109/infcom.2010.5462009 Difference: measures correlated failure in production systems; this paper asks what a quote computed without that measurement identifies. (supports `correlation-measured`)
 
-197. Yarimer E. (1983) Statistical Parameter Uncertainty, Information Level And Reliability Assessment. *Reliability Theory and Its Application in Structural and Soil Mechanics*. doi:10.1007/978-94-009-6896-7_28
+[197] Yarimer, E. (1983). Statistical Parameter Uncertainty, Information Level And Reliability Assessment. *Reliability Theory and Its Application in Structural and Soil Mechanics*. https://doi.org/10.1007/978-94-009-6896-7_28 Difference: treats a quoted probability's assumptions as a sensitivity question inside a study; this paper makes the quoted number the object. (supports `assumption-sensitivity`)
 
-198. Yeh C.T. (2017) Cost-oriented component redundancy allocation for a communication system subject to correlated failures and a transmission reliability threshold. *Proceedings of the Institution of Mechanical Engineers, Part O: Journal of Risk and Reliability*. doi:10.1177/1748006x17742778
+[198] Yeh, C. T. (2017). Cost-oriented component redundancy allocation for a communication system subject to correlated failures and a transmission reliability threshold. *Proceedings of the Institution of Mechanical Engineers, Part O: Journal of Risk and Reliability*. https://doi.org/10.1177/1748006x17742778 Difference: models common-cause failure to compute system reliability; this paper prices what an unstated dependence leaves open in the quote's unit. (supports `redundancy-defeated`)
 
-199. Yeh C.T. (2017) Optimal redundancy allocation to maximize multi-state computer network reliability subject to correlated failures. *Reliability Engineering &amp; System Safety*. doi:10.1016/j.ress.2016.08.026
+[199] Yeh, C. T. (2017). Optimal redundancy allocation to maximize multi-state computer network reliability subject to correlated failures. *Reliability Engineering &amp; System Safety*. https://doi.org/10.1016/j.ress.2016.08.026 Difference: models common-cause failure to compute system reliability; this paper prices what an unstated dependence leaves open in the quote's unit. (supports `redundancy-defeated`)
 
-200. Yigitbasi N. (2010) Analysis and modeling of time-correlated failures in large-scale distributed systems. *2010 11th IEEE/ACM International Conference on Grid Computing*. doi:10.1109/grid.2010.5697961
+[200] Yigitbasi, N. (2010). Analysis and modeling of time-correlated failures in large-scale distributed systems. *2010 11th IEEE/ACM International Conference on Grid Computing*. https://doi.org/10.1109/grid.2010.5697961 Difference: measures correlated failure in production systems; this paper asks what a quote computed without that measurement identifies. (supports `correlation-measured`)
 
-201. Yin C. (2016) Sharp Convex Bounds on the Aggregate Sums–An Alternative Proof. *Risks*. doi:10.3390/risks4040034
+[201] Yin, C. (2016). Sharp Convex Bounds on the Aggregate Sums–An Alternative Proof. *Risks*. https://doi.org/10.3390/risks4040034 Difference: optimises under the bound for dependent risks; this paper asks which end of the bound the quoted figure sits at. (supports `bounds-stated-not-attained`)
 
-202. Zhong M. (2007) Object replication degree customization for high availability. *Proceedings of the twenty-sixth annual ACM symposium on Principles of distributed computing*. doi:10.1145/1281100.1281164
+[202] Zhong, M. (2007). Object replication degree customization for high availability. *Proceedings of the twenty-sixth annual ACM symposium on Principles of distributed computing*. https://doi.org/10.1145/1281100.1281164 Difference: computes the durability figure from per-device rates under independence; this paper prices the independence step itself. (supports `durability-models`)
 
-203. Zhong M. (2008) Replication degree customization for high availability. *Proceedings of the 3rd ACM SIGOPS/EuroSys European Conference on Computer Systems 2008*. doi:10.1145/1352592.1352599
+[203] Zhong, M. (2008). Replication degree customization for high availability. *Proceedings of the 3rd ACM SIGOPS/EuroSys European Conference on Computer Systems 2008*. https://doi.org/10.1145/1352592.1352599 Difference: computes the durability figure from per-device rates under independence; this paper prices the independence step itself. (supports `durability-models`)
 
-204. Zhou C. (2009) Dependence Structure of Risk Factors and Diversification Effects. doi:10.2139/ssrn.1456848
+[204] Zhou, C. (2009). Dependence Structure of Risk Factors and Diversification Effects. https://doi.org/10.2139/ssrn.1456848 Difference: names the same arithmetic as a fallacy in risk aggregation; this paper supplies the identified set that the fallacy is a misreading of. (supports `diversification-fallacy`)
 
-205. Zhou T. (2020) Fast Erasure Coding for Data Storage. *ACM Transactions on Storage*. doi:10.1145/3375554
+[205] Zhou, T. (2020). Fast Erasure Coding for Data Storage. *ACM Transactions on Storage*. https://doi.org/10.1145/3375554 Difference: changes the redundancy arithmetic of the same model; this paper shows the identified set is unchanged by it. (supports `erasure-arithmetic`)
 
-206. Zuk J. (2014) Rare-event simulation for radar threshold estimation in heavy-tailed sea clutter. *2014 IEEE Workshop on Statistical Signal Processing (SSP)*. doi:10.1109/ssp.2014.6884669
+[206] Zuk, J. (2014). Rare-event simulation for radar threshold estimation in heavy-tailed sea clutter. *2014 IEEE Workshop on Statistical Signal Processing (SSP)*. https://doi.org/10.1109/ssp.2014.6884669 Difference: estimates far-tail probabilities by simulation or extrapolation; this paper declines to estimate and bounds instead. (supports `rare-event-cost`)
 

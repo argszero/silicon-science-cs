@@ -246,31 +246,51 @@ def numbered(corpus):
     return dict((k, i + 1) for i, k in enumerate(order))
 
 
-def entry_line(num, rec):
+def entry_line(num, rec, claim=None):
+    """One bibliography entry, in this journal's house order.
+
+    `[n] Family, I. (year). Title. Venue. https://doi.org/...` and then the difference line. The
+    link is printed as a URL a reader can open, never as a bare DOI string: a pointer has to resolve
+    in the hands of whoever reads it.
+
+    The difference line is the *claim's* — one authored line per claim, printed on each entry that
+    claim owns, and the entry names the claim it speaks for. That is a declared construction rather
+    than 200 restatements: the claims are what the paper distinguishes, and a per-entry sentence
+    invented for a record the paper cites in a cluster would be boilerplate dressed as content.
+    """
     fam = rec.get("first_family") or ""
     given = rec.get("first_given") or ""
+    fam = fam[:1].upper() + fam[1:].lower() if fam.isupper() or fam.islower() else fam
     initials = ""
     if given:
-        initials = " " + "".join(p[0] + "." for p in re.split(r"[\s-]+", given) if p)
-    authors = (fam + initials).strip() or "anon."
-    venue = rec.get("venue") or ""
-    bits = []
-    if authors:
-        bits.append(authors)
-    if rec.get("year"):
-        bits.append("(%s)" % rec["year"])
-    bits.append(rec["title"].rstrip(".") + ".")
+        initials = ", " + " ".join(p[0] + "." for p in re.split(r"[\s-]+", given) if p)
+    authors = (fam + initials) if fam else ""
+    if not authors:
+        authors = "author not established on Crossref for this DOI"
+    title = rec["title"].strip()
+    title = title[:1].upper() + title[1:]
+    bits = ["[%d]" % num, authors + " (%s)." % rec.get("year", "n.d."), title]
+    if not title.endswith("."):
+        bits[-1] = bits[-1] + "."
+    venue = (rec.get("venue") or "").strip()
     if venue:
         bits.append("*%s*." % venue)
-    bits.append("doi:%s" % rec["doi"])
-    return "%d. %s" % (num, " ".join(bits))
+    bits.append("https://doi.org/%s" % rec["doi"])
+    line = " ".join(bits)
+    if claim and claim.get("difference"):
+        line += " Difference: %s. (supports `%s`)" % (claim["difference"], claim["id"])
+    return line
 
 
 def render_list(corpus, nums):
     lines = []
+    owner = {}
+    for cl in CLAIMS:
+        for k in cl["keys"]:
+            owner.setdefault(k, cl)
     for key in sorted(nums, key=lambda k: nums[k]):
         rec = corpus["by_key"][key]
-        lines.append(entry_line(nums[key], rec))
+        lines.append(entry_line(nums[key], rec, owner.get(key)))
         lines.append("")
     return "\n".join(lines).rstrip() + "\n"
 

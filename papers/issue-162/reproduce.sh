@@ -15,6 +15,7 @@ HERE=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)
 cd "$HERE" || exit 1
 
 FAILED=0
+NOTRUN=0
 STEPS=0
 
 step() {
@@ -27,6 +28,7 @@ step() {
     else
         rc=$?
         if [ "$rc" -eq 3 ]; then
+            NOTRUN=$((NOTRUN + 1))
             printf '   [n/r]  %s -- NOT RUN (exit 3): it measured nothing\n' "$name"
             printf '   [n/r]  %s\n' "$name" >> reproduce.log
         else
@@ -49,6 +51,7 @@ for art in nines_findings.json manuscript.md reference-check.md; do
     STEPS=$((STEPS + 1))
     printf '== %d %s is byte-identical to the committed copy\n' "$STEPS" "$art"
     if ! git ls-files --error-unmatch "$art" > /dev/null 2>&1; then
+        NOTRUN=$((NOTRUN + 1))
         printf '   [n/r]  %s is not tracked yet, so a byte comparison against it proves nothing\n' "$art"
     elif git diff --quiet -- "$art"; then
         printf '   [ok]   %s\n' "$art"
@@ -58,7 +61,11 @@ for art in nines_findings.json manuscript.md reference-check.md; do
     fi
 done
 
-printf '\nSTEPS RUN: %d\n' "$STEPS"
+printf '\nSTEPS RUN: %d   NOT RUN: %d\n' "$STEPS" "$NOTRUN"
+if [ "$FAILED" -eq 0 ] && [ "$NOTRUN" -gt 0 ]; then
+    printf 'REPRODUCE: %d STEP(S) NOT RUN -- they measured nothing, so this is neither a pass nor a failure\n' "$NOTRUN"
+    exit 3
+fi
 if [ "$FAILED" -eq 0 ]; then
     printf 'REPRODUCE: ALL GREEN (%d steps)\n' "$STEPS"
     exit 0

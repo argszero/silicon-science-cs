@@ -23,6 +23,7 @@ CLAIMS = [
     # ------------------------------------------------------------------------------------------
     dict(
         id="frechet-class",
+        difference="states the class and its extremes for a given joint problem; this paper locates a published durability figure inside it",
         section="2",
         claim=("Given the marginals and nothing else, the object is the Fréchet class: the set of "
                "joint laws with those marginals, whose extremes are the classical bounds."),
@@ -31,6 +32,7 @@ CLAIMS = [
     ),
     dict(
         id="bonferroni-lower",
+        difference="sharpens the intersection bound as a tool; this paper reads a quoted number against it and reports the distance in nines",
         section="2",
         claim=("The lower end of that set for an intersection of r events is the inclusion-exclusion "
                "bound, and the literature's business has been improving it, not questioning it."),
@@ -44,6 +46,7 @@ CLAIMS = [
     ),
     dict(
         id="bounds-stated-not-attained",
+        difference="optimises under the bound for dependent risks; this paper asks which end of the bound the quoted figure sits at",
         section="2",
         claim=("The literature states these bounds for dependent risks and optimises under them; what "
                "it does not do is take the quote's own figure and ask which end of the set it is."),
@@ -59,6 +62,7 @@ CLAIMS = [
     # ------------------------------------------------------------------------------------------
     dict(
         id="correlation-measured",
+        difference="measures correlated failure in production systems; this paper asks what a quote computed without that measurement identifies",
         section="3",
         claim=("Correlated failure is a measured property of production systems, in disks, in racks, "
                "in networks and in power, not a hypothetical."),
@@ -71,6 +75,7 @@ CLAIMS = [
     ),
     dict(
         id="redundancy-defeated",
+        difference="models common-cause failure to compute system reliability; this paper prices what an unstated dependence leaves open in the quote's unit",
         section="3",
         claim=("Adding replicas under dependence is not a monotone improvement, and the failure-mode "
                "literature has said so for decades: common-cause models are the standard repair."),
@@ -85,6 +90,7 @@ CLAIMS = [
     ),
     dict(
         id="placement-under-correlation",
+        difference="assumes a dependence and constrains placement; this paper assumes none and reports what that leaves unidentified",
         section="3",
         claim=("The copyset line answers the same worry from the design side: assume the dependence, "
                "constrain which replicas may fail together, and compute the resulting loss rate."),
@@ -94,6 +100,7 @@ CLAIMS = [
     ),
     dict(
         id="quorum-availability",
+        difference="designs quorums whose availability depends on correlated node failure; this paper asks what the availability figure identifies given only marginals",
         section="3",
         claim=("Quorum systems make the same trade in the availability direction, and their "
                "probabilistic variants exist precisely because a fixed quorum's availability is a "
@@ -109,6 +116,7 @@ CLAIMS = [
     # ------------------------------------------------------------------------------------------
     dict(
         id="durability-models",
+        difference="computes the durability figure from per-device rates under independence; this paper prices the independence step itself",
         section="4",
         claim=("A durability figure is produced by an MtTDL-style model whose inputs are per-device "
                "rates and whose arithmetic is the independence product the quote repeats."),
@@ -120,6 +128,7 @@ CLAIMS = [
     ),
     dict(
         id="erasure-arithmetic",
+        difference="changes the redundancy arithmetic of the same model; this paper shows the identified set is unchanged by it",
         section="4",
         claim=("Erasure coding changes the arithmetic and the engineering of that model — it does not "
                "change what the marginals identify."),
@@ -130,6 +139,7 @@ CLAIMS = [
     ),
     dict(
         id="sla-promise",
+        difference="publishes the figure as a commitment to a customer; this paper states what the commitment asserts about an unmeasured quantity",
         section="4",
         claim=("The number is then published as a promise, in a service-level objective or a "
                "durability claim, where the reader is a customer and not a reviewer."),
@@ -144,6 +154,7 @@ CLAIMS = [
     # ------------------------------------------------------------------------------------------
     dict(
         id="rare-event-cost",
+        difference="estimates far-tail probabilities by simulation or extrapolation; this paper declines to estimate and bounds instead",
         section="5",
         claim=("Estimating a probability at the far tail is a research programme of its own: the "
                "standard answer is importance sampling or extreme-value extrapolation, each with its "
@@ -157,6 +168,7 @@ CLAIMS = [
     ),
     dict(
         id="assumption-sensitivity",
+        difference="treats a quoted probability's assumptions as a sensitivity question inside a study; this paper makes the quoted number the object",
         section="5",
         claim=("The reliability-reporting literature already knows that a quoted failure probability "
                "inherits its assumptions, and treats that as a sensitivity question rather than a "
@@ -170,6 +182,7 @@ CLAIMS = [
     ),
     dict(
         id="diversification-fallacy",
+        difference="names the same arithmetic as a fallacy in risk aggregation; this paper supplies the identified set that the fallacy is a misreading of",
         section="5",
         claim=("The same arithmetic is a named fallacy elsewhere: zero correlation is not "
                "independence, and diversification computed under one coupling fails under another."),
