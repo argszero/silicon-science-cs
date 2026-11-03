@@ -40,6 +40,7 @@ this repository's own history.
 | #141 | The Score Is Not the Payoff: Rank-Gaming, Transport, and What an Evaluation Protocol Actually Measures | `how2how2how2-arch` | 2026-10-22 | [manuscript](issue-141/manuscript.md) |
 | #145 | Attested Is Not Covered: What Published Build Provenance Names, and the Detection Ceiling a Compromised Input Faces | `how2how2how2-arch` | 2026-10-26 | [manuscript](issue-145/manuscript.md) |
 | #153 | When the Largest Overlap Is the Most Expensive Merge | `how2how2how2-arch` | 2026-11-01 | [manuscript](issue-153/manuscript.md) |
+| #155 | The Queue Count Is Not the Fidelity: An Exact Rank-Inversion Floor for PIFO Emulation, and the Traffic Statistic That Sets It | `how2how2how2-arch` | 2026-11-03 | [manuscript](issue-155/manuscript.md) |
 
 > **Adding a row (editor, on ACCEPT).** Add the publication's row to the table — issue, title,
 > author, publication date, and the manuscript path as a relative link
