@@ -28,16 +28,25 @@
     "determiner_but_no_saving_instances": [],
     "distinct_declaring_roots": 7,
     "instances_below_one_ratio": 34,
-    "instances_with_an_ambiguous_edge": 172,
+    "instances_below_one_ratio_among_refutable": 34,
+    "instances_with_a_single_ambiguous_coordinate": 94,
+    "instances_with_an_ambiguous_coordinate": 172,
     "max_saving": 1,
     "rate": 0.19767441860465115,
+    "rate_among_refutable": 0.4358974358974359,
+    "refutable_instances": 78,
     "saving_histogram": {
      "1": 34
     },
+    "single_coordinate_instances_with_a_saving": 0,
     "unexplained": [],
     "wilson95": [
      0.14504644442697598,
      0.2635121674145905
+    ],
+    "wilson95_among_refutable": [
+     0.33143062712963534,
+     0.5463821233542262
     ],
     "with_a_measured_functional_determiner": 34,
     "without_a_measured_functional_determiner": 0
@@ -60,7 +69,8 @@
     {
      "K": 4,
      "M": 4,
-     "ambiguity_edges": 6,
+     "ambiguous_coordinates": 4,
+     "ambiguous_pairs": 6,
      "cover_would_be": 3,
      "declaring": "axios@0.34.0",
      "dependence_search_exhaustive": true,
@@ -76,7 +86,8 @@
     {
      "K": 0,
      "M": 0,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 0,
+     "ambiguous_pairs": 0,
      "cover_would_be": null,
      "declaring": "@eslint-community/eslint-utils@4.7.0",
      "dependence_search_exhaustive": true,
@@ -92,7 +103,8 @@
     {
      "K": 0,
      "M": 0,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 0,
+     "ambiguous_pairs": 0,
      "cover_would_be": null,
      "declaring": "@eslint-community/eslint-utils@4.8.0",
      "dependence_search_exhaustive": true,
@@ -108,7 +120,8 @@
     {
      "K": 0,
      "M": 0,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 0,
+     "ambiguous_pairs": 0,
      "cover_would_be": null,
      "declaring": "@eslint-community/eslint-utils@4.9.0",
      "dependence_search_exhaustive": true,
@@ -124,7 +137,8 @@
     {
      "K": 0,
      "M": 0,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 0,
+     "ambiguous_pairs": 0,
      "cover_would_be": null,
      "declaring": "@eslint-community/eslint-utils@4.9.1",
      "dependence_search_exhaustive": true,
@@ -140,7 +154,8 @@
     {
      "K": 0,
      "M": 0,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 0,
+     "ambiguous_pairs": 0,
      "cover_would_be": null,
      "declaring": "@eslint-community/eslint-utils@4.10.0",
      "dependence_search_exhaustive": true,
@@ -156,7 +171,8 @@
     {
      "K": 0,
      "M": 0,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 0,
+     "ambiguous_pairs": 0,
      "cover_would_be": null,
      "declaring": "@eslint-community/eslint-utils@4.10.1",
      "dependence_search_exhaustive": true,
@@ -172,7 +188,8 @@
     {
      "K": 4,
      "M": 5,
-     "ambiguity_edges": 6,
+     "ambiguous_coordinates": 5,
+     "ambiguous_pairs": 6,
      "cover_would_be": 4,
      "declaring": "@eslint/config-array@0.23.1",
      "dependence_search_exhaustive": true,
@@ -192,7 +209,8 @@
     {
      "K": 3,
      "M": 4,
-     "ambiguity_edges": 4,
+     "ambiguous_coordinates": 4,
+     "ambiguous_pairs": 4,
      "cover_would_be": 3,
      "declaring": "@eslint/config-array@0.23.2",
      "dependence_search_exhaustive": true,
@@ -212,7 +230,8 @@
     {
      "K": 2,
      "M": 3,
-     "ambiguity_edges": 2,
+     "ambiguous_coordinates": 3,
+     "ambiguous_pairs": 2,
      "cover_would_be": 2,
      "declaring": "@eslint/config-array@0.21.2",
      "dependence_search_exhaustive": true,
@@ -232,7 +251,8 @@
     {
      "K": 3,
      "M": 4,
-     "ambiguity_edges": 4,
+     "ambiguous_coordinates": 4,
+     "ambiguous_pairs": 4,
      "cover_would_be": 3,
      "declaring": "@eslint/config-array@0.23.3",
      "dependence_search_exhaustive": true,
@@ -252,7 +272,8 @@
     {
      "K": 3,
      "M": 4,
-     "ambiguity_edges": 4,
+     "ambiguous_coordinates": 4,
+     "ambiguous_pairs": 4,
      "cover_would_be": 3,
      "declaring": "@eslint/config-array@0.23.4",
      "dependence_search_exhaustive": true,
@@ -272,7 +293,8 @@
     {
      "K": 3,
      "M": 4,
-     "ambiguity_edges": 4,
+     "ambiguous_coordinates": 4,
+     "ambiguous_pairs": 4,
      "cover_would_be": 3,
      "declaring": "@eslint/config-array@0.23.5",
      "dependence_search_exhaustive": true,
@@ -292,7 +314,8 @@
     {
      "K": 1,
      "M": 1,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 1,
+     "ambiguous_pairs": 0,
      "cover_would_be": 0,
      "declaring": "@eslint/config-helpers@0.5.2",
      "dependence_search_exhaustive": true,
@@ -308,7 +331,8 @@
     {
      "K": 1,
      "M": 1,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 1,
+     "ambiguous_pairs": 0,
      "cover_would_be": 0,
      "declaring": "@eslint/config-helpers@0.5.3",
      "dependence_search_exhaustive": true,
@@ -324,7 +348,8 @@
     {
      "K": 1,
      "M": 1,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 1,
+     "ambiguous_pairs": 0,
      "cover_would_be": 0,
      "declaring": "@eslint/config-helpers@0.5.4",
      "dependence_search_exhaustive": true,
@@ -340,7 +365,8 @@
     {
      "K": 0,
      "M": 0,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 0,
+     "ambiguous_pairs": 0,
      "cover_would_be": null,
      "declaring": "@eslint/config-helpers@0.5.5",
      "dependence_search_exhaustive": true,
@@ -356,7 +382,8 @@
     {
      "K": 0,
      "M": 0,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 0,
+     "ambiguous_pairs": 0,
      "cover_would_be": null,
      "declaring": "@eslint/config-helpers@0.6.0",
      "dependence_search_exhaustive": true,
@@ -372,7 +399,8 @@
     {
      "K": 0,
      "M": 0,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 0,
+     "ambiguous_pairs": 0,
      "cover_would_be": null,
      "declaring": "@eslint/config-helpers@0.7.0",
      "dependence_search_exhaustive": true,
@@ -388,7 +416,8 @@
     {
      "K": 0,
      "M": 0,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 0,
+     "ambiguous_pairs": 0,
      "cover_would_be": null,
      "declaring": "@eslint/core@1.0.0",
      "dependence_search_exhaustive": true,
@@ -404,7 +433,8 @@
     {
      "K": 0,
      "M": 0,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 0,
+     "ambiguous_pairs": 0,
      "cover_would_be": null,
      "declaring": "@eslint/core@1.0.1",
      "dependence_search_exhaustive": true,
@@ -420,7 +450,8 @@
     {
      "K": 0,
      "M": 0,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 0,
+     "ambiguous_pairs": 0,
      "cover_would_be": null,
      "declaring": "@eslint/core@1.1.0",
      "dependence_search_exhaustive": true,
@@ -436,7 +467,8 @@
     {
      "K": 0,
      "M": 0,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 0,
+     "ambiguous_pairs": 0,
      "cover_would_be": null,
      "declaring": "@eslint/core@1.1.1",
      "dependence_search_exhaustive": true,
@@ -452,7 +484,8 @@
     {
      "K": 0,
      "M": 0,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 0,
+     "ambiguous_pairs": 0,
      "cover_would_be": null,
      "declaring": "@eslint/core@1.2.0",
      "dependence_search_exhaustive": true,
@@ -468,7 +501,8 @@
     {
      "K": 0,
      "M": 0,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 0,
+     "ambiguous_pairs": 0,
      "cover_would_be": null,
      "declaring": "@eslint/core@1.2.1",
      "dependence_search_exhaustive": true,
@@ -484,7 +518,8 @@
     {
      "K": 1,
      "M": 1,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 1,
+     "ambiguous_pairs": 0,
      "cover_would_be": 0,
      "declaring": "@eslint/plugin-kit@0.6.0",
      "dependence_search_exhaustive": true,
@@ -500,7 +535,8 @@
     {
      "K": 1,
      "M": 1,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 1,
+     "ambiguous_pairs": 0,
      "cover_would_be": 0,
      "declaring": "@eslint/plugin-kit@0.6.1",
      "dependence_search_exhaustive": true,
@@ -516,7 +552,8 @@
     {
      "K": 1,
      "M": 1,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 1,
+     "ambiguous_pairs": 0,
      "cover_would_be": 0,
      "declaring": "@eslint/plugin-kit@0.7.0",
      "dependence_search_exhaustive": true,
@@ -532,7 +569,8 @@
     {
      "K": 0,
      "M": 0,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 0,
+     "ambiguous_pairs": 0,
      "cover_would_be": null,
      "declaring": "@eslint/plugin-kit@0.7.1",
      "dependence_search_exhaustive": true,
@@ -548,7 +586,8 @@
     {
      "K": 0,
      "M": 0,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 0,
+     "ambiguous_pairs": 0,
      "cover_would_be": null,
      "declaring": "@eslint/plugin-kit@0.7.2",
      "dependence_search_exhaustive": true,
@@ -564,7 +603,8 @@
     {
      "K": 0,
      "M": 0,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 0,
+     "ambiguous_pairs": 0,
      "cover_would_be": null,
      "declaring": "@eslint/plugin-kit@0.7.3",
      "dependence_search_exhaustive": true,
@@ -580,7 +620,8 @@
     {
      "K": 1,
      "M": 1,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 1,
+     "ambiguous_pairs": 0,
      "cover_would_be": 0,
      "declaring": "@humanfs/node@0.16.4",
      "dependence_search_exhaustive": true,
@@ -596,7 +637,8 @@
     {
      "K": 1,
      "M": 1,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 1,
+     "ambiguous_pairs": 0,
      "cover_would_be": 0,
      "declaring": "@humanfs/node@0.16.5",
      "dependence_search_exhaustive": true,
@@ -612,7 +654,8 @@
     {
      "K": 1,
      "M": 1,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 1,
+     "ambiguous_pairs": 0,
      "cover_would_be": 0,
      "declaring": "@humanfs/node@0.16.6",
      "dependence_search_exhaustive": true,
@@ -628,7 +671,8 @@
     {
      "K": 1,
      "M": 1,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 1,
+     "ambiguous_pairs": 0,
      "cover_would_be": 0,
      "declaring": "@humanfs/node@0.16.7",
      "dependence_search_exhaustive": true,
@@ -644,7 +688,8 @@
     {
      "K": 1,
      "M": 1,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 1,
+     "ambiguous_pairs": 0,
      "cover_would_be": 0,
      "declaring": "@humanfs/node@0.16.8",
      "dependence_search_exhaustive": true,
@@ -660,7 +705,8 @@
     {
      "K": 1,
      "M": 1,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 1,
+     "ambiguous_pairs": 0,
      "cover_would_be": 0,
      "declaring": "@humanfs/node@0.17.0",
      "dependence_search_exhaustive": true,
@@ -676,7 +722,8 @@
     {
      "K": 0,
      "M": 0,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 0,
+     "ambiguous_pairs": 0,
      "cover_would_be": null,
      "declaring": "@webassemblyjs/ast@1.11.5",
      "dependence_search_exhaustive": true,
@@ -692,7 +739,8 @@
     {
      "K": 0,
      "M": 0,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 0,
+     "ambiguous_pairs": 0,
      "cover_would_be": null,
      "declaring": "@webassemblyjs/ast@1.11.6",
      "dependence_search_exhaustive": true,
@@ -708,7 +756,8 @@
     {
      "K": 0,
      "M": 0,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 0,
+     "ambiguous_pairs": 0,
      "cover_would_be": null,
      "declaring": "@webassemblyjs/ast@1.12.1",
      "dependence_search_exhaustive": true,
@@ -724,7 +773,8 @@
     {
      "K": 0,
      "M": 0,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 0,
+     "ambiguous_pairs": 0,
      "cover_would_be": null,
      "declaring": "@webassemblyjs/ast@1.13.1",
      "dependence_search_exhaustive": true,
@@ -740,7 +790,8 @@
     {
      "K": 0,
      "M": 0,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 0,
+     "ambiguous_pairs": 0,
      "cover_would_be": null,
      "declaring": "@webassemblyjs/ast@1.13.2",
      "dependence_search_exhaustive": true,
@@ -756,7 +807,8 @@
     {
      "K": 0,
      "M": 0,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 0,
+     "ambiguous_pairs": 0,
      "cover_would_be": null,
      "declaring": "@webassemblyjs/ast@1.14.1",
      "dependence_search_exhaustive": true,
@@ -772,7 +824,8 @@
     {
      "K": 0,
      "M": 0,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 0,
+     "ambiguous_pairs": 0,
      "cover_would_be": null,
      "declaring": "@webassemblyjs/wasm-edit@1.11.5",
      "dependence_search_exhaustive": true,
@@ -788,7 +841,8 @@
     {
      "K": 0,
      "M": 0,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 0,
+     "ambiguous_pairs": 0,
      "cover_would_be": null,
      "declaring": "@webassemblyjs/wasm-edit@1.11.6",
      "dependence_search_exhaustive": true,
@@ -804,7 +858,8 @@
     {
      "K": 0,
      "M": 0,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 0,
+     "ambiguous_pairs": 0,
      "cover_would_be": null,
      "declaring": "@webassemblyjs/wasm-edit@1.12.1",
      "dependence_search_exhaustive": true,
@@ -820,7 +875,8 @@
     {
      "K": 0,
      "M": 0,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 0,
+     "ambiguous_pairs": 0,
      "cover_would_be": null,
      "declaring": "@webassemblyjs/wasm-edit@1.13.1",
      "dependence_search_exhaustive": true,
@@ -836,7 +892,8 @@
     {
      "K": 0,
      "M": 0,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 0,
+     "ambiguous_pairs": 0,
      "cover_would_be": null,
      "declaring": "@webassemblyjs/wasm-edit@1.13.2",
      "dependence_search_exhaustive": true,
@@ -852,7 +909,8 @@
     {
      "K": 0,
      "M": 0,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 0,
+     "ambiguous_pairs": 0,
      "cover_would_be": null,
      "declaring": "@webassemblyjs/wasm-edit@1.14.1",
      "dependence_search_exhaustive": true,
@@ -868,7 +926,8 @@
     {
      "K": 0,
      "M": 0,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 0,
+     "ambiguous_pairs": 0,
      "cover_would_be": null,
      "declaring": "@webassemblyjs/wasm-parser@1.11.5",
      "dependence_search_exhaustive": true,
@@ -884,7 +943,8 @@
     {
      "K": 0,
      "M": 0,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 0,
+     "ambiguous_pairs": 0,
      "cover_would_be": null,
      "declaring": "@webassemblyjs/wasm-parser@1.11.6",
      "dependence_search_exhaustive": true,
@@ -900,7 +960,8 @@
     {
      "K": 0,
      "M": 0,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 0,
+     "ambiguous_pairs": 0,
      "cover_would_be": null,
      "declaring": "@webassemblyjs/wasm-parser@1.12.1",
      "dependence_search_exhaustive": true,
@@ -916,7 +977,8 @@
     {
      "K": 0,
      "M": 0,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 0,
+     "ambiguous_pairs": 0,
      "cover_would_be": null,
      "declaring": "@webassemblyjs/wasm-parser@1.13.1",
      "dependence_search_exhaustive": true,
@@ -932,7 +994,8 @@
     {
      "K": 0,
      "M": 0,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 0,
+     "ambiguous_pairs": 0,
      "cover_would_be": null,
      "declaring": "@webassemblyjs/wasm-parser@1.13.2",
      "dependence_search_exhaustive": true,
@@ -948,7 +1011,8 @@
     {
      "K": 0,
      "M": 0,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 0,
+     "ambiguous_pairs": 0,
      "cover_would_be": null,
      "declaring": "@webassemblyjs/wasm-parser@1.14.1",
      "dependence_search_exhaustive": true,
@@ -964,7 +1028,8 @@
     {
      "K": 1,
      "M": 2,
-     "ambiguity_edges": 1,
+     "ambiguous_coordinates": 2,
+     "ambiguous_pairs": 1,
      "cover_would_be": 1,
      "declaring": "accepts@1.3.4",
      "dependence_search_exhaustive": true,
@@ -987,7 +1052,8 @@
     {
      "K": 1,
      "M": 2,
-     "ambiguity_edges": 1,
+     "ambiguous_coordinates": 2,
+     "ambiguous_pairs": 1,
      "cover_would_be": 1,
      "declaring": "accepts@1.3.5",
      "dependence_search_exhaustive": true,
@@ -1010,7 +1076,8 @@
     {
      "K": 1,
      "M": 2,
-     "ambiguity_edges": 1,
+     "ambiguous_coordinates": 2,
+     "ambiguous_pairs": 1,
      "cover_would_be": 1,
      "declaring": "accepts@1.3.6",
      "dependence_search_exhaustive": true,
@@ -1033,7 +1100,8 @@
     {
      "K": 1,
      "M": 2,
-     "ambiguity_edges": 1,
+     "ambiguous_coordinates": 2,
+     "ambiguous_pairs": 1,
      "cover_would_be": 1,
      "declaring": "accepts@1.3.7",
      "dependence_search_exhaustive": true,
@@ -1056,7 +1124,8 @@
     {
      "K": 1,
      "M": 2,
-     "ambiguity_edges": 1,
+     "ambiguous_coordinates": 2,
+     "ambiguous_pairs": 1,
      "cover_would_be": 1,
      "declaring": "accepts@1.3.8",
      "dependence_search_exhaustive": true,
@@ -1079,7 +1148,8 @@
     {
      "K": 2,
      "M": 2,
-     "ambiguity_edges": 1,
+     "ambiguous_coordinates": 2,
+     "ambiguous_pairs": 1,
      "cover_would_be": 1,
      "declaring": "accepts@2.0.0",
      "dependence_search_exhaustive": true,
@@ -1095,7 +1165,8 @@
     {
      "K": 0,
      "M": 0,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 0,
+     "ambiguous_pairs": 0,
      "cover_would_be": null,
      "declaring": "ajv@8.16.0",
      "dependence_search_exhaustive": true,
@@ -1111,7 +1182,8 @@
     {
      "K": 1,
      "M": 1,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 1,
+     "ambiguous_pairs": 0,
      "cover_would_be": 0,
      "declaring": "ajv@8.17.1",
      "dependence_search_exhaustive": true,
@@ -1127,7 +1199,8 @@
     {
      "K": 1,
      "M": 1,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 1,
+     "ambiguous_pairs": 0,
      "cover_would_be": 0,
      "declaring": "ajv@8.18.0",
      "dependence_search_exhaustive": true,
@@ -1143,7 +1216,8 @@
     {
      "K": 2,
      "M": 2,
-     "ambiguity_edges": 1,
+     "ambiguous_coordinates": 2,
+     "ambiguous_pairs": 1,
      "cover_would_be": 1,
      "declaring": "ajv@6.14.0",
      "dependence_search_exhaustive": true,
@@ -1159,7 +1233,8 @@
     {
      "K": 2,
      "M": 2,
-     "ambiguity_edges": 1,
+     "ambiguous_coordinates": 2,
+     "ambiguous_pairs": 1,
      "cover_would_be": 1,
      "declaring": "ajv@6.15.0",
      "dependence_search_exhaustive": true,
@@ -1175,7 +1250,8 @@
     {
      "K": 1,
      "M": 1,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 1,
+     "ambiguous_pairs": 0,
      "cover_would_be": 0,
      "declaring": "ajv@8.20.0",
      "dependence_search_exhaustive": true,
@@ -1191,7 +1267,8 @@
     {
      "K": 0,
      "M": 0,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 0,
+     "ambiguous_pairs": 0,
      "cover_would_be": null,
      "declaring": "content-disposition@1.0.0",
      "dependence_search_exhaustive": true,
@@ -1207,7 +1284,8 @@
     {
      "K": 0,
      "M": 0,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 0,
+     "ambiguous_pairs": 0,
      "cover_would_be": null,
      "declaring": "debug@4.3.5",
      "dependence_search_exhaustive": true,
@@ -1223,7 +1301,8 @@
     {
      "K": 0,
      "M": 0,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 0,
+     "ambiguous_pairs": 0,
      "cover_would_be": null,
      "declaring": "debug@4.3.6",
      "dependence_search_exhaustive": true,
@@ -1239,7 +1318,8 @@
     {
      "K": 0,
      "M": 0,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 0,
+     "ambiguous_pairs": 0,
      "cover_would_be": null,
      "declaring": "debug@4.3.7",
      "dependence_search_exhaustive": true,
@@ -1255,7 +1335,8 @@
     {
      "K": 0,
      "M": 0,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 0,
+     "ambiguous_pairs": 0,
      "cover_would_be": null,
      "declaring": "debug@4.4.0",
      "dependence_search_exhaustive": true,
@@ -1271,7 +1352,8 @@
     {
      "K": 0,
      "M": 0,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 0,
+     "ambiguous_pairs": 0,
      "cover_would_be": null,
      "declaring": "debug@4.4.1",
      "dependence_search_exhaustive": true,
@@ -1287,7 +1369,8 @@
     {
      "K": 0,
      "M": 0,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 0,
+     "ambiguous_pairs": 0,
      "cover_would_be": null,
      "declaring": "debug@4.4.3",
      "dependence_search_exhaustive": true,
@@ -1303,7 +1386,8 @@
     {
      "K": 1,
      "M": 1,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 1,
+     "ambiguous_pairs": 0,
      "cover_would_be": 0,
      "declaring": "enhanced-resolve@5.24.3",
      "dependence_search_exhaustive": true,
@@ -1319,7 +1403,8 @@
     {
      "K": 1,
      "M": 1,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 1,
+     "ambiguous_pairs": 0,
      "cover_would_be": 0,
      "declaring": "enhanced-resolve@5.24.4",
      "dependence_search_exhaustive": true,
@@ -1335,7 +1420,8 @@
     {
      "K": 1,
      "M": 1,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 1,
+     "ambiguous_pairs": 0,
      "cover_would_be": 0,
      "declaring": "enhanced-resolve@5.24.5",
      "dependence_search_exhaustive": true,
@@ -1351,7 +1437,8 @@
     {
      "K": 1,
      "M": 1,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 1,
+     "ambiguous_pairs": 0,
      "cover_would_be": 0,
      "declaring": "enhanced-resolve@5.25.0",
      "dependence_search_exhaustive": true,
@@ -1367,7 +1454,8 @@
     {
      "K": 1,
      "M": 1,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 1,
+     "ambiguous_pairs": 0,
      "cover_would_be": 0,
      "declaring": "enhanced-resolve@5.25.1",
      "dependence_search_exhaustive": true,
@@ -1383,7 +1471,8 @@
     {
      "K": 1,
      "M": 1,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 1,
+     "ambiguous_pairs": 0,
      "cover_would_be": 0,
      "declaring": "enhanced-resolve@5.26.0",
      "dependence_search_exhaustive": true,
@@ -1399,7 +1488,8 @@
     {
      "K": 1,
      "M": 1,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 1,
+     "ambiguous_pairs": 0,
      "cover_would_be": 0,
      "declaring": "eslint-scope@9.1.0",
      "dependence_search_exhaustive": true,
@@ -1415,7 +1505,8 @@
     {
      "K": 1,
      "M": 1,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 1,
+     "ambiguous_pairs": 0,
      "cover_would_be": 0,
      "declaring": "eslint-scope@9.1.1",
      "dependence_search_exhaustive": true,
@@ -1431,7 +1522,8 @@
     {
      "K": 1,
      "M": 1,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 1,
+     "ambiguous_pairs": 0,
      "cover_would_be": 0,
      "declaring": "eslint-scope@9.1.2",
      "dependence_search_exhaustive": true,
@@ -1447,7 +1539,8 @@
     {
      "K": 2,
      "M": 2,
-     "ambiguity_edges": 1,
+     "ambiguous_coordinates": 2,
+     "ambiguous_pairs": 1,
      "cover_would_be": 1,
      "declaring": "espree@10.3.0",
      "dependence_search_exhaustive": true,
@@ -1463,7 +1556,8 @@
     {
      "K": 1,
      "M": 1,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 1,
+     "ambiguous_pairs": 0,
      "cover_would_be": 0,
      "declaring": "espree@10.4.0",
      "dependence_search_exhaustive": true,
@@ -1479,7 +1573,8 @@
     {
      "K": 2,
      "M": 2,
-     "ambiguity_edges": 1,
+     "ambiguous_coordinates": 2,
+     "ambiguous_pairs": 1,
      "cover_would_be": 1,
      "declaring": "espree@11.0.0",
      "dependence_search_exhaustive": true,
@@ -1495,7 +1590,8 @@
     {
      "K": 2,
      "M": 2,
-     "ambiguity_edges": 1,
+     "ambiguous_coordinates": 2,
+     "ambiguous_pairs": 1,
      "cover_would_be": 1,
      "declaring": "espree@11.1.0",
      "dependence_search_exhaustive": true,
@@ -1511,7 +1607,8 @@
     {
      "K": 1,
      "M": 1,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 1,
+     "ambiguous_pairs": 0,
      "cover_would_be": 0,
      "declaring": "espree@11.1.1",
      "dependence_search_exhaustive": true,
@@ -1527,7 +1624,8 @@
     {
      "K": 1,
      "M": 1,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 1,
+     "ambiguous_pairs": 0,
      "cover_would_be": 0,
      "declaring": "espree@11.2.0",
      "dependence_search_exhaustive": true,
@@ -1543,7 +1641,8 @@
     {
      "K": 0,
      "M": 0,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 0,
+     "ambiguous_pairs": 0,
      "cover_would_be": null,
      "declaring": "finalhandler@2.0.0",
      "dependence_search_exhaustive": true,
@@ -1559,7 +1658,8 @@
     {
      "K": 0,
      "M": 0,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 0,
+     "ambiguous_pairs": 0,
      "cover_would_be": null,
      "declaring": "finalhandler@1.3.0",
      "dependence_search_exhaustive": true,
@@ -1575,7 +1675,8 @@
     {
      "K": 0,
      "M": 0,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 0,
+     "ambiguous_pairs": 0,
      "cover_would_be": null,
      "declaring": "finalhandler@1.3.1",
      "dependence_search_exhaustive": true,
@@ -1591,7 +1692,8 @@
     {
      "K": 2,
      "M": 2,
-     "ambiguity_edges": 1,
+     "ambiguous_coordinates": 2,
+     "ambiguous_pairs": 1,
      "cover_would_be": 1,
      "declaring": "finalhandler@2.1.0",
      "dependence_search_exhaustive": true,
@@ -1607,7 +1709,8 @@
     {
      "K": 0,
      "M": 0,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 0,
+     "ambiguous_pairs": 0,
      "cover_would_be": null,
      "declaring": "finalhandler@1.3.2",
      "dependence_search_exhaustive": true,
@@ -1623,7 +1726,8 @@
     {
      "K": 2,
      "M": 2,
-     "ambiguity_edges": 1,
+     "ambiguous_coordinates": 2,
+     "ambiguous_pairs": 1,
      "cover_would_be": 1,
      "declaring": "finalhandler@2.1.1",
      "dependence_search_exhaustive": true,
@@ -1639,7 +1743,8 @@
     {
      "K": 1,
      "M": 1,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 1,
+     "ambiguous_pairs": 0,
      "cover_would_be": 0,
      "declaring": "find-up@6.0.0",
      "dependence_search_exhaustive": true,
@@ -1655,7 +1760,8 @@
     {
      "K": 1,
      "M": 1,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 1,
+     "ambiguous_pairs": 0,
      "cover_would_be": 0,
      "declaring": "find-up@6.1.0",
      "dependence_search_exhaustive": true,
@@ -1671,7 +1777,8 @@
     {
      "K": 1,
      "M": 1,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 1,
+     "ambiguous_pairs": 0,
      "cover_would_be": 0,
      "declaring": "find-up@6.2.0",
      "dependence_search_exhaustive": true,
@@ -1687,7 +1794,8 @@
     {
      "K": 1,
      "M": 1,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 1,
+     "ambiguous_pairs": 0,
      "cover_would_be": 0,
      "declaring": "find-up@6.3.0",
      "dependence_search_exhaustive": true,
@@ -1703,7 +1811,8 @@
     {
      "K": 0,
      "M": 0,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 0,
+     "ambiguous_pairs": 0,
      "cover_would_be": null,
      "declaring": "find-up@7.0.0",
      "dependence_search_exhaustive": true,
@@ -1719,7 +1828,8 @@
     {
      "K": 0,
      "M": 0,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 0,
+     "ambiguous_pairs": 0,
      "cover_would_be": null,
      "declaring": "find-up@8.0.0",
      "dependence_search_exhaustive": true,
@@ -1735,7 +1845,8 @@
     {
      "K": 1,
      "M": 1,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 1,
+     "ambiguous_pairs": 0,
      "cover_would_be": 0,
      "declaring": "form-data@2.5.4",
      "dependence_search_exhaustive": true,
@@ -1751,7 +1862,8 @@
     {
      "K": 1,
      "M": 1,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 1,
+     "ambiguous_pairs": 0,
      "cover_would_be": 0,
      "declaring": "form-data@2.5.5",
      "dependence_search_exhaustive": true,
@@ -1767,7 +1879,8 @@
     {
      "K": 2,
      "M": 3,
-     "ambiguity_edges": 1,
+     "ambiguous_coordinates": 3,
+     "ambiguous_pairs": 1,
      "cover_would_be": 2,
      "declaring": "form-data@4.0.5",
      "dependence_search_exhaustive": true,
@@ -1790,7 +1903,8 @@
     {
      "K": 0,
      "M": 0,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 0,
+     "ambiguous_pairs": 0,
      "cover_would_be": null,
      "declaring": "form-data@4.0.6",
      "dependence_search_exhaustive": true,
@@ -1806,7 +1920,8 @@
     {
      "K": 0,
      "M": 0,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 0,
+     "ambiguous_pairs": 0,
      "cover_would_be": null,
      "declaring": "form-data@3.0.5",
      "dependence_search_exhaustive": true,
@@ -1822,7 +1937,8 @@
     {
      "K": 0,
      "M": 0,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 0,
+     "ambiguous_pairs": 0,
      "cover_would_be": null,
      "declaring": "form-data@2.5.6",
      "dependence_search_exhaustive": true,
@@ -1838,7 +1954,8 @@
     {
      "K": 1,
      "M": 1,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 1,
+     "ambiguous_pairs": 0,
      "cover_would_be": 0,
      "declaring": "glob-parent@5.1.0",
      "dependence_search_exhaustive": true,
@@ -1854,7 +1971,8 @@
     {
      "K": 1,
      "M": 1,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 1,
+     "ambiguous_pairs": 0,
      "cover_would_be": 0,
      "declaring": "glob-parent@5.1.1",
      "dependence_search_exhaustive": true,
@@ -1870,7 +1988,8 @@
     {
      "K": 1,
      "M": 1,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 1,
+     "ambiguous_pairs": 0,
      "cover_would_be": 0,
      "declaring": "glob-parent@5.1.2",
      "dependence_search_exhaustive": true,
@@ -1886,7 +2005,8 @@
     {
      "K": 1,
      "M": 1,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 1,
+     "ambiguous_pairs": 0,
      "cover_would_be": 0,
      "declaring": "glob-parent@6.0.0",
      "dependence_search_exhaustive": true,
@@ -1902,7 +2022,8 @@
     {
      "K": 1,
      "M": 1,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 1,
+     "ambiguous_pairs": 0,
      "cover_would_be": 0,
      "declaring": "glob-parent@6.0.1",
      "dependence_search_exhaustive": true,
@@ -1918,7 +2039,8 @@
     {
      "K": 0,
      "M": 0,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 0,
+     "ambiguous_pairs": 0,
      "cover_would_be": null,
      "declaring": "glob-parent@6.0.2",
      "dependence_search_exhaustive": true,
@@ -1934,7 +2056,8 @@
     {
      "K": 0,
      "M": 0,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 0,
+     "ambiguous_pairs": 0,
      "cover_would_be": null,
      "declaring": "http-errors@1.7.2",
      "dependence_search_exhaustive": true,
@@ -1950,7 +2073,8 @@
     {
      "K": 0,
      "M": 0,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 0,
+     "ambiguous_pairs": 0,
      "cover_would_be": null,
      "declaring": "http-errors@1.7.3",
      "dependence_search_exhaustive": true,
@@ -1966,7 +2090,8 @@
     {
      "K": 0,
      "M": 0,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 0,
+     "ambiguous_pairs": 0,
      "cover_would_be": null,
      "declaring": "http-errors@1.8.0",
      "dependence_search_exhaustive": true,
@@ -1982,7 +2107,8 @@
     {
      "K": 0,
      "M": 0,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 0,
+     "ambiguous_pairs": 0,
      "cover_would_be": null,
      "declaring": "http-errors@1.8.1",
      "dependence_search_exhaustive": true,
@@ -1998,7 +2124,8 @@
     {
      "K": 0,
      "M": 0,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 0,
+     "ambiguous_pairs": 0,
      "cover_would_be": null,
      "declaring": "http-errors@2.0.0",
      "dependence_search_exhaustive": true,
@@ -2014,7 +2141,8 @@
     {
      "K": 0,
      "M": 0,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 0,
+     "ambiguous_pairs": 0,
      "cover_would_be": null,
      "declaring": "http-errors@2.0.1",
      "dependence_search_exhaustive": true,
@@ -2030,7 +2158,8 @@
     {
      "K": 2,
      "M": 2,
-     "ambiguity_edges": 1,
+     "ambiguous_coordinates": 2,
+     "ambiguous_pairs": 1,
      "cover_would_be": 1,
      "declaring": "https-proxy-agent@7.0.4",
      "dependence_search_exhaustive": true,
@@ -2046,7 +2175,8 @@
     {
      "K": 2,
      "M": 2,
-     "ambiguity_edges": 1,
+     "ambiguous_coordinates": 2,
+     "ambiguous_pairs": 1,
      "cover_would_be": 1,
      "declaring": "https-proxy-agent@7.0.5",
      "dependence_search_exhaustive": true,
@@ -2062,7 +2192,8 @@
     {
      "K": 2,
      "M": 2,
-     "ambiguity_edges": 1,
+     "ambiguous_coordinates": 2,
+     "ambiguous_pairs": 1,
      "cover_would_be": 1,
      "declaring": "https-proxy-agent@7.0.6",
      "dependence_search_exhaustive": true,
@@ -2078,7 +2209,8 @@
     {
      "K": 1,
      "M": 2,
-     "ambiguity_edges": 1,
+     "ambiguous_coordinates": 2,
+     "ambiguous_pairs": 1,
      "cover_would_be": 1,
      "declaring": "https-proxy-agent@8.0.0",
      "dependence_search_exhaustive": true,
@@ -2098,7 +2230,8 @@
     {
      "K": 1,
      "M": 2,
-     "ambiguity_edges": 1,
+     "ambiguous_coordinates": 2,
+     "ambiguous_pairs": 1,
      "cover_would_be": 1,
      "declaring": "https-proxy-agent@9.0.0",
      "dependence_search_exhaustive": true,
@@ -2118,7 +2251,8 @@
     {
      "K": 1,
      "M": 2,
-     "ambiguity_edges": 1,
+     "ambiguous_coordinates": 2,
+     "ambiguous_pairs": 1,
      "cover_would_be": 1,
      "declaring": "https-proxy-agent@9.1.0",
      "dependence_search_exhaustive": true,
@@ -2138,7 +2272,8 @@
     {
      "K": 0,
      "M": 0,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 0,
+     "ambiguous_pairs": 0,
      "cover_would_be": null,
      "declaring": "import-local@3.0.0",
      "dependence_search_exhaustive": true,
@@ -2154,7 +2289,8 @@
     {
      "K": 1,
      "M": 1,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 1,
+     "ambiguous_pairs": 0,
      "cover_would_be": 0,
      "declaring": "import-local@3.0.1",
      "dependence_search_exhaustive": true,
@@ -2170,7 +2306,8 @@
     {
      "K": 1,
      "M": 1,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 1,
+     "ambiguous_pairs": 0,
      "cover_would_be": 0,
      "declaring": "import-local@3.0.2",
      "dependence_search_exhaustive": true,
@@ -2186,7 +2323,8 @@
     {
      "K": 1,
      "M": 1,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 1,
+     "ambiguous_pairs": 0,
      "cover_would_be": 0,
      "declaring": "import-local@3.0.3",
      "dependence_search_exhaustive": true,
@@ -2202,7 +2340,8 @@
     {
      "K": 1,
      "M": 1,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 1,
+     "ambiguous_pairs": 0,
      "cover_would_be": 0,
      "declaring": "import-local@3.1.0",
      "dependence_search_exhaustive": true,
@@ -2218,7 +2357,8 @@
     {
      "K": 1,
      "M": 1,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 1,
+     "ambiguous_pairs": 0,
      "cover_would_be": 0,
      "declaring": "import-local@3.2.0",
      "dependence_search_exhaustive": true,
@@ -2234,7 +2374,8 @@
     {
      "K": 1,
      "M": 1,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 1,
+     "ambiguous_pairs": 0,
      "cover_would_be": 0,
      "declaring": "is-glob@3.0.0",
      "dependence_search_exhaustive": true,
@@ -2250,7 +2391,8 @@
     {
      "K": 1,
      "M": 1,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 1,
+     "ambiguous_pairs": 0,
      "cover_would_be": 0,
      "declaring": "is-glob@3.1.0",
      "dependence_search_exhaustive": true,
@@ -2266,7 +2408,8 @@
     {
      "K": 0,
      "M": 0,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 0,
+     "ambiguous_pairs": 0,
      "cover_would_be": null,
      "declaring": "is-glob@4.0.0",
      "dependence_search_exhaustive": true,
@@ -2282,7 +2425,8 @@
     {
      "K": 0,
      "M": 0,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 0,
+     "ambiguous_pairs": 0,
      "cover_would_be": null,
      "declaring": "is-glob@4.0.1",
      "dependence_search_exhaustive": true,
@@ -2298,7 +2442,8 @@
     {
      "K": 0,
      "M": 0,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 0,
+     "ambiguous_pairs": 0,
      "cover_would_be": null,
      "declaring": "is-glob@4.0.2",
      "dependence_search_exhaustive": true,
@@ -2314,7 +2459,8 @@
     {
      "K": 0,
      "M": 0,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 0,
+     "ambiguous_pairs": 0,
      "cover_would_be": null,
      "declaring": "is-glob@4.0.3",
      "dependence_search_exhaustive": true,
@@ -2330,7 +2476,8 @@
     {
      "K": 0,
      "M": 0,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 0,
+     "ambiguous_pairs": 0,
      "cover_would_be": null,
      "declaring": "mime-types@2.1.33",
      "dependence_search_exhaustive": true,
@@ -2346,7 +2493,8 @@
     {
      "K": 0,
      "M": 0,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 0,
+     "ambiguous_pairs": 0,
      "cover_would_be": null,
      "declaring": "mime-types@2.1.34",
      "dependence_search_exhaustive": true,
@@ -2362,7 +2510,8 @@
     {
      "K": 0,
      "M": 0,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 0,
+     "ambiguous_pairs": 0,
      "cover_would_be": null,
      "declaring": "mime-types@2.1.35",
      "dependence_search_exhaustive": true,
@@ -2378,7 +2527,8 @@
     {
      "K": 1,
      "M": 1,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 1,
+     "ambiguous_pairs": 0,
      "cover_would_be": 0,
      "declaring": "mime-types@3.0.0",
      "dependence_search_exhaustive": true,
@@ -2394,7 +2544,8 @@
     {
      "K": 0,
      "M": 0,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 0,
+     "ambiguous_pairs": 0,
      "cover_would_be": null,
      "declaring": "mime-types@3.0.1",
      "dependence_search_exhaustive": true,
@@ -2410,7 +2561,8 @@
     {
      "K": 0,
      "M": 0,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 0,
+     "ambiguous_pairs": 0,
      "cover_would_be": null,
      "declaring": "mime-types@3.0.2",
      "dependence_search_exhaustive": true,
@@ -2426,7 +2578,8 @@
     {
      "K": 1,
      "M": 1,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 1,
+     "ambiguous_pairs": 0,
      "cover_would_be": 0,
      "declaring": "minimatch@5.1.9",
      "dependence_search_exhaustive": true,
@@ -2442,7 +2595,8 @@
     {
      "K": 1,
      "M": 1,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 1,
+     "ambiguous_pairs": 0,
      "cover_would_be": 0,
      "declaring": "minimatch@4.2.6",
      "dependence_search_exhaustive": true,
@@ -2458,7 +2612,8 @@
     {
      "K": 1,
      "M": 1,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 1,
+     "ambiguous_pairs": 0,
      "cover_would_be": 0,
      "declaring": "minimatch@3.1.5",
      "dependence_search_exhaustive": true,
@@ -2474,7 +2629,8 @@
     {
      "K": 1,
      "M": 1,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 1,
+     "ambiguous_pairs": 0,
      "cover_would_be": 0,
      "declaring": "minimatch@9.0.9",
      "dependence_search_exhaustive": true,
@@ -2490,7 +2646,8 @@
     {
      "K": 1,
      "M": 1,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 1,
+     "ambiguous_pairs": 0,
      "cover_would_be": 0,
      "declaring": "minimatch@10.2.5",
      "dependence_search_exhaustive": true,
@@ -2506,7 +2663,8 @@
     {
      "K": 1,
      "M": 1,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 1,
+     "ambiguous_pairs": 0,
      "cover_would_be": 0,
      "declaring": "minimatch@10.2.6",
      "dependence_search_exhaustive": true,
@@ -2522,7 +2680,8 @@
     {
      "K": 3,
      "M": 4,
-     "ambiguity_edges": 2,
+     "ambiguous_coordinates": 4,
+     "ambiguous_pairs": 2,
      "cover_would_be": 3,
      "declaring": "minimizer-webpack-plugin@5.10.0",
      "dependence_search_exhaustive": true,
@@ -2542,7 +2701,8 @@
     {
      "K": 3,
      "M": 4,
-     "ambiguity_edges": 2,
+     "ambiguous_coordinates": 4,
+     "ambiguous_pairs": 2,
      "cover_would_be": 3,
      "declaring": "minimizer-webpack-plugin@5.10.1",
      "dependence_search_exhaustive": true,
@@ -2562,7 +2722,8 @@
     {
      "K": 3,
      "M": 4,
-     "ambiguity_edges": 2,
+     "ambiguous_coordinates": 4,
+     "ambiguous_pairs": 2,
      "cover_would_be": 3,
      "declaring": "minimizer-webpack-plugin@5.11.0",
      "dependence_search_exhaustive": true,
@@ -2582,7 +2743,8 @@
     {
      "K": 3,
      "M": 4,
-     "ambiguity_edges": 2,
+     "ambiguous_coordinates": 4,
+     "ambiguous_pairs": 2,
      "cover_would_be": 3,
      "declaring": "minimizer-webpack-plugin@5.12.0",
      "dependence_search_exhaustive": true,
@@ -2602,7 +2764,8 @@
     {
      "K": 3,
      "M": 4,
-     "ambiguity_edges": 2,
+     "ambiguous_coordinates": 4,
+     "ambiguous_pairs": 2,
      "cover_would_be": 3,
      "declaring": "minimizer-webpack-plugin@5.13.0",
      "dependence_search_exhaustive": true,
@@ -2622,7 +2785,8 @@
     {
      "K": 1,
      "M": 1,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 1,
+     "ambiguous_pairs": 0,
      "cover_would_be": 0,
      "declaring": "minimizer-webpack-plugin@5.13.1",
      "dependence_search_exhaustive": true,
@@ -2638,7 +2802,8 @@
     {
      "K": 0,
      "M": 0,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 0,
+     "ambiguous_pairs": 0,
      "cover_would_be": null,
      "declaring": "on-finished@2.1.1",
      "dependence_search_exhaustive": true,
@@ -2654,7 +2819,8 @@
     {
      "K": 0,
      "M": 0,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 0,
+     "ambiguous_pairs": 0,
      "cover_would_be": null,
      "declaring": "on-finished@2.2.0",
      "dependence_search_exhaustive": true,
@@ -2670,7 +2836,8 @@
     {
      "K": 0,
      "M": 0,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 0,
+     "ambiguous_pairs": 0,
      "cover_would_be": null,
      "declaring": "on-finished@2.2.1",
      "dependence_search_exhaustive": true,
@@ -2686,7 +2853,8 @@
     {
      "K": 0,
      "M": 0,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 0,
+     "ambiguous_pairs": 0,
      "cover_would_be": null,
      "declaring": "on-finished@2.3.0",
      "dependence_search_exhaustive": true,
@@ -2702,7 +2870,8 @@
     {
      "K": 0,
      "M": 0,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 0,
+     "ambiguous_pairs": 0,
      "cover_would_be": null,
      "declaring": "on-finished@2.4.0",
      "dependence_search_exhaustive": true,
@@ -2718,7 +2887,8 @@
     {
      "K": 0,
      "M": 0,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 0,
+     "ambiguous_pairs": 0,
      "cover_would_be": null,
      "declaring": "on-finished@2.4.1",
      "dependence_search_exhaustive": true,
@@ -2734,7 +2904,8 @@
     {
      "K": 1,
      "M": 1,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 1,
+     "ambiguous_pairs": 0,
      "cover_would_be": 0,
      "declaring": "qs@6.15.0",
      "dependence_search_exhaustive": true,
@@ -2750,7 +2921,8 @@
     {
      "K": 1,
      "M": 1,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 1,
+     "ambiguous_pairs": 0,
      "cover_would_be": 0,
      "declaring": "qs@6.15.1",
      "dependence_search_exhaustive": true,
@@ -2766,7 +2938,8 @@
     {
      "K": 1,
      "M": 1,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 1,
+     "ambiguous_pairs": 0,
      "cover_would_be": 0,
      "declaring": "qs@6.15.2",
      "dependence_search_exhaustive": true,
@@ -2782,7 +2955,8 @@
     {
      "K": 0,
      "M": 0,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 0,
+     "ambiguous_pairs": 0,
      "cover_would_be": null,
      "declaring": "qs@6.15.3",
      "dependence_search_exhaustive": true,
@@ -2798,7 +2972,8 @@
     {
      "K": 0,
      "M": 0,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 0,
+     "ambiguous_pairs": 0,
      "cover_would_be": null,
      "declaring": "qs@6.16.0",
      "dependence_search_exhaustive": true,
@@ -2814,7 +2989,8 @@
     {
      "K": 0,
      "M": 0,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 0,
+     "ambiguous_pairs": 0,
      "cover_would_be": null,
      "declaring": "qs@6.16.1",
      "dependence_search_exhaustive": true,
@@ -2830,7 +3006,8 @@
     {
      "K": 0,
      "M": 0,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 0,
+     "ambiguous_pairs": 0,
      "cover_would_be": null,
      "declaring": "router@1.3.6",
      "dependence_search_exhaustive": true,
@@ -2846,7 +3023,8 @@
     {
      "K": 0,
      "M": 0,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 0,
+     "ambiguous_pairs": 0,
      "cover_would_be": null,
      "declaring": "router@1.3.7",
      "dependence_search_exhaustive": true,
@@ -2862,7 +3040,8 @@
     {
      "K": 0,
      "M": 0,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 0,
+     "ambiguous_pairs": 0,
      "cover_would_be": null,
      "declaring": "router@1.3.8",
      "dependence_search_exhaustive": true,
@@ -2878,7 +3057,8 @@
     {
      "K": 1,
      "M": 1,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 1,
+     "ambiguous_pairs": 0,
      "cover_would_be": 0,
      "declaring": "router@2.0.0",
      "dependence_search_exhaustive": true,
@@ -2894,7 +3074,8 @@
     {
      "K": 1,
      "M": 1,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 1,
+     "ambiguous_pairs": 0,
      "cover_would_be": 0,
      "declaring": "router@2.1.0",
      "dependence_search_exhaustive": true,
@@ -2910,7 +3091,8 @@
     {
      "K": 2,
      "M": 2,
-     "ambiguity_edges": 1,
+     "ambiguous_coordinates": 2,
+     "ambiguous_pairs": 1,
      "cover_would_be": 1,
      "declaring": "router@2.2.0",
      "dependence_search_exhaustive": true,
@@ -2926,7 +3108,8 @@
     {
      "K": 1,
      "M": 1,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 1,
+     "ambiguous_pairs": 0,
      "cover_would_be": 0,
      "declaring": "schema-utils@4.4.0",
      "dependence_search_exhaustive": true,
@@ -2942,7 +3125,8 @@
     {
      "K": 1,
      "M": 1,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 1,
+     "ambiguous_pairs": 0,
      "cover_would_be": 0,
      "declaring": "schema-utils@4.5.0",
      "dependence_search_exhaustive": true,
@@ -2958,7 +3142,8 @@
     {
      "K": 1,
      "M": 1,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 1,
+     "ambiguous_pairs": 0,
      "cover_would_be": 0,
      "declaring": "schema-utils@4.6.0",
      "dependence_search_exhaustive": true,
@@ -2974,7 +3159,8 @@
     {
      "K": 1,
      "M": 1,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 1,
+     "ambiguous_pairs": 0,
      "cover_would_be": 0,
      "declaring": "schema-utils@4.7.0",
      "dependence_search_exhaustive": true,
@@ -2990,7 +3176,8 @@
     {
      "K": 1,
      "M": 1,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 1,
+     "ambiguous_pairs": 0,
      "cover_would_be": 0,
      "declaring": "schema-utils@4.8.0",
      "dependence_search_exhaustive": true,
@@ -3006,7 +3193,8 @@
     {
      "K": 1,
      "M": 1,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 1,
+     "ambiguous_pairs": 0,
      "cover_would_be": 0,
      "declaring": "schema-utils@4.8.1",
      "dependence_search_exhaustive": true,
@@ -3022,7 +3210,8 @@
     {
      "K": 1,
      "M": 2,
-     "ambiguity_edges": 1,
+     "ambiguous_coordinates": 2,
+     "ambiguous_pairs": 1,
      "cover_would_be": 1,
      "declaring": "type-is@1.6.17",
      "dependence_search_exhaustive": true,
@@ -3045,7 +3234,8 @@
     {
      "K": 1,
      "M": 2,
-     "ambiguity_edges": 1,
+     "ambiguous_coordinates": 2,
+     "ambiguous_pairs": 1,
      "cover_would_be": 1,
      "declaring": "type-is@1.6.18",
      "dependence_search_exhaustive": true,
@@ -3068,7 +3258,8 @@
     {
      "K": 3,
      "M": 3,
-     "ambiguity_edges": 3,
+     "ambiguous_coordinates": 3,
+     "ambiguous_pairs": 3,
      "cover_would_be": 2,
      "declaring": "type-is@2.0.0",
      "dependence_search_exhaustive": true,
@@ -3084,7 +3275,8 @@
     {
      "K": 3,
      "M": 3,
-     "ambiguity_edges": 3,
+     "ambiguous_coordinates": 3,
+     "ambiguous_pairs": 3,
      "cover_would_be": 2,
      "declaring": "type-is@2.0.1",
      "dependence_search_exhaustive": true,
@@ -3100,7 +3292,8 @@
     {
      "K": 4,
      "M": 4,
-     "ambiguity_edges": 6,
+     "ambiguous_coordinates": 4,
+     "ambiguous_pairs": 6,
      "cover_would_be": 3,
      "declaring": "type-is@2.1.0",
      "dependence_search_exhaustive": true,
@@ -3116,7 +3309,8 @@
     {
      "K": 0,
      "M": 0,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 0,
+     "ambiguous_pairs": 0,
      "cover_would_be": null,
      "declaring": "type-is@3.0.0",
      "dependence_search_exhaustive": true,
@@ -3132,7 +3326,8 @@
     {
      "K": 1,
      "M": 1,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 1,
+     "ambiguous_pairs": 0,
      "cover_would_be": 0,
      "declaring": "watchpack@2.5.1",
      "dependence_search_exhaustive": true,
@@ -3148,7 +3343,8 @@
     {
      "K": 1,
      "M": 1,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 1,
+     "ambiguous_pairs": 0,
      "cover_would_be": 0,
      "declaring": "watchpack@2.5.2",
      "dependence_search_exhaustive": true,
@@ -3164,7 +3360,8 @@
     {
      "K": 1,
      "M": 1,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 1,
+     "ambiguous_pairs": 0,
      "cover_would_be": 0,
      "declaring": "watchpack@2.6.0",
      "dependence_search_exhaustive": true,
@@ -3180,7 +3377,8 @@
     {
      "K": 1,
      "M": 1,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 1,
+     "ambiguous_pairs": 0,
      "cover_would_be": 0,
      "declaring": "watchpack@2.6.1",
      "dependence_search_exhaustive": true,
@@ -3196,7 +3394,8 @@
     {
      "K": 1,
      "M": 1,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 1,
+     "ambiguous_pairs": 0,
      "cover_would_be": 0,
      "declaring": "watchpack@2.6.2",
      "dependence_search_exhaustive": true,
@@ -3212,7 +3411,8 @@
     {
      "K": 1,
      "M": 1,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 1,
+     "ambiguous_pairs": 0,
      "cover_would_be": 0,
      "declaring": "watchpack@2.6.3",
      "dependence_search_exhaustive": true,
@@ -3228,7 +3428,8 @@
     {
      "K": 0,
      "M": 0,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 0,
+     "ambiguous_pairs": 0,
      "cover_would_be": null,
      "declaring": "@eslint-community/eslint-utils@4.6.1",
      "dependence_search_exhaustive": true,
@@ -3244,7 +3445,8 @@
     {
      "K": 0,
      "M": 0,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 0,
+     "ambiguous_pairs": 0,
      "cover_would_be": null,
      "declaring": "@eslint-community/eslint-utils@4.6.0",
      "dependence_search_exhaustive": true,
@@ -3260,7 +3462,8 @@
     {
      "K": 3,
      "M": 4,
-     "ambiguity_edges": 4,
+     "ambiguous_coordinates": 4,
+     "ambiguous_pairs": 4,
      "cover_would_be": 3,
      "declaring": "@eslint/config-array@0.21.1",
      "dependence_search_exhaustive": true,
@@ -3280,7 +3483,8 @@
     {
      "K": 3,
      "M": 4,
-     "ambiguity_edges": 4,
+     "ambiguous_coordinates": 4,
+     "ambiguous_pairs": 4,
      "cover_would_be": 3,
      "declaring": "@eslint/config-array@0.21.0",
      "dependence_search_exhaustive": true,
@@ -3300,7 +3504,8 @@
     {
      "K": 3,
      "M": 4,
-     "ambiguity_edges": 4,
+     "ambiguous_coordinates": 4,
+     "ambiguous_pairs": 4,
      "cover_would_be": 3,
      "declaring": "@eslint/config-array@0.20.1",
      "dependence_search_exhaustive": true,
@@ -3320,7 +3525,8 @@
     {
      "K": 3,
      "M": 4,
-     "ambiguity_edges": 4,
+     "ambiguous_coordinates": 4,
+     "ambiguous_pairs": 4,
      "cover_would_be": 3,
      "declaring": "@eslint/config-array@0.20.0",
      "dependence_search_exhaustive": true,
@@ -3340,7 +3546,8 @@
     {
      "K": 3,
      "M": 4,
-     "ambiguity_edges": 4,
+     "ambiguous_coordinates": 4,
+     "ambiguous_pairs": 4,
      "cover_would_be": 3,
      "declaring": "@eslint/config-array@0.19.2",
      "dependence_search_exhaustive": true,
@@ -3360,7 +3567,8 @@
     {
      "K": 0,
      "M": 0,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 0,
+     "ambiguous_pairs": 0,
      "cover_would_be": null,
      "declaring": "@eslint/config-helpers@0.4.1",
      "dependence_search_exhaustive": true,
@@ -3376,7 +3584,8 @@
     {
      "K": 0,
      "M": 0,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 0,
+     "ambiguous_pairs": 0,
      "cover_would_be": null,
      "declaring": "@eslint/config-helpers@0.4.0",
      "dependence_search_exhaustive": true,
@@ -3392,7 +3601,8 @@
     {
      "K": 0,
      "M": 0,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 0,
+     "ambiguous_pairs": 0,
      "cover_would_be": null,
      "declaring": "@eslint/core@0.16.0",
      "dependence_search_exhaustive": true,
@@ -3408,7 +3618,8 @@
     {
      "K": 0,
      "M": 0,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 0,
+     "ambiguous_pairs": 0,
      "cover_would_be": null,
      "declaring": "@eslint/core@0.15.2",
      "dependence_search_exhaustive": true,
@@ -3424,7 +3635,8 @@
     {
      "K": 0,
      "M": 0,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 0,
+     "ambiguous_pairs": 0,
      "cover_would_be": null,
      "declaring": "@eslint/core@0.15.1",
      "dependence_search_exhaustive": true,
@@ -3440,7 +3652,8 @@
     {
      "K": 0,
      "M": 0,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 0,
+     "ambiguous_pairs": 0,
      "cover_would_be": null,
      "declaring": "@eslint/core@0.15.0",
      "dependence_search_exhaustive": true,
@@ -3456,7 +3669,8 @@
     {
      "K": 0,
      "M": 0,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 0,
+     "ambiguous_pairs": 0,
      "cover_would_be": null,
      "declaring": "@eslint/core@0.14.0",
      "dependence_search_exhaustive": true,
@@ -3472,7 +3686,8 @@
     {
      "K": 0,
      "M": 0,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 0,
+     "ambiguous_pairs": 0,
      "cover_would_be": null,
      "declaring": "@eslint/plugin-kit@0.4.0",
      "dependence_search_exhaustive": true,
@@ -3488,7 +3703,8 @@
     {
      "K": 0,
      "M": 0,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 0,
+     "ambiguous_pairs": 0,
      "cover_would_be": null,
      "declaring": "@eslint/plugin-kit@0.3.5",
      "dependence_search_exhaustive": true,
@@ -3504,7 +3720,8 @@
     {
      "K": 1,
      "M": 1,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 1,
+     "ambiguous_pairs": 0,
      "cover_would_be": 0,
      "declaring": "@eslint/plugin-kit@0.3.4",
      "dependence_search_exhaustive": true,
@@ -3520,7 +3737,8 @@
     {
      "K": 1,
      "M": 1,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 1,
+     "ambiguous_pairs": 0,
      "cover_would_be": 0,
      "declaring": "@eslint/plugin-kit@0.3.3",
      "dependence_search_exhaustive": true,
@@ -3536,7 +3754,8 @@
     {
      "K": 1,
      "M": 1,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 1,
+     "ambiguous_pairs": 0,
      "cover_would_be": 0,
      "declaring": "@eslint/plugin-kit@0.3.2",
      "dependence_search_exhaustive": true,
@@ -3552,7 +3771,8 @@
     {
      "K": 1,
      "M": 1,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 1,
+     "ambiguous_pairs": 0,
      "cover_would_be": 0,
      "declaring": "@humanfs/node@0.16.3",
      "dependence_search_exhaustive": true,
@@ -3568,7 +3788,8 @@
     {
      "K": 0,
      "M": 0,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 0,
+     "ambiguous_pairs": 0,
      "cover_would_be": null,
      "declaring": "@jest/pattern@30.0.1",
      "dependence_search_exhaustive": true,
@@ -3584,7 +3805,8 @@
     {
      "K": 0,
      "M": 0,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 0,
+     "ambiguous_pairs": 0,
      "cover_would_be": null,
      "declaring": "@jest/pattern@30.0.0",
      "dependence_search_exhaustive": true,
@@ -3600,7 +3822,8 @@
     {
      "K": 4,
      "M": 4,
-     "ambiguity_edges": 6,
+     "ambiguous_coordinates": 4,
+     "ambiguous_pairs": 6,
      "cover_would_be": 3,
      "declaring": "@jest/types@29.6.3",
      "dependence_search_exhaustive": true,
@@ -3616,7 +3839,8 @@
     {
      "K": 0,
      "M": 0,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 0,
+     "ambiguous_pairs": 0,
      "cover_would_be": null,
      "declaring": "@webassemblyjs/helper-numbers@1.14.1",
      "dependence_search_exhaustive": true,
@@ -3632,7 +3856,8 @@
     {
      "K": 0,
      "M": 0,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 0,
+     "ambiguous_pairs": 0,
      "cover_would_be": null,
      "declaring": "@webassemblyjs/helper-numbers@1.13.2",
      "dependence_search_exhaustive": true,
@@ -3648,7 +3873,8 @@
     {
      "K": 0,
      "M": 0,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 0,
+     "ambiguous_pairs": 0,
      "cover_would_be": null,
      "declaring": "@webassemblyjs/helper-numbers@1.13.1",
      "dependence_search_exhaustive": true,
@@ -3664,7 +3890,8 @@
     {
      "K": 0,
      "M": 0,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 0,
+     "ambiguous_pairs": 0,
      "cover_would_be": null,
      "declaring": "@webassemblyjs/helper-numbers@1.12.1",
      "dependence_search_exhaustive": true,
@@ -3680,7 +3907,8 @@
     {
      "K": 0,
      "M": 0,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 0,
+     "ambiguous_pairs": 0,
      "cover_would_be": null,
      "declaring": "@webassemblyjs/helper-numbers@1.11.6",
      "dependence_search_exhaustive": true,
@@ -3696,7 +3924,8 @@
     {
      "K": 1,
      "M": 2,
-     "ambiguity_edges": 1,
+     "ambiguous_coordinates": 2,
+     "ambiguous_pairs": 1,
      "cover_would_be": 1,
      "declaring": "agent-base@7.1.2",
      "dependence_search_exhaustive": true,
@@ -3716,7 +3945,8 @@
     {
      "K": 1,
      "M": 2,
-     "ambiguity_edges": 1,
+     "ambiguous_coordinates": 2,
+     "ambiguous_pairs": 1,
      "cover_would_be": 1,
      "declaring": "agent-base@7.1.1",
      "dependence_search_exhaustive": true,
@@ -3736,7 +3966,8 @@
     {
      "K": 1,
      "M": 2,
-     "ambiguity_edges": 1,
+     "ambiguous_coordinates": 2,
+     "ambiguous_pairs": 1,
      "cover_would_be": 1,
      "declaring": "agent-base@7.1.0",
      "dependence_search_exhaustive": true,
@@ -3756,7 +3987,8 @@
     {
      "K": 1,
      "M": 1,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 1,
+     "ambiguous_pairs": 0,
      "cover_would_be": 0,
      "declaring": "ajv@8.15.0",
      "dependence_search_exhaustive": true,
@@ -3772,7 +4004,8 @@
     {
      "K": 0,
      "M": 0,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 0,
+     "ambiguous_pairs": 0,
      "cover_would_be": null,
      "declaring": "ajv@8.14.0",
      "dependence_search_exhaustive": true,
@@ -3788,7 +4021,8 @@
     {
      "K": 0,
      "M": 0,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 0,
+     "ambiguous_pairs": 0,
      "cover_would_be": null,
      "declaring": "ajv@8.13.0",
      "dependence_search_exhaustive": true,
@@ -3804,7 +4038,8 @@
     {
      "K": 3,
      "M": 3,
-     "ambiguity_edges": 2,
+     "ambiguous_coordinates": 3,
+     "ambiguous_pairs": 2,
      "cover_would_be": 2,
      "declaring": "ajv-formats@3.0.1",
      "dependence_search_exhaustive": true,
@@ -3820,7 +4055,8 @@
     {
      "K": 3,
      "M": 3,
-     "ambiguity_edges": 2,
+     "ambiguous_coordinates": 3,
+     "ambiguous_pairs": 2,
      "cover_would_be": 2,
      "declaring": "ajv-formats@3.0.0",
      "dependence_search_exhaustive": true,
@@ -3836,7 +4072,8 @@
     {
      "K": 3,
      "M": 3,
-     "ambiguity_edges": 2,
+     "ambiguous_coordinates": 3,
+     "ambiguous_pairs": 2,
      "cover_would_be": 2,
      "declaring": "ajv-formats@2.1.1",
      "dependence_search_exhaustive": true,
@@ -3852,7 +4089,8 @@
     {
      "K": 3,
      "M": 3,
-     "ambiguity_edges": 2,
+     "ambiguous_coordinates": 3,
+     "ambiguous_pairs": 2,
      "cover_would_be": 2,
      "declaring": "ajv-formats@2.1.0",
      "dependence_search_exhaustive": true,
@@ -3868,7 +4106,8 @@
     {
      "K": 3,
      "M": 3,
-     "ambiguity_edges": 2,
+     "ambiguous_coordinates": 3,
+     "ambiguous_pairs": 2,
      "cover_would_be": 2,
      "declaring": "ajv-formats@2.0.2",
      "dependence_search_exhaustive": true,
@@ -3884,7 +4123,8 @@
     {
      "K": 0,
      "M": 0,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 0,
+     "ambiguous_pairs": 0,
      "cover_would_be": null,
      "declaring": "ajv-keywords@5.1.0",
      "dependence_search_exhaustive": true,
@@ -3900,7 +4140,8 @@
     {
      "K": 0,
      "M": 0,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 0,
+     "ambiguous_pairs": 0,
      "cover_would_be": null,
      "declaring": "ajv-keywords@5.0.0",
      "dependence_search_exhaustive": true,
@@ -3916,7 +4157,8 @@
     {
      "K": 4,
      "M": 4,
-     "ambiguity_edges": 6,
+     "ambiguous_coordinates": 4,
+     "ambiguous_pairs": 6,
      "cover_would_be": 3,
      "declaring": "axios@0.30.2",
      "dependence_search_exhaustive": true,
@@ -3932,7 +4174,8 @@
     {
      "K": 4,
      "M": 4,
-     "ambiguity_edges": 6,
+     "ambiguous_coordinates": 4,
+     "ambiguous_pairs": 6,
      "cover_would_be": 3,
      "declaring": "axios@1.12.2",
      "dependence_search_exhaustive": true,
@@ -3948,7 +4191,8 @@
     {
      "K": 4,
      "M": 4,
-     "ambiguity_edges": 6,
+     "ambiguous_coordinates": 4,
+     "ambiguous_pairs": 6,
      "cover_would_be": 3,
      "declaring": "axios@1.12.1",
      "dependence_search_exhaustive": true,
@@ -3964,7 +4208,8 @@
     {
      "K": 4,
      "M": 4,
-     "ambiguity_edges": 6,
+     "ambiguous_coordinates": 4,
+     "ambiguous_pairs": 6,
      "cover_would_be": 3,
      "declaring": "axios@1.12.0",
      "dependence_search_exhaustive": true,
@@ -3980,7 +4225,8 @@
     {
      "K": 4,
      "M": 4,
-     "ambiguity_edges": 6,
+     "ambiguous_coordinates": 4,
+     "ambiguous_pairs": 6,
      "cover_would_be": 3,
      "declaring": "axios@0.30.1",
      "dependence_search_exhaustive": true,
@@ -3996,7 +4242,8 @@
     {
      "K": 0,
      "M": 0,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 0,
+     "ambiguous_pairs": 0,
      "cover_would_be": null,
      "declaring": "content-disposition@0.5.4",
      "dependence_search_exhaustive": true,
@@ -4012,7 +4259,8 @@
     {
      "K": 0,
      "M": 0,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 0,
+     "ambiguous_pairs": 0,
      "cover_would_be": null,
      "declaring": "content-disposition@0.5.3",
      "dependence_search_exhaustive": true,
@@ -4028,7 +4276,8 @@
     {
      "K": 2,
      "M": 2,
-     "ambiguity_edges": 1,
+     "ambiguous_coordinates": 2,
+     "ambiguous_pairs": 1,
      "cover_would_be": 1,
      "declaring": "enhanced-resolve@5.18.3",
      "dependence_search_exhaustive": true,
@@ -4044,7 +4293,8 @@
     {
      "K": 2,
      "M": 2,
-     "ambiguity_edges": 1,
+     "ambiguous_coordinates": 2,
+     "ambiguous_pairs": 1,
      "cover_would_be": 1,
      "declaring": "enhanced-resolve@5.18.2",
      "dependence_search_exhaustive": true,
@@ -4060,7 +4310,8 @@
     {
      "K": 2,
      "M": 2,
-     "ambiguity_edges": 1,
+     "ambiguous_coordinates": 2,
+     "ambiguous_pairs": 1,
      "cover_would_be": 1,
      "declaring": "enhanced-resolve@5.18.1",
      "dependence_search_exhaustive": true,
@@ -4076,7 +4327,8 @@
     {
      "K": 2,
      "M": 2,
-     "ambiguity_edges": 1,
+     "ambiguous_coordinates": 2,
+     "ambiguous_pairs": 1,
      "cover_would_be": 1,
      "declaring": "enhanced-resolve@5.18.0",
      "dependence_search_exhaustive": true,
@@ -4092,7 +4344,8 @@
     {
      "K": 2,
      "M": 2,
-     "ambiguity_edges": 1,
+     "ambiguous_coordinates": 2,
+     "ambiguous_pairs": 1,
      "cover_would_be": 1,
      "declaring": "enhanced-resolve@5.17.1",
      "dependence_search_exhaustive": true,
@@ -4108,7 +4361,8 @@
     {
      "K": 1,
      "M": 1,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 1,
+     "ambiguous_pairs": 0,
      "cover_would_be": 0,
      "declaring": "es-set-tostringtag@2.1.0",
      "dependence_search_exhaustive": true,
@@ -4124,7 +4378,8 @@
     {
      "K": 1,
      "M": 1,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 1,
+     "ambiguous_pairs": 0,
      "cover_would_be": 0,
      "declaring": "es-set-tostringtag@2.0.3",
      "dependence_search_exhaustive": true,
@@ -4140,7 +4395,8 @@
     {
      "K": 1,
      "M": 1,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 1,
+     "ambiguous_pairs": 0,
      "cover_would_be": 0,
      "declaring": "es-set-tostringtag@2.0.2",
      "dependence_search_exhaustive": true,
@@ -4156,7 +4412,8 @@
     {
      "K": 2,
      "M": 2,
-     "ambiguity_edges": 1,
+     "ambiguous_coordinates": 2,
+     "ambiguous_pairs": 1,
      "cover_would_be": 1,
      "declaring": "espree@10.2.0",
      "dependence_search_exhaustive": true,
@@ -4172,7 +4429,8 @@
     {
      "K": 2,
      "M": 2,
-     "ambiguity_edges": 1,
+     "ambiguous_coordinates": 2,
+     "ambiguous_pairs": 1,
      "cover_would_be": 1,
      "declaring": "espree@10.1.0",
      "dependence_search_exhaustive": true,
@@ -4188,7 +4446,8 @@
     {
      "K": 2,
      "M": 2,
-     "ambiguity_edges": 1,
+     "ambiguous_coordinates": 2,
+     "ambiguous_pairs": 1,
      "cover_would_be": 1,
      "declaring": "espree@10.0.1",
      "dependence_search_exhaustive": true,
@@ -4204,7 +4463,8 @@
     {
      "K": 0,
      "M": 0,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 0,
+     "ambiguous_pairs": 0,
      "cover_would_be": null,
      "declaring": "finalhandler@1.2.1",
      "dependence_search_exhaustive": true,
@@ -4220,7 +4480,8 @@
     {
      "K": 1,
      "M": 1,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 1,
+     "ambiguous_pairs": 0,
      "cover_would_be": 0,
      "declaring": "form-data@3.0.4",
      "dependence_search_exhaustive": true,
@@ -4236,7 +4497,8 @@
     {
      "K": 2,
      "M": 3,
-     "ambiguity_edges": 1,
+     "ambiguous_coordinates": 3,
+     "ambiguous_pairs": 1,
      "cover_would_be": 2,
      "declaring": "form-data@4.0.4",
      "dependence_search_exhaustive": true,
@@ -4259,7 +4521,8 @@
     {
      "K": 2,
      "M": 3,
-     "ambiguity_edges": 1,
+     "ambiguous_coordinates": 3,
+     "ambiguous_pairs": 1,
      "cover_would_be": 2,
      "declaring": "form-data@4.0.3",
      "dependence_search_exhaustive": true,
@@ -4282,7 +4545,8 @@
     {
      "K": 2,
      "M": 3,
-     "ambiguity_edges": 1,
+     "ambiguous_coordinates": 3,
+     "ambiguous_pairs": 1,
      "cover_would_be": 2,
      "declaring": "form-data@4.0.2",
      "dependence_search_exhaustive": true,
@@ -4305,7 +4569,8 @@
     {
      "K": 2,
      "M": 2,
-     "ambiguity_edges": 1,
+     "ambiguous_coordinates": 2,
+     "ambiguous_pairs": 1,
      "cover_would_be": 1,
      "declaring": "https-proxy-agent@7.0.3",
      "dependence_search_exhaustive": true,
@@ -4321,7 +4586,8 @@
     {
      "K": 2,
      "M": 2,
-     "ambiguity_edges": 1,
+     "ambiguous_coordinates": 2,
+     "ambiguous_pairs": 1,
      "cover_would_be": 1,
      "declaring": "https-proxy-agent@7.0.2",
      "dependence_search_exhaustive": true,
@@ -4337,7 +4603,8 @@
     {
      "K": 0,
      "M": 0,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 0,
+     "ambiguous_pairs": 0,
      "cover_would_be": null,
      "declaring": "jest-resolve-dependencies@30.2.0",
      "dependence_search_exhaustive": true,
@@ -4353,7 +4620,8 @@
     {
      "K": 0,
      "M": 0,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 0,
+     "ambiguous_pairs": 0,
      "cover_would_be": null,
      "declaring": "jest-resolve-dependencies@30.1.3",
      "dependence_search_exhaustive": true,
@@ -4369,7 +4637,8 @@
     {
      "K": 0,
      "M": 0,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 0,
+     "ambiguous_pairs": 0,
      "cover_would_be": null,
      "declaring": "jest-resolve-dependencies@30.1.2",
      "dependence_search_exhaustive": true,
@@ -4385,7 +4654,8 @@
     {
      "K": 0,
      "M": 0,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 0,
+     "ambiguous_pairs": 0,
      "cover_would_be": null,
      "declaring": "jest-resolve-dependencies@30.1.1",
      "dependence_search_exhaustive": true,
@@ -4401,7 +4671,8 @@
     {
      "K": 0,
      "M": 0,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 0,
+     "ambiguous_pairs": 0,
      "cover_would_be": null,
      "declaring": "jest-resolve-dependencies@30.1.0",
      "dependence_search_exhaustive": true,
@@ -4417,7 +4688,8 @@
     {
      "K": 1,
      "M": 1,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 1,
+     "ambiguous_pairs": 0,
      "cover_would_be": 0,
      "declaring": "minimatch@10.0.3",
      "dependence_search_exhaustive": true,
@@ -4433,7 +4705,8 @@
     {
      "K": 0,
      "M": 0,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 0,
+     "ambiguous_pairs": 0,
      "cover_would_be": null,
      "declaring": "minimatch@10.0.2",
      "dependence_search_exhaustive": true,
@@ -4449,7 +4722,8 @@
     {
      "K": 1,
      "M": 1,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 1,
+     "ambiguous_pairs": 0,
      "cover_would_be": 0,
      "declaring": "minimatch@10.0.1",
      "dependence_search_exhaustive": true,
@@ -4465,7 +4739,8 @@
     {
      "K": 1,
      "M": 1,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 1,
+     "ambiguous_pairs": 0,
      "cover_would_be": 0,
      "declaring": "minimatch@10.0.0",
      "dependence_search_exhaustive": true,
@@ -4481,7 +4756,8 @@
     {
      "K": 1,
      "M": 1,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 1,
+     "ambiguous_pairs": 0,
      "cover_would_be": 0,
      "declaring": "minimatch@9.0.5",
      "dependence_search_exhaustive": true,
@@ -4497,7 +4773,8 @@
     {
      "K": 1,
      "M": 1,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 1,
+     "ambiguous_pairs": 0,
      "cover_would_be": 0,
      "declaring": "pkg-dir@7.0.0",
      "dependence_search_exhaustive": true,
@@ -4513,7 +4790,8 @@
     {
      "K": 2,
      "M": 2,
-     "ambiguity_edges": 1,
+     "ambiguous_coordinates": 2,
+     "ambiguous_pairs": 1,
      "cover_would_be": 1,
      "declaring": "pkg-dir@6.0.1",
      "dependence_search_exhaustive": true,
@@ -4529,7 +4807,8 @@
     {
      "K": 2,
      "M": 2,
-     "ambiguity_edges": 1,
+     "ambiguous_coordinates": 2,
+     "ambiguous_pairs": 1,
      "cover_would_be": 1,
      "declaring": "pkg-dir@6.0.0",
      "dependence_search_exhaustive": true,
@@ -4545,7 +4824,8 @@
     {
      "K": 0,
      "M": 0,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 0,
+     "ambiguous_pairs": 0,
      "cover_would_be": null,
      "declaring": "pkg-dir@5.0.0",
      "dependence_search_exhaustive": true,
@@ -4561,7 +4841,8 @@
     {
      "K": 0,
      "M": 0,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 0,
+     "ambiguous_pairs": 0,
      "cover_would_be": null,
      "declaring": "pretty-format@30.2.0",
      "dependence_search_exhaustive": true,
@@ -4577,7 +4858,8 @@
     {
      "K": 0,
      "M": 0,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 0,
+     "ambiguous_pairs": 0,
      "cover_would_be": null,
      "declaring": "pretty-format@30.0.5",
      "dependence_search_exhaustive": true,
@@ -4593,7 +4875,8 @@
     {
      "K": 0,
      "M": 0,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 0,
+     "ambiguous_pairs": 0,
      "cover_would_be": null,
      "declaring": "pretty-format@30.0.2",
      "dependence_search_exhaustive": true,
@@ -4609,7 +4892,8 @@
     {
      "K": 0,
      "M": 0,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 0,
+     "ambiguous_pairs": 0,
      "cover_would_be": null,
      "declaring": "pretty-format@30.0.1",
      "dependence_search_exhaustive": true,
@@ -4625,7 +4909,8 @@
     {
      "K": 0,
      "M": 0,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 0,
+     "ambiguous_pairs": 0,
      "cover_would_be": null,
      "declaring": "pretty-format@30.0.0",
      "dependence_search_exhaustive": true,
@@ -4641,7 +4926,8 @@
     {
      "K": 1,
      "M": 1,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 1,
+     "ambiguous_pairs": 0,
      "cover_would_be": 0,
      "declaring": "qs@6.14.0",
      "dependence_search_exhaustive": true,
@@ -4657,7 +4943,8 @@
     {
      "K": 1,
      "M": 1,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 1,
+     "ambiguous_pairs": 0,
      "cover_would_be": 0,
      "declaring": "qs@6.13.1",
      "dependence_search_exhaustive": true,
@@ -4673,7 +4960,8 @@
     {
      "K": 1,
      "M": 1,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 1,
+     "ambiguous_pairs": 0,
      "cover_would_be": 0,
      "declaring": "qs@6.13.0",
      "dependence_search_exhaustive": true,
@@ -4689,7 +4977,8 @@
     {
      "K": 1,
      "M": 1,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 1,
+     "ambiguous_pairs": 0,
      "cover_would_be": 0,
      "declaring": "qs@6.12.3",
      "dependence_search_exhaustive": true,
@@ -4705,7 +4994,8 @@
     {
      "K": 1,
      "M": 1,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 1,
+     "ambiguous_pairs": 0,
      "cover_would_be": 0,
      "declaring": "qs@6.12.2",
      "dependence_search_exhaustive": true,
@@ -4721,7 +5011,8 @@
     {
      "K": 3,
      "M": 3,
-     "ambiguity_edges": 3,
+     "ambiguous_coordinates": 3,
+     "ambiguous_pairs": 3,
      "cover_would_be": 2,
      "declaring": "schema-utils@4.3.3",
      "dependence_search_exhaustive": true,
@@ -4737,7 +5028,8 @@
     {
      "K": 3,
      "M": 3,
-     "ambiguity_edges": 3,
+     "ambiguous_coordinates": 3,
+     "ambiguous_pairs": 3,
      "cover_would_be": 2,
      "declaring": "schema-utils@4.3.2",
      "dependence_search_exhaustive": true,
@@ -4753,7 +5045,8 @@
     {
      "K": 3,
      "M": 3,
-     "ambiguity_edges": 3,
+     "ambiguous_coordinates": 3,
+     "ambiguous_pairs": 3,
      "cover_would_be": 2,
      "declaring": "schema-utils@4.3.1",
      "dependence_search_exhaustive": true,
@@ -4769,7 +5062,8 @@
     {
      "K": 3,
      "M": 3,
-     "ambiguity_edges": 3,
+     "ambiguous_coordinates": 3,
+     "ambiguous_pairs": 3,
      "cover_would_be": 2,
      "declaring": "schema-utils@4.3.0",
      "dependence_search_exhaustive": true,
@@ -4785,7 +5079,8 @@
     {
      "K": 4,
      "M": 4,
-     "ambiguity_edges": 6,
+     "ambiguous_coordinates": 4,
+     "ambiguous_pairs": 6,
      "cover_would_be": 3,
      "declaring": "schema-utils@3.3.0",
      "dependence_search_exhaustive": true,
@@ -4801,7 +5096,8 @@
     {
      "K": 1,
      "M": 2,
-     "ambiguity_edges": 1,
+     "ambiguous_coordinates": 2,
+     "ambiguous_pairs": 1,
      "cover_would_be": 1,
      "declaring": "type-is@1.6.16",
      "dependence_search_exhaustive": true,
@@ -4824,7 +5120,8 @@
     {
      "K": 1,
      "M": 1,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 1,
+     "ambiguous_pairs": 0,
      "cover_would_be": 0,
      "declaring": "watchpack@2.4.4",
      "dependence_search_exhaustive": true,
@@ -4840,7 +5137,8 @@
     {
      "K": 1,
      "M": 1,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 1,
+     "ambiguous_pairs": 0,
      "cover_would_be": 0,
      "declaring": "watchpack@2.4.3",
      "dependence_search_exhaustive": true,
@@ -4856,7 +5154,8 @@
     {
      "K": 1,
      "M": 1,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 1,
+     "ambiguous_pairs": 0,
      "cover_would_be": 0,
      "declaring": "watchpack@2.4.2",
      "dependence_search_exhaustive": true,
@@ -4872,7 +5171,8 @@
     {
      "K": 1,
      "M": 1,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 1,
+     "ambiguous_pairs": 0,
      "cover_would_be": 0,
      "declaring": "watchpack@2.4.1",
      "dependence_search_exhaustive": true,
@@ -4888,7 +5188,8 @@
     {
      "K": 1,
      "M": 1,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 1,
+     "ambiguous_pairs": 0,
      "cover_would_be": 0,
      "declaring": "watchpack@2.4.0",
      "dependence_search_exhaustive": true,
@@ -4933,14 +5234,23 @@
     "determiner_but_no_saving_instances": [],
     "distinct_declaring_roots": 0,
     "instances_below_one_ratio": 0,
-    "instances_with_an_ambiguous_edge": 63,
+    "instances_below_one_ratio_among_refutable": 0,
+    "instances_with_a_single_ambiguous_coordinate": 36,
+    "instances_with_an_ambiguous_coordinate": 63,
     "max_saving": 0,
     "rate": 0.0,
+    "rate_among_refutable": 0.0,
+    "refutable_instances": 27,
     "saving_histogram": {},
+    "single_coordinate_instances_with_a_saving": 0,
     "unexplained": [],
     "wilson95": [
      0.0,
      0.057473190348525466
+    ],
+    "wilson95_among_refutable": [
+     6.938893903907228e-18,
+     0.12455903714463581
     ],
     "with_a_measured_functional_determiner": 0,
     "without_a_measured_functional_determiner": 0
@@ -4963,7 +5273,8 @@
     {
      "K": 3,
      "M": 3,
-     "ambiguity_edges": 3,
+     "ambiguous_coordinates": 3,
+     "ambiguous_pairs": 3,
      "cover_would_be": 2,
      "declaring": "django@6.1",
      "dependence_search_exhaustive": true,
@@ -4979,7 +5290,8 @@
     {
      "K": 3,
      "M": 3,
-     "ambiguity_edges": 3,
+     "ambiguous_coordinates": 3,
+     "ambiguous_pairs": 3,
      "cover_would_be": 2,
      "declaring": "django@6.1.1",
      "dependence_search_exhaustive": true,
@@ -4995,7 +5307,8 @@
     {
      "K": 3,
      "M": 3,
-     "ambiguity_edges": 3,
+     "ambiguous_coordinates": 3,
+     "ambiguous_pairs": 3,
      "cover_would_be": 2,
      "declaring": "django@6.1.2",
      "dependence_search_exhaustive": true,
@@ -5011,7 +5324,8 @@
     {
      "K": 3,
      "M": 3,
-     "ambiguity_edges": 3,
+     "ambiguous_coordinates": 3,
+     "ambiguous_pairs": 3,
      "cover_would_be": 2,
      "declaring": "django@6.0.9",
      "dependence_search_exhaustive": true,
@@ -5027,7 +5341,8 @@
     {
      "K": 3,
      "M": 3,
-     "ambiguity_edges": 3,
+     "ambiguous_coordinates": 3,
+     "ambiguous_pairs": 3,
      "cover_would_be": 2,
      "declaring": "django@5.2.18",
      "dependence_search_exhaustive": true,
@@ -5043,7 +5358,8 @@
     {
      "K": 3,
      "M": 3,
-     "ambiguity_edges": 3,
+     "ambiguous_coordinates": 3,
+     "ambiguous_pairs": 3,
      "cover_would_be": 2,
      "declaring": "pandas@3.0.4",
      "dependence_search_exhaustive": true,
@@ -5059,7 +5375,8 @@
     {
      "K": 3,
      "M": 3,
-     "ambiguity_edges": 3,
+     "ambiguous_coordinates": 3,
+     "ambiguous_pairs": 3,
      "cover_would_be": 2,
      "declaring": "pandas@3.0.5",
      "dependence_search_exhaustive": true,
@@ -5075,7 +5392,8 @@
     {
      "K": 3,
      "M": 3,
-     "ambiguity_edges": 3,
+     "ambiguous_coordinates": 3,
+     "ambiguous_pairs": 3,
      "cover_would_be": 2,
      "declaring": "pandas@3.0.6",
      "dependence_search_exhaustive": true,
@@ -5091,7 +5409,8 @@
     {
      "K": 3,
      "M": 3,
-     "ambiguity_edges": 3,
+     "ambiguous_coordinates": 3,
+     "ambiguous_pairs": 3,
      "cover_would_be": 2,
      "declaring": "pandas@3.1.0rc0",
      "dependence_search_exhaustive": true,
@@ -5107,7 +5426,8 @@
     {
      "K": 3,
      "M": 3,
-     "ambiguity_edges": 3,
+     "ambiguous_coordinates": 3,
+     "ambiguous_pairs": 3,
      "cover_would_be": 2,
      "declaring": "pandas@3.1.0",
      "dependence_search_exhaustive": true,
@@ -5123,7 +5443,8 @@
     {
      "K": 1,
      "M": 1,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 1,
+     "ambiguous_pairs": 0,
      "cover_would_be": 0,
      "declaring": "asgiref@3.9.2",
      "dependence_search_exhaustive": true,
@@ -5139,7 +5460,8 @@
     {
      "K": 1,
      "M": 1,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 1,
+     "ambiguous_pairs": 0,
      "cover_would_be": 0,
      "declaring": "asgiref@3.10.0",
      "dependence_search_exhaustive": true,
@@ -5155,7 +5477,8 @@
     {
      "K": 1,
      "M": 1,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 1,
+     "ambiguous_pairs": 0,
      "cover_would_be": 0,
      "declaring": "asgiref@3.11.0",
      "dependence_search_exhaustive": true,
@@ -5171,7 +5494,8 @@
     {
      "K": 1,
      "M": 1,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 1,
+     "ambiguous_pairs": 0,
      "cover_would_be": 0,
      "declaring": "asgiref@3.11.1",
      "dependence_search_exhaustive": true,
@@ -5187,7 +5511,8 @@
     {
      "K": 1,
      "M": 1,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 1,
+     "ambiguous_pairs": 0,
      "cover_would_be": 0,
      "declaring": "asgiref@3.12.0",
      "dependence_search_exhaustive": true,
@@ -5203,7 +5528,8 @@
     {
      "K": 1,
      "M": 1,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 1,
+     "ambiguous_pairs": 0,
      "cover_would_be": 0,
      "declaring": "asgiref@3.12.1",
      "dependence_search_exhaustive": true,
@@ -5219,7 +5545,8 @@
     {
      "K": 1,
      "M": 1,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 1,
+     "ambiguous_pairs": 0,
      "cover_would_be": 0,
      "declaring": "exceptiongroup@1.3.0",
      "dependence_search_exhaustive": true,
@@ -5235,7 +5562,8 @@
     {
      "K": 1,
      "M": 1,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 1,
+     "ambiguous_pairs": 0,
      "cover_would_be": 0,
      "declaring": "exceptiongroup@1.3.1",
      "dependence_search_exhaustive": true,
@@ -5251,7 +5579,8 @@
     {
      "K": 1,
      "M": 1,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 1,
+     "ambiguous_pairs": 0,
      "cover_would_be": 0,
      "declaring": "importlib-metadata@8.7.1",
      "dependence_search_exhaustive": true,
@@ -5267,7 +5596,8 @@
     {
      "K": 1,
      "M": 1,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 1,
+     "ambiguous_pairs": 0,
      "cover_would_be": 0,
      "declaring": "importlib-metadata@8.8.0",
      "dependence_search_exhaustive": true,
@@ -5283,7 +5613,8 @@
     {
      "K": 1,
      "M": 1,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 1,
+     "ambiguous_pairs": 0,
      "cover_would_be": 0,
      "declaring": "importlib-metadata@9.0.0",
      "dependence_search_exhaustive": true,
@@ -5299,7 +5630,8 @@
     {
      "K": 1,
      "M": 1,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 1,
+     "ambiguous_pairs": 0,
      "cover_would_be": 0,
      "declaring": "importlib-metadata@9",
      "dependence_search_exhaustive": true,
@@ -5315,7 +5647,8 @@
     {
      "K": 1,
      "M": 1,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 1,
+     "ambiguous_pairs": 0,
      "cover_would_be": 0,
      "declaring": "importlib-metadata@8.9.0",
      "dependence_search_exhaustive": true,
@@ -5331,7 +5664,8 @@
     {
      "K": 1,
      "M": 1,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 1,
+     "ambiguous_pairs": 0,
      "cover_would_be": 0,
      "declaring": "importlib-metadata@9.0.1",
      "dependence_search_exhaustive": true,
@@ -5347,7 +5681,8 @@
     {
      "K": 1,
      "M": 1,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 1,
+     "ambiguous_pairs": 0,
      "cover_would_be": 0,
      "declaring": "jinja2@3.1.3",
      "dependence_search_exhaustive": true,
@@ -5363,7 +5698,8 @@
     {
      "K": 1,
      "M": 1,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 1,
+     "ambiguous_pairs": 0,
      "cover_would_be": 0,
      "declaring": "jinja2@3.1.4",
      "dependence_search_exhaustive": true,
@@ -5379,7 +5715,8 @@
     {
      "K": 1,
      "M": 1,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 1,
+     "ambiguous_pairs": 0,
      "cover_would_be": 0,
      "declaring": "jinja2@3.1.5",
      "dependence_search_exhaustive": true,
@@ -5395,7 +5732,8 @@
     {
      "K": 1,
      "M": 1,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 1,
+     "ambiguous_pairs": 0,
      "cover_would_be": 0,
      "declaring": "jinja2@3.1.6",
      "dependence_search_exhaustive": true,
@@ -5411,7 +5749,8 @@
     {
      "K": 1,
      "M": 1,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 1,
+     "ambiguous_pairs": 0,
      "cover_would_be": 0,
      "declaring": "python-dateutil@2.9.0",
      "dependence_search_exhaustive": true,
@@ -5427,7 +5766,8 @@
     {
      "K": 1,
      "M": 1,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 1,
+     "ambiguous_pairs": 0,
      "cover_would_be": 0,
      "declaring": "python-dateutil@2.9.0.post0",
      "dependence_search_exhaustive": true,
@@ -5443,7 +5783,8 @@
     {
      "K": 1,
      "M": 1,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 1,
+     "ambiguous_pairs": 0,
      "cover_would_be": 0,
      "declaring": "python-dateutil@3.0.0",
      "dependence_search_exhaustive": true,
@@ -5459,7 +5800,8 @@
     {
      "K": 1,
      "M": 1,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 1,
+     "ambiguous_pairs": 0,
      "cover_would_be": 0,
      "declaring": "python-dateutil@3",
      "dependence_search_exhaustive": true,
@@ -5475,7 +5817,8 @@
     {
      "K": 1,
      "M": 1,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 1,
+     "ambiguous_pairs": 0,
      "cover_would_be": 0,
      "declaring": "werkzeug@3.1.4",
      "dependence_search_exhaustive": true,
@@ -5491,7 +5834,8 @@
     {
      "K": 1,
      "M": 1,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 1,
+     "ambiguous_pairs": 0,
      "cover_would_be": 0,
      "declaring": "werkzeug@3.1.5",
      "dependence_search_exhaustive": true,
@@ -5507,7 +5851,8 @@
     {
      "K": 1,
      "M": 1,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 1,
+     "ambiguous_pairs": 0,
      "cover_would_be": 0,
      "declaring": "werkzeug@3.1.6",
      "dependence_search_exhaustive": true,
@@ -5523,7 +5868,8 @@
     {
      "K": 1,
      "M": 1,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 1,
+     "ambiguous_pairs": 0,
      "cover_would_be": 0,
      "declaring": "werkzeug@3.1.7",
      "dependence_search_exhaustive": true,
@@ -5539,7 +5885,8 @@
     {
      "K": 1,
      "M": 1,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 1,
+     "ambiguous_pairs": 0,
      "cover_would_be": 0,
      "declaring": "werkzeug@3.1.8",
      "dependence_search_exhaustive": true,
@@ -5555,7 +5902,8 @@
     {
      "K": 1,
      "M": 1,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 1,
+     "ambiguous_pairs": 0,
      "cover_would_be": 0,
      "declaring": "werkzeug@3.1.9",
      "dependence_search_exhaustive": true,
@@ -5571,7 +5919,8 @@
     {
      "K": 1,
      "M": 1,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 1,
+     "ambiguous_pairs": 0,
      "cover_would_be": 0,
      "declaring": "asgiref@3.9.1",
      "dependence_search_exhaustive": true,
@@ -5587,7 +5936,8 @@
     {
      "K": 1,
      "M": 1,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 1,
+     "ambiguous_pairs": 0,
      "cover_would_be": 0,
      "declaring": "asgiref@3.9.0",
      "dependence_search_exhaustive": true,
@@ -5603,7 +5953,8 @@
     {
      "K": 1,
      "M": 1,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 1,
+     "ambiguous_pairs": 0,
      "cover_would_be": 0,
      "declaring": "asgiref@3.8.1",
      "dependence_search_exhaustive": true,
@@ -5619,7 +5970,8 @@
     {
      "K": 3,
      "M": 3,
-     "ambiguity_edges": 3,
+     "ambiguous_coordinates": 3,
+     "ambiguous_pairs": 3,
      "cover_would_be": 2,
      "declaring": "django@6.0b1",
      "dependence_search_exhaustive": true,
@@ -5635,7 +5987,8 @@
     {
      "K": 3,
      "M": 3,
-     "ambiguity_edges": 3,
+     "ambiguous_coordinates": 3,
+     "ambiguous_pairs": 3,
      "cover_would_be": 2,
      "declaring": "django@4.2.25",
      "dependence_search_exhaustive": true,
@@ -5651,7 +6004,8 @@
     {
      "K": 3,
      "M": 3,
-     "ambiguity_edges": 3,
+     "ambiguous_coordinates": 3,
+     "ambiguous_pairs": 3,
      "cover_would_be": 2,
      "declaring": "django@5.1.13",
      "dependence_search_exhaustive": true,
@@ -5667,7 +6021,8 @@
     {
      "K": 3,
      "M": 3,
-     "ambiguity_edges": 3,
+     "ambiguous_coordinates": 3,
+     "ambiguous_pairs": 3,
      "cover_would_be": 2,
      "declaring": "django@5.2.7",
      "dependence_search_exhaustive": true,
@@ -5683,7 +6038,8 @@
     {
      "K": 3,
      "M": 3,
-     "ambiguity_edges": 3,
+     "ambiguous_coordinates": 3,
+     "ambiguous_pairs": 3,
      "cover_would_be": 2,
      "declaring": "django@6",
      "dependence_search_exhaustive": true,
@@ -5699,7 +6055,8 @@
     {
      "K": 2,
      "M": 2,
-     "ambiguity_edges": 1,
+     "ambiguous_coordinates": 2,
+     "ambiguous_pairs": 1,
      "cover_would_be": 1,
      "declaring": "importlib-metadata@8.7.0",
      "dependence_search_exhaustive": true,
@@ -5715,7 +6072,8 @@
     {
      "K": 2,
      "M": 2,
-     "ambiguity_edges": 1,
+     "ambiguous_coordinates": 2,
+     "ambiguous_pairs": 1,
      "cover_would_be": 1,
      "declaring": "importlib-metadata@8.6.1",
      "dependence_search_exhaustive": true,
@@ -5731,7 +6089,8 @@
     {
      "K": 2,
      "M": 2,
-     "ambiguity_edges": 1,
+     "ambiguous_coordinates": 2,
+     "ambiguous_pairs": 1,
      "cover_would_be": 1,
      "declaring": "importlib-metadata@8.6.0",
      "dependence_search_exhaustive": true,
@@ -5747,7 +6106,8 @@
     {
      "K": 2,
      "M": 2,
-     "ambiguity_edges": 1,
+     "ambiguous_coordinates": 2,
+     "ambiguous_pairs": 1,
      "cover_would_be": 1,
      "declaring": "importlib-metadata@8.5.0",
      "dependence_search_exhaustive": true,
@@ -5763,7 +6123,8 @@
     {
      "K": 2,
      "M": 2,
-     "ambiguity_edges": 1,
+     "ambiguous_coordinates": 2,
+     "ambiguous_pairs": 1,
      "cover_would_be": 1,
      "declaring": "importlib-metadata@8.4.0",
      "dependence_search_exhaustive": true,
@@ -5779,7 +6140,8 @@
     {
      "K": 4,
      "M": 4,
-     "ambiguity_edges": 6,
+     "ambiguous_coordinates": 4,
+     "ambiguous_pairs": 6,
      "cover_would_be": 3,
      "declaring": "pandas@2.3.3",
      "dependence_search_exhaustive": false,
@@ -5795,7 +6157,8 @@
     {
      "K": 4,
      "M": 4,
-     "ambiguity_edges": 6,
+     "ambiguous_coordinates": 4,
+     "ambiguous_pairs": 6,
      "cover_would_be": 3,
      "declaring": "pandas@2.3.2",
      "dependence_search_exhaustive": false,
@@ -5811,7 +6174,8 @@
     {
      "K": 4,
      "M": 4,
-     "ambiguity_edges": 6,
+     "ambiguous_coordinates": 4,
+     "ambiguous_pairs": 6,
      "cover_would_be": 3,
      "declaring": "pandas@2.3.1",
      "dependence_search_exhaustive": false,
@@ -5827,7 +6191,8 @@
     {
      "K": 4,
      "M": 4,
-     "ambiguity_edges": 6,
+     "ambiguous_coordinates": 4,
+     "ambiguous_pairs": 6,
      "cover_would_be": 3,
      "declaring": "pandas@2.3.0",
      "dependence_search_exhaustive": false,
@@ -5843,7 +6208,8 @@
     {
      "K": 4,
      "M": 4,
-     "ambiguity_edges": 6,
+     "ambiguous_coordinates": 4,
+     "ambiguous_pairs": 6,
      "cover_would_be": 3,
      "declaring": "pandas@2.2.3",
      "dependence_search_exhaustive": false,
@@ -5859,7 +6225,8 @@
     {
      "K": 2,
      "M": 2,
-     "ambiguity_edges": 1,
+     "ambiguous_coordinates": 2,
+     "ambiguous_pairs": 1,
      "cover_would_be": 1,
      "declaring": "pytest@8.3.5",
      "dependence_search_exhaustive": true,
@@ -5875,7 +6242,8 @@
     {
      "K": 2,
      "M": 2,
-     "ambiguity_edges": 1,
+     "ambiguous_coordinates": 2,
+     "ambiguous_pairs": 1,
      "cover_would_be": 1,
      "declaring": "pytest@8.3.4",
      "dependence_search_exhaustive": true,
@@ -5891,7 +6259,8 @@
     {
      "K": 1,
      "M": 1,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 1,
+     "ambiguous_pairs": 0,
      "cover_would_be": 0,
      "declaring": "werkzeug@3.1.3",
      "dependence_search_exhaustive": true,
@@ -5907,7 +6276,8 @@
     {
      "K": 1,
      "M": 1,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 1,
+     "ambiguous_pairs": 0,
      "cover_would_be": 0,
      "declaring": "werkzeug@3.1.2",
      "dependence_search_exhaustive": true,
@@ -5923,7 +6293,8 @@
     {
      "K": 1,
      "M": 1,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 1,
+     "ambiguous_pairs": 0,
      "cover_would_be": 0,
      "declaring": "werkzeug@3.1.1",
      "dependence_search_exhaustive": true,
@@ -5939,7 +6310,8 @@
     {
      "K": 1,
      "M": 1,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 1,
+     "ambiguous_pairs": 0,
      "cover_would_be": 0,
      "declaring": "werkzeug@3.1.0",
      "dependence_search_exhaustive": true,
@@ -5955,7 +6327,8 @@
     {
      "K": 1,
      "M": 1,
-     "ambiguity_edges": 0,
+     "ambiguous_coordinates": 1,
+     "ambiguous_pairs": 0,
      "cover_would_be": 0,
      "declaring": "werkzeug@3.0.6",
      "dependence_search_exhaustive": true,

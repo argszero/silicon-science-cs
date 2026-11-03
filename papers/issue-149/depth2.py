@@ -325,7 +325,14 @@ def analyse(eco):
         rows.append({"declaring": inst["declaring"], "packages": len(names),
                      "solutions": len(sols), "M": len(M), "K": k,
                      "ratio": (float(k) / len(M)) if M else None,
-                     "vertex_cover": tau, "ambiguity_edges": nedges,
+                     # TWO OBJECTS, TWO NAMES. `ambiguous_pairs` is what an edge count means -- a
+                     # PAIR of coordinates -- and `ambiguous_coordinates` is the cardinality of M.
+                     # The single name `ambiguity_edges` carried both readings, so a reader who
+                     # recomputed the manuscript's 172 from it got 78: every M = 1 row is 1
+                     # coordinate, 1 edge-slot, and 0 pairs. The field keeps the pair count and
+                     # says so; |M| gets its own name beside it.
+                     "vertex_cover": tau, "ambiguous_pairs": nedges,
+                     "ambiguous_coordinates": len(M),
                      "cover_would_be": len(M) - 1 if M else None,
                      "pins_pin_everything": len(names),
                      "pins_direct_only": len(inst["d1"]),
@@ -356,7 +363,12 @@ def summarise(eco):
     # dependence is present in exactly those instances (both directions, so the detector cannot
     # merely be firing everywhere)
     with_edges = [r for r in rows if r["M"] > 0]
+    # the population the identity can actually be refuted on: |M| >= 2. At |M| = 1 the certificate
+    # is that one record and |K*| = 1 by construction, so a failure is impossible rather than absent.
+    single = [r for r in with_edges if r["M"] == 1]
+    refutable = [r for r in with_edges if r["M"] > 1]
     exc = [r for r in with_edges if r["K"] < r["M"]]
+    exc_ref = [r for r in refutable if r["K"] < r["M"]]
     det_among_exc = [r for r in exc if r["determined"]]
     det_among_clean = [r for r in with_edges if r["K"] == r["M"] and r["determined"]]
     clean = [r for r in rows if r not in exc]
@@ -390,10 +402,25 @@ def summarise(eco):
                             "<0.75": sum(1 for r in ratios if r < 0.75),
                             "<0.5": sum(1 for r in ratios if r < 0.5)},
         "exceptions": {
-            "instances_with_an_ambiguous_edge": len(with_edges),
+            # THE DENOMINATOR IS NAMED FOR WHAT IT COUNTS. `instances_with_an_ambiguous_coordinate`
+            # is the population the sentences mean by "instances with an ambiguous edge": rows whose
+            # |M| is at least 1. It is not a pair count (that is `ambiguous_pairs` on each row) and
+            # not an edge count (that is per-row too).
+            "instances_with_an_ambiguous_coordinate": len(with_edges),
             "instances_below_one_ratio": len(exc),
             "rate": (float(len(exc)) / len(with_edges)) if with_edges else None,
             "wilson95": wilson(len(exc), len(with_edges)),
+            # ---- THE REFUTABLE POPULATION. An instance with exactly ONE ambiguous coordinate has
+            # |K*| = |M| = 1 with no choice to make, so "|K*| < |M|" is not merely false there --
+            # it is unstatable, and counting those rows in the denominator dilutes the rate and
+            # tightens the interval in the direction that flatters the paper. Both populations are
+            # now carried, with the degeneracy counted and asserted empty in the other direction.
+            "instances_with_a_single_ambiguous_coordinate": len(single),
+            "single_coordinate_instances_with_a_saving": len([r for r in single if r["K"] < r["M"]]),
+            "refutable_instances": len(refutable),
+            "instances_below_one_ratio_among_refutable": len(exc_ref),
+            "rate_among_refutable": (float(len(exc_ref)) / len(refutable)) if refutable else None,
+            "wilson95_among_refutable": wilson(len(exc_ref), len(refutable)),
             "distinct_declaring_roots": len({r["declaring"].rsplit("@", 1)[0] for r in exc}),
             "declaring_roots": sorted({r["declaring"].rsplit("@", 1)[0] for r in exc}),
             "max_saving": max([r["saving"] for r in exc], default=0),
@@ -463,6 +490,17 @@ def check():
     # and a case that MUST have an edge, so agreement is not vacuous agreement on two empty sets
     plant("plant two solutions differing at two coords IS an edge",
           ambiguity_edges_fast([("1", "0", "0"), ("0", "1", "0")]) == {(0, 1)})
+
+    # THE TWO OBJECTS, SEPARATED WHERE THEY DIFFER. |M| = 1 and "0 pairs" are both true of one row
+    # and say different things; the artefact used one field for both, so a reader recomputing the
+    # population from the pair field got 78 where the sentences mean 172. A fixture that only ever
+    # holds |M| >= 2 cannot separate them -- there the coordinate count and the pair count move
+    # together -- so this one is built to sit exactly on the disagreement.
+    one = [("0", "0", "0"), ("1", "0", "0")]
+    one_M = [i for i in range(3) if len({p[i] for p in one}) > 1]
+    plant("plant one ambiguous coordinate -> |M| = 1 and 0 pairs",
+          len(one_M) == 1 and ambiguity_edges_fast(one) == set(),
+          " (|M|=%d pairs=%d)" % (len(one_M), len(ambiguity_edges_fast(one))))
 
     inst = instance(fake, {"package": "root", "version": "1.0.0"}, False)
     names, sols, _ = enumerate_solutions(inst, fake, False)
@@ -546,10 +584,22 @@ def main():
                  s["instances"], s["vertex_cover_equals_K_with_ambiguous_edges"],
                  s["vertex_cover_equals_K_degenerate"]))
         e = s["exceptions"]
-        print("   EXCEPTIONS to |K*| = |M|: %d/%d instances with an ambiguous edge = %s [%s]"
-              % (e["instances_below_one_ratio"], e["instances_with_an_ambiguous_edge"],
+        # TWO DENOMINATORS, PRINTED TOGETHER. The all-ambiguous rate is what earlier heads printed
+        # alone; the refutable rate is the same failures over the rows where a failure was possible.
+        # A reader given only the first reads a diluted number and a too-tight bound.
+        print("   EXCEPTIONS to |K*| = |M|: %d/%d instances with an ambiguous coordinate = %s [%s]"
+              % (e["instances_below_one_ratio"], e["instances_with_an_ambiguous_coordinate"],
                  ("%.4f" % e["rate"]) if e["rate"] is not None else "n/a",
                  ", ".join("%.4f" % x for x in e["wilson95"]) if e["wilson95"] else "n/a"))
+        print("     population split: %d carry exactly one ambiguous coordinate (|K*| = |M| = 1 by"
+              " construction, %d of them with a saving) | %d are refutable (|M| >= 2)"
+              % (e["instances_with_a_single_ambiguous_coordinate"],
+                 e["single_coordinate_instances_with_a_saving"], e["refutable_instances"]))
+        print("     EXCEPTIONS on the refutable population: %d/%d = %s [%s]"
+              % (e["instances_below_one_ratio_among_refutable"], e["refutable_instances"],
+                 ("%.4f" % e["rate_among_refutable"]) if e["rate_among_refutable"] is not None else "n/a",
+                 ", ".join("%.4f" % x for x in e["wilson95_among_refutable"])
+                 if e["wilson95_among_refutable"] else "n/a"))
         print("     from %d distinct declaring roots; max saving %d per instance; histogram %s"
               % (e["distinct_declaring_roots"], e["max_saving"], e["saving_histogram"]))
         print("     with a measured functional determiner: %d | without: %d %s"

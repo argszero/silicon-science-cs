@@ -150,11 +150,33 @@ def check_table(rates, depth2=None):
 # One regex, two branches, so the matches cannot overlap and each statement is counted once. The
 # distant branch refuses to cross a `%`, a `[`, or a sentence end, so it can only pair a number with
 # the interval that closes its own sentence.
+#
+# THE BRANCH USED TO CARRY A `{1,160}` BOUND, AND THAT BOUND WAS THE DEFECT. It is not a rule a
+# reader could see: a statement whose interval closed 161 characters from its rate was neither
+# paired nor reported, so the gate's own count stayed at 14 of 14 while a fifteenth statement sat in
+# the body unread -- the review appended one at 173 characters and got `rc=0`. A character window is
+# a silent unit; the boundary of a statement is not a number of characters but the end of its
+# sentence, so the branch is now unbounded and stops at the sentence end the lookaheads already
+# describe. What that leaves is an interval with no rate in front of it -- and `interval_census`
+# below requires every interval token in the body to be either paired here or declared, so nothing
+# can be invisible by being far away.
 RATE = re.compile(
     r"(\d+\.\d)\s*%\**\s*"
     r"(?:\[(\d+\.\d+),\s*(\d+\.\d+)\]"
-    r"|(?:(?!\d+\.\d\s*%)(?!\[)(?![.!?]\s)(?!\n[ \t]*\n)[\s\S]){1,160}?"
+    r"|(?:(?!\d+\.\d\s*%)(?!\[)(?![.!?]\s)(?!\n[ \t]*\n)[\s\S])+?"
     r"\[(\d+\.\d+),\s*(\d+\.\d+)\])")
+
+# every interval the body writes, paired or not -- the population the census enumerates
+INTERVAL = re.compile(r"\[\d+\.\d+,\s*\d+\.\d+\]")
+
+# Intervals that are deliberately NOT a rate-with-interval claim, each with the reason. A declaration
+# that stops occurring in the body is a finding too, so a retired exception cannot linger here and
+# keep the census green over a body that no longer needs it.
+DECLARED_UNPAIRED_INTERVALS = [
+    ("[11.3, 21.0]",
+     "a quoted superseded bound: the artifact's lower bound 0.1124951 rounds to 11.2, and the "
+     "sentence that quotes the old 11.3 corrects it against the artifact in the same breath"),
+]
 
 
 def rate_statements(body):
@@ -169,6 +191,71 @@ def rate_statements(body):
                     "text": " ".join(m.group(0).split())[:70],
                     "raw": m.group(0), "span": (m.start(), m.end())})
     return out
+
+
+def sentence_spans(body):
+    """Every sentence of `body` as a (start, end) span -- the unit a statement's claim lives in."""
+    spans, start = [], 0
+    for m in re.finditer(r"(?<=[.!?])\s+", body):
+        spans.append((start, m.end()))
+        start = m.end()
+    spans.append((start, len(body)))
+    return spans
+
+
+def interval_census(body):
+    """Account for EVERY interval token in `body`: paired into a statement, or declared with a reason.
+
+    The gate used to count only what its own pattern matched, so an interval it did not pair was not
+    a finding -- it was absent. An interval token is the visible unit here, not a match: each one is
+    either inside a rate-with-interval statement (and therefore value-checked) or it is declared
+    below with its reason. Anything else is reported by position and text.
+    """
+    st = rate_statements(body)
+    spans = [x["span"] for x in st]
+    declared = dict(DECLARED_UNPAIRED_INTERVALS)
+    read, orphans, used = 0, [], set()
+    for m in INTERVAL.finditer(body):
+        token = " ".join(m.group(0).split())
+        if any(a <= m.start() < b for a, b in spans):
+            read += 1
+        elif token in declared:
+            used.add(token)
+        else:
+            orphans.append({"token": token, "at": m.start()})
+    return {"statements": len(st), "tokens": read + len(orphans) + len(used),
+            "read": read, "orphans": orphans, "declared": used,
+            "stale_declarations": sorted(set(declared) - used)}
+
+
+def plant_census(body):
+    """Two legs, because the census has two ways to be wrong.
+
+    (1) The defect this repairs: a statement whose interval closes past any character window must be
+    READ, not skipped. The doctor puts a share no artifact holds 174 characters from its own
+    interval -- past the retired 160 bound -- and the doctored body must come back paired, so the
+    ordinary value comparison refuses it. A gate that still had the bound would leave it invisible
+    and stay green, which is exactly what the review observed.
+    (2) The other direction: an interval with no rate before it in its sentence must be NAMED by the
+    census rather than counted as explained. A rule that reports only what it paired cannot fail
+    here, and this leg is what shows the census is a census.
+    """
+    ok = True
+    gap = " of the instances that can refute the identity and are counted in this population" * 3
+    far = round(44.9, 1)
+    doctored = body + ("\n\nA planted statement reads %.1f%%%s[33.1, 54.6].\n" % (far, gap))
+    cens = interval_census(doctored)
+    paired_far = any(x["triple"][0] == far for x in rate_statements(doctored))
+    print("  [plant %s] %d characters from its own interval, %.1f%% is read as a statement"
+          % ("ok" if paired_far else "FAIL", len(gap), far))
+    ok = ok and paired_far
+    orphaned = body + "\n\nA planted sentence carries an interval with no rate [33.1, 54.6].\n"
+    cens2 = interval_census(orphaned)
+    named = [o["token"] for o in cens2["orphans"] if o["token"] == "[33.1, 54.6]"]
+    print("  [plant %s] an interval with no rate before it is reported by the census (%d orphan(s))"
+          % ("ok" if named else "FAIL", len(cens2["orphans"])))
+    ok = ok and bool(named)
+    return ok
 
 
 def plant_prose(body, held):
@@ -235,6 +322,7 @@ def check_prose_rates(text, rates, depth2=None):
                 if isinstance(w, list) and len(w) == 2:
                     held.add((round(100 * val, 1), round(100 * w[0], 1), round(100 * w[1], 1)))
     pins_ints, pins_pct = set(), set()
+    denom_for = {}          # statement triple -> (the integer its sentence must print, field name)
     # the confirming brute check's population lives in rates.json, and the prose that quotes it sits
     # in a sentence that is also pricing a certificate, so this gate reads both artifacts
     for eco, v in rates["ecosystems"].items():
@@ -254,9 +342,22 @@ def check_prose_rates(text, rates, depth2=None):
                         if isinstance(vv, int) and not isinstance(vv, bool):
                             pins_ints.add(vv)
             e = v.get("exceptions") or {}
-            if isinstance(e.get("rate"), float) and isinstance(e.get("wilson95"), list):
-                lo, hi = e["wilson95"]
-                held.add((round(100 * e["rate"], 1), round(100 * lo, 1), round(100 * hi, 1)))
+            # ---- BOTH POPULATIONS, AND THE FIELD EACH ONE IS A RATE OF. The lemma's frequency is
+            # reported twice -- over every instance with an ambiguous coordinate, and over the
+            # refutable ones -- and the two differ only by the denominator. A gate that held both
+            # triples without holding their denominators would accept the refutable rate printed
+            # over 172, which is the confusion the review found in the artifact's own field names.
+            # So each triple carries the integer its sentence must also print, and the names are the
+            # artifact's, not this file's: a rename upstream breaks this where it should.
+            for rate_key, wil_key, den_key in (
+                    ("rate", "wilson95", "instances_with_an_ambiguous_coordinate"),
+                    ("rate_among_refutable", "wilson95_among_refutable", "refutable_instances")):
+                if isinstance(e.get(rate_key), float) and isinstance(e.get(wil_key), list):
+                    lo, hi = e[wil_key]
+                    triple = (round(100 * e[rate_key], 1), round(100 * lo, 1), round(100 * hi, 1))
+                    held.add(triple)
+                    if isinstance(e.get(den_key), int):
+                        denom_for[triple] = (e[den_key], den_key)
             for base in ("baselines", "baselines_excluding_exceptions"):
                 b = v.get(base) or {}
                 if isinstance(b.get("pins_certificate"), int) and isinstance(b.get("pins_pin_everything"), int):
@@ -265,6 +366,7 @@ def check_prose_rates(text, rates, depth2=None):
                 pins_pct.add(v["price_delta_points"])
     body = text.replace(render_table(rates), "")        # the table is checked above
     total, bad = 0, 0
+    spans = sentence_spans(body)
     for st in rate_statements(body):
         total += 1
         if st["triple"] not in held:
@@ -273,6 +375,28 @@ def check_prose_rates(text, rates, depth2=None):
             print("  [FAIL] the body prints %s, which no artifact holds (%s form); nearest rate "
                   "the artifacts hold: %.1f%% [%.1f, %.1f]"
                   % (st["text"], st["form"], near[0][0], near[0][1], near[0][2]))
+            continue
+        # the rate's own sentence must carry the denominator the artifact says it is a rate of
+        want = denom_for.get(st["triple"])
+        if want is None:
+            continue
+        denom, field = want
+        # A SENTENCE IS TOO WIDE A UNIT FOR THIS BINDING. The first version of this rule asked the
+        # enclosing sentence, and a doctored statement -- the refutable 43.6 % over 172 -- passed,
+        # because the same sentence legitimately prints 172 about the 94 single-coordinate
+        # instances: presence in the sentence is not the rate's denominator. The binder is a
+        # proximity window around the rate instead, and it fails LOUDLY, which is the difference
+        # from the character window retired above: there a miss meant the statement was never read;
+        # here a miss is reported with the field's own name.
+        lo = max(0, st["span"][0] - 120)
+        hi = min(len(body), st["span"][1] + 120)
+        if not re.search(r"(?<![\d.])%d(?![\d.]*\d)" % denom, body[lo:hi]):
+            bad += 1
+            print("  [FAIL] the statement printing %s is a rate over %d (%s), and neither the "
+                  "clause before it nor the one after prints %d; a rate over one population cannot "
+                  "stand where another population's count does"
+                  % (st["text"], denom, field, denom))
+        _ = spans
     if not depth2:
         print("  [FAIL] depth2.json could not be read, so the certificate's price sentence is not checked")
         return 1
@@ -300,14 +424,34 @@ def check_prose_rates(text, rates, depth2=None):
                       % (m.group(1), ", ".join("%.1f" % x for x in sorted(pins_pct))))
     if bad:
         return 1
+    # THE CENSUS, AFTER THE VALUES: every interval token in the body is either inside a statement
+    # (and so was value-checked above) or declared with its reason. This is what replaces the
+    # retired character window -- a statement the pattern cannot pair is now a finding by position.
+    cens = interval_census(body)
+    for o in cens["orphans"]:
+        bad += 1
+        print("  [FAIL] the body carries the interval %s at byte %d with no rate before it in its "
+              "sentence, and it is not a declared exception -- an unpaired interval is reported, not "
+              "skipped" % (o["token"], o["at"]))
+    for tok in cens["stale_declarations"]:
+        bad += 1
+        print("  [FAIL] the declared exception %s no longer occurs in the body, so the declaration "
+              "is stale and would excuse an interval that is no longer written" % tok)
+    if bad:
+        return 1
     if not plant_prose(body, held):
+        return 1
+    if not plant_census(body):
         return 1
     forms = {}
     for st in rate_statements(body):
         forms[st["form"]] = forms.get(st["form"], 0) + 1
     print("  [ok]   PROSE: IN SYNC (%d rate-with-interval statements -- %d adjacent, %d distant -- "
-          "and %d pin-price integers across the whole body, all of them the artifacts' own numbers)"
-          % (total, forms.get("adjacent", 0), forms.get("distant", 0), ints))
+          "%d of %d interval tokens read as statements, %d declared: %s -- and %d pin-price integers "
+          "across the whole body, all of them the artifacts' own numbers)"
+          % (total, forms.get("adjacent", 0), forms.get("distant", 0),
+             cens["read"], cens["tokens"], len(cens["declared"]),
+             ", ".join(sorted(cens["declared"])) or "none", ints))
     return 0
 
 

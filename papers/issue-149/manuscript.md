@@ -21,12 +21,16 @@ loses 10 times and wins 0. The second ecosystem supports only the birth-state ha
 PyPI's decay curve is **not run by construction**, because a declaration that is already
 multi-valued when written has no determination left to lose. We also price the alternative: a
 minimum certificate that recovers determination costs 31.0% of a lockfile's pins on npm and 95.8%
-on PyPI, because the certificate can never be smaller than the number of ambiguous edges unless two
-of those edges are functionally dependent — a closed form we prove under that condition and then
+on PyPI, because the certificate can never be smaller than the number of ambiguous coordinates
+unless two of them are functionally dependent — a closed form we prove under that condition and then
 test by exhaustive solution enumeration on the **292 npm and 63 PyPI** declarations whose closure
-enumerates exactly, where the condition fails in 34 of the 172 npm instances that have an ambiguous
-edge (19.8% [14.5, 26.4], from 7 declaring packages, one record each) and in none of the 63 PyPI
-instances — a null over a population from which 23 further declarations were dropped by the
+enumerates exactly, where the condition fails in 34 of the 78 npm instances that can exhibit it
+(43.6% [33.1, 54.6], from 7 declaring packages, one record each). The other 94 of the 172 npm
+instances with an ambiguous coordinate carry exactly one, where `|K*| = |M| = 1` holds by
+construction and the condition cannot fail; over all 172 those same 34 failures are 19.8%
+[14.5, 26.4], a figure that is that degeneracy in its denominator rather than a second reading of
+them. PyPI's 27 refutable instances, of its 63, carry none: 0.0% [0.0, 12.5] — a null over a
+population from which 23 further declarations were dropped by the
 enumeration budget, and which therefore excludes its own largest candidates. This is a **case study** of two registries, measured once, in one
 snapshot, with one instrument; we claim no general law of package managers. The decision this
 speaks to is small and current: a maintainer choosing between `^1.3.0` and `1.3.0` today is choosing
@@ -141,7 +145,10 @@ with no feasible solution, and **23 dropped by that budget**
 
 Enumerating solution sets exactly for the 292 and 63 gives a median `|K*|/|M|` of **1.0** in both
 ecosystems, and the identity `|K*| = |M|` holds in **138 of the 172** npm instances that have an
-ambiguous edge and in all 63 PyPI instances. The vertex-cover
+ambiguous coordinate and in all 63 PyPI instances. That 138 is not 138 opportunities to fail: 94 of
+the 172 carry exactly one ambiguous coordinate, where `|K*| = |M| = 1` and the identity cannot be
+refuted at all, so the population on which it can be tested is **78**, and the instances that
+survive on merit are **44 of 78**. The vertex-cover
 bound is valid and **attained**: in **14** npm instances `|K*| = τ = |M| - 1`, because the ambiguity
 graph of an independent product is a clique whose cover is `|M| - 1`, and there a cover of that size
 does determine an install. The bounds we
@@ -150,8 +157,9 @@ the general weighted form [31, 47];
 our unit-cost instance is the degenerate case of that form, which is why the guarantee there is
 true and yet silent about the structure we actually have. Functional
 dependence between packages is the only mechanism that can compress the certificate below `|M|`,
-**and it is in the data**: in the remaining **34 of those 172** npm instances (19.8 % [14.5, 26.4])
-the certificate is smaller than `|M|`, drawn from 7 distinct declaring packages, and in every one of
+**and it is in the data**: in **34 of the 78** npm instances where the identity can fail it does
+(43.6 % [33.1, 54.6]) — the certificate is smaller than `|M|` — drawn from 7 distinct declaring
+packages, and in every one of
 them the saving is exactly one record. An earlier draft of this section reported the mechanism as
 absent and exhibited it only in a synthetic plant; that reading was wrong and §3.1 states the lemma
 under the condition it actually needs, with the condition measured rather than assumed. The plant is
@@ -163,7 +171,8 @@ population that excludes its own best candidates is not an estimate for PyPI.** 
 an instance when its solution enumeration exceeds the budget
 (`if len(sols) > budget: truncated = True`), and the instances that hit that budget are those with the
 *largest* admissible sets — which is where a functional determiner is most plausible, since a
-determiner has to choose among more alternatives before it can save a record. So "0 of 63" is a
+determiner has to choose among more alternatives before it can save a record. So "0 of 63" — and
+"0 of the 27 of them that can show it" — is a
 reading about **63 of 264**, with 23 declarations effectively unread, and the paper claims nothing
 about them.
 
@@ -171,8 +180,9 @@ So the coupling leg is reported at cost, not as a system: the certificate **is**
 ambiguous edges, and the honest content of this section is the lemma and its price. The lemma is
 **conditional**: §3.1 proves `|K*| = |M|` *for edges whose constraints are independent*, and the
 exhaustive search over the **292 npm and 63 PyPI** instances that enumerate exactly is what refutes
-the unconditional form -- `|K*| < |M|` in **34 of the 172** npm instances with an ambiguous edge
-(19.8 % [14.5, 26.4], 7 declaring packages, one record saved each) and in none of the 63. The
+the unconditional form -- `|K*| < |M|` in **34 of the 78** npm instances that can refute it
+(43.6 % [33.1, 54.6], 7 declaring packages, one record saved each) and in none of PyPI's 27
+refutable instances (0.0 % [0.0, 12.5]). The
 separate brute certificate over the **389 npm and 65 PyPI** depth-1 entries tests that every
 ambiguity edge really is ambiguous; it is a wider population because it does not need the full
 solution set, and it is not the population the lemma is evaluated on.
@@ -194,8 +204,12 @@ argument's own exception, which we count rather than assume away [58].
 
 ### 3.1 The certificate cannot be compressed, unless two edges are dependent
 
-**Lemma (conditional on independence).** For one declaration, let `M` be the set of ambiguous edges
-and `K*` a minimum set of (package, version) records that determines the install. If no coordinate
+**Lemma (conditional on independence).** For one declaration, let `M` be the set of ambiguous
+*coordinates* — the packages whose admissible versions, over the enumerated solution set, number more
+than one — and `K*` a minimum set of (package, version) records that determines the install. |M| is
+the artifact's `ambiguous_coordinates` on each row, and not its `ambiguous_pairs`: a pair is two
+coordinates, so a row with a single ambiguous coordinate has `|M| = 1` and zero pairs, and the two
+fields answer different questions. If no coordinate
 of the solution set is a function of the others — formally, if two solutions agreeing on every
 coordinate outside `{p}` always agree on `p` as well, for every `p ∈ M` — then `|K*| = |M|`.
 
@@ -207,10 +221,12 @@ the install is determined. Hence `|K| ≤ |M|`. ∎
 
 Independence is the lemma's hypothesis, not a convenience, and the package measures it instead of
 asserting it. `depth2.py` reports for every ambiguous coordinate the smallest other coordinate that
-determines it, and the two directions agree exactly: **34 of the 172 npm instances** with an
-ambiguous edge have `|K*| < |M|` (19.8 % [14.5, 26.4], over 7 distinct declaring packages), **all 34
+determines it, and the two directions agree exactly: **34 of the 78 npm instances** that can refute
+the identity have `|K*| < |M|` (43.6 % [33.1, 54.6], over 7 distinct declaring packages), **all 34
 carry a measured functional determiner, and no instance with a determiner needs `|M|` records**;
-PyPI's 63 instances carry none (0.0 % [0.0, 5.7]). The saving never exceeds one record — the histogram
+PyPI's 27 refutable instances carry none (0.0 % [0.0, 12.5]). The 94 of the 172 that carry a single
+ambiguous coordinate are outside this denominator, and not as an omission: there `|K*| = |M| = 1`,
+so the identity has no room to fail and counting them would report the dilution as a frequency. The saving never exceeds one record — the histogram
 over the 34 is `{1: 34}` — so the condition buys one package per declaration, not a construction.
 
 The smallest exception is `accepts@1.3.4`. `mime-types` is ambiguous over 20 versions and `mime-db`
@@ -368,9 +384,11 @@ count as a closure difference, a version published later must not be admissible 
 spec must return `None` rather than an empty set,`wilson(0,52)` must have a positive upper bound,
 an absent target must be `UNKNOWN`, an empty denominator must print `NOT RUN` and not `0.0`, and a
 caret range must saturate at its major bound. The plants pass 7/7 on `ambiguous.py`, 7/7 on
-`decay.py` and 7/7 on `depth2.py`, each program printing its own denominator on its verdict line;
+`decay.py` and 8/8 on `depth2.py`, each program printing its own denominator on its verdict line;
 the functional-dependence positive that the data does not contain is a plant, and is labelled as one
-everywhere it appears (§3).
+everywhere it appears (§3). The eighth `depth2.py` plant is the one that separates this paper's two
+objects: a single ambiguous coordinate is `|M| = 1` and **zero** ambiguity pairs, so a guard that
+only ever holds `|M| >= 2` cannot tell the coordinate count from the pair count.
 
 **Decay.** A panel of declarations at least 12 months old is read at k = 0, 3, 6, 9, 12 months. The
 **at-risk set** is declared before the curve is read: only an edge that is a singleton at k = 0 can
@@ -544,10 +562,10 @@ and turns the certificate into a price. We do not present it as deep theory, and
 not read §3 as a construction.
 
 **Functional dependence is measured, and it is narrow.** A dependency between packages can compress
-the certificate below `|M|`, and it does so in 34 of the 172 npm instances that have an ambiguous
-edge. We detect it per coordinate instead of assuming it: the detector names the determining package
+the certificate below `|M|`, and it does so in 34 of the 78 npm instances where the identity can
+fail. We detect it per coordinate instead of assuming it: the detector names the determining package
 where one exists, fires on a constructed bijection and stays silent on an independent closure
-(`depth2.py --check`), and finds nothing in PyPI's 63 instances. What this does not license is a
+(`depth2.py --check`), and finds nothing in PyPI's 27 refutable instances. What this does not license is a
 claim about how much compression is possible anywhere else. The saving is one record in 34 of 34
 observed cases, over 7 distinct declaring packages, so the exception rate is the rate of a narrow
 phenomenon in two populations, not a bound on the phenomenon itself.
@@ -583,8 +601,9 @@ the ecosystem or the package. Two registries, one instrument: 13.3% of evaluable
 ambiguous against 94.2% on PyPI, and within npm the survival of determination over twelve months is
 ordered exact 1.000, tilde 0.980, caret 0.781, with the same-package control showing the syntax
 rather than the package carrying the effect. The minimum certificate that recovers determination
-cannot be smaller than the number of ambiguous edges unless two of them are functionally dependent —
-a condition that fails in 34 of the 172 npm instances and in none of PyPI's 63 — which makes it a
+cannot be smaller than the number of ambiguous coordinates unless two of them are functionally
+dependent — a condition that fails in 34 of the 78 npm instances that can test it (43.6%
+[33.1, 54.6]) and in none of PyPI's 27 — which makes it a
 price rather than a design:
 31.0% of a lockfile on npm, 95.8% on PyPI. What we did not find — a compression larger than one record, or a decay curve on PyPI — we report as
 not found, with the counts that show the search was made.
@@ -600,7 +619,7 @@ rather than proved, so the higher level does not hold on its own terms; this sec
 lower one and offers no alternative reading of it. What the evidence supports is a case study: two
 registries, one snapshot, one instrument, ground truth that is mechanical rather than annotated (set
 cardinality over published metadata), a closed form under a stated condition with that condition
-measured at 34 exceptions in 172, and baselines against which the certificate is priced
+measured at 34 exceptions in the 78 npm instances where it can fail, and baselines against which the certificate is priced
 (pin-everything and pin-direct-only). The abstract states the same level once, and no claim beyond
 the two measured populations is made anywhere in this paper.
 

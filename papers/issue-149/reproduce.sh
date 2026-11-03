@@ -84,20 +84,24 @@ PINS
 
 # ---------------------------------------------------------------- 2 plants
 step "2 known-answer plants"
-for pair in "ambiguous.py 7" "depth2.py 7" "decay.py 7"; do
-  set -- $pair
-  out=$("$PY" "$1" --check 2>&1)
+for prog in ambiguous.py depth2.py decay.py; do
+  out=$("$PY" "$prog" --check 2>&1)
   if printf '%s' "$out" | grep -q "FAILED"; then
-    bad "$1 plants"
+    bad "$prog plants"
     printf '%s\n' "$out" | sed 's/^/         /'
-  elif printf '%s' "$out" | grep -qi "ALL PASS\|7/7"; then
+  elif printf '%s' "$out" | grep -qE "PLANTS: [0-9]+/[0-9]+ (ok|ALL PASS)"; then
     # The verdict line is echoed, not just acted on: the README quotes these counts, so a reader
     # running the README's own command has to see them. Capturing them silently made the README's
     # attribution false for the one command it tells the reader to run.
-    ok "$1 plants"
+    #
+    # The pattern asks for a DENOMINATOR, not for a typed total. It read `ALL PASS\|7/7`, so a
+    # program that grew an eighth plant and printed `8/8` was matched only by the `ALL PASS` branch,
+    # and one printing `PLANTS: 8/8 ok` would have fallen through to NOT RUN -- the step counted a
+    # total written here instead of the one the program prints.
+    ok "$prog plants"
     printf '%s\n' "$out" | grep -i "PLANTS" | sed 's/^/         /'
   else
-    notrun "$1 plants (no verdict line)"
+    notrun "$prog plants (no verdict line)"
   fi
 done
 
