@@ -56,6 +56,13 @@ Seeds are drawn reproducibly inside a top-level field with a fixed year window, 
 sampling seed; the field's `display_name` is verified before sampling, because a filter without a field
 constraint silently lands in another discipline while every instrument check stays green.
 
+Both arms are named by the register's own identifiers rather than by a label typed here: the first field
+is field 17 and the second is field 33, and each
+arm's filter constrains `primary_topic.field.id` — the top-level field itself, not a subfield beneath
+it. The identifier is printed because the name alone does not fix the referent: the same register also
+carries a *domain* under which that field sits, and the domain's display name is identical to the
+second field's, so "field" is the word doing the work in every sentence that compares the two.
+
 The cost model is the API's, not ours, and both constants are measured from the service's own refusals
 rather than chosen: a page (`filter=cites:`) returns at most 200
 works (one more is refused), and an id filter accepts at most
@@ -184,6 +191,12 @@ a reader is most likely to forget.
 **Two fields, both large and both general.** The field-selection rule was fixed before the second field
 was measured — the largest non-CS top-level field by work count — precisely so that agreement could not
 be chosen. Two fields is not universality, and no third field is claimed.
+
+**Field membership is by construction, not re-derivable from the bytes.** The committed arms carry work
+identifiers and reference lists, not each work's own topic, so nothing in this package lets a reader
+re-check that a given work sits in the field its arm is named for. That guarantee comes from the
+recorded filter string and from the display-name check the capture performs before it samples; a reader
+who wants the second line of evidence has to re-issue the query.
 
 **One registry.** The price bound is a statement about this API's documented request caps. A registry
 whose page-to-batch payload ratio differed would move `w*`; the formula is given so it can be recomputed.
