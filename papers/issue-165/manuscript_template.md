@@ -112,6 +112,29 @@ order is that attention to a paper decays {{c:parolo2015}}: if a seed's citers a
 **when** a request is spent is part of what it is worth, which is why this paper prices a request and not
 a work.
 
+### 2.6 How this paper differs from the closest work
+
+Four works are close enough that the difference has to be stated rather than implied.
+
+**Wohlin's snowballing guidelines {{c:wohlin2014}}** prescribe a procedure and stop at saturation. The unit
+there is a search session with a recall target; this paper prices one request and reports what that
+request returns, so its quantity is defined per call rather than per session.
+
+**Kessler's bibliographic coupling {{c:kessler1963}}**, and co-citation after it {{c:small1973}}, define a
+similarity between works. This paper uses that same predicate — it does not propose a new one — but
+judges its **excess over a length-matched null per request**, which neither defines, and that excess is
+what decays with hop depth.
+
+**The bandit formulation {{c:march1991,lattimore2020}}** supplies the allocation framework this paper
+adopts, and assumes a reward model. Here the reward model is measured from the service's own refusals,
+and the result is that at this registry's price the optimum is degenerate rather than merely unknown —
+a conclusion about the price, not about the algorithm.
+
+**The attention-decay literature {{c:parolo2015}}** measures decay on a clock of time since publication.
+This paper measures decay on a clock of hop distance from a seed, at equal request price. A citers'
+asset that decays in time and one that decays in hops are different quantities, and only the second
+answers the question asked here.
+
 ## 3. The null, and why it has to be length-matched
 
 Two reference lists of lengths `a` and `b` drawn from a field's vocabulary couple at a rate that rises

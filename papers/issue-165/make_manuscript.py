@@ -70,6 +70,7 @@ def fmt_entry(r):
         tail.append(html.unescape(r["container"].strip()))
     if r.get("year"):
         tail.append(str(r["year"]))
+    bits = [b.rstrip(".") for b in bits]          # "Lee, T." + ". " would print a double stop
     body = ". ".join(bits)
     if tail:
         body += ". " + ", ".join(tail)

@@ -112,6 +112,29 @@ order is that attention to a paper decays [65]: if a seed's citers are a wasting
 **when** a request is spent is part of what it is worth, which is why this paper prices a request and not
 a work.
 
+### 2.6 How this paper differs from the closest work
+
+Four works are close enough that the difference has to be stated rather than implied.
+
+**Wohlin's snowballing guidelines [2]** prescribe a procedure and stop at saturation. The unit
+there is a search session with a recall target; this paper prices one request and reports what that
+request returns, so its quantity is defined per call rather than per session.
+
+**Kessler's bibliographic coupling [17]**, and co-citation after it [18], define a
+similarity between works. This paper uses that same predicate — it does not propose a new one — but
+judges its **excess over a length-matched null per request**, which neither defines, and that excess is
+what decays with hop depth.
+
+**The bandit formulation [56,61]** supplies the allocation framework this paper
+adopts, and assumes a reward model. Here the reward model is measured from the service's own refusals,
+and the result is that at this registry's price the optimum is degenerate rather than merely unknown —
+a conclusion about the price, not about the algorithm.
+
+**The attention-decay literature [65]** measures decay on a clock of time since publication.
+This paper measures decay on a clock of hop distance from a seed, at equal request price. A citers'
+asset that decays in time and one that decays in hops are different quantities, and only the second
+answers the question asked here.
+
 ## 3. The null, and why it has to be length-matched
 
 Two reference lists of lengths `a` and `b` drawn from a field's vocabulary couple at a rate that rises
@@ -345,7 +368,7 @@ them: it fetches nothing and imports nothing outside the standard library.
 
 [3] Badampudi, Deepika; Wohlin, Claes; Petersen, Kai. Experiences from using snowballing and database searches in systematic literature studies. Proceedings of the 19th International Conference on Evaluation and Assessment in Software Engineering, 2015. doi:10.1145/2745802.2745818
 
-[4] Marshall, Iain J.; Wallace, Byron C.. Toward systematic review automation: a practical guide to using machine learning tools in research synthesis. Systematic Reviews, 2019. doi:10.1186/s13643-019-1074-9
+[4] Marshall, Iain J.; Wallace, Byron C. Toward systematic review automation: a practical guide to using machine learning tools in research synthesis. Systematic Reviews, 2019. doi:10.1186/s13643-019-1074-9
 
 [5] Manning, Christopher D.; Raghavan, Prabhakar; Schütze, Hinrich. Introduction to Information Retrieval. 2008. doi:10.1017/cbo9780511809071
 
@@ -355,23 +378,23 @@ them: it fetches nothing and imports nothing outside the standard library.
 
 [8] Sanderson, Mark. Test Collection Based Evaluation of Information Retrieval Systems. Foundations and Trends® in Information Retrieval, 2010. doi:10.1561/1500000009
 
-[9] Buckley, Chris; Voorhees, Ellen M.. Retrieval evaluation with incomplete information. Proceedings of the 27th annual international ACM SIGIR conference on Research and development in information retrieval, 2004. doi:10.1145/1008992.1009000
+[9] Buckley, Chris; Voorhees, Ellen M. Retrieval evaluation with incomplete information. Proceedings of the 27th annual international ACM SIGIR conference on Research and development in information retrieval, 2004. doi:10.1145/1008992.1009000
 
-[10] Voorhees, Ellen M.. The Philosophy of Information Retrieval Evaluation. Lecture Notes in Computer Science, 2002. doi:10.1007/3-540-45691-0_34
+[10] Voorhees, Ellen M. The Philosophy of Information Retrieval Evaluation. Lecture Notes in Computer Science, 2002. doi:10.1007/3-540-45691-0_34
 
-[11] Pirolli, Peter; Card, Stuart. Information foraging.. Psychological Review, 1999. doi:10.1037/0033-295x.106.4.643
+[11] Pirolli, Peter; Card, Stuart. Information foraging. Psychological Review, 1999. doi:10.1037/0033-295x.106.4.643
 
 [12] Fu, Wai-Tat; Pirolli, Peter. SNIF-ACT: A Cognitive Model of User Navigation on the World Wide Web. 2007. doi:10.21236/ada462156
 
-[13] Kraft, D.H.; Lee, T.. Stopping rules and their effect on expected search length. Information Processing & Management, 1979. doi:10.1016/0306-4573(79)90007-4
+[13] Kraft, D.H.; Lee, T. Stopping rules and their effect on expected search length. Information Processing & Management, 1979. doi:10.1016/0306-4573(79)90007-4
 
-[14] Simon, Herbert A.. A Behavioral Model of Rational Choice. The Quarterly Journal of Economics, 1955. doi:10.2307/1884852
+[14] Simon, Herbert A. A Behavioral Model of Rational Choice. The Quarterly Journal of Economics, 1955. doi:10.2307/1884852
 
-[15] Stigler, George J.. The Economics of Information. Journal of Political Economy, 1961. doi:10.1086/258464
+[15] Stigler, George J. The Economics of Information. Journal of Political Economy, 1961. doi:10.1086/258464
 
 [16] Don R. Swanson. Undiscovered Public Knowledge. The Library Quarterly, 1986. doi:10.1086/601720
 
-[17] Kessler, M. M.. Bibliographic coupling between scientific papers. American Documentation, 1963. doi:10.1002/asi.5090140103
+[17] Kessler, M. M. Bibliographic coupling between scientific papers. American Documentation, 1963. doi:10.1002/asi.5090140103
 
 [18] Small, Henry. Co‐citation in the scientific literature: A new measure of the relationship between two documents. Journal of the American Society for Information Science, 1973. doi:10.1002/asi.4630240406
 
@@ -381,13 +404,13 @@ them: it fetches nothing and imports nothing outside the standard library.
 
 [21] Moravcsik, Michael J.; Murugesan, Poovanalingam. Some Results on the Function and Quality of Citations. Social Studies of Science, 1975. doi:10.1177/030631277500500106
 
-[22] Nigel Gilbert, G.. Referencing as Persuasion. Social Studies of Science, 1977. doi:10.1177/030631277700700112
+[22] Nigel Gilbert, G. Referencing as Persuasion. Social Studies of Science, 1977. doi:10.1177/030631277700700112
 
 [23] Robert Κ. Merton. The Matthew Effect in Science. Science, 1968. doi:10.1126/science.159.3810.56
 
-[24] Peritz, Bluma C.. A classification of citation roles for the social sciences and related fields. Scientometrics, 1983. doi:10.1007/bf02147226
+[24] Peritz, Bluma C. A classification of citation roles for the social sciences and related fields. Scientometrics, 1983. doi:10.1007/bf02147226
 
-[25] Lawani, Stephen M.. On the Heterogeneity and Classification of Author Self‐Citations. Journal of the American Society for Information Science, 1982. doi:10.1002/asi.4630330506
+[25] Lawani, Stephen M. On the Heterogeneity and Classification of Author Self‐Citations. Journal of the American Society for Information Science, 1982. doi:10.1002/asi.4630330506
 
 [26] Bornmann, Lutz; Daniel, Hans‐Dieter. What do citation counts measure? A review of studies on citing behavior. Journal of Documentation, 2008. doi:10.1108/00220410810844150
 
@@ -395,17 +418,17 @@ them: it fetches nothing and imports nothing outside the standard library.
 
 [28] Mingers, John; Leydesdorff, Loet. A review of theory and practice in scientometrics. European Journal of Operational Research, 2015. doi:10.1016/j.ejor.2015.04.002
 
-[29] Redner, S.. How popular is your paper? An empirical study of the citation distribution. The European Physical Journal B, 1998. doi:10.1007/s100510050359
+[29] Redner, S. How popular is your paper? An empirical study of the citation distribution. The European Physical Journal B, 1998. doi:10.1007/s100510050359
 
 [30] Barabási, Albert-László; Albert, Réka. Emergence of Scaling in Random Networks. Science, 1999. doi:10.1126/science.286.5439.509
 
 [31] Radicchi, Filippo; Fortunato, Santo; Castellano, Claudio. Universality of citation distributions: Toward an objective measure of scientific impact. Proceedings of the National Academy of Sciences, 2008. doi:10.1073/pnas.0806977105
 
-[32] Burrell, Quentin L.. The nth-citation distribution and obsolescence. Scientometrics, 2002. doi:10.1023/a:1014816911511
+[32] Burrell, Quentin L. The nth-citation distribution and obsolescence. Scientometrics, 2002. doi:10.1023/a:1014816911511
 
-[33] Newman, M. E. J.. Scientific collaboration networks.  I. Network construction and fundamental results. Physical Review E, 2001. doi:10.1103/physreve.64.016131
+[33] Newman, M. E. J. Scientific collaboration networks.  I. Network construction and fundamental results. Physical Review E, 2001. doi:10.1103/physreve.64.016131
 
-[34] Newman, M. E. J.. Mixing patterns in networks. Physical Review E, 2003. doi:10.1103/physreve.67.026126
+[34] Newman, M. E. J. Mixing patterns in networks. Physical Review E, 2003. doi:10.1103/physreve.67.026126
 
 [35] Ronald Fagin; Ravi Kumar; D. Sivakumar. Comparing top k lists. 2003. doi:10.5555/644108.644113
 
@@ -413,23 +436,23 @@ them: it fetches nothing and imports nothing outside the standard library.
 
 [37] Webber, William; Moffat, Alistair; Zobel, Justin. A similarity measure for indefinite rankings. ACM Transactions on Information Systems, 2010. doi:10.1145/1852102.1852106
 
-[38] Evans, James A.. Electronic Publication and the Narrowing of Science and Scholarship. Science, 2008. doi:10.1126/science.1150473
+[38] Evans, James A. Electronic Publication and the Narrowing of Science and Scholarship. Science, 2008. doi:10.1126/science.1150473
 
 [39] Larsen, Peder Olesen; von Ins, Markus. The rate of growth in scientific publication and the decline in coverage provided by Science Citation Index. Scientometrics, 2010. doi:10.1007/s11192-010-0202-z
 
-[40] Cochran, W. G.. The Effectiveness of Adjustment by Subclassification in Removing Bias in Observational Studies. Biometrics, 1968. doi:10.2307/2528036
+[40] Cochran, W. G. The Effectiveness of Adjustment by Subclassification in Removing Bias in Observational Studies. Biometrics, 1968. doi:10.2307/2528036
 
-[41] ROSENBAUM, PAUL R.; RUBIN, DONALD B.. The central role of the propensity score in observational studies for causal effects. Biometrika, 1983. doi:10.1093/biomet/70.1.41
+[41] ROSENBAUM, PAUL R.; RUBIN, DONALD B. The central role of the propensity score in observational studies for causal effects. Biometrika, 1983. doi:10.1093/biomet/70.1.41
 
-[42] Stuart, Elizabeth A.. Matching Methods for Causal Inference: A Review and a Look Forward. Statistical Science, 2010. doi:10.1214/09-sts313
+[42] Stuart, Elizabeth A. Matching Methods for Causal Inference: A Review and a Look Forward. Statistical Science, 2010. doi:10.1214/09-sts313
 
-[43] Rubin, Donald B.. Estimating causal effects of treatments in randomized and nonrandomized studies.. Journal of Educational Psychology, 1974. doi:10.1037/h0037350
+[43] Rubin, Donald B. Estimating causal effects of treatments in randomized and nonrandomized studies. Journal of Educational Psychology, 1974. doi:10.1037/h0037350
 
-[44] Heckman, James J.. Sample Selection Bias as a Specification Error. Econometrica, 1979. doi:10.2307/1912352
+[44] Heckman, James J. Sample Selection Bias as a Specification Error. Econometrica, 1979. doi:10.2307/1912352
 
 [45] Shimodaira, Hidetoshi. Improving predictive inference under covariate shift by weighting the log-likelihood function. Journal of Statistical Planning and Inference, 2000. doi:10.1016/s0378-3758(00)00115-4
 
-[46] G.F.S.. The frequency distribution of scientific productivity. Journal of the Franklin Institute, 1926. doi:10.1016/s0016-0032(26)91166-6
+[46] G.F.S. The frequency distribution of scientific productivity. Journal of the Franklin Institute, 1926. doi:10.1016/s0016-0032(26)91166-6
 
 [47] Egghe, Leo. Theory and practise of the g-index. Scientometrics, 2006. doi:10.1007/s11192-006-0144-7
 
@@ -441,19 +464,19 @@ them: it fetches nothing and imports nothing outside the standard library.
 
 [51] Claude E. Shannon. A Mathematical Theory of Communication. Bell System Technical Journal, 1948. doi:10.1002/j.1538-7305.1948.tb01338.x
 
-[52] Wilson, Edwin B.. Probable Inference, the Law of Succession, and Statistical Inference. Journal of the American Statistical Association, 1927. doi:10.1080/01621459.1927.10502953
+[52] Wilson, Edwin B. Probable Inference, the Law of Succession, and Statistical Inference. Journal of the American Statistical Association, 1927. doi:10.1080/01621459.1927.10502953
 
-[53] Efron, B.. Bootstrap Methods: Another Look at the Jackknife. The Annals of Statistics, 1979. doi:10.1214/aos/1176344552
+[53] Efron, B. Bootstrap Methods: Another Look at the Jackknife. The Annals of Statistics, 1979. doi:10.1214/aos/1176344552
 
-[54] Efron, Bradley; Tibshirani, R.J.. An Introduction to the Bootstrap. 1994. doi:10.1201/9780429246593
+[54] Efron, Bradley; Tibshirani, R.J. An Introduction to the Bootstrap. 1994. doi:10.1201/9780429246593
 
 [55] Goodman, Steven. A Dirty Dozen: Twelve P-Value Misconceptions. Seminars in Hematology, 2008. doi:10.1053/j.seminhematol.2008.04.003
 
-[56] March, James G.. Exploration and Exploitation in Organizational Learning. Organization Science, 1991. doi:10.1287/orsc.2.1.71
+[56] March, James G. Exploration and Exploitation in Organizational Learning. Organization Science, 1991. doi:10.1287/orsc.2.1.71
 
 [57] Sutton, Richard S.; Precup, Doina; Singh, Satinder. Between MDPs and semi-MDPs: A framework for temporal abstraction in reinforcement learning. Artificial Intelligence, 1999. doi:10.1016/s0004-3702(99)00052-1
 
-[58] Thompson, William R.. On the Likelihood that One Unknown Probability Exceeds Another in View of the Evidence of Two Samples. Biometrika, 1933. doi:10.2307/2332286
+[58] Thompson, William R. On the Likelihood that One Unknown Probability Exceeds Another in View of the Evidence of Two Samples. Biometrika, 1933. doi:10.2307/2332286
 
 [59] Robbins, Herbert. Some aspects of the sequential design of experiments. Bulletin of the American Mathematical Society, 1952. doi:10.1090/s0002-9904-1952-09620-8
 
@@ -461,13 +484,13 @@ them: it fetches nothing and imports nothing outside the standard library.
 
 [61] Lattimore, Tor; Szepesvári, Csaba. Bandit Algorithms. 2020. doi:10.1017/9781108571401
 
-[62] Kleinberg, Jon M.. Authoritative sources in a hyperlinked environment. Journal of the ACM, 1999. doi:10.1145/324133.324140
+[62] Kleinberg, Jon M. Authoritative sources in a hyperlinked environment. Journal of the ACM, 1999. doi:10.1145/324133.324140
 
 [63] Brin, Sergey; Page, Lawrence. The anatomy of a large-scale hypertextual Web search engine. Computer Networks and ISDN Systems, 1998. doi:10.1016/s0169-7552(98)00110-x
 
 [64] Tong, Hanghang; Faloutsos, Christos; Pan, Jia-yu. Fast Random Walk with Restart and Its Applications. Sixth International Conference on Data Mining (ICDM'06), 2006. doi:10.1109/icdm.2006.70
 
-[65] Briotta Parolo, Pietro Della; Pan, Raj Kumar; Ghosh, Rumi; et al.. Attention Decay in Science. SSRN Electronic Journal, 2015. doi:10.2139/ssrn.2575225
+[65] Briotta Parolo, Pietro Della; Pan, Raj Kumar; Ghosh, Rumi; et al. Attention Decay in Science. SSRN Electronic Journal, 2015. doi:10.2139/ssrn.2575225
 
 [66] Jason R Priem; Heather Piwowar; Richard Orr. OpenAlex: A fully-open index of scholarly works, authors, venues, institutions, and concepts. arXiv (Cornell University), 2022. doi:10.48550/arxiv.2205.01833
 
@@ -476,37 +499,37 @@ them: it fetches nothing and imports nothing outside the standard library.
 [68] Visser, Martijn; van Eck, Nees Jan; Waltman, Ludo. Large-scale comparison of bibliographic data sources: Scopus, Web of
                     Science, Dimensions, Crossref, and Microsoft Academic. Quantitative Science Studies, 2021. doi:10.1162/qss_a_00112
 
-[69] Freeman, Linton C.; Kish, Leslie. Survey Sampling.. Social Forces, 1966. doi:10.2307/2575802
+[69] Freeman, Linton C.; Kish, Leslie. Survey Sampling. Social Forces, 1966. doi:10.2307/2575802
 
 [70] Waltman, Ludo; van Eck, Nees Jan. A new methodology for constructing a publication‐level classification system of science. Journal of the American Society for Information Science and Technology, 2012. doi:10.1002/asi.22748
 
-[71] Klavans, Richard; Boyack, Kevin W.. Which Type of Citation Analysis Generates the Most Accurate Taxonomy of Scientific and Technical Knowledge?. Journal of the Association for Information Science and Technology, 2017. doi:10.1002/asi.23734
+[71] Klavans, Richard; Boyack, Kevin W. Which Type of Citation Analysis Generates the Most Accurate Taxonomy of Scientific and Technical Knowledge?. Journal of the Association for Information Science and Technology, 2017. doi:10.1002/asi.23734
 
-[72] Waltman, Ludo; van Eck, Nees Jan; van Leeuwen, Thed N.; et al.. Towards a new crown indicator: an empirical analysis. Scientometrics, 2011. doi:10.1007/s11192-011-0354-5
+[72] Waltman, Ludo; van Eck, Nees Jan; van Leeuwen, Thed N.; et al. Towards a new crown indicator: an empirical analysis. Scientometrics, 2011. doi:10.1007/s11192-011-0354-5
 
-[73] Schubert, A.; Braun, T.. Cross-field normalization of scientometric indicators. Scientometrics, 1996. doi:10.1007/bf02129597
+[73] Schubert, A.; Braun, T. Cross-field normalization of scientometric indicators. Scientometrics, 1996. doi:10.1007/bf02129597
 
 [74] Fanelli, Daniele. “Positive” Results Increase Down the Hierarchy of the Sciences. PLoS ONE, 2010. doi:10.1371/journal.pone.0010068
 
-[75] Simpson, E. H.. The Interpretation of Interaction in Contingency Tables. Journal of the Royal Statistical Society Series B: Statistical Methodology, 1951. doi:10.1111/j.2517-6161.1951.tb00088.x
+[75] Simpson, E. H. The Interpretation of Interaction in Contingency Tables. Journal of the Royal Statistical Society Series B: Statistical Methodology, 1951. doi:10.1111/j.2517-6161.1951.tb00088.x
 
-[76] Bickel, P. J.; Hammel, E. A.; O'Connell, J. W.. Sex Bias in Graduate Admissions: Data from Berkeley. Science, 1975. doi:10.1126/science.187.4175.398
+[76] Bickel, P. J.; Hammel, E. A.; O'Connell, J. W. Sex Bias in Graduate Admissions: Data from Berkeley. Science, 1975. doi:10.1126/science.187.4175.398
 
 [77] Runeson, Per; Höst, Martin. Guidelines for conducting and reporting case study research in software engineering. Empirical Software Engineering, 2009. doi:10.1007/s10664-008-9102-8
 
-[78] Wohlin, Claes; Runeson, Per; Höst, Martin; et al.. Experimentation in Software Engineering. 2012. doi:10.1007/978-3-642-29044-2
+[78] Wohlin, Claes; Runeson, Per; Höst, Martin; et al. Experimentation in Software Engineering. 2012. doi:10.1007/978-3-642-29044-2
 
 [79] Lipton, Zachary C.; Steinhardt, Jacob. Troubling Trends in Machine Learning Scholarship. Queue, 2019. doi:10.1145/3317287.3328534
 
-[80] Bollen, Johan; Van de Sompel, Herbert; Hagberg, Aric; et al.. A Principal Component Analysis of 39 Scientific Impact Measures. PLoS ONE, 2009. doi:10.1371/journal.pone.0006022
+[80] Bollen, Johan; Van de Sompel, Herbert; Hagberg, Aric; et al. A Principal Component Analysis of 39 Scientific Impact Measures. PLoS ONE, 2009. doi:10.1371/journal.pone.0006022
 
-[81] Sugimoto, Cassidy R.; Work, Sam; Larivière, Vincent; et al.. Scholarly use of social media and altmetrics: A review of the literature. Journal of the Association for Information Science and Technology, 2017. doi:10.1002/asi.23833
+[81] Sugimoto, Cassidy R.; Work, Sam; Larivière, Vincent; et al. Scholarly use of social media and altmetrics: A review of the literature. Journal of the Association for Information Science and Technology, 2017. doi:10.1002/asi.23833
 
-[82] Stroop, J. R.. Studies of interference in serial verbal reactions.. Journal of Experimental Psychology, 1935. doi:10.1037/h0054651
+[82] Stroop, J. R. Studies of interference in serial verbal reactions. Journal of Experimental Psychology, 1935. doi:10.1037/h0054651
 
-[83] Hicks, Diana; Wouters, Paul; Waltman, Ludo; et al.. Bibliometrics: The Leiden Manifesto for research metrics. Nature, 2015. doi:10.1038/520429a
+[83] Hicks, Diana; Wouters, Paul; Waltman, Ludo; et al. Bibliometrics: The Leiden Manifesto for research metrics. Nature, 2015. doi:10.1038/520429a
 
-[84] Ioannidis, John P. A.. How to Make More Published Research True. PLoS Medicine, 2014. doi:10.1371/journal.pmed.1001747
+[84] Ioannidis, John P. A. How to Make More Published Research True. PLoS Medicine, 2014. doi:10.1371/journal.pmed.1001747
 
 [85] Seglen, Per O. Why the impact factor of journals should not be used for evaluating research. BMJ, 1997. doi:10.1136/bmj.314.7079.497
 
@@ -518,7 +541,7 @@ them: it fetches nothing and imports nothing outside the standard library.
 
 [88] Amrhein, Valentin; Greenland, Sander; McShane, Blake. Scientists rise up against statistical significance. Nature, 2019. doi:10.1038/d41586-019-00857-9
 
-[89] Borenstein, Michael; Hedges, Larry V.; Higgins, Julian P. T.; et al.. Introduction to Meta‐Analysis. 2009. doi:10.1002/9780470743386
+[89] Borenstein, Michael; Hedges, Larry V.; Higgins, Julian P. T.; et al. Introduction to Meta‐Analysis. 2009. doi:10.1002/9780470743386
 
 [90] King, Gary; Zeng, Langche. Logistic Regression in Rare Events Data. Political Analysis, 2001. doi:10.1093/oxfordjournals.pan.a004868
 
@@ -526,22 +549,22 @@ them: it fetches nothing and imports nothing outside the standard library.
 
 [92] Tversky, Amos; Kahneman, Daniel. Judgment under Uncertainty: Heuristics and Biases. 1973. doi:10.21236/ad0767426
 
-[93] Nosek, Brian A.; Ebersole, Charles R.; DeHaven, Alexander Carl; et al.. The Preregistration Revolution. 2017. doi:10.31219/osf.io/2dxu5
+[93] Nosek, Brian A.; Ebersole, Charles R.; DeHaven, Alexander Carl; et al. The Preregistration Revolution. 2017. doi:10.31219/osf.io/2dxu5
 
-[94] Chambers, Christopher D.. Registered Reports: A new publishing initiative at Cortex. Cortex, 2013. doi:10.1016/j.cortex.2012.12.016
+[94] Chambers, Christopher D. Registered Reports: A new publishing initiative at Cortex. Cortex, 2013. doi:10.1016/j.cortex.2012.12.016
 
 [95] Andrew Gelman; Eric Loken. The Statistical Crisis in Science. American Scientist, 2014. doi:10.1511/2014.111.460
 
-[96] Peng, Roger D.. Reproducible Research in Computational Science. Science, 2011. doi:10.1126/science.1213847
+[96] Peng, Roger D. Reproducible Research in Computational Science. Science, 2011. doi:10.1126/science.1213847
 
 [97] Nosek, Brian A.; Bar-Anan, Yoav. Scientific Utopia: I. Opening Scientific Communication. Psychological Inquiry, 2012. doi:10.1080/1047840x.2012.692215
 
-[98] Edward A. Miguel; Colin F. Camerer; Katherine Casey; et al.. Promoting Transparency in Social Science Research. Science, 2014. doi:10.1126/science.1245317
+[98] Edward A. Miguel; Colin F. Camerer; Katherine Casey; et al. Promoting Transparency in Social Science Research. Science, 2014. doi:10.1126/science.1245317
 
 [99] Hutson, Matthew. Artificial intelligence faces reproducibility crisis. Science, 2018. doi:10.1126/science.359.6377.725
 
-[100] Ioannidis, John P. A.. Why Most Published Research Findings Are False. PLoS Medicine, 2005. doi:10.1371/journal.pmed.0020124
+[100] Ioannidis, John P. A. Why Most Published Research Findings Are False. PLoS Medicine, 2005. doi:10.1371/journal.pmed.0020124
 
-[101] Brian A. Nosek; George Charles Alter; George C. Banks; et al.. Promoting an open research culture. Science, 2015. doi:10.1126/science.aab2374
+[101] Brian A. Nosek; George Charles Alter; George C. Banks; et al. Promoting an open research culture. Science, 2015. doi:10.1126/science.aab2374
 
-[102] Munafò, Marcus R.; Nosek, Brian A.; Bishop, Dorothy V. M.; et al.. A manifesto for reproducible science. Nature Human Behaviour, 2017. doi:10.1038/s41562-016-0021
+[102] Munafò, Marcus R.; Nosek, Brian A.; Bishop, Dorothy V. M.; et al. A manifesto for reproducible science. Nature Human Behaviour, 2017. doi:10.1038/s41562-016-0021
