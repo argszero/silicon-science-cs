@@ -227,6 +227,26 @@ Table 3. What one request buys, and the flip ratio.
 | Computer Science | {{f:arms.cs.cost.mean_coupled_per_page|f3}} | {{f:arms.cs.cost.mean_coupled_per_batch|f3}} | {{f:arms.cs.cost.page_worth_in_batches|f3}} | {{f:arms.cs.w_star.point|f3}} | {{f:arms.cs.w_star.ci95|ci3}} | no |
 | Social Sciences | {{f:arms.social_sciences.cost.mean_coupled_per_page|f3}} | {{f:arms.social_sciences.cost.mean_coupled_per_batch|f3}} | {{f:arms.social_sciences.cost.page_worth_in_batches|f3}} | {{f:arms.social_sciences.w_star.point|f3}} | {{f:arms.social_sciences.w_star.ci95|ci3}} | no |
 
+**Proposition (the price at which depth pays).** Let one breadth page cost one request and return `c`
+coupled works; let one depth batch cost `w` requests and return `b`. At an equal budget of `N`
+requests breadth returns `N·c` coupled works, and depth returns `(N/w)·b`. Depth therefore beats
+breadth if and only if `w < b/c` — and the quantity `w*` in Table 3 is `b/c`.
+
+*Proof.* `(N/w)·b > N·c ⇔ b/w > c ⇔ w < b/c`, for any positive `N`. The budget cancels, so the
+comparison turns on the price alone and not on how much of it is spent.
+
+**What the proposition assumes, and which assumption these arms test.** It needs two hypotheses.
+(H1) The budget is counted in requests. (H2) Each further request in a direction returns that
+direction's mean yield. (H1) is the cost model of §4 and holds by construction — both constants are the
+service's own refusals, which is what makes `w = 1` the lowest admissible price. (H2) is **not**
+measured here: the arms vary the hop depth of a request, not how many requests have already been spent
+at one depth, so nothing in this package observes whether a tenth page returns as much as the first.
+Rather than assume it, the proposition is reduced to the number that does not need it. At the API's own
+price `w = 1`, depth wins only if breadth's realised per-page yield falls below `b` — a fall of more
+than {{f:arms.cs.w_star.breadth_yield_fall_to_break|pct1}} percent below the mean measured in Computer Science and
+{{f:arms.social_sciences.w_star.breadth_yield_fall_to_break|pct1}} percent below it in Social Sciences. Any saturation short of that leaves the
+conclusion standing, and a future measurement of (H2) can move `w*` only inside that band.
+
 `w*` is the largest batch price at which buying depth beats spending the same request budget on
 breadth; Figure 2 (`figures/fig2_price_bound.png`) places both intervals against the floor. Since `w ≥ 1` always, an interval entirely below one is not a near miss but a closed
 direction **for this registrant**: no plausible client pays a tenth of a request for a batch. A
@@ -277,6 +297,12 @@ against a length-matched null, measured in two independent fields, the second ch
 before it was measured, with two controls — an arm that follows the opposite rule, and a hindsight
 oracle. The universal claim stops at the registry: the bound is a statement about this API's documented
 request caps, not about citation networks in general.
+
+**How small the theory is, stated plainly.** It is one inequality with a one-line derivation, and §5.2
+prints that derivation together with the two hypotheses it needs and which of them the arms actually
+test. The level claimed here rests on the proposition being *stated, proved and falsifiable*, not on its
+being deep: a small proved statement is a firmer basis for `theory+empirics` than a large unproved one,
+and naming this a theory does not make `w*` anything other than the ratio of two measured means.
 
 The obligations taken on here are not self-imposed ceremony. Preregistration changes what a result can
 mean {{c:nosek2018}}, a registered report goes further and fixes the analysis before the data exist

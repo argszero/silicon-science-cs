@@ -192,7 +192,14 @@ def analyse_arm(name):
 
     w_star = mean_b1 / mean_c1 if mean_c1 else None
     w_ci = percentile_ci(w_boot)
-    out["w_star"] = {"point": w_star, "ci95": w_ci,
+    # The one number that does NOT need the linearity hypothesis of the manuscript's proposition.
+    # At the API's own price w = 1, depth wins only if breadth's REALISED per-page yield falls below
+    # b -- that is, by more than 1 - b/c = 1 - w* below the mean measured here. So the conclusion
+    # survives any breadth saturation short of this fraction, and this is what a reader must beat to
+    # reopen the direction. It follows from the definition of w*, which is why it needs no new data.
+    out["w_star"] = {"point": w_star,
+                     "breadth_yield_fall_to_break": (1.0 - w_star) if w_star is not None else None,
+                     "ci95": w_ci,
                      # The half-width IS the minimum effect this study can detect on w*: an effect
                      # narrower than it is "no information", never evidence for or against a prior.
                      "halfwidth": (w_ci[1] - w_ci[0]) / 2.0,

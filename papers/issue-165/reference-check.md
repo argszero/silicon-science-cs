@@ -123,20 +123,43 @@ not exist; it is a claim that this package does not hold a record it could verif
 | count | reason |
 |---|---|
 | 39 | no returned record matched the title and the year |
-| 10 | demoted by a later, tighter version of the acceptance rule |
-| 5 | the registry could not be read (rate limit or outage) |
+| 9 | demoted by a later, tighter version of the acceptance rule |
 | 1 | a openalex record with no DOI cannot be checked by a reader |
 
-## Not run
+## Titles corrected before verification
 
-These slots were never answered: the registry refused the request itself. They are
-**not** refusals about the works, and they stay unfetched until the registry can be
-read again.
+A `want_title` edited until the acceptance rule passes is a title that was changed,
+and a corrected expectation can hide a genuinely different work. Each correction is
+therefore listed with the reason it was made, and each is visible in the corpus
+rather than absorbed into it.
 
+| key | first stated as | the record's own title | why it changed |
+|---|---|---|---|
+| `hicks2015` | The Leiden Manifesto for research metrics | Bibliometrics: The Leiden Manifesto for research metrics | Nature's record title carries the subject label 'Bibliometrics:' |
+| `altman1995` | Absence of evidence is not evidence of absence | Statistics notes: Absence of evidence is not evidence of absence | the BMJ record's own title carries the 'Statistics notes:' series prefix that my statement of the title left out |
+| `hastie2009` | The elements of statistical learning: data mining, inference, and prediction | The Elements of Statistical Learning: Data Mining, Inference, and Prediction, Second Edition | the registry record is the second edition, which adds 'Second Edition' to the title |
+| `shull2008` | The role of replications in empirical software engineering | The role of replications in empirical software engineering: a word of warning | the published title has a subtitle my statement of it left out |
+
+## Not run — the registry would not answer
+
+These slots were never answered: the registry refused the request itself, not the
+work. They are **not** refusals, they are counted separately below, and they stay
+unfetched until the registry can be read again.
+
+- `altman1995` — REGISTRY UNAVAILABLE (openalex): HTTP Error 429: Too Many Requests
+- `cohen1988` — REGISTRY UNAVAILABLE (openalex): HTTP Error 429: Too Many Requests
 - `fortunato2018` — REGISTRY UNAVAILABLE (openalex): HTTP Error 429: Too Many Requests
+- `simmons2011` — REGISTRY UNAVAILABLE (openalex): HTTP Error 429: Too Many Requests
+- `wasserman2004` — REGISTRY UNAVAILABLE (openalex): HTTP Error 429: Too Many Requests
+- `wilsdon2015` — REGISTRY UNAVAILABLE (openalex): HTTP Error 429: Too Many Requests
 
 ## Totals
 
 - accepted and verified: **102**
-- refused: **55**
-- not run (registry unavailable): **1**
+- refused, with a reason about the work: **49**
+- never answered, so no judgement was made: **6**
+- declared slots in `refs/slots.json`: **157**
+- accepted + refused + never answered = **157**
+
+The three columns are the accounting: every declared slot is either verified, refused
+for a stated reason, or never answered. Nothing is dropped, and the total closes.

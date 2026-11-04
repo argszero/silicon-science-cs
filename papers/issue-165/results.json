@@ -1457,6 +1457,7 @@
     "attainable": false,
     "bootstrap_draws": 4000,
     "bootstrap_seed": 20261104,
+    "breadth_yield_fall_to_break": 0.5267441860465116,
     "ci95": [
      0.32566168009205987,
      0.6431095406360423
@@ -2632,6 +2633,7 @@
     "attainable": false,
     "bootstrap_draws": 4000,
     "bootstrap_seed": 20261104,
+    "breadth_yield_fall_to_break": 0.5987590486039297,
     "ci95": [
      0.3008849557522124,
      0.5150571131879543

@@ -25,6 +25,9 @@ import sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 RECORDS = os.path.join(HERE, "refs", "records.json")
+SLOTS = os.path.join(HERE, "refs", "slots.json")
+CORRECTIONS = os.path.join(HERE, "refs", "title_corrections.json")
+REQUEST_FAILED = "REGISTRY UNAVAILABLE"   # about the request, never about the work
 MANUSCRIPT = os.path.join(HERE, "manuscript.md")
 OUT = os.path.join(HERE, "reference-check.md")
 
@@ -48,10 +51,32 @@ def cited_keys(manuscript):
     return body.count("["), keys
 
 
+def classify(rejected):
+    """Split the failures by what they are ABOUT. A record the registry could not be asked about
+    (rate limit, outage) says nothing about the work, so counting it as a refusal would report a
+    judgement about a literature that was never looked at. One status cell cannot hold both facts:
+    "this package holds no record it could verify" is a refusal, "the registry would not answer" is
+    not run."""
+    work, request = [], []
+    for r in rejected:
+        (request if str(r.get("reason", "")).startswith(REQUEST_FAILED) else work).append(r)
+    return work, request
+
+
 def build(rec):
     accepted = sorted(rec["accepted"], key=lambda r: r["key"])
-    rejected = sorted(rec.get("rejected", []), key=lambda r: r["key"])
-    not_run = rec.get("not_run", [])
+    work, request_failed = classify(sorted(rec.get("rejected", []), key=lambda r: r["key"]))
+    # a slot can appear in both lists; the union is what "never answered" means
+    unread = {r["key"]: r for r in request_failed}
+    for r in rec.get("not_run", []):
+        unread.setdefault(r["key"], r)
+    not_run = sorted(unread.values(), key=lambda r: r["key"])
+    # ONE slot, ONE row. A slot can hold two records -- refused by the rule, and its re-read never
+    # answered -- and counting it in both columns inflates the total past the declared slots. The
+    # unanswered request is the more recent and less conclusive fact, so it takes the row and the
+    # rule-level reason stays available in records.json.
+    unanswered = {r["key"] for r in not_run}
+    rejected = [r for r in work if r["key"] not in unanswered]
 
     lines = []
     lines.append("# Reference check — issue 165")
@@ -96,12 +121,31 @@ def build(rec):
     for reason, n in hist.most_common():
         lines.append("| %d | %s |" % (n, reason))
     lines.append("")
-    if not_run:
-        lines.append("## Not run")
+    corrections = []
+    if os.path.exists(CORRECTIONS):
+        corrections = json.load(open(CORRECTIONS))
+    if corrections:
+        lines.append("## Titles corrected before verification")
         lines.append("")
-        lines.append("These slots were never answered: the registry refused the request itself. They are")
-        lines.append("**not** refusals about the works, and they stay unfetched until the registry can be")
-        lines.append("read again.")
+        lines.append("A `want_title` edited until the acceptance rule passes is a title that was changed,")
+        lines.append("and a corrected expectation can hide a genuinely different work. Each correction is")
+        lines.append("therefore listed with the reason it was made, and each is visible in the corpus")
+        lines.append("rather than absorbed into it.")
+        lines.append("")
+        lines.append("| key | first stated as | the record's own title | why it changed |")
+        lines.append("|---|---|---|---|")
+        for c in corrections:
+            lines.append("| `%s` | %s | %s | %s |"
+                         % (c.get("key"), c.get("was", "").replace("|", "\\|"),
+                            c.get("now", "").replace("|", "\\|"),
+                            c.get("why", "").replace("|", "\\|")))
+        lines.append("")
+    if not_run:
+        lines.append("## Not run — the registry would not answer")
+        lines.append("")
+        lines.append("These slots were never answered: the registry refused the request itself, not the")
+        lines.append("work. They are **not** refusals, they are counted separately below, and they stay")
+        lines.append("unfetched until the registry can be read again.")
         lines.append("")
         for r in sorted(not_run, key=lambda x: x["key"]):
             lines.append("- `%s` — %s" % (r["key"], r.get("reason", "?")))
@@ -109,28 +153,47 @@ def build(rec):
     lines.append("## Totals")
     lines.append("")
     lines.append("- accepted and verified: **%d**" % len(accepted))
-    lines.append("- refused: **%d**" % len(rejected))
-    lines.append("- not run (registry unavailable): **%d**" % len(not_run))
-    return "\n".join(lines) + "\n", len(accepted), len(rejected), len(not_run)
+    lines.append("- refused, with a reason about the work: **%d**" % len(rejected))
+    lines.append("- never answered, so no judgement was made: **%d**" % len(not_run))
+    declared = len(json.load(open(SLOTS))["slots"])
+    accounted = len(accepted) + len(rejected) + len(not_run)
+    lines.append("- declared slots in `refs/slots.json`: **%d**" % declared)
+    lines.append("- accepted + refused + never answered = **%d**" % accounted)
+    lines.append("")
+    if accounted == declared:
+        lines.append("The three columns are the accounting: every declared slot is either verified, refused")
+        lines.append("for a stated reason, or never answered. Nothing is dropped, and the total closes.")
+    else:
+        lines.append("**THE ACCOUNTING DOES NOT CLOSE**: %d slot(s) unaccounted for. A histogram that does"
+                     % (declared - accounted) if declared > accounted else
+                     "**THE ACCOUNTING DOES NOT CLOSE**: %d slot(s) counted twice. A histogram that does"
+                     % (accounted - declared))
+        lines.append("not sum to its own declared total is missing a category, and the missing category")
+        lines.append("is where the interesting cases live.")
+    return "\n".join(lines) + "\n", len(accepted), len(rejected), len(not_run), declared, accounted
 
 
 def main():
     rec = load()
-    text, n_acc, n_rej, n_notrun = build(rec)
+    text, n_acc, n_rej, n_notrun, n_decl, n_acc2 = build(rec)
     if "--check" in sys.argv:
         committed = open(OUT).read() if os.path.exists(OUT) else ""
         if committed != text:
             print("CHECK FAILED: reference-check.md differs from what this run renders -- the report no "
                   "longer describes the corpus", file=sys.stderr)
             return 1
-        print("  report matches the corpus byte for byte: %d verified, %d refused, %d not run"
-              % (n_acc, n_rej, n_notrun))
+        print("  report matches the corpus byte for byte: %d verified, %d refused, %d not run "
+              "(%d of %d declared slots accounted)" % (n_acc, n_rej, n_notrun, n_acc2, n_decl))
+        if n_acc2 != n_decl:
+            print("  REFUSED: the accounting does not close -- %d declared, %d accounted"
+                  % (n_decl, n_acc2), file=sys.stderr)
+            return 1
         return 0
     with open(OUT, "w") as fh:
         fh.write(text)
-    print("ref_check: wrote reference-check.md -- %d verified, %d refused, %d not run"
-          % (n_acc, n_rej, n_notrun))
-    return 0
+    print("ref_check: wrote reference-check.md -- %d verified, %d refused, %d not run, "
+          "%d of %d declared slots accounted" % (n_acc, n_rej, n_notrun, n_acc2, n_decl))
+    return 0 if n_acc2 == n_decl else 1
 
 
 if __name__ == "__main__":
