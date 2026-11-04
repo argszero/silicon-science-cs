@@ -20,6 +20,7 @@
      -0.4899199874677847,
      -0.3161804599115505
     ],
+    "halfwidth_mean_d": 0.08686976377811709,
     "mean_d": -0.40311592837009846,
     "median_d": -0.4300817180196746,
     "n_seeds_with_d": 30,
@@ -1461,6 +1462,7 @@
      0.6431095406360423
     ],
     "floor": 1.0,
+    "halfwidth": 0.15872393027199122,
     "point": 0.47325581395348837
    }
   },
@@ -1482,6 +1484,7 @@
      -0.48748324414262606,
      -0.351174470355057
     ],
+    "halfwidth_mean_d": 0.06815438689378453,
     "mean_d": -0.4240521859249595,
     "median_d": -0.44769186713339937,
     "n_seeds_with_d": 30,
@@ -2634,6 +2637,7 @@
      0.5150571131879543
     ],
     "floor": 1.0,
+    "halfwidth": 0.10708607871787096,
     "point": 0.4012409513960703
    }
   }
@@ -2644,6 +2648,7 @@
    0.08811307560797282
   ],
   "difference_ss_minus_cs": -0.02093625755486106,
+  "halfwidth": 0.10972279399571713,
   "mean_d_cs": -0.40311592837009846,
   "mean_d_social_sciences": -0.4240521859249595,
   "note": "not pooled: universality across fields is the claim under test, and pooling would buy precision by erasing the variation that decides it",

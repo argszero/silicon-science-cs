@@ -191,12 +191,18 @@ def analyse_arm(name):
             d_boot.append(statistics.mean(picked))
 
     w_star = mean_b1 / mean_c1 if mean_c1 else None
-    out["w_star"] = {"point": w_star, "ci95": percentile_ci(w_boot),
+    w_ci = percentile_ci(w_boot)
+    out["w_star"] = {"point": w_star, "ci95": w_ci,
+                     # The half-width IS the minimum effect this study can detect on w*: an effect
+                     # narrower than it is "no information", never evidence for or against a prior.
+                     "halfwidth": (w_ci[1] - w_ci[0]) / 2.0,
                      "floor": 1.0, "attainable": bool(w_star is not None and w_star >= 1.0),
                      "bootstrap_draws": BOOTSTRAP_DRAWS, "bootstrap_seed": BOOTSTRAP_SEED}
     d_mean = statistics.mean(ds) if ds else None
+    d_ci = percentile_ci(d_boot) if d_boot else None
     out["decay"] = {"n_seeds_with_d": len(ds), "mean_d": d_mean,
-                    "ci95_mean_d": percentile_ci(d_boot) if d_boot else None,
+                    "ci95_mean_d": d_ci,
+                    "halfwidth_mean_d": (d_ci[1] - d_ci[0]) / 2.0 if d_ci else None,
                     "median_d": statistics.median(ds) if ds else None,
                     "seeds_d_lt_0": sum(1 for x in ds if x < 0),
                     "seeds_d_gt_0": sum(1 for x in ds if x > 0),
@@ -243,6 +249,7 @@ def main():
                "mean_d_social_sciences": arms["social_sciences"]["decay"]["mean_d"],
                "difference_ss_minus_cs": arms["social_sciences"]["decay"]["mean_d"] - arms["cs"]["decay"]["mean_d"],
                "ci95": percentile_ci(diffs),
+               "halfwidth": (percentile_ci(diffs)[1] - percentile_ci(diffs)[0]) / 2.0,
                "pooled": False,
                "note": "not pooled: universality across fields is the claim under test, and pooling "
                        "would buy precision by erasing the variation that decides it"}

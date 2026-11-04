@@ -134,7 +134,39 @@ These were registered on the issue before the decisive measurement.
 | P2 | hop 2 is not worthless: its excess is many times chance | **confirmed**, 0.140 against a null of 0.009 |
 | P3 | the breadth advantage is not an artefact of the cost model | **unresolved, and reported as such**: with the price pinned from the API's own refusals the ratio is 2.11, but the flip ratio moves with the budget-to-pool ratio, so the advantage is partly a property of the model |
 
-## 6. A correction kept visible
+## 6. Contribution level, and what this study can detect
+
+The level this paper claims is **`theory+empirics`**, on the evidence it actually carries and narrowed
+where that evidence narrows it. The theory is the price bound derived from the cost model in §4.2: depth
+wins only if one depth batch costs less than `w*` breadth pages. The empirics are a decay law judged
+against a length-matched null, measured in two independent fields, the second chosen by a rule fixed
+before it was measured, with two controls — an arm that follows the opposite rule, and a hindsight
+oracle. The universal claim stops at the registry: the bound is a statement about this API's documented
+request caps, not about citation networks in general.
+
+That level also obliges the paper to say what it cannot resolve, and to place each verdict above
+against the sample's own noise. The half-width of an interval is the smallest effect this study can
+distinguish; an effect narrower than it is **no information**, and is never reported here as evidence
+for or against a prior.
+
+| quantity | half-width of its 95% interval | how a narrower effect must be read |
+|---|---|---|
+| mean decay `d`, Computer Science | 0.087 | a mean decay smaller than this is not resolved |
+| mean decay `d`, Social Sciences | 0.068 | same, in the second field |
+| `w*`, Computer Science | 0.159 | `w*` is located to about this much of a page |
+| `w*`, Social Sciences | 0.107 | same, in the second field |
+| difference of the two fields | 0.110 | the observed difference is far inside it |
+
+Read against this table, the two headline results are not marginal: the mean decay is
+-0.403 in the first field (interval [-0.490, -0.316]) and
+-0.424 in the second ([-0.487, -0.351]),
+so each interval clears zero by more than its own half-width, and each `w*` interval clears the floor the
+same way. The third prior in §5 is a different case, which is why it is reported as unresolved rather
+than as a refutation: the field-to-field difference is
+-0.0209 with interval [-0.131, 0.088], which
+contains zero, so at this sample size it is no information either way.
+
+## 7. A correction kept visible
 
 An earlier draft of this work reported the flip ratio as a value above one and concluded that the two
 allocations tie at the API's own price. That number was wrong, and wrong for a reason worth recording:
@@ -144,7 +176,7 @@ flip ratio from the published figure to **0.473** in Computer Science. The
 conclusion reversed, and the retracted figure stays here rather than being silently absorbed into the
 final number.
 
-## 7. Threats to validity
+## 8. Threats to validity
 
 **The estimand is overlap, not usefulness.** Stated in §1 and repeated here because it is the limitation
 a reader is most likely to forget.
@@ -167,7 +199,7 @@ not measure, so `w` is a count ratio and not wall-clock or money.
 where to look: a batch-shaped endpoint would have to beat a page by more than
 2.11 before depth deserves any of the budget.
 
-## 8. Reproduction
+## 9. Reproduction
 
 `README.md` states the one command and the expected output. The committed data are the two arms'
 reference lists, with digests taken over the decompressed bytes, and `analysis.py` is a pure function of

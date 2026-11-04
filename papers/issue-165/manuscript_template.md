@@ -134,7 +134,39 @@ These were registered on the issue before the decisive measurement.
 | P2 | hop 2 is not worthless: its excess is many times chance | **confirmed**, {{f:arms.cs.pooled.hop2.excess|f3}} against a null of {{f:arms.cs.pooled.hop2.null_share|f3}} |
 | P3 | the breadth advantage is not an artefact of the cost model | **unresolved, and reported as such**: with the price pinned from the API's own refusals the ratio is {{f:arms.cs.cost.page_worth_in_batches|f2}}, but the flip ratio moves with the budget-to-pool ratio, so the advantage is partly a property of the model |
 
-## 6. A correction kept visible
+## 6. Contribution level, and what this study can detect
+
+The level this paper claims is **`theory+empirics`**, on the evidence it actually carries and narrowed
+where that evidence narrows it. The theory is the price bound derived from the cost model in §4.2: depth
+wins only if one depth batch costs less than `w*` breadth pages. The empirics are a decay law judged
+against a length-matched null, measured in two independent fields, the second chosen by a rule fixed
+before it was measured, with two controls — an arm that follows the opposite rule, and a hindsight
+oracle. The universal claim stops at the registry: the bound is a statement about this API's documented
+request caps, not about citation networks in general.
+
+That level also obliges the paper to say what it cannot resolve, and to place each verdict above
+against the sample's own noise. The half-width of an interval is the smallest effect this study can
+distinguish; an effect narrower than it is **no information**, and is never reported here as evidence
+for or against a prior.
+
+| quantity | half-width of its {{n:ci_level}}% interval | how a narrower effect must be read |
+|---|---|---|
+| mean decay `d`, Computer Science | {{f:arms.cs.decay.halfwidth_mean_d|f3}} | a mean decay smaller than this is not resolved |
+| mean decay `d`, Social Sciences | {{f:arms.social_sciences.decay.halfwidth_mean_d|f3}} | same, in the second field |
+| `w*`, Computer Science | {{f:arms.cs.w_star.halfwidth|f3}} | `w*` is located to about this much of a page |
+| `w*`, Social Sciences | {{f:arms.social_sciences.w_star.halfwidth|f3}} | same, in the second field |
+| difference of the two fields | {{f:between_fields.halfwidth|f3}} | the observed difference is far inside it |
+
+Read against this table, the two headline results are not marginal: the mean decay is
+{{f:arms.cs.decay.mean_d|f3}} in the first field (interval {{f:arms.cs.decay.ci95_mean_d|ci3}}) and
+{{f:arms.social_sciences.decay.mean_d|f3}} in the second ({{f:arms.social_sciences.decay.ci95_mean_d|ci3}}),
+so each interval clears zero by more than its own half-width, and each `w*` interval clears the floor the
+same way. The third prior in §5 is a different case, which is why it is reported as unresolved rather
+than as a refutation: the field-to-field difference is
+{{f:between_fields.difference_ss_minus_cs|f4}} with interval {{f:between_fields.ci95|ci3}}, which
+contains zero, so at this sample size it is no information either way.
+
+## 7. A correction kept visible
 
 An earlier draft of this work reported the flip ratio as a value above one and concluded that the two
 allocations tie at the API's own price. That number was wrong, and wrong for a reason worth recording:
@@ -144,7 +176,7 @@ flip ratio from the published figure to **{{f:arms.cs.w_star.point|f3}}** in Com
 conclusion reversed, and the retracted figure stays here rather than being silently absorbed into the
 final number.
 
-## 7. Threats to validity
+## 8. Threats to validity
 
 **The estimand is overlap, not usefulness.** Stated in §1 and repeated here because it is the limitation
 a reader is most likely to forget.
@@ -167,7 +199,7 @@ not measure, so `w` is a count ratio and not wall-clock or money.
 where to look: a batch-shaped endpoint would have to beat a page by more than
 {{f:arms.cs.cost.page_worth_in_batches|f2}} before depth deserves any of the budget.
 
-## 8. Reproduction
+## 9. Reproduction
 
 `README.md` states the one command and the expected output. The committed data are the two arms'
 reference lists, with digests taken over the decompressed bytes, and `analysis.py` is a pure function of
