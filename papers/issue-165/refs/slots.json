@@ -1,0 +1,1236 @@
+{
+ "_what": "The paper's citation slots: one entry per assertion the manuscript makes, with the query that asks a registry for a work supporting it. A slot is filled only if a registry returns a real record that passes verification; an unfilled slot is REPORTED, never quietly dropped.",
+ "_rule": "The query is recall; the REGISTRY is authority. Nothing enters the corpus because it was remembered. Acceptance needs two criteria independent of each other (title AND year); an author mismatch is fatal. One work may hold at most one key (same DOI or same normalised title is a duplicate).",
+ "slots": [
+  {
+   "key": "kessler1963",
+   "slot": "S1.1",
+   "claim": "two works are coupled when they share a reference",
+   "query": "Bibliographic coupling between scientific papers Kessler",
+   "want_year": 1963,
+   "want_title": "Bibliographic coupling between scientific papers"
+  },
+  {
+   "key": "small1973",
+   "slot": "S1.1",
+   "claim": "co-citation as a relatedness measure",
+   "query": "Co-citation in the scientific literature a new measure of the relationship between two documents",
+   "want_year": 1973,
+   "want_title": "Co-citation in the scientific literature: A new measure of the relationship between two documents"
+  },
+  {
+   "key": "price1965",
+   "slot": "S1.1",
+   "claim": "citation networks carry a research-front structure",
+   "query": "Networks of scientific papers Price",
+   "want_year": 1965,
+   "want_title": "Networks of scientific papers"
+  },
+  {
+   "key": "garfield1979",
+   "slot": "S1.1",
+   "claim": "citation indexing as a retrieval mechanism",
+   "query": "Citation indexing its theory and application in science technology and humanities",
+   "want_year": 1979,
+   "want_title": "Citation indexing: its theory and application in science, technology, and humanities"
+  },
+  {
+   "key": "newman2001",
+   "slot": "S1.1",
+   "claim": "scientific networks analysed statistically",
+   "query": "Scientific collaboration networks network construction and fundamental results",
+   "want_year": 2001,
+   "want_title": "Scientific collaboration networks. I. Network construction and fundamental results"
+  },
+  {
+   "key": "redner1998",
+   "slot": "S1.1",
+   "claim": "citation counts are heavy tailed",
+   "query": "How popular is your paper An empirical study of the citation distribution",
+   "want_year": 1998,
+   "want_title": "How popular is your paper? An empirical study of the citation distribution"
+  },
+  {
+   "key": "evans2008",
+   "slot": "S1.2",
+   "claim": "reference lists have grown and narrowed",
+   "query": "Electronic publication and the narrowing of science and scholarship",
+   "want_year": 2008,
+   "want_title": "Electronic publication and the narrowing of science and scholarship"
+  },
+  {
+   "key": "larsen2010",
+   "slot": "S1.2",
+   "claim": "scientific output grows and index coverage lags",
+   "query": "The rate of growth in scientific publication and the decline in coverage provided by Science Citation Index",
+   "want_year": 2010,
+   "want_title": "The rate of growth in scientific publication and the decline in coverage provided by Science Citation Index"
+  },
+  {
+   "key": "cohen1960",
+   "slot": "S1.3",
+   "claim": "chance agreement must be removed from an observed share",
+   "query": "A coefficient of agreement for nominal scales",
+   "want_year": 1960,
+   "want_title": "A coefficient of agreement for nominal scales"
+  },
+  {
+   "key": "wilson1927",
+   "slot": "S1.4",
+   "claim": "interval for a binomial share",
+   "query": "Probable inference the law of succession and statistical inference Wilson",
+   "want_year": 1927,
+   "want_title": "Probable inference, the law of succession, and statistical inference"
+  },
+  {
+   "key": "efron1979",
+   "slot": "S1.4",
+   "claim": "bootstrap resampling for an interval",
+   "query": "Bootstrap methods another look at the jackknife",
+   "want_year": 1979,
+   "want_title": "Bootstrap methods: another look at the jackknife"
+  },
+  {
+   "key": "efron1993",
+   "slot": "S1.4",
+   "claim": "bootstrap intervals in practice",
+   "query": "An introduction to the bootstrap Efron Tibshirani",
+   "want_year": 1993,
+   "want_title": "An introduction to the bootstrap",
+   "want_kind": "book"
+  },
+  {
+   "key": "priem2022",
+   "slot": "S2.1",
+   "claim": "OpenAlex is the registry used here",
+   "query": "OpenAlex a fully open index of scholarly works authors venues and institutions",
+   "want_year": 2022,
+   "want_title": "OpenAlex: A fully-open index of scholarly works, authors, venues, institutions, and concepts"
+  },
+  {
+   "key": "hendricks2020",
+   "slot": "S2.1",
+   "claim": "Crossref is DOI registration infrastructure",
+   "query": "Crossref documenting and sharing research metadata",
+   "want_year": 2020,
+   "want_title": "Crossref: documenting and sharing research metadata"
+  },
+  {
+   "key": "martin2021",
+   "slot": "S2.1",
+   "claim": "coverage differs across bibliographic databases",
+   "query": "The coverage of forty million scholarly documents by Microsoft Academic Graph Dimensions Scopus OpenAlex and Crossref",
+   "want_year": 2021,
+   "want_title": "The coverage of forty million scholarly documents by Microsoft Academic Graph, Dimensions, Scopus, OpenAlex, and Crossref"
+  },
+  {
+   "key": "visser2021",
+   "slot": "S2.1",
+   "claim": "database choice changes what a study can see",
+   "query": "Large-scale comparison of bibliographic data sources Scopus Web of Science Dimensions OpenAlex and Crossref",
+   "want_year": 2021,
+   "want_title": "Large-scale comparison of bibliographic data sources: Scopus, Web of Science, Dimensions, Crossref, and Microsoft Academic"
+  },
+  {
+   "key": "mongeon2016",
+   "slot": "S2.1",
+   "claim": "database coverage is biased by region and language",
+   "query": "The journal coverage of Web of Science and Scopus a comparative analysis",
+   "want_year": 2016,
+   "want_title": "The journal coverage of Web of Science and Scopus: a comparative analysis"
+  },
+  {
+   "key": "waltman2012",
+   "slot": "S2.2",
+   "claim": "science needs a publication-level field classification",
+   "query": "A new methodology for constructing a publication-level classification system of science",
+   "want_year": 2012,
+   "want_title": "A new methodology for constructing a publication-level classification system of science"
+  },
+  {
+   "key": "wohlin2014",
+   "slot": "S1.0",
+   "claim": "snowballing iterates citations until saturation",
+   "query": "Guidelines for snowballing in systematic literature studies and a replication in software engineering",
+   "want_year": 2014,
+   "want_title": "Guidelines for snowballing in systematic literature studies and a replication in software engineering"
+  },
+  {
+   "key": "jalali2012",
+   "slot": "S1.0",
+   "claim": "snowballing compared with database searching",
+   "query": "Systematic literature studies snowballing versus database searches",
+   "want_year": 2012,
+   "want_title": "Systematic literature studies: database searches vs. backward snowballing"
+  },
+  {
+   "key": "kitchenham2004",
+   "slot": "S1.0",
+   "claim": "systematic review procedure",
+   "query": "Procedures for performing systematic reviews Kitchenham",
+   "want_year": 2004,
+   "want_title": "Procedures for performing systematic reviews"
+  },
+  {
+   "key": "petersen2015",
+   "slot": "S1.0",
+   "claim": "systematic mapping study procedure",
+   "query": "Guidelines for conducting systematic mapping studies in software engineering an update",
+   "want_year": 2015,
+   "want_title": "Guidelines for conducting systematic mapping studies in software engineering: An update"
+  },
+  {
+   "key": "marshall2019",
+   "slot": "S1.0",
+   "claim": "automating systematic review screening",
+   "query": "Toward systematic review automation a practical tutorial on using machine learning to reduce work in evidence syntheses",
+   "want_year": 2019,
+   "want_title": "Toward systematic review automation: a practical guide to using machine learning tools in research synthesis"
+  },
+  {
+   "key": "swanson1986",
+   "slot": "S1.0",
+   "claim": "undiscovered public knowledge across disjoint literatures",
+   "query": "Undiscovered public knowledge",
+   "want_year": 1986,
+   "want_title": "Undiscovered public knowledge"
+  },
+  {
+   "key": "salton1988",
+   "slot": "S1.0",
+   "claim": "term-weighting as the baseline retrieval mechanism",
+   "query": "Term-weighting approaches in automatic text retrieval",
+   "want_year": 1988,
+   "want_title": "Term-weighting approaches in automatic text retrieval"
+  },
+  {
+   "key": "robertson2009",
+   "slot": "S1.0",
+   "claim": "probabilistic relevance framework BM25",
+   "query": "The probabilistic relevance framework BM25 and beyond",
+   "want_year": 2009,
+   "want_title": "The probabilistic relevance framework: BM25 and beyond"
+  },
+  {
+   "key": "manning2008",
+   "slot": "S1.0",
+   "claim": "IR evaluation methodology",
+   "query": "Introduction to information retrieval Manning Raghavan Schutze",
+   "want_year": 2008,
+   "want_title": "Introduction to information retrieval",
+   "want_kind": "book"
+  },
+  {
+   "key": "brin1998",
+   "slot": "S1.5",
+   "claim": "citation-like graphs are exploited by link ranking",
+   "query": "The anatomy of a large-scale hypertextual web search engine",
+   "want_year": 1998,
+   "want_title": "The anatomy of a large-scale hypertextual web search engine"
+  },
+  {
+   "key": "kleinberg1999",
+   "slot": "S1.5",
+   "claim": "hubs and authorities on a citation-like graph",
+   "query": "Authoritative sources in a hyperlinked environment",
+   "want_year": 1999,
+   "want_title": "Authoritative sources in a hyperlinked environment"
+  },
+  {
+   "key": "jeh2002",
+   "slot": "S1.5",
+   "claim": "structural similarity in a graph",
+   "query": "SimRank a measure of structural-context similarity",
+   "want_year": 2002,
+   "want_title": "SimRank: a measure of structural-context similarity"
+  },
+  {
+   "key": "tong2006",
+   "slot": "S1.5",
+   "claim": "random walk with restart as graph proximity",
+   "query": "Fast random walk with restart and its applications",
+   "want_year": 2006,
+   "want_title": "Fast random walk with restart and its applications"
+  },
+  {
+   "key": "wang2013",
+   "slot": "S1.5",
+   "claim": "individual citation histories show quantifiable dynamics",
+   "query": "Quantifying the evolution of individual scientific impact",
+   "want_year": 2013,
+   "want_title": "Quantifying the evolution of individual scientific impact"
+  },
+  {
+   "key": "parolo2015",
+   "slot": "S1.5",
+   "claim": "attention to a paper decays",
+   "query": "Attention decay in science",
+   "want_year": 2015,
+   "want_title": "Attention decay in science"
+  },
+  {
+   "key": "hicks2015",
+   "slot": "S5.0",
+   "claim": "metric use needs a statement of what is measured",
+   "query": "The Leiden Manifesto for research metrics",
+   "want_year": 2015,
+   "want_title": "Bibliometrics: The Leiden Manifesto for research metrics"
+  },
+  {
+   "key": "wilsdon2015",
+   "slot": "S5.0",
+   "claim": "metric evaluation changes behaviour",
+   "query": "The metric tide report of the independent review of the role of metrics in research assessment and management",
+   "want_year": 2015,
+   "want_title": "The metric tide: report of the independent review of the role of metrics in research assessment and management"
+  },
+  {
+   "key": "ioannidis2005",
+   "slot": "S7.0",
+   "claim": "published findings can fail to hold",
+   "query": "Why most published research findings are false",
+   "want_year": 2005,
+   "want_title": "Why most published research findings are false"
+  },
+  {
+   "key": "munafo2017",
+   "slot": "S7.0",
+   "claim": "a manifesto for reproducible science",
+   "query": "A manifesto for reproducible science",
+   "want_year": 2017,
+   "want_title": "A manifesto for reproducible science"
+  },
+  {
+   "key": "nosek2015",
+   "slot": "S7.0",
+   "claim": "reproducibility is measurable practice",
+   "query": "Promoting an open research culture",
+   "want_year": 2015,
+   "want_title": "Promoting an open research culture"
+  },
+  {
+   "key": "cohen1988",
+   "slot": "S5.1",
+   "claim": "power and the smallest detectable effect",
+   "query": "Statistical power analysis for the behavioral sciences",
+   "want_year": 1988,
+   "want_title": "Statistical power analysis for the behavioral sciences",
+   "want_kind": "book"
+  },
+  {
+   "key": "lakens2017",
+   "slot": "S5.1",
+   "claim": "equivalence testing as the way to report an absence",
+   "query": "Equivalence tests a practical primer for t tests correlations and meta-analyses",
+   "want_year": 2017,
+   "want_title": "Equivalence tests: a practical primer for t tests, correlations, and meta-analyses"
+  },
+  {
+   "key": "altman1995",
+   "slot": "S5.1",
+   "claim": "absence of evidence is not evidence of absence",
+   "query": "Absence of evidence is not evidence of absence",
+   "want_year": 1995,
+   "want_title": "Statistics notes: Absence of evidence is not evidence of absence"
+  },
+  {
+   "key": "simmons2011",
+   "slot": "S6.0",
+   "claim": "flexible analysis changes conclusions",
+   "query": "False-positive psychology undisclosed flexibility in data collection and analysis allows presenting anything as significant",
+   "want_year": 2011,
+   "want_title": "False-positive psychology: undisclosed flexibility in data collection and analysis allows presenting anything as significant"
+  },
+  {
+   "key": "gelman2014",
+   "slot": "S6.0",
+   "claim": "garden of forking paths",
+   "query": "The statistical crisis in science",
+   "want_year": 2015,
+   "want_title": "The statistical crisis in science"
+  },
+  {
+   "key": "nosek2018",
+   "slot": "S6.0",
+   "claim": "preregistration changes what a result can mean",
+   "query": "The preregistration revolution",
+   "want_year": 2018,
+   "want_title": "The preregistration revolution"
+  },
+  {
+   "key": "hardwicke2020",
+   "slot": "S6.0",
+   "claim": "preregistration in practice",
+   "query": "Patterns of preregistration in scientific research",
+   "want_year": 2020,
+   "want_title": "Patterns of preregistration in scientific research"
+  },
+  {
+   "key": "chambers2013",
+   "slot": "S6.0",
+   "claim": "registered reports",
+   "query": "Registered reports a new publishing initiative at Cortex",
+   "want_year": 2013,
+   "want_title": "Registered reports: a new publishing initiative at Cortex"
+  },
+  {
+   "key": "fisher1925",
+   "slot": "S1.3",
+   "claim": "the null hypothesis as the thing a test rejects",
+   "query": "Statistical methods for research workers Fisher",
+   "want_year": 1925,
+   "want_title": "Statistical methods for research workers"
+  },
+  {
+   "key": "goodman2008",
+   "slot": "S1.3",
+   "claim": "p-values are not posterior probabilities",
+   "query": "A dirty dozen twelve p-value misconceptions",
+   "want_year": 2008,
+   "want_title": "A dirty dozen: twelve p-value misconceptions"
+  },
+  {
+   "key": "wasserman2004",
+   "slot": "S1.4",
+   "claim": "statistical inference baselines",
+   "query": "All of statistics a concise course in statistical inference",
+   "want_year": 2004,
+   "want_title": "All of statistics: a concise course in statistical inference",
+   "want_kind": "book"
+  },
+  {
+   "key": "hastie2009",
+   "slot": "S3.0",
+   "claim": "resampling evaluation of models",
+   "query": "The elements of statistical learning data mining inference and prediction",
+   "want_year": 2009,
+   "want_title": "The Elements of Statistical Learning: Data Mining, Inference, and Prediction, Second Edition",
+   "want_kind": "book"
+  },
+  {
+   "key": "stuart2011",
+   "slot": "S1.2",
+   "claim": "matching must match on the confounder",
+   "query": "Matching methods for causal inference a review and a look forward",
+   "want_year": 2011,
+   "want_title": "Matching methods for causal inference: a review and a look forward"
+  },
+  {
+   "key": "rosenbaum1983",
+   "slot": "S1.2",
+   "claim": "matched sampling removes a covariate's effect",
+   "query": "The central role of the propensity score in observational studies for causal effects",
+   "want_year": 1983,
+   "want_title": "The central role of the propensity score in observational studies for causal effects"
+  },
+  {
+   "key": "rubin1974",
+   "slot": "S1.2",
+   "claim": "adjustment requires the covariate to be measured",
+   "query": "Estimating causal effects of treatments in randomized and nonrandomized studies",
+   "want_year": 1974,
+   "want_title": "Estimating causal effects of treatments in randomized and nonrandomized studies"
+  },
+  {
+   "key": "cochran1968",
+   "slot": "S1.2",
+   "claim": "subclassification removes bias only for the controlled variable",
+   "query": "The effectiveness of adjustment by subclassification in removing bias in observational studies",
+   "want_year": 1968,
+   "want_title": "The effectiveness of adjustment by subclassification in removing bias in observational studies"
+  },
+  {
+   "key": "shimodaira2000",
+   "slot": "S1.2",
+   "claim": "covariate shift is a named problem",
+   "query": "Improving predictive inference under covariate shift by weighting the log-likelihood function",
+   "want_year": 2000,
+   "want_title": "Improving predictive inference under covariate shift by weighting the log-likelihood function"
+  },
+  {
+   "key": "heckman1979",
+   "slot": "S1.2",
+   "claim": "sample selection bias must be modelled",
+   "query": "Sample selection bias as a specification error",
+   "want_year": 1979,
+   "want_title": "Sample selection bias as a specification error"
+  },
+  {
+   "key": "moed2005",
+   "slot": "S2.2",
+   "claim": "citation analysis needs field normalisation",
+   "query": "Citation analysis in research evaluation",
+   "want_year": 2005,
+   "want_title": "Citation analysis in research evaluation",
+   "want_kind": "book"
+  },
+  {
+   "key": "schubert1996",
+   "slot": "S2.2",
+   "claim": "cross-field comparison needs an explicit baseline",
+   "query": "Cross-field normalization of scientometric indicators",
+   "want_year": 1996,
+   "want_title": "Cross-field normalization of scientometric indicators"
+  },
+  {
+   "key": "fanelli2010",
+   "slot": "S2.2",
+   "claim": "fields differ in their reporting behaviour",
+   "query": "Positive results increase down the hierarchy of the sciences",
+   "want_year": 2010,
+   "want_title": "Positive results increase down the hierarchy of the sciences"
+  },
+  {
+   "key": "bollen2009",
+   "slot": "S3.0",
+   "claim": "different impact signals measure different things",
+   "query": "A principal component analysis of 39 scientific impact measures",
+   "want_year": 2009,
+   "want_title": "A principal component analysis of 39 scientific impact measures"
+  },
+  {
+   "key": "bornmann2014",
+   "slot": "S3.0",
+   "claim": "altmetrics and citations diverge",
+   "query": "Do altmetrics correlate with citations a meta-analysis on forty-three million individual records",
+   "want_year": 2016,
+   "want_title": "Do altmetrics correlate with citations? A meta-analysis on forty-three million individual records"
+  },
+  {
+   "key": "lipton2018",
+   "slot": "S3.0",
+   "claim": "benchmarking practice needs its own critique",
+   "query": "Troubling trends in machine learning scholarship",
+   "want_year": 2018,
+   "want_title": "Troubling trends in machine learning scholarship"
+  },
+  {
+   "key": "sculley2015",
+   "slot": "S3.0",
+   "claim": "empirical systems carry hidden debt",
+   "query": "Hidden technical debt in machine learning systems",
+   "want_year": 2015,
+   "want_title": "Hidden technical debt in machine learning systems"
+  },
+  {
+   "key": "wagstaff2020",
+   "slot": "S3.0",
+   "claim": "benchmark performance does not transfer",
+   "query": "On the proven pitfalls of machine learning in computational biology Wagstaff",
+   "want_year": 2020,
+   "want_title": "On the proven pitfalls of machine learning for computational biology"
+  },
+  {
+   "key": "kitchenham2009",
+   "slot": "S3.0",
+   "claim": "empirical software engineering research methods",
+   "query": "Empirical research methods in software engineering Kitchenham",
+   "want_year": 2009,
+   "want_title": "Empirical research methods in software engineering"
+  },
+  {
+   "key": "wohlin2012",
+   "slot": "S3.0",
+   "claim": "experimentation in software engineering",
+   "query": "Experimentation in software engineering Wohlin Runeson",
+   "want_year": 2012,
+   "want_title": "Experimentation in software engineering",
+   "want_kind": "book"
+  },
+  {
+   "key": "buckley2004",
+   "slot": "S1.0",
+   "claim": "retrieval evaluation with incomplete information",
+   "query": "Retrieval evaluation with incomplete information",
+   "want_year": 2004,
+   "want_title": "Retrieval evaluation with incomplete information"
+  },
+  {
+   "key": "zobel2006",
+   "slot": "S1.0",
+   "claim": "incomplete relevance judgements bias evaluation",
+   "query": "Incomplete and biased relevance judgments in IR evaluation",
+   "want_year": 2006,
+   "want_title": "Incomplete and biased relevance judgments in IR evaluation"
+  },
+  {
+   "key": "sanderson2010",
+   "slot": "S1.0",
+   "claim": "test collections carry bias",
+   "query": "Test collection based evaluation of information retrieval systems",
+   "want_year": 2010,
+   "want_title": "Test collection based evaluation of information retrieval systems"
+  },
+  {
+   "key": "sakai2016",
+   "slot": "S1.0",
+   "claim": "statistical reform in IR evaluation",
+   "query": "Statistical reform in information retrieval",
+   "want_year": 2016,
+   "want_title": "Statistical reform in information retrieval"
+  },
+  {
+   "key": "ferro2017",
+   "slot": "S1.0",
+   "claim": "reproducibility of statistical tests on IR measures",
+   "query": "Reproducibility of statistical tests based on IR evaluation measures",
+   "want_year": 2017,
+   "want_title": "Reproducibility of statistical tests based on IR evaluation measures"
+  },
+  {
+   "key": "fagin2003",
+   "slot": "S1.1",
+   "claim": "comparing top-k lists needs a stated measure",
+   "query": "Comparing top k lists",
+   "want_year": 2003,
+   "want_title": "Comparing top k lists"
+  },
+  {
+   "key": "webber2010",
+   "slot": "S1.1",
+   "claim": "rank-biased overlap for indefinite rankings",
+   "query": "A similarity measure for indefinite rankings",
+   "want_year": 2010,
+   "want_title": "A similarity measure for indefinite rankings"
+  },
+  {
+   "key": "jarvelin2002",
+   "slot": "S1.1",
+   "claim": "graded relevance gain measures",
+   "query": "Cumulated gain-based evaluation of IR techniques",
+   "want_year": 2002,
+   "want_title": "Cumulated gain-based evaluation of IR techniques"
+  },
+  {
+   "key": "thompson1933",
+   "slot": "S1.5",
+   "claim": "probability matching allocates finite trials",
+   "query": "On the likelihood that one unknown probability exceeds another in view of the evidence of two samples",
+   "want_year": 1933,
+   "want_title": "On the likelihood that one unknown probability exceeds another in view of the evidence of two samples"
+  },
+  {
+   "key": "auer2002",
+   "slot": "S1.5",
+   "claim": "finite-time analysis of the multiarmed bandit",
+   "query": "Finite-time analysis of the multiarmed bandit problem",
+   "want_year": 2002,
+   "want_title": "Finite-time analysis of the multiarmed bandit problem"
+  },
+  {
+   "key": "lattimore2020",
+   "slot": "S1.5",
+   "claim": "bandit algorithms as the allocation framework",
+   "query": "Bandit algorithms Lattimore Szepesvari",
+   "want_year": 2020,
+   "want_title": "Bandit algorithms",
+   "want_kind": "book"
+  },
+  {
+   "key": "sutton1999",
+   "slot": "S1.5",
+   "claim": "sequential decisions are stated as a policy over states",
+   "query": "Between MDPs and semi-MDPs a framework for temporal abstraction in reinforcement learning",
+   "want_year": 1999,
+   "want_title": "Between MDPs and semi-MDPs: a framework for temporal abstraction in reinforcement learning"
+  },
+  {
+   "key": "tversky1974",
+   "slot": "S5.1",
+   "claim": "judgement under uncertainty is biased in stated ways",
+   "query": "Judgment under uncertainty heuristics and biases",
+   "want_year": 1974,
+   "want_title": "Judgment under uncertainty: heuristics and biases"
+  },
+  {
+   "key": "kahneman2011",
+   "slot": "S5.1",
+   "claim": "fast and slow thinking as a model of judgement",
+   "query": "Thinking fast and slow Kahneman",
+   "want_year": 2011,
+   "want_title": "Thinking, fast and slow",
+   "want_kind": "book"
+  },
+  {
+   "key": "stroop1935",
+   "slot": "S3.0",
+   "claim": "a named interference effect used as a control paradigm",
+   "query": "Studies of interference in serial verbal reactions",
+   "want_year": 1935,
+   "want_title": "Studies of interference in serial verbal reactions"
+  },
+  {
+   "key": "shannon1948",
+   "slot": "S1.3",
+   "claim": "information as a quantitative measure",
+   "query": "A mathematical theory of communication",
+   "want_year": 1948,
+   "want_title": "A mathematical theory of communication"
+  },
+  {
+   "key": "zipf1949",
+   "slot": "S1.1",
+   "claim": "heavy-tailed word and reference distributions",
+   "query": "Human behavior and the principle of least effort",
+   "want_year": 1949,
+   "want_title": "Human behavior and the principle of least effort",
+   "want_kind": "book"
+  },
+  {
+   "key": "lotka1926",
+   "slot": "S1.1",
+   "claim": "author productivity follows a power law",
+   "query": "The frequency distribution of scientific productivity",
+   "want_year": 1926,
+   "want_title": "The frequency distribution of scientific productivity"
+  },
+  {
+   "key": "bradford1934",
+   "slot": "S1.1",
+   "claim": "literature scatters across sources",
+   "query": "Sources of information on specific subjects",
+   "want_year": 1934,
+   "want_title": "Sources of information on specific subjects"
+  },
+  {
+   "key": "hirsch2005",
+   "slot": "S1.2",
+   "claim": "a scalar index can summarise a citation distribution",
+   "query": "An index to quantify an individual's scientific research output",
+   "want_year": 2005,
+   "want_title": "An index to quantify an individual's scientific research output"
+  },
+  {
+   "key": "egghe2006",
+   "slot": "S1.2",
+   "claim": "the h-index has stated properties and limits",
+   "query": "Theory and practise of the g-index",
+   "want_year": 2006,
+   "want_title": "Theory and practise of the g-index"
+  },
+  {
+   "key": "waltman2012b",
+   "slot": "S2.2",
+   "claim": "field normalisation methods differ in their assumptions",
+   "query": "Towards a new crown indicator an experimental comparison of bibliometric normalization approaches",
+   "want_year": 2011,
+   "want_title": "Towards a new crown indicator: an empirical analysis"
+  },
+  {
+   "key": "ruiz2013",
+   "slot": "S2.2",
+   "claim": "citation impact needs a stated reference set",
+   "query": "Interpreting bibliometric data a guide for the evaluation of research",
+   "want_year": 2013,
+   "want_title": "Interpreting bibliometric data: a guide for the evaluation of research"
+  },
+  {
+   "key": "narin1976",
+   "slot": "S1.1",
+   "claim": "evaluative bibliometrics as a method",
+   "query": "Evaluative bibliometrics the use of publication and citation analysis in the evaluation of scientific activity",
+   "want_year": 1976,
+   "want_title": "Evaluative bibliometrics: the use of publication and citation analysis in the evaluation of scientific activity"
+  },
+  {
+   "key": "peritz1983",
+   "slot": "S1.1",
+   "claim": "citation analysis validity is contested",
+   "query": "A classification of citation roles for the social sciences and related fields",
+   "want_year": 1983,
+   "want_title": "A classification of citation roles for the social sciences and related fields"
+  },
+  {
+   "key": "moravcsik1975",
+   "slot": "S1.1",
+   "claim": "citations have varied motivations",
+   "query": "Some results on the function and quality of citations",
+   "want_year": 1975,
+   "want_title": "Some results on the function and quality of citations"
+  },
+  {
+   "key": "gilbert1977",
+   "slot": "S1.1",
+   "claim": "citation is persuasion, not simple reference",
+   "query": "Referencing as persuasion",
+   "want_year": 1977,
+   "want_title": "Referencing as persuasion"
+  },
+  {
+   "key": "merton1968",
+   "slot": "S1.1",
+   "claim": "the Matthew effect in science",
+   "query": "The Matthew effect in science",
+   "want_year": 1968,
+   "want_title": "The Matthew effect in science"
+  },
+  {
+   "key": "cole1973",
+   "slot": "S1.1",
+   "claim": "citation counts as a partial proxy for quality",
+   "query": "Citation and the evaluation of scientific output Cole",
+   "want_year": 1973,
+   "want_title": "Citation and the evaluation of scientific output"
+  },
+  {
+   "key": "mccain1989",
+   "slot": "S1.1",
+   "claim": "citation use varies by field and author",
+   "query": "Descriptor and citation scattering in the development of a scientific specialty",
+   "want_year": 1989,
+   "want_title": "Descriptor and citation scattering in the development of a scientific specialty"
+  },
+  {
+   "key": "white1998",
+   "slot": "S1.1",
+   "claim": "citation-based retrieval has a long history",
+   "query": "On the use of informetric models in online bibliographic retrieval White",
+   "want_year": 1998,
+   "want_title": "On the use of informetric models in online bibliographic retrieval"
+  },
+  {
+   "key": "lawani1982",
+   "slot": "S1.1",
+   "claim": "citation analysis as a theory-evaluation tool",
+   "query": "On the heterogeneity and classification of author self-citations",
+   "want_year": 1982,
+   "want_title": "On the heterogeneity and classification of author self-citations"
+  },
+  {
+   "key": "schubert1987",
+   "slot": "S1.1",
+   "claim": "citation rates differ systematically across fields",
+   "query": "Cross-field comparison of scientometric indicators and citation rates",
+   "want_year": 1987,
+   "want_title": "Cross-field comparison of scientometric indicators"
+  },
+  {
+   "key": "glanzel1996",
+   "slot": "S2.2",
+   "claim": "field-specific citation behaviour must be modelled",
+   "query": "A bibliometric approach to social sciences national research performances in border fields",
+   "want_year": 1996,
+   "want_title": "A bibliometric approach to social sciences: national research performances in border fields"
+  },
+  {
+   "key": "hicks1999",
+   "slot": "S2.2",
+   "claim": "the social sciences need their own bibliometric treatment",
+   "query": "The difficulty of achieving full coverage of international social science literature and some consequences",
+   "want_year": 1999,
+   "want_title": "The difficulty of achieving full coverage of international social science literature and some consequences"
+  },
+  {
+   "key": "vanleeuwen2001",
+   "slot": "S2.2",
+   "claim": "field-specific normalisation changes rankings",
+   "query": "Bibliometric analysis of the Dutch research performance in an international context",
+   "want_year": 2001,
+   "want_title": "Bibliometric analysis of the Dutch research performance in an international context"
+  },
+  {
+   "key": "anderson2004",
+   "slot": "S2.2",
+   "claim": "field practice affects measured output",
+   "query": "The metric tide reconsidered",
+   "want_year": 2004,
+   "want_title": "The metric tide reconsidered"
+  },
+  {
+   "key": "osterloh2004",
+   "slot": "S2.2",
+   "claim": "field differences in publication counts",
+   "query": "Co-authorship and collaboration in scientific publishing",
+   "want_year": 2004,
+   "want_title": "Co-authorship and collaboration in scientific publishing"
+  },
+  {
+   "key": "wuchty2007",
+   "slot": "S1.2",
+   "claim": "authorship structures have changed over time",
+   "query": "The increasing dominance of teams in production of knowledge",
+   "want_year": 2007,
+   "want_title": "The increasing dominance of teams in production of knowledge"
+  },
+  {
+   "key": "jones2009",
+   "slot": "S1.2",
+   "claim": "multi-university collaboration rises",
+   "query": "Multi-university research teams shifting impact and geography over time",
+   "want_year": 2009,
+   "want_title": "Multi-university research teams: shifting impact, geography, and stratification in science"
+  },
+  {
+   "key": "fortunato2018",
+   "slot": "S1.0",
+   "claim": "science needs a quantitative understanding of its own dynamics",
+   "query": "Science of science",
+   "want_year": 2018,
+   "want_title": "Science of science"
+  },
+  {
+   "key": "zeng2017",
+   "slot": "S1.0",
+   "claim": "citation-based measures can be reproduced from data",
+   "query": "The science of science big data and the science of citation",
+   "want_year": 2017,
+   "want_title": "The science of science: big data and the science of citation"
+  },
+  {
+   "key": "ioannidis2014b",
+   "slot": "S5.0",
+   "claim": "research assessment design affects research practice",
+   "query": "How to make more published research true",
+   "want_year": 2014,
+   "want_title": "How to make more published research true"
+  },
+  {
+   "key": "nosek2012",
+   "slot": "S6.0",
+   "claim": "scientific Utopia and the openness agenda",
+   "query": "Scientific utopia I opening scientific communication",
+   "want_year": 2012,
+   "want_title": "Scientific utopia: I. Opening scientific communication"
+  },
+  {
+   "key": "miguel2014",
+   "slot": "S6.0",
+   "claim": "promoting transparency in research",
+   "query": "Promoting transparency in social science research",
+   "want_year": 2014,
+   "want_title": "Promoting transparency in social science research"
+  },
+  {
+   "key": "christensen2019",
+   "slot": "S6.0",
+   "claim": "the reproducibility of repeated measurement",
+   "query": "A study of the reproducibility of research in the social and behavioral sciences",
+   "want_year": 2019,
+   "want_title": "A study of the reproducibility of research in the social and behavioral sciences"
+  },
+  {
+   "key": "hardwicke2018",
+   "slot": "S6.0",
+   "claim": "data availability statements and reproducibility",
+   "query": "Data availability data reuse and data citation in social science research",
+   "want_year": 2018,
+   "want_title": "Data availability, data reuse, and data citation in social science research"
+  },
+  {
+   "key": "stodden2016",
+   "slot": "S6.0",
+   "claim": "computational reproducibility is measurable",
+   "query": "Enhancing reproducibility for computational methods",
+   "want_year": 2016,
+   "want_title": "Enhancing reproducibility for computational methods"
+  },
+  {
+   "key": "donoho2009",
+   "slot": "S6.0",
+   "claim": "published computational results are often irreproducible",
+   "query": "Reproducible research computing and the scientific method",
+   "want_year": 2009,
+   "want_title": "Reproducible research: computing and the scientific method"
+  },
+  {
+   "key": "peng2011",
+   "slot": "S6.0",
+   "claim": "reproducible research as a standard",
+   "query": "Reproducible research in computational science",
+   "want_year": 2011,
+   "want_title": "Reproducible research in computational science"
+  },
+  {
+   "key": "kowalczyk2013",
+   "slot": "S6.0",
+   "claim": "benchmark irreproducibility has a known cause",
+   "query": "On the reproducibility of scientific results in the computational sciences",
+   "want_year": 2013,
+   "want_title": "The scientific method in practice: reproducibility in the computational sciences"
+  },
+  {
+   "key": "hutson2018",
+   "slot": "S6.0",
+   "claim": "artificial intelligence faces a reproducibility crisis",
+   "query": "Artificial intelligence faces reproducibility crisis",
+   "want_year": 2018,
+   "want_title": "Artificial intelligence faces reproducibility crisis"
+  },
+  {
+   "key": "haibe2012",
+   "slot": "S6.0",
+   "claim": "signatures of reproducibility failures in computational biology",
+   "query": "Independent component analysis uncovers the landscape of activity of the mitotic spindle",
+   "want_year": 2012,
+   "want_title": "Independent component analysis uncovers the landscape of activity of the mitotic spindle"
+  },
+  {
+   "key": "raghavan2019",
+   "slot": "S3.0",
+   "claim": "empirical hyperparameter conclusions often do not replicate",
+   "query": "On the reproducibility of neural network hyperparameter studies",
+   "want_year": 2019,
+   "want_title": "On the reproducibility of neural network hyperparameter studies"
+  },
+  {
+   "key": "march1991",
+   "slot": "S1.5",
+   "claim": "exploration versus exploitation is the trade-off this paper prices",
+   "query": "Exploration and exploitation in organizational learning March",
+   "want_year": 1991,
+   "want_title": "Exploration and exploitation in organizational learning"
+  },
+  {
+   "key": "robbins1952",
+   "slot": "S1.5",
+   "claim": "sequential allocation of experiments across arms",
+   "query": "Some aspects of the sequential design of experiments Robbins",
+   "want_year": 1952,
+   "want_title": "Some aspects of the sequential design of experiments"
+  },
+  {
+   "key": "pirolli1999",
+   "slot": "S1.0",
+   "claim": "information foraging: a patch model of where to search",
+   "query": "Information foraging Pirolli Card",
+   "want_year": 1999,
+   "want_title": "Information foraging"
+  },
+  {
+   "key": "kraft1979",
+   "slot": "S1.0",
+   "claim": "stopping rules in literature searching",
+   "query": "Stopping rules and their effect on expected search length Kraft Lee",
+   "want_year": 1979,
+   "want_title": "Stopping rules and their effect on expected search length"
+  },
+  {
+   "key": "simon1955",
+   "slot": "S1.5",
+   "claim": "satisficing as a stopping rule",
+   "query": "A behavioral model of rational choice Simon",
+   "want_year": 1955,
+   "want_title": "A behavioral model of rational choice"
+  },
+  {
+   "key": "stigler1961",
+   "slot": "S1.0",
+   "claim": "information has a price",
+   "query": "The economics of information Stigler",
+   "want_year": 1961,
+   "want_title": "The economics of information"
+  },
+  {
+   "key": "barabasi1999",
+   "slot": "S1.1",
+   "claim": "scale-free degree distributions in networks",
+   "query": "Emergence of scaling in random networks Barabasi Albert",
+   "want_year": 1999,
+   "want_title": "Emergence of scaling in random networks"
+  },
+  {
+   "key": "albert2002",
+   "slot": "S1.1",
+   "claim": "statistical mechanics of complex networks",
+   "query": "Statistical mechanics of complex networks Albert Barabasi",
+   "want_year": 2002,
+   "want_title": "Statistical mechanics of complex networks"
+  },
+  {
+   "key": "newman2003",
+   "slot": "S1.1",
+   "claim": "mixing patterns in networks",
+   "query": "Mixing patterns in networks Newman",
+   "want_year": 2003,
+   "want_title": "Mixing patterns in networks"
+  },
+  {
+   "key": "bornmann2008",
+   "slot": "S1.1",
+   "claim": "what citation counts actually measure",
+   "query": "What do citation counts measure A review of studies on citing behavior",
+   "want_year": 2008,
+   "want_title": "What do citation counts measure? A review of studies on citing behavior"
+  },
+  {
+   "key": "seglen1997",
+   "slot": "S5.0",
+   "claim": "the impact factor is not an article-level measure",
+   "query": "Why the impact factor of journals should not be used for evaluating research Seglen",
+   "want_year": 1997,
+   "want_title": "Why the impact factor of journals should not be used for evaluating research"
+  },
+  {
+   "key": "waltman2012c",
+   "slot": "S5.0",
+   "claim": "the h-index lacks a statistical basis",
+   "query": "The inconsistency of the h-index Waltman van Eck",
+   "want_year": 2012,
+   "want_title": "The inconsistency of the h-index"
+  },
+  {
+   "key": "klavans2017",
+   "slot": "S2.2",
+   "claim": "citation-based taxonomies differ and the choice matters",
+   "query": "Which type of citation analysis generates the most accurate taxonomy of scientific and technical knowledge",
+   "want_year": 2017,
+   "want_title": "Which type of citation analysis generates the most accurate taxonomy of scientific and technical knowledge"
+  },
+  {
+   "key": "ioannidis2019",
+   "slot": "S2.2",
+   "claim": "field labels are themselves a constructed instrument",
+   "query": "A standardized citation metrics author database annotated for scientific field",
+   "want_year": 2019,
+   "want_title": "A standardized citation metrics author database annotated for scientific field"
+  },
+  {
+   "key": "voorhees2001",
+   "slot": "S1.0",
+   "claim": "the philosophy of IR evaluation",
+   "query": "The philosophy of information retrieval evaluation Voorhees",
+   "want_year": 2001,
+   "want_title": "The philosophy of information retrieval evaluation"
+  },
+  {
+   "key": "harman1993",
+   "slot": "S1.0",
+   "claim": "a test collection is the instrument of evaluation",
+   "query": "Overview of the first TREC conference Harman",
+   "want_year": 1993,
+   "want_title": "Overview of the first TREC conference"
+  },
+  {
+   "key": "cumming2014",
+   "slot": "S5.1",
+   "claim": "intervals rather than p-values as the reporting unit",
+   "query": "The new statistics why and how Cumming",
+   "want_year": 2014,
+   "want_title": "The new statistics: why and how"
+  },
+  {
+   "key": "wasserstein2016",
+   "slot": "S5.1",
+   "claim": "the ASA statement on p-values",
+   "query": "The ASA statement on p-values context process and purpose",
+   "want_year": 2016,
+   "want_title": "The ASA statement on p-values: context, process, and purpose"
+  },
+  {
+   "key": "amrhein2019",
+   "slot": "S5.1",
+   "claim": "retiring statistical significance",
+   "query": "Scientists rise up against statistical significance Amrhein",
+   "want_year": 2019,
+   "want_title": "Scientists rise up against statistical significance"
+  },
+  {
+   "key": "king2001b",
+   "slot": "S5.1",
+   "claim": "rare events and small counts in regression",
+   "query": "Logistic regression in rare events data King Zeng",
+   "want_year": 2001,
+   "want_title": "Logistic regression in rare events data"
+  },
+  {
+   "key": "simpson1951",
+   "slot": "S2.3",
+   "claim": "aggregation can reverse a comparison",
+   "query": "The interpretation of interaction in contingency tables Simpson",
+   "want_year": 1951,
+   "want_title": "The interpretation of interaction in contingency tables"
+  },
+  {
+   "key": "bickel1975",
+   "slot": "S2.3",
+   "claim": "an aggregation artefact in real admissions data",
+   "query": "Sex bias in graduate admissions data from Berkeley Bickel",
+   "want_year": 1975,
+   "want_title": "Sex bias in graduate admissions: data from Berkeley"
+  },
+  {
+   "key": "kish1965",
+   "slot": "S2.1",
+   "claim": "the sampling design is part of the estimator",
+   "query": "Survey sampling Kish",
+   "want_year": 1965,
+   "want_title": "Survey sampling",
+   "want_kind": "book"
+  },
+  {
+   "key": "groves2009",
+   "slot": "S2.1",
+   "claim": "survey methodology and nonresponse",
+   "query": "Survey methodology Groves",
+   "want_year": 2009,
+   "want_title": "Survey methodology",
+   "want_kind": "book"
+  },
+  {
+   "key": "borenstein2009",
+   "slot": "S5.1",
+   "claim": "small studies and meta-analytic aggregation",
+   "query": "Introduction to meta-analysis Borenstein",
+   "want_year": 2009,
+   "want_title": "Introduction to meta-analysis",
+   "want_kind": "book"
+  },
+  {
+   "key": "basili1994",
+   "slot": "S3.0",
+   "claim": "measurement must be goal-driven",
+   "query": "Software modeling and measurement the goal question metric paradigm",
+   "want_year": 1994,
+   "want_title": "Software modeling and measurement: the Goal/Question/Metric paradigm"
+  },
+  {
+   "key": "runeson2009",
+   "slot": "S3.0",
+   "claim": "case study research must state its own design",
+   "query": "Guidelines for conducting and reporting case study research in software engineering",
+   "want_year": 2009,
+   "want_title": "Guidelines for conducting and reporting case study research in software engineering"
+  },
+  {
+   "key": "shull2008",
+   "slot": "S3.0",
+   "claim": "replication is what makes an empirical result a result",
+   "query": "The role of replications in empirical software engineering",
+   "want_year": 2008,
+   "want_title": "The role of replications in empirical software engineering: a word of warning"
+  },
+  {
+   "key": "badampudi2015",
+   "slot": "S1.0",
+   "claim": "snowballing versus database search in practice",
+   "query": "Experiences from using snowballing and database searches in systematic literature studies",
+   "want_year": 2015,
+   "want_title": "Experiences from using snowballing and database searches in systematic literature studies"
+  },
+  {
+   "key": "alperin2015",
+   "slot": "S2.1",
+   "claim": "geographic bias in bibliographic coverage",
+   "query": "The geographic bias of scholarly publishing Alperin",
+   "want_year": 2015,
+   "want_title": "The geographic bias of scholarly publishing"
+  },
+  {
+   "key": "burrell2002",
+   "slot": "S1.1",
+   "claim": "citation obsolescence has a distributional form",
+   "query": "The nth-citation distribution and obsolescence Burrell",
+   "want_year": 2002,
+   "want_title": "The nth-citation distribution and obsolescence"
+  },
+  {
+   "key": "fu2007",
+   "slot": "S1.0",
+   "claim": "information scent drives navigation between patches",
+   "query": "SNIF-ACT a cognitive model of user navigation on the World Wide Web",
+   "want_year": 2007,
+   "want_title": "SNIF-ACT: A cognitive model of user navigation on the World Wide Web"
+  }
+ ],
+ "_want_title_rule": "`want_title` is the title this study BELIEVES the work has; the registry is asked to falsify it. A record is accepted only if the returned title matches this one under two-way content-word containment (exact equality when either title has three or fewer content words) AND the year agrees."
+}

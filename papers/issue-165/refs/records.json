@@ -1,0 +1,2510 @@
+{
+ "accepted": [
+  {
+   "authors": [
+    "Amrhein, Valentin",
+    "Greenland, Sander",
+    "McShane, Blake"
+   ],
+   "claim": "retiring statistical significance",
+   "container": "Nature",
+   "doi": "10.1038/d41586-019-00857-9",
+   "key": "amrhein2019",
+   "query": "Scientists rise up against statistical significance Amrhein",
+   "slot": "S5.1",
+   "title": "Scientists rise up against statistical significance",
+   "type": "journal-article",
+   "verified": {
+    "queried_on": "2026-11-04",
+    "registry": "crossref",
+    "title": "two-way content-word containment vs want_title",
+    "year": "exact"
+   },
+   "year": 2019
+  },
+  {
+   "authors": [
+    "Auer, Peter",
+    "Cesa-Bianchi, Nicol\u00f2",
+    "Fischer, Paul"
+   ],
+   "claim": "finite-time analysis of the multiarmed bandit",
+   "container": "Machine Learning",
+   "doi": "10.1023/a:1013689704352",
+   "key": "auer2002",
+   "query": "Finite-time analysis of the multiarmed bandit problem",
+   "slot": "S1.5",
+   "title": "Finite-time Analysis of the Multiarmed Bandit Problem",
+   "type": "journal-article",
+   "verified": {
+    "queried_on": "2026-11-04",
+    "registry": "Crossref /works?query.bibliographic",
+    "title": "two-way content-word containment",
+    "year": "exact"
+   },
+   "year": 2002
+  },
+  {
+   "authors": [
+    "Badampudi, Deepika",
+    "Wohlin, Claes",
+    "Petersen, Kai"
+   ],
+   "claim": "snowballing versus database search in practice",
+   "container": "Proceedings of the 19th International Conference on Evaluation and Assessment in Software Engineering",
+   "doi": "10.1145/2745802.2745818",
+   "key": "badampudi2015",
+   "query": "Experiences from using snowballing and database searches in systematic literature studies",
+   "slot": "S1.0",
+   "title": "Experiences from using snowballing and database searches in systematic literature studies",
+   "type": "proceedings-article",
+   "verified": {
+    "queried_on": "2026-11-04",
+    "registry": "crossref",
+    "title": "two-way content-word containment vs want_title",
+    "year": "exact"
+   },
+   "year": 2015
+  },
+  {
+   "authors": [
+    "Baraba\u0301si, Albert-La\u0301szlo\u0301",
+    "Albert, Re\u0301ka"
+   ],
+   "claim": "scale-free degree distributions in networks",
+   "container": "Science",
+   "doi": "10.1126/science.286.5439.509",
+   "key": "barabasi1999",
+   "query": "Emergence of scaling in random networks Barabasi Albert",
+   "slot": "S1.1",
+   "title": "Emergence of Scaling in Random Networks",
+   "type": "journal-article",
+   "verified": {
+    "queried_on": "2026-11-04",
+    "registry": "crossref",
+    "title": "two-way content-word containment vs want_title",
+    "year": "exact"
+   },
+   "year": 1999
+  },
+  {
+   "authors": [
+    "Bickel, P. J.",
+    "Hammel, E. A.",
+    "O'Connell, J. W."
+   ],
+   "claim": "an aggregation artefact in real admissions data",
+   "container": "Science",
+   "doi": "10.1126/science.187.4175.398",
+   "key": "bickel1975",
+   "query": "Sex bias in graduate admissions data from Berkeley Bickel",
+   "slot": "S2.3",
+   "title": "Sex Bias in Graduate Admissions: Data from Berkeley",
+   "type": "journal-article",
+   "verified": {
+    "queried_on": "2026-11-04",
+    "registry": "crossref",
+    "title": "two-way content-word containment vs want_title",
+    "year": "exact"
+   },
+   "year": 1975
+  },
+  {
+   "authors": [
+    "Bollen, Johan",
+    "Van de Sompel, Herbert",
+    "Hagberg, Aric",
+    "Chute, Ryan"
+   ],
+   "claim": "different impact signals measure different things",
+   "container": "PLoS ONE",
+   "doi": "10.1371/journal.pone.0006022",
+   "key": "bollen2009",
+   "query": "A principal component analysis of 39 scientific impact measures",
+   "slot": "S3.0",
+   "title": "A Principal Component Analysis of 39 Scientific Impact Measures",
+   "type": "journal-article",
+   "verified": {
+    "queried_on": "2026-11-04",
+    "registry": "Crossref /works?query.bibliographic",
+    "title": "two-way content-word containment",
+    "year": "exact"
+   },
+   "year": 2009
+  },
+  {
+   "authors": [
+    "Borenstein, Michael",
+    "Hedges, Larry V.",
+    "Higgins, Julian P. T.",
+    "Rothstein, Hannah R."
+   ],
+   "claim": "small studies and meta-analytic aggregation",
+   "container": "",
+   "doi": "10.1002/9780470743386",
+   "key": "borenstein2009",
+   "query": "Introduction to meta-analysis Borenstein",
+   "slot": "S5.1",
+   "title": "Introduction to Meta\u2010Analysis",
+   "type": "monograph",
+   "verified": {
+    "queried_on": "2026-11-04",
+    "registry": "crossref",
+    "title": "two-way content-word containment vs want_title",
+    "year": "exact"
+   },
+   "year": 2009
+  },
+  {
+   "authors": [
+    "Bornmann, Lutz",
+    "Daniel, Hans\u2010Dieter"
+   ],
+   "claim": "what citation counts actually measure",
+   "container": "Journal of Documentation",
+   "doi": "10.1108/00220410810844150",
+   "key": "bornmann2008",
+   "query": "What do citation counts measure A review of studies on citing behavior",
+   "slot": "S1.1",
+   "title": "What do citation counts measure? A review of studies on citing behavior",
+   "type": "journal-article",
+   "verified": {
+    "queried_on": "2026-11-04",
+    "registry": "crossref",
+    "title": "two-way content-word containment vs want_title",
+    "year": "exact"
+   },
+   "year": 2008
+  },
+  {
+   "authors": [
+    "Brin, Sergey",
+    "Page, Lawrence"
+   ],
+   "claim": "citation-like graphs are exploited by link ranking",
+   "container": "Computer Networks and ISDN Systems",
+   "doi": "10.1016/s0169-7552(98)00110-x",
+   "key": "brin1998",
+   "query": "The anatomy of a large-scale hypertextual web search engine",
+   "slot": "S1.5",
+   "title": "The anatomy of a large-scale hypertextual Web search engine",
+   "type": "journal-article",
+   "verified": {
+    "queried_on": "2026-11-04",
+    "registry": "Crossref /works?query.bibliographic",
+    "title": "two-way content-word containment",
+    "year": "exact"
+   },
+   "year": 1998
+  },
+  {
+   "authors": [
+    "Buckley, Chris",
+    "Voorhees, Ellen M."
+   ],
+   "claim": "retrieval evaluation with incomplete information",
+   "container": "Proceedings of the 27th annual international ACM SIGIR conference on Research and development in information retrieval",
+   "doi": "10.1145/1008992.1009000",
+   "key": "buckley2004",
+   "query": "Retrieval evaluation with incomplete information",
+   "slot": "S1.0",
+   "title": "Retrieval evaluation with incomplete information",
+   "type": "proceedings-article",
+   "verified": {
+    "queried_on": "2026-11-04",
+    "registry": "Crossref /works?query.bibliographic",
+    "title": "two-way content-word containment",
+    "year": "exact"
+   },
+   "year": 2004
+  },
+  {
+   "authors": [
+    "Burrell, Quentin L."
+   ],
+   "claim": "citation obsolescence has a distributional form",
+   "container": "Scientometrics",
+   "doi": "10.1023/a:1014816911511",
+   "key": "burrell2002",
+   "query": "The nth-citation distribution and obsolescence Burrell",
+   "slot": "S1.1",
+   "title": "The nth-citation distribution and obsolescence",
+   "type": "journal-article",
+   "verified": {
+    "queried_on": "2026-11-04",
+    "registry": "crossref",
+    "title": "two-way content-word containment vs want_title",
+    "year": "exact"
+   },
+   "year": 2002
+  },
+  {
+   "authors": [
+    "Chambers, Christopher D."
+   ],
+   "claim": "registered reports",
+   "container": "Cortex",
+   "doi": "10.1016/j.cortex.2012.12.016",
+   "key": "chambers2013",
+   "query": "Registered reports a new publishing initiative at Cortex",
+   "slot": "S6.0",
+   "title": "Registered Reports: A new publishing initiative at\u00a0Cortex",
+   "type": "journal-article",
+   "verified": {
+    "queried_on": "2026-11-04",
+    "registry": "Crossref /works?query.bibliographic",
+    "title": "two-way content-word containment",
+    "year": "exact"
+   },
+   "year": 2013
+  },
+  {
+   "authors": [
+    "Cochran, W. G."
+   ],
+   "claim": "subclassification removes bias only for the controlled variable",
+   "container": "Biometrics",
+   "doi": "10.2307/2528036",
+   "key": "cochran1968",
+   "query": "The effectiveness of adjustment by subclassification in removing bias in observational studies",
+   "slot": "S1.2",
+   "title": "The Effectiveness of Adjustment by Subclassification in Removing Bias in Observational Studies",
+   "type": "journal-article",
+   "verified": {
+    "queried_on": "2026-11-04",
+    "registry": "Crossref /works?query.bibliographic",
+    "title": "two-way content-word containment",
+    "year": "exact"
+   },
+   "year": 1968
+  },
+  {
+   "authors": [
+    "Cohen, Jacob"
+   ],
+   "claim": "chance agreement must be removed from an observed share",
+   "container": "Educational and Psychological Measurement",
+   "doi": "10.1177/001316446002000104",
+   "key": "cohen1960",
+   "query": "A coefficient of agreement for nominal scales",
+   "slot": "S1.3",
+   "title": "A Coefficient of Agreement for Nominal Scales",
+   "type": "journal-article",
+   "verified": {
+    "queried_on": "2026-11-04",
+    "registry": "Crossref /works?query.bibliographic",
+    "title": "two-way content-word containment",
+    "year": "exact"
+   },
+   "year": 1960
+  },
+  {
+   "authors": [
+    "Efron, B."
+   ],
+   "claim": "bootstrap resampling for an interval",
+   "container": "The Annals of Statistics",
+   "doi": "10.1214/aos/1176344552",
+   "key": "efron1979",
+   "query": "Bootstrap methods another look at the jackknife",
+   "slot": "S1.4",
+   "title": "Bootstrap Methods: Another Look at the Jackknife",
+   "type": "journal-article",
+   "verified": {
+    "queried_on": "2026-11-04",
+    "registry": "Crossref /works?query.bibliographic",
+    "title": "two-way content-word containment",
+    "year": "exact"
+   },
+   "year": 1979
+  },
+  {
+   "authors": [
+    "Efron, Bradley",
+    "Tibshirani, R.J."
+   ],
+   "claim": "bootstrap intervals in practice",
+   "container": "",
+   "doi": "10.1201/9780429246593",
+   "key": "efron1993",
+   "query": "An introduction to the bootstrap Efron Tibshirani",
+   "slot": "S1.4",
+   "title": "An Introduction to the Bootstrap",
+   "type": "book",
+   "verified": {
+    "queried_on": "2026-11-04",
+    "registry": "Crossref /works?query.bibliographic",
+    "title": "two-way content-word containment",
+    "year": "off_by_one"
+   },
+   "year": 1994
+  },
+  {
+   "authors": [
+    "Egghe, Leo"
+   ],
+   "claim": "the h-index has stated properties and limits",
+   "container": "Scientometrics",
+   "doi": "10.1007/s11192-006-0144-7",
+   "key": "egghe2006",
+   "query": "Theory and practise of the g-index",
+   "slot": "S1.2",
+   "title": "Theory and practise of the g-index",
+   "type": "journal-article",
+   "verified": {
+    "queried_on": "2026-11-04",
+    "registry": "Crossref /works?query.bibliographic",
+    "title": "two-way content-word containment",
+    "year": "exact"
+   },
+   "year": 2006
+  },
+  {
+   "authors": [
+    "Evans, James A."
+   ],
+   "claim": "reference lists have grown and narrowed",
+   "container": "Science",
+   "doi": "10.1126/science.1150473",
+   "key": "evans2008",
+   "query": "Electronic publication and the narrowing of science and scholarship",
+   "slot": "S1.2",
+   "title": "Electronic Publication and the Narrowing of Science and Scholarship",
+   "type": "journal-article",
+   "verified": {
+    "queried_on": "2026-11-04",
+    "registry": "Crossref /works?query.bibliographic",
+    "title": "two-way content-word containment",
+    "year": "exact"
+   },
+   "year": 2008
+  },
+  {
+   "authors": [
+    "Ronald Fagin",
+    "Ravi Kumar",
+    "D. Sivakumar"
+   ],
+   "claim": "comparing top-k lists needs a stated measure",
+   "container": "",
+   "doi": "10.5555/644108.644113",
+   "key": "fagin2003",
+   "query": "Comparing top k lists",
+   "slot": "S1.1",
+   "title": "Comparing top k lists",
+   "type": "article",
+   "verified": {
+    "queried_on": "2026-11-04",
+    "registry": "openalex",
+    "title": "two-way content-word containment vs want_title",
+    "year": "exact"
+   },
+   "year": 2003
+  },
+  {
+   "authors": [
+    "Fanelli, Daniele"
+   ],
+   "claim": "fields differ in their reporting behaviour",
+   "container": "PLoS ONE",
+   "doi": "10.1371/journal.pone.0010068",
+   "key": "fanelli2010",
+   "query": "Positive results increase down the hierarchy of the sciences",
+   "slot": "S2.2",
+   "title": "\u201cPositive\u201d Results Increase Down the Hierarchy of the Sciences",
+   "type": "journal-article",
+   "verified": {
+    "queried_on": "2026-11-04",
+    "registry": "Crossref /works?query.bibliographic",
+    "title": "two-way content-word containment",
+    "year": "exact"
+   },
+   "year": 2010
+  },
+  {
+   "authors": [
+    "Fu, Wai-Tat",
+    "Pirolli, Peter"
+   ],
+   "claim": "information scent drives navigation between patches",
+   "container": "",
+   "doi": "10.21236/ada462156",
+   "key": "fu2007",
+   "query": "SNIF-ACT a cognitive model of user navigation on the World Wide Web",
+   "slot": "S1.0",
+   "title": "SNIF-ACT: A Cognitive Model of User Navigation on the World Wide Web",
+   "type": "report",
+   "verified": {
+    "queried_on": "2026-11-04",
+    "registry": "crossref",
+    "title": "two-way content-word containment vs want_title",
+    "year": "exact"
+   },
+   "year": 2007
+  },
+  {
+   "authors": [
+    "Goodwin, Jack",
+    "Garfield, Eugene"
+   ],
+   "claim": "citation indexing as a retrieval mechanism",
+   "container": "Technology and Culture",
+   "doi": "10.2307/3104125",
+   "key": "garfield1979",
+   "query": "Citation indexing its theory and application in science technology and humanities",
+   "slot": "S1.1",
+   "title": "Citation Indexing-Its Theory and Application in Science, Technology, and Humanities",
+   "type": "journal-article",
+   "verified": {
+    "queried_on": "2026-11-04",
+    "registry": "Crossref /works?query.bibliographic",
+    "title": "two-way content-word containment",
+    "year": "off_by_one"
+   },
+   "year": 1980
+  },
+  {
+   "authors": [
+    "Andrew Gelman",
+    "Eric Loken"
+   ],
+   "claim": "garden of forking paths",
+   "container": "American Scientist",
+   "doi": "10.1511/2014.111.460",
+   "key": "gelman2014",
+   "query": "The statistical crisis in science",
+   "slot": "S6.0",
+   "title": "The Statistical Crisis in Science",
+   "type": "article",
+   "verified": {
+    "queried_on": "2026-11-04",
+    "registry": "openalex",
+    "title": "two-way content-word containment vs want_title",
+    "year": "off_by_one"
+   },
+   "year": 2014
+  },
+  {
+   "authors": [
+    "Nigel Gilbert, G."
+   ],
+   "claim": "citation is persuasion, not simple reference",
+   "container": "Social Studies of Science",
+   "doi": "10.1177/030631277700700112",
+   "key": "gilbert1977",
+   "query": "Referencing as persuasion",
+   "slot": "S1.1",
+   "title": "Referencing as Persuasion",
+   "type": "journal-article",
+   "verified": {
+    "queried_on": "2026-11-04",
+    "registry": "Crossref /works?query.bibliographic",
+    "title": "two-way content-word containment",
+    "year": "exact"
+   },
+   "year": 1977
+  },
+  {
+   "authors": [
+    "Goodman, Steven"
+   ],
+   "claim": "p-values are not posterior probabilities",
+   "container": "Seminars in Hematology",
+   "doi": "10.1053/j.seminhematol.2008.04.003",
+   "key": "goodman2008",
+   "query": "A dirty dozen twelve p-value misconceptions",
+   "slot": "S1.3",
+   "title": "A Dirty Dozen: Twelve P-Value Misconceptions",
+   "type": "journal-article",
+   "verified": {
+    "queried_on": "2026-11-04",
+    "registry": "Crossref /works?query.bibliographic",
+    "title": "two-way content-word containment",
+    "year": "exact"
+   },
+   "year": 2008
+  },
+  {
+   "authors": [
+    "Heckman, James J."
+   ],
+   "claim": "sample selection bias must be modelled",
+   "container": "Econometrica",
+   "doi": "10.2307/1912352",
+   "key": "heckman1979",
+   "query": "Sample selection bias as a specification error",
+   "slot": "S1.2",
+   "title": "Sample Selection Bias as a Specification Error",
+   "type": "journal-article",
+   "verified": {
+    "queried_on": "2026-11-04",
+    "registry": "Crossref /works?query.bibliographic",
+    "title": "two-way content-word containment",
+    "year": "exact"
+   },
+   "year": 1979
+  },
+  {
+   "authors": [
+    "Hicks, Diana",
+    "Wouters, Paul",
+    "Waltman, Ludo",
+    "de Rijcke, Sarah",
+    "Rafols, Ismael"
+   ],
+   "claim": "metric use needs a statement of what is measured",
+   "container": "Nature",
+   "doi": "10.1038/520429a",
+   "key": "hicks2015",
+   "query": "The Leiden Manifesto for research metrics",
+   "slot": "S5.0",
+   "title": "Bibliometrics: The Leiden Manifesto for research metrics",
+   "type": "journal-article",
+   "verified": {
+    "queried_on": "2026-11-04",
+    "registry": "crossref",
+    "title": "two-way content-word containment vs want_title",
+    "year": "exact"
+   },
+   "year": 2015
+  },
+  {
+   "authors": [
+    "Hutson, Matthew"
+   ],
+   "claim": "artificial intelligence faces a reproducibility crisis",
+   "container": "Science",
+   "doi": "10.1126/science.359.6377.725",
+   "key": "hutson2018",
+   "query": "Artificial intelligence faces reproducibility crisis",
+   "slot": "S6.0",
+   "title": "Artificial intelligence faces reproducibility crisis",
+   "type": "journal-article",
+   "verified": {
+    "queried_on": "2026-11-04",
+    "registry": "Crossref /works?query.bibliographic",
+    "title": "two-way content-word containment",
+    "year": "exact"
+   },
+   "year": 2018
+  },
+  {
+   "authors": [
+    "Ioannidis, John P. A."
+   ],
+   "claim": "published findings can fail to hold",
+   "container": "PLoS Medicine",
+   "doi": "10.1371/journal.pmed.0020124",
+   "key": "ioannidis2005",
+   "query": "Why most published research findings are false",
+   "slot": "S7.0",
+   "title": "Why Most Published Research Findings Are False",
+   "type": "journal-article",
+   "verified": {
+    "queried_on": "2026-11-04",
+    "registry": "Crossref /works?query.bibliographic",
+    "title": "two-way content-word containment",
+    "year": "exact"
+   },
+   "year": 2005
+  },
+  {
+   "authors": [
+    "Ioannidis, John P. A."
+   ],
+   "claim": "research assessment design affects research practice",
+   "container": "PLoS Medicine",
+   "doi": "10.1371/journal.pmed.1001747",
+   "key": "ioannidis2014b",
+   "query": "How to make more published research true",
+   "slot": "S5.0",
+   "title": "How to Make More Published Research True",
+   "type": "journal-article",
+   "verified": {
+    "queried_on": "2026-11-04",
+    "registry": "Crossref /works?query.bibliographic",
+    "title": "two-way content-word containment",
+    "year": "exact"
+   },
+   "year": 2014
+  },
+  {
+   "authors": [
+    "J\u00e4rvelin, Kalervo",
+    "Kek\u00e4l\u00e4inen, Jaana"
+   ],
+   "claim": "graded relevance gain measures",
+   "container": "ACM Transactions on Information Systems",
+   "doi": "10.1145/582415.582418",
+   "key": "jarvelin2002",
+   "query": "Cumulated gain-based evaluation of IR techniques",
+   "slot": "S1.1",
+   "title": "Cumulated gain-based evaluation of IR techniques",
+   "type": "journal-article",
+   "verified": {
+    "queried_on": "2026-11-04",
+    "registry": "Crossref /works?query.bibliographic",
+    "title": "two-way content-word containment",
+    "year": "exact"
+   },
+   "year": 2002
+  },
+  {
+   "authors": [
+    "Jones, Benjamin F.",
+    "Wuchty, Stefan",
+    "Uzzi, Brian"
+   ],
+   "claim": "multi-university collaboration rises",
+   "container": "Science",
+   "doi": "10.1126/science.1158357",
+   "key": "jones2009",
+   "query": "Multi-university research teams shifting impact and geography over time",
+   "slot": "S1.2",
+   "title": "Multi-University Research Teams: Shifting Impact, Geography, and Stratification in Science",
+   "type": "journal-article",
+   "verified": {
+    "queried_on": "2026-11-04",
+    "registry": "Crossref /works?query.bibliographic",
+    "title": "two-way content-word containment",
+    "year": "off_by_one"
+   },
+   "year": 2008
+  },
+  {
+   "authors": [
+    "Kessler, M. M."
+   ],
+   "claim": "two works are coupled when they share a reference",
+   "container": "American Documentation",
+   "doi": "10.1002/asi.5090140103",
+   "key": "kessler1963",
+   "query": "Bibliographic coupling between scientific papers Kessler",
+   "slot": "S1.1",
+   "title": "Bibliographic coupling between scientific papers",
+   "type": "journal-article",
+   "verified": {
+    "queried_on": "2026-11-04",
+    "registry": "Crossref /works?query.bibliographic",
+    "title": "two-way content-word containment",
+    "year": "exact"
+   },
+   "year": 1963
+  },
+  {
+   "authors": [
+    "King, Gary",
+    "Zeng, Langche"
+   ],
+   "claim": "rare events and small counts in regression",
+   "container": "Political Analysis",
+   "doi": "10.1093/oxfordjournals.pan.a004868",
+   "key": "king2001b",
+   "query": "Logistic regression in rare events data King Zeng",
+   "slot": "S5.1",
+   "title": "Logistic Regression in Rare Events Data",
+   "type": "journal-article",
+   "verified": {
+    "queried_on": "2026-11-04",
+    "registry": "crossref",
+    "title": "two-way content-word containment vs want_title",
+    "year": "exact"
+   },
+   "year": 2001
+  },
+  {
+   "authors": [
+    "Freeman, Linton C.",
+    "Kish, Leslie"
+   ],
+   "claim": "the sampling design is part of the estimator",
+   "container": "Social Forces",
+   "doi": "10.2307/2575802",
+   "key": "kish1965",
+   "query": "Survey sampling Kish",
+   "slot": "S2.1",
+   "title": "Survey Sampling.",
+   "type": "journal-article",
+   "verified": {
+    "queried_on": "2026-11-04",
+    "registry": "crossref",
+    "title": "two-way content-word containment vs want_title",
+    "year": "off_by_one"
+   },
+   "year": 1966
+  },
+  {
+   "authors": [
+    "Klavans, Richard",
+    "Boyack, Kevin W."
+   ],
+   "claim": "citation-based taxonomies differ and the choice matters",
+   "container": "Journal of the Association for Information Science and Technology",
+   "doi": "10.1002/asi.23734",
+   "key": "klavans2017",
+   "query": "Which type of citation analysis generates the most accurate taxonomy of scientific and technical knowledge",
+   "slot": "S2.2",
+   "title": "Which Type of Citation Analysis Generates the Most Accurate Taxonomy of Scientific and Technical Knowledge?",
+   "type": "journal-article",
+   "verified": {
+    "queried_on": "2026-11-04",
+    "registry": "crossref",
+    "title": "two-way content-word containment vs want_title",
+    "year": "exact"
+   },
+   "year": 2017
+  },
+  {
+   "authors": [
+    "Kleinberg, Jon M."
+   ],
+   "claim": "hubs and authorities on a citation-like graph",
+   "container": "Journal of the ACM",
+   "doi": "10.1145/324133.324140",
+   "key": "kleinberg1999",
+   "query": "Authoritative sources in a hyperlinked environment",
+   "slot": "S1.5",
+   "title": "Authoritative sources in a hyperlinked environment",
+   "type": "journal-article",
+   "verified": {
+    "queried_on": "2026-11-04",
+    "registry": "Crossref /works?query.bibliographic",
+    "title": "two-way content-word containment",
+    "year": "exact"
+   },
+   "year": 1999
+  },
+  {
+   "authors": [
+    "Kraft, D.H.",
+    "Lee, T."
+   ],
+   "claim": "stopping rules in literature searching",
+   "container": "Information Processing &amp; Management",
+   "doi": "10.1016/0306-4573(79)90007-4",
+   "key": "kraft1979",
+   "query": "Stopping rules and their effect on expected search length Kraft Lee",
+   "slot": "S1.0",
+   "title": "Stopping rules and their effect on expected search length",
+   "type": "journal-article",
+   "verified": {
+    "queried_on": "2026-11-04",
+    "registry": "crossref",
+    "title": "two-way content-word containment vs want_title",
+    "year": "exact"
+   },
+   "year": 1979
+  },
+  {
+   "authors": [
+    "Lakens, Daniel"
+   ],
+   "claim": "equivalence testing as the way to report an absence",
+   "container": "",
+   "doi": "10.31234/osf.io/97gpc_v1",
+   "key": "lakens2017",
+   "query": "Equivalence tests a practical primer for t tests correlations and meta-analyses",
+   "slot": "S5.1",
+   "title": "Equivalence Tests:  A Practical Primer for t-Tests, Correlations, and Meta-Analyses",
+   "type": "posted-content",
+   "verified": {
+    "queried_on": "2026-11-04",
+    "registry": "Crossref /works?query.bibliographic",
+    "title": "two-way content-word containment",
+    "year": "off_by_one"
+   },
+   "year": 2016
+  },
+  {
+   "authors": [
+    "Larsen, Peder Olesen",
+    "von Ins, Markus"
+   ],
+   "claim": "scientific output grows and index coverage lags",
+   "container": "Scientometrics",
+   "doi": "10.1007/s11192-010-0202-z",
+   "key": "larsen2010",
+   "query": "The rate of growth in scientific publication and the decline in coverage provided by Science Citation Index",
+   "slot": "S1.2",
+   "title": "The rate of growth in scientific publication and the decline in coverage provided by Science Citation Index",
+   "type": "journal-article",
+   "verified": {
+    "queried_on": "2026-11-04",
+    "registry": "Crossref /works?query.bibliographic",
+    "title": "two-way content-word containment",
+    "year": "exact"
+   },
+   "year": 2010
+  },
+  {
+   "authors": [
+    "Lattimore, Tor",
+    "Szepesv\u00e1ri, Csaba"
+   ],
+   "claim": "bandit algorithms as the allocation framework",
+   "container": "",
+   "doi": "10.1017/9781108571401",
+   "key": "lattimore2020",
+   "query": "Bandit algorithms Lattimore Szepesvari",
+   "slot": "S1.5",
+   "title": "Bandit Algorithms",
+   "type": "monograph",
+   "verified": {
+    "queried_on": "2026-11-04",
+    "registry": "Crossref /works?query.bibliographic",
+    "title": "two-way content-word containment",
+    "year": "exact"
+   },
+   "year": 2020
+  },
+  {
+   "authors": [
+    "Lawani, Stephen M."
+   ],
+   "claim": "citation analysis as a theory-evaluation tool",
+   "container": "Journal of the American Society for Information Science",
+   "doi": "10.1002/asi.4630330506",
+   "key": "lawani1982",
+   "query": "On the heterogeneity and classification of author self-citations",
+   "slot": "S1.1",
+   "title": "On the Heterogeneity and Classification of Author Self\u2010Citations",
+   "type": "journal-article",
+   "verified": {
+    "queried_on": "2026-11-04",
+    "registry": "Crossref /works?query.bibliographic",
+    "title": "two-way content-word containment",
+    "year": "exact"
+   },
+   "year": 1982
+  },
+  {
+   "authors": [
+    "Lipton, Zachary C.",
+    "Steinhardt, Jacob"
+   ],
+   "claim": "benchmarking practice needs its own critique",
+   "container": "Queue",
+   "doi": "10.1145/3317287.3328534",
+   "key": "lipton2018",
+   "query": "Troubling trends in machine learning scholarship",
+   "slot": "S3.0",
+   "title": "Troubling Trends in Machine Learning Scholarship",
+   "type": "journal-article",
+   "verified": {
+    "queried_on": "2026-11-04",
+    "registry": "Crossref /works?query.bibliographic",
+    "title": "two-way content-word containment",
+    "year": "off_by_one"
+   },
+   "year": 2019
+  },
+  {
+   "authors": [
+    "G.F.S."
+   ],
+   "claim": "author productivity follows a power law",
+   "container": "Journal of the Franklin Institute",
+   "doi": "10.1016/s0016-0032(26)91166-6",
+   "key": "lotka1926",
+   "query": "The frequency distribution of scientific productivity",
+   "slot": "S1.1",
+   "title": "The frequency distribution of scientific productivity",
+   "type": "journal-article",
+   "verified": {
+    "queried_on": "2026-11-04",
+    "registry": "Crossref /works?query.bibliographic",
+    "title": "two-way content-word containment",
+    "year": "exact"
+   },
+   "year": 1926
+  },
+  {
+   "authors": [
+    "Manning, Christopher D.",
+    "Raghavan, Prabhakar",
+    "Sch\u00fctze, Hinrich"
+   ],
+   "claim": "IR evaluation methodology",
+   "container": "",
+   "doi": "10.1017/cbo9780511809071",
+   "key": "manning2008",
+   "query": "Introduction to information retrieval Manning Raghavan Schutze",
+   "slot": "S1.0",
+   "title": "Introduction to Information Retrieval",
+   "type": "monograph",
+   "verified": {
+    "queried_on": "2026-11-04",
+    "registry": "Crossref /works?query.bibliographic",
+    "title": "two-way content-word containment",
+    "year": "exact"
+   },
+   "year": 2008
+  },
+  {
+   "authors": [
+    "March, James G."
+   ],
+   "claim": "exploration versus exploitation is the trade-off this paper prices",
+   "container": "Organization Science",
+   "doi": "10.1287/orsc.2.1.71",
+   "key": "march1991",
+   "query": "Exploration and exploitation in organizational learning March",
+   "slot": "S1.5",
+   "title": "Exploration and Exploitation in Organizational Learning",
+   "type": "journal-article",
+   "verified": {
+    "queried_on": "2026-11-04",
+    "registry": "crossref",
+    "title": "two-way content-word containment vs want_title",
+    "year": "exact"
+   },
+   "year": 1991
+  },
+  {
+   "authors": [
+    "Marshall, Iain J.",
+    "Wallace, Byron C."
+   ],
+   "claim": "automating systematic review screening",
+   "container": "Systematic Reviews",
+   "doi": "10.1186/s13643-019-1074-9",
+   "key": "marshall2019",
+   "query": "Toward systematic review automation a practical tutorial on using machine learning to reduce work in evidence syntheses",
+   "slot": "S1.0",
+   "title": "Toward systematic review automation: a practical guide to using machine learning tools in research synthesis",
+   "type": "journal-article",
+   "verified": {
+    "queried_on": "2026-11-04",
+    "registry": "Crossref /works?query.bibliographic",
+    "title": "two-way content-word containment",
+    "year": "exact"
+   },
+   "year": 2019
+  },
+  {
+   "authors": [
+    "Robert \u039a. Merton"
+   ],
+   "claim": "the Matthew effect in science",
+   "container": "Science",
+   "doi": "10.1126/science.159.3810.56",
+   "key": "merton1968",
+   "query": "The Matthew effect in science",
+   "slot": "S1.1",
+   "title": "The Matthew Effect in Science",
+   "type": "article",
+   "verified": {
+    "queried_on": "2026-11-04",
+    "registry": "openalex",
+    "title": "two-way content-word containment vs want_title",
+    "year": "exact"
+   },
+   "year": 1968
+  },
+  {
+   "authors": [
+    "Edward A. Miguel",
+    "Colin F. Camerer",
+    "Katherine Casey",
+    "J. Cohen",
+    "Kevin Esterling",
+    "Alan S. Gerber",
+    "Rachel Glennerster",
+    "DONALD PHILIP GREEN",
+    "Macartan Humphreys",
+    "Guido W. Imbens",
+    "David D. Laitin",
+    "Temina Madon",
+    "Lewis S. Nelson",
+    "Brian A. Nosek",
+    "M. Petersen",
+    "Richard Sedlmayr",
+    "Joseph P. Simmons",
+    "Uri Simonsohn",
+    "Mark J. van der Laan"
+   ],
+   "claim": "promoting transparency in research",
+   "container": "Science",
+   "doi": "10.1126/science.1245317",
+   "key": "miguel2014",
+   "query": "Promoting transparency in social science research",
+   "slot": "S6.0",
+   "title": "Promoting Transparency in Social Science Research",
+   "type": "article",
+   "verified": {
+    "queried_on": "2026-11-04",
+    "registry": "openalex",
+    "title": "two-way content-word containment vs want_title",
+    "year": "exact"
+   },
+   "year": 2014
+  },
+  {
+   "authors": [
+    "Mongeon, Philippe",
+    "Paul-Hus, Ad\u00e8le"
+   ],
+   "claim": "database coverage is biased by region and language",
+   "container": "Scientometrics",
+   "doi": "10.1007/s11192-015-1765-5",
+   "key": "mongeon2016",
+   "query": "The journal coverage of Web of Science and Scopus a comparative analysis",
+   "slot": "S2.1",
+   "title": "The journal coverage of Web of Science and Scopus: a comparative analysis",
+   "type": "journal-article",
+   "verified": {
+    "queried_on": "2026-11-04",
+    "registry": "Crossref /works?query.bibliographic",
+    "title": "two-way content-word containment",
+    "year": "exact"
+   },
+   "year": 2016
+  },
+  {
+   "authors": [
+    "Moravcsik, Michael J.",
+    "Murugesan, Poovanalingam"
+   ],
+   "claim": "citations have varied motivations",
+   "container": "Social Studies of Science",
+   "doi": "10.1177/030631277500500106",
+   "key": "moravcsik1975",
+   "query": "Some results on the function and quality of citations",
+   "slot": "S1.1",
+   "title": "Some Results on the Function and Quality of Citations",
+   "type": "journal-article",
+   "verified": {
+    "queried_on": "2026-11-04",
+    "registry": "Crossref /works?query.bibliographic",
+    "title": "two-way content-word containment",
+    "year": "exact"
+   },
+   "year": 1975
+  },
+  {
+   "authors": [
+    "Munaf\u00f2, Marcus R.",
+    "Nosek, Brian A.",
+    "Bishop, Dorothy V. M.",
+    "Button, Katherine S.",
+    "Chambers, Christopher D.",
+    "Percie du Sert, Nathalie",
+    "Simonsohn, Uri",
+    "Wagenmakers, Eric-Jan",
+    "Ware, Jennifer J.",
+    "Ioannidis, John P. A."
+   ],
+   "claim": "a manifesto for reproducible science",
+   "container": "Nature Human Behaviour",
+   "doi": "10.1038/s41562-016-0021",
+   "key": "munafo2017",
+   "query": "A manifesto for reproducible science",
+   "slot": "S7.0",
+   "title": "A manifesto for reproducible science",
+   "type": "journal-article",
+   "verified": {
+    "queried_on": "2026-11-04",
+    "registry": "Crossref /works?query.bibliographic",
+    "title": "two-way content-word containment",
+    "year": "exact"
+   },
+   "year": 2017
+  },
+  {
+   "authors": [
+    "Newman, M. E. J."
+   ],
+   "claim": "scientific networks analysed statistically",
+   "container": "Physical Review E",
+   "doi": "10.1103/physreve.64.016131",
+   "key": "newman2001",
+   "query": "Scientific collaboration networks network construction and fundamental results",
+   "slot": "S1.1",
+   "title": "Scientific collaboration networks.\u2002\u2002I. Network construction and fundamental results",
+   "type": "journal-article",
+   "verified": {
+    "queried_on": "2026-11-04",
+    "registry": "Crossref /works?query.bibliographic",
+    "title": "two-way content-word containment",
+    "year": "exact"
+   },
+   "year": 2001
+  },
+  {
+   "authors": [
+    "Newman, M. E. J."
+   ],
+   "claim": "mixing patterns in networks",
+   "container": "Physical Review E",
+   "doi": "10.1103/physreve.67.026126",
+   "key": "newman2003",
+   "query": "Mixing patterns in networks Newman",
+   "slot": "S1.1",
+   "title": "Mixing patterns in networks",
+   "type": "journal-article",
+   "verified": {
+    "queried_on": "2026-11-04",
+    "registry": "crossref",
+    "title": "two-way content-word containment vs want_title",
+    "year": "exact"
+   },
+   "year": 2003
+  },
+  {
+   "authors": [
+    "Nosek, Brian A.",
+    "Bar-Anan, Yoav"
+   ],
+   "claim": "scientific Utopia and the openness agenda",
+   "container": "Psychological Inquiry",
+   "doi": "10.1080/1047840x.2012.692215",
+   "key": "nosek2012",
+   "query": "Scientific utopia I opening scientific communication",
+   "slot": "S6.0",
+   "title": "Scientific Utopia: I. Opening Scientific Communication",
+   "type": "journal-article",
+   "verified": {
+    "queried_on": "2026-11-04",
+    "registry": "Crossref /works?query.bibliographic",
+    "title": "two-way content-word containment",
+    "year": "exact"
+   },
+   "year": 2012
+  },
+  {
+   "authors": [
+    "Brian A. Nosek",
+    "George Charles Alter",
+    "George C. Banks",
+    "Denny Borsboom",
+    "Sara D. Bowman",
+    "Steven Breckler",
+    "Stuart Buck",
+    "Chris Chambers",
+    "G. J. Chin",
+    "Garret Christensen",
+    "M\u00f3nica Contestabile",
+    "Allan Dafoe",
+    "Eric Eich",
+    "Jeremy Freese A",
+    "Rachel Glennerster",
+    "Daniel L. Goroff",
+    "D. P. Green",
+    "Bradford William Hesse",
+    "Macartan Humphreys",
+    "John Ishiyama",
+    "Dean Karlan",
+    "Alan G. Kraut",
+    "Arthur Lupia",
+    "Patricia L. Mabry",
+    "Temina Madon",
+    "Neil A. Malhotra",
+    "Evan Mayo\u2010Wilson",
+    "Marcia K. Mcnutt",
+    "Edward A. Miguel",
+    "Elizabeth Levy Paluck",
+    "Uri Simonsohn",
+    "Courtney K. Soderberg",
+    "Barbara A. Spellman",
+    "James Turitto",
+    "Gary R. VandenBos",
+    "Simine Vazire",
+    "Eric\u2010Jan Wagenmakers",
+    "Rory Wilson",
+    "Tal Yarkoni"
+   ],
+   "claim": "reproducibility is measurable practice",
+   "container": "Science",
+   "doi": "10.1126/science.aab2374",
+   "key": "nosek2015",
+   "query": "Promoting an open research culture",
+   "slot": "S7.0",
+   "title": "Promoting an open research culture",
+   "type": "article",
+   "verified": {
+    "queried_on": "2026-11-04",
+    "registry": "openalex",
+    "title": "two-way content-word containment vs want_title",
+    "year": "exact"
+   },
+   "year": 2015
+  },
+  {
+   "authors": [
+    "Nosek, Brian A.",
+    "Ebersole, Charles R.",
+    "DeHaven, Alexander Carl",
+    "Mellor, David Thomas"
+   ],
+   "claim": "preregistration changes what a result can mean",
+   "container": "",
+   "doi": "10.31219/osf.io/2dxu5",
+   "key": "nosek2018",
+   "query": "The preregistration revolution",
+   "slot": "S6.0",
+   "title": "The Preregistration Revolution",
+   "type": "posted-content",
+   "verified": {
+    "queried_on": "2026-11-04",
+    "registry": "Crossref /works?query.bibliographic",
+    "title": "two-way content-word containment",
+    "year": "off_by_one"
+   },
+   "year": 2017
+  },
+  {
+   "authors": [
+    "Briotta Parolo, Pietro Della",
+    "Pan, Raj Kumar",
+    "Ghosh, Rumi",
+    "Huberman, Bernardo A.",
+    "Kaski, Kimmo",
+    "Fortunato, Santo"
+   ],
+   "claim": "attention to a paper decays",
+   "container": "SSRN Electronic Journal",
+   "doi": "10.2139/ssrn.2575225",
+   "key": "parolo2015",
+   "query": "Attention decay in science",
+   "slot": "S1.5",
+   "title": "Attention Decay in Science",
+   "type": "journal-article",
+   "verified": {
+    "queried_on": "2026-11-04",
+    "registry": "Crossref /works?query.bibliographic",
+    "title": "two-way content-word containment",
+    "year": "exact"
+   },
+   "year": 2015
+  },
+  {
+   "authors": [
+    "Peng, Roger D."
+   ],
+   "claim": "reproducible research as a standard",
+   "container": "Science",
+   "doi": "10.1126/science.1213847",
+   "key": "peng2011",
+   "query": "Reproducible research in computational science",
+   "slot": "S6.0",
+   "title": "Reproducible Research in Computational Science",
+   "type": "journal-article",
+   "verified": {
+    "queried_on": "2026-11-04",
+    "registry": "Crossref /works?query.bibliographic",
+    "title": "two-way content-word containment",
+    "year": "exact"
+   },
+   "year": 2011
+  },
+  {
+   "authors": [
+    "Peritz, Bluma C."
+   ],
+   "claim": "citation analysis validity is contested",
+   "container": "Scientometrics",
+   "doi": "10.1007/bf02147226",
+   "key": "peritz1983",
+   "query": "A classification of citation roles for the social sciences and related fields",
+   "slot": "S1.1",
+   "title": "A classification of citation roles for the social sciences and related fields",
+   "type": "journal-article",
+   "verified": {
+    "queried_on": "2026-11-04",
+    "registry": "Crossref /works?query.bibliographic",
+    "title": "two-way content-word containment",
+    "year": "exact"
+   },
+   "year": 1983
+  },
+  {
+   "authors": [
+    "Petersen, Kai",
+    "Vakkalanka, Sairam",
+    "Kuzniarz, Ludwik"
+   ],
+   "claim": "systematic mapping study procedure",
+   "container": "Information and Software Technology",
+   "doi": "10.1016/j.infsof.2015.03.007",
+   "key": "petersen2015",
+   "query": "Guidelines for conducting systematic mapping studies in software engineering an update",
+   "slot": "S1.0",
+   "title": "Guidelines for conducting systematic mapping studies in software engineering: An update",
+   "type": "journal-article",
+   "verified": {
+    "queried_on": "2026-11-04",
+    "registry": "Crossref /works?query.bibliographic",
+    "title": "two-way content-word containment",
+    "year": "exact"
+   },
+   "year": 2015
+  },
+  {
+   "authors": [
+    "Pirolli, Peter",
+    "Card, Stuart"
+   ],
+   "claim": "information foraging: a patch model of where to search",
+   "container": "Psychological Review",
+   "doi": "10.1037/0033-295x.106.4.643",
+   "key": "pirolli1999",
+   "query": "Information foraging Pirolli Card",
+   "slot": "S1.0",
+   "title": "Information foraging.",
+   "type": "journal-article",
+   "verified": {
+    "queried_on": "2026-11-04",
+    "registry": "crossref",
+    "title": "two-way content-word containment vs want_title",
+    "year": "exact"
+   },
+   "year": 1999
+  },
+  {
+   "authors": [
+    "Price, Derek J. de Solla"
+   ],
+   "claim": "citation networks carry a research-front structure",
+   "container": "Science",
+   "doi": "10.1126/science.149.3683.510",
+   "key": "price1965",
+   "query": "Networks of scientific papers Price",
+   "slot": "S1.1",
+   "title": "Networks of Scientific Papers",
+   "type": "journal-article",
+   "verified": {
+    "queried_on": "2026-11-04",
+    "registry": "Crossref /works?query.bibliographic",
+    "title": "two-way content-word containment",
+    "year": "exact"
+   },
+   "year": 1965
+  },
+  {
+   "authors": [
+    "Jason R Priem",
+    "Heather Piwowar",
+    "Richard Orr"
+   ],
+   "claim": "OpenAlex is the registry used here",
+   "container": "arXiv (Cornell University)",
+   "doi": "10.48550/arxiv.2205.01833",
+   "key": "priem2022",
+   "query": "OpenAlex a fully open index of scholarly works authors venues and institutions",
+   "slot": "S2.1",
+   "title": "OpenAlex: A fully-open index of scholarly works, authors, venues, institutions, and concepts",
+   "type": "preprint",
+   "verified": {
+    "queried_on": "2026-11-04",
+    "registry": "openalex",
+    "title": "two-way content-word containment vs want_title",
+    "year": "exact"
+   },
+   "year": 2022
+  },
+  {
+   "authors": [
+    "Redner, S."
+   ],
+   "claim": "citation counts are heavy tailed",
+   "container": "The European Physical Journal B",
+   "doi": "10.1007/s100510050359",
+   "key": "redner1998",
+   "query": "How popular is your paper An empirical study of the citation distribution",
+   "slot": "S1.1",
+   "title": "How popular is your paper? An empirical study of the citation distribution",
+   "type": "journal-article",
+   "verified": {
+    "queried_on": "2026-11-04",
+    "registry": "Crossref /works?query.bibliographic",
+    "title": "two-way content-word containment",
+    "year": "exact"
+   },
+   "year": 1998
+  },
+  {
+   "authors": [
+    "Robbins, Herbert"
+   ],
+   "claim": "sequential allocation of experiments across arms",
+   "container": "Bulletin of the American Mathematical Society",
+   "doi": "10.1090/s0002-9904-1952-09620-8",
+   "key": "robbins1952",
+   "query": "Some aspects of the sequential design of experiments Robbins",
+   "slot": "S1.5",
+   "title": "Some aspects of the sequential design of experiments",
+   "type": "journal-article",
+   "verified": {
+    "queried_on": "2026-11-04",
+    "registry": "crossref",
+    "title": "two-way content-word containment vs want_title",
+    "year": "exact"
+   },
+   "year": 1952
+  },
+  {
+   "authors": [
+    "Robertson, Stephen",
+    "Zaragoza, Hugo"
+   ],
+   "claim": "probabilistic relevance framework BM25",
+   "container": "Foundations and Trends\u00ae in Information Retrieval",
+   "doi": "10.1561/1500000019",
+   "key": "robertson2009",
+   "query": "The probabilistic relevance framework BM25 and beyond",
+   "slot": "S1.0",
+   "title": "The Probabilistic Relevance Framework: BM25 and Beyond",
+   "type": "journal-article",
+   "verified": {
+    "queried_on": "2026-11-04",
+    "registry": "Crossref /works?query.bibliographic",
+    "title": "two-way content-word containment",
+    "year": "exact"
+   },
+   "year": 2009
+  },
+  {
+   "authors": [
+    "ROSENBAUM, PAUL R.",
+    "RUBIN, DONALD B."
+   ],
+   "claim": "matched sampling removes a covariate's effect",
+   "container": "Biometrika",
+   "doi": "10.1093/biomet/70.1.41",
+   "key": "rosenbaum1983",
+   "query": "The central role of the propensity score in observational studies for causal effects",
+   "slot": "S1.2",
+   "title": "The central role of the propensity score in observational studies for causal effects",
+   "type": "journal-article",
+   "verified": {
+    "queried_on": "2026-11-04",
+    "registry": "Crossref /works?query.bibliographic",
+    "title": "two-way content-word containment",
+    "year": "exact"
+   },
+   "year": 1983
+  },
+  {
+   "authors": [
+    "Rubin, Donald B."
+   ],
+   "claim": "adjustment requires the covariate to be measured",
+   "container": "Journal of Educational Psychology",
+   "doi": "10.1037/h0037350",
+   "key": "rubin1974",
+   "query": "Estimating causal effects of treatments in randomized and nonrandomized studies",
+   "slot": "S1.2",
+   "title": "Estimating causal effects of treatments in randomized and nonrandomized studies.",
+   "type": "journal-article",
+   "verified": {
+    "queried_on": "2026-11-04",
+    "registry": "Crossref /works?query.bibliographic",
+    "title": "two-way content-word containment",
+    "year": "exact"
+   },
+   "year": 1974
+  },
+  {
+   "authors": [
+    "Runeson, Per",
+    "H\u00f6st, Martin"
+   ],
+   "claim": "case study research must state its own design",
+   "container": "Empirical Software Engineering",
+   "doi": "10.1007/s10664-008-9102-8",
+   "key": "runeson2009",
+   "query": "Guidelines for conducting and reporting case study research in software engineering",
+   "slot": "S3.0",
+   "title": "Guidelines for conducting and reporting case study research in software engineering",
+   "type": "journal-article",
+   "verified": {
+    "queried_on": "2026-11-04",
+    "registry": "crossref",
+    "title": "two-way content-word containment vs want_title",
+    "year": "exact"
+   },
+   "year": 2009
+  },
+  {
+   "authors": [
+    "Salton, Gerard",
+    "Buckley, Christopher"
+   ],
+   "claim": "term-weighting as the baseline retrieval mechanism",
+   "container": "Information Processing &amp; Management",
+   "doi": "10.1016/0306-4573(88)90021-0",
+   "key": "salton1988",
+   "query": "Term-weighting approaches in automatic text retrieval",
+   "slot": "S1.0",
+   "title": "Term-weighting approaches in automatic text retrieval",
+   "type": "journal-article",
+   "verified": {
+    "queried_on": "2026-11-04",
+    "registry": "Crossref /works?query.bibliographic",
+    "title": "two-way content-word containment",
+    "year": "exact"
+   },
+   "year": 1988
+  },
+  {
+   "authors": [
+    "Sanderson, Mark"
+   ],
+   "claim": "test collections carry bias",
+   "container": "Foundations and Trends\u00ae in Information Retrieval",
+   "doi": "10.1561/1500000009",
+   "key": "sanderson2010",
+   "query": "Test collection based evaluation of information retrieval systems",
+   "slot": "S1.0",
+   "title": "Test Collection Based Evaluation of Information Retrieval Systems",
+   "type": "journal-article",
+   "verified": {
+    "queried_on": "2026-11-04",
+    "registry": "Crossref /works?query.bibliographic",
+    "title": "two-way content-word containment",
+    "year": "exact"
+   },
+   "year": 2010
+  },
+  {
+   "authors": [
+    "Schubert, A.",
+    "Braun, T."
+   ],
+   "claim": "cross-field comparison needs an explicit baseline",
+   "container": "Scientometrics",
+   "doi": "10.1007/bf02129597",
+   "key": "schubert1996",
+   "query": "Cross-field normalization of scientometric indicators",
+   "slot": "S2.2",
+   "title": "Cross-field normalization of scientometric indicators",
+   "type": "journal-article",
+   "verified": {
+    "queried_on": "2026-11-04",
+    "registry": "Crossref /works?query.bibliographic",
+    "title": "two-way content-word containment",
+    "year": "exact"
+   },
+   "year": 1996
+  },
+  {
+   "authors": [
+    "Seglen, Per O"
+   ],
+   "claim": "the impact factor is not an article-level measure",
+   "container": "BMJ",
+   "doi": "10.1136/bmj.314.7079.497",
+   "key": "seglen1997",
+   "query": "Why the impact factor of journals should not be used for evaluating research Seglen",
+   "slot": "S5.0",
+   "title": "Why the impact factor of journals should not be used for evaluating research",
+   "type": "journal-article",
+   "verified": {
+    "queried_on": "2026-11-04",
+    "registry": "crossref",
+    "title": "two-way content-word containment vs want_title",
+    "year": "exact"
+   },
+   "year": 1997
+  },
+  {
+   "authors": [
+    "Claude E. Shannon"
+   ],
+   "claim": "information as a quantitative measure",
+   "container": "Bell System Technical Journal",
+   "doi": "10.1002/j.1538-7305.1948.tb01338.x",
+   "key": "shannon1948",
+   "query": "A mathematical theory of communication",
+   "slot": "S1.3",
+   "title": "A Mathematical Theory of Communication",
+   "type": "article",
+   "verified": {
+    "queried_on": "2026-11-04",
+    "registry": "openalex",
+    "title": "two-way content-word containment vs want_title",
+    "year": "exact"
+   },
+   "year": 1948
+  },
+  {
+   "authors": [
+    "Shimodaira, Hidetoshi"
+   ],
+   "claim": "covariate shift is a named problem",
+   "container": "Journal of Statistical Planning and Inference",
+   "doi": "10.1016/s0378-3758(00)00115-4",
+   "key": "shimodaira2000",
+   "query": "Improving predictive inference under covariate shift by weighting the log-likelihood function",
+   "slot": "S1.2",
+   "title": "Improving predictive inference under covariate shift by weighting the log-likelihood function",
+   "type": "journal-article",
+   "verified": {
+    "queried_on": "2026-11-04",
+    "registry": "Crossref /works?query.bibliographic",
+    "title": "two-way content-word containment",
+    "year": "exact"
+   },
+   "year": 2000
+  },
+  {
+   "authors": [
+    "Simon, Herbert A."
+   ],
+   "claim": "satisficing as a stopping rule",
+   "container": "The Quarterly Journal of Economics",
+   "doi": "10.2307/1884852",
+   "key": "simon1955",
+   "query": "A behavioral model of rational choice Simon",
+   "slot": "S1.5",
+   "title": "A Behavioral Model of Rational Choice",
+   "type": "journal-article",
+   "verified": {
+    "queried_on": "2026-11-04",
+    "registry": "crossref",
+    "title": "two-way content-word containment vs want_title",
+    "year": "exact"
+   },
+   "year": 1955
+  },
+  {
+   "authors": [
+    "Simpson, E. H."
+   ],
+   "claim": "aggregation can reverse a comparison",
+   "container": "Journal of the Royal Statistical Society Series B: Statistical Methodology",
+   "doi": "10.1111/j.2517-6161.1951.tb00088.x",
+   "key": "simpson1951",
+   "query": "The interpretation of interaction in contingency tables Simpson",
+   "slot": "S2.3",
+   "title": "The Interpretation of Interaction in Contingency Tables",
+   "type": "journal-article",
+   "verified": {
+    "queried_on": "2026-11-04",
+    "registry": "crossref",
+    "title": "two-way content-word containment vs want_title",
+    "year": "exact"
+   },
+   "year": 1951
+  },
+  {
+   "authors": [
+    "Small, Henry"
+   ],
+   "claim": "co-citation as a relatedness measure",
+   "container": "Journal of the American Society for Information Science",
+   "doi": "10.1002/asi.4630240406",
+   "key": "small1973",
+   "query": "Co-citation in the scientific literature a new measure of the relationship between two documents",
+   "slot": "S1.1",
+   "title": "Co\u2010citation in the scientific literature: A new measure of the relationship between two documents",
+   "type": "journal-article",
+   "verified": {
+    "queried_on": "2026-11-04",
+    "registry": "Crossref /works?query.bibliographic",
+    "title": "two-way content-word containment",
+    "year": "exact"
+   },
+   "year": 1973
+  },
+  {
+   "authors": [
+    "Stigler, George J."
+   ],
+   "claim": "information has a price",
+   "container": "Journal of Political Economy",
+   "doi": "10.1086/258464",
+   "key": "stigler1961",
+   "query": "The economics of information Stigler",
+   "slot": "S1.0",
+   "title": "The Economics of Information",
+   "type": "journal-article",
+   "verified": {
+    "queried_on": "2026-11-04",
+    "registry": "crossref",
+    "title": "two-way content-word containment vs want_title",
+    "year": "exact"
+   },
+   "year": 1961
+  },
+  {
+   "authors": [
+    "Stroop, J. R."
+   ],
+   "claim": "a named interference effect used as a control paradigm",
+   "container": "Journal of Experimental Psychology",
+   "doi": "10.1037/h0054651",
+   "key": "stroop1935",
+   "query": "Studies of interference in serial verbal reactions",
+   "slot": "S3.0",
+   "title": "Studies of interference in serial verbal reactions.",
+   "type": "journal-article",
+   "verified": {
+    "queried_on": "2026-11-04",
+    "registry": "Crossref /works?query.bibliographic",
+    "title": "two-way content-word containment",
+    "year": "exact"
+   },
+   "year": 1935
+  },
+  {
+   "authors": [
+    "Stuart, Elizabeth A."
+   ],
+   "claim": "matching must match on the confounder",
+   "container": "Statistical Science",
+   "doi": "10.1214/09-sts313",
+   "key": "stuart2011",
+   "query": "Matching methods for causal inference a review and a look forward",
+   "slot": "S1.2",
+   "title": "Matching Methods for Causal Inference: A Review and a Look Forward",
+   "type": "journal-article",
+   "verified": {
+    "queried_on": "2026-11-04",
+    "registry": "Crossref /works?query.bibliographic",
+    "title": "two-way content-word containment",
+    "year": "off_by_one"
+   },
+   "year": 2010
+  },
+  {
+   "authors": [
+    "Sutton, Richard S.",
+    "Precup, Doina",
+    "Singh, Satinder"
+   ],
+   "claim": "sequential decisions are stated as a policy over states",
+   "container": "Artificial Intelligence",
+   "doi": "10.1016/s0004-3702(99)00052-1",
+   "key": "sutton1999",
+   "query": "Between MDPs and semi-MDPs a framework for temporal abstraction in reinforcement learning",
+   "slot": "S1.5",
+   "title": "Between MDPs and semi-MDPs: A framework for temporal abstraction in reinforcement learning",
+   "type": "journal-article",
+   "verified": {
+    "queried_on": "2026-11-04",
+    "registry": "Crossref /works?query.bibliographic",
+    "title": "two-way content-word containment",
+    "year": "exact"
+   },
+   "year": 1999
+  },
+  {
+   "authors": [
+    "Don R. Swanson"
+   ],
+   "claim": "undiscovered public knowledge across disjoint literatures",
+   "container": "The Library Quarterly",
+   "doi": "10.1086/601720",
+   "key": "swanson1986",
+   "query": "Undiscovered public knowledge",
+   "slot": "S1.0",
+   "title": "Undiscovered Public Knowledge",
+   "type": "article",
+   "verified": {
+    "queried_on": "2026-11-04",
+    "registry": "openalex",
+    "title": "two-way content-word containment vs want_title",
+    "year": "exact"
+   },
+   "year": 1986
+  },
+  {
+   "authors": [
+    "Thompson, William R."
+   ],
+   "claim": "probability matching allocates finite trials",
+   "container": "Biometrika",
+   "doi": "10.2307/2332286",
+   "key": "thompson1933",
+   "query": "On the likelihood that one unknown probability exceeds another in view of the evidence of two samples",
+   "slot": "S1.5",
+   "title": "On the Likelihood that One Unknown Probability Exceeds Another in View of the Evidence of Two Samples",
+   "type": "journal-article",
+   "verified": {
+    "queried_on": "2026-11-04",
+    "registry": "Crossref /works?query.bibliographic",
+    "title": "two-way content-word containment",
+    "year": "exact"
+   },
+   "year": 1933
+  },
+  {
+   "authors": [
+    "Tong, Hanghang",
+    "Faloutsos, Christos",
+    "Pan, Jia-yu"
+   ],
+   "claim": "random walk with restart as graph proximity",
+   "container": "Sixth International Conference on Data Mining (ICDM'06)",
+   "doi": "10.1109/icdm.2006.70",
+   "key": "tong2006",
+   "query": "Fast random walk with restart and its applications",
+   "slot": "S1.5",
+   "title": "Fast Random Walk with Restart and Its Applications",
+   "type": "proceedings-article",
+   "verified": {
+    "queried_on": "2026-11-04",
+    "registry": "Crossref /works?query.bibliographic",
+    "title": "two-way content-word containment",
+    "year": "exact"
+   },
+   "year": 2006
+  },
+  {
+   "authors": [
+    "Tversky, Amos",
+    "Kahneman, Daniel"
+   ],
+   "claim": "judgement under uncertainty is biased in stated ways",
+   "container": "",
+   "doi": "10.21236/ad0767426",
+   "key": "tversky1974",
+   "query": "Judgment under uncertainty heuristics and biases",
+   "slot": "S5.1",
+   "title": "Judgment under Uncertainty: Heuristics and Biases",
+   "type": "report",
+   "verified": {
+    "queried_on": "2026-11-04",
+    "registry": "Crossref /works?query.bibliographic",
+    "title": "two-way content-word containment",
+    "year": "off_by_one"
+   },
+   "year": 1973
+  },
+  {
+   "authors": [
+    "Visser, Martijn",
+    "van Eck, Nees Jan",
+    "Waltman, Ludo"
+   ],
+   "claim": "database choice changes what a study can see",
+   "container": "Quantitative Science Studies",
+   "doi": "10.1162/qss_a_00112",
+   "key": "visser2021",
+   "query": "Large-scale comparison of bibliographic data sources Scopus Web of Science Dimensions OpenAlex and Crossref",
+   "slot": "S2.1",
+   "title": "Large-scale comparison of bibliographic data sources: Scopus, Web of\n                    Science, Dimensions, Crossref, and Microsoft Academic",
+   "type": "journal-article",
+   "verified": {
+    "queried_on": "2026-11-04",
+    "registry": "Crossref /works?query.bibliographic",
+    "title": "two-way content-word containment",
+    "year": "exact"
+   },
+   "year": 2021
+  },
+  {
+   "authors": [
+    "Voorhees, Ellen M."
+   ],
+   "claim": "the philosophy of IR evaluation",
+   "container": "Lecture Notes in Computer Science",
+   "doi": "10.1007/3-540-45691-0_34",
+   "key": "voorhees2001",
+   "query": "The philosophy of information retrieval evaluation Voorhees",
+   "slot": "S1.0",
+   "title": "The Philosophy of Information Retrieval Evaluation",
+   "type": "book-chapter",
+   "verified": {
+    "queried_on": "2026-11-04",
+    "registry": "crossref",
+    "title": "two-way content-word containment vs want_title",
+    "year": "off_by_one"
+   },
+   "year": 2002
+  },
+  {
+   "authors": [
+    "Waltman, Ludo",
+    "van Eck, Nees Jan"
+   ],
+   "claim": "science needs a publication-level field classification",
+   "container": "Journal of the American Society for Information Science and Technology",
+   "doi": "10.1002/asi.22748",
+   "key": "waltman2012",
+   "query": "A new methodology for constructing a publication-level classification system of science",
+   "slot": "S2.2",
+   "title": "A new methodology for constructing a publication\u2010level classification system of science",
+   "type": "journal-article",
+   "verified": {
+    "queried_on": "2026-11-04",
+    "registry": "Crossref /works?query.bibliographic",
+    "title": "two-way content-word containment",
+    "year": "exact"
+   },
+   "year": 2012
+  },
+  {
+   "authors": [
+    "Waltman, Ludo",
+    "van Eck, Nees Jan",
+    "van Leeuwen, Thed N.",
+    "Visser, Martijn S.",
+    "van Raan, Anthony F. J."
+   ],
+   "claim": "field normalisation methods differ in their assumptions",
+   "container": "Scientometrics",
+   "doi": "10.1007/s11192-011-0354-5",
+   "key": "waltman2012b",
+   "query": "Towards a new crown indicator an experimental comparison of bibliometric normalization approaches",
+   "slot": "S2.2",
+   "title": "Towards a new crown indicator: an empirical analysis",
+   "type": "journal-article",
+   "verified": {
+    "queried_on": "2026-11-04",
+    "registry": "Crossref /works?query.bibliographic",
+    "title": "two-way content-word containment",
+    "year": "exact"
+   },
+   "year": 2011
+  },
+  {
+   "authors": [
+    "Waltman, Ludo",
+    "van Eck, Nees Jan"
+   ],
+   "claim": "the h-index lacks a statistical basis",
+   "container": "Journal of the American Society for Information Science and Technology",
+   "doi": "10.1002/asi.21678",
+   "key": "waltman2012c",
+   "query": "The inconsistency of the h-index Waltman van Eck",
+   "slot": "S5.0",
+   "title": "The inconsistency of the h\u2010index",
+   "type": "journal-article",
+   "verified": {
+    "queried_on": "2026-11-04",
+    "registry": "crossref",
+    "title": "two-way content-word containment vs want_title",
+    "year": "exact"
+   },
+   "year": 2012
+  },
+  {
+   "authors": [
+    "Webber, William",
+    "Moffat, Alistair",
+    "Zobel, Justin"
+   ],
+   "claim": "rank-biased overlap for indefinite rankings",
+   "container": "ACM Transactions on Information Systems",
+   "doi": "10.1145/1852102.1852106",
+   "key": "webber2010",
+   "query": "A similarity measure for indefinite rankings",
+   "slot": "S1.1",
+   "title": "A similarity measure for indefinite rankings",
+   "type": "journal-article",
+   "verified": {
+    "queried_on": "2026-11-04",
+    "registry": "Crossref /works?query.bibliographic",
+    "title": "two-way content-word containment",
+    "year": "exact"
+   },
+   "year": 2010
+  },
+  {
+   "authors": [
+    "Wilson, Edwin B."
+   ],
+   "claim": "interval for a binomial share",
+   "container": "Journal of the American Statistical Association",
+   "doi": "10.1080/01621459.1927.10502953",
+   "key": "wilson1927",
+   "query": "Probable inference the law of succession and statistical inference Wilson",
+   "slot": "S1.4",
+   "title": "Probable Inference, the Law of Succession, and Statistical Inference",
+   "type": "journal-article",
+   "verified": {
+    "queried_on": "2026-11-04",
+    "registry": "Crossref /works?query.bibliographic",
+    "title": "two-way content-word containment",
+    "year": "exact"
+   },
+   "year": 1927
+  },
+  {
+   "authors": [
+    "Wohlin, Claes",
+    "Runeson, Per",
+    "H\u00f6st, Martin",
+    "Ohlsson, Magnus C.",
+    "Regnell, Bj\u00f6rn",
+    "Wessl\u00e9n, Anders"
+   ],
+   "claim": "experimentation in software engineering",
+   "container": "",
+   "doi": "10.1007/978-3-642-29044-2",
+   "key": "wohlin2012",
+   "query": "Experimentation in software engineering Wohlin Runeson",
+   "slot": "S3.0",
+   "title": "Experimentation in Software Engineering",
+   "type": "book",
+   "verified": {
+    "queried_on": "2026-11-04",
+    "registry": "Crossref /works?query.bibliographic",
+    "title": "two-way content-word containment",
+    "year": "exact"
+   },
+   "year": 2012
+  },
+  {
+   "authors": [
+    "Wohlin, Claes"
+   ],
+   "claim": "snowballing iterates citations until saturation",
+   "container": "Proceedings of the 18th International Conference on Evaluation and Assessment in Software Engineering",
+   "doi": "10.1145/2601248.2601268",
+   "key": "wohlin2014",
+   "query": "Guidelines for snowballing in systematic literature studies and a replication in software engineering",
+   "slot": "S1.0",
+   "title": "Guidelines for snowballing in systematic literature studies and a replication in software engineering",
+   "type": "proceedings-article",
+   "verified": {
+    "queried_on": "2026-11-04",
+    "registry": "Crossref /works?query.bibliographic",
+    "title": "two-way content-word containment",
+    "year": "exact"
+   },
+   "year": 2014
+  },
+  {
+   "authors": [
+    "Wuchty, Stefan",
+    "Jones, Benjamin F.",
+    "Uzzi, Brian"
+   ],
+   "claim": "authorship structures have changed over time",
+   "container": "Science",
+   "doi": "10.1126/science.1136099",
+   "key": "wuchty2007",
+   "query": "The increasing dominance of teams in production of knowledge",
+   "slot": "S1.2",
+   "title": "The Increasing Dominance of Teams in Production of Knowledge",
+   "type": "journal-article",
+   "verified": {
+    "queried_on": "2026-11-04",
+    "registry": "Crossref /works?query.bibliographic",
+    "title": "two-way content-word containment",
+    "year": "exact"
+   },
+   "year": 2007
+  }
+ ],
+ "built_on": "2026-11-04",
+ "duplicates_refused": [],
+ "not_run": [
+  {
+   "key": "wilsdon2015",
+   "reason": "REGISTRY UNAVAILABLE (openalex): HTTP Error 429: Too Many Requests",
+   "slot": "S5.0"
+  },
+  {
+   "key": "cohen1988",
+   "reason": "REGISTRY UNAVAILABLE (openalex): HTTP Error 429: Too Many Requests",
+   "slot": "S5.1"
+  },
+  {
+   "key": "altman1995",
+   "reason": "REGISTRY UNAVAILABLE (openalex): HTTP Error 429: Too Many Requests",
+   "slot": "S5.1"
+  },
+  {
+   "key": "simmons2011",
+   "reason": "REGISTRY UNAVAILABLE (openalex): HTTP Error 429: Too Many Requests",
+   "slot": "S6.0"
+  },
+  {
+   "key": "wasserman2004",
+   "reason": "REGISTRY UNAVAILABLE (openalex): HTTP Error 429: Too Many Requests",
+   "slot": "S1.4"
+  },
+  {
+   "key": "hastie2009",
+   "reason": "REGISTRY UNAVAILABLE (openalex): HTTP Error 429: Too Many Requests",
+   "slot": "S3.0"
+  },
+  {
+   "key": "moed2005",
+   "reason": "request ceiling of 30 reached",
+   "slot": "S2.2"
+  },
+  {
+   "key": "zipf1949",
+   "reason": "request ceiling of 30 reached",
+   "slot": "S1.1"
+  },
+  {
+   "key": "hirsch2005",
+   "reason": "request ceiling of 30 reached",
+   "slot": "S1.2"
+  },
+  {
+   "key": "fortunato2018",
+   "reason": "request ceiling of 30 reached",
+   "slot": "S1.0"
+  },
+  {
+   "key": "stodden2016",
+   "reason": "request ceiling of 30 reached",
+   "slot": "S6.0"
+  },
+  {
+   "key": "ioannidis2019",
+   "reason": "request ceiling of 30 reached",
+   "slot": "S2.2"
+  },
+  {
+   "key": "harman1993",
+   "reason": "request ceiling of 30 reached",
+   "slot": "S1.0"
+  },
+  {
+   "key": "wasserstein2016",
+   "reason": "request ceiling of 30 reached",
+   "slot": "S5.1"
+  },
+  {
+   "key": "shull2008",
+   "reason": "request ceiling of 30 reached",
+   "slot": "S3.0"
+  }
+ ],
+ "registry": "Crossref /works?query.bibliographic",
+ "rejected": [
+  {
+   "key": "albert2002",
+   "query": "Statistical mechanics of complex networks Albert Barabasi",
+   "reason": "no returned record passed BOTH criteria; tried: Statistical mechanics of complex networks (2007) title=True year=False | The Bass Diffusion Model on Finite Barabasi\u2010Albert Networks (2019) title=False year=False | Complex Network Analysis in Socioeconomic Models (2015) title=False year=False | Nonextensive statistical mechanics and complex scale-free ne (2008) title=True year=False | Nonextensive statistical mechanics and complex scale-free ne (2005) title=True year=False",
+   "slot": "S1.1"
+  },
+  {
+   "key": "alperin2015",
+   "query": "The geographic bias of scholarly publishing Alperin",
+   "reason": "no returned record passed BOTH criteria; tried: Ten Hot Topics around Scholarly Publishing (2019) title=False year=False | Scholarly publishing and peer review in the Global South: th (2022) title=False year=False | Scholarly publishing\u2019s hidden diversity: How exclusive datab (2025) title=False year=False | Articulations of language and value(s) in scholarly publishi (2023) title=False year=False | Opening the record of science: making scholarly publishing w (2021) title=False year=False",
+   "slot": "S2.1"
+  },
+  {
+   "attempts": 0,
+   "key": "altman1995",
+   "query": "Absence of evidence is not evidence of absence",
+   "reason": "REGISTRY UNAVAILABLE (openalex): HTTP Error 429: Too Many Requests",
+   "slot": "S5.1"
+  },
+  {
+   "key": "anderson2004",
+   "query": "The metric tide reconsidered",
+   "reason": "no returned record passed BOTH criteria; tried: Precise comparisons of bottom\u2010pressure and altimetric ocean  (2013) title=False year=False | TIDES AND TIMES (2025) title=False year=False | An Astronomer's View on the Current College-Level Textbook D (2009) title=False year=False | Modeling gravimetric signatures of third-degree ocean tides  (2022) title=False year=False | Reconsidering Statistics Education: A National Science Found (1993) title=False year=False",
+   "slot": "S2.2"
+  },
+  {
+   "key": "basili1994",
+   "query": "Software modeling and measurement the goal question metric paradigm",
+   "reason": "no returned record passed BOTH criteria; tried: Software Modeling and Measurement: The Goal/Question/Metric  (1992) title=True year=False | Software Performance Assessment Using Goal-Question-Metric A (2008) title=False year=False | Representing software engineering models: the TAME goal orie (1992) title=False year=False | Continuous GQM: An automated framework for the Goal-Question (2005) title=False year=False | Integration of system dynamics modelling with descriptive pr (1999) title=False year=False",
+   "slot": "S3.0"
+  },
+  {
+   "key": "bornmann2014",
+   "query": "Do altmetrics correlate with citations a meta-analysis on forty-three million individual records",
+   "reason": "no returned record passed BOTH criteria; tried: A Scientometric Review of Environmental Valuation Research w (2023) title=False year=False | Experiences of post-stroke emotion dysregulation: A meta-eth (2025) title=False year=False | What do computer scientists tweet? Analyzing the link-sharin (2017) title=False year=True | TeamTree analysis: A new approach to evaluate scientific pro (2021) title=False year=False | TeamTree analysis: a new approach to evaluate scientific pro (2020) title=False year=False",
+   "slot": "S3.0"
+  },
+  {
+   "key": "bradford1934",
+   "query": "Sources of information on specific subjects",
+   "reason": "no returned record passed BOTH criteria; tried: Sources of information on specific subjects 1934 (1985) title=True year=False | \"Sources of information on specific subjects\" by S.C. Bradfo (1985) title=True year=False | CLASSIC PAPER: Sources of Information on Specific Subjects (1976) title=True year=False | LibGuides: Finding Biographical Information: Subject Specifi (2009) title=False year=False | Library Class & Subject Guides: Student Affairs Information  (2014) title=False year=False",
+   "slot": "S1.1"
+  },
+  {
+   "key": "christensen2019",
+   "query": "A study of the reproducibility of research in the social and behavioral sciences",
+   "reason": "no returned record passed BOTH criteria; tried: Automated reproducibility assessments in the social and beha (2026) title=False year=False | Automated reproducibility assessments in the social and beha (2026) title=False year=False | Inventory Of The Japanese Disaster Research Literature In Th (1982) title=False year=False | Emerging Trends in the Social and Behavioral Sciences (2015) title=False year=False | Reproducibility in the Social Sciences (2022) title=False year=False",
+   "slot": "S6.0"
+  },
+  {
+   "attempts": 0,
+   "key": "cohen1988",
+   "query": "Statistical power analysis for the behavioral sciences",
+   "reason": "REGISTRY UNAVAILABLE (openalex): HTTP Error 429: Too Many Requests",
+   "slot": "S5.1"
+  },
+  {
+   "key": "cole1973",
+   "query": "Citation and the evaluation of scientific output Cole",
+   "reason": "no returned record passed BOTH criteria; tried: Citations, Citation Indicators, and Research Quality: An Ove (2019) title=False year=False | Self-Citations and scientific evaluation: Leadership, influe (2019) title=False year=False | The evaluation of citation distributions (2011) title=False year=False | Unraveling scientific impact: Citation types in marketing jo (2014) title=False year=False | Publish (in English) or perish: The effect on citation rate  (2016) title=False year=False",
+   "slot": "S1.1"
+  },
+  {
+   "key": "cumming2014",
+   "query": "The new statistics why and how Cumming",
+   "reason": "no returned record passed BOTH criteria; tried: The New Statistics: A How\u2010To Guide (2013) title=False year=True | New Statistics, Old Schools: An Overview of Current Introduc (2021) title=False year=False | The Bayesian New Statistics: Hypothesis testing, estimation, (2017) title=False year=False | AGAINST INFERENTIAL STATISTICS: HOW AND WHY CURRENT STATISTI (2017) title=False year=False | New players in entrepreneurial finance and why they are ther (2017) title=False year=False",
+   "slot": "S5.1"
+  },
+  {
+   "key": "donoho2009",
+   "query": "Reproducible research computing and the scientific method",
+   "reason": "no returned record passed BOTH criteria; tried: Measuring the Reproducibility of Scientific Research Based o (2025) title=False year=False | THE GLOBAL EVIDENCE ENGINE / From Silent Collapse to a Livin (2026) title=False year=False | Reproducible research and Biostatistics (2009) title=False year=True | Replication in computing education research (2016) title=False year=False | Reproducible research policies and software/data management  (2025) title=False year=False",
+   "slot": "S6.0"
+  },
+  {
+   "key": "ferro2017",
+   "query": "Reproducibility of statistical tests based on IR evaluation measures",
+   "reason": "no returned record passed BOTH criteria; tried: How to Measure the Reproducibility of System-oriented IR Exp (2020) title=False year=False | Towards Meaningful Statements in IR Evaluation: Mapping Eval (2021) title=False year=False | repro_eval: A Python Interface to Reproducibility Measures o (2021) title=False year=False | An in-depth investigation on the behavior of measures to qua (2023) title=False year=False | User Variability and IR System Evaluation (2015) title=False year=False",
+   "slot": "S1.0"
+  },
+  {
+   "key": "fisher1925",
+   "query": "Statistical methods for research workers Fisher",
+   "reason": "no returned record passed BOTH criteria; tried: Introduction to Fisher (1925) Statistical Methods for Resear (1992) title=True year=False | R. A. Fisher's Statistical Methods for Research Workers: An  (1951) title=True year=False | Fisher\u2019s Statistical Methods for Research Workers: 100 Year  (2025) title=True year=False | Fisher, R. A.: Statistical Methods for Research Workers, 14. (1971) title=True year=False | Statistical Methods for Research Workers (1933) title=True year=False",
+   "slot": "S1.3"
+  },
+  {
+   "key": "fortunato2018",
+   "query": "Science of science",
+   "reason": "DEMOTED by --reaudit: title=True year=True shape=False (record type 'review' is not a citable scholarly work) under today's rule (want 'Science of science' / 2018)",
+   "slot": "S1.0"
+  },
+  {
+   "key": "glanzel1996",
+   "query": "A bibliometric approach to social sciences national research performances in border fields",
+   "reason": "no returned record passed BOTH criteria; tried: Investigating the emerging COVID-19 research trends in the f (2020) title=False year=False | A bibliometric performance analysis of publication productiv (2022) title=False year=False | Entrepreneurial cognition and socially situated approach: a  (2018) title=False year=False | Bibliometric Analysis of the Impact of International Researc (2025) title=False year=False | Global trends in research related to social media in psychol (2018) title=False year=False",
+   "slot": "S2.2"
+  },
+  {
+   "key": "groves2009",
+   "query": "Survey methodology Groves",
+   "reason": "no returned record passed BOTH criteria; tried: Cr\u00edtica de libro: R.M. Groves et al. (2009). Survey Methodol (2010) title=False year=True | AARP 2016 Age-Friendly Community Survey: City of Maple Grove (2016) title=False year=False | (1) \"Telephone Survey Methodology\", Edited by Robert M. Grov (1990) title=False year=False | Survey Methodology. Robert M. Groves, Floyd J. Fowler Jr., M (2006) title=False year=False | Robert M. Groves, Floyd J. Fowler, Mick P. Couper, James M.  (2005) title=False year=False",
+   "slot": "S2.1"
+  },
+  {
+   "key": "haibe2012",
+   "query": "Independent component analysis uncovers the landscape of activity of the mitotic spindle",
+   "reason": "no returned record passed BOTH criteria; tried: Mitotic Spindle Form and Function (2012) title=False year=True | VISAGE Reveals a Targetable Mitotic Spindle Vulnerability in (2019) title=False year=False | mRNA spindle localization and mitotic translational regulati (2020) title=False year=False | Mechanisms of Mitotic Spindle Disassembly and Positioning in (2011) title=False year=True | Mitotic force generators and chromosome segregation (2010) title=False year=False",
+   "slot": "S6.0"
+  },
+  {
+   "key": "hardwicke2018",
+   "query": "Data availability data reuse and data citation in social science research",
+   "reason": "no returned record passed BOTH criteria; tried: The Anatomy of a Data Citation: Discovery, Reuse, and Credit (2012) title=False year=False | FAIR Data Reuse \u2013 the Path through Data Citation (2019) title=False year=True | Use and users of a social science research data archive (2020) title=False year=False | On the Reuse of Scientific Data (2017) title=False year=True | The Enduring Value of Social Science Research: The Use and R (2010) title=False year=False",
+   "slot": "S6.0"
+  },
+  {
+   "key": "hardwicke2020",
+   "query": "Patterns of preregistration in scientific research",
+   "reason": "no returned record passed BOTH criteria; tried: Preregistration in Qualitative Research: A Meta-Scientific S (2026) title=True year=False | Preregistration in Qualitative Research: A Meta-Scientific S (2026) title=True year=False | Preregistration in Qualitative Research: A Meta-Scientific S (2026) title=True year=False | Preregistration in Qualitative Research: A Meta-Scientific S (2026) title=True year=False | Preregistration in Qualitative Research: A Meta-Scientific S (2026) title=True year=False",
+   "slot": "S6.0"
+  },
+  {
+   "key": "harman1993",
+   "query": "Overview of the first TREC conference Harman",
+   "reason": "DEMOTED by --reaudit: title=True year=True shape=False (record type 'conference-paper' is not a citable scholarly work) under today's rule (want 'Overview of the first TREC conference' / 1993)",
+   "slot": "S1.0"
+  },
+  {
+   "key": "hastie2009",
+   "query": "The elements of statistical learning data mining inference and prediction",
+   "reason": "DEMOTED by --reaudit: title=False year=True shape=True under today's rule (want 'The elements of statistical learning: data mining,' / 2009)",
+   "slot": "S3.0"
+  },
+  {
+   "key": "hendricks2020",
+   "query": "Crossref documenting and sharing research metadata",
+   "reason": "no returned record passed BOTH criteria; tried: Crossref: The sustainable source of community-owned scholarl (2020) title=False year=True | Crossref as a source of open bibliographic metadata (2022) title=False year=False | Crossref as a source of open bibliographic metadata (2025) title=False year=False | Crossref as a source of open bibliographic metadata (2022) title=False year=False | Crossref metadata for preprints: Discussions and recommendat (2022) title=False year=False",
+   "slot": "S2.1"
+  },
+  {
+   "key": "hicks1999",
+   "query": "The difficulty of achieving full coverage of international social science literature and some consequences",
+   "reason": "no returned record passed BOTH criteria; tried: International journal of social sciences (2024) title=False year=False | Research on Humanities and Social Sciences (2019) title=False year=False | Managing consequences of climate\u2010driven species redistributi (2017) title=False year=False | Real earnings management: A review of the international lite (2022) title=False year=False | Meta-studies in land use science: Current coverage and prosp (2015) title=False year=False",
+   "slot": "S2.2"
+  },
+  {
+   "key": "hirsch2005",
+   "query": "An index to quantify an individual's scientific research output",
+   "reason": "DEMOTED by --reaudit: title=False year=True shape=False (a wrapper record, not the work: 'Faculty Opinions recommendation of An index to quantify an i') under today's rule (want \"An index to quantify an individual's scientific re\" / 2005)",
+   "slot": "S1.2"
+  },
+  {
+   "key": "ioannidis2019",
+   "query": "A standardized citation metrics author database annotated for scientific field",
+   "reason": "DEMOTED by --reaudit: title=False year=True shape=False (a wrapper record, not the work: 'Faculty Opinions recommendation of A standardized citation m') under today's rule (want 'A standardized citation metrics author database an' / 2019)",
+   "slot": "S2.2"
+  },
+  {
+   "key": "jalali2012",
+   "query": "Systematic literature studies snowballing versus database searches",
+   "reason": "no returned record passed BOTH criteria; tried: Assessing Diversity in Creating Seed Set for Snowballing Sea (2025) title=False year=False | Using Forward Snowballing to update Systematic Reviews in So (2016) title=False year=False | Effectiveness and efficiency of search methods in systematic (2005) title=False year=False | Successful combination of database search and snowballing fo (2022) title=False year=False | Experiences from using snowballing and database searches in  (2015) title=False year=False",
+   "slot": "S1.0"
+  },
+  {
+   "key": "jeh2002",
+   "query": "SimRank a measure of structural-context similarity",
+   "reason": "no returned record passed BOTH criteria; tried: SimRank (2002) title=False year=True | SimRank*: effective and scalable pairwise similarity search  (2019) title=False year=False | SimRank computation on uncertain graphs (2016) title=False year=False | Fast incremental SimRank on link-evolving graphs (2014) title=False year=False | Dynamical SimRank search on time-varying networks (2017) title=False year=False",
+   "slot": "S1.5"
+  },
+  {
+   "key": "kahneman2011",
+   "query": "Thinking fast and slow Kahneman",
+   "reason": "no returned record passed BOTH criteria; tried: Kahneman, D. (2011): Thinking, Fast and Slow (2013) title=False year=False | Psychologists at the Gate: A Review of Daniel Kahneman's Thi (2012) title=False year=True | Daniel Kahneman's Thinking, Fast and Slow (2018) title=False year=False | Thinking, Fast and Slow, by D. Kahneman (2012) title=False year=True | Design thinking, fast and slow: A framework for Kahneman\u2019s d (2019) title=False year=False",
+   "slot": "S5.1"
+  },
+  {
+   "key": "kitchenham2004",
+   "query": "Procedures for performing systematic reviews Kitchenham",
+   "reason": "no returned record passed BOTH criteria; tried: Guidelines for performing Systematic Research Projects Revie (2020) title=False year=False | Systematic Literature Reviews: An Introduction (2019) title=False year=False | A Guide to Conducting a Standalone Systematic Literature Rev (2015) title=False year=False | Green Accounting And Social Development Goals (Sdg\u2019s): Kitch (2026) title=False year=False | Systematic literature review on SQL injection attack (2016) title=False year=False",
+   "slot": "S1.0"
+  },
+  {
+   "key": "kitchenham2009",
+   "query": "Empirical research methods in software engineering Kitchenham",
+   "reason": "no returned record passed BOTH criteria; tried: Preliminary guidelines for empirical research in software en (2002) title=False year=False | Robust Statistical Methods for Empirical Software Engineerin (2016) title=False year=False | Systematic review in software engineering (2012) title=False year=False | Empirical Standards for Software Engineering Research (2020) title=False year=False | Empirical studies of software engineering (2000) title=False year=False",
+   "slot": "S3.0"
+  },
+  {
+   "key": "kowalczyk2013",
+   "query": "On the reproducibility of scientific results in the computational sciences",
+   "reason": "no returned record passed BOTH criteria; tried: The Scientific Method in Practice: Reproducibility in the Co (2010) title=True year=False | Scientific workflows for computational reproducibility in th (2017) title=False year=False | The Scientific Method in Practice: Reproducibility in the Co (2010) title=True year=False | Reproducibility and Replicability in Science (2019) title=False year=False | 15 Years of Reproducible Research in Computational Harmonic  (2008) title=False year=False",
+   "slot": "S6.0"
+  },
+  {
+   "key": "martin2021",
+   "query": "The coverage of forty million scholarly documents by Microsoft Academic Graph Dimensions Scopus OpenAlex and Crossref",
+   "reason": "no returned record passed BOTH criteria; tried: Agentic Workflows for Economic Research: Design, Implementat (2025) title=False year=False",
+   "slot": "S2.1"
+  },
+  {
+   "key": "mccain1989",
+   "query": "Descriptor and citation scattering in the development of a scientific specialty",
+   "reason": "no returned record passed BOTH criteria; tried: Predictive value of Altmetric score on citation rates and bi (2021) title=False year=False | The role of document structure and citation analysis in lite (2015) title=False year=False | More on the relationship between interdisciplinary accountin (2023) title=False year=False | Medical specialty selection influences, satisfaction, and id (2015) title=False year=False | Els \ufffdndexs de citacions : del Science Citation Index al Web  (2016) title=False year=False",
+   "slot": "S1.1"
+  },
+  {
+   "key": "moed2005",
+   "query": "Citation analysis in research evaluation",
+   "reason": "DEMOTED by --reaudit: title=False year=True shape=True under today's rule (want 'Citation analysis in research evaluation' / 2005)",
+   "slot": "S2.2"
+  },
+  {
+   "key": "narin1976",
+   "query": "Evaluative bibliometrics the use of publication and citation analysis in the evaluation of scientific activity",
+   "reason": "no returned record passed BOTH criteria; tried: The Digitalization in Evaluation of Scientific Efficiency: B (2020) title=False year=False | Bibliometric Indicators and Analysis of Research Systems (1997) title=False year=False | Patent bibliometrics (1994) title=False year=False | Bibliometric Indicators for Evaluating the Quality of Scient (2014) title=False year=False | Citation gaming induced by bibliometric evaluation: A countr (2019) title=False year=False",
+   "slot": "S1.1"
+  },
+  {
+   "key": "osterloh2004",
+   "query": "Co-authorship and collaboration in scientific publishing",
+   "reason": "no returned record passed BOTH criteria; tried: Analysis of the evolution of scientific collaboration networ (2022) title=False year=False | Beyond genuine collaboration: the rise of strategic co-autho (2026) title=False year=False | Exploring high scientific productivity in international co-a (2023) title=False year=False | Prolific authorship in orthodontic scientific publishing (2021) title=False year=False | International Writing Collaboration Strengthens Publishing:  (2016) title=False year=False",
+   "slot": "S2.2"
+  },
+  {
+   "key": "raghavan2019",
+   "query": "On the reproducibility of neural network hyperparameter studies",
+   "reason": "no returned record passed BOTH criteria; tried: Artificial Neural Network Hyperparameters Optimization: A Su (2022) title=False year=False | Hyperparameter Optimization in Convolutional Neural Network  (2019) title=False year=True | Benchmarking Graph Neural Networks (2020) title=False year=True | Parsimonious Optimization of Multitask Neural Network Hyperp (2021) title=False year=False | Radiomics and Deep Features: Robust Classification of Brain  (2024) title=False year=False",
+   "slot": "S3.0"
+  },
+  {
+   "key": "ruiz2013",
+   "query": "Interpreting bibliometric data a guide for the evaluation of research",
+   "reason": "no returned record passed BOTH criteria; tried: Interpreting Bibliometric Data (2021) title=False year=False | Guidelines for interpreting the results of bibliometric anal (2023) title=False year=False | Evaluating Bibliometrics Reviews: A Practical Guide for Peer (2025) title=False year=False | Bibliometric Analysis for Medical Research (2022) title=False year=False | Bibliometric Indicators and Analysis of Research Systems (1997) title=False year=False",
+   "slot": "S2.2"
+  },
+  {
+   "key": "sakai2016",
+   "query": "Statistical reform in information retrieval",
+   "reason": "no returned record passed BOTH criteria; tried: Statistical reform in information retrieval? (2014) title=True year=False | Information Retrieval: Recent Advances and Beyond (2023) title=False year=False | Improving Query Expansion for Information Retrieval Using Wi (2015) title=False year=True | Information retrieval and evaluation skills for education st (1992) title=False year=False | Visualization for Information Retrieval based on Fast Search (2013) title=False year=False",
+   "slot": "S1.0"
+  },
+  {
+   "key": "schubert1987",
+   "query": "Cross-field comparison of scientometric indicators and citation rates",
+   "reason": "no returned record passed BOTH criteria; tried: From Excessive Journal Self-Cites to Citation Stacking: Anal (2016) title=False year=False | Reference standards for citation based assessments (1993) title=False year=False | Citations, Citation Indicators, and Research Quality: An Ove (2019) title=False year=False | Normalizing Scientometric Indicators Of Individual Publicati (2018) title=False year=False | A review of theory and practice in scientometrics (2015) title=False year=False",
+   "slot": "S1.1"
+  },
+  {
+   "key": "sculley2015",
+   "query": "Hidden technical debt in machine learning systems",
+   "reason": "a openalex record with no DOI cannot be checked by a reader",
+   "slot": "S3.0"
+  },
+  {
+   "key": "shull2008",
+   "query": "The role of replications in empirical software engineering",
+   "reason": "DEMOTED by --reaudit: title=False year=True shape=True under today's rule (want 'The role of replications in empirical software eng' / 2008)",
+   "slot": "S3.0"
+  },
+  {
+   "attempts": 0,
+   "key": "simmons2011",
+   "query": "False-positive psychology undisclosed flexibility in data collection and analysis allows presenting anything as significant",
+   "reason": "REGISTRY UNAVAILABLE (openalex): HTTP Error 429: Too Many Requests",
+   "slot": "S6.0"
+  },
+  {
+   "key": "stodden2016",
+   "query": "Enhancing reproducibility for computational methods",
+   "reason": "DEMOTED by --reaudit: title=False year=True shape=False (a wrapper record, not the work: 'Faculty Opinions recommendation of Enhancing reproducibility') under today's rule (want 'Enhancing reproducibility for computational method' / 2016)",
+   "slot": "S6.0"
+  },
+  {
+   "key": "vanleeuwen2001",
+   "query": "Bibliometric analysis of the Dutch research performance in an international context",
+   "reason": "no returned record passed BOTH criteria; tried: Bibliometric Indicators and Analysis of Research Systems (1997) title=False year=False | Bibliometric analysis of international researches on innovat (2017) title=False year=False | Digital Leadership: A Bibliometric Analysis (2022) title=False year=False | Bibliometric analysis of international researches on innovat (2017) title=False year=False | Public procurement research: a bibliometric analysis (2024) title=False year=False",
+   "slot": "S2.2"
+  },
+  {
+   "key": "wagstaff2020",
+   "query": "On the proven pitfalls of machine learning in computational biology Wagstaff",
+   "reason": "no returned record passed BOTH criteria; tried: Machine learning in photosynthesis: Prospects on sustainable (2023) title=False year=False | Improving and Securing Machine Learning Systems (2018) title=False year=False | Machine Learning in Amyloidogenic Polypeptide Research: From (2026) title=False year=False | Probabilistic Learning on Graphs via Contextual Architecture (2020) title=False year=True | A Fair Comparison of Graph Neural Networks for Graph Classif (2019) title=False year=True",
+   "slot": "S3.0"
+  },
+  {
+   "key": "wang2013",
+   "query": "Quantifying the evolution of individual scientific impact",
+   "reason": "no returned record passed BOTH criteria; tried: Quantifying the evolution of individual scientific impact (2016) title=True year=False | Author Impact Factor: tracking the dynamics of individual sc (2014) title=False year=True | Quantifying the Impact and Relevance of Scientific Research (2011) title=False year=False | Quantifying the impact of weak, strong, and super ties in sc (2015) title=False year=False | Untangling pair synergy in the evolution of collaborative sc (2023) title=False year=False",
+   "slot": "S1.5"
+  },
+  {
+   "attempts": 0,
+   "key": "wasserman2004",
+   "query": "All of statistics a concise course in statistical inference",
+   "reason": "REGISTRY UNAVAILABLE (openalex): HTTP Error 429: Too Many Requests",
+   "slot": "S1.4"
+  },
+  {
+   "key": "wasserstein2016",
+   "query": "The ASA statement on p-values context process and purpose",
+   "reason": "DEMOTED by --reaudit: title=False year=True shape=False (a wrapper record, not the work: 'Faculty Opinions recommendation of The ASA Statement on &lt;') under today's rule (want 'The ASA statement on p-values: context, process, a' / 2016)",
+   "slot": "S5.1"
+  },
+  {
+   "key": "white1998",
+   "query": "On the use of informetric models in online bibliographic retrieval White",
+   "reason": "no returned record passed BOTH criteria; tried: Applications Of Informetrics To Information Retrieval Resear (2000) title=False year=False | Multidimensional Data Model and Query Language for Informetr (2003) title=False year=False | Theories of Informetrics and Scholarly Communication (2016) title=False year=False | Scientometrics and information retrieval: weak-links revital (2014) title=False year=False | A user\u2010oriented interface for generalised informetric analys (2000) title=False year=False",
+   "slot": "S1.1"
+  },
+  {
+   "attempts": 0,
+   "key": "wilsdon2015",
+   "query": "The metric tide report of the independent review of the role of metrics in research assessment and management",
+   "reason": "REGISTRY UNAVAILABLE (openalex): HTTP Error 429: Too Many Requests",
+   "slot": "S5.0"
+  },
+  {
+   "key": "zeng2017",
+   "query": "The science of science big data and the science of citation",
+   "reason": "no returned record passed BOTH criteria; tried: Big data analytics and big data science: a survey (2016) title=False year=True | The rate of growth in scientific publication and the decline (2010) title=False year=False | The evolution of data science and big data research: A bibli (2020) title=False year=False | \"Big Data\" : big gaps of knowledge in the field of internet  (2012) title=False year=False | Science of science (2018) title=False year=True",
+   "slot": "S1.0"
+  },
+  {
+   "key": "zipf1949",
+   "query": "Human behavior and the principle of least effort",
+   "reason": "DEMOTED by --reaudit: title=False year=True shape=False (a wrapper record, not the work: 'Review of Human behavior and the principle of least effort. ') under today's rule (want 'Human behavior and the principle of least effort' / 1949)",
+   "slot": "S1.1"
+  },
+  {
+   "key": "zobel2006",
+   "query": "Incomplete and biased relevance judgments in IR evaluation",
+   "reason": "no returned record passed BOTH criteria; tried: Here or there: preference judgments for relevance (2008) title=False year=False | Prioritizing relevance judgments to improve the construction (2011) title=False year=False | Perspectives on Large Language Models for Relevance Judgment (2023) title=False year=False | On information retrieval metrics designed for evaluation wit (2008) title=False year=False | Don't Use LLMs to Make Relevance Judgments (2025) title=False year=False",
+   "slot": "S1.0"
+  }
+ ]
+}
