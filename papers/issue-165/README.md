@@ -20,14 +20,15 @@ and the script finds an interpreter that has it):
 [3] manuscript.md re-rendered                    ok
 [4] figures redrawn                              ok
 [5] printed numbers all derivable                ok
+[6] reference report matches corpus              ok
 
-REPRODUCE: ALL GREEN (5 steps)
+REPRODUCE: ALL GREEN (6 steps)
 ```
 
-Exit codes: `0` all five steps ran and agreed · `3` nothing failed but a step could not run here (a
+Exit codes: `0` all six steps ran and agreed · `3` nothing failed but a step could not run here (a
 declared NOT RUN, never to be read as a pass) · `N` N steps disagreed.
 
-**Tolerance: none.** Steps 2–5 compare bytes, not values: `results.json` and `manuscript.md` are
+**Tolerance: none.** Steps 2–6 compare bytes, not values: `results.json` and `manuscript.md` are
 regenerated from the committed arms and the committed template and must match the committed copies
 exactly; the two PNGs are redrawn into a temporary directory and compared byte for byte. A reader on a
 different matplotlib version may get a different PNG *encoding* (same numbers, same picture) — that is
@@ -44,6 +45,7 @@ numbers themselves have no version dependence: `analysis.py`, `make_manuscript.p
 | 3 | the manuscript is *generated*: every quantity in it resolves from `results.json`, and re-rendering reproduces the committed prose byte for byte |
 | 4 | the two figures redraw identically, each one carrying a numeric invariant it is checked against before it is drawn |
 | 5 | every number printed in the manuscript is a form the artefact can produce at that precision — a hand-rounded or hand-typed number fails here |
+| 6 | `reference-check.md` still describes `refs/records.json`: the report is regenerated and compared byte for byte, so it cannot certify a corpus that has moved |
 
 ## Files
 
@@ -55,7 +57,11 @@ numbers themselves have no version dependence: `analysis.py`, `make_manuscript.p
 | `results.json` | every published quantity, one key each |
 | `manuscript_template.md` | the paper with `{{...}}` markers where quantities go; a bare multi-digit number in it is refused |
 | `make_manuscript.py` | renders the template into `manuscript.md`, refusing hand-typed numbers |
-| `check_numbers.py` | reads the rendered manuscript and refuses any number the artefact cannot produce |
+| `check_numbers.py` | reads the *prose* (the renderer with citations and bibliography removed) and refuses any number the artefact cannot produce; the renderer's own ordinals and DOI digits are never the object of the scan |
+| `refs/records.json`, `refs/slots.json` | the reference corpus: 102 verified registry returns and every refusal with its reason |
+| `build_refs.py` | asks a registry for each declared slot and verifies the answer; a refused slot stays refused |
+| `ref_check.py` | writes `reference-check.md` from the corpus, and `--check` proves the report still matches it |
+| `reference-check.md` | one line per entry: key, method, result, the record found |
 | `make_figures.py` | draws the two figures, each guarded by an invariant that would refuse a contradictory picture |
 | `manuscript.md` | the generated paper — do not edit it; edit the template |
 | `figures/` | `fig1_decay.png`, `fig2_price_bound.png` |

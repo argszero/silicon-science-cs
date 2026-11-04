@@ -14,6 +14,13 @@ The exemptions are named here rather than implied by a pattern that quietly grew
   * anything inside backticks                                    -- identifiers and paths;
   * the bin labels the artefact itself holds as strings           -- `10-49` is the name of a bin.
 
+It reads the PROSE, not manuscript.md. The rendered file also carries the citation ordinals and the
+bibliography the renderer inserts, and those digits are the renderer's, not the author's: scanning
+them would report reference numbers and DOI fragments as stray numbers. Exempting them by pattern
+instead would put a hole in the gate exactly where digits are densest, so the input is changed rather
+than the rule -- `make_manuscript.prose()` is the same renderer with the derived text removed, which is
+one renderer and not a second copy of one.
+
 Usage:  python3 check_numbers.py            -> exit 0 if every printed number is artefact-derivable
         python3 check_numbers.py --explain  -> also print the artefact form each match came from
 """
@@ -113,7 +120,9 @@ def scan(text, allowed, provenance, explain):
 
 def main():
     results = json.load(open(RESULTS))
-    text = open(MANUSCRIPT).read()
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    import make_manuscript
+    text = make_manuscript.prose(open(make_manuscript.TEMPLATE).read(), results)
     allowed, provenance = derivable(results)
     matched, unmatched, exempt = scan(text, allowed, provenance, "--explain" in sys.argv)
     total = len(matched) + len(unmatched) + exempt

@@ -40,7 +40,7 @@ fi
 
 # The declared steps, in order. Adding a step means adding its name here as well as its call below;
 # leaving the two out of step is caught at the end of the run, not left to a reader to notice.
-STEP_NAMES="digests analysis_check manuscript_check figures_check numbers_check"
+STEP_NAMES="digests analysis_check manuscript_check figures_check numbers_check refs_check"
 DECLARED_STEPS=$(( $(echo $STEP_NAMES | wc -w | tr -d ' ') + 0 ))
 
 RUN_STEPS=0
@@ -93,6 +93,11 @@ figures_check () { "$FIGPY" make_figures.py --check; }
 # 5. Every number printed in the manuscript must be a form the artefact can produce at that precision.
 numbers_check () { "$PY" check_numbers.py; }
 
+# 6. The citation report must still describe the corpus. A report that has drifted from
+#    refs/records.json is a claim about references that no longer exists, which is the defect the
+#    report exists to prevent.
+refs_check () { "$PY" ref_check.py --check; }
+
 echo "issue-165 reproduce -- $(pwd)"
 echo "  numbers: $PY$( [ "$PY" = "$FIGPY" ] && echo "" || echo "   figures: $FIGPY" )"
 echo
@@ -101,6 +106,7 @@ step "results.json recomputed"         analysis_check
 step "manuscript.md re-rendered"       manuscript_check
 step "figures redrawn"                 figures_check
 step "printed numbers all derivable"   numbers_check
+step "reference report matches corpus" refs_check
 echo
 
 if [ "$DECLARED_STEPS" != "$RUN_STEPS" ]; then

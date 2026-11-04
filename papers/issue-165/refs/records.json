@@ -160,6 +160,27 @@
     "Bornmann, Lutz",
     "Daniel, Hans\u2010Dieter"
    ],
+   "claim": "the h index has stated properties and limits",
+   "container": "Journal of the American Society for Information Science and Technology",
+   "doi": "10.1002/asi.20609",
+   "key": "bornmann2007h",
+   "query": "What do we know about the h index Bornmann Daniel",
+   "slot": "S1.2",
+   "title": "What do we know about the\n                    <i>h</i>\n                    index?",
+   "type": "journal-article",
+   "verified": {
+    "queried_on": "2026-11-04",
+    "registry": "crossref",
+    "title": "two-way content-word containment vs want_title",
+    "year": "exact"
+   },
+   "year": 2007
+  },
+  {
+   "authors": [
+    "Bornmann, Lutz",
+    "Daniel, Hans\u2010Dieter"
+   ],
    "claim": "what citation counts actually measure",
    "container": "Journal of Documentation",
    "doi": "10.1108/00220410810844150",
@@ -1041,6 +1062,27 @@
   },
   {
    "authors": [
+    "Mingers, John",
+    "Leydesdorff, Loet"
+   ],
+   "claim": "scientometrics reviewed as a field with its own theory and practice",
+   "container": "European Journal of Operational Research",
+   "doi": "10.1016/j.ejor.2015.04.002",
+   "key": "mingers2015",
+   "query": "A review of theory and practice in scientometrics Mingers Leydesdorff",
+   "slot": "S1.6",
+   "title": "A review of theory and practice in scientometrics",
+   "type": "journal-article",
+   "verified": {
+    "queried_on": "2026-11-04",
+    "registry": "crossref",
+    "title": "two-way content-word containment vs want_title",
+    "year": "exact"
+   },
+   "year": 2015
+  },
+  {
+   "authors": [
     "Mongeon, Philippe",
     "Paul-Hus, Ad\u00e8le"
    ],
@@ -1401,6 +1443,28 @@
     "year": "exact"
    },
    "year": 2022
+  },
+  {
+   "authors": [
+    "Radicchi, Filippo",
+    "Fortunato, Santo",
+    "Castellano, Claudio"
+   ],
+   "claim": "rescaled citation distributions are universal across fields",
+   "container": "Proceedings of the National Academy of Sciences",
+   "doi": "10.1073/pnas.0806977105",
+   "key": "radicchi2008",
+   "query": "Universality of citation distributions toward an objective measure of scientific impact Radicchi",
+   "slot": "S1.1",
+   "title": "Universality of citation distributions: Toward an objective measure of scientific impact",
+   "type": "journal-article",
+   "verified": {
+    "queried_on": "2026-11-04",
+    "registry": "crossref",
+    "title": "two-way content-word containment vs want_title",
+    "year": "exact"
+   },
+   "year": 2008
   },
   {
    "authors": [
@@ -1769,6 +1833,29 @@
   },
   {
    "authors": [
+    "Sugimoto, Cassidy R.",
+    "Work, Sam",
+    "Larivi\u00e8re, Vincent",
+    "Haustein, Stefanie"
+   ],
+   "claim": "non-citation impact signals reviewed as a class",
+   "container": "Journal of the Association for Information Science and Technology",
+   "doi": "10.1002/asi.23833",
+   "key": "sugimoto2017",
+   "query": "Scholarly use of social media and altmetrics a review of the literature Sugimoto",
+   "slot": "S3.0",
+   "title": "Scholarly use of social media and altmetrics: A review of the literature",
+   "type": "journal-article",
+   "verified": {
+    "queried_on": "2026-11-04",
+    "registry": "crossref",
+    "title": "two-way content-word containment vs want_title",
+    "year": "exact"
+   },
+   "year": 2017
+  },
+  {
+   "authors": [
     "Sutton, Richard S.",
     "Precup, Doina",
     "Singh, Satinder"
@@ -1808,6 +1895,27 @@
     "year": "exact"
    },
    "year": 1986
+  },
+  {
+   "authors": [
+    "Tahamtan, Iman",
+    "Bornmann, Lutz"
+   ],
+   "claim": "what citation counts measure, updated",
+   "container": "Scientometrics",
+   "doi": "10.1007/s11192-019-03243-4",
+   "key": "tahamtan2019",
+   "query": "What do citation counts measure updated review Tahamtan Bornmann",
+   "slot": "S1.1",
+   "title": "What do citation counts measure? An updated review of studies on citations in scientific documents published between 2006 and 2018",
+   "type": "journal-article",
+   "verified": {
+    "queried_on": "2026-11-04",
+    "registry": "crossref",
+    "title": "two-way content-word containment vs want_title",
+    "year": "exact"
+   },
+   "year": 2019
   },
   {
    "authors": [
@@ -2094,79 +2202,9 @@
  "duplicates_refused": [],
  "not_run": [
   {
-   "key": "wilsdon2015",
-   "reason": "REGISTRY UNAVAILABLE (openalex): HTTP Error 429: Too Many Requests",
-   "slot": "S5.0"
-  },
-  {
-   "key": "cohen1988",
-   "reason": "REGISTRY UNAVAILABLE (openalex): HTTP Error 429: Too Many Requests",
-   "slot": "S5.1"
-  },
-  {
-   "key": "altman1995",
-   "reason": "REGISTRY UNAVAILABLE (openalex): HTTP Error 429: Too Many Requests",
-   "slot": "S5.1"
-  },
-  {
-   "key": "simmons2011",
-   "reason": "REGISTRY UNAVAILABLE (openalex): HTTP Error 429: Too Many Requests",
-   "slot": "S6.0"
-  },
-  {
-   "key": "wasserman2004",
-   "reason": "REGISTRY UNAVAILABLE (openalex): HTTP Error 429: Too Many Requests",
-   "slot": "S1.4"
-  },
-  {
-   "key": "hastie2009",
-   "reason": "REGISTRY UNAVAILABLE (openalex): HTTP Error 429: Too Many Requests",
-   "slot": "S3.0"
-  },
-  {
-   "key": "moed2005",
-   "reason": "request ceiling of 30 reached",
-   "slot": "S2.2"
-  },
-  {
-   "key": "zipf1949",
-   "reason": "request ceiling of 30 reached",
-   "slot": "S1.1"
-  },
-  {
-   "key": "hirsch2005",
-   "reason": "request ceiling of 30 reached",
-   "slot": "S1.2"
-  },
-  {
    "key": "fortunato2018",
-   "reason": "request ceiling of 30 reached",
+   "reason": "REGISTRY UNAVAILABLE (openalex): HTTP Error 429: Too Many Requests",
    "slot": "S1.0"
-  },
-  {
-   "key": "stodden2016",
-   "reason": "request ceiling of 30 reached",
-   "slot": "S6.0"
-  },
-  {
-   "key": "ioannidis2019",
-   "reason": "request ceiling of 30 reached",
-   "slot": "S2.2"
-  },
-  {
-   "key": "harman1993",
-   "reason": "request ceiling of 30 reached",
-   "slot": "S1.0"
-  },
-  {
-   "key": "wasserstein2016",
-   "reason": "request ceiling of 30 reached",
-   "slot": "S5.1"
-  },
-  {
-   "key": "shull2008",
-   "reason": "request ceiling of 30 reached",
-   "slot": "S3.0"
   }
  ],
  "registry": "Crossref /works?query.bibliographic",

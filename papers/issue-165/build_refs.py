@@ -114,8 +114,11 @@ def shape_ok(item, want_kind=None):
     title = (item.get("title") or [""])[0]
     container = (item.get("container-title") or [""])[0]
     typ = (item.get("type") or "").lower()
-    if WRAPPER.match(title):
-        return False, "a wrapper record, not the work: %r" % title[:60]
+    # The wrapper ban is deliberately NOT a title regex here. Set equality in `title_ok` already
+    # refuses a wrapper -- "Faculty Opinions recommendation of X" is a strict SUPERSET of X's content
+    # words -- while a regex on top of it also refuses legitimate works whose own title begins "A
+    # review of ...", which is a false positive on a real review article. The regex stays defined so a
+    # refusal can still name the shape; the decision belongs to the set test.
     if "faculty opinions" in container.lower():
         return False, "a commentary container, not the work: %r" % container[:50]
     if typ and typ not in SCHOLARLY:
