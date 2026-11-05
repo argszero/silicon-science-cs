@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="780" height="470" viewBox="0 0 780 470" font-family="Helvetica, Arial, sans-serif">
+<rect width="780" height="470" fill="#ffffff"/>
+<rect x="78" y="40" width="522" height="332" fill="none" stroke="#c8c8c8"/>
+<line x1="78" y1="372.0" x2="600" y2="372.0" stroke="#eeeeee"/>
+<text x="70" y="376.0" font-size="11" fill="#555555" text-anchor="end">0.70</text>
+<line x1="78" y1="316.7" x2="600" y2="316.7" stroke="#eeeeee"/>
+<text x="70" y="320.7" font-size="11" fill="#555555" text-anchor="end">0.75</text>
+<line x1="78" y1="261.3" x2="600" y2="261.3" stroke="#eeeeee"/>
+<text x="70" y="265.3" font-size="11" fill="#555555" text-anchor="end">0.80</text>
+<line x1="78" y1="206.0" x2="600" y2="206.0" stroke="#eeeeee"/>
+<text x="70" y="210.0" font-size="11" fill="#555555" text-anchor="end">0.85</text>
+<line x1="78" y1="150.7" x2="600" y2="150.7" stroke="#eeeeee"/>
+<text x="70" y="154.7" font-size="11" fill="#555555" text-anchor="end">0.90</text>
+<line x1="78" y1="95.3" x2="600" y2="95.3" stroke="#eeeeee"/>
+<text x="70" y="99.3" font-size="11" fill="#555555" text-anchor="end">0.95</text>
+<line x1="78" y1="40.0" x2="600" y2="40.0" stroke="#eeeeee"/>
+<text x="70" y="44.0" font-size="11" fill="#555555" text-anchor="end">1.00</text>
+<text x="78.0" y="390" font-size="11" fill="#555555" text-anchor="middle">0</text>
+<text x="208.5" y="390" font-size="11" fill="#555555" text-anchor="middle">3</text>
+<text x="339.0" y="390" font-size="11" fill="#555555" text-anchor="middle">6</text>
+<text x="469.5" y="390" font-size="11" fill="#555555" text-anchor="middle">9</text>
+<text x="600.0" y="390" font-size="11" fill="#555555" text-anchor="middle">12</text>
+<text x="339.0" y="410" font-size="12" fill="#333333" text-anchor="middle">horizon k (publishes after the declaration)</text>
+<text x="16" y="206.0" font-size="12" fill="#333333" transform="rotate(-90 16 206.0)" text-anchor="middle">share of edges still determined</text>
+<text x="78" y="22" font-size="13" fill="#111111">npm: survival of a declared edge, by range syntax (k = 0 cohort)</text>
+<polyline points="78.0,40.0 121.5,128.5 165.0,143.3 208.5,150.7 252.0,172.8 295.5,209.7 339.0,224.4 382.5,224.4 426.0,231.8 469.5,246.6 513.0,276.1 556.5,276.1 600.0,298.2" fill="none" stroke="#111111" stroke-width="2"/>
+<circle cx="78.0" cy="40.0" r="2.6" fill="#111111"/>
+<circle cx="339.0" cy="224.4" r="2.6" fill="#111111"/>
+<circle cx="600.0" cy="298.2" r="2.6" fill="#111111"/>
+<polyline points="78.0,40.0 121.5,40.0 165.0,40.0 208.5,40.0 252.0,40.0 295.5,40.0 339.0,40.0 382.5,40.0 426.0,40.0 469.5,40.0 513.0,40.0 556.5,40.0 600.0,40.0" fill="none" stroke="#1f6f3f" stroke-width="2"/>
+<circle cx="78.0" cy="40.0" r="2.6" fill="#1f6f3f"/>
+<circle cx="339.0" cy="40.0" r="2.6" fill="#1f6f3f"/>
+<circle cx="600.0" cy="40.0" r="2.6" fill="#1f6f3f"/>
+<polyline points="78.0,40.0 121.5,40.0 165.0,40.0 208.5,40.0 252.0,40.0 295.5,61.7 339.0,61.7 382.5,61.7 426.0,61.7 469.5,61.7 513.0,61.7 556.5,61.7 600.0,61.7" fill="none" stroke="#8a6d1f" stroke-width="2" stroke-dasharray="6,4"/>
+<circle cx="78.0" cy="40.0" r="2.6" fill="#8a6d1f"/>
+<circle cx="339.0" cy="61.7" r="2.6" fill="#8a6d1f"/>
+<circle cx="600.0" cy="61.7" r="2.6" fill="#8a6d1f"/>
+<polyline points="78.0,40.0 121.5,82.9 165.0,105.5 208.5,123.2 252.0,138.3 295.5,166.0 339.0,186.2 382.5,201.3 426.0,221.5 469.5,246.7 513.0,261.8 556.5,271.9 600.0,282.0" fill="none" stroke="#9c2b2b" stroke-width="2"/>
+<circle cx="78.0" cy="40.0" r="2.6" fill="#9c2b2b"/>
+<circle cx="339.0" cy="186.2" r="2.6" fill="#9c2b2b"/>
+<circle cx="600.0" cy="282.0" r="2.6" fill="#9c2b2b"/>
+<text x="624" y="46" font-size="11" fill="#555555">at k = 12 (n at risk)</text>
+<line x1="624" y1="64" x2="646" y2="64" stroke="#111111" stroke-width="2"/>
+<text x="652" y="68" font-size="11" fill="#333333">declaration (all edges) 0.767 (n=150)</text>
+<line x1="624" y1="84" x2="646" y2="84" stroke="#1f6f3f" stroke-width="2"/>
+<text x="652" y="88" font-size="11" fill="#333333">exact pin 1.000 (n=582)</text>
+<line x1="624" y1="104" x2="646" y2="104" stroke="#8a6d1f" stroke-width="2" stroke-dasharray="6,4"/>
+<text x="652" y="108" font-size="11" fill="#333333">tilde range 0.980 (n=51)</text>
+<line x1="624" y1="124" x2="646" y2="124" stroke="#9c2b2b" stroke-width="2"/>
+<text x="652" y="128" font-size="11" fill="#333333">caret range 0.781 (n=439)</text>
+<text x="624" y="166" font-size="11" fill="#9c2b2b">PyPI: NOT RUN</text>
+<text x="624" y="181" font-size="10" fill="#666666">no declaration in the panel</text>
+<text x="624" y="194" font-size="10" fill="#666666">is determined at k = 0, so the</text>
+<text x="624" y="207" font-size="10" fill="#666666">at-risk set is empty at every</text>
+<text x="624" y="220" font-size="10" fill="#666666">horizon. This is an absence of</text>
+<text x="624" y="233" font-size="10" fill="#666666">population, not a rate of zero.</text>
+<text x="78" y="456" font-size="10" fill="#666666">exhaustive enumeration over the committed panel; no sampling, no seeds. Drawn from decay.json by make_figures.py.</text>
+</svg>
