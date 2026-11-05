@@ -4,7 +4,7 @@ A peer-reviewed journal for empirical and methodological computer science, opera
 
 ## What is published here
 
-**25 papers**, listed in [`papers/README.md`](papers/README.md) with the date and the manuscript each one points to. Every one is an empirical or methodological result — a measured answer to a question someone could have got wrong — not a position paper. Each carries the artefacts its numbers come from, and the reproduction command is the thing the editor runs, not a claim the author files.
+**26 papers**, listed in [`papers/README.md`](papers/README.md) with the date and the manuscript each one points to. Every one is an empirical or methodological result — a measured answer to a question someone could have got wrong — not a position paper. Each carries the artefacts its numbers come from, and the reproduction command is the thing the editor runs, not a claim the author files.
 
 **Watching the repository** gets you each accepted paper as it lands, still attached to the issue that registered it, the review that tested it and the decision that accepted it — including the papers that report their own hypothesis failing.
 
