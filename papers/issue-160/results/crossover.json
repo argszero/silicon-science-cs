@@ -1,0 +1,152 @@
+{
+ "cells": [
+  {
+   "T_rule": "k * row median",
+   "binds": 27325,
+   "binds_frac": 0.5752,
+   "c_max": 0.499991,
+   "c_median": 0.147195,
+   "c_p10": 0.0,
+   "c_p90": 0.40573,
+   "identified_frac": 0.4248,
+   "k": 2,
+   "rows": 47502,
+   "understated_by_max": 28556.9588,
+   "understated_by_median": 4.2446,
+   "understated_by_p90": 61.5711
+  },
+  {
+   "T_rule": "k * row median",
+   "binds": 19580,
+   "binds_frac": 0.4122,
+   "c_max": 0.499973,
+   "c_median": 0.0,
+   "c_p10": 0.0,
+   "c_p90": 0.249194,
+   "identified_frac": 0.5878,
+   "k": 4,
+   "rows": 47502,
+   "understated_by_max": 27305.6667,
+   "understated_by_median": 3.8295,
+   "understated_by_p90": 69.5399
+  },
+  {
+   "T_rule": "k * row median",
+   "binds": 13519,
+   "binds_frac": 0.2846,
+   "c_max": 0.499936,
+   "c_median": 0.0,
+   "c_p10": 0.0,
+   "c_p90": 0.23139,
+   "identified_frac": 0.7154,
+   "k": 8,
+   "rows": 47502,
+   "understated_by_max": 27305.6667,
+   "understated_by_median": 3.4502,
+   "understated_by_p90": 69.6144
+  },
+  {
+   "T_rule": "k * row median",
+   "binds": 8981,
+   "binds_frac": 0.1891,
+   "c_max": 0.499863,
+   "c_median": 0.0,
+   "c_p10": 0.0,
+   "c_p90": 0.184234,
+   "identified_frac": 0.8109,
+   "k": 16,
+   "rows": 47502,
+   "understated_by_max": 27305.6667,
+   "understated_by_median": 3.2588,
+   "understated_by_p90": 58.3243
+  },
+  {
+   "T_rule": "k * row median",
+   "binds": 5815,
+   "binds_frac": 0.1224,
+   "c_max": 0.499716,
+   "c_median": 0.0,
+   "c_p10": 0.0,
+   "c_p90": 0.084725,
+   "identified_frac": 0.8776,
+   "k": 32,
+   "rows": 47502,
+   "understated_by_max": 27305.6667,
+   "understated_by_median": 3.0599,
+   "understated_by_p90": 35.3825
+  }
+ ],
+ "controls": {
+  "flat_rows_R_eq_1": 11972,
+  "flat_rows_R_eq_1_frac": 0.252,
+  "no_censoring_identified_and_exact_frac": 1.0,
+  "no_censoring_rows": 5000,
+  "note": "flat_rows_R_eq_1 counts rows whose ladder has no range at all (p100 == p50); rows_needing_one_level_at_eps_5 counts rows the cost law certifies with a single level, which is R <= 1.05 and is the larger set. A timeout above the maximum prints the truth, which is what the no-censoring control checks.",
+  "rows_needing_one_level_at_eps_5": 12664
+ },
+ "cost": {
+  "K_at_10": {
+   "frac_at_one": 0.2781,
+   "max": 133,
+   "median": 13,
+   "p90": 50
+  },
+  "K_at_20": {
+   "frac_at_one": 0.2988,
+   "max": 70,
+   "median": 7,
+   "p90": 26
+  },
+  "K_at_5": {
+   "frac_at_one": 0.2666,
+   "max": 259,
+   "median": 25,
+   "p90": 98
+  },
+  "R_max": 300241.0,
+  "R_median": 3.325,
+  "R_min": 1.0,
+  "R_p90": 114.0824,
+  "rule": "K = ceil(log R / log(1+eps)), R = p100/p50 (same-space, interval means)"
+ },
+ "count_limit": {
+  "below_100": 31185,
+  "below_1000": 40993,
+  "below_1000_frac": 0.863,
+  "below_100_frac": 0.6565,
+  "n_obs_median": 0.24,
+  "q": 0.99,
+  "refused": {
+   "crossing_ladder": 0,
+   "unparseable": 7,
+   "zero_median": 2219
+  },
+  "resolvable": 16317,
+  "resolvable_frac": 0.3435,
+  "rows": 49728,
+  "unit": "interval mean (30-s average), NOT single invocations -- trace footnote 7",
+  "unresolvable_frac": 0.6565,
+  "usable": 47502
+ },
+ "eps": [
+  0.05,
+  0.1,
+  0.2
+ ],
+ "input": {
+  "fixture": "fixture/function_durations_percentiles.anon.d01.csv.xz",
+  "interval_note": "the trace aggregates every 30 seconds and publishes percentiles of the per-interval MEAN (dataset footnote 7); this is the unit of every range in this artefact",
+  "interval_seconds": 30,
+  "member": "function_durations_percentiles.anon.d01.csv",
+  "sha256_of_decompressed_bytes": "6bb4e9a918dff8bf021158cbb9470107b47f0a2003412f789d03cb23dce3a5d2"
+ },
+ "kgrid": [
+  2,
+  4,
+  8,
+  16,
+  32
+ ],
+ "q": 0.99,
+ "source": "function_durations_percentiles.anon.d01.csv"
+}
