@@ -11,6 +11,13 @@
         "manuscript.md:414"
       ],
       "note": "Correction round 2 was OPENED R629 at 573dd41 and CLOSED at dac89f9, the squash merge of PR #152 (verified at c7ae675 in comment 6402211633): the two manuscript lines now state the pair the script takes, so the sites this entry named occupy no finding - the gate prints them as a note, which is what a discharged round looks like. Retired by recording it closed rather than by deleting it: the round is a fact of the record, and both expiries stay mechanical - a closed entry owns nothing, so if these lines ever disagree again the finding comes back UNOWNED and the gate exits 1."
+    },
+    {
+      "issue": 149,
+      "package": "issue-149",
+      "clock": "2026-12-07",
+      "state": "open",
+      "note": "OPENED R667, 2026-11-07. The published package's step-count collector read ONE value per line: `sed -n` with a greedy `.*` ahead of the capture group reports the line's LAST match, so `manuscript.md:635` - which states the count twice, the second time because the sentence is about the literal itself - was compared by its second occurrence only, and doctoring the first left the run green (measured: published collector exit 0 on that drift, repaired collector exit 1). Repaired in the same round on branch `paper/issue-149-correction` (the collector enumerates every occurrence with `grep -o` and requires them to agree with each other and with the run), and the round's product is `papers/issue-149/ERRATUM.md`. No `sites` are listed deliberately: the ACCEPT decision `6650620273` carried four items and three are still owed, each touching a site this round does not fix, so the round owns the whole package until its clock. What this entry can and cannot own here: `stepgate` reports this package's two document claims as NOT CHECKED - the script derives its count at run time, a form the gate does not read - so the gate prints this round as occupying no finding, and that note means THE GATE CANNOT SEE THIS PACKAGE'S COUNT, never that the claims now agree. The receipt for the repaired defect is the collector's own two-sided proof in the round's opening comment."
     }
   ]
 }

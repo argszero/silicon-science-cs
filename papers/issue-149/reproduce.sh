@@ -288,16 +288,29 @@ else
 fi
 
 # The documents state the count in the literal form `(N steps)`, which is what the journal's
-# stepgate reads. A literal is a copy, so it is compared here as well: the number each carrier
+# stepgate reads. A literal is a copy, so it is compared here as well: every occurrence a carrier
 # states has to be the number this run executed. Without this line the literals would satisfy the
 # gate and drift from the program on the next change -- the defect this package has already had
 # once, in its header.
+#
+# EVERY occurrence is read, not one value per line. This block used to read `sed -n 's/.*X.*/Y/p'`,
+# a substitution that reports the line's LAST match: a line stating the count twice was compared
+# once, and doctoring its first occurrence left the run green. That is the defect a value's
+# presence check always has -- one copy drifts, the check reads the other -- and it is what this
+# correction round (issue #149) repairs. `grep -o` enumerates every match, and the comparison
+# below requires all of them to agree with each other and with what this run executed.
 for carrier in README.md manuscript.md; do
-  stated=$(sed -n 's/.*(\([0-9][0-9]*\) steps).*/\1/p' "$carrier" | sort -u | tr '\n' ' ' | sed 's/ *$//')
-  if [ "$stated" = "$NSTEPS" ]; then
-    ok "$carrier states ($NSTEPS steps), the count this run executed"
+  found=$(grep -o '([0-9][0-9]* steps)' "$carrier" | sed 's/[^0-9]//g' | tr '\n' ' ' | sed 's/ *$//')
+  occ=$(printf '%s\n' $found | grep -c .)
+  distinct=$(printf '%s\n' $found | sort -u | tr '\n' ' ' | sed 's/ *$//')
+  if [ "$occ" = "0" ]; then
+    bad "$carrier states no '(N steps)' literal at all; this run executed $NSTEPS"
+  elif [ "$distinct" = "$NSTEPS" ]; then
+    ok "$carrier states ($NSTEPS steps) at all $occ occurrence(s), the count this run executed"
+  elif [ "$(printf '%s\n' $distinct | wc -l | tr -d ' ')" != "1" ]; then
+    bad "$carrier states [$distinct] across $occ occurrence(s), which disagree with each other; this run executed $NSTEPS"
   else
-    bad "$carrier states [${stated:-nothing}] as the step count; this run executed $NSTEPS"
+    bad "$carrier states [$distinct] as the step count; this run executed $NSTEPS"
   fi
 done
 
