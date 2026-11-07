@@ -68,12 +68,19 @@ so nothing downstream moves.
 ## What this round does not repair
 
 The editorial decision that published this package carried four items (`6650620273`, its *What is
-carried* section). This round takes the fourth — the collector's unit, which that decision names as
-*the one a future correction round should take first* — and leaves three: the floating-point lower
-bound printed as `0.0` in an artefact cell, the prose census's single declared exception whose reason
-lives in a program rather than in the manuscript, and the second failure line whose first clause
-attributes a doctored body number to the rates table. Each is owed its own round inside this round's
-clock; none of them makes a claim in the manuscript false today.
+carried* section). The first correction round took the fourth — the collector's unit, which that
+decision names as *the one a future correction round should take first*. The list below is current as
+of the second item rather than as of that round, because a list of what is owed goes stale the moment
+one of its entries is paid:
+
+- the floating-point lower bound carried in an artefact cell — **repaired**, in the section below;
+- the prose census's single declared exception, whose reason lives in a program rather than in the
+  manuscript — still owed;
+- the second failure line, whose first clause attributes a doctored body number to the rates table —
+  still owed.
+
+Each of the two still owed is owed its own round inside this round's clock, and neither makes a claim
+in the manuscript false today.
 
 ## What the tree-wide gate can and cannot see here
 
@@ -82,3 +89,78 @@ finding — because the script derives its count at run time, a form the gate do
 repair does not change that, and giving the gate a reader for that form is a separate item rather
 than part of this erratum. So the receipt for **this** defect is the collector's own two-sided proof
 above, taken in the package, and it is deliberately not a gate verdict.
+
+
+## Item 1 of the three owed — the floating-point lower bound at `k = 0`
+
+Repaired 2026-11-07, on branch `paper/issue-149-correction-2`, cut from `origin/main` = `2703762`
+(the merge of the first correction round's PR #170) after confirming the merge base at `f9a1535`.
+
+**What was wrong.** `depth2.json`'s `ecosystems.pypi.exceptions.wilson95_among_refutable[0]` read
+`6.938893903907228e-18` where every carrier prints `0.0`. A 95 % Wilson interval at a zero count is an
+upper bound whose lower end is **0 exactly**, by construction — no observed event places any mass
+below it. The published form **computed** that end instead of stating it, and subtracting below a zero
+count leaves a floating-point residue on some denominators and not on others.
+
+**The signature was in the same artefact, and no carrier could see it.** One function, one `k = 0`,
+two denominators in the same dictionary:
+
+| cell | denominator `n` | published lower end |
+|---|---|---|
+| `wilson95` | 63 | `0.0` — clean |
+| `wilson95_among_refutable` | 27 | `6.938893903907228e-18` |
+
+That is why a published package with every gate green carried it: the printed end was a property of
+the **denominator**, not of the measurement. And the repair a reader would reach for — a clamp — was
+already there, on the wrong side: `max(0.0, ·)` hides a negative residue and does nothing to a
+positive one.
+
+**Where it was repaired.** In the interval function's `k = 0` leg, not in the carrier that prints the
+value: `wilson` now returns the exact `0.0` the interval has, rather than the value the arithmetic
+happens to give. Two copies of that function exist in this package — `depth2.py`, which produced this
+cell, and `ambiguous.py`, which produced `rates.json` — and **both** are repaired, because fixing only
+the copy that happened to show the residue would leave the same defect latent in the other. Measured
+consequence in the second copy: none. `rates.json` carries no residue under either form and is
+byte-identical after the run.
+
+**The receipt, and it is two-sided.** The repair ships inside the package's own plant list
+(`PLANTS: 10/10 ALL PASS`, previously 8):
+
+- `plant the k=0 lower end is exactly 0.0 on every denominator` — sweeps `n` over 1…199 and requires
+  the lower end to *be* `0.0`, not to print as one, at every denominator in the sweep;
+- `plant the residue the published form leaves at k=0 is refused` — the published form is carried in
+  the plant as its negative leg, and the same predicate must refuse it. It does, and it prints the
+  refused value at `n = 27`. Without that leg the first plant would pass just as well if the mutant
+  and the original were the same object, which is a failure this package has recorded before.
+
+Measured over the wider range: **37 of the 399** denominators in 1…399 reproduce a residue under the
+published form, so the negative leg is not a lucky case.
+
+**What changed, and what did not** — stated as artefacts, and one of them did change:
+
+| file | before | after |
+|---|---|---|
+| `rates.json` | `127bd25d…` | `127bd25d…` sha256-identical |
+| `decay.json` | `18a9c345…` | `18a9c345…` sha256-identical |
+| `depth2.json` | `0db9d623…` | `751d373a…` **changed** |
+| `manuscript.md` | `7d857459…` | `7d857459…` sha256-identical |
+
+`depth2.json` changed in **exactly one line**, and `git diff` over the file is that line and nothing
+else: the lower end `6.938893903907228e-18` → `0.0`. The upper end `0.12455903714463581` is untouched.
+The prose does not move because it never printed this end at full precision — the manuscript renders
+the interval to four decimals, where both values are `0.0000` — so **this correction is invisible in
+print and visible only in the artefact**, which is precisely the class of defect no carrier can catch.
+No sub-1e-15 non-zero float remains in any of the three artefacts after the run, and
+`git status --porcelain` over the package shows this item's two source files and the one artefact.
+
+**Why this item fills no `sites` entry.** `.github/corrections.json` records `sites` as claim sites the
+tree-wide gate reads. This defect occupied none: it lived in an artefact cell, and the gate does not
+read artefacts. So it is discharged by the artefact and the plant above, and the entry's `sites` list
+stays empty — a site that occupies no finding prints a note in place of a receipt.
+
+**One reading to carry forward, recorded rather than fixed.** With no `sites` listed, `stepgate`
+prints for this round: *"occupies no finding, so the claims it named now agree — the round may be
+discharged and the entry retired"*. An entry that named no claims cannot have claims that agree, and
+this round still owes two items, so that sentence is a note about an empty list and not a verdict on
+the package. The entry's own `note` already says the opposite in terms; it is repeated here because a
+future cycle opener reads the gate's line and not the entry's.
