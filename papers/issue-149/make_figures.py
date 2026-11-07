@@ -210,26 +210,37 @@ def interval_census(body):
     a finding -- it was absent. An interval token is the visible unit here, not a match: each one is
     either inside a rate-with-interval statement (and therefore value-checked) or it is declared
     below with its reason. Anything else is reported by position and text.
+
+    THE UNIT IS THE OCCURRENCE, NOT THE DISTINCT TOKEN, and the first version of this census got that
+    wrong in the one place it is hardest to see: the total was `len(used)`, the set of declared
+    tokens, so quoting a declared interval a second time added a token to the body and left the
+    printed total where it was. The body now writes the declared token twice -- once quoting the
+    superseded bound and once naming what is declared -- and the printed denominator has to count
+    both or it reports 19 tokens over a body that writes 20. `declared` stays a set, because the
+    stale check asks which declarations matched at all; `declared_occurrences` is what the total
+    counts.
     """
     st = rate_statements(body)
     spans = [x["span"] for x in st]
     declared = dict(DECLARED_UNPAIRED_INTERVALS)
-    read, orphans, used = 0, [], set()
+    read, orphans, used, declared_hits = 0, [], set(), 0
     for m in INTERVAL.finditer(body):
         token = " ".join(m.group(0).split())
         if any(a <= m.start() < b for a, b in spans):
             read += 1
         elif token in declared:
             used.add(token)
+            declared_hits += 1
         else:
             orphans.append({"token": token, "at": m.start()})
-    return {"statements": len(st), "tokens": read + len(orphans) + len(used),
+    return {"statements": len(st), "tokens": read + len(orphans) + declared_hits,
             "read": read, "orphans": orphans, "declared": used,
+            "declared_occurrences": declared_hits,
             "stale_declarations": sorted(set(declared) - used)}
 
 
 def plant_census(body):
-    """Two legs, because the census has two ways to be wrong.
+    """Five legs, because the census has more than one way to be wrong.
 
     (1) The defect this repairs: a statement whose interval closes past any character window must be
     READ, not skipped. The doctor puts a share no artifact holds 174 characters from its own
@@ -239,8 +250,18 @@ def plant_census(body):
     (2) The other direction: an interval with no rate before it in its sentence must be NAMED by the
     census rather than counted as explained. A rule that reports only what it paired cannot fail
     here, and this leg is what shows the census is a census.
+    (3) A declaration whose token has LEFT the body must be a finding, or an exemption outlives the
+    sentence that needed it and the census goes on explaining an interval nobody writes. This is the
+    direction that separates a declaration from an allowlist, and the manuscript now states it to a
+    reader, so it is planted rather than asserted.
+    (4)-(5) The unit: the occurrence, not the distinct token. A third quotation of a declared
+    interval must move the printed total by exactly one, and the form this package published --
+    which counted the set of declared tokens -- must NOT move, and is carried here as the negative
+    leg. Without that leg, leg (4) would pass just as well if the mutant and the original were the
+    same object.
     """
     ok = True
+    base = interval_census(body)
     gap = " of the instances that can refute the identity and are counted in this population" * 3
     far = round(44.9, 1)
     doctored = body + ("\n\nA planted statement reads %.1f%%%s[33.1, 54.6].\n" % (far, gap))
@@ -255,6 +276,36 @@ def plant_census(body):
     print("  [plant %s] an interval with no rate before it is reported by the census (%d orphan(s))"
           % ("ok" if named else "FAIL", len(cens2["orphans"])))
     ok = ok and bool(named)
+    # (3) every occurrence of the declared token removed: the declaration must go stale. Removing the
+    # text rather than doctoring it keeps the two findings apart -- a replaced interval would also be
+    # reported as an orphan, and this leg is about the declaration alone.
+    retired = body.replace("[11.3, 21.0]", "the superseded bound")
+    cens3 = interval_census(retired)
+    stale_ok = (cens3["stale_declarations"] == ["[11.3, 21.0]"]
+                and not cens3["orphans"] and cens3["declared_occurrences"] == 0)
+    print("  [plant %s] a declaration that stops occurring is STALE, and reported: %s"
+          % ("ok" if stale_ok else "FAIL", cens3["stale_declarations"]))
+    ok = ok and stale_ok
+    # (4)-(5) the occurrence is the unit, and the published set-counting form cannot see a repeat
+    repeated = body + "\n\nThe superseded bound [11.3, 21.0] is quoted once more here.\n"
+    cens4 = interval_census(repeated)
+
+    def distinct_token_form(b):
+        """The form this package published: a declared token counted once, however often written."""
+        c = interval_census(b)
+        return c["read"] + len(c["orphans"]) + len(c["declared"])
+
+    moved = (cens4["tokens"] == base["tokens"] + 1
+             and cens4["declared_occurrences"] == base["declared_occurrences"] + 1)
+    print("  [plant %s] one more quotation of a declared interval adds one to the total (%d -> %d, "
+          "%d declared occurrence(s))"
+          % ("ok" if moved else "FAIL", base["tokens"], cens4["tokens"],
+             cens4["declared_occurrences"]))
+    ok = ok and moved
+    blind = distinct_token_form(repeated) == distinct_token_form(body)
+    print("  [plant %s] the published distinct-token form reports the same total (%d) for that body "
+          "and is refused as the unit" % ("ok" if blind else "FAIL", distinct_token_form(repeated)))
+    ok = ok and blind
     return ok
 
 
@@ -447,10 +498,11 @@ def check_prose_rates(text, rates, depth2=None):
     for st in rate_statements(body):
         forms[st["form"]] = forms.get(st["form"], 0) + 1
     print("  [ok]   PROSE: IN SYNC (%d rate-with-interval statements -- %d adjacent, %d distant -- "
-          "%d of %d interval tokens read as statements, %d declared: %s -- and %d pin-price integers "
-          "across the whole body, all of them the artifacts' own numbers)"
+          "%d of %d interval occurrences read as statements, %d declared occurrence(s) of %d "
+          "token(s): %s -- and %d pin-price integers across the whole body, all of them the "
+          "artifacts' own numbers)"
           % (total, forms.get("adjacent", 0), forms.get("distant", 0),
-             cens["read"], cens["tokens"], len(cens["declared"]),
+             cens["read"], cens["tokens"], cens["declared_occurrences"], len(cens["declared"]),
              ", ".join(sorted(cens["declared"])) or "none", ints))
     return 0
 

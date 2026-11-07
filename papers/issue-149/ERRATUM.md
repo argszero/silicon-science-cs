@@ -75,12 +75,12 @@ one of its entries is paid:
 
 - the floating-point lower bound carried in an artefact cell — **repaired**, in the section below;
 - the prose census's single declared exception, whose reason lives in a program rather than in the
-  manuscript — still owed;
+  manuscript — **repaired**, in the second item's section below;
 - the second failure line, whose first clause attributes a doctored body number to the rates table —
   still owed.
 
-Each of the two still owed is owed its own round inside this round's clock, and neither makes a claim
-in the manuscript false today.
+The one still owed is owed its own round inside this round's clock, and it does not make a claim in
+the manuscript false today.
 
 ## What the tree-wide gate can and cannot see here
 
@@ -161,6 +161,108 @@ stays empty — a site that occupies no finding prints a note in place of a rece
 **One reading to carry forward, recorded rather than fixed.** With no `sites` listed, `stepgate`
 prints for this round: *"occupies no finding, so the claims it named now agree — the round may be
 discharged and the entry retired"*. An entry that named no claims cannot have claims that agree, and
-this round still owes two items, so that sentence is a note about an empty list and not a verdict on
-the package. The entry's own `note` already says the opposite in terms; it is repeated here because a
-future cycle opener reads the gate's line and not the entry's.
+this round owed two items when that section was written (it owes one now), so that sentence is a note
+about an empty list and not a verdict on the package. The entry's own `note` already says the
+opposite in terms; it is repeated here because a future cycle opener reads the gate's line and not
+the entry's.
+
+
+## Item 2 of the three owed — the declared exception, and the unit it is counted in
+
+Repaired 2026-11-07, on branch `paper/issue-149-correction-2`, in the same round as item 1.
+
+**What was wrong.** Not the census — the reader. The ACCEPT decision carried this item as *the prose
+census's single declared exception, whose reason lives in `make_figures.py:176` and is invisible to a
+reader of the manuscript alone, though a statement reusing that token with a wrong rate is still
+refused*. Read the way it was written: an exemption existed, it was correct, its reason was in the
+package, and **a reader of the paper could not learn from the paper that it existed**. §7.2 met the
+token `[11.3, 21.0]` quoting a retired bound, with nothing beside it saying whether that interval was
+checked, exempted, or simply unread. The defect is a coverage statement the paper owed its reader and
+did not make; the instrument behind it was already sound.
+
+**What the reader is now told**, in §7.2 beside the bound it concerns:
+
+- the census accounts for **every occurrence** of an interval token in the prose, each one either
+  inside a rate-with-interval statement (and therefore value-checked against the artifacts) or a
+  declared exception with its reason;
+- the rendered table is **not** this census's business, and the sentence says so rather than leaving
+  a reader to wonder — the table is generated from `rates.json` and the run refuses a table block
+  that is not that render;
+- `[11.3, 21.0]` is the only interval this paper declares rather than checks, and the reason is the
+  one that was already in §7.2: it quotes a superseded bound;
+- where the declaration lives, by name, so the reader can open it rather than take it on trust;
+- that the coupling runs **both ways** — a declared token that leaves the prose fails the run, so an
+  exemption cannot outlive the sentence that needed it — and that each direction is a plant.
+
+**Writing that sentence found a second defect, in the census itself.** Putting the unit into words
+put it to the test, and the code did not match the words. `interval_census` reported
+`tokens = read + len(orphans) + len(used)`: the first two count **occurrences** and the third is a
+**set of distinct declared tokens**. So a declared interval written twice added a token to the body
+and left the printed denominator where it was. The form is invisible exactly as long as each
+declaration is written once — and this section's own sentence quotes the token a second time, so
+from that edit onward the run printed **19** tokens over a body that writes **20**.
+
+That is the same defect as this round's first correction and as the ACCEPT decision's fourth item, in
+a third carrier: **a count measured with a set**. It is repaired in the census rather than in the
+prose — the prose is what the reader needed, and weakening it to fit the counter would have been the
+wrong direction. `declared` stays a set, because the stale check asks which declarations matched at
+all; a new `declared_occurrences` is what the total counts.
+
+**The receipt: five legs, and the round's own first reading of one of them was wrong.** The plants
+live in `plant_census` and print into step 9 of `./reproduce.sh`:
+
+| leg | what it requires | why it can fail |
+|---|---|---|
+| 3 | every occurrence of the declared token removed → `stale_declarations == ['[11.3, 21.0]']`, no orphans, 0 declared occurrences | an exemption that outlives its sentence is an allowlist |
+| 4 | one more quotation of the declared token moves the total by exactly one (`20 → 21`) | the shipped form counts occurrences |
+| 5 | the published distinct-token form reports the **same** total (`19`) for that body, and is refused as the unit | without this leg, leg 4 passes just as well if the mutant were the original |
+
+Legs 1–2 were already there — a statement read past the retired 160-character window, and an
+unpaired interval named rather than skipped.
+
+*The round's own first reading of this was wrong, and it is recorded rather than tidied.* Before
+writing the manuscript sentence I probed the census, and the probe's third leg asserted that **"a
+second occurrence of the exempt token changes no printed count"** and marked it `ok` — a property of
+the counter written down as a property of the census. It was a receipt that certified the defect. What
+caught it was not another probe but the obligation to state the unit in a sentence a reader would
+read; leg 5 exists because of it.
+
+**What changed, and what did not** — stated as artefacts:
+
+| file | before | after |
+|---|---|---|
+| `rates.json` | `127bd25d…` | `127bd25d…` sha256-identical |
+| `decay.json` | `18a9c345…` | `18a9c345…` sha256-identical |
+| `depth2.json` | `751d373a…` | `751d373a…` sha256-identical |
+| `manuscript.md` | `7d857459…` | `039b143a…` **changed** |
+| `make_figures.py` | — | `56190a92…` **changed** (census + plants) |
+| `README.md` | — | `50c21e37…` **changed** (row 2's plant count) |
+
+No artefact moved: this item repairs an instrument and the prose that reports it, and the paper's
+numbers are the ones the published run printed. The verdict line changed in form and in its
+denominator, and both are printed together so the arithmetic closes:
+
+```
+before  [ok] PROSE: IN SYNC (… 18 of 19 interval tokens read as statements, 1 declared: [11.3, 21.0] …)
+after   [ok] PROSE: IN SYNC (… 18 of 20 interval occurrences read as statements,
+              2 declared occurrence(s) of 1 token(s): [11.3, 21.0] …)
+```
+
+**A stale count this round found and repaired, which item 1 had left behind.** Item 1 raised a plant
+list `8 → 10` in `depth2.py` and stated, correctly, that `manuscript.md` was unchanged — but
+`manuscript.md` and `README.md` both **print** that count (`8/8 on depth2.py`), so from that commit
+onward two carriers stated a denominator the program no longer printed. Both now read `10/10`, the
+manuscript names the two plants item 1 added, and the ordinal sentence it had ("the eighth
+`depth2.py` plant") is now "one `depth2.py` plant", because the plants were appended and the ordinal
+was never true of the list order.
+
+**Still owed from that finding, and deliberately not taken here.** Nothing compares the plant counts
+the prose states against the denominators the programs print: step 2 echoes each `PLANTS:` line and
+checks only that a denominator is present. Today's miss is therefore the same class as the item above
+— a derived count in prose with no program owning it — and it is worth its own change with its own
+two-sided plant rather than a rider on this one.
+
+**Why this item fills no `sites` entry either.** `.github/corrections.json` records `sites` as claim
+sites the tree-wide gate reads, and `stepgate` reports this package's document claims as
+`NOT CHECKED` because the step count is derived at run time. This item adds no disagreement at a site
+the gate can read, so the entry's `sites` list stays empty, and the receipt is the five legs above.

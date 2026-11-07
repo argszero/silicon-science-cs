@@ -28,7 +28,7 @@ depth-1 rates, the decay curve, the citation gates, the figure and the rates tab
 | step | what it checks | expected |
 |---|---|---|
 | 1 | snapshot pins | npm `e5760d09…`, PyPI `bcb64650…`, checked in **all three** artifacts (`rates.json`, `decay.json`, `depth2.json`) — the snapshots ship with the paper |
-| 2 | known-answer plants | `ambiguous.py` 7/7, `depth2.py` 8/8, `decay.py` 7/7 — the `PLANTS:` lines are printed by the run, with the count on the verdict line |
+| 2 | known-answer plants | `ambiguous.py` 7/7, `depth2.py` 10/10, `decay.py` 7/7 — the `PLANTS:` lines are printed by the run, with the count on the verdict line |
 | 3 | depth-1 rates | npm 322/2427 = 0.133 [0.120, 0.147]; PyPI 213/226 = 0.942 [0.904, 0.966] |
 | 4 | depth-2 certificate | ~10 s; npm median 1.0, price 281/906 = 31.0% over all 292 enumerable instances and 211/778 = 27.1% excluding the 34 dependent ones; PyPI median 1.0, price 115/120 = 95.8%; `NOT RUN` under `--fast` — the `pins:` and `price,` lines carrying those counts are printed by the run |
 | 5 | decay | npm `exact` 1.000 (n=582), `tilde` 0.980 (n=51), `caret` 0.781 (n=439), decl 0.767 (n=150) |
