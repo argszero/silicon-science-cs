@@ -70,16 +70,17 @@ so nothing downstream moves.
 The editorial decision that published this package carried four items (`6650620273`, its *What is
 carried* section). The first correction round took the fourth — the collector's unit, which that
 decision names as *the one a future correction round should take first*. The list below is current as
-of the second item rather than as of that round, because a list of what is owed goes stale the moment
+of the third item rather than as of that round, because a list of what is owed goes stale the moment
 one of its entries is paid:
 
 - the floating-point lower bound carried in an artefact cell — **repaired**, in the section below;
 - the prose census's single declared exception, whose reason lives in a program rather than in the
   manuscript — **repaired**, in the second item's section below;
 - the second failure line, whose first clause attributes a doctored body number to the rates table —
-  still owed.
+  **repaired**, in the third item's section below.
 
-The one still owed is owed its own round inside this round's clock, and it does not make a claim in
+All four items the decision carried are now repaired inside this round's clock. What is recorded
+rather than repaired is named at the end of the third item's section, and none of it makes a claim in
 the manuscript false today.
 
 ## What the tree-wide gate can and cannot see here
@@ -266,3 +267,100 @@ two-sided plant rather than a rider on this one.
 sites the tree-wide gate reads, and `stepgate` reports this package's document claims as
 `NOT CHECKED` because the step count is derived at run time. This item adds no disagreement at a site
 the gate can read, so the entry's `sites` list stays empty, and the receipt is the five legs above.
+
+
+## Item 3 of the three owed — one exit code carried two objects, and the sentence named the wrong one
+
+Repaired 2026-11-07, in the same round as items 1 and 2.
+
+**What was wrong.** Not a number and not a check: a **sentence**. `reproduce.sh` ran one command for
+step 9 and printed one failure line for it — *the manuscript's table block is not the render of
+rates.json* — while that command checked the table block **and** every number the body prints.
+`check_table()` ended with `return check_prose_rates(...)`: the prose leg's verdict **was** the
+function's verdict. So the commonest failure a reader can produce, changing a number in the prose,
+came out under a sentence about the table, and the reader was sent to the object that was fine. The
+decision carried this as *the second failure line … correct in its own verdict but misattributed in
+its first clause*; the verdict was never wrong, the addressee was.
+
+**A second defect the split exposed, latent until now.** The prose leg cut the table out of the
+manuscript by matching the render: `text.replace(render_table(rates), "")`. That tied this leg's
+**input** to the other leg's **verdict**. While one exit code served both it could not show, because
+the table was verified first and the function returned before the prose ran. Asked on its own — which
+the split now allows — it shows at once: with one table cell wrong, the published cut leaves **28**
+interval occurrences in the prose leg's unit where a green tree has **20**, the eight extra being the
+table's own rows, read as prose. The unit is now cut by the block's **markers**, so it is the same
+bytes whatever the table says.
+
+**The repair: two objects, two legs, two sentences.**
+
+- `make_figures.py --check-table` — the table block against `render_table(rates)`, byte-exact, naming
+  its own object (`TABLE BLOCK … not the render of rates.json`) and printing the differing cell;
+- `make_figures.py --check-prose` — every number the prose prints, its unit cut by the markers;
+- step 9 asks both and its own line names the object that failed — *manuscript.md's table block vs the
+  rates.json render*, or *manuscript.md's prose numbers vs the artifacts* — deliberately **not** a
+  restatement of the leg's finding. A step line that copies the finding prints one failure twice: my
+  first version copied it verbatim, and the log showed the same sentence on two consecutive lines.
+
+**The receipt: four readings**, each taken with the manuscript restored and its sha256 re-checked
+(`039b143a` after every one).
+
+| reading | drift | table leg | prose leg | step line |
+|---|---|---|---|---|
+| 1 baseline | none | `TABLE: IN SYNC` | `PROSE: IN SYNC` | `ALL STEPS PASSED (9 steps)`, exit 0 |
+| 2 a **number in the prose** | §7.1 `34.5% → 34.8%`, table untouched | **`TABLE: IN SYNC`** — green | `[FAIL] the body prints 34.8% [29.5, 39.8], which no artifact holds` | `[FAIL] manuscript.md's prose numbers vs the artifacts`, exit 1 |
+| 3 a **cell in the table** | `13.3% → 14.3%`, prose untouched | `[FAIL] … TABLE BLOCK is not the render of rates.json` and the cell | **`PROSE: IN SYNC`** — green | `[FAIL] manuscript.md's table block vs the rates.json render`, exit 1 |
+| 4 reverted | none | `TABLE: IN SYNC` | `PROSE: IN SYNC` | `ALL STEPS PASSED (9 steps)`, exit 0 |
+
+Reading 2 is the carried defect cured: the drift that used to print *the manuscript's table block is
+not the render of rates.json* now prints a sentence about prose numbers, and the table leg states, on
+its own line, that the table is fine. Reading 3 is what keeps reading 2 from being satisfied by a leg
+that simply stopped reading tables.
+
+**The plant, and its first version is recorded because it was wrong.** `plant_legs_are_separable`
+states the claim as a **relation between the two legs** — doctoring the prose must not move the table
+verdict, doctoring the table must not move the prose verdict — and plants both directions. Its first
+version asserted instead that *both legs are green on the shipped manuscript*. Taking reading 2 above
+against that version printed `[plant FAIL] both legs are green on the shipped manuscript` and
+`[plant FAIL] a doctored TABLE BLOCK is named by the table leg alone`: the plant had made a claim
+about the manuscript's health, so a genuine defect became a *failing plant*, and its noise printed
+over the finding that named the defect. A plant that inherits a defect it is not testing is a
+recorded shape in this package; the fix is to plant the relation and let the legs' own verdict lines
+report the manuscript — which is why the plant's baseline line now prints both verdicts and asserts
+neither.
+
+**What changed, and what did not.**
+
+| file | before | after |
+|---|---|---|
+| `rates.json` | `127bd25d…` | `127bd25d…` sha256-identical |
+| `decay.json` | `18a9c345…` | `18a9c345…` sha256-identical |
+| `depth2.json` | `751d373a…` | `751d373a…` sha256-identical |
+| `manuscript.md` | `039b143a…` | `039b143a…` sha256-identical |
+| `make_figures.py` | — | `e474612b…` **changed** (two legs, the marker cut, the plant) |
+| `reproduce.sh` | — | `39ab8a92…` **changed** (two invocations, two sentences) |
+| `README.md` | — | `df30d7c1…` **changed** (row 9 now names both legs) |
+
+No number moved and no prose moved: this item repairs **which sentence a failure is printed under**,
+and the unit the prose leg reads. Row 9 of the README also stopped saying `§7`, which was stale from
+the retired window — the check has read the whole body since that window was removed.
+
+**Recorded rather than repaired, now that the decision's four are all paid.**
+
+- **the plant counts the prose states are still not compared against the denominators the programs
+  print** — step 2 echoes each `PLANTS:` line and checks only that a denominator is present. Found
+  while repairing item 2, which is how it is possible for a plant list to go `8 → 10` while two
+  carriers went on printing `8/8`.
+- **a reader for run-time-derived step counts in `stepgate`** — the gate reports this package's two
+  document claims as `NOT CHECKED` because the script derives its count at run time. The publishing
+  decision named this a separate item, and this round does not touch it.
+
+Neither makes a claim in the manuscript false today.
+
+**Why `sites` stays empty, now as a completed argument rather than a deferral.** The ledger's own
+`why` defines `sites` as *the claim sites the round requires changed*, which `stepgate` compares
+against findings. This round required no manuscript claim to change — every one of the three items it
+paid was an instrument, a unit, or the coverage statement beside a bound — and the package's two
+document claims are exactly the ones the gate reports `NOT CHECKED`. Listing three sites there would
+not make the round own them; it would make the gate print three notes saying the round *may be
+discharged*, an entry that named claims it cannot compare. The round is the editor's to retire, and
+its clock is **2026-12-07**.

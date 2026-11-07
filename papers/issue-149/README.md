@@ -35,7 +35,7 @@ depth-1 rates, the decay curve, the citation gates, the figure and the rates tab
 | 6 | corpus gates | C0/C0b the committed corpus matches its recorded sha256; C1–C5 pass; `reference-check.md` regenerates byte-identically |
 | 7 | manuscript citations | 102 cited of 102 placed; `references.md` matches the corpus, and the manuscript's own `## References` section is the same render |
 | 8 | figure | `figures/decay-curve.svg` regenerated from `decay.json`; the script asserts `exact` > `caret` at k=12 before writing, and labels PyPI `NOT RUN` |
-| 9 | rates table | the manuscript's table block is compared against the render of `rates.json`, and every `X% [a, b]` statement in §7 is matched to a rate the artifacts hold |
+| 9 | table and prose | two legs, two sentences: the manuscript's table block is compared against the render of `rates.json` (a hand-edited cell), and every number the prose prints across the whole body is matched to one the artifacts hold — each leg names its own object when it fails |
 
 Exact lines are printed by each step; the numbers above are what they print. Two of them used to be
 captured rather than echoed (the plants' verdict line, and the `pins:` line that carries 906 and 281),
