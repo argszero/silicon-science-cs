@@ -382,13 +382,17 @@ the subject of their own literature [36].
 that fail if the instrument reverts to a plausible wrong behaviour: identical closures must not
 count as a closure difference, a version published later must not be admissible as-of, an unparsed
 spec must return `None` rather than an empty set,`wilson(0,52)` must have a positive upper bound,
-an absent target must be `UNKNOWN`, an empty denominator must print `NOT RUN` and not `0.0`, and a
+an absent target must be `UNKNOWN`, an empty denominator must print `NOT RUN` and not `0.0`, a zero
+count must have a lower end of exactly `0.0` rather than a value that prints as one, and a
 caret range must saturate at its major bound. The plants pass 7/7 on `ambiguous.py`, 7/7 on
-`decay.py` and 8/8 on `depth2.py`, each program printing its own denominator on its verdict line;
+`decay.py` and 10/10 on `depth2.py`, each program printing its own denominator on its verdict line;
 the functional-dependence positive that the data does not contain is a plant, and is labelled as one
-everywhere it appears (§3). The eighth `depth2.py` plant is the one that separates this paper's two
+everywhere it appears (§3). One `depth2.py` plant is the one that separates this paper's two
 objects: a single ambiguous coordinate is `|M| = 1` and **zero** ambiguity pairs, so a guard that
-only ever holds `|M| >= 2` cannot tell the coordinate count from the pair count.
+only ever holds `|M| >= 2` cannot tell the coordinate count from the pair count. Two further
+`depth2.py` plants are two-sided on the zero-count interval: the shipped form must return an exact
+`0.0` at every denominator in a 1…199 sweep, and the form this paper published — which computed that
+end instead of stating it — is carried as the negative leg the same predicate must refuse.
 
 **Decay.** A panel of declarations at least 12 months old is read at k = 0, 3, 6, 9, 12 months. The
 **at-risk set** is declared before the curve is read: only an edge that is a singleton at k = 0 can
@@ -430,6 +434,22 @@ PyPI the analogous figures are 33/213 = 15.5% [11.2, 21.0] and 6.6% [4.0, 10.7].
 those bounds read `[11.3, 21.0]` in earlier heads: the artifact's lower bound is `0.1124951`, which
 rounds to 11.2 and not to 11.3, and the table below is generated from the artifact, so the copy is
 corrected against it rather than the other way round.)
+
+One instrument note belongs beside that number, because the reader of a bound is owed its coverage.
+The prose census accounts for **every** occurrence of an interval token in the prose: each one is
+either inside a rate-with-interval statement, and therefore compared against the artifacts, or it is
+a declared exception with its reason. (The rendered table is a separate object and is not this
+census's business: it is generated from `rates.json`, and the run refuses a table block that is not
+that render.) The token `[11.3, 21.0]` is the only interval this paper declares rather than checks,
+and the reason is the one above — it quotes a superseded bound instead of asserting a current one.
+It is written twice, once quoting the old bound and once here naming what is declared, and both
+occurrences are counted, because the unit is the occurrence and not the distinct token. The
+declaration and its reason live in the package, in `DECLARED_UNPAIRED_INTERVALS` in
+`make_figures.py`, where a reader can open them. The coupling runs in both directions: a declared
+token that stops occurring in the prose fails the run, so an exemption cannot outlive the sentence
+that needed it, and any *other* unpaired interval is still reported by position and text rather than
+passed over. Each direction is a plant, including the one where the count does *not* move for a
+repeated token under the cheaper set-counting form.
 
 That asymmetry is expected under the dialect reading and is worth stating plainly: PyPI's
 declarations are ambiguous far more often and consequential far less often, because an unbounded

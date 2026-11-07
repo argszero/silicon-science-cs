@@ -55,7 +55,11 @@ def wilson(k, n, z=1.96):
     d = 1.0 + z * z / n
     centre = (p + z * z / (2 * n)) / d
     half = z * ((p * (1 - p) / n + z * z / (4 * n * n)) ** 0.5) / d
-    return [max(0.0, centre - half), min(1.0, centre + half)]
+    # The lower end at k = 0 is 0 EXACTLY, and is stated rather than computed: subtracting below a
+    # zero count leaves a floating-point residue on some denominators and not others (n = 27 gives
+    # 6.94e-18, n = 63 gives a clean 0.0), which would make the printed end a property of the
+    # denominator.  depth2.py's copy of this function carries the same repair, for the same reason.
+    return [0.0 if k == 0 else max(0.0, centre - half), min(1.0, centre + half)]
 
 
 def admissible(pkg, spec, as_of, pep440):
