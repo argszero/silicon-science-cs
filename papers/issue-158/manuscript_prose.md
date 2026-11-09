@@ -19,8 +19,9 @@ three families (random-hyperplane Hamming, product quantisation, scalar quantisa
 {{n:A.corpus.n}} real SIFT descriptors — the two endpoint controls are run on every reproduction and
 are not among them, because neither belongs to a family: the float cell carries no code and the
 constructed cell is a corpus rather than a code — the boundary tie group is ordered by resolution on a log-log
-scale at `r = {{n:A.r}}` over {{n:A.n_cells}} seed-level cells; at {{n:B.corpus.n}} descriptors
-the same ordering holds at `r = {{n:B.r}}` over {{n:B.configs}} configurations. Hamming distance
+scale at `r = {{n:A.r_configs}}` over {{n:A.n_configs}} configuration means; at
+{{n:B.corpus.n}} descriptors the same ordering holds at `r = {{n:B.r_configs}}` over
+{{n:B.n_configs}} configurations. Hamming distance
 attains only `b+1` values for a `b`-bit code and ties badly — the boundary tie group is
 {{n:B.hamming32.median_t}} at the shortest budget, mean floor {{n:B.hamming32.floor}} — while
 product and scalar quantisation, which attain hundreds of values, tie barely: a tie group of
@@ -178,7 +179,7 @@ quantiser family and not by the bit budget alone.**
 
 The same axis is measured on {{n:B.corpus.n}} descriptors — a factor of fifty more points than the
 committed subsample, with {{n:B.corpus.n_queries}} queries per seed — and it holds:
-`r = {{n:B.r}}` over {{n:B.configs}} configurations. The resolution ranges from
+`r = {{n:B.r_configs}}` over {{n:B.n_configs}} configurations. The resolution ranges from
 {{n:B.hamming32.atoms}} distinct values in the near neighbourhood of a short Hamming budget to
 {{n:B.pq32.atoms}} for product quantisation. Correspondingly the mean boundary tie group is
 {{n:B.hamming32.median_t}} at the short Hamming budget, {{n:B.hamming64.median_t}} at twice the
@@ -355,15 +356,23 @@ descriptors from the same source, not a second dataset, so the axis is shown to 
 not shown to survive a change of data. This is the study's binding limitation and it is why the
 contribution level is a case study.
 
-**Configurations, not cells.** The correlation is computed over seed-level cells; three seeds of one
-configuration are one configuration measured thrice. The program prints both counts and the paper
-quotes the configuration count as evidence.
+**Configurations, not cells.** Three seeds of one configuration are one configuration measured
+thrice, so the configuration count is the evidence count and every statistic this paper quotes is
+composed over configuration means: {{n:A.n_configs}} of them at 20,000 descriptors and
+{{n:B.n_configs}} at a million. The finer view is also carried, and is named as the finer view: the
+artefact records the seed-level cells too ({{n:A.n_cells}} of them), and the programme prints both
+counts on every run.
 
-**Sensitivity.** The central claim is a correlation over {{n:A.n_cells}} seed-level cells. The
-smallest correlation a design of this size could have detected, at conventional two-sided
-significance and power, is {{n:A.mde}}; the measured `r = {{n:A.r}}` is far above it. That matters
-for reading section 6: the refutations there rest on differences larger than the design's own
-sensitivity, so they are evidence against the registered priors rather than an absence of one.
+**Sensitivity.** A statistic and the smallest effect it must clear belong on the same denominator, so
+both are given at the evidence count. At 20,000 descriptors the design has {{n:A.n_configs}}
+configuration means and detects `|r|` down to {{n:A.mde_configs}}, against a measured
+`r = {{n:A.r_configs}}`; at a million it has {{n:B.n_configs}} and detects down to
+{{n:B.mde_configs}}, against `r = {{n:B.r_configs}}`. Both clear their own threshold. The seed-cell
+pair the artefact also holds is finer and not the design — `r = {{n:A.r}}` over {{n:A.n_cells}}
+cells against {{n:A.mde}} — and it is reported here only because a reader who recomputes over the
+cells will find it, not as the sensitivity of the claim. That matters for reading section 6: the
+refutations there rest on differences larger than the design's own sensitivity, so they are evidence
+against the registered priors rather than an absence of one.
 
 **Resolution is measured, not derived.** No closed form predicts the number of distinct distance
 values a quantiser induces, so the axis is an empirical predictor. That is enough to falsify the

@@ -19,8 +19,9 @@ three families (random-hyperplane Hamming, product quantisation, scalar quantisa
 20,000 real SIFT descriptors — the two endpoint controls are run on every reproduction and
 are not among them, because neither belongs to a family: the float cell carries no code and the
 constructed cell is a corpus rather than a code — the boundary tie group is ordered by resolution on a log-log
-scale at `r = -0.9765` over 20 seed-level cells; at 1,000,000 descriptors
-the same ordering holds at `r = -0.9613` over 7 configurations. Hamming distance
+scale at `r = -0.9795` over 8 configuration means; at
+1,000,000 descriptors the same ordering holds at `r = -0.9631` over
+7 configurations. Hamming distance
 attains only `b+1` values for a `b`-bit code and ties badly — the boundary tie group is
 52.333 at the shortest budget, mean floor 0.2886 — while
 product and scalar quantisation, which attain hundreds of values, tie barely: a tie group of
@@ -177,7 +178,7 @@ quantiser family and not by the bit budget alone.**
 
 The same axis is measured on 1,000,000 descriptors — a factor of fifty more points than the
 committed subsample, with 512 queries per seed — and it holds:
-`r = -0.9613` over 7 configurations. The resolution ranges from
+`r = -0.9631` over 7 configurations. The resolution ranges from
 3.0 distinct values in the near neighbourhood of a short Hamming budget to
 701.667 for product quantisation. Correspondingly the mean boundary tie group is
 52.333 at the short Hamming budget, 18.5 at twice the
@@ -348,15 +349,23 @@ descriptors from the same source, not a second dataset, so the axis is shown to 
 not shown to survive a change of data. This is the study's binding limitation and it is why the
 contribution level is a case study.
 
-**Configurations, not cells.** The correlation is computed over seed-level cells; three seeds of one
-configuration are one configuration measured thrice. The program prints both counts and the paper
-quotes the configuration count as evidence.
+**Configurations, not cells.** Three seeds of one configuration are one configuration measured
+thrice, so the configuration count is the evidence count and every statistic this paper quotes is
+composed over configuration means: 8 of them at 20,000 descriptors and
+7 at a million. The finer view is also carried, and is named as the finer view: the
+artefact records the seed-level cells too (20 of them), and the programme prints both
+counts on every run.
 
-**Sensitivity.** The central claim is a correlation over 20 seed-level cells. The
-smallest correlation a design of this size could have detected, at conventional two-sided
-significance and power, is 0.5912; the measured `r = -0.9765` is far above it. That matters
-for reading section 6: the refutations there rest on differences larger than the design's own
-sensitivity, so they are evidence against the registered priors rather than an absence of one.
+**Sensitivity.** A statistic and the smallest effect it must clear belong on the same denominator, so
+both are given at the evidence count. At 20,000 descriptors the design has 8
+configuration means and detects `|r|` down to 0.8491, against a measured
+`r = -0.9795`; at a million it has 7 and detects down to
+0.8855, against `r = -0.9631`. Both clear their own threshold. The seed-cell
+pair the artefact also holds is finer and not the design — `r = -0.9765` over 20
+cells against 0.5912 — and it is reported here only because a reader who recomputes over the
+cells will find it, not as the sensitivity of the claim. That matters for reading section 6: the
+refutations there rest on differences larger than the design's own sensitivity, so they are evidence
+against the registered priors rather than an absence of one.
 
 **Resolution is measured, not derived.** No closed form predicts the number of distinct distance
 values a quantiser induces, so the axis is an empirical predictor. That is enough to falsify the

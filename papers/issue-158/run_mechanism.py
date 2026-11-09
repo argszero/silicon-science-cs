@@ -33,6 +33,7 @@ import warnings
 import numpy as np
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import axis
 import tiefloor as T                                   # noqa: E402
 
 warnings.filterwarnings("ignore", message=".*encountered in matmul")
@@ -165,6 +166,9 @@ def main():
     mde = float(np.tanh((z_alpha + z_power) / np.sqrt(max(len(fam) - 3, 1))))
     print("Pearson r on log(atoms) vs log(median t) = %.4f over %d cells" % (rho, len(fam)))
     print("smallest |r| this design detects (two-sided, power 0.8, Fisher z) = %.4f" % mde)
+    _ax = axis.at_evidence_count(cells)
+    print("at the evidence count (%d configuration means): r = %.4f, smallest |r| detectable = %.4f"
+          % (_ax["n_configs"], _ax["log_log_pearson_configs"], _ax["mde_pearson_configs"]))
 
     out = dict(corpus=dict(source="ann-benchmarks sift-128-euclidean, committed subsample",
                            source_sha256=z["source_sha256"].tobytes().decode(),
@@ -172,6 +176,7 @@ def main():
                fixture_sha256=os.environ.get("FIXTURE_SHA256", ""),
                cells=cells, log_log_pearson=round(rho, 4), n_cells=len(fam),
                mde_pearson=round(mde, 4),
+               **axis.at_evidence_count(cells),
                exactness="all integer-valued reconstructions; float32 path asserted vs int64 "
                          "on every call (tiefloor.exact_sq_distances)")
     os.makedirs("results", exist_ok=True)

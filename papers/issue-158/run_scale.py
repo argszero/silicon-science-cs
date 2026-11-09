@@ -12,6 +12,7 @@ What it adds to tier A: whether the ordering the axis predicts survives an incre
 Reads  : the corpus given by $SIFT_HDF5 (default: corpus/sift-128-euclidean.hdf5)
 Writes : results/scale.json
 """
+import axis
 import json
 import os
 import sys
@@ -148,10 +149,14 @@ def main():
     # regenerated every number identically and still failed a byte comparison, on a field whose
     # value is the operator's choice rather than the corpus's identity. The content is already
     # identified by expected_sha256; the name is now the dataset id both paths agree on.
+    # The 1M number that carries the P1 refutation ships with its own sensitivity: the review's M4
+    # and M2 both land on the same gap, that a headline number read from a committed artefact and
+    # never re-derived must at least carry the design property that makes it readable as evidence.
     out = dict(corpus=dict(name=DATASET, expected_sha256=EXPECT_SHA,
                            n=int(n), d=int(d),
                            k=K, n_queries=NQ, seeds=SEEDS, knn=KNN),
-               cells=cells)
+               cells=cells,
+               **axis.at_evidence_count(cells))
     os.makedirs("results", exist_ok=True)
     json.dump(out, open("results/scale.json", "w"), indent=1, sort_keys=True)
     print("\nelapsed %.1fs -> results/scale.json" % (time.time() - t0))

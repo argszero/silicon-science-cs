@@ -21,6 +21,7 @@ the journal's count is a count of citations, not of entries.
 Reads  : manuscript_prose.md, results/mechanism.json, results/scale.json, refs.json
 Writes : manuscript.md
 """
+import axis
 import json
 import os
 import re
@@ -44,26 +45,12 @@ def cell_lookup(cells, tag, field):
     raise KeyError("no cell %r in the artefact" % tag)
 
 
-# The two endpoint controls pin the instrument's ends; neither is a quantiser family. The float cell
-# is raw descriptors with no code at all and the constructed one is a corpus rather than a code, so
-# counting either as a configuration reports a set one member larger than the set every correlation
-# was composed over -- which is what this count did until review M1 (2026-11-09).
-CONTROL_PREFIXES = ("float", "constructed")
-
-
-def is_family_cell(cell):
-    return not cell["tag"].startswith(CONTROL_PREFIXES)
-
-
-def configs_of(cells):
-    """Distinct (family, budget) configurations over the FAMILY cells -- the evidence count.
-
-    Filtering happens here, inside the one function both count sites call, so the printed count and
-    the correlation beside it cannot come from different sets. check_claims.py asserts that this
-    function, called on the artefact's full cell list, returns the same number it composes the
-    correlations over; a regression to counting the controls fails that check.
-    """
-    return len({tuple(c["tag"].split("/")[:2]) for c in cells if is_family_cell(c)})
+# The control rule, the configuration count and both statistics live in axis.py, which the two
+# artefact producers and the claims checker also import. They are re-exported here so a caller keeps
+# reading `make_manuscript.configs_of` while there stays exactly one copy of the rule: review M1 and
+# M2 were both two copies of one definition disagreeing about which set the number is over.
+is_family_cell = axis.is_family_cell
+configs_of = axis.configs_of
 
 
 def mean(xs):
@@ -96,12 +83,21 @@ def build_values(A, B):
         "A.n_cells": A["n_cells"],
         "A.mde": A["mde_pearson"],
         "A.configs": configs_of(cellsA),
+        "A.r_configs": A["log_log_pearson_configs"],
+        "A.mde_configs": A["mde_pearson_configs"],
+        "A.n_configs": A["n_configs"],
         "B.corpus.n": B["corpus"]["n"],
         "B.corpus.d": B["corpus"]["d"],
         "B.corpus.n_queries": B["corpus"]["n_queries"],
         "B.corpus.knn": B["corpus"]["knn"],
         "B.n_cells": len(xsB),
         "B.configs": configs_of(cellsB),
+        # Tier B's axis, read from the artefact rather than composed here: the 1M number carries
+        # its own sensitivity in results/scale.json (review M2/M4), and check_claims.py asserts the
+        # stored pair still equals what the committed cells compose to.
+        "B.r_configs": B["log_log_pearson_configs"],
+        "B.mde_configs": B["mde_pearson_configs"],
+        "B.n_configs": B["n_configs"],
     }
 
     # tier B carries no single stored correlation: it is composed here from the cells, exactly as

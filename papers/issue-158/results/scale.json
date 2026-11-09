@@ -256,5 +256,8 @@
    11,
    13
   ]
- }
+ },
+ "log_log_pearson_configs": -0.9631,
+ "mde_pearson_configs": 0.8855,
+ "n_configs": 7
 }

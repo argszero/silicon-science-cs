@@ -36,6 +36,10 @@ def main():
         return 1
 
     cells = d["cells"]
+    try:
+        scale = json.load(open("results/scale.json"))
+    except FileNotFoundError:
+        scale = None
     by = {c["tag"]: c for c in cells}
     corpus = d["corpus"]
     n = corpus["n"]
@@ -95,6 +99,27 @@ def main():
     except FileNotFoundError:
         check("tier B's configuration count", False,
               "results/scale.json is missing -- this check has NOT RUN, it is not a pass")
+
+    # ---- the statistic and its threshold sit on the same denominator ----------------------
+    # Section 8 calls the configuration count the evidence count, and a threshold computed over the
+    # seed-level cells is then a threshold for a different design (review M2). The pair is now stored
+    # in the artefact, and this asserts the stored pair still equals what the cells compose to --
+    # so a re-run that moved the cells without moving the stored pair, or a stored pair typed by
+    # hand, fails here rather than in a reader's recomputation.
+    import axis
+    for label, art in (("A", d), ("B", scale)):
+        if art is None:
+            continue
+        composed = axis.at_evidence_count(art["cells"])
+        check("%s: the stored axis is the one the committed cells compose" % label,
+              all(art[k] == composed[k] for k in composed),
+              "stored %s vs composed %s"
+              % ({k: art[k] for k in composed}, composed))
+        check("%s: the correlation clears the threshold at the evidence count" % label,
+              abs(composed["log_log_pearson_configs"]) > composed["mde_pearson_configs"],
+              "|r|=%.4f over %d configurations vs MDE=%.4f"
+              % (abs(composed["log_log_pearson_configs"]), composed["n_configs"],
+                 composed["mde_pearson_configs"]))
 
     # ---- is the measured effect above what this design could have detected? ---------------
     # A correlation a design of this size could not have seen is not evidence either way, so the
