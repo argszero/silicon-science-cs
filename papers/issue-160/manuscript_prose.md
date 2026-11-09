@@ -76,9 +76,9 @@ What the applied literature does not routinely carry is the resulting refusal. O
 | usable rows | {{n:usable}} | — |
 | can resolve a {{n:q_pct}}th percentile (expects at least one observation above it) | {{n:resolvable}} | **{{n:resolvable_pct}}%** |
 | cannot resolve it at any timeout | {{n:unresolvable}} | {{n:unresolvable_pct}}% |
+| fewer than {{n:count_gate}} invocations in the day | {{n:below_1000}} | {{n:below_1000_pct}}% |
 
 The two rows a reader might expect here — `cannot resolve it at any timeout` and `fewer than {{n:count_gate_lo}} invocations in the day` — are the same {{n:below_100}} rows, and the table prints one of them rather than both: at a {{n:q_pct}}th percentile `resolvable(count, q)` is `count × (1 − q) ≥ 1`, which flips at exactly that count, so the equality is an identity rather than an agreement between two measurements. Printing both read as two findings that corroborate each other. `check_claims.py` asserts the equality (`usable − resolvable == below_100`); written as the inequality it carried until this revision, it would have stayed green if the two ever began to differ, which is the one thing it should catch.
-| fewer than {{n:count_gate}} invocations in the day | {{n:below_1000}} | {{n:below_1000_pct}}% |
 
 The median row expects {{n:n_obs_median}} observations above its own {{n:q_pct}}th percentile — that is, the median row does not expect even one.
 
@@ -135,14 +135,21 @@ number is the checked one and not the computed one. The residual — achieved br
 `eps` — lives in the artefact beside the law, and `check_claims.py` fails if either the check or this
 finding disappears from it.
 
-The check imports no parametric assumption: the levels are placed across each row's **own**
-`[p50, p100]`, and the bracket is read off that row's own quantile, so what is measured is the
+The check imports no parametric assumption: the levels are placed across each row’s **own**
+`[p50, p100]`, and the bracket is read off that row’s own quantile, so what is measured is the
+interpolation the paper already commits to rather than a distribution chosen for the occasion.
+
 The law is stated on the interval mean, so its `K` prices the smoothed quantity. A reader who wants the invocation-level cost is owed one factor and no more: write `c` for the ratio of the invocation-level range to the interval-mean range; then `K` grows by `log c / log(1 + eps)` and nothing else in the law changes, so the growth is additive in levels and slow — a factor of two costs about fifteen more levels at {{n:eps5}}% precision, against a median `K` of {{n:K5_median}}. That factor is **not bounded by this data**, and the reason is the one that withdrew our own first registered prior: the only single-invocation column the trace publishes is `Maximum`, an extremum of single calls, while `p100` is a percentile of the interval mean, so their ratio crosses the two spaces rather than measuring the compression between them. We therefore report the multiplier as arithmetic and the factor as unmeasured, rather than dressing a cross-space ratio as a bound.
-interpolation the paper already commits to rather than a distribution chosen for the occasion. A
-second limb draws {{n:recon_draws}} invocations from each of {{n:recon_rows}} rows and compares the
-empirical quantile against the ladder's, which checks that the reconstruction is not inventing the
-tail; sampling error at that draw count is the floor on it, which is why that limb is labelled as a
-test of the interpolation and not of the law.
+
+A second limb draws {{n:recon_draws}} invocations from each of {{n:recon_rows}} rows and compares
+the empirical quantile against the ladder’s, as a check that the reconstruction is not inventing
+the tail. It is a check with a resolution, and we report it as one: relative to the ladder’s own
+quantile the median row disagrees by {{n:recon_err_median_pct}}%, the {{n:p90}}th percentile by
+{{n:recon_err_p90_pct}}%, and the worst row by {{n:recon_err_max_pct}}% — where the worst row is a
+statement about the draw count rather than about the ladder, since a {{n:q_pct}}th percentile
+estimated from {{n:recon_draws}} draws rests on about {{n:recon_tail_draws}} observations above it.
+That is why the limb is labelled a test of the interpolation at this resolution, and not a test of
+the law.
 
 | precision | `K` median | `K` {{n:p90}}th pct | `K` max | rows certified by one level |
 |---|---|---|---|---|

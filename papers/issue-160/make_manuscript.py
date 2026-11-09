@@ -166,6 +166,15 @@ def build_values(art):
         v["K%d_over_pct" % eps] = pct(blk["at_K"]["rows_over_eps_frac"])
     v["recon_rows"] = cc["reconstruction"]["rows"]
     v["recon_draws"] = cc["reconstruction"]["draws_per_row"]
+    # The draw-based limb has a RESOLUTION, and its worst row is a fact about that resolution rather
+    # than about the ladder: a q-quantile estimated from this many draws rests on only
+    # `draws * (1-q)` observations above it. Bound so the prose reports all three and cannot quote
+    # the median as though it were the worst case.
+    rec = cc["reconstruction"]
+    v["recon_err_median_pct"] = pct(rec["rel_err_median"])
+    v["recon_err_p90_pct"] = pct(rec["rel_err_p90"])
+    v["recon_err_max_pct"] = pct(rec["rel_err_max"])
+    v["recon_tail_draws"] = int(round(rec["draws_per_row"] * (1.0 - art["q"])))
     # Review minor 2: the step count is READ off the script that runs them, not remembered. The
     # manuscript said "six" while the script ran eight; a number derived from its own object cannot
     # go stale, and `check_claims.py` re-derives the same count through the same function. Imported
