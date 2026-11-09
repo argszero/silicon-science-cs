@@ -175,6 +175,60 @@ def main():
               "%s stamps %s..., %s is pinned at %s..."
               % (label, str(stamp)[:16], path, str(pins.get(path))[:16]))
 
+    # ---- the figure asserts the same thing the artefacts do (review m3) --------------------
+    # A picture is an assertion in a second language, and the way it goes wrong is silently: it keeps
+    # rendering while the numbers under it move. `make_figure.py` writes beside the image what it
+    # plotted, so the claim can be read back off the record instead of off the pixels -- and the
+    # record carries the image's digest, so swapping the picture for another one also fails here.
+    import make_figure as MF
+    arts = {"A": d, "M": medium, "B": scale}
+    missing = sorted(k for k, v in arts.items() if v is None)
+    if missing:
+        check("the figure's three artefacts exist", False,
+              "no artefact for %s -- this check has NOT RUN, it is not a pass" % ", ".join(missing))
+    else:
+        try:
+            plot = json.load(open(MF.DATA))
+            for name, ok, detail in MF.figure_claim_holds(plot, arts):
+                check(name, ok, detail)
+        except FileNotFoundError:
+            check("the figure's data record exists", False,
+                  "%s is missing -- run make_figure.py; this check has NOT RUN" % MF.DATA)
+
+    # ---- the absence claim's search record (review m5) --------------------------------------
+    # The paper says the recall literature does not ask its question. That is falsifiable, and this
+    # is where it is falsified if it ever becomes false: if the search surfaces a record that does
+    # ask it, this check goes red and the paper's framing -- not the search -- has to change. The
+    # other four invariants keep the record honest about its own coverage: a record nobody read, a
+    # reading whose record the index no longer returns, a declared index that did not answer, and a
+    # window that is not closed at both ends.
+    try:
+        rec = json.load(open("search/absence_search.json"))
+    except FileNotFoundError:
+        rec = None
+    if rec is None:
+        check("the absence claim's search record exists", False,
+              "search/absence_search.json is missing -- run search_record.py")
+    else:
+        L = rec["ledger"]
+        check("the search read every record its own screen put in front of it",
+              L["n_unreviewed"] == 0,
+              "%d of %d survivor(s) unread" % (L["n_unreviewed"], L["survived_screen"]))
+        check("no recorded reading names a record the index no longer returns",
+              L["n_stale"] == 0, "%d stale judgement(s)" % L["n_stale"])
+        check("every declared index answered",
+              not L["sources_not_run"],
+              "NOT RUN: %s" % (", ".join(L["sources_not_run"]) or "none"))
+        check("the window is closed at both ends and names its date field per index",
+              bool(rec["window"].get("from")) and bool(rec["window"].get("to"))
+              and set(rec["window"].get("date_field", {})) == set(rec["indices"]),
+              "from=%s to=%s fields=%s" % (rec["window"].get("from"), rec["window"].get("to"),
+                                           sorted(rec["window"].get("date_field", {}))))
+        check("nothing the search returned asks what determines the width of the identified set",
+              L["n_asks_width"] == 0,
+              "%d of %d read record(s) ask it -- the absence claim would then be false"
+              % (L["n_asks_width"], L["read_by_hand"]))
+
     # ---- is the measured effect above what this design could have detected? ---------------
     # A correlation a design of this size could not have seen is not evidence either way, so the
     # sensitivity is printed and asserted here rather than quoted from a note.

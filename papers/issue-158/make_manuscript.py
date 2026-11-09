@@ -74,7 +74,7 @@ def composed_r(xs, ys):
     return round(num / den, 4)
 
 
-def build_values(A, B, M):
+def build_values(A, B, M, S):
     """Every number the prose may name, as a flat dict. Anything not here cannot be printed."""
     cellsA, cellsB, cellsM = A["cells"], B["cells"], M["cells"]
 
@@ -126,6 +126,18 @@ def build_values(A, B, M):
         "M.n_configs": M["n_configs"],
         "M.r_configs": M["log_log_pearson_configs"],
         "M.mde_configs": M["mde_pearson_configs"],
+        # The search behind the paper's one absence claim (review m5). Every number that sentence
+        # states — how many queries, how many indices, the window's two endpoints, what came back —
+        # is bound here, so the claim cannot be edited without the record moving with it.
+        "S.n_indices": len(S["indices"]),
+        "S.n_queries": len(S["queries"]),
+        "S.n_retrieved": S["ledger"]["records_retrieved"],
+        "S.n_deduped": S["ledger"]["records_deduped"],
+        "S.n_screened": S["ledger"]["survived_screen"],
+        "S.n_read": S["ledger"]["read_by_hand"],
+        "S.n_asks": S["ledger"]["n_asks_width"],
+        "S.window_from": S["window"]["from"],
+        "S.window_to": S["window"]["to"],
     }
 
     # tier B carries no single stored correlation: it is composed here from the cells, exactly as
@@ -241,6 +253,14 @@ def stray_numbers(body, bound):
     """
     allowed = {fmt(x) for x in bound} | {a.replace(",", "") for a in (fmt(x) for x in bound)}
     allowed |= {str(int(x)) for x in bound if isinstance(x, (int, float)) and float(x).is_integer()}
+    # A bound value that is a string may be a composite -- a window endpoint like `2016-01-01` is one
+    # value held by one key, and it prints as three digit runs. Its components are part of the bound
+    # value, not numbers of their own, so they are allowed; a date the prose typed itself matches no
+    # bound string and is still refused. Without this, the honest form of the search record (state
+    # both endpoints) is exactly what the gate would reject.
+    for x in bound:
+        if isinstance(x, str):
+            allowed |= set(re.findall(r"\d+", x))
     # Code spans and fenced blocks are identifiers, not quantities: `Hamming/32bit` is a tag the
     # artefact uses, and a bit budget written as a tag must not read as a number the prose typed.
     scan = re.sub(r"```.*?```", " ", body, flags=re.S)
@@ -341,13 +361,19 @@ def main():
         print("  render without it. -> run run_scale.py --medium (numpy alone, no corpus).")
         return 1
     try:
+        S = load("search/absence_search.json")
+    except FileNotFoundError:
+        print("search/absence_search.json is missing -- the paper's absence claim states the")
+        print("  search behind it and cannot render without it. -> run search_record.py")
+        return 1
+    try:
         refs = load("refs.json")
     except FileNotFoundError:
         print("refs.json is missing -- the bibliography has not been built yet.")
         print("  -> run build_refs.py; the paper will not render until every citation resolves.")
         return 1
 
-    values = build_values(A, B, M)
+    values = build_values(A, B, M, S)
     bound = []
 
     def sub(m):

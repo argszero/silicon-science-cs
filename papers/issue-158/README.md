@@ -15,10 +15,15 @@ This README covers reproduction. The manuscript is what the numbers are for.
 **Expected output**, last line, and it depends on what the machine can actually run:
 
 ```
-core, clean machine (numpy only):   REPRODUCE: 1 STEP(S) NOT RUN, 0 failed (8 steps)
-full, corpus + h5py present:        REPRODUCE: ALL GREEN (8 steps)
-full, corpus or h5py absent:        REPRODUCE: 1 STEP(S) NOT RUN, 0 failed (8 steps)
+core, numpy only:                   REPRODUCE: 2 STEP(S) NOT RUN, 0 failed (9 steps)
+core, numpy + matplotlib:           REPRODUCE: 1 STEP(S) NOT RUN, 0 failed (9 steps)
+full, corpus + h5py + matplotlib:   REPRODUCE: ALL GREEN (9 steps)
+full, corpus or h5py absent:        REPRODUCE: 1 STEP(S) NOT RUN, 0 failed (9 steps)
 ```
+
+The two `NOT RUN` rows in core mode are the figure (needs `matplotlib`, which a numpy-only machine
+does not have) and tier B (needs the corpus). Neither is a failure, and neither is a pass: the
+figure's numbers are reproduced by the steps above it, and what the figure adds is the picture.
 
 **The scale axis has two instruments, and one of them needs nothing but numpy.**
 `results/medium.json` is the same axis at 200,000 descriptors, recomputed by the default command
@@ -38,10 +43,11 @@ A step's program has three outcomes and the verdict keeps them apart: **ran and 
 **did not run** (exit 3 — never a failed step, never a pass), **failed** (anything else). A NOT RUN
 row is therefore counted, and `ALL GREEN` means every step ran.
 
-Tolerance: **none**, in four places. Step 3 runs the mechanism table twice and byte-compares
+Tolerance: **none**, in five places. Step 3 runs the mechanism table twice and byte-compares
 `results/mechanism.json`; step 6 regenerates `manuscript.md` and byte-compares it; step 7 does the
-same for the 200,000-descriptor axis in `results/medium.json` and step 8 for the million-descriptor
-one in `results/scale.json`. A number that
+same for the 200,000-descriptor axis in `results/medium.json`; step 8 for the figure and the record
+of what it plotted (`figures/resolution_axis.png`, `figures/plot_data.json`); and step 9 for the
+million-descriptor one in `results/scale.json`. A number that
 moves between two runs of the same program on the same input is not a measurement, and a manuscript
 that does not regenerate from its artefact is a second copy of the numbers rather than the paper.
 
@@ -104,6 +110,8 @@ computation is asserted against an independent int64 path before a tie is counte
 | `tiefloor.py` | the instrument: identified-set floor, local resolution, the three quantisers, exact integer distances. Pure functions, no I/O. |
 | `run_mechanism.py` | tier A — the table, plus the two endpoint controls |
 | `run_scale.py` | tiers M and B — one `measure()` over the committed 200k fixture (`--medium`) or the 1M corpus; tier B is `NOT RUN` without the corpus |
+| `make_figure.py` | draws `figures/resolution_axis.png` from the three artefacts and writes `figures/plot_data.json` (what it plotted, and the image's digest); `--selftest` proves the guard refuses a drifted picture |
+| `search_record.py` | maintainer only, needs the network: runs the declared search behind the paper's one absence claim and writes `search/absence_search.json` |
 | `check_claims.py` | reads the artefact back and tests the claims the paper makes about it |
 | `verify_fixture.py` | the committed fixtures against their recorded digests |
 | `build_fixture.py` | maintainer only: cuts both committed fixtures out of the 1M corpus (`--medium` writes the 200,000-descriptor one) |

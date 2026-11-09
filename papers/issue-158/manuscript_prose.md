@@ -10,7 +10,11 @@ Approximate nearest-neighbour search is measured by recall@k against an exhausti
 truth, and when several database points share the k-th distance the procedure names some of them
 and not others. For a *provably correct* index the metric can therefore take any value in an
 identified set `[floor, 1]`, and this paper asks a question the recall literature does not: what
-decides whether that set has any width at all?
+decides whether that set has any width at all? That the literature does not ask it is itself a claim
+about the literature, so it is recorded as a search rather than asserted — {{n:S.n_queries}} query
+statements over {{n:S.n_indices}} indices, in a window closed at both ends from {{n:S.window_from}} to
+{{n:S.window_to}}, returning {{n:S.n_retrieved}} records of which {{n:S.n_asks}} asks this question.
+Section 7 states the search in full and commits it.
 
 The answer this study measures is not the quantiser family and not the bit budget. It is the
 **local resolution of the distance the index computes** — how many distinct distance values the
@@ -179,6 +183,18 @@ This is the paper's central claim, in falsifiable form: **hold the corpus and th
 the width of the identified set is predicted by the local resolution of the distance, not by the
 quantiser family and not by the bit budget alone.**
 
+![The boundary tie group against the local resolution of the distance, at three scales](figures/resolution_axis.png)
+
+**Figure 1.** The claim above, drawn at every scale this paper measures. A point is one
+(family, budget) configuration — {{n:A.n_configs}} of them at {{n:A.corpus.n}} descriptors,
+{{n:M.n_configs}} at {{n:M.fixture.n}} and {{n:B.n_configs}} at {{n:B.corpus.n}} — and the two
+endpoint controls are absent from it because neither is a quantiser family. Both axes are
+logarithmic, and the straight line in each series is the fit the correlation is computed on. The
+three series lie almost on top of one another: what changes with corpus size is where a
+configuration sits along the line, not the slope of it. That is the paper's result stated as a
+picture rather than as three correlations, and it is the reason the claim is about resolution rather
+than about scale.
+
 ## 5. At the benchmark's own scale
 
 The same axis is measured on {{n:B.corpus.n}} descriptors — a factor of fifty more points than the
@@ -277,6 +293,23 @@ quietly replaced.
 layer arriving more recently {{c:guo-manu-2022,pan-vector-db-survey-2024}}. This paper takes no
 position on which index is faster; it asks what a recall number computed against any of them can
 mean.
+
+**The absence claim, and the search behind it.** The framing of this paper rests on a claim about the
+literature — that recall@k is reported without asking what makes its identified set have width — and
+a claim about the literature is worth only the search behind it. That search is recorded rather than
+described. {{n:S.n_queries}} query statements were run against {{n:S.n_indices}} indices: arXiv, whose
+date field is the submission date, and Crossref, whose date field is the issued date. The window is
+closed at both ends, from {{n:S.window_from}} to {{n:S.window_to}}, and the query strings, the per-query
+totals and the records retrieved are committed with the program that produced them, so the search can
+be re-taken by a reader who does not trust this paragraph. It returned {{n:S.n_retrieved}} records,
+{{n:S.n_deduped}} after de-duplication; a declared two-term screen — one term naming the mechanism, one
+naming the evaluation setting — narrowed those to {{n:S.n_screened}}, all {{n:S.n_read}} of which were
+read, and {{n:S.n_asks}} of them asks what determines whether the set has width. What the search does
+return is adjacent work rather than the same work: consistency of the k-NN rule, graph construction
+for fast search, and identifiability in time series and in remote sensing all share the vocabulary
+and none of them takes the width of an identified recall set as its object. Crossref's bibliographic
+totals are fuzzy-match candidate counts and not counts of relevant work, which is a reason to state
+them beside the pile that was actually read rather than instead of it.
 
 **Metric trees and space partitioning.** Exact similarity search begins with multidimensional
 search trees {{c:bentley-1975}} and the spatial structures built beside them
@@ -421,8 +454,8 @@ number, and is told, on the spot, that the tier-B ones were not recomputed — r
 shown a green verdict over a number that was never computed. This is what the largest number in
 this paper needed most: it used to have one instrument, a {{n:B.corpus.n}}-descriptor download, and
 it now has two, because the same axis is recomputed at a fifth of that size from bytes that ship
-inside the package. Every artefact — the mechanism table, the {{n:M.fixture.n}}-descriptor axis and
-the million-descriptor one — is regenerated twice
+inside the package. Every artefact — the mechanism table, the {{n:M.fixture.n}}-descriptor axis, the
+million-descriptor one and the figure itself — is regenerated twice
 and byte-compared, so a number that moves between two runs fails the build, and a program reads the
 artefact back to test the claims this paper makes about it. The stack is the standard scientific
 Python one — array and linear-algebra routines {{c:harris-numpy-2020,virtanen-scipy-2020}}, the
