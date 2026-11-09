@@ -585,7 +585,7 @@ a program, and a reference that does not resolve stops the manuscript from being
 
 [101] Jouppi, N. P.; Young, C.; Patil, N.; et al.. (2017). In-Datacenter Performance Analysis of a Tensor Processing Unit. ACM SIGARCH Computer Architecture News. vol. 45. pp. 1-12. https://doi.org/10.1145/3140659.3080246
 
-[102] Harman, D.. (1993). Overview of the first TREC conference. Proceedings of the 16th annual international ACM SIGIR conference on Research and development in information retrieval  - SIGIR '93. pp. 36-47. https://doi.org/10.1145/160688.160692
+[102] Harman, D.. (1993). Overview of the first TREC conference. Proceedings of the 16th annual international ACM SIGIR conference on Research and development in information retrieval - SIGIR '93. pp. 36-47. https://doi.org/10.1145/160688.160692
 
 [103] VOORHEES, E. M.. (2001). The TREC question answering track. Natural Language Engineering. vol. 7. pp. 361-378. https://doi.org/10.1017/s1351324901002789
 
@@ -593,15 +593,13 @@ a program, and a reference that does not resolve stops the manuscript from being
 
 [105] Buckley, C.; Dimmick, D.; Soboroff, I.; et al.. (2007). Bias and the limits of pooling for large collections. Information Retrieval. vol. 10. pp. 491-508. https://doi.org/10.1007/s10791-007-9032-x
 
-[106] Aslam, J. A.; Savell, R.. (2003). On the effectiveness of evaluating retrieval systems in the absence of relevance judgments. Proceedings of the 26th annual international ACM SIGIR conference on Research and development in informaion retrieval  - SIGIR '03. https://doi.org/10.1145/860500.860501
+[106] Aslam, J. A.; Savell, R.. (2003). On the effectiveness of evaluating retrieval systems in the absence of relevance judgments. Proceedings of the 26th annual international ACM SIGIR conference on Research and development in informaion retrieval - SIGIR '03. https://doi.org/10.1145/860500.860501
 
-[107] Aslam, J. A.; Pavlu, V.; Savell, R.. (2003). A unified model for metasearch, pooling, and system evaluation. Proceedings of the twelfth international conference on Information and knowledge management  - CIKM '03. https://doi.org/10.1145/956950.956953
+[107] Aslam, J. A.; Pavlu, V.; Savell, R.. (2003). A unified model for metasearch, pooling, and system evaluation. Proceedings of the twelfth international conference on Information and knowledge management - CIKM '03. https://doi.org/10.1145/956950.956953
 
 [108] Zobel, J.; Moffat, A.. (2006). Inverted files for text search engines. ACM Computing Surveys. vol. 38. pp. 6. https://doi.org/10.1145/1132956.1132959
 
-[109] Thorne, J.; Vlachos, A.; Christodoulopoulos, C.; et al.. (2018). FEVER: a Large-scale Dataset for Fact Extraction and VERification. Proceedings of the 2018 Conference of the North American Chapter of
-          the Association for Computational Linguistics: Human Language
-          Technologies, Volume 1 (Long Papers). pp. 809-819. https://doi.org/10.18653/v1/n18-1074
+[109] Thorne, J.; Vlachos, A.; Christodoulopoulos, C.; et al.. (2018). FEVER: a Large-scale Dataset for Fact Extraction and VERification. Proceedings of the 2018 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 1 (Long Papers). pp. 809-819. https://doi.org/10.18653/v1/n18-1074
 
 [110] Johnson, W. B.; Lindenstrauss, J.. (1984). Extensions of Lipschitz mappings into a Hilbert space. Contemporary Mathematics. pp. 189-206. https://doi.org/10.1090/conm/026/737400
 

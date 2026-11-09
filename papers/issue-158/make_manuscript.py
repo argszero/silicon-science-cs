@@ -160,6 +160,18 @@ CITE = re.compile(r"\{\{c:([^}]+)\}\}")
 
 
 
+def house_entry(entry):
+    """One line per entry.
+
+    `thorne-fever-2018` arrived from the registry hard-wrapped -- CR/LF plus the registry's own
+    indentation inside the entry -- so the printed record stopped mid-venue and read as truncated.
+    Its DOI was on the continuation line, where a reader of the raw file does not see it; as one
+    line it resolves. Normalising cannot change a quantity: entries are identifiers and titles, and
+    the stray-number gate reads the prose before this substitution.
+    """
+    return " ".join(entry.split())
+
+
 def stray_numbers(body, bound):
     """Numbers in the prose that no artefact binds.
 
@@ -329,15 +341,21 @@ def main():
                        % (len(order), REF_FLOOR))
 
     entries = []
+    repaired = 0
     for i, slug in enumerate(order, 1):
         r = refs[slug]
-        entries.append("[%d] %s" % (i, r["entry"]))
+        printed = house_entry(r["entry"])
+        if printed != r["entry"]:
+            repaired += 1
+        entries.append("[%d] %s" % (i, printed))
 
     body = body.replace("{{refs}}", "\n\n".join(entries))
     open("manuscript.md", "w").write(body)
     print("manuscript.md written: %d characters" % len(body))
     print("  markers bound: %d numbers, %d citations" % (len(bound), len(order)))
     print("  references: %d held, %d cited (floor %d)" % (len(refs), len(order), REF_FLOOR))
+    print("  house form: %d of %d entries repaired on the way out (stored line breaks)"
+          % (repaired, len(order)))
     print("  stray-number scan: clean")
     return 0
 
