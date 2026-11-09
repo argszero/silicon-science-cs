@@ -205,6 +205,24 @@ def lookup_arxiv(query, want_year):
     return None, "NO RECORD (arxiv: no exact title match)"
 
 
+def house_join(bits):
+    """Join fragments with a full stop, without doubling one the fragment already ends with.
+
+    Every initial ends in a period and `et al.` does too, so a plain ". ".join() printed
+    `Yang, C. S.. (1975)` and `et al.. (2018)` on most of the list (review m4, 2026-11-09).
+    The reader is shown this text, so the assembler must emit the form the reader is owed.
+    """
+    out = ""
+    for b in bits:
+        b = b.strip()
+        if not b:
+            continue
+        if out:
+            out += " " if out.endswith(".") else ". "
+        out += b
+    return out
+
+
 def entry_of(it):
     title = (it.get("title") or [""])[0].strip().rstrip(".")
     authors = []
@@ -238,7 +256,7 @@ def entry_of(it):
     if it.get("page"):
         bits.append("pp. %s" % it["page"])
     bits.append("https://doi.org/%s" % it["DOI"])
-    return ". ".join(bits)
+    return house_join(bits)
 
 
 def entry_of_arxiv(it):
@@ -253,7 +271,7 @@ def entry_of_arxiv(it):
     bits.append(it["title"].rstrip("."))
     bits.append("arXiv preprint %s" % it["ident"].rsplit("/abs/", 1)[-1])
     bits.append(it["ident"])
-    return ". ".join(bits)
+    return house_join(bits)
 
 
 

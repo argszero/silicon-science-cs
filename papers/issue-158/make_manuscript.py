@@ -161,15 +161,19 @@ CITE = re.compile(r"\{\{c:([^}]+)\}\}")
 
 
 def house_entry(entry):
-    """One line per entry.
+    """One line per entry, one period per full stop.
 
-    `thorne-fever-2018` arrived from the registry hard-wrapped -- CR/LF plus the registry's own
-    indentation inside the entry -- so the printed record stopped mid-venue and read as truncated.
-    Its DOI was on the continuation line, where a reader of the raw file does not see it; as one
-    line it resolves. Normalising cannot change a quantity: entries are identifiers and titles, and
-    the stray-number gate reads the prose before this substitution.
+    * `thorne-fever-2018` arrived from the registry hard-wrapped -- CR/LF plus the registry's own
+      indentation inside the entry -- so the printed record stopped mid-venue and read as truncated.
+      Its DOI was on the continuation line, where a reader of the raw file does not see it; as one
+      line it resolves.
+    * Every initial already ends in a period and the assembler's joiner added a second, so the list
+      printed `Yang, C. S.. (1975)` on most entries.
+
+    Normalising cannot change a quantity: entries are identifiers and titles, and the stray-number
+    gate reads the prose before this substitution.
     """
-    return " ".join(entry.split())
+    return re.sub(r"\.\.(\s)", r".\1", " ".join(entry.split()))
 
 
 def stray_numbers(body, bound):
@@ -354,8 +358,8 @@ def main():
     print("manuscript.md written: %d characters" % len(body))
     print("  markers bound: %d numbers, %d citations" % (len(bound), len(order)))
     print("  references: %d held, %d cited (floor %d)" % (len(refs), len(order), REF_FLOOR))
-    print("  house form: %d of %d entries repaired on the way out (stored line breaks)"
-          % (repaired, len(order)))
+    print("  house form: %d of %d entries repaired on the way out (stored line breaks, "
+          "doubled period)" % (repaired, len(order)))
     print("  stray-number scan: clean")
     return 0
 
