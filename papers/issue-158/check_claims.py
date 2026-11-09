@@ -40,6 +40,10 @@ def main():
         scale = json.load(open("results/scale.json"))
     except FileNotFoundError:
         scale = None
+    try:
+        medium = json.load(open("results/medium.json"))
+    except FileNotFoundError:
+        medium = None
     by = {c["tag"]: c for c in cells}
     corpus = d["corpus"]
     n = corpus["n"]
@@ -107,7 +111,7 @@ def main():
     # so a re-run that moved the cells without moving the stored pair, or a stored pair typed by
     # hand, fails here rather than in a reader's recomputation.
     import axis
-    for label, art in (("A", d), ("B", scale)):
+    for label, art in (("A", d), ("B", scale), ("M", medium)):
         if art is None:
             continue
         composed = axis.at_evidence_count(art["cells"])
@@ -120,6 +124,56 @@ def main():
               "|r|=%.4f over %d configurations vs MDE=%.4f"
               % (abs(composed["log_log_pearson_configs"]), composed["n_configs"],
                  composed["mde_pearson_configs"]))
+
+    # ---- tier M: the scale axis a reader can recompute from committed bytes ----------------
+    # Review M4: the 1M number's only path used to be a 501 MB fetch, so it was read from an
+    # artefact and re-derived nowhere. The 200k fixture gives it a second instrument, and what
+    # makes that instrument a CHECK rather than a second opinion is that the tiers are nested:
+    # tier A's descriptors are the head of tier M's train block, so the three scales are views of
+    # one inclusion chain and a sentence comparing them compares one population. The array-level
+    # comparison is `run_scale.py --medium`'s (it holds both files and numpy); this asserts the
+    # binding the ARTEFACTS carry, so a rebuild of either fixture that moved the relation fails
+    # here as well as there.
+    if medium is None:
+        check("tier M: the 200k artefact exists", False,
+              "results/medium.json is missing -- this check has NOT RUN, it is not a pass")
+    else:
+        m_fam = {tuple(c["tag"].split("/")[:2]) for c in medium["cells"]
+                 if make_manuscript.is_family_cell(c)}
+        check("tier M: the printed configuration count is over the family cells",
+              make_manuscript.configs_of(medium["cells"]) == len(m_fam),
+              "manuscript prints %d, the cells carry %d"
+              % (make_manuscript.configs_of(medium["cells"]), len(m_fam)))
+        check("tier M: the two committed fixtures are nested (tier A is tier M's first rows)",
+              medium["fixture"]["nested_rows"] == n,
+              "nested_rows=%s vs tier A's n=%d" % (medium["fixture"]["nested_rows"], n))
+        check("tier M: the medium scale really is larger than tier A",
+              medium["fixture"]["n"] > n,
+              "M.n=%d vs A.n=%d" % (medium["fixture"]["n"], n))
+
+    # ---- each artefact names the bytes it measured, and names the right ones ----------------
+    # Review M4 gave this package a second fixture, and adding it silently changed what tier A
+    # recorded: `verify_fixture.py --print-sha` printed the first `.npz` in sorted order, so
+    # `mechanism.json` began stamping the MEDIUM fixture's digest while every number in it still
+    # came from the 20k one. The build stayed green -- both runs of the byte comparison produced
+    # the same new value -- and what noticed was `git status`. A digest is only an identity if it is
+    # bound to the name it belongs to, so each artefact's stamp is compared against the pin of the
+    # file that artefact is measured from.
+    import verify_fixture as VF
+    pins = VF.recorded()
+    for label, art, key in (("A", d, "fixture_sha256"), ("M", medium, None)):
+        if art is None:
+            continue
+        if key is None:
+            path = art["fixture"]["path"]
+            stamp = art["fixture"]["sha256"]
+        else:
+            path = VF.SUBSET
+            stamp = art[key]
+        check("%s: the recorded fixture digest is the pin of the fixture it measured" % label,
+              pins.get(path) is not None and stamp == pins.get(path),
+              "%s stamps %s..., %s is pinned at %s..."
+              % (label, str(stamp)[:16], path, str(pins.get(path))[:16]))
 
     # ---- is the measured effect above what this design could have detected? ---------------
     # A correlation a design of this size could not have seen is not evidence either way, so the

@@ -57,9 +57,26 @@ def mean(xs):
     return sum(xs) / len(xs)
 
 
-def build_values(A, B):
+def family_xy(cells):
+    """The family cells' (resolution, tie group) pairs. The float control is not a family."""
+    fam = [c for c in cells if not c["tag"].startswith("float")]
+    return [c["median_atoms"] for c in fam], [c["median_t"] for c in fam]
+
+
+def composed_r(xs, ys):
+    """Pearson r on the log-log pairs, rounded the way the artefacts round it. Composed, not typed."""
+    import math
+    lx = [math.log(x) for x in xs]
+    ly = [math.log(y) for y in ys]
+    mx, my = mean(lx), mean(ly)
+    num = sum((a - mx) * (b_ - my) for a, b_ in zip(lx, ly))
+    den = math.sqrt(sum((a - mx) ** 2 for a in lx) * sum((b_ - my) ** 2 for b_ in ly))
+    return round(num / den, 4)
+
+
+def build_values(A, B, M):
     """Every number the prose may name, as a flat dict. Anything not here cannot be printed."""
-    cellsA, cellsB = A["cells"], B["cells"]
+    cellsA, cellsB, cellsM = A["cells"], B["cells"], M["cells"]
 
     def by_prefix(cells, prefix):
         return [c for c in cells if c["tag"].startswith(prefix)]
@@ -98,20 +115,27 @@ def build_values(A, B):
         "B.r_configs": B["log_log_pearson_configs"],
         "B.mde_configs": B["mde_pearson_configs"],
         "B.n_configs": B["n_configs"],
+        # Tier M: the 200k scale, recomputed from committed bytes by numpy alone. It is the reason
+        # the 1M reading has a second instrument, so its numbers are bound like every other.
+        "M.fixture.n": M["fixture"]["n"],
+        "M.fixture.n_queries": M["fixture"]["n_queries"],
+        "M.fixture.n_queries_available": M["fixture"]["n_queries_available"],
+        "M.fixture.knn": M["fixture"]["knn"],
+        "M.nested_rows": M["fixture"]["nested_rows"],
+        "M.configs": configs_of(cellsM),
+        "M.n_configs": M["n_configs"],
+        "M.r_configs": M["log_log_pearson_configs"],
+        "M.mde_configs": M["mde_pearson_configs"],
     }
 
     # tier B carries no single stored correlation: it is composed here from the cells, exactly as
-    # check_claims composes nothing and reads only stored values. Composed, not typed.
-    import math
-    n = len(xsB)
-    lx = [math.log(x) for x in xsB]
-    ly = [math.log(y) for y in ysB]
-    mx, my = mean(lx), mean(ly)
-    num = sum((a - mx) * (b_ - my) for a, b_ in zip(lx, ly))
-    den = math.sqrt(sum((a - mx) ** 2 for a in lx) * sum((b_ - my) ** 2 for b_ in ly))
-    v["B.r"] = round(num / den, 4)
+    # check_claims composes nothing and reads only stored values. Composed, not typed. Tier M's is
+    # composed by the same function, so the two scales cannot be correlated by two different rules.
+    v["B.r"] = composed_r(xsB, ysB)
     v["B.atoms_min"] = min(xsB)
     v["B.atoms_max"] = max(xsB)
+    xsM, ysM = family_xy(cellsM)
+    v["M.r"] = composed_r(xsM, ysM)
 
     # the headline contrast at tier B, as one number each
     v["B.hamming32.median_t"] = agg(cellsB, "Hamming/32bit", "median_t", mean)
@@ -311,13 +335,19 @@ def main():
     A = load("results/mechanism.json")
     B = load("results/scale.json")
     try:
+        M = load("results/medium.json")
+    except FileNotFoundError:
+        print("results/medium.json is missing -- the paper states the 200k scale and cannot")
+        print("  render without it. -> run run_scale.py --medium (numpy alone, no corpus).")
+        return 1
+    try:
         refs = load("refs.json")
     except FileNotFoundError:
         print("refs.json is missing -- the bibliography has not been built yet.")
         print("  -> run build_refs.py; the paper will not render until every citation resolves.")
         return 1
 
-    values = build_values(A, B)
+    values = build_values(A, B, M)
     bound = []
 
     def sub(m):

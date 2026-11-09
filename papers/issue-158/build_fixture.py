@@ -29,9 +29,11 @@ import sys
 import numpy as np
 
 N_TRAIN = 20000
+N_TRAIN_MEDIUM = 200000
 N_QUERY = 200
 SEED = 20261030
 OUT = "fixture/sift_subset.npz"
+OUT_MEDIUM = "fixture/sift_medium.npz"
 
 
 def sha256(path, chunk=1 << 20):
@@ -43,8 +45,12 @@ def sha256(path, chunk=1 << 20):
 
 
 def main(argv):
+    medium = len(argv) > 1 and argv[1] == "--medium"
+    if medium:
+        argv = argv[:1] + argv[2:]
     if len(argv) != 2:
         print(__doc__.strip().splitlines()[-1])
+        print("       python3 build_fixture.py --medium <path-to-sift1m.hdf5>")
         return 2
     src = argv[1]
     import h5py                                     # maintainer-only dependency
@@ -60,17 +66,32 @@ def main(argv):
 
     rng = np.random.default_rng(SEED)
     perm = rng.permutation(len(train))
-    qidx = rng.permutation(len(test))
-    X = train[perm[:N_TRAIN]].astype(np.uint8)
-    Q = test[qidx[:N_QUERY]].astype(np.uint8)
+    if medium:
+        # Same permutation as the 20k fixture, read further along it: the first N_TRAIN rows of
+        # this train block ARE `fixture/sift_subset.npz`'s train block, so the three scales the
+        # paper reports (20k, 200k, 1M) sit on one inclusion chain rather than on three unrelated
+        # draws. `reproduce.sh` asserts that nesting; it is the property that lets a reader read
+        # the axis across scales instead of comparing three samples of different populations.
+        #
+        # The whole 10,000-row query set ships because the measurement draws its queries from it
+        # BY SEED. Shipping only the rows one seed happens to pick would bake one design's choice
+        # into the fixture's bytes and make every later seed a re-use of that choice.
+        X = train[perm[:N_TRAIN_MEDIUM]].astype(np.uint8)
+        Q = test.astype(np.uint8)
+        out, n_train = OUT_MEDIUM, N_TRAIN_MEDIUM
+    else:
+        qidx = rng.permutation(len(test))
+        X = train[perm[:N_TRAIN]].astype(np.uint8)
+        Q = test[qidx[:N_QUERY]].astype(np.uint8)
+        out, n_train = OUT, N_TRAIN
 
     import os
     os.makedirs("fixture", exist_ok=True)
-    np.savez_compressed(OUT, train=X, queries=Q,
+    np.savez_compressed(out, train=X, queries=Q,
                         source_sha256=digest.encode(),
-                        seed=np.array([SEED]), n_train=np.array([N_TRAIN]))
-    new = sha256(OUT)
-    print("wrote %s (%d x %d train, %d x %d queries)" % (OUT, *X.shape, *Q.shape))
+                        seed=np.array([SEED]), n_train=np.array([n_train]))
+    new = sha256(out)
+    print("wrote %s (%d x %d train, %d x %d queries)" % (out, *X.shape, *Q.shape))
     print("fixture sha256: %s" % new)
     print("   -> record this in fixture/SHA256SUMS; reproduce.sh verifies it")
     return 0

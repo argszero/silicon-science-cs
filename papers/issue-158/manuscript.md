@@ -201,6 +201,17 @@ Hamming at the short budget a correct index can be graded **0.2886** on average
 [59.2, 64.3], and the interval excludes zero — so at this sample the ordering of the
 families is not a sampling artefact of the query set.
 
+The axis is read at a third scale as well, and that one a reader can recompute without the corpus:
+at 200,000 descriptors from the same source, with 512 queries per
+seed and the same 1,000-neighbour window, it reads `r = -0.9724` over
+7 configurations against a smallest detectable `|r|` of 0.8855 — so the
+intermediate scale clears its own sensitivity too, and it sits between the two endpoints of the
+claim rather than beside it. The three scales are nested, not sampled independently: the
+20,000 descriptors of section 4 are the first 20,000 rows of the
+200,000-descriptor set, which is in turn a subset of the million. Every across-scale
+sentence in this section therefore compares one population at three sizes, which is what a
+statement about scale has to mean.
+
 Raw descriptors, measured in the same run at the same scale, give **0.9994**. That
 number is the control that keeps the rest honest: the metric is fully determined on the objects
 themselves, and everything this paper reports is about distances that a *code* introduces.
@@ -393,12 +404,18 @@ registered claim explained only its presence.
 ## 9. Reproduction
 
 `./reproduce.sh` reproduces tier A — the mechanism table, both endpoint controls and this
-manuscript — from the committed fixture, with numpy alone and no network. The
-1,000,000-descriptor numbers in section 5 are **tier B, the opt-in tier**: they are
-reproduced by `./reproduce.sh full`, which needs the corpus fetched by `fetch_corpus.sh` and `h5py`, and which
-reports `NOT RUN` rather than failing when either is absent. A reader who runs only the default
-command therefore reproduces every tier-A number and is told, on the spot, that the tier-B ones were
-not recomputed — rather than being shown a green verdict over a number that was never computed. The mechanism table is regenerated twice
+manuscript — from the committed fixture, with numpy alone and no network. It also reproduces the
+scale axis, at 200,000 descriptors, from a committed fixture that likewise needs nothing
+but numpy: **tier M**. The 1,000,000-descriptor numbers in section 5 are **tier B, the opt-in
+tier**: they are reproduced by `./reproduce.sh full`, which needs the corpus fetched by
+`fetch_corpus.sh` and `h5py`, and which reports `NOT RUN` rather than failing when either is absent.
+A reader who runs only the default command therefore reproduces every tier-A and every tier-M
+number, and is told, on the spot, that the tier-B ones were not recomputed — rather than being
+shown a green verdict over a number that was never computed. This is what the largest number in
+this paper needed most: it used to have one instrument, a 1,000,000-descriptor download, and
+it now has two, because the same axis is recomputed at a fifth of that size from bytes that ship
+inside the package. Every artefact — the mechanism table, the 200,000-descriptor axis and
+the million-descriptor one — is regenerated twice
 and byte-compared, so a number that moves between two runs fails the build, and a program reads the
 artefact back to test the claims this paper makes about it. The stack is the standard scientific
 Python one — array and linear-algebra routines [13,14], the

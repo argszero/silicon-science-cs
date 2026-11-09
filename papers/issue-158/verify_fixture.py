@@ -7,13 +7,14 @@ from, and every number downstream is then about some other data. That is a hard 
 warning.
 
     python3 verify_fixture.py              # verify, exit 1 on mismatch
-    python3 verify_fixture.py --print-sha  # print the digest (used by reproduce.sh)
+    python3 verify_fixture.py --print-sha [fixture/<name>.npz]   # print one digest, for reproduce.sh
 """
 import hashlib
 import os
 import sys
 
 SUMS = "fixture/SHA256SUMS"
+SUBSET = "fixture/sift_subset.npz"      # the tier-A fixture: the one --print-sha means by default
 
 
 def sha256(path, chunk=1 << 20):
@@ -60,10 +61,18 @@ def main(argv):
         if not ok:
             failed += 1
     if len(argv) > 1 and argv[1] == "--print-sha":
-        for name, digest in sorted(want.items()):
-            if name.endswith(".npz"):
-                print(digest)
-                break
+        # WHICH fixture: named by the caller, because "the first .npz in sorted order" is a
+        # property of the directory listing, not of the question being asked. When a second fixture
+        # was added (`fixture/sift_medium.npz`, which sorts first) tier A began recording the OTHER
+        # fixture's digest -- and nothing went red, because the two runs of the byte comparison both
+        # produced the new value and agreed with each other. Determinism is not identity: a digest
+        # that names "some fixture" names none. `check_claims.py` now binds the recorded digest to
+        # this file's name, so the same silent substitution fails a claim instead.
+        name = argv[2] if len(argv) > 2 else SUBSET
+        if name not in want:
+            sys.stderr.write("%s records no digest for %r, so none can be printed\n" % (SUMS, name))
+            return 1
+        print(want[name])
         return 0 if failed == 0 else 1
     say("FIXTURE: %s" % ("OK" if failed == 0 else "%d MISMATCHED" % failed))
     return 0 if failed == 0 else 1
