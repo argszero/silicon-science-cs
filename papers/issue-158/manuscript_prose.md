@@ -16,7 +16,9 @@ The answer this study measures is not the quantiser family and not the bit budge
 **local resolution of the distance the index computes** — how many distinct distance values the
 near neighbourhood of a query actually occupies. Across {{n:A.configs}} configurations spanning
 three families (random-hyperplane Hamming, product quantisation, scalar quantisation) on
-{{n:A.corpus.n}} real SIFT descriptors, the boundary tie group is ordered by resolution on a log-log
+{{n:A.corpus.n}} real SIFT descriptors — the two endpoint controls are run on every reproduction and
+are not among them, because neither belongs to a family: the float cell carries no code and the
+constructed cell is a corpus rather than a code — the boundary tie group is ordered by resolution on a log-log
 scale at `r = {{n:A.r}}` over {{n:A.n_cells}} seed-level cells; at {{n:B.corpus.n}} descriptors
 the same ordering holds at `r = {{n:B.r}}` over {{n:B.configs}} configurations. Hamming distance
 attains only `b+1` values for a `b`-bit code and ties badly — median boundary group

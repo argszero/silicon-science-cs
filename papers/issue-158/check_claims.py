@@ -75,6 +75,27 @@ def main():
     print("  [info] seeds are not independent confirmations: the cell count is the seed count, "
           "the configuration count is the evidence count")
 
+    # The manuscript prints a configuration count beside each correlation. That count must come from
+    # the same set the correlation was composed over, so this compares the generator's own function
+    # (imported, not re-implemented here) against the set composed above. Counting the two endpoint
+    # controls as configurations -- what the manuscript did until review M1 -- fails this line.
+    import make_manuscript
+    check("the printed configuration count is over the family cells, not the controls",
+          make_manuscript.configs_of(cells) == len(configs),
+          "manuscript prints %d, the correlations are composed over %d"
+          % (make_manuscript.configs_of(cells), len(configs)))
+    try:
+        scale = json.load(open("results/scale.json"))
+        b_configs = {tuple(c["tag"].split("/")[:2])
+                     for c in scale["cells"] if make_manuscript.is_family_cell(c)}
+        check("tier B's printed configuration count is over the family cells too",
+              make_manuscript.configs_of(scale["cells"]) == len(b_configs),
+              "manuscript prints %d, the cells carry %d"
+              % (make_manuscript.configs_of(scale["cells"]), len(b_configs)))
+    except FileNotFoundError:
+        check("tier B's configuration count", False,
+              "results/scale.json is missing -- this check has NOT RUN, it is not a pass")
+
     # ---- is the measured effect above what this design could have detected? ---------------
     # A correlation a design of this size could not have seen is not evidence either way, so the
     # sensitivity is printed and asserted here rather than quoted from a note.

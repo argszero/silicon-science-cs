@@ -44,9 +44,26 @@ def cell_lookup(cells, tag, field):
     raise KeyError("no cell %r in the artefact" % tag)
 
 
+# The two endpoint controls pin the instrument's ends; neither is a quantiser family. The float cell
+# is raw descriptors with no code at all and the constructed one is a corpus rather than a code, so
+# counting either as a configuration reports a set one member larger than the set every correlation
+# was composed over -- which is what this count did until review M1 (2026-11-09).
+CONTROL_PREFIXES = ("float", "constructed")
+
+
+def is_family_cell(cell):
+    return not cell["tag"].startswith(CONTROL_PREFIXES)
+
+
 def configs_of(cells):
-    """Distinct (family, budget) configurations -- the evidence count, as against cell count."""
-    return len({tuple(c["tag"].split("/")[:2]) for c in cells})
+    """Distinct (family, budget) configurations over the FAMILY cells -- the evidence count.
+
+    Filtering happens here, inside the one function both count sites call, so the printed count and
+    the correlation beside it cannot come from different sets. check_claims.py asserts that this
+    function, called on the artefact's full cell list, returns the same number it composes the
+    correlations over; a regression to counting the controls fails that check.
+    """
+    return len({tuple(c["tag"].split("/")[:2]) for c in cells if is_family_cell(c)})
 
 
 def mean(xs):

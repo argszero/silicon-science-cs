@@ -14,11 +14,13 @@ decides whether that set has any width at all?
 
 The answer this study measures is not the quantiser family and not the bit budget. It is the
 **local resolution of the distance the index computes** — how many distinct distance values the
-near neighbourhood of a query actually occupies. Across 10 configurations spanning
+near neighbourhood of a query actually occupies. Across 8 configurations spanning
 three families (random-hyperplane Hamming, product quantisation, scalar quantisation) on
-20,000 real SIFT descriptors, the boundary tie group is ordered by resolution on a log-log
+20,000 real SIFT descriptors — the two endpoint controls are run on every reproduction and
+are not among them, because neither belongs to a family: the float cell carries no code and the
+constructed cell is a corpus rather than a code — the boundary tie group is ordered by resolution on a log-log
 scale at `r = -0.9765` over 20 seed-level cells; at 1,000,000 descriptors
-the same ordering holds at `r = -0.9613` over 8 configurations. Hamming distance
+the same ordering holds at `r = -0.9613` over 7 configurations. Hamming distance
 attains only `b+1` values for a `b`-bit code and ties badly — median boundary group
 52.333 at the shortest budget, mean floor 0.2886 — while
 product and scalar quantisation, which attain hundreds of values, tie barely: median group
@@ -31,7 +33,7 @@ recall@k on compact codes *as such* is undetermined — and the second and third
 registered priors are likewise reported as refuted, supported, or refuted-in-one-space, and the
 scaling prior is refuted.
 
-Contribution level: **`case study`**. One corpus, two scales of it, 8 configurations
+Contribution level: **`case study`**. One corpus, two scales of it, 7 configurations
 at the larger scale. The instrument is exact and its two endpoint controls are run on every
 reproduction; the scope is one corpus and the abstract says so rather than a limitations section.
 
@@ -172,7 +174,7 @@ quantiser family and not by the bit budget alone.**
 
 The same axis is measured on 1,000,000 descriptors — a factor of fifty more points than the
 committed subsample, with 512 queries per seed — and it holds:
-`r = -0.9613` over 8 configurations. The resolution ranges from
+`r = -0.9613` over 7 configurations. The resolution ranges from
 3.0 distinct values in the near neighbourhood of a short Hamming budget to
 701.667 for product quantisation. Correspondingly the median boundary tie group is
 52.333 at the short Hamming budget, 18.5 at twice the
@@ -281,7 +283,7 @@ hash-addressed lookup tables [30], the inverted multi-index and its revisiting
 [34,35], polysemous codes
 [36] and the billion-scale deep-descriptor indexing
 [91] are the reconstruct-and-scan systems whose distance distributions this
-paper measures at 10 configurations. The classical theory of vector quantisation, its
+paper measures at 8 configurations. The classical theory of vector quantisation, its
 optimality conditions and its signal-compression treatment
 [31,32,33] supply the
 machinery, with one change that is this paper's and not the literature's: reconstructions are
