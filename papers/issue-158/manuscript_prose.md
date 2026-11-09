@@ -21,10 +21,13 @@ are not among them, because neither belongs to a family: the float cell carries 
 constructed cell is a corpus rather than a code — the boundary tie group is ordered by resolution on a log-log
 scale at `r = {{n:A.r}}` over {{n:A.n_cells}} seed-level cells; at {{n:B.corpus.n}} descriptors
 the same ordering holds at `r = {{n:B.r}}` over {{n:B.configs}} configurations. Hamming distance
-attains only `b+1` values for a `b`-bit code and ties badly — median boundary group
+attains only `b+1` values for a `b`-bit code and ties badly — the boundary tie group is
 {{n:B.hamming32.median_t}} at the shortest budget, mean floor {{n:B.hamming32.floor}} — while
-product and scalar quantisation, which attain hundreds of values, tie barely: median group
-{{n:B.pq32.median_t}} and floor {{n:B.pq32.floor}} to {{n:B.pq64.floor}}. The two families most
+product and scalar quantisation, which attain hundreds of values, tie barely: a tie group of
+{{n:B.pq32.median_t}} and floors {{n:B.pq32.floor}} to {{n:B.pq64.floor}}. Every per-configuration
+figure in this paper is the mean, over that configuration's three seeds, of a per-seed median taken
+over queries, so a tie group quoted here is a mean of medians rather than a median; the tier-A
+scalar-quantisation cells are seedless and carry their single measurement. The two families most
 widely deployed at billion scale are therefore the ones the effect leaves almost untouched.
 
 The paper states plainly what this replaces. This study **registered the opposite claim** — that
@@ -151,7 +154,7 @@ families can be compared:
  gersho-gray-vq-book-1992,lloyd-least-squares-1982}}.
 
 The result is a monotone ordering, and it is the same ordering whether the ordering is read off the
-tie group or off the resolution. Median boundary tie group across the configurations runs from
+tie group or off the resolution. The mean boundary tie group across the configurations runs from
 {{n:A.hamming32.median_t}} at the coarsest Hamming budget to {{n:A.hamming256.median_t}} at the
 finest, and the mean floor at the finely resolved families is {{n:A.pq32.floor}} and
 {{n:A.pq64.floor}} against a Hamming floor that stays far below it. The families are not ordered by
@@ -177,7 +180,7 @@ The same axis is measured on {{n:B.corpus.n}} descriptors — a factor of fifty 
 committed subsample, with {{n:B.corpus.n_queries}} queries per seed — and it holds:
 `r = {{n:B.r}}` over {{n:B.configs}} configurations. The resolution ranges from
 {{n:B.hamming32.atoms}} distinct values in the near neighbourhood of a short Hamming budget to
-{{n:B.pq32.atoms}} for product quantisation. Correspondingly the median boundary tie group is
+{{n:B.pq32.atoms}} for product quantisation. Correspondingly the mean boundary tie group is
 {{n:B.hamming32.median_t}} at the short Hamming budget, {{n:B.hamming64.median_t}} at twice the
 budget and {{n:B.hamming256.median_t}} at the finest, against {{n:B.pq32.median_t}} for product
 quantisation. The mean floor tells the practitioner's version of the same story: for Hamming at the

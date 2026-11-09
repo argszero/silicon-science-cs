@@ -21,10 +21,13 @@ are not among them, because neither belongs to a family: the float cell carries 
 constructed cell is a corpus rather than a code — the boundary tie group is ordered by resolution on a log-log
 scale at `r = -0.9765` over 20 seed-level cells; at 1,000,000 descriptors
 the same ordering holds at `r = -0.9613` over 7 configurations. Hamming distance
-attains only `b+1` values for a `b`-bit code and ties badly — median boundary group
+attains only `b+1` values for a `b`-bit code and ties badly — the boundary tie group is
 52.333 at the shortest budget, mean floor 0.2886 — while
-product and scalar quantisation, which attain hundreds of values, tie barely: median group
-1.333 and floor 0.899 to 0.991. The two families most
+product and scalar quantisation, which attain hundreds of values, tie barely: a tie group of
+1.333 and floors 0.899 to 0.991. Every per-configuration
+figure in this paper is the mean, over that configuration's three seeds, of a per-seed median taken
+over queries, so a tie group quoted here is a mean of medians rather than a median; the tier-A
+scalar-quantisation cells are seedless and carry their single measurement. The two families most
 widely deployed at billion scale are therefore the ones the effect leaves almost untouched.
 
 The paper states plainly what this replaces. This study **registered the opposite claim** — that
@@ -150,7 +153,7 @@ families can be compared:
  one-dimensional case of the classical theory [31,32,33].
 
 The result is a monotone ordering, and it is the same ordering whether the ordering is read off the
-tie group or off the resolution. Median boundary tie group across the configurations runs from
+tie group or off the resolution. The mean boundary tie group across the configurations runs from
 23.667 at the coarsest Hamming budget to 4.5 at the
 finest, and the mean floor at the finely resolved families is 0.98 and
 0.9995 against a Hamming floor that stays far below it. The families are not ordered by
@@ -176,7 +179,7 @@ The same axis is measured on 1,000,000 descriptors — a factor of fifty more po
 committed subsample, with 512 queries per seed — and it holds:
 `r = -0.9613` over 7 configurations. The resolution ranges from
 3.0 distinct values in the near neighbourhood of a short Hamming budget to
-701.667 for product quantisation. Correspondingly the median boundary tie group is
+701.667 for product quantisation. Correspondingly the mean boundary tie group is
 52.333 at the short Hamming budget, 18.5 at twice the
 budget and 6.0 at the finest, against 1.333 for product
 quantisation. The mean floor tells the practitioner's version of the same story: for Hamming at the
