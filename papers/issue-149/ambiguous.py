@@ -363,6 +363,27 @@ def selftest():
     w = wilson(0, 52)
     cases.append(("wilson(0,52) has a positive upper bound", w is not None and w[0] == 0.0 and w[1] > 0.05))
 
+    # plant 7: the k = 0 lower end is EXACTLY 0.0 on every denominator, AND the form this package
+    # published is REFUSED by the same predicate.  Without it this copy's repair is unguarded:
+    # rates.json carries no k = 0 cell today, so reverting the repair here moves no byte of any
+    # artefact and turns nothing red -- an unguarded repair is as latent as an unrepaired one.
+    # Both legs are asserted, because a plant that passes when the mutant equals the original has
+    # tested nothing: n = 27 is the denominator where the published form leaves a residue.
+    def lower_is_exact_zero(fn, ns=range(1, 200)):
+        """True only if every n in the sweep gives a lower end that IS 0.0, not a residue printing as one."""
+        return all(repr(fn(0, n)[0]) == "0.0" for n in ns)
+
+    def residue_form(k, n, z=1.96):
+        """The form this package published, kept here as the plant's negative leg."""
+        p = float(k) / n
+        d = 1.0 + z * z / n
+        centre = (p + z * z / (2 * n)) / d
+        half = z * ((p * (1 - p) / n + z * z / (4 * n * n)) ** 0.5) / d
+        return [max(0.0, centre - half), min(1.0, centre + half)]
+
+    cases.append(("k=0 lower end is exactly 0.0, and the published form is refused",
+                  lower_is_exact_zero(wilson) and not lower_is_exact_zero(residue_form)))
+
     for label, good in cases:
         print("  plant %-52s %s" % (label, "OK" if good else "FAILED"))
         ok &= bool(good)
