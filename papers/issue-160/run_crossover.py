@@ -44,6 +44,7 @@ import os
 import sys
 
 import censored_tail as ct
+import simulate_cost as sc
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 MEMBER = "function_durations_percentiles.anon.d01.csv"
@@ -187,6 +188,46 @@ def main():
                                                 max=int(max(ks)),
                                                 frac_at_one=round(sum(1 for x in ks if x == 1) / float(len(ks)), 4))
 
+    # ---- C2. the law's check (registered success criterion (ii)) ----------------------------
+    # §6 prices a certification and, until this revision round, nothing in the package ran the
+    # procedure whose cost it prices. The residual lives here, beside the law, so `check_claims.py`
+    # can assert it and so the two cannot ship apart.
+    cost_check = sc.check(kept, Q, EPS)
+
+    # ---- B2. is the refuted margin the reconstruction's, or the workload's? (review question 2) ---
+    # At k = 32 the binding fraction misses the registered "<10%" by a margin small enough that a
+    # reader is entitled to ask how much of it is the piecewise-linear ladder through seven knots.
+    # So the same measurement is repeated over coarser ladders: the fewer knots, the more of the tail
+    # is interpolated rather than measured. The interpolation FAMILY is held fixed (piecewise-linear
+    # in u, the family §3 already commits to), and the sweep says so in its own field, because a
+    # sensitivity analysis that silently varies two things answers neither.
+    KNOT_SETS = [("coarsest", (0.00, 0.50, 1.00)),
+                 ("median kept", (0.00, 0.50, 0.75, 0.99, 1.00)),
+                 ("quartiles", (0.00, 0.25, 0.50, 0.75, 0.99, 1.00)),
+                 ("all seven published knots", (0.00, 0.01, 0.25, 0.50, 0.75, 0.99, 1.00))]
+    k32 = KGRID[-1]
+    sweep_sets = []
+    for label, us in KNOT_SETS:
+        binds, alive = 0, 0
+        for row in kept:
+            sub = [(u, v) for (u, v), (uu, _) in zip(row["pts"], ct.LADDER) if uu in us]
+            # A coarser ladder can lose its median or cross where the full one did not; those rows
+            # are counted out rather than carried at a value the subset does not contain. Reporting
+            # the count is what stops a shrinking population from reading as a stable measurement.
+            if len(sub) != len(us) or ct.quantile(sub, 0.5) <= 0.0:
+                continue
+            alive += 1
+            T = k32 * ct.quantile(sub, 0.5)
+            if not ct.identified(Q, ct.censored_fraction(sub, T)):
+                binds += 1
+        sweep_sets.append(dict(knots=len(us), label=label, rows=alive,
+                               binds=binds, binds_frac=round(binds / float(alive), 4) if alive else None))
+    knot_sweep = dict(k=k32, full_knots=len(ct.LADDER),
+                      family="piecewise-linear in the probability scale (family held fixed)",
+                      sets=sweep_sets,
+                      note=("same rows, coarser reconstruction: how much of the fraction that binds "
+                            "at the widest grid point is the ladder's shape rather than the workload"))
+
     # ---- controls --------------------------------------------------------------------------
     # no censoring: timeout above the row's own maximum
     exact = []
@@ -222,7 +263,8 @@ def main():
                           fixture=os.path.relpath(SRC, HERE) if os.environ.get("TRACE_CSV") is None
                           else "TRACE_CSV override: " + os.path.basename(SRC),
                           sha256_of_decompressed_bytes=src_digest),
-               count_limit=count_limit, cells=cells, cost=cost, controls=controls)
+               count_limit=count_limit, cells=cells, cost=cost, cost_check=cost_check,
+               knot_sweep=knot_sweep, controls=controls)
     json.dump(out, open(OUT, "w"), indent=1, sort_keys=True)
 
     # ---- what the run prints ---------------------------------------------------------------
@@ -249,6 +291,13 @@ def main():
         d = cost["K_at_%d" % int(eps * 100)]
         print("   eps=%2.0f%%  K median %4d  p90 %4d  (rows needing exactly 1 level: %.1f%%)"
               % (eps * 100, d["median"], d["p90"], 100 * d["frac_at_one"]))
+    print("\nD. the reconstruction's own sensitivity at k=%d (review question 2)" % knot_sweep["k"])
+    for st in knot_sweep["sets"]:
+        print("   %-24s knots=%d  rows=%d  binds=%.2f%%"
+              % (st["label"], st["knots"], st["rows"], 100 * st["binds_frac"]))
+    print("   span across ladder shapes: %.2f%% .. %.2f%%"
+          % (100 * min(st["binds_frac"] for st in knot_sweep["sets"]),
+             100 * max(st["binds_frac"] for st in knot_sweep["sets"])))
     print("\ncontrols: no-censoring exact on %d/%d rows (%.6f)"
           % (sum(exact), len(exact), controls["no_censoring_identified_and_exact_frac"]))
     print("          flat rows (R == 1): %d (%.2f%%) | rows needing one level at eps=5%%: %d (%.2f%%)"

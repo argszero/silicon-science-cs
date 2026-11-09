@@ -43,6 +43,53 @@ def pct(x):
     return round(100.0 * x, 2)
 
 
+# --- bibliography author form (review minor 4) ------------------------------------------------
+# A registry record is not the form an entry prints. Three of this trace's references arrive with the
+# family name in capitals (`GENTLEMAN, D. R.`) and one arrives with a name SUFFIX in the family field
+# (`family: "III"`, `given: "James Pickands"`), because DOI metadata stores what the publisher
+# deposited. Printing the stored field is faithful and wrong: the work is indexed under a suffix
+# rather than under its author. Normalisation happens HERE, at render, so `refs.json` keeps the
+# registry's form and a reader can always see what was actually deposited.
+AUTHOR_FIXUPS = {
+    # A suffix cannot be re-cased into a surname: no rule recovers "Pickands" from "III", so this one
+    # is an explicit override and the only place in the package where a name is asserted rather than
+    # derived. The published work is Pickands (1975), Annals of Statistics 3:119-131.
+    "pickands-1975": ("III, J. P.", "Pickands, J."),
+}
+# An all-caps family name is a deposited-form artefact: at least three capitals followed by a comma.
+# Deliberately narrow -- an ALL-CAPS TITLE must not be touched (titles sit after the year, and the
+# normaliser only ever sees the author segment), and a single initial (`J.`) is not a name.
+ALLCAPS_FAMILY = re.compile(r"(?:^|[.\s,;])([A-Z][A-Z'\u2019\-]{2,})(?=,)")
+_YEAR = re.compile(r"\((\d{4})\)")
+_SUFFIXES = ("II", "III", "IV", "V")
+
+
+def _split_at_year(entry):
+    """(author segment, year, rest) -- so normalisation can never touch a title."""
+    m = _YEAR.search(entry)
+    if not m:
+        return entry, "", ""
+    return entry[:m.start()], entry[m.start():m.end()], entry[m.end():]
+
+
+def rendered_entry(ref, slug=""):
+    """The entry as it is printed: the registry's stored form in, house form out."""
+    entry = ref["entry"] if isinstance(ref, dict) else str(ref)
+    old, new = AUTHOR_FIXUPS.get(slug, (None, None))
+    if old:
+        entry = entry.replace(old, new, 1)
+    head, year, tail = _split_at_year(entry)
+
+    def _recase(m):
+        name = m.group(1)
+        if name in _SUFFIXES:                 # a suffix is not a family name
+            return m.group(0)
+        return m.group(0).replace(name, name[0] + name[1:].lower())
+
+    entry = ALLCAPS_FAMILY.sub(_recase, head) + year + tail
+    return re.sub(r"\.\.+", ".", entry)
+
+
 def build_values(art):
     """Every number the prose may name, as a flat dict. Anything not here cannot be printed."""
     cl = art["count_limit"]
@@ -103,6 +150,37 @@ def build_values(art):
         v["K%d_p90" % eps] = d["p90"]
         v["K%d_max" % eps] = d["max"]
         v["K%d_one_pct" % eps] = pct(d["frac_at_one"])
+    # The cost law's CHECK (registered criterion (ii)). `K` in the law counts the gaps between timed
+    # levels, so a certification needs one more level than the law's own number; the artefact settles
+    # which count attains `eps` on EVERY row, and both are bound here so the distinction is printable
+    # and neither can be quoted in place of the other.
+    cc = art["cost_check"]
+    for eps in (5, 10, 20):
+        tag = "eps_%d" % eps
+        blk = cc["by_eps"][tag]
+        held = cc["holds_at"][tag]
+        v["K%d_levels" % eps] = blk[held]["levels_median"]
+        v["K%d_levels_p90" % eps] = blk[held]["levels_p90"]
+        v["K%d_resid_max" % eps] = blk[held]["residual_max"]
+        v["K%d_resid_at_K" % eps] = blk["at_K"]["residual_max"]
+        v["K%d_over_pct" % eps] = pct(blk["at_K"]["rows_over_eps_frac"])
+    v["recon_rows"] = cc["reconstruction"]["rows"]
+    v["recon_draws"] = cc["reconstruction"]["draws_per_row"]
+    # Review minor 2: the step count is READ off the script that runs them, not remembered. The
+    # manuscript said "six" while the script ran eight; a number derived from its own object cannot
+    # go stale, and `check_claims.py` re-derives the same count through the same function. Imported
+    # here rather than at module scope: `check_claims` imports this module to re-apply the renderer's
+    # own author form, so a top-level import would be a cycle, and one function must serve both.
+    import check_claims
+    v["steps"] = check_claims.reproduction_steps()
+    # Review question 2: is the refuted margin an artefact of the reconstruction? The same measurement
+    # over coarser ladders, so the prose can state the spread instead of asserting robustness.
+    ks = art["knot_sweep"]
+    v["knot_sweep_sets"] = len(ks["sets"])
+    v["knot_sweep_min_pct"] = pct(min(s["binds_frac"] for s in ks["sets"]))
+    v["knot_sweep_max_pct"] = pct(max(s["binds_frac"] for s in ks["sets"]))
+    v["knot_sweep_full_pct"] = pct([s for s in ks["sets"] if s["knots"] == ks["full_knots"]][0]
+                                   ["binds_frac"])
     for cell in art["cells"]:
         k = cell["k"]
         v["k%d" % k] = k                      # the grid values, so `k = 2 .. 32` is bound
@@ -118,6 +196,11 @@ def build_values(art):
     # multiplier, and the drop in the binding fraction across it is the change the design
     # resolves. Composed from the artefact, not typed.
     v["binds_ladder_pp"] = round(v["k2_binds_pct"] - v["k32_binds_pct"], 2)
+    # How far the refutation clears the threshold it refutes, in percentage points, and the spread the
+    # reconstruction alone can produce. Both are printed because the second is larger than the first:
+    # a reader is owed that comparison, not the margin on its own.
+    v["binds_margin_pp"] = round(v["k32_binds_pct"] - v["prior_limb2_pct"], 2)
+    v["knot_sweep_span_pp"] = round(v["knot_sweep_max_pct"] - v["knot_sweep_min_pct"], 2)
     return v
 
 
@@ -300,8 +383,7 @@ def main():
 
     entries = []
     for i, slug in enumerate(order, 1):
-        entry = re.sub(r"\.\.+", ".", refs[slug]["entry"])
-        entries.append("[%d] %s" % (i, entry))
+        entries.append("[%d] %s" % (i, rendered_entry(refs[slug], slug)))
 
     body = body.replace("{{refs}}", "\n\n".join(entries))
     with open(OUT, "w", encoding="utf-8") as f:

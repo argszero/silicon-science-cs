@@ -6,6 +6,18 @@ directory, and `./reproduce.sh` re-derives all of them.
 
 This README covers reproduction. The manuscript is what the numbers are for.
 
+## Levels
+
+**Contribution level: `case study`.** One public trace, one day, one provider. What a timeout leaves
+identifiable is a consequence of the censoring lemma and does not depend on the day; the magnitudes
+are this workload's and are not claimed to generalise. The manuscript declares the same level in its
+subtitle and at the two points where a reader could be tempted to read more into the numbers.
+
+**Reproducibility level: `full`, with one declared `NOT RUN`.** One command, standard library only, no
+network, and every generated artefact is regenerated and compared byte for byte against the committed
+one. The single `NOT RUN` is the limb the data cannot carry: it is counted as neither a pass nor a
+null, and the run prints it on every execution so the verdict line can never read as `ALL GREEN`.
+
 ## One command
 
 ```sh

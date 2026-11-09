@@ -8,11 +8,11 @@
 
 A latency harness reports a 99th percentile. If the harness also stops waiting at a timeout — as nearly every one does — then some fraction of requests have no latency value at all, and the number it prints is not the quantile it names. We treat that as an identification problem rather than a rounding problem, and ask three questions of one real workload: can the quantile be resolved at all, does the timeout bind, and what does certifying the quantile cost.
 
-The first answer dominates. Of the 47,502 function rows in the first day of the public Azure Functions trace that carry a usable quantile ladder, **34.35%** expect at least one observation above their own 99th percentile; the remaining **65.65%** cannot resolve it at any timeout, because the quantile is a statement about the top of a distribution that the sample never reaches. 31,185 rows (65.65%) record fewer than 100 invocations in a whole day. No amount of careful measurement repairs this: it is a property of how much data was collected, not of how it was analysed.
+The first answer dominates. Of the 47,502 function rows in the first day of the public Azure Functions trace that carry a usable quantile ladder, **34.35%** expect at least one observation above their own 99th percentile; the remaining **65.65%** cannot resolve it at any timeout, because the quantile is a statement about the top of a distribution that the sample never reaches. Those are exactly the 31,185 rows that record fewer than 100 invocations in a whole day — one set under two descriptions, not two findings that corroborate each other, because at a 99th percentile `count × (1 − q) ≥ 1` flips at exactly that count. No amount of careful measurement repairs this: it is a property of how much data was collected, not of how it was analysed.
 
 Second, with the timeout set at a fixed multiple of each row's own median, truncation binds — the true quantile falls outside the set the harness can identify — on **57.52%** of rows at 2x the median, and still on **12.24%** at 32x. Where it binds, the printed number sits below the truth by a median factor of **4.24** at 2x and **3.06** even at 32x. A registered prior predicted that under 10% of rows would still bind at 32x. The data says otherwise, and that refutation is the sharpest result in this paper.
 
-Third, certifying the quantile to 5% relative precision by timeout levels alone needs a median of **25** distinct levels on this workload, and 98 at the 90th percentile of rows.
+Third, certifying the quantile to 5% relative precision by timeout levels alone needs a median of **26** distinct levels on this workload, and 99 at the 90th percentile of rows. That price was **checked rather than computed**, and the check moved it by one: the law's own `K` counts the gaps between timed levels, so with `K` levels the bracket stays wider than the precision it promises on 73.34% of rows.
 
 Throughout, the unit is the **30-second interval mean**, not the single invocation: the trace publishes percentiles of a 30-second average, so every range reported here ranges over a smoothed quantity and is therefore a **lower bound** on the invocation-level range. All numbers come from one program and one committed input; `./reproduce.sh` re-derives them.
 
@@ -76,7 +76,8 @@ What the applied literature does not routinely carry is the resulting refusal. O
 | usable rows | 47,502 | — |
 | can resolve a 99th percentile (expects at least one observation above it) | 16,317 | **34.35%** |
 | cannot resolve it at any timeout | 31,185 | 65.65% |
-| fewer than 100 invocations in the day | 31,185 | 65.65% |
+
+The two rows a reader might expect here — `cannot resolve it at any timeout` and `fewer than 100 invocations in the day` — are the same 31,185 rows, and the table prints one of them rather than both: at a 99th percentile `resolvable(count, q)` is `count × (1 − q) ≥ 1`, which flips at exactly that count, so the equality is an identity rather than an agreement between two measurements. Printing both read as two findings that corroborate each other. `check_claims.py` asserts the equality (`usable − resolvable == below_100`); written as the inequality it carried until this revision, it would have stayed green if the two ever began to differ, which is the one thing it should catch.
 | fewer than 1,000 invocations in the day | 40,993 | 86.3% |
 
 The median row expects 0.24 observations above its own 99th percentile — that is, the median row does not expect even one.
@@ -105,6 +106,8 @@ Fixing the grid in advance matters. The obvious alternative — evaluate at `T` 
 
 The refuted prior is the last row. It predicted under 10% of rows would still bind at 32x; the measurement is 12.24%, so the prediction failed. What makes the failure interesting is the reason it is not merely a calibration error: at a timeout of thirty-two times the median, on a workload whose median row records a handful of invocations, the harness still cannot identify the quantile for one row in eight, and there it understates by a median 3.06x. The decay from 57.52% to 12.24% — a fall of 45.28 percentage points across a sixteen-fold relaxation — is slower than the intuition that a generous timeout makes censoring irrelevant.
 
+A reader is entitled to ask how much of that margin is the reconstruction rather than the workload, since the crossover is read off a piecewise-linear ladder and Section 8 calls that interpolation the most substantive modelling assumption in the paper. So the same measurement is repeated over 4 ladder shapes at the widest grid point, holding the interpolation family fixed and varying only how many knots the ladder keeps: the fraction that binds runs from 12.24% to 20.03%, a span of 7.79 points, and the ladder this paper reports sits at the flat end of it — dropping a knot above the quartiles does not move the number at all, while cutting the ladder to its median and its maximum does. Every shape still lands above the 10% the prior predicted, so the refutation survives the sensitivity analysis; but the margin by which it clears that threshold is 2.24 points, which is smaller than the spread the reconstruction can produce on its own. We report both numbers for that reason: the direction is not a modelling artefact, the distance is.
+
 That shape is what the extreme-value literature would predict, though we do not fit a tail model and do not claim one. The behaviour of exceedances over a high threshold is what peak-over-threshold methods were built to describe [74,75,76,77], the limiting laws for maxima are classical [78,79], and the estimation of the tail index and of high quantiles from few exceedances is well developed [80,81,82,83,84,85,86], including the rare-event simulation machinery for when the events are too rare to sample directly [87,88] and the theory of records for the maxima themselves [89]. Our contribution is not a tail estimator. It is the observation that a threshold set for *configuration* reasons can be read as a censoring threshold, and that the correct report of a conditional quantile is conditioned on the threshold it was computed under.
 
 Two controls run on every execution of the measurement, and both hold. With the timeout placed above each row's own maximum, the quantile is identified and the printed number equals the truth on 5,000 of 5,000 rows tested (100%): if that ever stopped holding, the instrument would be broken rather than the data. And the degenerate class the cost law predicts does appear in real data: 11,972 rows (25.2%) have no dynamic range at all, with `p100` equal to `p50`. A further 12,664 rows (26.66%) are certified by a single timeout level, which is the same set only up to the precision one asks for — the two counts differ by every row whose range is non-trivial but smaller than the requested precision, and reporting one number in place of both would be a label that lies about its own set.
@@ -115,7 +118,31 @@ If an operator wants to certify a quantile to relative precision `eps` by choosi
 
     K = ceil(log R / log(1 + eps)),   R = p100 / p50.
 
-The law is deliberately crude and deliberately conservative. It counts levels, not invocations, and it therefore answers the question "how many experiments does certifying this cost" rather than "how much traffic does it need" — the second is the sample-count limit of Section 4. Its degenerate endpoint is what keeps it honest: at `R = 1` it returns one level, because a workload with no range is certified by a single timeout.
+The law is deliberately crude, but the hedge that used to stand here — that it is *conservative* — was
+wrong, and the check this revision round ran is what showed it. It counts levels, not invocations, and
+it therefore answers the question "how many experiments does certifying this cost" rather than "how
+much traffic does it need" — the second is the sample-count limit of Section 4. Its degenerate
+endpoint is what keeps it honest: at `R = 1` it returns one level, because a workload with no range is
+certified by a single timeout.
+
+The correction is one level, and it is measurable rather than rhetorical. `K` steps of ratio `1+eps`
+span a ratio of `R`, so `K` counts the **gaps** between timed levels while a certification needs the
+**levels** themselves: with `K` levels the bracket around a row's own quantile stays wider than `eps`
+on 73.34% of rows at 5% precision, with a worst-row residual of
+2.0433 against the precision the law promises. With `K+1` levels the residual is at or
+below 1 on every one of 47,502 rows, worst row 1, so the abstract's third
+number is the checked one and not the computed one. The residual — achieved bracket width divided by
+`eps` — lives in the artefact beside the law, and `check_claims.py` fails if either the check or this
+finding disappears from it.
+
+The check imports no parametric assumption: the levels are placed across each row's **own**
+`[p50, p100]`, and the bracket is read off that row's own quantile, so what is measured is the
+The law is stated on the interval mean, so its `K` prices the smoothed quantity. A reader who wants the invocation-level cost is owed one factor and no more: write `c` for the ratio of the invocation-level range to the interval-mean range; then `K` grows by `log c / log(1 + eps)` and nothing else in the law changes, so the growth is additive in levels and slow — a factor of two costs about fifteen more levels at 5% precision, against a median `K` of 25. That factor is **not bounded by this data**, and the reason is the one that withdrew our own first registered prior: the only single-invocation column the trace publishes is `Maximum`, an extremum of single calls, while `p100` is a percentile of the interval mean, so their ratio crosses the two spaces rather than measuring the compression between them. We therefore report the multiplier as arithmetic and the factor as unmeasured, rather than dressing a cross-space ratio as a bound.
+interpolation the paper already commits to rather than a distribution chosen for the occasion. A
+second limb draws 512 invocations from each of 200 rows and compares the
+empirical quantile against the ladder's, which checks that the reconstruction is not inventing the
+tail; sampling error at that draw count is the floor on it, which is why that limb is labelled as a
+test of the interpolation and not of the law.
 
 | precision | `K` median | `K` 90th pct | `K` max | rows certified by one level |
 |---|---|---|---|---|
@@ -157,9 +184,9 @@ For the tail quantities themselves the binding constraint is not statistical but
 
 **The unit.** Every range reported here is a range of the 30-second interval mean. The invocation-level range is larger, by an amount this table cannot quantify, so the cost figures in Section 6 are lower bounds and the tail compression we measure is a lower bound on the compression at the invocation level. A reader who reads `R` as an invocation-level dynamic range will overestimate how cheap certification actually is.
 
-**One trace, one day, one provider.** This is a case study and we do not generalise from it. The direction of the result — that a timeout leaves a quantile unidentified for a substantial share of workloads — is a consequence of the lemma and cannot be undone by another day; the magnitudes are properties of this workload and would move.
+**One trace, one day, one provider.** This is a case study and we do not generalise from it. The direction of the result — that a timeout leaves a quantile unidentified for a substantial share of workloads — is a consequence of the lemma and cannot be undone by another day; the magnitudes are properties of this workload and would move. A second day of the same trace is feasible in principle — the archive publishes one member per day and this package already reads member `d01` — but it is not in this package: the fixture is that one member and the reproduction is offline by design. Whether the 65.65% share moves between days enough to change the architectural conclusion is therefore unmeasured here. What the conclusion turns on is not that share’s second digit but the 100-invocation boundary, and it would take a large movement of rows across that boundary to change the answer.
 
-**The reconstruction is a model.** Piecewise-linear interpolation between seven knots is a choice. It is stated, applied identically to every row, and embedded in committed code [34,36], but a different reconstruction would move the crossover slightly. Since the lemma's boundary depends on the CDF evaluated at the timeout, and the CDF between knots is exactly what interpolation supplies, this is the most substantive modelling assumption in the paper.
+**The reconstruction is a model.** Piecewise-linear interpolation between seven knots is a choice. It is stated, applied identically to every row, and embedded in committed code [34,36], but a different reconstruction would move the crossover, and Section 5 measures by how much: the binding fraction spans 7.79 points across ladder shapes, which is wider than the margin by which it misses the threshold the prior named. Since the lemma's boundary depends on the CDF evaluated at the timeout, and the CDF between knots is exactly what interpolation supplies, this is the most substantive modelling assumption in the paper.
 
 **Determinism is not replication.** Our reproduction check proves that the same program on the same bytes yields the same numbers. That is a statement about the instrument, not about the world, and it is why the noise limb is reported as unmeasured rather than as passed — a confusion this literature has warned about for a long time [38,39,40,101].
 
@@ -195,7 +222,7 @@ Each of these is a bound a practitioner can recompute for their own system from 
 
 ## Availability
 
-The instrument, the committed input and every number in this paper are in this directory. `./reproduce.sh` runs the six steps that re-derive them and prints its verdict; a `NOT RUN` step means a claim the data cannot carry, and the package is designed so that verdict can never read as though that number had been reproduced.
+The instrument, the committed input and every number in this paper are in this directory. `./reproduce.sh` runs the 8 steps that re-derive them and prints its verdict; a `NOT RUN` step means a claim the data cannot carry, and the package is designed so that verdict can never read as though that number had been reproduced.
 
 ## References
 
@@ -227,7 +254,7 @@ The instrument, the committed input and every number in this paper are in this d
 
 [14] Lagakos, S. W. (1979). General Right Censoring and Its Impact on the Analysis of Survival Data. Biometrics. vol. 35. pp. 139. https://doi.org/10.2307/2529941
 
-[15] GENTLEMAN, R.; GEYER, C. J. (1994). Maximum likelihood for interval censored data: Consistency and computation. Biometrika. vol. 81. pp. 618-623. https://doi.org/10.1093/biomet/81.3.618
+[15] Gentleman, R.; Geyer, C. J. (1994). Maximum likelihood for interval censored data: Consistency and computation. Biometrika. vol. 81. pp. 618-623. https://doi.org/10.1093/biomet/81.3.618
 
 [16] Woodroofe, M. (1985). Estimating a Distribution Function with Truncated Data. The Annals of Statistics. vol. 13. pp. 163-177. https://doi.org/10.1214/aos/1176346584
 
@@ -255,7 +282,7 @@ The instrument, the committed input and every number in this paper are in this d
 
 [28] Heitjan, D. F.; Rubin, D. B. (1991). Ignorability and Coarse Data. The Annals of Statistics. vol. 19. pp. 2244-2253. https://doi.org/10.1214/aos/1176348396
 
-[29] RUBIN, D. B. (1976). Inference and missing data. Biometrika. vol. 63. pp. 581-592. https://doi.org/10.1093/biomet/63.3.581
+[29] Rubin, D. B. (1976). Inference and missing data. Biometrika. vol. 63. pp. 581-592. https://doi.org/10.1093/biomet/63.3.581
 
 [30] (2006). Semiparametric Theory and Missing Data. Springer Series in Statistics. https://doi.org/10.1007/0-387-37345-4
 
@@ -317,7 +344,7 @@ The instrument, the committed input and every number in this paper are in this d
 
 [59] Wilson, E. B. (1927). Probable Inference, the Law of Succession, and Statistical Inference. Journal of the American Statistical Association. vol. 22. pp. 209-212. https://doi.org/10.1080/01621459.1927.10502953
 
-[60] CLOPPER, C. J.; PEARSON, E. S. (1934). THE USE OF CONFIDENCE OR FIDUCIAL LIMITS ILLUSTRATED IN THE CASE OF THE BINOMIAL. Biometrika. vol. 26. pp. 404-413. https://doi.org/10.1093/biomet/26.4.404
+[60] Clopper, C. J.; Pearson, E. S. (1934). THE USE OF CONFIDENCE OR FIDUCIAL LIMITS ILLUSTRATED IN THE CASE OF THE BINOMIAL. Biometrika. vol. 26. pp. 404-413. https://doi.org/10.1093/biomet/26.4.404
 
 [61] Brown, L. D.; Cai, T. T.; DasGupta, A. (2001). Interval Estimation for a Binomial Proportion. Statistical Science. vol. 16. pp. 101-133. https://doi.org/10.1214/ss/1009213286
 
@@ -345,7 +372,7 @@ The instrument, the committed input and every number in this paper are in this d
 
 [73] (2006). Sampling Algorithms. Springer Series in Statistics. https://doi.org/10.1007/0-387-34240-0
 
-[74] III, J. P. (1975). Statistical Inference Using Extreme Order Statistics. The Annals of Statistics. vol. 3. pp. 119-131. https://doi.org/10.1214/aos/1176343003
+[74] Pickands, J. (1975). Statistical Inference Using Extreme Order Statistics. The Annals of Statistics. vol. 3. pp. 119-131. https://doi.org/10.1214/aos/1176343003
 
 [75] Balkema, A. A.; de Haan, L. (1974). Residual Life Time at Great Age. The Annals of Probability. vol. 2. pp. 792-804. https://doi.org/10.1214/aop/1176996548
 
@@ -385,7 +412,7 @@ The instrument, the committed input and every number in this paper are in this d
 
 [93] Reiman, M. I. (1984). Open Queueing Networks in Heavy Traffic. Mathematics of Operations Research. vol. 9. pp. 441-458. https://doi.org/10.1287/moor.9.3.441
 
-[94] WHITT, W. (1993). APPROXIMATIONS FOR THE GI/G/m QUEUE. Production and Operations Management. vol. 2. pp. 114-161. https://doi.org/10.1111/j.1937-5956.1993.tb00094.x
+[94] Whitt, W. (1993). APPROXIMATIONS FOR THE GI/G/m QUEUE. Production and Operations Management. vol. 2. pp. 114-161. https://doi.org/10.1111/j.1937-5956.1993.tb00094.x
 
 [95] Abate, J.; Whitt, W. (1992). The Fourier-series method for inverting transforms of probability distributions. Queueing Systems. vol. 10. pp. 5-87. https://doi.org/10.1007/bf01158520
 

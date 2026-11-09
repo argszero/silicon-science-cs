@@ -43,6 +43,19 @@ CONTROL = dict(id="no-censoring control", path="controls.no_censoring_identified
                text="a timeout above the row maximum identifies the quantile exactly, every time")
 
 
+def reproduction_steps():
+    """How many steps `reproduce.sh` actually runs, counted off the script itself.
+
+    Review minor 2: the manuscript said "six steps" while the script ran eight, and no gate owned the
+    number. One function, used by the renderer that prints the sentence and by the identity that
+    checks it, so the two cannot disagree -- a second parser would be a copy free to drift.
+    """
+    path = os.path.join(HERE, "reproduce.sh")
+    with open(path, encoding="utf-8") as f:
+        text = f.read()
+    return len([ln for ln in text.splitlines() if ln.startswith('step "')])
+
+
 def get(art, dotted):
     """Read a dotted path out of the artefact; a missing path is a failure, never a default."""
     cur = art
@@ -90,12 +103,13 @@ def identities(art):
     out.append(("unresolvable_frac is the complement of resolvable_frac",
                 cl["unresolvable_frac"] == round(1.0 - cl["resolvable_frac"], 4),
                 "%.4f vs 1 - %.4f" % (cl["unresolvable_frac"], cl["resolvable_frac"])))
-    # A real implication of the definition, not an identity in disguise. A row with Count < 100
-    # expects fewer than 1 observation above a p99 (100 * (1-q) is exactly 1), so every such row must
-    # be unresolvable: below_100 must fit inside usable - resolvable. Written as a tautology
-    # (`resolvable == 0 + resolvable`) this line stayed green while measuring nothing.
-    out.append(("every row with Count < 100 is unresolvable",
-                cl["below_100"] <= cl["usable"] - cl["resolvable"],
+    # EQUALITY, not the weaker `<=` it carried until the revision round: `resolvable(count, q)` is
+    # `count * (1-q) >= 1`, so at q = 0.99 it flips at exactly count = 100 and "fewer than 100
+    # invocations" IS "unresolvable" -- the same rows by construction, not two findings that happen
+    # to agree. Written as `<=`, the gate would have stayed green if the two ever began to differ,
+    # which is the one thing it should catch: the paper prints both as separate rows.
+    out.append(("every row with Count < 100 is unresolvable, and the two sets are equal",
+                cl["below_100"] == cl["usable"] - cl["resolvable"],
                 "%d below 100 vs %d unresolvable (%d - %d)"
                 % (cl["below_100"], cl["usable"] - cl["resolvable"], cl["usable"], cl["resolvable"])))
     out.append(("below_100 <= below_1000", cl["below_100"] <= cl["below_1000"],
@@ -131,6 +145,136 @@ def identities(art):
     out.append(("the artefact records the digest of the bytes it read",
                 len(get(art, "input.sha256_of_decompressed_bytes")) == 64,
                 get(art, "input.sha256_of_decompressed_bytes")[:16] + "..."))
+    # ---- the cost law travels with its check (registered criterion (ii), review M1) ----------
+    # §6 prices a certification. Until this revision round nothing ran the procedure whose cost it
+    # prices, and the registration's criterion (ii) asked for exactly that. The residual lives in the
+    # artefact beside the law, and these lines are what make the two inseparable: the check cannot be
+    # dropped, and the finding it produced cannot quietly evaporate.
+    cc = art.get("cost_check")
+    if cc is None:
+        out.append(("the cost law's check is present and states its residual", False,
+                    "no cost_check block: criterion (ii) would again be unverified"))
+    else:
+        eps_tags = sorted(cc["by_eps"])
+        out.append(("every precision in the registered ladder has a residual, at K-1, K and K+1",
+                    eps_tags == ["eps_10", "eps_20", "eps_5"]
+                    and all(all(k in cc["by_eps"][e] for k in
+                                ("at_K_minus_1", "at_K", "at_K_plus_1")) for e in eps_tags)
+                    and all("residual_max" in cc["by_eps"][e]["at_K"] for e in eps_tags),
+                    ",".join(eps_tags)))
+        for tag in eps_tags:
+            blk = cc["by_eps"][tag]
+            held = cc["holds_at"][tag]
+            # What the paper sells must attain eps on EVERY row, not typically: a price that buys
+            # the precision usually is not a certification, and the worst row is the one that
+            # decides whether a reader can rely on the number.
+            out.append(("%s: the level count the paper states attains eps on every row" % tag,
+                        blk[held]["rows_over_eps"] == 0,
+                        "%s: %d of %d rows over eps (residual max %.4f)"
+                        % (held, blk[held]["rows_over_eps"], blk[held]["rows"],
+                           blk[held]["residual_max"])))
+            # And the finding, asserted rather than narrated: the law's own K is NOT enough. If a
+            # later change made K sufficient, §6's sentence about the off-by-one would be false and
+            # this line is what would say so.
+            out.append(("%s: the law's own K does not attain eps (K counts gaps, not levels)" % tag,
+                        blk["at_K"]["rows_over_eps"] > 0,
+                        "at_K: %d of %d rows over eps (residual max %.4f)"
+                        % (blk["at_K"]["rows_over_eps"], blk["at_K"]["rows"],
+                           blk["at_K"]["residual_max"])))
+        rec = cc["reconstruction"]
+        out.append(("the reconstruction limb actually drew from the rows it reports",
+                    rec["rows"] > 0 and rec["draws_per_row"] > 0 and rec["seed"] == 20261110,
+                    "%d rows x %d draws, seed %d"
+                    % (rec["rows"], rec["draws_per_row"], rec["seed"])))
+
+    # ---- the reproduction's step count is read from the script, not remembered ---------------
+    # Review minor 2: the manuscript said "six steps" while the script ran eight, and no gate owned
+    # the number. The renderer now derives it from `reproduce.sh` itself, so the sentence cannot go
+    # stale; this line re-derives the same number a second way and refuses a script whose declared
+    # constant disagrees with its own call sites -- the script's own guard, read by the gate too.
+    script = os.path.join(HERE, "reproduce.sh")
+    if os.path.exists(script):
+        text = open(script, encoding="utf-8").read()
+        declared = [ln for ln in text.splitlines() if ln.startswith("TOTAL_STEPS=")]
+        sites = reproduction_steps()
+        out.append(("reproduce.sh: the declared step count equals its own call sites",
+                    len(declared) == 1 and int(declared[0].split("=")[1]) == sites,
+                    "declared %s, call sites %d"
+                    % (declared[0].split("=")[1] if declared else "?", sites)))
+    else:
+        out.append(("reproduce.sh is present so its step count can be read", False, "missing"))
+
+    # ---- bibliography entries print names, not the registry's stored fields ------------------
+    # Review minor 4: `[74]` printed `III, J. P.` because the DOI's record stores the suffix in the
+    # family field, and five more entries printed an ALL-CAPS family. The fix is applied at render;
+    # this re-applies THE RENDERER'S OWN function to all 120 entries, so the check cannot be a copy
+    # that drifts from the code that produces the paper.
+    try:
+        import make_manuscript as mm
+    except Exception as e:                                   # pragma: no cover - reported, not hidden
+        out.append(("the renderer is importable so author form can be re-checked", False, str(e)))
+        make_manuscript_mod = None
+    else:
+        make_manuscript_mod = mm
+    if make_manuscript_mod is not None:
+        refs_path = os.path.join(HERE, "refs.json")
+        if os.path.exists(refs_path):
+            rj = json.load(open(refs_path, encoding="utf-8"))
+            refs = rj.get("refs", rj)
+            offenders = []
+            for slug in sorted(refs):
+                printed = make_manuscript_mod.rendered_entry(refs[slug], slug)
+                if make_manuscript_mod.ALLCAPS_FAMILY.search(printed):
+                    offenders.append(slug)
+            out.append(("no entry prints an ALL-CAPS or suffix-shaped family name",
+                        not offenders,
+                        "%d of %d entries: %s"
+                        % (len(offenders), len(refs), ", ".join(offenders[:4]) or "none")))
+        else:
+            out.append(("refs.json is present so author form can be checked", False, "missing"))
+
+    # ---- is the refuted margin the reconstruction's, or the workload's? (review question 2) ---
+    # §5 now says the refutation survives a sensitivity sweep over ladder shapes AND that the margin
+    # it clears the threshold by is narrower than the spread those shapes produce. Both are asserted,
+    # because a sentence comparing two numbers is exactly the kind that can stay green after one of
+    # them moves. The threshold is read from CLAIMS -- the gate that decides the verdict -- never
+    # retyped here.
+    ks = art.get("knot_sweep")
+    if ks is None:
+        out.append(("the crossover is re-measured over coarser ladders", False,
+                    "no knot_sweep block: question 2 would be answered in prose only"))
+    else:
+        thr = [c["threshold"] for c in CLAIMS if c["id"] == "P2' limb 2"][0]
+        fr = [s_["binds_frac"] for s_ in ks["sets"]]
+        full = [s_ for s_ in ks["sets"] if s_["knots"] == ks["full_knots"]]
+        out.append(("every ladder shape tested still refutes the registered threshold",
+                    len(full) == 1 and all(f > thr for f in fr),
+                    "%d shapes, min %.4f, threshold %.4f" % (len(fr), min(fr), thr)))
+        spread, margin = max(fr) - min(fr), full[0]["binds_frac"] - thr if full else None
+        out.append(("the reconstruction's own spread is wider than the refutation's margin",
+                    full and spread > margin,
+                    "spread %.4f vs margin %s" % (spread, "%.4f" % margin if margin else "?")))
+        out.append(("the sweep holds the interpolation family fixed and says so",
+                    "family held fixed" in ks.get("family", ""), ks.get("family", "")[:48]))
+
+    # ---- the level is stated where a reader enters (review question 6) -----------------------
+    # Four carriers have to agree: the registration, the manuscript, the README, and the review's
+    # own reading. Two of them are authored text in this package and both are asserted; the
+    # registration is not in the package and is named here rather than read.
+    rd = os.path.join(HERE, "README.md")
+    pr = os.path.join(HERE, "manuscript_prose.md")
+    if os.path.exists(rd) and os.path.exists(pr):
+        readme, prose = open(rd, encoding="utf-8").read(), open(pr, encoding="utf-8").read()
+        out.append(("README and manuscript declare the same contribution level",
+                    "case study" in readme and "case study" in prose,
+                    "README %s / manuscript %s"
+                    % ("case study" in readme, "case study" in prose)))
+        out.append(("README states a reproducibility level, not only a command",
+                    "Reproducibility level" in readme,
+                    "found" if "Reproducibility level" in readme else "absent"))
+    else:
+        out.append(("README and manuscript are present so the level can be checked", False, "missing"))
+
     return out
 
 

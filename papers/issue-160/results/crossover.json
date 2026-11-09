@@ -109,6 +109,163 @@
   "R_p90": 114.0824,
   "rule": "K = ceil(log R / log(1+eps)), R = p100/p50 (same-space, interval means)"
  },
+ "cost_check": {
+  "by_eps": {
+   "eps_10": {
+    "at_K": {
+     "achieved_max": 0.209877,
+     "achieved_median": 0.101267,
+     "achieved_p90": 0.10966,
+     "extra_levels": 0,
+     "levels_max": 133,
+     "levels_median": 13,
+     "levels_p90": 50,
+     "residual_max": 2.0988,
+     "residual_median": 1.0127,
+     "rows": 47502,
+     "rows_over_eps": 34292,
+     "rows_over_eps_frac": 0.7219
+    },
+    "at_K_minus_1": {
+     "achieved_max": 0.330961,
+     "achieved_median": 0.104714,
+     "achieved_p90": 0.134121,
+     "extra_levels": -1,
+     "levels_max": 132,
+     "levels_median": 12,
+     "levels_p90": 49,
+     "residual_max": 3.3096,
+     "residual_median": 1.0471,
+     "rows": 47502,
+     "rows_over_eps": 34292,
+     "rows_over_eps_frac": 0.7219
+    },
+    "at_K_plus_1": {
+     "achieved_max": 0.1,
+     "achieved_median": 0.096232,
+     "achieved_p90": 0.099455,
+     "extra_levels": 1,
+     "levels_max": 134,
+     "levels_median": 14,
+     "levels_p90": 51,
+     "residual_max": 1.0,
+     "residual_median": 0.9623,
+     "rows": 47502,
+     "rows_over_eps": 0,
+     "rows_over_eps_frac": 0.0
+    },
+    "eps": 0.1
+   },
+   "eps_20": {
+    "at_K": {
+     "achieved_max": 0.439868,
+     "achieved_median": 0.204518,
+     "achieved_p90": 0.235115,
+     "extra_levels": 0,
+     "levels_max": 70,
+     "levels_median": 7,
+     "levels_p90": 26,
+     "residual_max": 2.1993,
+     "residual_median": 1.0226,
+     "rows": 47502,
+     "rows_over_eps": 33305,
+     "rows_over_eps_frac": 0.7011
+    },
+    "at_K_minus_1": {
+     "achieved_max": 0.727845,
+     "achieved_median": 0.218266,
+     "achieved_p90": 0.330836,
+     "extra_levels": -1,
+     "levels_max": 69,
+     "levels_median": 6,
+     "levels_p90": 25,
+     "residual_max": 3.6392,
+     "residual_median": 1.0913,
+     "rows": 47502,
+     "rows_over_eps": 33307,
+     "rows_over_eps_frac": 0.7012
+    },
+    "at_K_plus_1": {
+     "achieved_max": 0.2,
+     "achieved_median": 0.185435,
+     "achieved_p90": 0.197898,
+     "extra_levels": 1,
+     "levels_max": 71,
+     "levels_median": 8,
+     "levels_p90": 27,
+     "residual_max": 1.0,
+     "residual_median": 0.9272,
+     "rows": 47502,
+     "rows_over_eps": 0,
+     "rows_over_eps_frac": 0.0
+    },
+    "eps": 0.2
+   },
+   "eps_5": {
+    "at_K": {
+     "achieved_max": 0.102167,
+     "achieved_median": 0.050321,
+     "achieved_p90": 0.052594,
+     "extra_levels": 0,
+     "levels_max": 259,
+     "levels_median": 25,
+     "levels_p90": 98,
+     "residual_max": 2.0433,
+     "residual_median": 1.0064,
+     "rows": 47502,
+     "rows_over_eps": 34838,
+     "rows_over_eps_frac": 0.7334
+    },
+    "at_K_minus_1": {
+     "achieved_max": 0.157282,
+     "achieved_median": 0.051187,
+     "achieved_p90": 0.058594,
+     "extra_levels": -1,
+     "levels_max": 258,
+     "levels_median": 24,
+     "levels_p90": 97,
+     "residual_max": 3.1456,
+     "residual_median": 1.0237,
+     "rows": 47502,
+     "rows_over_eps": 34838,
+     "rows_over_eps_frac": 0.7334
+    },
+    "at_K_plus_1": {
+     "achieved_max": 0.05,
+     "achieved_median": 0.049034,
+     "achieved_p90": 0.049861,
+     "extra_levels": 1,
+     "levels_max": 260,
+     "levels_median": 26,
+     "levels_p90": 99,
+     "residual_max": 1.0,
+     "residual_median": 0.9807,
+     "rows": 47502,
+     "rows_over_eps": 0,
+     "rows_over_eps_frac": 0.0
+    },
+    "eps": 0.05
+   }
+  },
+  "construction": "levels placed geometrically across each row's own [p50, p100], the range R = p100/p50 the law prices; achieved precision = relative width of the level interval bracketing the row's own q-quantile",
+  "criterion": "registered success criterion (ii): the cost law's prediction checked against the empirical distributions, with the residual stated",
+  "holds_at": {
+   "eps_10": "at_K_plus_1",
+   "eps_20": "at_K_plus_1",
+   "eps_5": "at_K_plus_1"
+  },
+  "reconstruction": {
+   "draws_per_row": 512,
+   "note": "draw-based check of the piecewise-linear reconstruction: how far the empirical q-quantile of drawn invocations sits from the ladder's own quantile. Sampling error at this draw count is the floor here; this limb tests the interpolation, NOT the cost law.",
+   "rel_err_max": 3.09887,
+   "rel_err_median": 0.000901,
+   "rel_err_p90": 0.06616,
+   "rows": 200,
+   "seed": 20261110
+  },
+  "residual_definition": "achieved relative bracket width / eps; <= 1 means the law's price buys the precision it claims",
+  "unit": "interval mean (30-s average), NOT single invocations -- trace footnote 7"
+ },
  "count_limit": {
   "below_100": 31185,
   "below_1000": 40993,
@@ -147,6 +304,42 @@
   16,
   32
  ],
+ "knot_sweep": {
+  "family": "piecewise-linear in the probability scale (family held fixed)",
+  "full_knots": 7,
+  "k": 32,
+  "note": "same rows, coarser reconstruction: how much of the fraction that binds at the widest grid point is the ladder's shape rather than the workload",
+  "sets": [
+   {
+    "binds": 9513,
+    "binds_frac": 0.2003,
+    "knots": 3,
+    "label": "coarsest",
+    "rows": 47502
+   },
+   {
+    "binds": 5815,
+    "binds_frac": 0.1224,
+    "knots": 5,
+    "label": "median kept",
+    "rows": 47502
+   },
+   {
+    "binds": 5815,
+    "binds_frac": 0.1224,
+    "knots": 6,
+    "label": "quartiles",
+    "rows": 47502
+   },
+   {
+    "binds": 5815,
+    "binds_frac": 0.1224,
+    "knots": 7,
+    "label": "all seven published knots",
+    "rows": 47502
+   }
+  ]
+ },
  "q": 0.99,
  "source": "function_durations_percentiles.anon.d01.csv"
 }

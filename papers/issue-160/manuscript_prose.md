@@ -8,11 +8,11 @@
 
 A latency harness reports a 99th percentile. If the harness also stops waiting at a timeout — as nearly every one does — then some fraction of requests have no latency value at all, and the number it prints is not the quantile it names. We treat that as an identification problem rather than a rounding problem, and ask three questions of one real workload: can the quantile be resolved at all, does the timeout bind, and what does certifying the quantile cost.
 
-The first answer dominates. Of the {{n:usable}} function rows in the first day of the public Azure Functions trace that carry a usable quantile ladder, **{{n:resolvable_pct}}%** expect at least one observation above their own 99th percentile; the remaining **{{n:unresolvable_pct}}%** cannot resolve it at any timeout, because the quantile is a statement about the top of a distribution that the sample never reaches. {{n:below_100}} rows ({{n:below_100_pct}}%) record fewer than {{n:count_gate_lo}} invocations in a whole day. No amount of careful measurement repairs this: it is a property of how much data was collected, not of how it was analysed.
+The first answer dominates. Of the {{n:usable}} function rows in the first day of the public Azure Functions trace that carry a usable quantile ladder, **{{n:resolvable_pct}}%** expect at least one observation above their own 99th percentile; the remaining **{{n:unresolvable_pct}}%** cannot resolve it at any timeout, because the quantile is a statement about the top of a distribution that the sample never reaches. Those are exactly the {{n:below_100}} rows that record fewer than {{n:count_gate_lo}} invocations in a whole day — one set under two descriptions, not two findings that corroborate each other, because at a {{n:q_pct}}th percentile `count × (1 − q) ≥ 1` flips at exactly that count. No amount of careful measurement repairs this: it is a property of how much data was collected, not of how it was analysed.
 
 Second, with the timeout set at a fixed multiple of each row's own median, truncation binds — the true quantile falls outside the set the harness can identify — on **{{n:k2_binds_pct}}%** of rows at {{n:k2}}x the median, and still on **{{n:k32_binds_pct}}%** at {{n:k32}}x. Where it binds, the printed number sits below the truth by a median factor of **{{n:k2_under_median}}** at {{n:k2}}x and **{{n:k32_under_median}}** even at {{n:k32}}x. A registered prior predicted that under {{n:prior_limb2_pct}}% of rows would still bind at {{n:k32}}x. The data says otherwise, and that refutation is the sharpest result in this paper.
 
-Third, certifying the quantile to {{n:eps5}}% relative precision by timeout levels alone needs a median of **{{n:K5_median}}** distinct levels on this workload, and {{n:K5_p90}} at the {{n:p90}}th percentile of rows.
+Third, certifying the quantile to {{n:eps5}}% relative precision by timeout levels alone needs a median of **{{n:K5_levels}}** distinct levels on this workload, and {{n:K5_levels_p90}} at the {{n:p90}}th percentile of rows. That price was **checked rather than computed**, and the check moved it by one: the law's own `K` counts the gaps between timed levels, so with `K` levels the bracket stays wider than the precision it promises on {{n:K5_over_pct}}% of rows.
 
 Throughout, the unit is the **{{n:interval_s}}-second interval mean**, not the single invocation: the trace publishes percentiles of a 30-second average, so every range reported here ranges over a smoothed quantity and is therefore a **lower bound** on the invocation-level range. All numbers come from one program and one committed input; `./reproduce.sh` re-derives them.
 
@@ -76,7 +76,8 @@ What the applied literature does not routinely carry is the resulting refusal. O
 | usable rows | {{n:usable}} | — |
 | can resolve a {{n:q_pct}}th percentile (expects at least one observation above it) | {{n:resolvable}} | **{{n:resolvable_pct}}%** |
 | cannot resolve it at any timeout | {{n:unresolvable}} | {{n:unresolvable_pct}}% |
-| fewer than {{n:count_gate_lo}} invocations in the day | {{n:below_100}} | {{n:below_100_pct}}% |
+
+The two rows a reader might expect here — `cannot resolve it at any timeout` and `fewer than {{n:count_gate_lo}} invocations in the day` — are the same {{n:below_100}} rows, and the table prints one of them rather than both: at a {{n:q_pct}}th percentile `resolvable(count, q)` is `count × (1 − q) ≥ 1`, which flips at exactly that count, so the equality is an identity rather than an agreement between two measurements. Printing both read as two findings that corroborate each other. `check_claims.py` asserts the equality (`usable − resolvable == below_100`); written as the inequality it carried until this revision, it would have stayed green if the two ever began to differ, which is the one thing it should catch.
 | fewer than {{n:count_gate}} invocations in the day | {{n:below_1000}} | {{n:below_1000_pct}}% |
 
 The median row expects {{n:n_obs_median}} observations above its own {{n:q_pct}}th percentile — that is, the median row does not expect even one.
@@ -105,6 +106,8 @@ Fixing the grid in advance matters. The obvious alternative — evaluate at `T` 
 
 The refuted prior is the last row. It predicted under {{n:prior_limb2_pct}}% of rows would still bind at {{n:k32}}x; the measurement is {{n:k32_binds_pct}}%, so the prediction failed. What makes the failure interesting is the reason it is not merely a calibration error: at a timeout of thirty-two times the median, on a workload whose median row records a handful of invocations, the harness still cannot identify the quantile for one row in eight, and there it understates by a median {{n:k32_under_median}}x. The decay from {{n:k2_binds_pct}}% to {{n:k32_binds_pct}}% — a fall of {{n:binds_ladder_pp}} percentage points across a sixteen-fold relaxation — is slower than the intuition that a generous timeout makes censoring irrelevant.
 
+A reader is entitled to ask how much of that margin is the reconstruction rather than the workload, since the crossover is read off a piecewise-linear ladder and Section 8 calls that interpolation the most substantive modelling assumption in the paper. So the same measurement is repeated over {{n:knot_sweep_sets}} ladder shapes at the widest grid point, holding the interpolation family fixed and varying only how many knots the ladder keeps: the fraction that binds runs from {{n:knot_sweep_min_pct}}% to {{n:knot_sweep_max_pct}}%, a span of {{n:knot_sweep_span_pp}} points, and the ladder this paper reports sits at the flat end of it — dropping a knot above the quartiles does not move the number at all, while cutting the ladder to its median and its maximum does. Every shape still lands above the {{n:prior_limb2_pct}}% the prior predicted, so the refutation survives the sensitivity analysis; but the margin by which it clears that threshold is {{n:binds_margin_pp}} points, which is smaller than the spread the reconstruction can produce on its own. We report both numbers for that reason: the direction is not a modelling artefact, the distance is.
+
 That shape is what the extreme-value literature would predict, though we do not fit a tail model and do not claim one. The behaviour of exceedances over a high threshold is what peak-over-threshold methods were built to describe {{c:pickands-1975,balkema-dehaan-1974,davison-smith-1990,davison-1984}}, the limiting laws for maxima are classical {{c:fisher-tippett-1928,gnedenko-1943}}, and the estimation of the tail index and of high quantiles from few exceedances is well developed {{c:smith-1987,hosking-wallis-1987,hosking-1990,grimshaw-1993,coles-2001,gumbel-1958,katz-2002}}, including the rare-event simulation machinery for when the events are too rare to sample directly {{c:glasserman-2000,rubino-rare-event-2009}} and the theory of records for the maxima themselves {{c:arnold-balakrishnan-1998}}. Our contribution is not a tail estimator. It is the observation that a threshold set for *configuration* reasons can be read as a censoring threshold, and that the correct report of a conditional quantile is conditioned on the threshold it was computed under.
 
 Two controls run on every execution of the measurement, and both hold. With the timeout placed above each row's own maximum, the quantile is identified and the printed number equals the truth on {{n:no_censoring_rows}} of {{n:no_censoring_rows}} rows tested ({{n:no_censoring_pct}}%): if that ever stopped holding, the instrument would be broken rather than the data. And the degenerate class the cost law predicts does appear in real data: {{n:flat}} rows ({{n:flat_pct}}%) have no dynamic range at all, with `p100` equal to `p50`. A further {{n:one_level}} rows ({{n:one_level_pct}}%) are certified by a single timeout level, which is the same set only up to the precision one asks for — the two counts differ by every row whose range is non-trivial but smaller than the requested precision, and reporting one number in place of both would be a label that lies about its own set.
@@ -115,7 +118,31 @@ If an operator wants to certify a quantile to relative precision `eps` by choosi
 
     K = ceil(log R / log(1 + eps)),   R = p100 / p50.
 
-The law is deliberately crude and deliberately conservative. It counts levels, not invocations, and it therefore answers the question "how many experiments does certifying this cost" rather than "how much traffic does it need" — the second is the sample-count limit of Section 4. Its degenerate endpoint is what keeps it honest: at `R = 1` it returns one level, because a workload with no range is certified by a single timeout.
+The law is deliberately crude, but the hedge that used to stand here — that it is *conservative* — was
+wrong, and the check this revision round ran is what showed it. It counts levels, not invocations, and
+it therefore answers the question "how many experiments does certifying this cost" rather than "how
+much traffic does it need" — the second is the sample-count limit of Section 4. Its degenerate
+endpoint is what keeps it honest: at `R = 1` it returns one level, because a workload with no range is
+certified by a single timeout.
+
+The correction is one level, and it is measurable rather than rhetorical. `K` steps of ratio `1+eps`
+span a ratio of `R`, so `K` counts the **gaps** between timed levels while a certification needs the
+**levels** themselves: with `K` levels the bracket around a row's own quantile stays wider than `eps`
+on {{n:K5_over_pct}}% of rows at {{n:eps5}}% precision, with a worst-row residual of
+{{n:K5_resid_at_K}} against the precision the law promises. With `K+1` levels the residual is at or
+below 1 on every one of {{n:usable}} rows, worst row {{n:K5_resid_max}}, so the abstract's third
+number is the checked one and not the computed one. The residual — achieved bracket width divided by
+`eps` — lives in the artefact beside the law, and `check_claims.py` fails if either the check or this
+finding disappears from it.
+
+The check imports no parametric assumption: the levels are placed across each row's **own**
+`[p50, p100]`, and the bracket is read off that row's own quantile, so what is measured is the
+The law is stated on the interval mean, so its `K` prices the smoothed quantity. A reader who wants the invocation-level cost is owed one factor and no more: write `c` for the ratio of the invocation-level range to the interval-mean range; then `K` grows by `log c / log(1 + eps)` and nothing else in the law changes, so the growth is additive in levels and slow — a factor of two costs about fifteen more levels at {{n:eps5}}% precision, against a median `K` of {{n:K5_median}}. That factor is **not bounded by this data**, and the reason is the one that withdrew our own first registered prior: the only single-invocation column the trace publishes is `Maximum`, an extremum of single calls, while `p100` is a percentile of the interval mean, so their ratio crosses the two spaces rather than measuring the compression between them. We therefore report the multiplier as arithmetic and the factor as unmeasured, rather than dressing a cross-space ratio as a bound.
+interpolation the paper already commits to rather than a distribution chosen for the occasion. A
+second limb draws {{n:recon_draws}} invocations from each of {{n:recon_rows}} rows and compares the
+empirical quantile against the ladder's, which checks that the reconstruction is not inventing the
+tail; sampling error at that draw count is the floor on it, which is why that limb is labelled as a
+test of the interpolation and not of the law.
 
 | precision | `K` median | `K` {{n:p90}}th pct | `K` max | rows certified by one level |
 |---|---|---|---|---|
@@ -157,9 +184,9 @@ For the tail quantities themselves the binding constraint is not statistical but
 
 **The unit.** Every range reported here is a range of the 30-second interval mean. The invocation-level range is larger, by an amount this table cannot quantify, so the cost figures in Section 6 are lower bounds and the tail compression we measure is a lower bound on the compression at the invocation level. A reader who reads `R` as an invocation-level dynamic range will overestimate how cheap certification actually is.
 
-**One trace, one day, one provider.** This is a case study and we do not generalise from it. The direction of the result — that a timeout leaves a quantile unidentified for a substantial share of workloads — is a consequence of the lemma and cannot be undone by another day; the magnitudes are properties of this workload and would move.
+**One trace, one day, one provider.** This is a case study and we do not generalise from it. The direction of the result — that a timeout leaves a quantile unidentified for a substantial share of workloads — is a consequence of the lemma and cannot be undone by another day; the magnitudes are properties of this workload and would move. A second day of the same trace is feasible in principle — the archive publishes one member per day and this package already reads member `d01` — but it is not in this package: the fixture is that one member and the reproduction is offline by design. Whether the {{n:unresolvable_pct}}% share moves between days enough to change the architectural conclusion is therefore unmeasured here. What the conclusion turns on is not that share’s second digit but the {{n:count_gate_lo}}-invocation boundary, and it would take a large movement of rows across that boundary to change the answer.
 
-**The reconstruction is a model.** Piecewise-linear interpolation between seven knots is a choice. It is stated, applied identically to every row, and embedded in committed code {{c:david-nagaraja-2003,reiss-1989}}, but a different reconstruction would move the crossover slightly. Since the lemma's boundary depends on the CDF evaluated at the timeout, and the CDF between knots is exactly what interpolation supplies, this is the most substantive modelling assumption in the paper.
+**The reconstruction is a model.** Piecewise-linear interpolation between seven knots is a choice. It is stated, applied identically to every row, and embedded in committed code {{c:david-nagaraja-2003,reiss-1989}}, but a different reconstruction would move the crossover, and Section 5 measures by how much: the binding fraction spans {{n:knot_sweep_span_pp}} points across ladder shapes, which is wider than the margin by which it misses the threshold the prior named. Since the lemma's boundary depends on the CDF evaluated at the timeout, and the CDF between knots is exactly what interpolation supplies, this is the most substantive modelling assumption in the paper.
 
 **Determinism is not replication.** Our reproduction check proves that the same program on the same bytes yields the same numbers. That is a statement about the instrument, not about the world, and it is why the noise limb is reported as unmeasured rather than as passed — a confusion this literature has warned about for a long time {{c:mytkowicz-2009,georges-2007,hoefler-belli-2015,kohavi-online-2013}}.
 
@@ -195,7 +222,7 @@ Each of these is a bound a practitioner can recompute for their own system from 
 
 ## Availability
 
-The instrument, the committed input and every number in this paper are in this directory. `./reproduce.sh` runs the six steps that re-derive them and prints its verdict; a `NOT RUN` step means a claim the data cannot carry, and the package is designed so that verdict can never read as though that number had been reproduced.
+The instrument, the committed input and every number in this paper are in this directory. `./reproduce.sh` runs the {{n:steps}} steps that re-derive them and prints its verdict; a `NOT RUN` step means a claim the data cannot carry, and the package is designed so that verdict can never read as though that number had been reproduced.
 
 ## References
 
