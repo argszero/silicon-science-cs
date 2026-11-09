@@ -7,7 +7,11 @@
    "cost": {
     "mean_coupled_per_batch": 13.566666666666666,
     "mean_coupled_per_page": 28.666666666666668,
-    "page_worth_in_batches": 2.113022113022113
+    "page_worth_in_batches": 2.113022113022113,
+    "page_worth_in_batches_ci95": [
+     1.5549450549450552,
+     3.0706713780918724
+    ]
    },
    "cost_constants": {
     "breadth_page_works_max": 200,
@@ -1472,7 +1476,11 @@
    "cost": {
     "mean_coupled_per_batch": 12.933333333333334,
     "mean_coupled_per_page": 32.233333333333334,
-    "page_worth_in_batches": 2.4922680412371134
+    "page_worth_in_batches": 2.4922680412371134,
+    "page_worth_in_batches_ci95": [
+     1.941532258064516,
+     3.3235294117647056
+    ]
    },
    "cost_constants": {
     "breadth_page_works_max": 200,

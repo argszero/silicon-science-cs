@@ -284,7 +284,7 @@ result means is subject to stated biases [92].
 
 | prior | statement | outcome |
 |---|---|---|
-| P1 | breadth beats depth per request by at least a factor of two at equal budget | **confirmed in direction, wrong in magnitude as stated**: the page-to-batch ratio is 2.11 in Computer Science and 2.49 in Social Sciences |
+| P1 | breadth beats depth per request by at least a factor of two at equal budget | **confirmed in direction, met by the point estimate in both fields, and not established**: the page-to-batch ratio is 2.11 ([1.555, 3.071]) in Computer Science and 2.49 ([1.942, 3.324]) in Social Sciences, both point estimates at or above the registered factor of two and both 95% intervals reaching below it, so the registered magnitude lies inside the study's own interval rather than outside it and the prior is neither refuted nor established by these data |
 | P2 | hop 2 is not worthless: its excess is many times chance | **confirmed**, 0.140 against a null of 0.009 |
 | P3 | the breadth advantage is not an artefact of the cost model | **unresolved, and reported as such**: with the price pinned from the API's own refusals the ratio is 2.11, but the flip ratio moves with the budget-to-pool ratio, so the advantage is partly a property of the model |
 

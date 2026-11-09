@@ -192,6 +192,11 @@ def analyse_arm(name):
 
     w_star = mean_b1 / mean_c1 if mean_c1 else None
     w_ci = percentile_ci(w_boot)
+    # P1 is registered on the RATIO (a page is worth at least two batches), not on w*, so a verdict on
+    # it needs the interval on the ratio. w* is exactly the reciprocal of that ratio, and a percentile
+    # interval carries across a strictly decreasing transform by flipping its endpoints -- so this is
+    # the same draws read from the other side, not a second estimate, and it may not be narrowed.
+    out["cost"]["page_worth_in_batches_ci95"] = [1.0 / w_ci[1], 1.0 / w_ci[0]] if w_ci else None
     # The one number that does NOT need the linearity hypothesis of the manuscript's proposition.
     # At the API's own price w = 1, depth wins only if breadth's REALISED per-page yield falls below
     # b -- that is, by more than 1 - b/c = 1 - w* below the mean measured here. So the conclusion
