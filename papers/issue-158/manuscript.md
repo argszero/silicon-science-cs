@@ -138,7 +138,11 @@ what the tie group is.
 ## 4. What governs the tie group
 
 Three quantiser families are run on the same corpus and the same queries, at budgets chosen so the
-families can be compared:
+families can be compared. Each tier-A cell measures 200 queries against
+1,000 stored neighbours with `k = 10`, and every family-and-budget
+configuration is measured with three seeds except scalar quantisation, which is deterministic and is
+measured once — the denominator and the seed count are stated here rather than left to be inferred
+from the artefact:
 
 - **random-hyperplane Hamming** — `b` random hyperplanes, one bit each, the construction that
  descends from similarity estimation by rounding [19] and from the p-stable
@@ -183,10 +187,19 @@ committed subsample, with 512 queries per seed — and it holds:
 701.667 for product quantisation. Correspondingly the mean boundary tie group is
 52.333 at the short Hamming budget, 18.5 at twice the
 budget and 6.0 at the finest, against 1.333 for product
-quantisation. The mean floor tells the practitioner's version of the same story: for Hamming at the
-short budget a correct index can be graded **0.2886** on average and
-0.9668 of queries are not fully determined, while product quantisation
-gives **0.899** and scalar quantisation **0.9839**.
+quantisation — each of those is the mean over the three seeds, and the spread is real: the shortest
+Hamming budget gives a per-seed median tie group of 50.0 to
+54.0 and product quantisation 1.0 to
+2.0. The mean floor tells the practitioner's version of the same story: for
+Hamming at the short budget a correct index can be graded **0.2886** on average
+(0.2719 to 0.3064 across the seeds) and
+96.7% of queries are not fully determined, a
+[95.7, 97.5]% score interval over the 1,536 queries of the
+3 seeds; product quantisation gives **0.899** with
+34.8% ([32.5, 37.2]%) and scalar quantisation
+**0.9839**. The gap between those two families is 61.8 points,
+[59.2, 64.3], and the interval excludes zero — so at this sample the ordering of the
+families is not a sampling artefact of the query set.
 
 Raw descriptors, measured in the same run at the same scale, give **0.9994**. That
 number is the control that keeps the rest honest: the metric is fully determined on the objects

@@ -103,3 +103,55 @@ def at_cell_count(cells, r, m):
     """The same pair over the seed-level cells, labelled as the finer view rather than the design."""
     fam = family_cells(cells)
     return {"n_cells": len(fam), "log_log_pearson": round(r, 4), "mde_pearson": round(m, 4)}
+
+
+# --- intervals ---------------------------------------------------------------------------------
+# Section 3 promises that a proportion is reported with a score interval, that a difference between
+# families gets a two-sample interval, and that denominators are stated rather than implied. Until
+# review M3 none of the three was done: every aggregate was a bare point. These are the instruments
+# that paragraph names, implemented once here so the renderer and the checker read the same code.
+
+
+def count_from_fraction(frac, n):
+    """Recover the integer count behind a stored fraction, refusing when it is not recoverable.
+
+    The artefact stores proportions rounded to four decimals, so `frac * n` is near an integer but
+    not one. At n = 512 one count is 0.00195 apart and the stored precision is 1e-4, so recovery is
+    exact -- and the assertion proves it for this value instead of assuming it for all of them. A
+    fraction whose count cannot be recovered raises rather than silently producing an interval for a
+    different cell.
+    """
+    raw = frac * n
+    k = int(round(raw))
+    if abs(raw - k) > 0.5:
+        raise ValueError("proportion %r over n=%d is not a count over that denominator" % (frac, n))
+    if abs(round(k / float(n), 4) - frac) > 1e-9:
+        raise ValueError("stored %r is not round(%d/%d, 4); the count is not recoverable"
+                         % (frac, k, n))
+    return k
+
+
+def wilson(k, n, z=Z_ALPHA):
+    """Wilson score interval for a binomial proportion -- the interval section 3 promises."""
+    if n <= 0:
+        raise ValueError("an empty denominator is NOT RUN, never an interval")
+    p = k / float(n)
+    denom = 1.0 + z * z / n
+    centre = (p + z * z / (2 * n)) / denom
+    half = z * math.sqrt(p * (1 - p) / n + z * z / (4 * n * n)) / denom
+    return (max(0.0, centre - half), min(1.0, centre + half))
+
+
+def wilson_diff(k1, n1, k2, n2, z=Z_ALPHA):
+    """Newcombe's hybrid score interval for p1 - p2, the two-sample interval section 3 names.
+
+    Built from the two Wilson intervals rather than from a pooled standard error, because the family
+    rates here are far from 0.5 and the Wald interval misbehaves exactly there.
+    """
+    p1, p2 = k1 / float(n1), k2 / float(n2)
+    l1, u1 = wilson(k1, n1, z)
+    l2, u2 = wilson(k2, n2, z)
+    d = p1 - p2
+    lo = d - math.sqrt((p1 - l1) ** 2 + (u2 - p2) ** 2)
+    hi = d + math.sqrt((u1 - p1) ** 2 + (p2 - l2) ** 2)
+    return (lo, hi)

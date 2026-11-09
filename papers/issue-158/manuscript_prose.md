@@ -138,7 +138,11 @@ what the tie group is.
 ## 4. What governs the tie group
 
 Three quantiser families are run on the same corpus and the same queries, at budgets chosen so the
-families can be compared:
+families can be compared. Each tier-A cell measures {{n:A.corpus.n_queries}} queries against
+{{n:A.corpus.knn}} stored neighbours with `k = {{n:A.corpus.k}}`, and every family-and-budget
+configuration is measured with three seeds except scalar quantisation, which is deterministic and is
+measured once — the denominator and the seed count are stated here rather than left to be inferred
+from the artefact:
 
 - **random-hyperplane Hamming** — `b` random hyperplanes, one bit each, the construction that
  descends from similarity estimation by rounding {{c:charikar-2002}} and from the p-stable
@@ -184,10 +188,19 @@ committed subsample, with {{n:B.corpus.n_queries}} queries per seed — and it h
 {{n:B.pq32.atoms}} for product quantisation. Correspondingly the mean boundary tie group is
 {{n:B.hamming32.median_t}} at the short Hamming budget, {{n:B.hamming64.median_t}} at twice the
 budget and {{n:B.hamming256.median_t}} at the finest, against {{n:B.pq32.median_t}} for product
-quantisation. The mean floor tells the practitioner's version of the same story: for Hamming at the
-short budget a correct index can be graded **{{n:B.hamming32.floor}}** on average and
-{{n:B.hamming32.frac_floor_lt1}} of queries are not fully determined, while product quantisation
-gives **{{n:B.pq32.floor}}** and scalar quantisation **{{n:B.sq2.floor}}**.
+quantisation — each of those is the mean over the three seeds, and the spread is real: the shortest
+Hamming budget gives a per-seed median tie group of {{n:B.hamming32.median_t_seed_lo}} to
+{{n:B.hamming32.median_t_seed_hi}} and product quantisation {{n:B.pq32.median_t_seed_lo}} to
+{{n:B.pq32.median_t_seed_hi}}. The mean floor tells the practitioner's version of the same story: for
+Hamming at the short budget a correct index can be graded **{{n:B.hamming32.floor}}** on average
+({{n:B.hamming32.floor_seed_lo}} to {{n:B.hamming32.floor_seed_hi}} across the seeds) and
+{{f:B.hamming32.frac_pct|pct1}}% of queries are not fully determined, a
+{{f:B.hamming32.frac_ci|cipct1}}% score interval over the {{n:B.hamming32.n_queries}} queries of the
+{{n:B.hamming32.n_seeds}} seeds; product quantisation gives **{{n:B.pq32.floor}}** with
+{{f:B.pq32.frac_pct|pct1}}% ({{f:B.pq32.frac_ci|cipct1}}%) and scalar quantisation
+**{{n:B.sq2.floor}}**. The gap between those two families is {{f:B.frac_gap_pp|pct1}} points,
+{{f:B.frac_gap_ci|cipct1}}, and the interval excludes zero — so at this sample the ordering of the
+families is not a sampling artefact of the query set.
 
 Raw descriptors, measured in the same run at the same scale, give **{{n:B.float.floor}}**. That
 number is the control that keeps the rest honest: the metric is fully determined on the objects

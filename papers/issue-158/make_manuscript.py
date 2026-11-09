@@ -123,6 +123,35 @@ def build_values(A, B):
     v["B.pq32.floor"] = agg(cellsB, "PQ/32bit", "mean_floor", mean)
     v["B.pq64.floor"] = agg(cellsB, "PQ/64bit", "mean_floor", mean)
     v["B.sq2.floor"] = agg(cellsB, "SQ/2bit", "mean_floor", mean)
+
+    # ---- M3: what section 3 promises, printed instead of promised ---------------------------
+    # A proportion with a score interval, a difference between families with its two-sample
+    # interval, the spread across the three seeds rather than only their mean, and the denominator
+    # in the text. Every one of these is arithmetic over cells already committed, so none of it
+    # needed a new run; until review M3 the paper declared the practice and printed bare points.
+    def pooled(prefix):
+        cs = [c for c in cellsB if c["tag"].startswith(prefix)]
+        if not cs:
+            raise KeyError("no cells with prefix %r" % prefix)
+        k = sum(axis.count_from_fraction(c["frac_floor_lt1"], c["n_queries"]) for c in cs)
+        n = sum(c["n_queries"] for c in cs)
+        return cs, k, n
+
+    for label, prefix in (("hamming32", "Hamming/32bit"), ("pq32", "PQ/32bit")):
+        cs, k, n = pooled(prefix)
+        v["B.%s.frac_pct" % label] = k / float(n)
+        v["B.%s.frac_ci" % label] = axis.wilson(k, n)
+        v["B.%s.n_queries" % label] = n
+        v["B.%s.n_seeds" % label] = len(cs)
+        v["B.%s.median_t_seed_lo" % label] = min(c["median_t"] for c in cs)
+        v["B.%s.median_t_seed_hi" % label] = max(c["median_t"] for c in cs)
+        v["B.%s.floor_seed_lo" % label] = min(c["mean_floor"] for c in cs)
+        v["B.%s.floor_seed_hi" % label] = max(c["mean_floor"] for c in cs)
+
+    cs_h, k_h, n_h = pooled("Hamming/32bit")
+    cs_p, k_p, n_p = pooled("PQ/32bit")
+    v["B.frac_gap_pp"] = (k_h / float(n_h)) - (k_p / float(n_p))
+    v["B.frac_gap_ci"] = axis.wilson_diff(k_h, n_h, k_p, n_p)
     v["B.float.floor"] = agg(cellsB, "float", "mean_floor", mean)
     v["B.hamming32.atoms"] = agg(cellsB, "Hamming/32bit", "median_atoms", mean)
     v["B.pq32.atoms"] = agg(cellsB, "PQ/32bit", "median_atoms", mean)
@@ -152,6 +181,11 @@ def fmt(x):
 
 
 MARK = re.compile(r"\{\{n:([^}]+)\}\}")
+# A number the prose wants at a stated precision: `{{f:key|pct1}}` prints a proportion as a
+# percentage and `{{f:key|cipct1}}` prints a pair as a percentage interval. The precision belongs to
+# the sentence, the value belongs to the artefact, and the gate still reads both.
+FLOAT_MARK = re.compile(r"\{\{f:([^}|]+)\|([a-z0-9]+)\}\}")
+SPECS = {"pct1", "cipct1"}
 CITE = re.compile(r"\{\{c:([^}]+)\}\}")
 
 
@@ -295,6 +329,25 @@ def main():
 
     body = MARK.sub(sub, prose)
 
+    def sub_float(m):
+        key, spec = m.group(1).strip(), m.group(2).strip()
+        if key not in values:
+            raise KeyError("{{f:%s|%s}} is not a number any artefact holds" % (key, spec))
+        if spec not in SPECS:
+            raise KeyError("{{f:%s|%s}} names no spec this renderer knows (%s)"
+                           % (key, spec, ", ".join(sorted(SPECS))))
+        value = values[key]
+        if spec == "pct1":
+            text = "%.1f" % (100 * value)
+            bound.extend([value, text])
+            return text
+        lo, hi = value
+        lo_s, hi_s = "%.1f" % (100 * lo), "%.1f" % (100 * hi)
+        bound.extend([value, lo, hi, lo_s, hi_s])
+        return "[%s, %s]" % (lo_s, hi_s)
+
+    body = FLOAT_MARK.sub(sub_float, body)
+
     # ---- citations -----------------------------------------------------------------------
     order = []
 
@@ -350,6 +403,16 @@ def main():
         entries.append("[%d] %s" % (i, printed))
 
     body = body.replace("{{refs}}", "\n\n".join(entries))
+
+    # A marker this renderer did not resolve is not a number and not a citation, so the stray-number
+    # scan cannot see it: its digits, if any, are inside braces. Writing `{{f:key|pct1}}` into the
+    # published text is the failure mode that produced this check (2026-11-09), and the paper is
+    # refused rather than shipped with a template expression in a sentence.
+    if "{{" in body:
+        loc = body.index("{{")
+        print("UNRESOLVED MARKER in the rendered paper: %r" % body[loc:loc + 40])
+        print("  -> every marker must be one this renderer resolves; refusing to write the paper.")
+        return 1
     open("manuscript.md", "w").write(body)
     print("manuscript.md written: %d characters" % len(body))
     print("  markers bound: %d numbers, %d citations" % (len(bound), len(order)))
