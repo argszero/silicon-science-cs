@@ -292,6 +292,26 @@ def main():
               L2["records_retrieved"] > L2["read_by_hand"],
               "%d retrieved, %d read" % (L2["records_retrieved"], L2["read_by_hand"]))
 
+    # ---- does the conclusion rest on the two single-measurement configurations? --------------
+    # Question 5 of the round-2 review: tier A's scalar-quantisation cells are seedless, and the
+    # sensitivity is composed over the configuration means as though all of them carried the same
+    # independent information. The threshold is a property of the number of points, not of
+    # within-configuration replication, so it does not weight by seed count -- but the worry is
+    # testable on the committed cells, which is what this does: drop the two seedless points and
+    # ask whether the ordering still clears its own, larger threshold.
+    seeded = [c for c in d["cells"] if not c["tag"].endswith("/seedless")]
+    keys_s, xs_s, ys_s = axis.config_means(seeded)
+    r_s, m_s, n_s = axis.pearson_logs(xs_s, ys_s), axis.mde(len(keys_s)), len(keys_s)
+    all_axis = axis.at_evidence_count(d["cells"])
+    check("the axis holds over the configurations that carry seeds, without the seedless ones",
+          abs(r_s) > m_s,
+          "|r|=%.4f over %d seeded configuration means vs MDE=%.4f (all %d configurations: "
+          "|r|=%.4f vs %.4f)"
+          % (abs(r_s), n_s, m_s, all_axis["n_configs"],
+             abs(all_axis["log_log_pearson_configs"]), all_axis["mde_pearson_configs"]))
+    print("  [info] tier A without its two seedless cells: %d configuration means, |r|=%.4f, "
+          "MDE=%.4f" % (n_s, abs(r_s), m_s))
+
     print("CLAIMS: %s" % ("PASS" if FAILED == 0 else "%d FAILED" % FAILED))
     return 0 if FAILED == 0 else 1
 
