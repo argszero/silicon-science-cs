@@ -22,6 +22,7 @@ Reads  : manuscript_prose.md, results/mechanism.json, results/scale.json, refs.j
 Writes : manuscript.md
 """
 import axis
+import html
 import json
 import os
 import re
@@ -315,8 +316,34 @@ CITE = re.compile(r"\{\{c:([^}]+)\}\}")
 
 
 
+def _house_author(m):
+    """A family name the registry stored in capitals, printed in one case with the rest of the list.
+
+    `SPARCK JONES, K.` and `VOORHEES, E. M.` are how the registry returned those records, and a list
+    that prints them beside `Hunter, J. D.` reads as two conventions in one bibliography. Only an
+    author component with no lower-case letter at all is touched.
+    """
+    author, year = m.group(1), m.group(2)
+    if re.search(r"[a-z]", author):
+        return m.group(0)
+    return " ".join(w.capitalize() if w.isupper() else w for w in author.split()) + year
+
+
+def _house_title(m):
+    """A title stored in capitals, printed in sentence case: the same rule, one field over.
+
+    The condition is the whole title, not a word in it: `TREC` inside "The TREC question answering
+    track" is an acronym in a mixed-case title and stays exactly as stored, and so does any title
+    with a lower-case letter anywhere.
+    """
+    year, title = m.group(1), m.group(2)
+    if re.search(r"[a-z]", title):
+        return m.group(0)
+    return "%s. %s" % (year, title[0].upper() + title[1:].lower())
+
+
 def house_entry(entry):
-    """One line per entry, one period per full stop.
+    """One line per entry, one period per full stop, one convention for the whole list.
 
     * `thorne-fever-2018` arrived from the registry hard-wrapped -- CR/LF plus the registry's own
       indentation inside the entry -- so the printed record stopped mid-venue and read as truncated.
@@ -324,11 +351,20 @@ def house_entry(entry):
       line it resolves.
     * Every initial already ends in a period and the assembler's joiner added a second, so the list
       printed `Yang, C. S.. (1975)` on most entries.
+    * `hunter-matplotlib-2007` printed its venue as `Computing in Science &amp; Engineering`: the
+      registry stores the publisher's XML text, entity and all, and a reference that prints an escape
+      is quoting its source rather than naming the venue (round-2 review Q3).
+    * Two entries store an author family name -- and, in one, the title as well -- in capitals, as
+      the registry received them.
 
-    Normalising cannot change a quantity: entries are identifiers and titles, and the stray-number
-    gate reads the prose before this substitution.
+    All four are the casing and escaping of the RECORD, not of the paper: `refs.json` keeps exactly
+    what the registry returned, and this is the render's house form, the same way the doubled period
+    is. Normalising cannot change a quantity: entries are identifiers, titles and venues, and the
+    stray-number gate reads the prose before this substitution.
     """
-    return re.sub(r"\.\.(\s)", r".\1", " ".join(entry.split()))
+    line = re.sub(r"\.\.(\s)", r".\1", html.unescape(" ".join(entry.split())))
+    line = re.sub(r"^(.*?)(\s*\((?:\d{4}|n\.d\.)\))", _house_author, line, count=1)
+    return re.sub(r"(\(\d{4}\))\.\s+([^.]+)", _house_title, line, count=1)
 
 
 def stray_numbers(body, bound):
@@ -461,6 +497,33 @@ def selftest():
            typed_design_counts("one corpus, {{w:N.n_scales}} scales of it") == [])
     expect("a contrast inside a sentence is not a design count",
            typed_design_counts("Two further families refute it") == [])
+
+    # 10b. the reference list prints in one house form (round-2 review Q3).
+    expect("an entity in the registry's stored venue is decoded at render",
+           "&amp;" not in house_entry("Hunter, J. D. (2007). Matplotlib: A 2D Graphics Environment. "
+                                      "Computing in Science &amp; Engineering. vol. 9."),
+           house_entry("Hunter, J. D. (2007). Matplotlib: A 2D Graphics Environment. "
+                       "Computing in Science &amp; Engineering. vol. 9.")[-60:])
+    expect("a family name stored in capitals is printed in one case",
+           house_entry("VOORHEES, E. M. (2001). The TREC question answering track.").startswith(
+               "Voorhees, E. M."),
+           house_entry("VOORHEES, E. M. (2001). The TREC question answering track.")[:30])
+    expect("a title stored in capitals is printed in sentence case",
+           ". A statistical interpretation" in house_entry(
+               "SPARCK JONES, K. (1972). A STATISTICAL INTERPRETATION OF TERM SPECIFICITY. Journal of "
+               "Documentation."),
+           house_entry("SPARCK JONES, K. (1972). A STATISTICAL INTERPRETATION OF TERM SPECIFICITY. "
+                       "Journal of Documentation.")[:70])
+    expect("an acronym inside a mixed-case title is left as stored",
+           "The TREC question answering track" in house_entry(
+               "VOORHEES, E. M. (2001). The TREC question answering track. Natural Language Engineering."))
+    expect("a mixed-case entry is returned exactly as stored, apart from the doubled period",
+           house_entry("Hunter, J. D.. (2007). Matplotlib: A 2D Graphics Environment. "
+                       "Computing in Science &amp; Engineering.") ==
+           "Hunter, J. D. (2007). Matplotlib: A 2D Graphics Environment. "
+           "Computing in Science & Engineering.",
+           house_entry("Hunter, J. D.. (2007). Matplotlib: A 2D Graphics Environment. "
+                       "Computing in Science & Engineering."))
 
     # 11. the scale count is a property of the tiers, not of a sentence.
     expect("the scale count is the number of tiers a render drew from",

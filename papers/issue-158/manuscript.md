@@ -463,7 +463,7 @@ a program, and a reference that does not resolve stops the manuscript from being
 
 [2] Robertson, S. E.; Jones, K. S. (1976). Relevance weighting of search terms. Journal of the American Society for Information Science. vol. 27. pp. 129-146. https://doi.org/10.1002/asi.4630270302
 
-[3] SPARCK JONES, K. (1972). A STATISTICAL INTERPRETATION OF TERM SPECIFICITY AND ITS APPLICATION IN RETRIEVAL. Journal of Documentation. vol. 28. pp. 11-21. https://doi.org/10.1108/eb026526
+[3] Sparck Jones, K. (1972). A statistical interpretation of term specificity and its application in retrieval. Journal of Documentation. vol. 28. pp. 11-21. https://doi.org/10.1108/eb026526
 
 [4] Robertson, S.; Zaragoza, H. (2009). The Probabilistic Relevance Framework: BM25 and Beyond. Foundations and Trends® in Information Retrieval. vol. 4. pp. 1-174. https://doi.org/10.1561/1500000019
 
@@ -617,7 +617,7 @@ a program, and a reference that does not resolve stops the manuscript from being
 
 [79] Ciaccia, P.; Patella, M. (None). PAC nearest neighbor queries: Approximate and controlled search in high-dimensional and metric spaces. Proceedings of 16th International Conference on Data Engineering (Cat. No.00CB37073). pp. 244-255. https://doi.org/10.1109/icde.2000.839417
 
-[80] (2009). FAST APPROXIMATE NEAREST NEIGHBORS WITH AUTOMATIC ALGORITHM CONFIGURATION. Proceedings of the Fourth International Conference on Computer Vision Theory and Applications. pp. 331-340. https://doi.org/10.5220/0001787803310340
+[80] (2009). Fast approximate nearest neighbors with automatic algorithm configuration. Proceedings of the Fourth International Conference on Computer Vision Theory and Applications. pp. 331-340. https://doi.org/10.5220/0001787803310340
 
 [81] Muja, M.; Lowe, D. G. (2014). Scalable Nearest Neighbor Algorithms for High Dimensional Data. IEEE Transactions on Pattern Analysis and Machine Intelligence. vol. 36. pp. 2227-2240. https://doi.org/10.1109/tpami.2014.2321376
 
@@ -663,7 +663,7 @@ a program, and a reference that does not resolve stops the manuscript from being
 
 [102] Harman, D. (1993). Overview of the first TREC conference. Proceedings of the 16th annual international ACM SIGIR conference on Research and development in information retrieval - SIGIR '93. pp. 36-47. https://doi.org/10.1145/160688.160692
 
-[103] VOORHEES, E. M. (2001). The TREC question answering track. Natural Language Engineering. vol. 7. pp. 361-378. https://doi.org/10.1017/s1351324901002789
+[103] Voorhees, E. M. (2001). The TREC question answering track. Natural Language Engineering. vol. 7. pp. 361-378. https://doi.org/10.1017/s1351324901002789
 
 [104] Buckley, C.; Voorhees, E. M. (2004). Retrieval evaluation with incomplete information. Proceedings of the 27th annual international ACM SIGIR conference on Research and development in information retrieval. pp. 25-32. https://doi.org/10.1145/1008992.1009000
 
@@ -689,7 +689,7 @@ a program, and a reference that does not resolve stops the manuscript from being
 
 [115] Shapiro, S. S.; Wilk, M. B. (1965). An Analysis of Variance Test for Normality (Complete Samples). Biometrika. vol. 52. pp. 591. https://doi.org/10.2307/2333709
 
-[116] Martin Bland, J.; Altman, D. (1986). STATISTICAL METHODS FOR ASSESSING AGREEMENT BETWEEN TWO METHODS OF CLINICAL MEASUREMENT. The Lancet. vol. 327. pp. 307-310. https://doi.org/10.1016/s0140-6736(86)90837-8
+[116] Martin Bland, J.; Altman, D. (1986). Statistical methods for assessing agreement between two methods of clinical measurement. The Lancet. vol. 327. pp. 307-310. https://doi.org/10.1016/s0140-6736(86)90837-8
 
 [117] Ioannidis, J. P. A. (2005). Why Most Published Research Findings Are False. PLoS Medicine. vol. 2. pp. e124. https://doi.org/10.1371/journal.pmed.0020124
 
@@ -703,4 +703,4 @@ a program, and a reference that does not resolve stops the manuscript from being
 
 [122] McKinney, W. (2010). Data Structures for Statistical Computing in Python. Proceedings of the Python in Science Conference. pp. 56-61. https://doi.org/10.25080/majora-92bf1922-00a
 
-[123] Hunter, J. D. (2007). Matplotlib: A 2D Graphics Environment. Computing in Science &amp; Engineering. vol. 9. pp. 90-95. https://doi.org/10.1109/mcse.2007.55
+[123] Hunter, J. D. (2007). Matplotlib: A 2D Graphics Environment. Computing in Science & Engineering. vol. 9. pp. 90-95. https://doi.org/10.1109/mcse.2007.55
