@@ -13,7 +13,8 @@ identified set `[floor, 1]`, and this paper asks a question the recall literatur
 decides whether that set has any width at all? That the literature does not ask it is itself a claim
 about the literature, so it is recorded as a search rather than asserted — 6 query
 statements over 2 indices, in a window closed at both ends from 2016-01-01 to
-2026-11-09, returning 92 records of which 0 asks this question.
+2026-11-09, returning 92 records; the 15 that survived a
+declared two-term screen were read in full, and 0 of them asks this question.
 Section 7 states the search in full and commits it.
 
 The answer this study measures is not the quantiser family and not the bit budget. It is the

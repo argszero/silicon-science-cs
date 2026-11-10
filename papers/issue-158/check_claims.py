@@ -269,6 +269,29 @@ def main():
               len({tuple(v) for v in fams.values()}) == 1,
               "; ".join("%s=%s" % (k, ",".join(v)) for k, v in sorted(fams.items())))
 
+    # ---- the abstract's denominator is the read pile (round-2 review M2) -------------------
+    # The abstract said "92 records of which 0 asks this question": the retrieval set's size with the
+    # read pile's finding. Section 7 reads 15 of the 92. The sentence now quotes the read pile, and
+    # this keeps the two piles distinguishable, so a re-run that narrows the screen cannot leave the
+    # abstract claiming coverage of records nobody read.
+    search = rec if "rec" in dir() else None
+    if search is None:
+        check("the abstract's read pile is the set the hand reading covers", False,
+              "search/absence_search.json is missing -- this check has NOT RUN")
+    else:
+        L2 = search["ledger"]
+        check("every record the screen kept was read, so the read pile is the screened pile",
+              L2["survived_screen"] == L2["read_by_hand"],
+              "%d survived the screen, %d were read"
+              % (L2["survived_screen"], L2["read_by_hand"]))
+        check("the read pile is the set the hand reading actually covers",
+              L2["read_by_hand"] == len(search["hand_review"]["records"]),
+              "ledger says %d read, the hand reading holds %d record(s)"
+              % (L2["read_by_hand"], len(search["hand_review"]["records"])))
+        check("the retrieved set and the read pile are different denominators",
+              L2["records_retrieved"] > L2["read_by_hand"],
+              "%d retrieved, %d read" % (L2["records_retrieved"], L2["read_by_hand"]))
+
     print("CLAIMS: %s" % ("PASS" if FAILED == 0 else "%d FAILED" % FAILED))
     return 0 if FAILED == 0 else 1
 
