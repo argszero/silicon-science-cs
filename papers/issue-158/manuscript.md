@@ -1,6 +1,6 @@
 # What Decides Whether Recall@k Is Determined: The Resolution of the Index's Distance
 
-### A case study on one corpus, three quantiser families, and two scales
+### A case study on one corpus, three quantiser families, and three scales
 
 ---
 
@@ -32,8 +32,8 @@ product and scalar quantisation, which attain hundreds of values, tie barely: a 
 1.333 and floors 0.899 to 0.991. Every per-configuration
 figure in this paper is the mean, over that configuration's three seeds, of a per-seed median taken
 over queries, so a tie group quoted here is a mean of medians rather than a median; the tier-A
-scalar-quantisation cells are seedless and carry their single measurement. The two families most
-widely deployed at billion scale are therefore the ones the effect leaves almost untouched.
+scalar-quantisation cells are seedless and carry their single measurement. The families most widely deployed at billion scale — product and scalar
+quantisation — are therefore the ones the effect leaves almost untouched.
 
 The paper states plainly what this replaces. This study **registered the opposite claim** — that
 recall@k on compact codes *as such* is undetermined — and the second and third quantiser families
@@ -41,8 +41,8 @@ recall@k on compact codes *as such* is undetermined — and the second and third
 registered priors are likewise reported as refuted, supported, or refuted-in-one-space, and the
 scaling prior is refuted.
 
-Contribution level: **`case study`**. One corpus, two scales of it, 7 configurations
-at the larger scale. The instrument is exact and its two endpoint controls are run on every
+Contribution level: **`case study`**. One corpus, three scales of it, 7 configurations
+at the largest scale. The instrument is exact and its two endpoint controls are run on every
 reproduction; the scope is one corpus and the abstract says so rather than a limitations section.
 
 ---
@@ -141,7 +141,7 @@ what the tie group is.
 
 ## 4. What governs the tie group
 
-Three quantiser families are run on the same corpus and the same queries, at budgets chosen so the
+All three quantiser families are run on the same corpus and the same queries, at budgets chosen so the
 families can be compared. Each tier-A cell measures 200 queries against
 1,000 stored neighbours with `k = 10`, and every family-and-budget
 configuration is measured with three seeds except scalar quantisation, which is deterministic and is
@@ -213,7 +213,7 @@ Hamming at the short budget a correct index can be graded **0.2886** on average
 [95.7, 97.5]% score interval over the 1,536 queries of the
 3 seeds; product quantisation gives **0.899** with
 34.8% ([32.5, 37.2]%) and scalar quantisation
-**0.9839**. The gap between those two families is 61.8 points,
+**0.9839**. The gap between product and scalar quantisation is 61.8 points,
 [59.2, 64.3], and the interval excludes zero — so at this sample the ordering of the
 families is not a sampling artefact of the query set.
 
@@ -254,7 +254,7 @@ is not a preregistration but a wish [64].
 
 **The registered headline is refuted.** Two further families — product and scalar quantisation —
 put the boundary tie group far outside the interval established for random hyperplanes, and at the
-larger scale their floors are 0.899, 0.991 and 0.9839. A claim
+largest scale their floors are 0.899, 0.991 and 0.9839. A claim
 that compact codes are undetermined cannot survive families whose median query has no tie at all.
 
 **P1, that the tie group is invariant in corpus size, is refuted** by the scaling measurement: the
@@ -401,7 +401,7 @@ check the refutation instead of taking it on trust.
 
 ## 8. Threats to validity, and why the result still stands
 
-**One corpus.** Every number is on `sift-128-euclidean`. The larger scale is fifty times as many
+**One corpus.** Every number is on `sift-128-euclidean`. The largest scale is fifty times as many
 descriptors from the same source, not a second dataset, so the axis is shown to survive scale and
 not shown to survive a change of data. This is the study's binding limitation and it is why the
 contribution level is a case study.

@@ -1,6 +1,6 @@
 # What Decides Whether Recall@k Is Determined: The Resolution of the Index's Distance
 
-### A case study on one corpus, three quantiser families, and two scales
+### A case study on one corpus, {{w:N.n_families}} quantiser families, and {{w:N.n_scales}} scales
 
 ---
 
@@ -19,8 +19,8 @@ Section 7 states the search in full and commits it.
 The answer this study measures is not the quantiser family and not the bit budget. It is the
 **local resolution of the distance the index computes** — how many distinct distance values the
 near neighbourhood of a query actually occupies. Across {{n:A.configs}} configurations spanning
-three families (random-hyperplane Hamming, product quantisation, scalar quantisation) on
-{{n:A.corpus.n}} real SIFT descriptors — the two endpoint controls are run on every reproduction and
+{{w:N.n_families}} families (random-hyperplane Hamming, product quantisation, scalar quantisation) on
+{{n:A.corpus.n}} real SIFT descriptors — the {{w:N.n_controls}} endpoint controls are run on every reproduction and
 are not among them, because neither belongs to a family: the float cell carries no code and the
 constructed cell is a corpus rather than a code — the boundary tie group is ordered by resolution on a log-log
 scale at `r = {{n:A.r_configs}}` over {{n:A.n_configs}} configuration means; at
@@ -32,8 +32,8 @@ product and scalar quantisation, which attain hundreds of values, tie barely: a 
 {{n:B.pq32.median_t}} and floors {{n:B.pq32.floor}} to {{n:B.pq64.floor}}. Every per-configuration
 figure in this paper is the mean, over that configuration's three seeds, of a per-seed median taken
 over queries, so a tie group quoted here is a mean of medians rather than a median; the tier-A
-scalar-quantisation cells are seedless and carry their single measurement. The two families most
-widely deployed at billion scale are therefore the ones the effect leaves almost untouched.
+scalar-quantisation cells are seedless and carry their single measurement. The families most widely deployed at billion scale — product and scalar
+quantisation — are therefore the ones the effect leaves almost untouched.
 
 The paper states plainly what this replaces. This study **registered the opposite claim** — that
 recall@k on compact codes *as such* is undetermined — and the second and third quantiser families
@@ -41,8 +41,8 @@ recall@k on compact codes *as such* is undetermined — and the second and third
 registered priors are likewise reported as refuted, supported, or refuted-in-one-space, and the
 scaling prior is refuted.
 
-Contribution level: **`case study`**. One corpus, two scales of it, {{n:B.configs}} configurations
-at the larger scale. The instrument is exact and its two endpoint controls are run on every
+Contribution level: **`case study`**. One corpus, {{w:N.n_scales}} scales of it, {{n:B.configs}} configurations
+at the largest scale. The instrument is exact and its {{w:N.n_controls}} endpoint controls are run on every
 reproduction; the scope is one corpus and the abstract says so rather than a limitations section.
 
 ---
@@ -102,7 +102,7 @@ the metric is fully determined. When the entire top-k lies inside one tie group,
 its minimum for that `r`, and in the degenerate case where the whole corpus is one group and
 `k <= n` it is `0`. Those two endpoints are the controls of section 3.
 
-## 3. The instrument, and its two endpoint controls
+## 3. The instrument, and its {{w:N.n_controls}} endpoint controls
 
 The instrument is a function of the query's distance row alone: sort, find `d_k`, count `r` and
 `t`, evaluate `floor`. Three things are needed for it to measure anything.
@@ -141,7 +141,7 @@ what the tie group is.
 
 ## 4. What governs the tie group
 
-Three quantiser families are run on the same corpus and the same queries, at budgets chosen so the
+All {{w:N.n_families}} quantiser families are run on the same corpus and the same queries, at budgets chosen so the
 families can be compared. Each tier-A cell measures {{n:A.corpus.n_queries}} queries against
 {{n:A.corpus.knn}} stored neighbours with `k = {{n:A.corpus.k}}`, and every family-and-budget
 configuration is measured with three seeds except scalar quantisation, which is deterministic and is
@@ -183,7 +183,7 @@ This is the paper's central claim, in falsifiable form: **hold the corpus and th
 the width of the identified set is predicted by the local resolution of the distance, not by the
 quantiser family and not by the bit budget alone.**
 
-![The boundary tie group against the local resolution of the distance, at three scales](figures/resolution_axis.png)
+![The boundary tie group against the local resolution of the distance, at {{w:N.n_scales}} scales](figures/resolution_axis.png)
 
 **Figure 1.** The claim above, drawn at every scale this paper measures. A point is one
 (family, budget) configuration — {{n:A.n_configs}} of them at {{n:A.corpus.n}} descriptors,
@@ -197,7 +197,7 @@ than about scale.
 
 ## 5. At the benchmark's own scale
 
-The same axis is measured on {{n:B.corpus.n}} descriptors — a factor of fifty more points than the
+The same axis is measured on {{n:B.corpus.n}} descriptors — a factor of {{w:N.scale_ratio}} more points than the
 committed subsample, with {{n:B.corpus.n_queries}} queries per seed — and it holds:
 `r = {{n:B.r_configs}}` over {{n:B.n_configs}} configurations. The resolution ranges from
 {{n:B.hamming32.atoms}} distinct values in the near neighbourhood of a short Hamming budget to
@@ -214,7 +214,7 @@ Hamming at the short budget a correct index can be graded **{{n:B.hamming32.floo
 {{f:B.hamming32.frac_ci|cipct1}}% score interval over the {{n:B.hamming32.n_queries}} queries of the
 {{n:B.hamming32.n_seeds}} seeds; product quantisation gives **{{n:B.pq32.floor}}** with
 {{f:B.pq32.frac_pct|pct1}}% ({{f:B.pq32.frac_ci|cipct1}}%) and scalar quantisation
-**{{n:B.sq2.floor}}**. The gap between those two families is {{f:B.frac_gap_pp|pct1}} points,
+**{{n:B.sq2.floor}}**. The gap between product and scalar quantisation is {{f:B.frac_gap_pp|pct1}} points,
 {{f:B.frac_gap_ci|cipct1}}, and the interval excludes zero — so at this sample the ordering of the
 families is not a sampling artefact of the query set.
 
@@ -223,7 +223,7 @@ at {{n:M.fixture.n}} descriptors from the same source, with {{n:M.fixture.n_quer
 seed and the same {{n:M.fixture.knn}}-neighbour window, it reads `r = {{n:M.r_configs}}` over
 {{n:M.n_configs}} configurations against a smallest detectable `|r|` of {{n:M.mde_configs}} — so the
 intermediate scale clears its own sensitivity too, and it sits between the two endpoints of the
-claim rather than beside it. The three scales are nested, not sampled independently: the
+claim rather than beside it. The {{w:N.n_scales}} scales are nested, not sampled independently: the
 {{n:A.corpus.n}} descriptors of section 4 are the first {{n:M.nested_rows}} rows of the
 {{n:M.fixture.n}}-descriptor set, which is in turn a subset of the million. Every across-scale
 sentence in this section therefore compares one population at three sizes, which is what a
@@ -258,7 +258,7 @@ is not a preregistration but a wish {{c:munafo-manifesto-2017}}.
 
 **The registered headline is refuted.** Two further families — product and scalar quantisation —
 put the boundary tie group far outside the interval established for random hyperplanes, and at the
-larger scale their floors are {{n:B.pq32.floor}}, {{n:B.pq64.floor}} and {{n:B.sq2.floor}}. A claim
+largest scale their floors are {{n:B.pq32.floor}}, {{n:B.pq64.floor}} and {{n:B.sq2.floor}}. A claim
 that compact codes are undetermined cannot survive families whose median query has no tie at all.
 
 **P1, that the tie group is invariant in corpus size, is refuted** by the scaling measurement: the
@@ -408,7 +408,7 @@ check the refutation instead of taking it on trust.
 
 ## 8. Threats to validity, and why the result still stands
 
-**One corpus.** Every number is on `sift-128-euclidean`. The larger scale is fifty times as many
+**One corpus.** Every number is on `sift-128-euclidean`. The largest scale is {{w:N.scale_ratio}} times as many
 descriptors from the same source, not a second dataset, so the axis is shown to survive scale and
 not shown to survive a change of data. This is the study's binding limitation and it is why the
 contribution level is a case study.

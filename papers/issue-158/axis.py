@@ -53,6 +53,36 @@ def configs_of(cells):
     return len({config_key(c) for c in family_cells(cells)})
 
 
+def families_of(cells):
+    """The quantiser families the family cells belong to: 'Hamming/32bit/seed7' -> 'Hamming'.
+
+    The paper counts its families in prose -- "three quantiser families", "across three families" --
+    and a count written in words is a number no gate reads and no scanner sees: the stray-number
+    scan matches digits, so a stale word survives every check the package has. Round-2 review M1 is
+    exactly that failure one step over, in the scale count. Composed here from the tags, so the
+    sentence moves when the cells do.
+    """
+    return sorted({config_key(c)[0] for c in family_cells(cells)})
+
+
+def scale_tiers(tiers):
+    """The scale tiers a render drew from, as (label, corpus size) -- the paper's scale count is this.
+
+    `tiers` is the list of (label, artefact) the renderer actually loaded, not a list of the scales
+    the author remembers measuring. The subtitle and the contribution-level sentence print its
+    length, so adding a tier is a change here and in the renderer and can no longer be a sentence
+    that stays behind while the design moves.
+    """
+    out = []
+    for label, art in tiers:
+        block = art.get("corpus") or art.get("fixture") or {}
+        if "n" not in block:
+            raise KeyError("tier %r states no corpus size, so the scale count cannot be composed"
+                           % label)
+        out.append((label, block["n"]))
+    return out
+
+
 def config_means(cells):
     """One (mean resolution, mean tie group) per configuration, in sorted key order.
 

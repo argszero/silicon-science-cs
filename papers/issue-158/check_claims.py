@@ -237,6 +237,38 @@ def main():
           abs(d["log_log_pearson"]) > mde,
           "|r|=%.4f vs MDE=%.4f" % (abs(d["log_log_pearson"]), mde))
 
+    # ---- the counts the paper states about its own design ----------------------------------
+    # Round-2 review M1: the subtitle and the contribution-level line said "two scales" while the
+    # body enumerated three, and no gate read that sentence. The count is composed now, and this
+    # compares the composition against the artefacts on disk -- a fourth scale artefact that the
+    # render does not count is named here rather than reaching a reader as a stale word.
+    import glob
+    on_disk = []
+    for path in sorted(glob.glob("results/*.json")):
+        art = json.load(open(path))
+        block_ = art.get("corpus") or art.get("fixture") or {}
+        if "n" in block_:
+            on_disk.append((path, block_["n"]))
+    if scale is None or medium is None:
+        check("the scale count the paper prints is the scale artefacts on disk", False,
+              "a scale artefact is missing -- this check has NOT RUN, it is not a pass")
+    else:
+        tiers = make_manuscript.scale_tiers(d, scale, medium)
+        check("the scale count the paper prints is the number of scale artefacts on disk",
+              len(tiers) == len(on_disk),
+              "the render counts %d (%s); results/ holds %d (%s)"
+              % (len(tiers), ", ".join(str(n) for _, n in tiers), len(on_disk),
+                 ", ".join("%s=%d" % (p, n) for p, n in on_disk)))
+        check("the tiers the render counts are the tiers on disk, by corpus size",
+              sorted(n for _, n in tiers) == sorted(n for _, n in on_disk),
+              "render %s vs disk %s"
+              % (sorted(n for _, n in tiers), sorted(n for _, n in on_disk)))
+        fams = {label: make_manuscript.families_of(art["cells"])
+                for label, art in (("A", d), ("B", scale), ("M", medium))}
+        check("every tier carries the same quantiser families the family count is composed from",
+              len({tuple(v) for v in fams.values()}) == 1,
+              "; ".join("%s=%s" % (k, ",".join(v)) for k, v in sorted(fams.items())))
+
     print("CLAIMS: %s" % ("PASS" if FAILED == 0 else "%d FAILED" % FAILED))
     return 0 if FAILED == 0 else 1
 

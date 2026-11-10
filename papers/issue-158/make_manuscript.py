@@ -51,6 +51,17 @@ def cell_lookup(cells, tag, field):
 # M2 were both two copies of one definition disagreeing about which set the number is over.
 is_family_cell = axis.is_family_cell
 configs_of = axis.configs_of
+families_of = axis.families_of
+
+
+def scale_tiers(A, B, M):
+    """The scale tiers this render drew from, smallest first: the paper's scale count is its length.
+
+    Round-2 review M1: the subtitle and the contribution-level line said "two scales" while the body
+    enumerated three, and the sentence had not moved when tier M added the third. The count is now
+    the length of this list, so a fourth tier changes it and cannot leave the sentence behind.
+    """
+    return axis.scale_tiers([("mechanism", A), ("medium", M), ("scale", B)])
 
 
 def mean(xs):
@@ -77,6 +88,18 @@ def composed_r(xs, ys):
 def build_values(A, B, M, S):
     """Every number the prose may name, as a flat dict. Anything not here cannot be printed."""
     cellsA, cellsB, cellsM = A["cells"], B["cells"], M["cells"]
+
+    # Counts about the paper's own design. They are counts, not measurements, so no artefact stores
+    # them: they are composed from the tiers this render drew from and the families the cells carry.
+    # Round-2 review M1 is the cost of typing one -- the subtitle said "two scales" at a head that
+    # measured three -- and the fix is the same one the review asked for twice already: compose it,
+    # in one place, from the object that owns the fact.
+    tiers = scale_tiers(A, B, M)
+    tier_sizes = [n for _, n in tiers]
+    if max(tier_sizes) % min(tier_sizes):
+        raise KeyError("the largest scale (%d) is not a whole multiple of the smallest (%d), so the "
+                       "ratio the paper prints is not an integer" % (max(tier_sizes), min(tier_sizes)))
+    families = axis.families_of(cellsA)
 
     def by_prefix(cells, prefix):
         return [c for c in cells if c["tag"].startswith(prefix)]
@@ -138,6 +161,11 @@ def build_values(A, B, M, S):
         "S.n_asks": S["ledger"]["n_asks_width"],
         "S.window_from": S["window"]["from"],
         "S.window_to": S["window"]["to"],
+        # Counts about the paper's own design (round-2 review M1). Printed as words by `{{w:}}`.
+        "N.n_scales": len(tiers),
+        "N.n_families": len(families),
+        "N.scale_ratio": max(tier_sizes) // min(tier_sizes),
+        "N.n_controls": len(axis.CONTROL_PREFIXES),
     }
 
     # tier B carries no single stored correlation: it is composed here from the cells, exactly as
@@ -216,7 +244,68 @@ def fmt(x):
     return str(x)
 
 
+UNITS = ("zero one two three four five six seven eight nine ten eleven twelve thirteen fourteen "
+         "fifteen sixteen seventeen eighteen nineteen").split()
+TENS = "_ _ twenty thirty forty fifty sixty seventy eighty ninety".split()
+
+
+def bind_word(values, bound=None):
+    """The `{{w:key}}` substitution. The render and the selftest run this one predicate.
+
+    It lives here rather than inside `main` because a refusal demonstrated on a copy of the rule is
+    not a refusal of the rule: the first draft of this selftest called `word()` directly on a
+    fractional fixture and passed, where the render would have printed `zero`.
+    """
+    def sub(m):
+        key = m.group(1).strip()
+        if key not in values:
+            raise KeyError("{{w:%s}} is not a count any artefact holds" % key)
+        value = values[key]
+        if isinstance(value, bool) or not isinstance(value, int):
+            raise KeyError("{{w:%s}} is not a whole number (%r); a count in words must be one"
+                           % (key, value))
+        if bound is not None:
+            bound.append(value)
+        return word(value)
+    return sub
+
+
+def word(x):
+    """A whole number as the English word a sentence needs. `{{w:key}}` prints through this."""
+    n = int(x)
+    if n < len(UNITS):
+        return UNITS[n]
+    if n < 100:
+        tens, unit = divmod(n, 10)
+        return TENS[tens] + ("-" + UNITS[unit] if unit else "")
+    return "{:,}".format(n)
+
+
 MARK = re.compile(r"\{\{n:([^}]+)\}\}")
+# A count the sentence needs as a word: `{{w:key}}` prints "three" where `{{n:key}}` would print "3".
+# A count written in words is invisible to the stray-number scan (it matches digits), so every count
+# of the paper's own design -- how many scales, how many families, the scale ratio -- is bound here
+# rather than typed: round-2 review M1.
+WORD_MARK = re.compile(r"\{\{w:([^}]+)\}\}")
+
+# A count of the paper's own design written as a word, on the source prose. Round-2 review M1 named
+# the gap: `refgate` reads the bibliography, `stepgate` reads script counts, `numgate` reads digits,
+# and none of them reads "how many scales a sentence says the study has" -- so the subtitle read
+# `two scales` at a head that measured three and every gate stayed green. Composing the count fixes
+# the sentence; this refuses the class, because a regeneration is not a guard against the next author
+# typing the same word. The noun list is deliberately short: it carries the design counts that appear
+# in the sentences a reader meets first, and a bare "two further families" (a contrast inside one
+# sentence, not a claim about the study) is out of scope by construction rather than by exemption.
+DESIGN_NOUNS = ("scales", "families", "configurations")
+COUNT_WORDS = ("one two three four five six seven eight nine ten eleven twelve twenty thirty fifty "
+               "hundred").split()
+TYPED_COUNT = re.compile(r"\b(%s)\s+(?:quantiser\s+)?(%s)\b"
+                         % ("|".join(COUNT_WORDS), "|".join(DESIGN_NOUNS)), re.I)
+
+
+def typed_design_counts(prose):
+    """Counts of the paper's own design typed as words -- refused, whatever the digit scan says."""
+    return sorted({m.group(0) for m in TYPED_COUNT.finditer(prose)})
 # A number the prose wants at a stated precision: `{{f:key|pct1}}` prints a proportion as a
 # percentage and `{{f:key|cipct1}}` prints a pair as a percentage interval. The precision belongs to
 # the sentence, the value belongs to the artefact, and the gate still reads both.
@@ -347,6 +436,47 @@ def selftest():
     # 9. the floor is enforced
     expect("the reference floor is enforced", len(fake) < REF_FLOOR)
 
+    # 10. a count in words is a number, and it comes from a bound value (round-2 review M1).
+    words = {"k": 3, "ratio": 50}
+    expect("a count written in words is invisible to the number scan -- which is why it is bound",
+           stray_of("this study has three scales", [3]) == [])
+    expect("a bound word marker prints the word its value names",
+           WORD_MARK.sub(bind_word(words), "{{w:k}} scales") == "three scales")
+    expect("a ratio prints as a compound word", word(words["ratio"]) == "fifty")
+    try:
+        WORD_MARK.sub(bind_word(words), "{{w:nope}}")
+        expect("an unbound word marker is refused", False)
+    except KeyError:
+        expect("an unbound word marker is refused", True)
+    try:
+        WORD_MARK.sub(bind_word(dict(values)), "{{w:y}}")
+        expect("a word marker bound to a non-count is refused", False)
+    except KeyError:
+        expect("a word marker bound to a non-count is refused", True)
+
+    expect("a design count typed as a word is refused",
+           typed_design_counts("one corpus, two scales of it") == ["two scales"],
+           "found %s" % typed_design_counts("one corpus, two scales of it"))
+    expect("the same count as a marker passes the gate",
+           typed_design_counts("one corpus, {{w:N.n_scales}} scales of it") == [])
+    expect("a contrast inside a sentence is not a design count",
+           typed_design_counts("Two further families refute it") == [])
+
+    # 11. the scale count is a property of the tiers, not of a sentence.
+    expect("the scale count is the number of tiers a render drew from",
+           len(axis.scale_tiers([("a", {"corpus": {"n": 20000}}),
+                                 ("b", {"fixture": {"n": 200000}}),
+                                 ("c", {"corpus": {"n": 1000000}})])) == 3)
+    try:
+        axis.scale_tiers([("t", {"cells": []})])
+        expect("a tier that states no corpus size is refused", False)
+    except KeyError:
+        expect("a tier that states no corpus size is refused", True)
+    expect("the family count is the families the cells carry, not a word",
+           axis.families_of([{"tag": "Hamming/32bit/seed7"}, {"tag": "PQ/64bit/seed7"},
+                             {"tag": "PQ/32bit/seed7"},
+                             {"tag": "float/raw descriptors"}]) == ["Hamming", "PQ"])
+
     print("SELFTEST: %s" % ("PASS" if fails == 0 else "%d FAILED" % fails))
     return 0 if fails == 0 else 1
 
@@ -373,6 +503,15 @@ def main():
         print("  -> run build_refs.py; the paper will not render until every citation resolves.")
         return 1
 
+    typed = typed_design_counts(prose)
+    if typed:
+        print("TYPED DESIGN COUNT(S) in the prose: %s" % typed)
+        print("  -> how many scales or families this study has must come from a composed value")
+        print("     (`{{w:N.n_scales}}`, `{{w:N.n_families}}`); a word is invisible to the")
+        print("     stray-number scan, which is how the subtitle read `two scales` at a head that")
+        print("     measured three. Refusing to write the paper.")
+        return 1
+
     values = build_values(A, B, M, S)
     bound = []
 
@@ -384,6 +523,8 @@ def main():
         return fmt(values[key])
 
     body = MARK.sub(sub, prose)
+
+    body = WORD_MARK.sub(bind_word(values, bound), body)
 
     def sub_float(m):
         key, spec = m.group(1).strip(), m.group(2).strip()
