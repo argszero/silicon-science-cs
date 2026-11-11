@@ -391,7 +391,68 @@ def authors_to_house(component):
     return "; ".join(author_to_house(p) for p in parts)
 
 
-def house_entry(entry):
+# A field a record stores as null is ABSENT, and the page says so by saying nothing. The word for
+# absence is not the absence: `[73]` printed `(None)` where its year belongs because `str(None)`
+# returns a string, so the assembler's `try/except` could never see it. `(n.d.)` is NOT null -- an
+# explicitly undated record is a statement, and the review names it as the acceptable alternative.
+NULL_SLOT = re.compile(r"\(\s*(?:None|null|NULL|N/A|nan|NaN)\s*\)|(?<![\w.])None(?![\w.])")
+
+
+# A null in the YEAR slot is a different thing from a null anywhere else: the slot exists, and the
+# record usually HOLDS the year -- `entry_of` reads Crossref's `issued`, which is where the year was
+# missing, not where the work's year lives. Measured across the list, five entries printed `(None)`
+# for a year their own record carries (1984, 1997, 2000, 2005, 2006). The review named one of them
+# and asked for the slot to be dropped; the census is what separates "drop it" from "fill it".
+YEAR_SLOT_NULL = re.compile(r"\(\s*(?:None|null|NULL|N/A|nan|NaN)\s*\)(?=\.\s)")
+
+
+def strip_null_slots(line):
+    r"""Print an absent field as absent, and close the gap it leaves behind -- and only that gap.
+
+    The first version collapsed `[\s,;:]{2,}` to one space, which ate the `", "` between every pair
+    of author names in the list and turned `Hunter, J. D.` into `Hunter J. D.` -- the selftest's
+    "returned exactly as stored" leg is what caught it. Only whitespace is collapsed; the separators
+    are removed one at a time, and only where a slot actually was.
+    """
+    if not NULL_SLOT.search(line):
+        return line
+    out = NULL_SLOT.sub("\x00", line)
+    out = re.sub(r"^\s*\x00\s*[.,;:]?\s*", "", out)      # a slot that opened the entry
+    out = re.sub(r"\s*\x00\s*[.,;:]\s*", " ", out)       # … one in the middle takes one side
+    out = re.sub(r"[.,;:]\s*\x00\s*", " ", out)
+    out = out.replace("\x00", "")
+    return re.sub(r"\s{2,}", " ", out).strip()
+
+
+def null_slot_census(entries, render=None):
+    """Three questions with different answers, and only one of them is a defect.
+
+    `in_record` are entries whose STORED text carries a null slot. `repaired` are those whose null
+    sat in the year slot and whose own record holds the year, so the render prints the year rather
+    than the absence: the review named `[73]` and asked for the slot to be dropped, and the census is
+    what shows that dropping it would delete a year the record carries. `survives` are entries whose
+    RENDERED line still carries a null, which is the defect: it is refused BY NAME, with the slug,
+    because a gate that dies on the thing it exists to find names nothing (round 2 of #160, one
+    package over).
+    """
+    if render is None:
+        def render(ref):
+            return house_entry(ref.get("entry") or "", year=ref.get("year"))
+    in_record, repaired, survives = [], [], []
+    for slug in sorted(entries):
+        ref = entries[slug] or {}
+        raw = ref.get("entry") or ""
+        line = render(ref)
+        if NULL_SLOT.search(raw):
+            in_record.append(slug)
+            if YEAR_SLOT_NULL.search(raw) and ref.get("year"):
+                repaired.append(slug)
+        if NULL_SLOT.search(line):
+            survives.append((slug, line[:90]))
+    return dict(in_record=in_record, repaired=repaired, survives=survives, rows=len(entries))
+
+
+def house_entry(entry, year=None):
     """One line per entry, one period per full stop, one convention for the whole list.
 
     * `thorne-fever-2018` arrived from the registry hard-wrapped -- CR/LF plus the registry's own
@@ -411,8 +472,12 @@ def house_entry(entry):
     is. Normalising cannot change a quantity: entries are identifiers, titles and venues, and the
     stray-number gate reads the prose before this substitution.
     """
-    line = re.sub(r"\.\.(\s)", r".\1", html.unescape(" ".join(entry.split())))
-    line = re.sub(r"^(.*?)(\s*\((?:\d{4}|n\.d\.)\))", _house_author, line, count=1)
+    line = " ".join(entry.split())
+    if year:
+        line = YEAR_SLOT_NULL.sub("(%s)" % year, line, count=1)
+    line = strip_null_slots(line)
+    line = re.sub(r"\.\.(\s)", r".\1", html.unescape(line))
+    line = re.sub(r"^(.*?)(\s*\((?:(?:\d{4})|(?:n\.d\.))\))", _house_author, line, count=1)
     return re.sub(r"(\(\d{4}\))\.\s+([^.]+)", _house_title, line, count=1)
 
 
@@ -616,6 +681,31 @@ def selftest():
                        "Representations of Words and Phrases and their Compositionality. "
                        "arXiv preprint 1310.4546v1.").startswith("Mikolov, T.; Sutskever, I.;"))
 
+    # 13. a null field prints as absent, and a null that SURVIVES the render is refused by name.
+    nul = ("(None). R-Trees - A Dynamic Index Structure for Spatial Searching. SpringerReference. "
+           "https://doi.org/10.1007/springerreference_62807")
+    expect("a stored null slot does not reach the page",
+           "(None)" not in house_entry(nul) and "None" not in house_entry(nul),
+           house_entry(nul)[:60])
+    expect("and the entry still opens with its title",
+           house_entry(nul).startswith("R-Trees -"), house_entry(nul)[:40])
+    cen = null_slot_census({"x": {"entry": nul}, "y": {"entry": "Hunter, J. D. (2007). Matplotlib."}})
+    expect("the census counts what it repaired",
+           cen["in_record"] == ["x"] and cen["survives"] == [] and cen["rows"] == 2,
+           "in_record=%s survives=%s" % (cen["in_record"], cen["survives"]))
+    expect("a null in the YEAR slot is filled from the record, not dropped",
+           house_entry(nul, year=1984).startswith("(1984). R-Trees -"),
+           house_entry(nul, year=1984)[:40])
+    expect("and without a record year the same slot prints as absent",
+           house_entry(nul).startswith("R-Trees -"), house_entry(nul)[:40])
+    # plant: a render that does NOT repair. Without this the guard could only be tested against a
+    # world in which it never has to fire, which is the shape of a guard that has never been seen to
+    # work -- and the review asks for a refusal, not a crash, when one gets through.
+    planted = null_slot_census({"x": {"entry": nul}}, render=lambda ref: ref.get("entry"))
+    expect("a null that survives the render is reported BY NAME",
+           [sl for sl, _ in planted["survives"]] == ["x"],
+           "survives=%s" % (planted["survives"],))
+
     print("SELFTEST: %s" % ("PASS" if fails == 0 else "%d FAILED" % fails))
     return 0 if fails == 0 else 1
 
@@ -733,10 +823,24 @@ def main():
     repaired = 0
     for i, slug in enumerate(order, 1):
         r = refs[slug]
-        printed = house_entry(r["entry"])
+        printed = house_entry(r["entry"], year=r.get("year"))
         if printed != r["entry"]:
             repaired += 1
         entries.append("[%d] %s" % (i, printed))
+
+    census = null_slot_census(refs)
+    if census["survives"]:
+        for slug, line in census["survives"]:
+            print("NULL SLOT printed by entry `%s`: %s" % (slug, line))
+        print("  -> an absent field prints as absent, never as the word for absence.")
+        print("     Refusing to write the paper.")
+        return 1
+    if census["in_record"]:
+        print("  null slots: %d of %d stored entries carried one; %d print their own record's year "
+              "in the slot and %d print the field as absent (%s)"
+              % (len(census["in_record"]), census["rows"], len(census["repaired"]),
+                 len(census["in_record"]) - len(census["repaired"]),
+                 ", ".join(census["in_record"][:6])))
 
     body = body.replace("{{refs}}", "\n\n".join(entries))
 

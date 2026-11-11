@@ -555,9 +555,9 @@ a program, and a reference that does not resolve stops the manuscript from being
 
 [48] Bay, H.; Ess, A.; Tuytelaars, T.; et al. (2008). Speeded-Up Robust Features (SURF). Computer Vision and Image Understanding. vol. 110. pp. 346-359. https://doi.org/10.1016/j.cviu.2007.09.014
 
-[49] Dalal, N.; Triggs, B. (None). Histograms of Oriented Gradients for Human Detection. 2005 IEEE Computer Society Conference on Computer Vision and Pattern Recognition (CVPR'05). vol. 1. pp. 886-893. https://doi.org/10.1109/cvpr.2005.177
+[49] Dalal, N.; Triggs, B. (2005). Histograms of Oriented Gradients for Human Detection. 2005 IEEE Computer Society Conference on Computer Vision and Pattern Recognition (CVPR'05). vol. 1. pp. 886-893. https://doi.org/10.1109/cvpr.2005.177
 
-[50] Nister, D.; Stewenius, H. (None). Scalable Recognition with a Vocabulary Tree. 2006 IEEE Computer Society Conference on Computer Vision and Pattern Recognition - Volume 2 (CVPR'06). vol. 2. pp. 2161-2168. https://doi.org/10.1109/cvpr.2006.264
+[50] Nister, D.; Stewenius, H. (2006). Scalable Recognition with a Vocabulary Tree. 2006 IEEE Computer Society Conference on Computer Vision and Pattern Recognition - Volume 2 (CVPR'06). vol. 2. pp. 2161-2168. https://doi.org/10.1109/cvpr.2006.264
 
 [51] Philbin, J.; Chum, O.; Isard, M.; et al. (2007). Object retrieval with large vocabularies and fast spatial matching. 2007 IEEE Conference on Computer Vision and Pattern Recognition. pp. 1-8. https://doi.org/10.1109/cvpr.2007.383172
 
@@ -603,7 +603,7 @@ a program, and a reference that does not resolve stops the manuscript from being
 
 [72] Pan, J. J.; Wang, J.; Li, G. (2024). Survey of vector database management systems. The VLDB Journal. vol. 33. pp. 1591-1615. https://doi.org/10.1007/s00778-024-00864-x
 
-[73] (None). R-Trees - A Dynamic Index Structure for Spatial Searching. SpringerReference. https://doi.org/10.1007/springerreference_62807
+[73] (1984). R-Trees - A Dynamic Index Structure for Spatial Searching. SpringerReference. https://doi.org/10.1007/springerreference_62807
 
 [74] Beckmann, N.; Kriegel, H. P.; Schneider, R.; et al. (1990). The R*-tree: an efficient and robust access method for points and rectangles. Proceedings of the 1990 ACM SIGMOD international conference on Management of data. pp. 322-331. https://doi.org/10.1145/93597.98741
 
@@ -615,7 +615,7 @@ a program, and a reference that does not resolve stops the manuscript from being
 
 [78] Hjaltason, G. R.; Samet, H. (2003). Index-driven similarity search in metric spaces (Survey Article). ACM Transactions on Database Systems. vol. 28. pp. 517-580. https://doi.org/10.1145/958942.958948
 
-[79] Ciaccia, P.; Patella, M. (None). PAC nearest neighbor queries: Approximate and controlled search in high-dimensional and metric spaces. Proceedings of 16th International Conference on Data Engineering (Cat. No.00CB37073). pp. 244-255. https://doi.org/10.1109/icde.2000.839417
+[79] Ciaccia, P.; Patella, M. (2000). PAC nearest neighbor queries: Approximate and controlled search in high-dimensional and metric spaces. Proceedings of 16th International Conference on Data Engineering (Cat. No.00CB37073). pp. 244-255. https://doi.org/10.1109/icde.2000.839417
 
 [80] (2009). Fast approximate nearest neighbors with automatic algorithm configuration. Proceedings of the Fourth International Conference on Computer Vision Theory and Applications. pp. 331-340. https://doi.org/10.5220/0001787803310340
 
@@ -623,7 +623,7 @@ a program, and a reference that does not resolve stops the manuscript from being
 
 [82] Bloom, B. H. (1970). Space/time trade-offs in hash coding with allowable errors. Communications of the ACM. vol. 13. pp. 422-426. https://doi.org/10.1145/362686.362692
 
-[83] Broder, A. (None). On the resemblance and containment of documents. Proceedings. Compression and Complexity of SEQUENCES 1997 (Cat. No.97TB100171). pp. 21-29. https://doi.org/10.1109/sequen.1997.666900
+[83] Broder, A. (1997). On the resemblance and containment of documents. Proceedings. Compression and Complexity of SEQUENCES 1997 (Cat. No.97TB100171). pp. 21-29. https://doi.org/10.1109/sequen.1997.666900
 
 [84] Sundaram, N.; Turmukhametova, A.; Satish, N.; et al. (2013). Streaming similarity search over one billion tweets using parallel locality-sensitive hashing. Proceedings of the VLDB Endowment. vol. 6. pp. 1930-1941. https://doi.org/10.14778/2556549.2556574
 
