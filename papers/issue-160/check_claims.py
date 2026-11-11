@@ -18,6 +18,7 @@ be refused, so the gate is demonstrated to bite rather than asserted to.
 """
 import json
 import os
+import re
 import sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -41,6 +42,33 @@ CLAIMS = [
 CONTROL = dict(id="no-censoring control", path="controls.no_censoring_identified_and_exact_frac",
                op="==", threshold=1.0, registered="MET",
                text="a timeout above the row maximum identifies the quantile exactly, every time")
+
+
+def verdict_line_states_the_pair(text, law_gaps, checked_levels):
+    """Does the P3 verdict line print BOTH counts, and say which one is the law's?
+
+    Review round 2, minor 1. The line printed the law's `K` (25) as the answer to "how many timeout
+    levels", while the abstract printed the checked price (26) three paragraphs above: the marker was
+    bound correctly and to the wrong quantity, so no gate could see it -- the binding was never the
+    defect. This predicate is what makes the pair printable-but-not-substitutable: the line must carry
+    both numbers, and the law's number must be attached to the word *gap*, because that is the only
+    thing that distinguishes the two counts in the reader's hands.
+
+    It is a text predicate on purpose. A sentence is the object under test here, and the failure it
+    guards is a sentence quoting one quantity under another's name.
+    """
+    for line in text.splitlines():
+        if not line.startswith("**P3"):
+            continue
+        has_both = (str(law_gaps) in line) and (str(checked_levels) in line)
+        names_the_law = _GAP_WORD.search(line) is not None
+        law_before_checked = (line.find(str(law_gaps)) < line.find(str(checked_levels))
+                              if has_both else False)
+        return has_both, names_the_law, law_before_checked, line
+    return False, False, False, ""
+
+
+_GAP_WORD = re.compile(r"\bgaps?\b", re.I)
 
 
 def reproduction_steps():
@@ -181,6 +209,17 @@ def identities(art):
                         "at_K: %d of %d rows over eps (residual max %.4f)"
                         % (blk["at_K"]["rows_over_eps"], blk["at_K"]["rows"],
                            blk["at_K"]["residual_max"])))
+            # Review round 2, minor 1: the two counts are one level apart under ANY parameters --
+            # `K` counts the gaps between timed levels and a certification needs the levels, so the
+            # difference is structural rather than a property of this workload. Asserting it here is
+            # what lets the next check hold the sentence to the pair: if the delta were ever not 1,
+            # the sentence's own arithmetic would be wrong and this line would say so first.
+            out.append(("%s: the checked price is exactly one level above the law's gap count" % tag,
+                        blk["at_K_plus_1"]["levels_median"] == blk["at_K"]["levels_median"] + 1,
+                        "law K=%d checked=%d (delta %d)"
+                        % (blk["at_K"]["levels_median"], blk["at_K_plus_1"]["levels_median"],
+                           blk["at_K_plus_1"]["levels_median"] - blk["at_K"]["levels_median"])))
+
         rec = cc["reconstruction"]
         out.append(("the reconstruction limb actually drew from the rows it reports",
                     rec["rows"] > 0 and rec["draws_per_row"] > 0 and rec["seed"] == 20261110,
@@ -258,6 +297,25 @@ def identities(art):
                     "family held fixed" in ks.get("family", ""), ks.get("family", "")[:48]))
 
     # ---- the level is stated where a reader enters (review question 6) -----------------------
+    # ---- the verdict line states the pair, not one of the two (review round 2, minor 1) -------
+    # The site a reader consults to learn whether the registration's belief survived. A line that
+    # prints the law's gap count as the answer to "how many levels" under-claims by one, and the
+    # previous head did exactly that while every gate stayed green -- because the marker behind it
+    # was bound correctly, to the wrong quantity. This reads the rendered paper.
+    ms_path = os.path.join(HERE, "manuscript.md")
+    if cc is None or not os.path.exists(ms_path):
+        out.append(("the P3 verdict line states both counts", False,
+                    "no artefact or no rendered manuscript -- this check has NOT RUN"))
+    else:
+        law_gaps = cc["by_eps"]["eps_5"]["at_K"]["levels_median"]
+        checked = cc["by_eps"]["eps_5"]["at_K_plus_1"]["levels_median"]
+        text = open(ms_path, encoding="utf-8").read()
+        both, names_law, law_first, line = verdict_line_states_the_pair(text, law_gaps, checked)
+        out.append(("the P3 verdict line prints both the law's gap count and the checked price",
+                    both, "law=%d checked=%d | line: %s" % (law_gaps, checked, line[:100])))
+        out.append(("the P3 verdict line says which of the two is the law's gap count",
+                    names_law, line[:100]))
+
     # Four carriers have to agree: the registration, the manuscript, the README, and the review's
     # own reading. Two of them are authored text in this package and both are asserted; the
     # registration is not in the package and is named here rather than read.
@@ -362,6 +420,33 @@ def selftest():
     f3 = evaluate(m3)[2]
     expect("an artefact from other bytes than the fixture is refused",
            any("other bytes" in x for x in f3), (f3 or ["(not refused)"])[0])
+
+    # 4. the verdict line quotes one of the two counts as the other (review round 2, minor 1).
+    #    The predicate is the one the gate runs, not a copy: a refusal demonstrated on a second
+    #    implementation of the rule is not a refusal of the rule.
+    cc = base.get("cost_check") or {}
+    if cc:
+        law = cc["by_eps"]["eps_5"]["at_K"]["levels_median"]
+        chk = cc["by_eps"]["eps_5"]["at_K_plus_1"]["levels_median"]
+        old_line = ("**P3 — certifying the median workload to 5%% needs at least 20 timeout levels.** "
+                    "**MET**: the median is %d, with a 90th percentile of %d across rows."
+                    % (law, law + 73))
+        both, names, _, _ = verdict_line_states_the_pair(old_line, law, chk)
+        expect("a verdict line that quotes only the law's gap count is refused", not both,
+               "law=%d checked=%d, line prints both=%s" % (law, chk, both))
+        pair_line = ("**P3 — MET.** The law's number is %d, the count of **gaps**; certification "
+                     "needs the levels, one more: %d." % (law, chk))
+        both2, names2, first2, _ = verdict_line_states_the_pair(pair_line, law, chk)
+        expect("a verdict line that states the pair and names the law's count is accepted",
+               both2 and names2 and first2, "both=%s names=%s law_first=%s" % (both2, names2, first2))
+        unnamed = ("**P3 — MET.** The law's number is %d and the checked one is %d." % (law, chk))
+        _, names3, _, _ = verdict_line_states_the_pair(unnamed, law, chk)
+        expect("a verdict line that prints both without saying which is the law's is refused",
+               not names3, "names_the_law=%s" % names3)
+        swapped = ("**P3 — MET.** The levels are %d; the gaps number %d." % (chk, law))
+        both4, names4, first4, _ = verdict_line_states_the_pair(swapped, law, chk)
+        expect("a verdict line that prints the two counts in the wrong order is refused",
+               both4 and names4 and not first4, "law_first=%s" % first4)
 
     print("SELFTEST: %s" % ("PASS" if fails == 0 else "%d FAILED" % fails))
     return 0 if fails == 0 else 1

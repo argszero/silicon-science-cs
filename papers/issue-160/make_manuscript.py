@@ -161,6 +161,12 @@ def build_values(art):
         held = cc["holds_at"][tag]
         v["K%d_levels" % eps] = blk[held]["levels_median"]
         v["K%d_levels_p90" % eps] = blk[held]["levels_p90"]
+        # Review round 2, minor 1: the verdict line of a registered prior printed the law's `K`
+        # under the word "levels", one below the checked price the abstract prints three paragraphs
+        # earlier. Both quantities are bound here under names that say which is which, so a sentence
+        # can state the pair instead of quoting one of them as the other.
+        v["K%d_gap_median" % eps] = blk["at_K"]["levels_median"]
+        v["K%d_attained_pct" % eps] = pct(blk[held]["achieved_median"])
         v["K%d_resid_max" % eps] = blk[held]["residual_max"]
         v["K%d_resid_at_K" % eps] = blk["at_K"]["residual_max"]
         v["K%d_over_pct" % eps] = pct(blk["at_K"]["rows_over_eps_frac"])
