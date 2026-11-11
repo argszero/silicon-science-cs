@@ -199,6 +199,18 @@ def build_values(art):
         v["K%d_resid_max" % eps] = blk[held]["residual_max"]
         v["K%d_resid_at_K" % eps] = blk["at_K"]["residual_max"]
         v["K%d_over_pct" % eps] = pct(blk["at_K"]["rows_over_eps_frac"])
+        # Review round 2, question 4: the block above is arithmetic, and the one number in the paper
+        # that measures rather than derives is the price under a SECOND placement rule. Bound here so
+        # the prose cannot quote the geometric price as though the grid were not a choice.
+        gr = blk.get("grids") or {}
+        lin = gr.get("linear") or {}
+        if lin:
+            v["lin%d_median" % eps] = lin["levels_median"]
+            v["lin%d_p90" % eps] = lin["levels_p90"]
+            v["lin%d_cap" % eps] = lin["cap"]
+            v["lin%d_unc" % eps] = lin["uncertified_rows"]
+            v["lin%d_off_price" % eps] = lin["rows_off_the_geometric_price"]
+            v["ident%d_cases" % eps] = gr["identity_cases"]
     v["recon_rows"] = cc["reconstruction"]["rows"]
     v["recon_draws"] = cc["reconstruction"]["draws_per_row"]
     # The draw-based limb has a RESOLUTION, and its worst row is a fact about that resolution rather

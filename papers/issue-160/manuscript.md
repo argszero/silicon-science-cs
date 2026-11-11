@@ -12,7 +12,7 @@ The first answer dominates. Of the 47,502 function rows in the first day of the 
 
 Second, with the timeout set at a fixed multiple of each row's own median, truncation binds — the true quantile falls outside the set the harness can identify — on **57.52%** of rows at 2x the median, and still on **12.24%** at 32x. Where it binds, the printed number sits below the truth by a median factor of **4.24** at 2x and **3.06** even at 32x. A registered prior predicted that under 10% of rows would still bind at 32x. The data says otherwise, and that refutation is the sharpest result in this paper.
 
-Third, certifying the quantile to 5% relative precision by timeout levels alone needs a median of **26** distinct levels on this workload, and 99 at the 90th percentile of rows. That price was **checked rather than computed**, and the check moved it by one: the law's own `K` counts the gaps between timed levels, so with `K` levels the bracket stays wider than the precision it promises on 73.34% of rows.
+Third, certifying the quantile to 5% relative precision by timeout levels alone needs a median of **26** distinct levels on this workload, and 99 at the 90th percentile of rows. The one level that separates that from the law's own `K` is a **theorem** rather than a measurement: on a geometric ladder the bracket's width is fixed by the row's own range and the level count, so `K` levels cannot attain the precision and `K+1` always do. Because that is a property of the grid, the price is also measured under a second grid — levels uniform in latency — which needs 17 levels at the median and fails to certify 285 rows within 2,000.
 
 Throughout, the unit is the **30-second interval mean**, not the single invocation: the trace publishes percentiles of a 30-second average, so every range reported here ranges over a smoothed quantity and is therefore a **lower bound** on the invocation-level range. All numbers come from one program and one committed input; `./reproduce.sh` re-derives them.
 
@@ -119,25 +119,39 @@ If an operator wants to certify a quantile to relative precision `eps` by choosi
     K = ceil(log R / log(1 + eps)),   R = p100 / p50.
 
 The law is deliberately crude, but the hedge that used to stand here — that it is *conservative* — was
-wrong, and the check this revision round ran is what showed it. It counts levels, not invocations, and
+wrong, and the arithmetic below is what shows it. It counts levels, not invocations, and
 it therefore answers the question "how many experiments does certifying this cost" rather than "how
 much traffic does it need" — the second is the sample-count limit of Section 4. Its degenerate
 endpoint is what keeps it honest: at `R = 1` it returns one level, because a workload with no range is
 certified by a single timeout.
 
-The correction is one level, and it is measurable rather than rhetorical. `K` steps of ratio `1+eps`
-span a ratio of `R`, so `K` counts the **gaps** between timed levels while a certification needs the
-**levels** themselves: with `K` levels the bracket around a row's own quantile stays wider than `eps`
-on 73.34% of rows at 5% precision, with a worst-row residual of
+The correction is one level, and it is a **theorem** rather than a measurement. `K` steps of ratio
+`1+eps` span a ratio of `R`, so `K` counts the **gaps** between timed levels while a certification
+needs the **levels** themselves. On a geometric ladder laid across a row's own `[p50, p100]` every
+interval carries the same relative width, so the width the quantile falls into does not depend on
+where the quantile sits: with `K` levels it exceeds `eps` on every row that has any range at all —
+73.34% of rows at 5% precision, which is the same statement as the
+26.66% of rows a single level already certifies — with a worst-row residual of
 2.0433 against the precision the law promises. With `K+1` levels the residual is at or
-below 1 on every one of 47,502 rows, worst row 1, so the abstract's third
-number is the checked one and not the computed one. The residual — achieved bracket width divided by
-`eps` — lives in the artefact beside the law, and `check_claims.py` fails if either the check or this
-finding disappears from it.
+below 1 on every one of 47,502 rows, worst row 1. The residual — achieved
+bracket width divided by `eps` — lives in the artefact beside the law, and `check_claims.py` compares
+the count at `K` against the closed form count for count, so the block cannot drift from the
+arithmetic it states. An earlier version of this section called that number a measurement of the
+interpolation; it is not one, and the sentence is replaced here rather than annotated.
 
-The check imports no parametric assumption: the levels are placed across each row’s **own**
-`[p50, p100]`, and the bracket is read off that row’s own quantile, so what is measured is the
-interpolation the paper already commits to rather than a distribution chosen for the occasion.
+**The grid is a condition of the price, and a second grid is what measures it.** Placing levels
+geometrically is a choice rather than a neutral rule, and on any construction that shares it the
+block above can only restate the law. So the same certification is priced a second time with the
+levels spaced uniformly in **latency** instead of in ratio — the other rule an operator can implement
+— and there the width does depend on where the quantile sits. The two rules disagree: the uniform
+grid prices the certified quantile at a median of 17 levels against the geometric
+grid's 26, 45,237 of 47,502 rows priced away from the geometric
+count, and on 285 rows it does not reach 5% within 2,000 levels at all,
+because a quantile sitting near the median against a very large maximum needs a linear grid finer
+than that to resolve. The law's price is therefore the price of certifying **at this grid's
+resolution**, a narrower claim than the law's own sentence makes, and both readings are in the
+artefact. The levels are placed across each row’s **own** `[p50, p100]` and the bracket is read off
+that row’s own quantile, so no distribution is chosen for the occasion.
 
 The law is stated on the interval mean, so its `K` prices the smoothed quantity. A reader who wants the invocation-level cost is owed one factor and no more: write `c` for the ratio of the invocation-level range to the interval-mean range; then `K` grows by `log c / log(1 + eps)` and nothing else in the law changes, so the growth is additive in levels and slow — a factor of two costs about fifteen more levels at 5% precision, against a median `K` of 25. That factor is **not bounded by this data**, and the reason is the one that withdrew our own first registered prior: the only single-invocation column the trace publishes is `Maximum`, an extremum of single calls, while `p100` is a percentile of the interval mean, so their ratio crosses the two spaces rather than measuring the compression between them. We therefore report the multiplier as arithmetic and the factor as unmeasured, rather than dressing a cross-space ratio as a bound.
 

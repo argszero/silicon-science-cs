@@ -198,11 +198,21 @@ def identities(art):
             # What the paper sells must attain eps on EVERY row, not typically: a price that buys
             # the precision usually is not a certification, and the worst row is the one that
             # decides whether a reader can rely on the number.
-            out.append(("%s: the level count the paper states attains eps on every row" % tag,
-                        blk[held]["rows_over_eps"] == 0,
-                        "%s: %d of %d rows over eps (residual max %.4f)"
-                        % (held, blk[held]["rows_over_eps"], blk[held]["rows"],
-                           blk[held]["residual_max"])))
+            if held not in blk:
+                # No tested level count attains eps on every row. That is a FINDING, and the gate
+                # has to name it: the first version of this block indexed the verdict word directly
+                # and died with a KeyError, so the plant that broke the ladder produced a red that
+                # printed a traceback and no claim -- a failure sentence that names nothing.
+                out.append(("%s: some level count attains eps on every row" % tag, False,
+                            "none of K-1, K, K+1 does: %d of %d rows still over eps at K+1"
+                            % (blk["at_K_plus_1"]["rows_over_eps"],
+                               blk["at_K_plus_1"]["rows"])))
+            else:
+                out.append(("%s: the level count the paper states attains eps on every row" % tag,
+                            blk[held]["rows_over_eps"] == 0,
+                            "%s: %d of %d rows over eps (residual max %.4f)"
+                            % (held, blk[held]["rows_over_eps"], blk[held]["rows"],
+                               blk[held]["residual_max"])))
             # And the finding, asserted rather than narrated: the law's own K is NOT enough. If a
             # later change made K sufficient, §6's sentence about the off-by-one would be false and
             # this line is what would say so.
@@ -211,6 +221,46 @@ def identities(art):
                         "at_K: %d of %d rows over eps (residual max %.4f)"
                         % (blk["at_K"]["rows_over_eps"], blk["at_K"]["rows"],
                            blk["at_K"]["residual_max"])))
+            # Review round 2, question 4. The residual block is arithmetic, not measurement: on a
+            # geometric ladder the bracket's width is fixed by `R` and the level count alone, so the
+            # check could not have disagreed with the law on any row. These lines say what the block
+            # establishes, and hold the one instrument that CAN disagree.
+            gr = blk.get("grids")
+            if gr is None:
+                out.append(("%s: the second placement rule is present" % tag, False,
+                            "no grids block: the check would again be pure arithmetic"))
+            else:
+                out.append(("%s: the law's width is the closed form at every quantile position" % tag,
+                            gr["identity_dev_max"] < 1e-9 and gr["identity_cases"] >= 100,
+                            "max deviation %.3e over %d cases on %d rows"
+                            % (gr["identity_dev_max"], gr["identity_cases"], gr["identity_rows"])))
+                # The count at K, measured on the bracket and recomputed from the closed form:
+                # two routes, one number. This is the equality that says the block is arithmetic.
+                out.append(("%s: the rows over eps at K agree with the closed form, count for count"
+                            % tag,
+                            blk["at_K"]["rows_over_eps"] == gr["rows_over_eps_from_closed_form"],
+                            "%d measured vs %d closed form (of %d rows with a range)"
+                            % (blk["at_K"]["rows_over_eps"],
+                               gr["rows_over_eps_from_closed_form"], gr["rows_with_range"])))
+                # And a row WITH a range that is not over eps may only be inside the comparison's
+                # own 1e-12 tolerance -- stated as the tolerance it is, rather than as "every row".
+                out.append(("%s: a row with a range is over eps unless inside float tolerance" % tag,
+                            gr["tolerance_band_max_excess"] <= 1e-12,
+                            "%d such rows, largest excess %.3e"
+                            % (gr["rows_in_tolerance_band"],
+                               gr["tolerance_band_max_excess"])))
+                out.append(("%s: the residual at K is the closed form, recomputed" % tag,
+                            abs(gr["residual_at_K_from_closed_form"]
+                                - blk["at_K"]["residual_max"]) < 5e-4,
+                            "%.4f closed form vs %.4f measured"
+                            % (gr["residual_at_K_from_closed_form"], blk["at_K"]["residual_max"])))
+                out.append(("%s: a grid uniform in latency prices the same certification "
+                            "differently" % tag,
+                            gr["linear"]["rows_off_the_geometric_price"] > 0,
+                            "%d of %d rows priced away from the geometric count; %d not "
+                            "certified within %d levels"
+                            % (gr["linear"]["rows_off_the_geometric_price"], gr["linear"]["rows"],
+                               gr["linear"]["uncertified_rows"], gr["linear"]["cap"])))
             # Review round 2, minor 1: the two counts are one level apart under ANY parameters --
             # `K` counts the gaps between timed levels and a certification needs the levels, so the
             # difference is structural rather than a property of this workload. Asserting it here is

@@ -154,7 +154,38 @@
      "rows_over_eps": 0,
      "rows_over_eps_frac": 0.0
     },
-    "eps": 0.1
+    "eps": 0.1,
+    "grids": {
+     "identity_cases": 3552,
+     "identity_dev_max": 3.331e-16,
+     "identity_quantiles": [
+      0.5,
+      0.55,
+      0.7,
+      0.9,
+      0.99,
+      1.0
+     ],
+     "identity_rows": 238,
+     "linear": {
+      "cap": 2000,
+      "levels_max": 2000,
+      "levels_median": 9,
+      "levels_p90": 36,
+      "ratio_to_geometric_median": 0.5,
+      "rows": 47502,
+      "rows_off_the_geometric_price": 44352,
+      "uncertified_frac": 0.0028,
+      "uncertified_rows": 135
+     },
+     "residual_at_K_from_closed_form": 2.0988,
+     "rows_in_tolerance_band": 0,
+     "rows_over_eps_from_closed_form": 34292,
+     "rows_with_range": 34292,
+     "rows_without_range": 13210,
+     "rule": "levels spaced geometrically (the law's rule) vs uniformly in latency (a second rule)",
+     "tolerance_band_max_excess": 0.0
+    }
    },
    "eps_20": {
     "at_K": {
@@ -199,7 +230,38 @@
      "rows_over_eps": 0,
      "rows_over_eps_frac": 0.0
     },
-    "eps": 0.2
+    "eps": 0.2,
+    "grids": {
+     "identity_cases": 3462,
+     "identity_dev_max": 3.886e-16,
+     "identity_quantiles": [
+      0.5,
+      0.55,
+      0.7,
+      0.9,
+      0.99,
+      1.0
+     ],
+     "identity_rows": 238,
+     "linear": {
+      "cap": 2000,
+      "levels_max": 2000,
+      "levels_median": 6,
+      "levels_p90": 19,
+      "ratio_to_geometric_median": 0.5,
+      "rows": 47502,
+      "rows_off_the_geometric_price": 43344,
+      "uncertified_frac": 0.0012,
+      "uncertified_rows": 55
+     },
+     "residual_at_K_from_closed_form": 2.1993,
+     "rows_in_tolerance_band": 2,
+     "rows_over_eps_from_closed_form": 33305,
+     "rows_with_range": 33307,
+     "rows_without_range": 14195,
+     "rule": "levels spaced geometrically (the law's rule) vs uniformly in latency (a second rule)",
+     "tolerance_band_max_excess": 0.0
+    }
    },
    "eps_5": {
     "at_K": {
@@ -244,10 +306,41 @@
      "rows_over_eps": 0,
      "rows_over_eps_frac": 0.0
     },
-    "eps": 0.05
+    "eps": 0.05,
+    "grids": {
+     "identity_cases": 3582,
+     "identity_dev_max": 2.845e-16,
+     "identity_quantiles": [
+      0.5,
+      0.55,
+      0.7,
+      0.9,
+      0.99,
+      1.0
+     ],
+     "identity_rows": 238,
+     "linear": {
+      "cap": 2000,
+      "levels_max": 2000,
+      "levels_median": 17,
+      "levels_p90": 69,
+      "ratio_to_geometric_median": 0.5,
+      "rows": 47502,
+      "rows_off_the_geometric_price": 45237,
+      "uncertified_frac": 0.006,
+      "uncertified_rows": 285
+     },
+     "residual_at_K_from_closed_form": 2.0433,
+     "rows_in_tolerance_band": 0,
+     "rows_over_eps_from_closed_form": 34838,
+     "rows_with_range": 34838,
+     "rows_without_range": 12664,
+     "rule": "levels spaced geometrically (the law's rule) vs uniformly in latency (a second rule)",
+     "tolerance_band_max_excess": 0.0
+    }
    }
   },
-  "construction": "levels placed geometrically across each row's own [p50, p100], the range R = p100/p50 the law prices; achieved precision = relative width of the level interval bracketing the row's own q-quantile",
+  "construction": "levels placed geometrically across each row's own [p50, p100], the range R = p100/p50 the law prices; achieved precision = relative width of the level interval bracketing the row's own q-quantile. On this grid the width is R**(1/(m-1))-1 for every row and every quantile position, so what the at_K / at_K_plus_1 blocks establish is a theorem; the `grids` block checks that identity against the rows and re-prices the certification under a second rule, levels uniform in latency, where the width does depend on position and the two rules disagree",
   "criterion": "registered success criterion (ii): the cost law's prediction checked against the empirical distributions, with the residual stated",
   "holds_at": {
    "eps_10": "at_K_plus_1",

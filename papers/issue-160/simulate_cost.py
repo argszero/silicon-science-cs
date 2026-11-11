@@ -16,9 +16,20 @@ placing `K` levels, measuring the bracket width achieved on each row's own recon
 distribution, and comparing that width against `eps`. The **residual** is the achieved width divided
 by `eps`: at or below 1 the law's price buys the precision it claims, above 1 it does not.
 
-This is measured, not assumed, because the quantile sits at a different position inside the grid on
-every row: the achieved width is an empirical quantity over 47,502 ladders, not an algebraic
-identity in `R`.
+It is *not* measured, in the sense the first version of this module claimed, and review round 2 is
+what established that. A geometric ladder spanning exactly `[p50, p100]` gives every interval the same
+relative width, so the width the quantile falls into is `R**(1/(m-1)) - 1` for every row and every
+quantile position: an algebraic identity in `R` and `m`, which `grid_at` now checks against the rows
+instead of claiming otherwise in a docstring. What the arithmetic establishes is therefore a
+**theorem**: at `m = K` the width is above `eps` on every row that has any range at all, at `m = K+1`
+it is at or below `eps` on every row. The empirical content left is the distribution of `R` -- which
+is why the count of rows over `eps` at `K` is exactly the count of rows with `R > 1`, and carries
+nothing the range distribution did not already carry.
+
+What *is* measured, because it cannot be derived this way, is the same certification under a second
+placement rule: `grid_at` runs the level counts again with the levels spaced uniformly in latency
+rather than in ratio. There the width does depend on where the quantile sits, the two rules disagree,
+and the price turns out to be a price for a grid rather than for certification as such.
 
 It is run at three level counts -- `K-1`, `K` and `K+1` -- because the answer decides what the law
 may be stated as:
@@ -182,6 +193,144 @@ def kept_stride_safe(rows):
         yield r
 
 
+GRID_SAMPLE = 200            # deterministic stride over rows for the identity census
+GRID_QUANTILES = (0.50, 0.55, 0.70, 0.90, 0.99, 1.00)
+LINEAR_CAP = 2000
+
+
+def closed_width(R, m):
+    """Width of a geometric ladder of `m` levels spanning `R`, in closed form.
+
+    `None` when there is no interval to fall into: a single level brackets nothing.
+    """
+    if m < 2:
+        return None
+    return R ** (1.0 / (m - 1)) - 1.0
+
+
+def linear_width(p50, p100, v, m):
+    """Relative width of the level interval containing `v` when levels are uniform in LATENCY.
+
+    The second placement rule. Because the grid is uniform in absolute latency rather than in ratio,
+    the interval the quantile falls into depends on where the quantile sits -- which is exactly what
+    the geometric construction makes irrelevant, and therefore the only way this check can read
+    something the law's own arithmetic does not already contain.
+    """
+    if m < 2:
+        return (p100 - p50) / p50 if p50 else 0.0
+    d = (p100 - p50) / (m - 1.0)
+    if d <= 0.0:
+        return 0.0
+    if v <= p50:
+        j = 0
+    elif v >= p100:
+        j = m - 2
+    else:
+        j = max(0, min(int(math.floor((v - p50) / d)), m - 2))
+    lo = p50 + j * d
+    return d / lo if lo > 0.0 else float("inf")
+
+
+def linear_levels(p50, p100, v, eps, cap=LINEAR_CAP):
+    """Smallest level count on the linear grid whose bracket attains `eps`; `cap` if none does.
+
+    The width is non-increasing in `m` (the spacing shrinks and the interval's lower end rises
+    towards the quantile), so the search is a bisection; the answer is then checked against `m-1`,
+    because a bisection over a merely non-increasing predicate would otherwise be able to report a
+    count that is not minimal.
+    """
+    tol = eps * (1.0 + 1e-12)
+    if linear_width(p50, p100, v, cap) > tol:
+        return cap
+    lo, hi = 1, cap
+    while lo < hi:
+        mid = (lo + hi) // 2
+        if linear_width(p50, p100, v, mid) <= tol:
+            hi = mid
+        else:
+            lo = mid + 1
+    return lo
+
+
+def grid_at(kept, q, eps, cap=LINEAR_CAP):
+    """The law's arithmetic as an identity, and the same certification under a second grid."""
+    # ---- (1) the identity: on a geometric ladder the quantile's position cannot matter ---------
+    dev, cases = 0.0, 0
+    for row in kept[::GRID_SAMPLE]:
+        pts = row["pts"]
+        p50, p100 = ct.quantile(pts, 0.5), ct.quantile(pts, 1.0)
+        span = (p100 - p50) / p50 if p50 else 0.0
+        K = ct.levels_needed(row["R"], eps)
+        for m in (K - 1, K, K + 1):
+            cf = closed_width(row["R"], m)
+            if cf is None:
+                continue
+            for u in GRID_QUANTILES:
+                w = bracket_at(levels(p50, p100, m), ct.quantile(pts, u), span)
+                dev = max(dev, abs(w - cf))
+                cases += 1
+    # ---- (2) the second rule: uniform in latency, where the position does matter --------------
+    lin = []
+    for row in kept:
+        pts = row["pts"]
+        lin.append(linear_levels(ct.quantile(pts, 0.5), ct.quantile(pts, 1.0),
+                                 ct.quantile(pts, q), eps, cap))
+    ratios = []
+    differs = 0
+    for m, row in zip(lin, kept):
+        K1 = ct.levels_needed(row["R"], eps) + 1
+        if m != K1:
+            differs += 1
+        if m < cap:
+            ratios.append(m / float(max(K1, 1)))
+    unc = sum(1 for m in lin if m >= cap)
+    with_range = sum(1 for row in kept if ct.levels_needed(row["R"], eps) >= 2)
+    # The same question the at_K block answers, answered from the closed form instead of from the
+    # bracket: the two counts must agree exactly, and a row that has a range but is NOT over `eps`
+    # must be inside the comparison's own tolerance rather than merely near it. The first version of
+    # this line asserted the count equals the rows with a range, which is off by the rows that sit
+    # inside that tolerance (two of them at 20%); the gate found it, and the statement is the
+    # tolerance-bounded one because that is the one that is true.
+    over_cf = 0
+    band_n = 0
+    band_excess = 0.0
+    for row in kept:
+        pts = row["pts"]
+        p50, p100 = ct.quantile(pts, 0.5), ct.quantile(pts, 1.0)
+        K = ct.levels_needed(row["R"], eps)
+        cf = closed_width(row["R"], max(K, 1))
+        if cf is None:
+            cf = (p100 - p50) / p50 if p50 else 0.0
+        if cf > eps * (1.0 + 1e-12):
+            over_cf += 1
+        elif K >= 2:
+            band_n += 1
+            band_excess = max(band_excess, cf / eps - 1.0)
+    cfmax = max([closed_width(row["R"], ct.levels_needed(row["R"], eps)) or 0.0
+                 for row in kept if ct.levels_needed(row["R"], eps) >= 2] or [0.0])
+    return dict(
+        rule="levels spaced geometrically (the law's rule) vs uniformly in latency (a second rule)",
+        identity_dev_max=float("%.3e" % dev),
+        identity_cases=cases,
+        identity_rows=len(kept[::GRID_SAMPLE]),
+        identity_quantiles=list(GRID_QUANTILES),
+        residual_at_K_from_closed_form=round(cfmax / eps, 4),
+        rows_with_range=with_range,
+        rows_without_range=len(kept) - with_range,
+        rows_over_eps_from_closed_form=over_cf,
+        rows_in_tolerance_band=band_n,
+        tolerance_band_max_excess=float("%.3e" % band_excess),
+        linear=dict(cap=cap, rows=len(lin),
+                    levels_median=int(_pctl(lin, 0.5)),
+                    levels_p90=int(_pctl(lin, 0.9)),
+                    levels_max=int(max(lin)),
+                    uncertified_rows=unc,
+                    uncertified_frac=round(unc / float(len(lin)), 4),
+                    ratio_to_geometric_median=round(_pctl(ratios, 0.5), 4) if ratios else None,
+                    rows_off_the_geometric_price=differs),
+    )
+
+
 def check(kept, q, eps_grid=EPS_GRID):
     """The block stored in `results/crossover.json` under `cost_check`."""
     eps_blocks = {}
@@ -192,6 +341,7 @@ def check(kept, q, eps_grid=EPS_GRID):
             at_K_minus_1=law_at(kept, q, eps, -1),
             at_K=law_at(kept, q, eps, 0),
             at_K_plus_1=law_at(kept, q, eps, +1),
+            grids=grid_at(kept, q, eps),
         )
     # The verdict sentence, as data: which level count attains eps on EVERY row at every eps. A law
     # stated with one level too few is a law whose price does not buy its product, and the artefact
@@ -209,7 +359,12 @@ def check(kept, q, eps_grid=EPS_GRID):
                   "the empirical distributions, with the residual stated",
         construction=("levels placed geometrically across each row's own [p50, p100], the range "
                       "R = p100/p50 the law prices; achieved precision = relative width of the "
-                      "level interval bracketing the row's own q-quantile"),
+                      "level interval bracketing the row's own q-quantile. On this grid the width "
+                      "is R**(1/(m-1))-1 for every row and every quantile position, so what the "
+                      "at_K / at_K_plus_1 blocks establish is a theorem; the `grids` block checks "
+                      "that identity against the rows and re-prices the certification under a "
+                      "second rule, levels uniform in latency, where the width does depend on "
+                      "position and the two rules disagree"),
         residual_definition="achieved relative bracket width / eps; <= 1 means the law's price "
                             "buys the precision it claims",
         holds_at=holds_at,
@@ -286,6 +441,31 @@ def selftest():
     expect("the reconstruction limb actually drew and measured",
            rec["rows"] > 0 and rec["rel_err_median"] is not None,
            "rows=%d median rel err %.6f" % (rec["rows"], rec["rel_err_median"] or -1))
+
+    # plant 5: the identity, and the property that makes the second instrument worth having.
+    # A geometric ladder makes the quantile's position irrelevant; a ladder uniform in latency must
+    # NOT, or the second instrument would be reading the same algebra a second time.
+    gr = grid_at([row, flat], 0.99, 0.05)
+    expect("the geometric ladder's width is the closed form at every quantile position",
+           gr["identity_dev_max"] < 1e-12 and gr["identity_cases"] >= 6,
+           "dev=%.3e over %d cases" % (gr["identity_dev_max"], gr["identity_cases"]))
+    p50 = ct.quantile(row["pts"], 0.5)
+    p100 = ct.quantile(row["pts"], 1.0)
+    ws = [linear_width(p50, p100, ct.quantile(row["pts"], u), 8) for u in GRID_QUANTILES]
+    expect("on the linear grid the quantile's position DOES move the width",
+           max(ws) - min(ws) > 1e-9,
+           "linear widths %s" % " ".join("%.4f" % w for w in ws))
+
+    # plant 6: a row the linear grid cannot certify must be reported as uncertified rather than
+    # silently priced at the cap -- an absent answer is not a level count.
+    huge = dict(pts=[(0.0, 1.0), (0.01, 1.0), (0.25, 1.0), (0.5, 1.0), (0.75, 1.0),
+                     (0.99, 1.01), (1.0, 1e6)], R=1e6)
+    gh = grid_at([huge], 0.99, 0.05, cap=2000)
+    expect("a quantile near the median against a huge maximum is counted as uncertified",
+           linear_levels(1.0, 1e6, 1.01, 0.05, cap=2000) == 2000
+           and gh["linear"]["uncertified_rows"] == 1,
+           "linear_levels=%d uncertified=%d"
+           % (linear_levels(1.0, 1e6, 1.01, 0.05, cap=2000), gh["linear"]["uncertified_rows"]))
 
     print("SELFTEST: %s" % ("PASS" if fails == 0 else "%d FAILED" % fails))
     return 0 if fails == 0 else 1
