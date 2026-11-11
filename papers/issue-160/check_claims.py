@@ -282,6 +282,37 @@ def identities(art):
                 head, _year, _tail = make_manuscript_mod._split_at_year(head)
                 if not head.strip().rstrip(",;").rstrip():
                     noauth += 1
+            # Review round 2, minor 2: three of the 120 entries printed their author
+            # given-name-first (`Mohammad Shahrad;`) where the other 117 print `Family, I.`. The
+            # cause is a second assembly path: an arXiv record gives one `<name>` string per author
+            # and no family/given split, so `entry_of_arxiv` joined those strings verbatim while
+            # `entry_of` built the form from Crossref's fields. Found by reading the assembled text,
+            # so the census is the whole list -- a form defect found by sampling is a form defect
+            # with a denominator. Every count below is reported with it.
+            with_auth, conform, outside = 0, 0, []
+            for slug in sorted(refs):
+                printed = make_manuscript_mod.rendered_entry(refs[slug], slug)
+                title = (refs[slug].get("title") if isinstance(refs[slug], dict) else "") or ""
+                head = printed.split(title, 1)[0] if (title and title in printed) else printed
+                head, _year, _tail = make_manuscript_mod._split_at_year(head)
+                head = head.strip()
+                if head.endswith(".."):
+                    head = head[:-1]
+                # Separators only: the last initial ends in a period, and stripping it turns
+                # `Whitt, W.` into `Whitt, W`, which fails the predicate it is read for.
+                head = head.rstrip().rstrip(",;").rstrip()
+                if not head:
+                    continue
+                with_auth += 1
+                toks = [t.strip() for t in head.split(";") if t.strip()]
+                if all(t.lower().startswith("et al") or _AUTHOR_TOKEN.match(t) for t in toks):
+                    conform += 1
+                else:
+                    outside.append(slug)
+            out.append(("every entry that prints an author prints it in one form",
+                        not outside and conform == with_auth,
+                        "%d of %d entries with an author are in house form: %s"
+                        % (conform, with_auth, ", ".join(outside[:4]) or "none")))
             out.append(("no entry prints a null slot where a field belongs",
                         not nulls,
                         "%d of %d entries: %s"

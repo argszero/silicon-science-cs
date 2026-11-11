@@ -239,11 +239,11 @@ The instrument, the committed input and every number in this paper are in this d
 
 [3] Armbrust, M.; Fox, A.; Griffith, R.; et al. (2010). A view of cloud computing. Communications of the ACM. vol. 53. pp. 50-58. https://doi.org/10.1145/1721654.1721672
 
-[4] Mohammad Shahrad; Rodrigo Fonseca; Íñigo Goiri; et al. (2020). Serverless in the Wild: Characterizing and Optimizing the Serverless Workload at a Large Cloud Provider. arXiv preprint 2003.03423v3. http://arxiv.org/abs/2003.03423v3
+[4] Shahrad, M.; Fonseca, R.; Goiri, Í.; et al. (2020). Serverless in the Wild: Characterizing and Optimizing the Serverless Workload at a Large Cloud Provider. arXiv preprint 2003.03423v3. http://arxiv.org/abs/2003.03423v3
 
-[5] Eric Jonas; Johann Schleier-Smith; Vikram Sreekanti; et al. (2019). Cloud Programming Simplified: A Berkeley View on Serverless Computing. arXiv preprint 1902.03383v1. http://arxiv.org/abs/1902.03383v1
+[5] Jonas, E.; Schleier-Smith, J.; Sreekanti, V.; et al. (2019). Cloud Programming Simplified: A Berkeley View on Serverless Computing. arXiv preprint 1902.03383v1. http://arxiv.org/abs/1902.03383v1
 
-[6] Joseph M. Hellerstein; Jose Faleiro; Joseph E. Gonzalez; et al. (2018). Serverless Computing: One Step Forward, Two Steps Back. arXiv preprint 1812.03651v1. http://arxiv.org/abs/1812.03651v1
+[6] Hellerstein, J. M.; Faleiro, J.; Gonzalez, J. E.; et al. (2018). Serverless Computing: One Step Forward, Two Steps Back. arXiv preprint 1812.03651v1. http://arxiv.org/abs/1812.03651v1
 
 [7] McGrath, G.; Brenner, P. R. (2017). Serverless Computing: Design, Implementation, and Performance. 2017 IEEE 37th International Conference on Distributed Computing Systems Workshops (ICDCSW). pp. 405-410. https://doi.org/10.1109/icdcsw.2017.36
 

@@ -584,7 +584,7 @@
  },
  "hellerstein-serverless-2019": {
   "doi": null,
-  "entry": "Joseph M. Hellerstein; Jose Faleiro; Joseph E. Gonzalez; et al.. (2018). Serverless Computing: One Step Forward, Two Steps Back. arXiv preprint 1812.03651v1. http://arxiv.org/abs/1812.03651v1",
+  "entry": "Hellerstein, J. M.; Faleiro, J.; Gonzalez, J. E.; et al.. (2018). Serverless Computing: One Step Forward, Two Steps Back. arXiv preprint 1812.03651v1. http://arxiv.org/abs/1812.03651v1",
   "title": "Serverless Computing: One Step Forward, Two Steps Back",
   "verification": {
    "date": "2026-10-31",
@@ -672,7 +672,7 @@
  },
  "jonas-berkeley-serverless-2019": {
   "doi": null,
-  "entry": "Eric Jonas; Johann Schleier-Smith; Vikram Sreekanti; et al.. (2019). Cloud Programming Simplified: A Berkeley View on Serverless Computing. arXiv preprint 1902.03383v1. http://arxiv.org/abs/1902.03383v1",
+  "entry": "Jonas, E.; Schleier-Smith, J.; Sreekanti, V.; et al.. (2019). Cloud Programming Simplified: A Berkeley View on Serverless Computing. arXiv preprint 1902.03383v1. http://arxiv.org/abs/1902.03383v1",
   "title": "Cloud Programming Simplified: A Berkeley View on Serverless Computing",
   "verification": {
    "date": "2026-10-31",
@@ -1101,7 +1101,7 @@
  },
  "shahrad-serverless-wild-2020": {
   "doi": null,
-  "entry": "Mohammad Shahrad; Rodrigo Fonseca; \u00cd\u00f1igo Goiri; et al.. (2020). Serverless in the Wild: Characterizing and Optimizing the Serverless Workload at a Large Cloud Provider. arXiv preprint 2003.03423v3. http://arxiv.org/abs/2003.03423v3",
+  "entry": "Shahrad, M.; Fonseca, R.; Goiri, \u00cd.; et al.. (2020). Serverless in the Wild: Characterizing and Optimizing the Serverless Workload at a Large Cloud Provider. arXiv preprint 2003.03423v3. http://arxiv.org/abs/2003.03423v3",
   "title": "Serverless in the Wild: Characterizing and Optimizing the Serverless Workload at a Large Cloud Provider",
   "verification": {
    "date": "2026-10-31",

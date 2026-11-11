@@ -244,8 +244,32 @@ def entry_of(it):
     return re.sub(r"\.\.+", ".", ". ".join(bits))
 
 
+def name_to_form(full):
+    """One person's name in the form this bibliography prints: `Family, I. I.`
+
+    Review round 2, minor 2. An arXiv record gives a single `<name>` string per author and no
+    family/given split -- checked against the registry's own return, not assumed -- so the arXiv
+    path joined those strings verbatim and three entries printed `Mohammad Shahrad;` where the other
+    117 print `Family, I.`. The defect was in the assembly, and the census that found the three was
+    reading the assembled text: two paths to one list, and only one of them built the form.
+
+    The split is the conventional one -- the last token is the family name, everything before it is
+    given -- and a single-token name is a family name with no given part. A name that cannot be read
+    that way is returned unchanged rather than guessed at, so the failure is visible in the census
+    instead of being silently mangled here.
+    """
+    if not full or "," in full:
+        return full
+    parts = full.split()
+    if len(parts) == 1:
+        return parts[0]
+    family, given = parts[-1], parts[:-1]
+    initials = " ".join(p[0] + "." for p in given if p)
+    return "%s, %s" % (family, initials) if initials else family
+
+
 def entry_of_arxiv(it):
-    authors = it.get("authors") or []
+    authors = [name_to_form(a) for a in (it.get("authors") or [])]
     if len(authors) > 3:
         authors = authors[:3] + ["et al."]
     bits = []
@@ -310,6 +334,23 @@ def selftest():
         expect("accepts %r" % t[:52], admissible(q, t, k, rt))
     for q, t, k, rt in books_bad:
         expect("refuses a %s standing in for a book" % rt, not admissible(q, t, k, rt))
+    # The name form (review round 2, minor 2). An arXiv record gives one string per author and no
+    # family/given split, so the form has to be built rather than read -- and a name that cannot be
+    # read that way is returned unchanged so the census sees it, instead of being guessed at here.
+    expect("a two-part name becomes Family, I.",
+           name_to_form("Mohammad Shahrad") == "Shahrad, M.")
+    expect("a hyphenated family name stays whole",
+           name_to_form("Johann Schleier-Smith") == "Schleier-Smith, J.")
+    expect("a middle name or initial becomes a second initial",
+           name_to_form("Joseph M. Hellerstein") == "Hellerstein, J. M.")
+    expect("an accented given name keeps its accent",
+           name_to_form("\u00cd\u00f1igo Goiri") == "Goiri, \u00cd.")
+    expect("a single-token name is a family name with no given part",
+           name_to_form("Prince") == "Prince")
+    expect("a name already in the printed form is left alone",
+           name_to_form("Shahrad, M.") == "Shahrad, M.")
+    expect("an empty name is returned unchanged rather than invented", name_to_form("") == "")
+
     print("SELFTEST: %s" % ("PASS" if fails == 0 else "%d FAILED" % fails))
     return 0 if fails == 0 else 1
 
