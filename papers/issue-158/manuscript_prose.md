@@ -24,9 +24,9 @@ near neighbourhood of a query actually occupies. Across {{n:A.configs}} configur
 {{n:A.corpus.n}} real SIFT descriptors — the {{w:N.n_controls}} endpoint controls are run on every reproduction and
 are not among them, because neither belongs to a family: the float cell carries no code and the
 constructed cell is a corpus rather than a code — the boundary tie group is ordered by resolution on a log-log
-scale at `r = {{n:A.r_configs}}` over {{n:A.n_configs}} configuration means; at
+scale at `r = {{n:A.r_configs}}` over {{n:A.n_configs}} configuration means against a smallest detectable `|r|` of {{n:A.mde_configs}}; at
 {{n:B.corpus.n}} descriptors the same ordering holds at `r = {{n:B.r_configs}}` over
-{{n:B.n_configs}} configurations. Hamming distance
+{{n:B.n_configs}} configurations against a smallest detectable `|r|` of {{n:B.mde_configs}}. Hamming distance
 attains only `b+1` values for a `b`-bit code and ties badly — the boundary tie group is
 {{n:B.hamming32.median_t}} at the shortest budget, mean floor {{n:B.hamming32.floor}} — while
 product and scalar quantisation, which attain hundreds of values, tie barely: a tie group of
@@ -200,7 +200,7 @@ than about scale.
 
 The same axis is measured on {{n:B.corpus.n}} descriptors — a factor of {{w:N.scale_ratio}} more points than the
 committed subsample, with {{n:B.corpus.n_queries}} queries per seed — and it holds:
-`r = {{n:B.r_configs}}` over {{n:B.n_configs}} configurations. The resolution ranges from
+`r = {{n:B.r_configs}}` over {{n:B.n_configs}} configurations against a smallest detectable `|r|` of {{n:B.mde_configs}}. The resolution ranges from
 {{n:B.hamming32.atoms}} distinct values in the near neighbourhood of a short Hamming budget to
 {{n:B.pq32.atoms}} for product quantisation. Correspondingly the mean boundary tie group is
 {{n:B.hamming32.median_t}} at the short Hamming budget, {{n:B.hamming64.median_t}} at twice the

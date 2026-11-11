@@ -24,9 +24,9 @@ three families (random-hyperplane Hamming, product quantisation, scalar quantisa
 20,000 real SIFT descriptors — the two endpoint controls are run on every reproduction and
 are not among them, because neither belongs to a family: the float cell carries no code and the
 constructed cell is a corpus rather than a code — the boundary tie group is ordered by resolution on a log-log
-scale at `r = -0.9795` over 8 configuration means; at
+scale at `r = -0.9795` over 8 configuration means against a smallest detectable `|r|` of 0.8491; at
 1,000,000 descriptors the same ordering holds at `r = -0.9631` over
-7 configurations. Hamming distance
+7 configurations against a smallest detectable `|r|` of 0.8855. Hamming distance
 attains only `b+1` values for a `b`-bit code and ties badly — the boundary tie group is
 52.333 at the shortest budget, mean floor 0.2886 — while
 product and scalar quantisation, which attain hundreds of values, tie barely: a tie group of
@@ -199,7 +199,7 @@ than about scale.
 
 The same axis is measured on 1,000,000 descriptors — a factor of fifty more points than the
 committed subsample, with 512 queries per seed — and it holds:
-`r = -0.9631` over 7 configurations. The resolution ranges from
+`r = -0.9631` over 7 configurations against a smallest detectable `|r|` of 0.8855. The resolution ranges from
 3.0 distinct values in the near neighbourhood of a short Hamming budget to
 701.667 for product quantisation. Correspondingly the mean boundary tie group is
 52.333 at the short Hamming budget, 18.5 at twice the

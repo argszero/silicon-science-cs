@@ -452,6 +452,29 @@ def null_slot_census(entries, render=None):
     return dict(in_record=in_record, repaired=repaired, survives=survives, rows=len(entries))
 
 
+CORR_MARK = re.compile(r"\{\{n:([A-Za-z][A-Za-z0-9_]*?)\.(r(?:_configs)?)\}\}")
+
+
+def bare_correlations(prose):
+    """A correlation printed without the smallest effect IT must clear, named with its site.
+
+    A correlation and its threshold belong on the same denominator, and they are only readable as a
+    pair when both use the same one: `r` over 20 seed cells is not `r` over 8 configuration means,
+    and the two thresholds differ by a third of the scale (0.5912 against 0.8491). So every sentence
+    that prints a correlation must print the threshold computed for that same n (round-3 Q3).
+    """
+    out = []
+    for para in prose.split("\n\n"):
+        for sent in re.split(r"(?<=[.;:])\s+", para):
+            need = set()
+            for m in CORR_MARK.finditer(sent):
+                need.add("%s.mde%s" % (m.group(1), "_configs" if m.group(2) == "r_configs" else ""))
+            for key in sorted(need):
+                if "{{n:%s}}" % key not in sent:
+                    out.append((key, " ".join(sent.split())[:110]))
+    return out
+
+
 def house_entry(entry, year=None):
     """One line per entry, one period per full stop, one convention for the whole list.
 
@@ -706,6 +729,20 @@ def selftest():
            [sl for sl, _ in planted["survives"]] == ["x"],
            "survives=%s" % (planted["survives"],))
 
+    # 14. a correlation may not be printed without the threshold computed for its own n.
+    expect("a correlation printed alone is refused, naming the threshold it is missing",
+           bare_correlations("it holds at `r = {{n:A.r_configs}}` over {{n:A.n_configs}} means.")
+           == [("A.mde_configs", "it holds at `r = {{n:A.r_configs}}` over {{n:A.n_configs}} "
+               "means.")])
+    expect("the same sentence with its own threshold is accepted",
+           bare_correlations("it holds at `r = {{n:A.r_configs}}` over {{n:A.n_configs}} means "
+                             "against {{n:A.mde_configs}}.") == [])
+    expect("the seed-level pair is held to the SEED-level threshold, not the configuration one",
+           [k for k, _ in bare_correlations("finer: `r = {{n:A.r}}` over {{n:A.n_cells}} cells "
+                                            "against {{n:A.mde_configs}}.")] == ["A.mde"],
+           str(bare_correlations("finer: `r = {{n:A.r}}` over {{n:A.n_cells}} cells "
+                                 "against {{n:A.mde_configs}}.")))
+
     print("SELFTEST: %s" % ("PASS" if fails == 0 else "%d FAILED" % fails))
     return 0 if fails == 0 else 1
 
@@ -739,6 +776,17 @@ def main():
         print("     (`{{w:N.n_scales}}`, `{{w:N.n_families}}`); a word is invisible to the")
         print("     stray-number scan, which is how the subtitle read `two scales` at a head that")
         print("     measured three. Refusing to write the paper.")
+        return 1
+
+    bare = bare_correlations(prose)
+    if bare:
+        print("BARE CORRELATION(S) in the prose: %s" % (bare,))
+        print("  -> a correlation and the smallest effect it must clear belong on the same")
+        print("     denominator, and the pair is only readable when both use the same one: `r`")
+        print("     over 20 seed cells (threshold 0.5912) is a different statistic from `r`")
+        print("     over 8 configuration means (0.8491), and the two thresholds differ by a")
+        print("     third of the scale. Printing a correlation without its own n's threshold")
+        print("     leaves a reader to pair it with the wrong one. Refusing to write the paper.")
         return 1
 
     values = build_values(A, B, M, S)
