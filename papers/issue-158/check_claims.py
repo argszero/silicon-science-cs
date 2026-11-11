@@ -312,6 +312,50 @@ def main():
     print("  [info] tier A without its two seedless cells: %d configuration means, |r|=%.4f, "
           "MDE=%.4f" % (n_s, abs(r_s), m_s))
 
+    # ---- the year rule is bounded where the record supplies a year, and that is COUNTED -------
+    # The report used to state the two-year bound as unconditional while the code guarded it with
+    # `year is not None`, so on five rows the rule could not fire and nothing said so. A sentence
+    # that names the exception is still a sentence; this gate is what makes the count an assertion:
+    # the set the artefact records, the set derived from the committed bytes, the set the report
+    # names, and the number the report states must be one number.
+    import build_refs as br
+    refs = json.load(open("refs.json", encoding="utf-8"))
+    derived = br.year_provenance(refs)
+    recorded = sorted(sl for sl, r in refs.items() if (r or {}).get("year_source") == "seed")
+    check("every entry records which field its printed year came from",
+          all((r or {}).get("year_source") in ("record", "seed") for r in refs.values()),
+          "%d entries, sources=%s" % (len(refs),
+                                      sorted({(r or {}).get("year_source") for r in refs.values()})))
+    check("the recorded provenance equals the provenance derived from the stored entries",
+          recorded == derived, "recorded %d vs derived %d (%s)"
+          % (len(recorded), len(derived), ", ".join(derived[:6])))
+    report_text = open("reference-check.md", encoding="utf-8").read()
+    import re as _re
+    m = _re.search(r"could not fire on (\d+) of the (\d+) rows", report_text)
+    check("the report states how many rows the year bound could not fire on",
+          m is not None, m.group(0) if m else "no counted sentence in reference-check.md")
+    if m:
+        check("the number the report states is the number the artefact holds",
+              int(m.group(1)) == len(derived),
+              "report says %s, artefact holds %d" % (m.group(1), len(derived)))
+        named = _re.search(r"seed asserts: ([^.]+)\.", report_text)
+        named_set = set(_re.findall(r"`([^`]+)`", named.group(1))) if named else set()
+        check("the report names exactly the rows it counted",
+              named_set == set(derived),
+              "%d named, %d held, symmetric difference %s"
+              % (len(named_set), len(derived), sorted(named_set ^ set(derived))[:4]))
+    # and the table says it row by row, so a reader who checks one DOI sees which it is
+    prov_col = {}
+    for row in report_text.split("\n"):
+        mm = _re.match(r"^\| `([^`]+)` \|.*\|\s*(record|seed)\s*\|\s*$", row)
+        if mm:
+            prov_col[mm.group(1)] = mm.group(2)
+    check("every table row's last column matches the provenance in refs.json",
+          {k: v for k, v in prov_col.items() if v == "seed"} ==
+          {k: "seed" for k in recorded},
+          "%d rows carry a provenance; %d say seed, %d are recorded seed"
+          % (len(prov_col), sum(1 for v in prov_col.values() if v == "seed"), len(recorded)))
+
     print("CLAIMS: %s" % ("PASS" if FAILED == 0 else "%d FAILED" % FAILED))
     return 0 if FAILED == 0 else 1
 

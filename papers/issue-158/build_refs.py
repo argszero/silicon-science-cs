@@ -326,6 +326,24 @@ def selftest():
     for q, t, k, rt in books_bad:
         expect("refuses a %s standing in for a book" % rt, not admissible(q, t, k, rt))
     print("SELFTEST: %s" % ("PASS" if fails == 0 else "%d FAILED" % fails))
+
+    # The year rule is bounded where a record supplies a year, so the count of rows where it could
+    # not fire is a measurement, and these legs hold it to the two shapes that decide it.
+    noneyear = {"a": {"entry": "Broder, A.. (None). On the resemblance and containment. X. doi:1"}}
+    hasyear = {"b": {"entry": "Hunter, J. D. (2007). Matplotlib. Computing in Science."}}
+    noauthor = {"c": {"entry": "(2009). Fast approximate nearest neighbors. VISAPP."}}
+    undated = {"d": {"entry": "Ciaccia, P. (n.d.). PAC nearest neighbor queries. ICDE."}}
+    expect("a record with an empty issued year is counted as one the bound could not fire on (%s)"
+           % year_provenance(noneyear), year_provenance(noneyear) == ["a"])
+    expect("a record that supplies a year is not counted (%s)" % year_provenance(hasyear),
+           year_provenance(hasyear) == [])
+    expect("an entry with no author but a year is not counted: the slot that matters is the year's",
+           year_provenance(noauthor) == [])
+    expect("an explicitly undated record is counted: the bound cannot fire there either (%s)"
+           % year_provenance(undated), year_provenance(undated) == ["d"])
+    expect("the count over a mixed set is the sum of its parts (%d)"
+           % len(year_provenance(dict(noneyear, **hasyear, **noauthor, **undated))),
+           len(year_provenance(dict(noneyear, **hasyear, **noauthor, **undated))) == 2)
     return 0 if fails == 0 else 1
 
 REPORT_PREAMBLE = (
@@ -339,7 +357,11 @@ REPORT_PREAMBLE = (
     "note. A query of three content words or fewer is admitted on exact equality only, because "
     "a word-overlap ratio has no resolution on a short title: 'Spectral hashing' is a 100% word "
     "match for 'Fully non-local super-resolution via spectral hashing'. The issued year must "
-    "agree within two years. A book seed instead requires exact title equality AND a "
+    "agree within two years **where the record supplies one**: the guard is\n"
+    "`want_year is not None and year is not None`, so a record whose `issued` field is\n"
+    "empty is identified on title and DOI alone, and the year its entry prints is the one\n"
+    "this package's seed asserts. The table's last column says, row by row, which of the\n"
+    "two it is. A book seed instead requires exact title equality AND a "
     "book-shaped record type, because a book review carries the book's title and a DOI.\n\n"
     "From arXiv, used for the venues Crossref does not index at all, a record is accepted only "
     "on exact normalised title equality with the year within one, and the row is labelled "
@@ -348,19 +370,62 @@ REPORT_PREAMBLE = (
     "lengthened by naming one paper twice.\n\n")
 
 
+NULL_SLOT = re.compile(r"\(\s*(?:None|null|NULL|n\.?d\.?|N/A|nan|NaN)\s*\)"
+                       r"|(?<![\w.])None(?![\w.])")
+
+
+def year_provenance(refs):
+    """Which rows' printed year the registry did NOT supply, derived from the stored entry.
+
+    The rule below bounds a year only where a record supplies one, so the report owes the count of
+    rows where it could not fire. That count is derived, never typed: a record whose `issued` field
+    is empty renders its year slot as null in the stored entry, which is exactly the signature --
+    the same fact that printed `(None)` on those entries until the render began repairing the slot
+    (round-3 Weakness 2). Deriving it from the committed bytes means the count cannot drift from
+    the data it describes, and needs no registry call to check.
+    """
+    out = []
+    for slug, rec in (refs or {}).items():
+        entry = (rec or {}).get("entry") or ""
+        if NULL_SLOT.search(entry) or (rec or {}).get("year_source") == "seed":
+            out.append(slug)
+    return sorted(out)
+
+
 def write_report(path, report):
     """Emit the authenticity report. No `%` formatting: a percent sign in the prose of a
     report about percentages is how the date printed as a literal %Y-%m-%d."""
     with open(path, "w", encoding="utf-8") as f:
         f.write("# Reference authenticity check -- issue #158\n\n")
         f.write(REPORT_PREAMBLE.replace("DATE", report["date"]))
-        f.write("| slug | query | verdict | record found |\n|---|---|---|---|\n")
+        f.write("| slug | query | verdict | record found | year from "
+                "|\n|---|---|---|---|---|\n")
         f.write("\n".join(report["rows"]) + "\n")
         why = ", ".join("%s x%d" % (k, v) for k, v in sorted(report["why"].items())) or "none"
         f.write("\n**%d of %d seeds verified.** Rejections by reason: %s. A refusal is not a "
                 "failure to look: every refused seed is named with its reason, because a "
                 "silently dropped citation is a lie of omission.\n\n"
                 % (report["verified"], report["seeds"], why))
+        try:
+            unchecked = year_provenance(json.load(open("refs.json", encoding="utf-8")))
+        except Exception:
+            unchecked = report.get("year_unchecked")
+        if unchecked is None:
+            f.write("\n**Year provenance is not recorded in this cache.** The rule above bounds "
+                    "the year only where the registry supplies one; `refs_report.json` carries no "
+                    "`year_unchecked` key, so this file cannot say on which rows the bound was "
+                    "unavailable. Re-run `build_refs.py` to record it.\n\n")
+        elif unchecked:
+            f.write("\n**The two-year bound could not fire on %d of the %d rows** -- their records "
+                    "carry no issued year, so each was identified on title and DOI alone and its "
+                    "entry prints the year this package's seed asserts: %s. Their year is an "
+                    "assertion about the work, not a registry corroboration, and the table's last "
+                    "column marks every such row `seed`.\n\n"
+                    % (len(unchecked), report["verified"],
+                       ", ".join("`%s`" % sl for sl in unchecked)))
+        else:
+            f.write("\n**The two-year bound fired on every row**: every record supplied an issued "
+                    "year, and the table's last column reads `record` throughout.\n\n")
         f.write("The journal's floor is 100 references, all cited in the body; this file and "
                 "`refs.json` together are what that count is read from, and "
                 "`make_manuscript.py` refuses to render while the count is short or while a "
@@ -438,9 +503,19 @@ def main(argv):
                 method = held.get("verification", {}).get("method", "carried")
                 carried = True
 
-        line = "| `%s` | %s | **%s** | %s |" % (
+        # A row's year has two possible homes and the reader is owed which one it is: a year the
+        # registry issued, or a year this package's seed asserts. Printing the two alike is how the
+        # report came to state a check that could not fire on five rows (round-3 response,
+        # 2026-11-11). The column is derived here, where the answer is known, and never typed.
+        if carried:
+            prov = prior.get(slug, {}).get("year_source", "carried")
+        elif rec is not None:
+            prov = "record" if year_rec is not None else "seed"
+        else:
+            prov = "-"
+        line = "| `%s` | %s | **%s** | %s | %s |" % (
             slug, query[:70].replace("|", "/"), verdict,
-            ((" %s" % ident) if ident and rec is not None else "-"))
+            ((" %s" % ident) if ident and rec is not None else "-"), prov)
         report.append(line)
         print("%-34s %-10s %s" % (slug, method, verdict), flush=True)
 
@@ -448,6 +523,7 @@ def main(argv):
             out[slug] = dict(prior[slug])
             out[slug]["verification"] = dict(prior[slug]["verification"],
                                              carried=time.strftime("%Y-%m-%d"))
+            out[slug]["year_source"] = prior[slug].get("year_source", "carried")
             if ident in seen_work and seen_work[ident] != slug:
                 del out[slug]
                 verdict = "DUPLICATE of `%s` (same work, refused)" % seen_work[ident]
@@ -457,6 +533,12 @@ def main(argv):
             out[slug] = dict(entry=entry, doi=(rec.get("DOI") if method == "crossref" else None),
                              title=(rec.get("title") or [""])[0] if method == "crossref" else rec["title"],
                              year=year_rec if year_rec is not None else year,
+                             # Which field the printed year came from. `record`: the registry
+                             # issued it, so the two-year rule could be applied to it. `seed`: the
+                             # record carried no issued year, so that rule could NOT fire and the
+                             # year is this package's own assertion about a work identified by
+                             # title and DOI.
+                             year_source="record" if year_rec is not None else "seed",
                              verification=dict(result="verified", method=method,
                                                date=time.strftime("%Y-%m-%d")))
         else:
@@ -470,11 +552,13 @@ def main(argv):
     # wording fix in the preamble must not cost a re-resolution that could silently drop a
     # reference. The cache is the input to `--report-only`, and byte-equality between the two
     # paths is asserted below.
+    unchecked = sorted(sl for sl, r in out.items() if r.get("year_source") == "seed")
     json.dump(dict(date=time.strftime("%Y-%m-%d"), rows=report, verified=len(out),
-                   seeds=len(SEEDS), why=why),
+                   seeds=len(SEEDS), why=why, year_unchecked=unchecked),
               open("refs_report.json", "w"), indent=1, sort_keys=True)
     write_report("reference-check.md", dict(date=time.strftime("%Y-%m-%d"), rows=report,
-                                            verified=len(out), seeds=len(SEEDS), why=why))
+                                            verified=len(out), seeds=len(SEEDS), why=why,
+                                            year_unchecked=unchecked))
     if machine:
         print(json.dumps(dict(seeds=len(SEEDS), verified=len(out), rejected=why), indent=1))
     n_carried = sum(1 for r in out.values() if "carried" in r.get("verification", {}))
@@ -485,7 +569,51 @@ def main(argv):
     return 0
 
 
+def annotate_years():
+    """Record `year_source` in refs.json and the provenance column in the cached report rows.
+
+    Offline by design. Re-resolving 123 records to learn which of them lacked an issued year would
+    put a network run between the package and a fact its own bytes already carry, and a thin run
+    would rewrite verified records for no gain (the shrink failure of 2026-10-30). This pass reads
+    the committed entries, derives the provenance, and touches nothing else; every pre-existing
+    field is asserted unchanged.
+    """
+    refs = json.load(open("refs.json", encoding="utf-8"))
+    before = {k: dict(v) for k, v in refs.items()}
+    unchecked = set(year_provenance(refs))
+    for slug in refs:
+        refs[slug]["year_source"] = "seed" if slug in unchecked else "record"
+    for slug, rec in refs.items():
+        for key, val in before[slug].items():
+            assert rec[key] == val, "annotate changed existing field %s.%s" % (slug, key)
+    json.dump(refs, open("refs.json", "w", encoding="utf-8"), indent=1, sort_keys=True)
+
+    cache = json.load(open("refs_report.json", encoding="utf-8"))
+    fixed = []
+    for row in cache["rows"]:
+        slug = row.split("`")[1]
+        # A row with no record has no year to attribute, so its provenance is `-`, exactly as the
+        # fresh-build path writes it for a rejected seed. Stamping `record` here was a first-version
+        # defect: the column would have claimed a registry year for 17 rows that were REFUSED --
+        # the same shape as the report sentence this pass exists to correct.
+        verified = "**verified" in row
+        prov = ("seed" if slug in unchecked else "record") if verified else "-"
+        parts = row.rstrip().rstrip("|").rstrip()
+        if parts.count("|") >= 5:              # strip a provenance cell written by an earlier pass
+            parts = parts.rsplit("|", 1)[0].rstrip()
+        row = parts + " | %s |" % prov
+        fixed.append(row)
+    cache["rows"] = fixed
+    cache["year_unchecked"] = sorted(unchecked)
+    json.dump(cache, open("refs_report.json", "w", encoding="utf-8"), indent=1, sort_keys=True)
+    print("annotated: %d entries, %d with a seed-sourced year (%s)"
+          % (len(refs), len(unchecked), ", ".join(sorted(unchecked))))
+    return 0
+
+
 if __name__ == "__main__":
+    if "--annotate-years" in sys.argv:
+        sys.exit(annotate_years())
     if "--selftest" in sys.argv:
         sys.exit(selftest())
     sys.exit(main(sys.argv))
