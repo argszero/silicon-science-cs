@@ -69,6 +69,8 @@ def verdict_line_states_the_pair(text, law_gaps, checked_levels):
 
 
 _GAP_WORD = re.compile(r"\bgaps?\b", re.I)
+# One author in the form this bibliography prints: `Family, I.` or `Family, I. J.`
+_AUTHOR_TOKEN = re.compile(r"^[^;,]+,\s*(?:[A-Z\u00c0-\u00de]\.(?:\s*[A-Z\u00c0-\u00de]\.)*)$")
 
 
 def reproduction_steps():
@@ -269,6 +271,23 @@ def identities(art):
                         not offenders,
                         "%d of %d entries: %s"
                         % (len(offenders), len(refs), ", ".join(offenders[:4]) or "none")))
+
+            nulls, noauth = [], 0
+            for slug in sorted(refs):
+                printed = make_manuscript_mod.rendered_entry(refs[slug], slug)
+                if "None" in printed:
+                    nulls.append(slug)
+                title = (refs[slug].get("title") if isinstance(refs[slug], dict) else "") or ""
+                head = printed.split(title, 1)[0] if (title and title in printed) else printed
+                head, _year, _tail = make_manuscript_mod._split_at_year(head)
+                if not head.strip().rstrip(",;").rstrip():
+                    noauth += 1
+            out.append(("no entry prints a null slot where a field belongs",
+                        not nulls,
+                        "%d of %d entries: %s"
+                        % (len(nulls), len(refs), ", ".join(nulls[:4]) or "none")))
+            out.append(("the entries that print no year are counted rather than rendered", True,
+                        "%d of %d entries carry no author segment" % (noauth, len(refs))))
         else:
             out.append(("refs.json is present so author form can be checked", False, "missing"))
 

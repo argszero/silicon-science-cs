@@ -271,13 +271,13 @@ The instrument, the committed input and every number in this paper are in this d
 
 [19] (2003). Partial Identification of Probability Distributions. Springer Series in Statistics. https://doi.org/10.1007/b97478
 
-[20] Manski, C. F. (None). partial identification in econometrics. The New Palgrave Dictionary of Economics. pp. 300-306. https://doi.org/10.1057/9780230226203.1251
+[20] Manski, C. F. partial identification in econometrics. The New Palgrave Dictionary of Economics. pp. 300-306. https://doi.org/10.1057/9780230226203.1251
 
 [21] (2020). Microeconometrics with partial identification. Handbook of Econometrics. pp. 355-486. https://doi.org/10.1016/bs.hoe.2020.05.002
 
 [22] Wilks, S. S. (1941). Determination of Sample Sizes for Setting Tolerance Limits. The Annals of Mathematical Statistics. vol. 12. pp. 91-96. https://doi.org/10.1214/aoms/1177731788
 
-[23] (None). Order Statistics. SpringerReference. https://doi.org/10.1007/springerreference_65446
+[23] Order Statistics. SpringerReference. https://doi.org/10.1007/springerreference_65446
 
 [24] Wald, A. (1943). An Extension of Wilks' Method for Setting Tolerance Limits. The Annals of Mathematical Statistics. vol. 14. pp. 45-55. https://doi.org/10.1214/aoms/1177731491
 
@@ -469,6 +469,6 @@ The instrument, the committed input and every number in this paper are in this d
 
 [118] Ousterhout, J.; Agrawal, P.; Erickson, D.; et al. (2011). The case for RAMCloud. Communications of the ACM. vol. 54. pp. 121-130. https://doi.org/10.1145/1965724.1965751
 
-[119] Smith, C. U.; Williams, L. G. (None). Software Performance Engineering. UML for Real. pp. 343-365. https://doi.org/10.1007/0-306-48738-1_16
+[119] Smith, C. U.; Williams, L. G. Software Performance Engineering. UML for Real. pp. 343-365. https://doi.org/10.1007/0-306-48738-1_16
 
 [120] Woodside, M.; Franks, G.; Petriu, D. C. (2007). The Future of Software Performance Engineering. Future of Software Engineering (FOSE '07). pp. 171-187. https://doi.org/10.1109/fose.2007.32

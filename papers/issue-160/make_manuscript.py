@@ -72,9 +72,38 @@ def _split_at_year(entry):
     return entry[:m.start()], entry[m.start():m.end()], entry[m.end():]
 
 
+# A slot the registry stored as a null. `10.1007/springerreference_65446` is a reference-entry with
+# no issued date, and the assembler wrote `(None)` into the entry, which then printed on the page:
+# a placeholder standing where a reader expects a year. Review round 2, minor 3 named one entry; the
+# census over all 120 found three (also `smith-1990` and `tamer-2010`), which is why this is a rule
+# rather than a fix to one line.
+NULL_SLOTS = re.compile(r"\(\s*(?:None|null|NULL|nan|NaN)\s*\)|(?<![\w.])None(?![\w.])")
+
+
+def strip_null_slots(entry):
+    """The entry with null slots removed, and how many were removed.
+
+    The absence is PRINTED by the census (`check_claims.py`) rather than rendered as a slot: an entry
+    whose record carries no year prints like the entries whose record carries no author -- with the
+    field simply not there. The count is what makes that a decision and not a deletion.
+    """
+    cleaned, n = NULL_SLOTS.subn("", entry)
+    if n:
+        # A slot that stood between two bits leaves their join behind it: `Manski, C. F. (None). p`
+        # becomes `Manski, C. F. . p` and `(None). Order Statistics` becomes `. Order Statistics`.
+        # The separator is part of the slot, so it goes with it -- otherwise the fix trades a visible
+        # placeholder for a punctuation defect in the same position.
+        cleaned = re.sub(r"\s+\.", ".", cleaned)
+        cleaned = re.sub(r"^\s*\.\s*", "", cleaned)
+        # The bit's own closing stop now sits next to the join's: `C. F.` + `.` reads `C. F..`.
+        cleaned = re.sub(r"\.\.+", ".", cleaned)
+    return re.sub(r"\s{2,}", " ", cleaned).strip(), n
+
+
 def rendered_entry(ref, slug=""):
     """The entry as it is printed: the registry's stored form in, house form out."""
     entry = ref["entry"] if isinstance(ref, dict) else str(ref)
+    entry, _dropped = strip_null_slots(entry)
     old, new = AUTHOR_FIXUPS.get(slug, (None, None))
     if old:
         entry = entry.replace(old, new, 1)
@@ -328,6 +357,18 @@ def selftest():
            stray_of("a family {{c:x,y}} ties", []) == [])
     expect("the reference floor is enforced", len(fake) < REF_FLOOR)
 
+    # 10. a null slot is a decision, not a slot (review round 2, minor 3).
+    cleaned, n = strip_null_slots("Manski, C. F. (None). partial identification. Palgrave.")
+    expect("a null year slot is removed and counted", n == 1 and "(None)" not in cleaned,
+           "%d removed -> %r" % (n, cleaned[:60]))
+    expect("removing a slot does not leave its join behind",
+           cleaned == "Manski, C. F. partial identification. Palgrave.", cleaned)
+    headless, n2 = strip_null_slots("(None). Order Statistics. SpringerReference.")
+    expect("a slot at the head of an entry leaves no leading stop",
+           n2 == 1 and headless.startswith("Order Statistics"), headless[:50])
+    expect("an entry with no null slot is returned unchanged",
+           strip_null_slots("Shahrad, M. (2020). Serverless in the Wild.")[1] == 0)
+
     print("SELFTEST: %s" % ("PASS" if fails == 0 else "%d FAILED" % fails))
     return 0 if fails == 0 else 1
 
@@ -397,8 +438,23 @@ def main():
                        % (len(order), REF_FLOOR))
 
     entries = []
+    dropped_year = 0
     for i, slug in enumerate(order, 1):
+        _clean, _n = strip_null_slots(refs[slug]["entry"] if isinstance(refs[slug], dict)
+                                      else str(refs[slug]))
+        dropped_year += 1 if _n else 0
         entries.append("[%d] %s" % (i, rendered_entry(refs[slug], slug)))
+
+    # A null that reaches the page has to be a decision, not a slot. `strip_null_slots` is the
+    # decision; this is what makes it one -- an entry that still carries a null sentinel after the
+    # pass would print a placeholder where a reader expects a field, and the paper is refused instead
+    # of shipped with one (review round 2, minor 3).
+    leftover = [e for e in entries if NULL_SLOTS.search(e) or "None" in e]
+    if leftover:
+        print("NULL SLOT in the rendered bibliography: %r" % leftover[0][:90])
+        print("  -> a record field with no value must print as an absent field, never as a slot;")
+        print("     refusing to write the paper.")
+        return 1
 
     body = body.replace("{{refs}}", "\n\n".join(entries))
     with open(OUT, "w", encoding="utf-8") as f:
@@ -407,6 +463,8 @@ def main():
     print("  markers bound: %d numbers, %d citations" % (len(bound), len(order)))
     print("  references: %d held, %d cited (floor %d)" % (len(refs), len(order), REF_FLOOR))
     print("  stray-number scan: clean")
+    print("  null slots: %d entry(ies) printed without the field their record stored as null"
+          % dropped_year)
     return 0
 
 
