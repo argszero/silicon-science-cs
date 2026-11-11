@@ -531,7 +531,7 @@ a program, and a reference that does not resolve stops the manuscript from being
 
 [36] Douze, M.; Jégou, H.; Perronnin, F. (2016). Polysemous Codes. Lecture Notes in Computer Science. pp. 785-801. https://doi.org/10.1007/978-3-319-46475-6_48
 
-[37] Tomas Mikolov; Ilya Sutskever; Kai Chen; et al. (2013). Distributed Representations of Words and Phrases and their Compositionality. arXiv preprint 1310.4546v1. http://arxiv.org/abs/1310.4546v1
+[37] Mikolov, T.; Sutskever, I.; Chen, K.; et al. (2013). Distributed Representations of Words and Phrases and their Compositionality. arXiv preprint 1310.4546v1. http://arxiv.org/abs/1310.4546v1
 
 [38] Devlin, J.; Chang, M. W.; Lee, K.; et al. (2019). BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding. Proceedings of the 2019 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 1 (Long and Short Papers). pp. 4171-4186. https://doi.org/10.18653/v1/n19-1423
 
@@ -539,13 +539,13 @@ a program, and a reference that does not resolve stops the manuscript from being
 
 [40] Karpukhin, V.; Oguz, B.; Min, S.; et al. (2020). Dense Passage Retrieval for Open-Domain Question Answering. Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing (EMNLP). pp. 6769-6781. https://doi.org/10.18653/v1/2020.emnlp-main.550
 
-[41] Omar Khattab; Matei Zaharia. (2020). ColBERT: Efficient and Effective Passage Search via Contextualized Late Interaction over BERT. arXiv preprint 2004.12832v2. http://arxiv.org/abs/2004.12832v2
+[41] Khattab, O.; Zaharia, M. (2020). ColBERT: Efficient and Effective Passage Search via Contextualized Late Interaction over BERT. arXiv preprint 2004.12832v2. http://arxiv.org/abs/2004.12832v2
 
-[42] Patrick Lewis; Ethan Perez; Aleksandra Piktus; et al. (2020). Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks. arXiv preprint 2005.11401v4. http://arxiv.org/abs/2005.11401v4
+[42] Lewis, P.; Perez, E.; Piktus, A.; et al. (2020). Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks. arXiv preprint 2005.11401v4. http://arxiv.org/abs/2005.11401v4
 
-[43] Kelvin Guu; Kenton Lee; Zora Tung; et al. (2020). REALM: Retrieval-Augmented Language Model Pre-Training. arXiv preprint 2002.08909v1. http://arxiv.org/abs/2002.08909v1
+[43] Guu, K.; Lee, K.; Tung, Z.; et al. (2020). REALM: Retrieval-Augmented Language Model Pre-Training. arXiv preprint 2002.08909v1. http://arxiv.org/abs/2002.08909v1
 
-[44] Sebastian Borgeaud; Arthur Mensch; Jordan Hoffmann; et al. (2021). Improving language models by retrieving from trillions of tokens. arXiv preprint 2112.04426v3. http://arxiv.org/abs/2112.04426v3
+[44] Borgeaud, S.; Mensch, A.; Hoffmann, J.; et al. (2021). Improving language models by retrieving from trillions of tokens. arXiv preprint 2112.04426v3. http://arxiv.org/abs/2112.04426v3
 
 [45] Muennighoff, N.; Tazi, N.; Magne, L.; et al. (2023). MTEB: Massive Text Embedding Benchmark. Proceedings of the 17th Conference of the European Chapter of the Association for Computational Linguistics. pp. 2014-2037. https://doi.org/10.18653/v1/2023.eacl-main.148
 
@@ -581,7 +581,7 @@ a program, and a reference that does not resolve stops the manuscript from being
 
 [61] Kuznetsova, A.; Rom, H.; Alldrin, N.; et al. (2020). The Open Images Dataset V4. International Journal of Computer Vision. vol. 128. pp. 1956-1981. https://doi.org/10.1007/s11263-020-01316-z
 
-[62] Bart Thomee; David A. Shamma; Gerald Friedland; et al. (2015). YFCC100M: The New Data in Multimedia Research. arXiv preprint 1503.01817v2. http://arxiv.org/abs/1503.01817v2
+[62] Thomee, B.; Shamma, D. A.; Friedland, G.; et al. (2015). YFCC100M: The New Data in Multimedia Research. arXiv preprint 1503.01817v2. http://arxiv.org/abs/1503.01817v2
 
 [63] Nosek, B. A.; Ebersole, C. R.; DeHaven, A. C.; et al. (2017). The Preregistration Revolution. https://doi.org/10.31219/osf.io/2dxu5
 
@@ -599,7 +599,7 @@ a program, and a reference that does not resolve stops the manuscript from being
 
 [70] Johnson, J.; Douze, M.; Jegou, H. (2021). Billion-Scale Similarity Search with GPUs. IEEE Transactions on Big Data. vol. 7. pp. 535-547. https://doi.org/10.1109/tbdata.2019.2921572
 
-[71] Rentong Guo; Xiaofan Luan; Long Xiang; et al. (2022). Manu: A Cloud Native Vector Database Management System. arXiv preprint 2206.13843v1. http://arxiv.org/abs/2206.13843v1
+[71] Guo, R.; Luan, X.; Xiang, L.; et al. (2022). Manu: A Cloud Native Vector Database Management System. arXiv preprint 2206.13843v1. http://arxiv.org/abs/2206.13843v1
 
 [72] Pan, J. J.; Wang, J.; Li, G. (2024). Survey of vector database management systems. The VLDB Journal. vol. 33. pp. 1591-1615. https://doi.org/10.1007/s00778-024-00864-x
 
@@ -631,11 +631,11 @@ a program, and a reference that does not resolve stops the manuscript from being
 
 [86] Gong, Y.; Lazebnik, S. (2011). Iterative quantization: A procrustean approach to learning binary codes. CVPR 2011. pp. 817-824. https://doi.org/10.1109/cvpr.2011.5995432
 
-[87] Wei Liu; Jun Wang; Rongrong Ji; et al. (2012). Supervised hashing with kernels. 2012 IEEE Conference on Computer Vision and Pattern Recognition. pp. 2074-2081. https://doi.org/10.1109/cvpr.2012.6247912
+[87] Liu, W.; Wang, J.; Ji, R.; et al. (2012). Supervised hashing with kernels. 2012 IEEE Conference on Computer Vision and Pattern Recognition. pp. 2074-2081. https://doi.org/10.1109/cvpr.2012.6247912
 
-[88] Liong, V. E.; Jiwen Lu; Gang Wang; et al. (2015). Deep hashing for compact binary codes learning. 2015 IEEE Conference on Computer Vision and Pattern Recognition (CVPR). pp. 2475-2483. https://doi.org/10.1109/cvpr.2015.7298862
+[88] Liong, V. E.; Lu, J.; Wang, G.; et al. (2015). Deep hashing for compact binary codes learning. 2015 IEEE Conference on Computer Vision and Pattern Recognition (CVPR). pp. 2475-2483. https://doi.org/10.1109/cvpr.2015.7298862
 
-[89] Jae-Pil Heo; Youngwoon Lee; Junfeng He; et al. (2012). Spherical hashing. 2012 IEEE Conference on Computer Vision and Pattern Recognition. pp. 2957-2964. https://doi.org/10.1109/cvpr.2012.6248024
+[89] Heo, J. P.; Lee, Y.; He, J.; et al. (2012). Spherical hashing. 2012 IEEE Conference on Computer Vision and Pattern Recognition. pp. 2957-2964. https://doi.org/10.1109/cvpr.2012.6248024
 
 [90] Wang, J.; Zhang, T.; Song, J.; et al. (2018). A Survey on Learning to Hash. IEEE Transactions on Pattern Analysis and Machine Intelligence. vol. 40. pp. 769-790. https://doi.org/10.1109/tpami.2017.2699960
 
@@ -653,7 +653,7 @@ a program, and a reference that does not resolve stops the manuscript from being
 
 [97] Douze, M.; Guzhva, A.; Deng, C.; et al. (2026). The Faiss Library. IEEE Transactions on Big Data. vol. 12. pp. 346-361. https://doi.org/10.1109/tbdata.2025.3618474
 
-[98] Harsha Vardhan Simhadri; George Williams; Martin Aumüller; et al. (2022). Results of the NeurIPS'21 Challenge on Billion-Scale Approximate Nearest Neighbor Search. arXiv preprint 2205.03763v1. http://arxiv.org/abs/2205.03763v1
+[98] Simhadri, H. V.; Williams, G.; Aumüller, M.; et al. (2022). Results of the NeurIPS'21 Challenge on Billion-Scale Approximate Nearest Neighbor Search. arXiv preprint 2205.03763v1. http://arxiv.org/abs/2205.03763v1
 
 [99] Aumüller, M.; Bernhardsson, E.; Faithfull, A. (2017). ANN-Benchmarks: A Benchmarking Tool for Approximate Nearest Neighbor Algorithms. Lecture Notes in Computer Science. pp. 34-49. https://doi.org/10.1007/978-3-319-68474-1_3
 

@@ -324,9 +324,9 @@ def _house_author(m):
     author component with no lower-case letter at all is touched.
     """
     author, year = m.group(1), m.group(2)
-    if re.search(r"[a-z]", author):
-        return m.group(0)
-    return " ".join(w.capitalize() if w.isupper() else w for w in author.split()) + year
+    if author.strip() and not re.search(r"[a-z]", author):
+        author = " ".join(w.capitalize() if w.isupper() else w for w in author.split())
+    return authors_to_house(author) + year
 
 
 def _house_title(m):
@@ -340,6 +340,55 @@ def _house_title(m):
     if re.search(r"[a-z]", title):
         return m.group(0)
     return "%s. %s" % (year, title[0].upper() + title[1:].lower())
+
+
+PARTICLES = frozenset((
+    "van", "von", "der", "den", "de", "del", "della", "degli", "di", "da", "dos", "das", "do",
+    "du", "la", "le", "les", "bin", "ibn", "al", "el", "ter", "ten", "op", "zu", "zum", "zur",
+))
+
+
+def author_to_house(name):
+    """`Tomas Mikolov` -> `Mikolov, T.`; `Johannes Diderik van der Waals` -> `van der Waals, J. D.`
+
+    The list prints one convention, and ten entries arrived from the arXiv path in the other one.
+    The Atom feed gives each author as a single `name` string with no family/given split, so the
+    assembler had nothing to build the house form from and joined the strings whole (round-3 review,
+    Weakness 1). The split is made here, from the evidence the other path also uses -- where the
+    family name begins -- and never by cutting a fixed number of tokens, because a family name may
+    begin with a particle (`van der Waals`) and a position-blind cut prints `Waals, v. d.`.
+
+    A name already carrying a comma is the house form and is returned untouched; so is `et al.`,
+    which is a sentinel rather than a person. A single-token name is a family name.
+    """
+    name = " ".join((name or "").split())
+    if not name or "," in name or name.lower() in ("et al", "et al."):
+        return name
+    toks = name.split()
+    if len(toks) == 1:
+        return name
+    idx = next((i for i, t in enumerate(toks) if t[:1].islower()), None)
+    if idx == 0:                       # particles and a family name only: no given name to initialise
+        return name
+    if idx is None:
+        idx = len(toks) - 1
+    fam = " ".join(toks[idx:])
+    # A record sometimes stores the family name with its sentence period (`Matei Zaharia.`), and that
+    # period belongs to the sentence rather than to the name. The cut is CONDITIONAL on the family
+    # name being longer than an initial: a blanket `rstrip(".")` over the name ate the final initial
+    # in `Hunter, J. D.` and `Voorhees, E. M.` when this leg was first written, which is the fourth
+    # time that shortcut has cost this journal a rendered period.
+    if len(fam) > 2 and fam.endswith("."):
+        fam = fam[:-1]
+    giv = " ".join(toks[:idx])
+    inits = " ".join(ch[0] + "." for ch in re.split(r"[\s-]+", giv) if ch)
+    return ("%s, %s" % (fam, inits)) if inits else fam
+
+
+def authors_to_house(component):
+    """The whole author component, one name at a time; `;` separates the names in both forms."""
+    parts = [p.strip() for p in (component or "").split(";")]
+    return "; ".join(author_to_house(p) for p in parts)
 
 
 def house_entry(entry):
@@ -539,6 +588,33 @@ def selftest():
            axis.families_of([{"tag": "Hamming/32bit/seed7"}, {"tag": "PQ/64bit/seed7"},
                              {"tag": "PQ/32bit/seed7"},
                              {"tag": "float/raw descriptors"}]) == ["Hamming", "PQ"])
+
+    # 12. one author form for the whole list, and the particle that a position-blind cut breaks.
+    expect("a given-name-first author prints in the house form",
+           author_to_house("Tomas Mikolov") == "Mikolov, T.")
+    expect("a middle name becomes a second initial, not part of the family name",
+           author_to_house("Harsha Vardhan Simhadri") == "Simhadri, H. V.")
+    expect("a family name that begins with a particle keeps it",
+           author_to_house("Johannes Diderik van der Waals") == "van der Waals, J. D.",
+           author_to_house("Johannes Diderik van der Waals"))
+    expect("and the last-token cut that would print `Waals, v. d.` is not what runs",
+           not author_to_house("Johannes Diderik van der Waals").startswith("Waals"))
+    expect("a hyphenated given name keeps both initials",
+           author_to_house("Jae-Pil Heo") == "Heo, J. P.", author_to_house("Jae-Pil Heo"))
+    expect("a name already in the house form is returned untouched",
+           author_to_house("Hunter, J. D.") == "Hunter, J. D.")
+    expect("the et al. sentinel is not a person and is not rearranged",
+           author_to_house("et al.") == "et al.")
+    expect("a single-token name is a family name",
+           author_to_house("Plato") == "Plato")
+    expect("the whole component is one convention",
+           authors_to_house("Tomas Mikolov; Ilya Sutskever; Kai Chen; et al.")
+           == "Mikolov, T.; Sutskever, I.; Chen, K.; et al.",
+           authors_to_house("Tomas Mikolov; Ilya Sutskever; Kai Chen; et al."))
+    expect("and the entry the review named ends in that form",
+           house_entry("Tomas Mikolov; Ilya Sutskever; Kai Chen; et al.. (2013). Distributed "
+                       "Representations of Words and Phrases and their Compositionality. "
+                       "arXiv preprint 1310.4546v1.").startswith("Mikolov, T.; Sutskever, I.;"))
 
     print("SELFTEST: %s" % ("PASS" if fails == 0 else "%d FAILED" % fails))
     return 0 if fails == 0 else 1
