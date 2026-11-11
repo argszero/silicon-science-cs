@@ -365,7 +365,11 @@ REPORT_PREAMBLE = (
     "note. A query of three content words or fewer is admitted on exact equality only, because "
     "a word-overlap ratio has no resolution on a short title: 'Spectral hashing' is a 100% word "
     "match for 'Fully non-local super-resolution via spectral hashing'. The issued year must "
-    "agree within two years. A book seed instead requires exact title equality AND a "
+    "agree within two years **where the record supplies one**: the guard is\n"
+    "`want_year is not None and year is not None`, so a record whose `issued` field is\n"
+    "empty is identified on title and DOI alone, and the year its entry prints is the one\n"
+    "this package's seed asserts. The table's last column says, row by row, which of the\n"
+    "two it is. A book seed instead requires exact title equality AND a "
     "book-shaped record type, because a book review carries the book's title and a DOI.\n\n"
     "From arXiv, used for the venues Crossref does not index at all, a record is accepted only "
     "on exact normalised title equality with the year within one, and the row is labelled "
@@ -374,19 +378,68 @@ REPORT_PREAMBLE = (
     "lengthened by naming one paper twice.\n\n")
 
 
+NULL_SLOT = re.compile(r"\(\s*(?:None|null|NULL|n\.?d\.?|N/A|nan|NaN)\s*\)"
+                       r"|(?<![\w.])None(?![\w.])")
+
+
+def year_provenance(refs):
+    """Which rows' printed year the registry did NOT supply, derived from the stored entry.
+
+    The rule above bounds a year only where a record supplies one, so the report owes the count
+    of rows where it could not fire. That count is derived, never typed: `entry_of` writes the
+    year slot from `it["issued"]["date-parts"][0][0]`, so a record whose `issued` field is empty
+    renders that slot as `None`, and `build()` then falls back to the seed for the entry's year
+    (`year_rec if year_rec is not None else year`). The null slot and the seed fallback are the
+    same fact, read from committed bytes, so the count cannot drift from the data it describes.
+
+    A row carried from an earlier run is excluded from that claim: its entry and its year are a
+    snapshot of a resolution this build did not perform, so `build()` marks it `carried` rather
+    than guessing which field its year came from.
+    """
+    out = []
+    for slug, rec in (refs or {}).items():
+        rec = rec or {}
+        if (rec.get("verification") or {}).get("carried"):
+            continue
+        if NULL_SLOT.search(rec.get("entry") or ""):
+            out.append(slug)
+    return sorted(out)
+
+
 def write_report(path, report):
     """Emit the authenticity report. No `%` formatting: a percent sign in the prose of a
     report about percentages is how the date printed as a literal %Y-%m-%d."""
     with open(path, "w", encoding="utf-8") as f:
         f.write("# Reference authenticity check -- issue #160\n\n")
         f.write(REPORT_PREAMBLE.replace("DATE", report["date"]))
-        f.write("| slug | query | verdict | record found |\n|---|---|---|---|\n")
+        f.write("| slug | query | verdict | record found | year from "
+                "|\n|---|---|---|---|---|\n")
         f.write("\n".join(report["rows"]) + "\n")
         why = ", ".join("%s x%d" % (k, v) for k, v in sorted(report["why"].items())) or "none"
         f.write("\n**%d of %d seeds verified.** Rejections by reason: %s. A refusal is not a "
                 "failure to look: every refused seed is named with its reason, because a "
                 "silently dropped citation is a lie of omission.\n\n"
                 % (report["verified"], report["seeds"], why))
+        try:
+            unchecked = year_provenance(json.load(open("refs.json", encoding="utf-8")))
+        except Exception:
+            unchecked = report.get("year_unchecked")
+        if unchecked is None:
+            f.write("\n**Year provenance is not recorded in this cache.** The rule above bounds "
+                    "the year only where the registry supplies one; `refs_report.json` carries no "
+                    "`year_unchecked` key, so this file cannot say on which rows the bound was "
+                    "unavailable. Re-run `build_refs.py` to record it.\n\n")
+        elif unchecked:
+            f.write("\n**The two-year bound could not fire on %d of the %d rows** -- their records "
+                    "carry no issued year, so each was identified on title and DOI alone and its "
+                    "entry prints the year this package's seed asserts: %s. Their year is an "
+                    "assertion about the work, not a registry corroboration, and the table's last "
+                    "column marks every such row `seed`.\n\n"
+                    % (len(unchecked), report["verified"],
+                       ", ".join("`%s`" % sl for sl in unchecked)))
+        else:
+            f.write("\n**The two-year bound fired on every row**: every record supplied an issued "
+                    "year, and the table's last column reads `record` throughout.\n\n")
         f.write("The journal's floor is 100 references, all cited in the body; this file and "
                 "`refs.json` together are what that count is read from, and "
                 "`make_manuscript.py` refuses to render while the count is short or while a "
@@ -473,9 +526,15 @@ def main(argv):
                 method = held.get("verification", {}).get("method", "carried")
                 carried = True
 
-        line = "| `%s` | %s | **%s** | %s |" % (
+        if carried:
+            prov = "carried"
+        elif rec is not None:
+            prov = "seed" if year_rec is None else "record"
+        else:
+            prov = "-"
+        line = "| `%s` | %s | **%s** | %s | %s |" % (
             slug, query[:70].replace("|", "/"), verdict,
-            ((" %s" % ident) if ident and rec is not None else "-"))
+            ((" %s" % ident) if ident and rec is not None else "-"), prov)
         report.append(line)
         print("%-34s %-10s %s" % (slug, method, verdict), flush=True)
 
@@ -492,6 +551,7 @@ def main(argv):
             out[slug] = dict(entry=entry, doi=(rec.get("DOI") if method == "crossref" else None),
                              title=(rec.get("title") or [""])[0] if method == "crossref" else rec["title"],
                              year=year_rec if year_rec is not None else year,
+                             year_source=("seed" if year_rec is None else "record"),
                              verification=dict(result="verified", method=method,
                                                date=time.strftime("%Y-%m-%d")))
         else:

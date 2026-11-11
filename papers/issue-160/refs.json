@@ -8,7 +8,8 @@
    "method": "crossref",
    "result": "verified"
   },
-  "year": 1992
+  "year": 1992,
+  "year_source": "record"
  },
  "agresti-coull-1998": {
   "doi": "10.2307/2685469",
@@ -19,7 +20,8 @@
    "method": "crossref",
    "result": "verified"
   },
-  "year": 1998
+  "year": 1998,
+  "year_source": "record"
  },
  "andersen-borgan-gill-keiding-1993": {
   "doi": "10.1007/978-1-4612-4348-9",
@@ -30,7 +32,8 @@
    "method": "crossref",
    "result": "verified"
   },
-  "year": 1993
+  "year": 1993,
+  "year_source": "record"
  },
  "andersen-gill-1982": {
   "doi": "10.1214/aos/1176345976",
@@ -41,7 +44,8 @@
    "method": "crossref",
    "result": "verified"
   },
-  "year": 1982
+  "year": 1982,
+  "year_source": "record"
  },
  "anderson-darling-1952": {
   "doi": "10.1214/aoms/1177729437",
@@ -52,7 +56,8 @@
    "method": "crossref",
    "result": "verified"
   },
-  "year": 1952
+  "year": 1952,
+  "year_source": "record"
  },
  "andrews-soares-2010": {
   "doi": "10.3982/ecta7502",
@@ -63,7 +68,8 @@
    "method": "crossref",
    "result": "verified"
   },
-  "year": 2010
+  "year": 2010,
+  "year_source": "record"
  },
  "armbrust-2010": {
   "doi": "10.1145/1721654.1721672",
@@ -74,7 +80,8 @@
    "method": "crossref",
    "result": "verified"
   },
-  "year": 2010
+  "year": 2010,
+  "year_source": "record"
  },
  "arnold-balakrishnan-1998": {
   "doi": "10.1002/9781118150412",
@@ -85,7 +92,8 @@
    "method": "crossref",
    "result": "verified"
   },
-  "year": 1998
+  "year": 1998,
+  "year_source": "record"
  },
  "arnold-balakrishnan-nagaraja-2008": {
   "doi": "10.1137/1.9780898719062",
@@ -96,7 +104,8 @@
    "method": "crossref",
    "result": "verified"
   },
-  "year": 2008
+  "year": 2008,
+  "year_source": "record"
  },
  "bahadur-1966": {
   "doi": "10.1214/aoms/1177699450",
@@ -107,7 +116,8 @@
    "method": "crossref",
    "result": "verified"
   },
-  "year": 1966
+  "year": 1966,
+  "year_source": "record"
  },
  "balkema-dehaan-1974": {
   "doi": "10.1214/aop/1176996548",
@@ -118,7 +128,8 @@
    "method": "crossref",
    "result": "verified"
   },
-  "year": 1974
+  "year": 1974,
+  "year_source": "record"
  },
  "barroso-2003": {
   "doi": "10.1109/mm.2003.1196112",
@@ -129,7 +140,8 @@
    "method": "crossref",
    "result": "verified"
   },
-  "year": 2003
+  "year": 2003,
+  "year_source": "record"
  },
  "benson-2010": {
   "doi": "10.1145/1879141.1879175",
@@ -140,7 +152,8 @@
    "method": "crossref",
    "result": "verified"
   },
-  "year": 2010
+  "year": 2010,
+  "year_source": "record"
  },
  "beran-1982": {
   "doi": "10.1214/aos/1176345704",
@@ -151,7 +164,8 @@
    "method": "crossref",
    "result": "verified"
   },
-  "year": 1982
+  "year": 1982,
+  "year_source": "record"
  },
  "beran-1987": {
   "doi": "10.2307/2336685",
@@ -162,7 +176,8 @@
    "method": "crossref",
    "result": "verified"
   },
-  "year": 1987
+  "year": 1987,
+  "year_source": "record"
  },
  "berger-1985": {
   "doi": "10.1007/978-1-4757-4286-2",
@@ -173,7 +188,8 @@
    "method": "crossref",
    "result": "verified"
   },
-  "year": 1985
+  "year": 1985,
+  "year_source": "record"
  },
  "bickel-freedman-1981": {
   "doi": "10.1214/aos/1176345637",
@@ -184,7 +200,8 @@
    "method": "crossref",
    "result": "verified"
   },
-  "year": 1981
+  "year": 1981,
+  "year_source": "record"
  },
  "bodik-2010": {
   "doi": "10.1145/1807128.1807166",
@@ -195,7 +212,8 @@
    "method": "crossref",
    "result": "verified"
   },
-  "year": 2010
+  "year": 2010,
+  "year_source": "record"
  },
  "box-1976": {
   "doi": "10.1080/01621459.1976.10480949",
@@ -206,7 +224,8 @@
    "method": "crossref",
    "result": "verified"
   },
-  "year": 1976
+  "year": 1976,
+  "year_source": "record"
  },
  "bronson-metastable-2021": {
   "doi": "10.1145/3458336.3465286",
@@ -217,7 +236,8 @@
    "method": "crossref",
    "result": "verified"
   },
-  "year": 2021
+  "year": 2021,
+  "year_source": "record"
  },
  "brown-cai-dasgupta-2001": {
   "doi": "10.1214/ss/1009213286",
@@ -228,7 +248,8 @@
    "method": "crossref",
    "result": "verified"
   },
-  "year": 2001
+  "year": 2001,
+  "year_source": "record"
  },
  "bugni-2010": {
   "doi": "10.3982/ecta8056",
@@ -239,7 +260,8 @@
    "method": "crossref",
    "result": "verified"
   },
-  "year": 2010
+  "year": 2010,
+  "year_source": "record"
  },
  "calzarossa-1993": {
   "doi": "10.1109/5.236191",
@@ -250,7 +272,8 @@
    "method": "crossref",
    "result": "verified"
   },
-  "year": 1993
+  "year": 1993,
+  "year_source": "record"
  },
  "chen-hall-1993": {
   "doi": "10.1214/aos/1176349256",
@@ -261,7 +284,8 @@
    "method": "crossref",
    "result": "verified"
   },
-  "year": 1993
+  "year": 1993,
+  "year_source": "record"
  },
  "chernozhukov-hong-tamer-2007": {
   "doi": "10.1111/j.1468-0262.2007.00794.x",
@@ -272,7 +296,8 @@
    "method": "crossref",
    "result": "verified"
   },
-  "year": 2007
+  "year": 2007,
+  "year_source": "record"
  },
  "clopper-pearson-1934": {
   "doi": "10.1093/biomet/26.4.404",
@@ -283,7 +308,8 @@
    "method": "crossref",
    "result": "verified"
   },
-  "year": 1934
+  "year": 1934,
+  "year_source": "record"
  },
  "coles-2001": {
   "doi": "10.1007/978-1-4471-3675-0",
@@ -294,7 +320,8 @@
    "method": "crossref",
    "result": "verified"
   },
-  "year": 2001
+  "year": 2001,
+  "year_source": "record"
  },
  "cox-1972": {
   "doi": "10.1111/j.2517-6161.1972.tb00899.x",
@@ -305,7 +332,8 @@
    "method": "crossref",
    "result": "verified"
   },
-  "year": 1972
+  "year": 1972,
+  "year_source": "record"
  },
  "david-nagaraja-2003": {
   "doi": "10.1002/0471722162",
@@ -316,7 +344,8 @@
    "method": "crossref",
    "result": "verified"
   },
-  "year": 2003
+  "year": 2003,
+  "year_source": "record"
  },
  "davison-1984": {
   "doi": "10.1007/978-94-017-3069-3_34",
@@ -327,7 +356,8 @@
    "method": "crossref",
    "result": "verified"
   },
-  "year": 1984
+  "year": 1984,
+  "year_source": "record"
  },
  "davison-smith-1990": {
   "doi": "10.1111/j.2517-6161.1990.tb01796.x",
@@ -338,7 +368,8 @@
    "method": "crossref",
    "result": "verified"
   },
-  "year": 1990
+  "year": 1990,
+  "year_source": "record"
  },
  "dean-barroso-2013": {
   "doi": "10.1145/2408776.2408794",
@@ -349,7 +380,8 @@
    "method": "crossref",
    "result": "verified"
   },
-  "year": 2013
+  "year": 2013,
+  "year_source": "record"
  },
  "diciccio-romano-1988": {
   "doi": "10.1111/j.2517-6161.1988.tb01732.x",
@@ -360,7 +392,8 @@
    "method": "crossref",
    "result": "verified"
   },
-  "year": 1988
+  "year": 1988,
+  "year_source": "record"
  },
  "dvoretzky-kiefer-wolfowitz-1956": {
   "doi": "10.1214/aoms/1177728174",
@@ -371,7 +404,8 @@
    "method": "crossref",
    "result": "verified"
   },
-  "year": 1956
+  "year": 1956,
+  "year_source": "record"
  },
  "efron-1979": {
   "doi": "10.1214/aos/1176344552",
@@ -382,7 +416,8 @@
    "method": "crossref",
    "result": "verified"
   },
-  "year": 1979
+  "year": 1979,
+  "year_source": "record"
  },
  "efron-1987": {
   "doi": "10.1080/01621459.1987.10478410",
@@ -393,7 +428,8 @@
    "method": "crossref",
    "result": "verified"
   },
-  "year": 1987
+  "year": 1987,
+  "year_source": "record"
  },
  "efron-1988": {
   "doi": "10.1080/01621459.1988.10478612",
@@ -404,7 +440,8 @@
    "method": "crossref",
    "result": "verified"
   },
-  "year": 1988
+  "year": 1988,
+  "year_source": "record"
  },
  "efron-tibshirani-1993": {
   "doi": "10.1201/9780429246593",
@@ -415,7 +452,8 @@
    "method": "crossref",
    "result": "verified"
   },
-  "year": 1994
+  "year": 1994,
+  "year_source": "record"
  },
  "eivy-2017": {
   "doi": "10.1109/mcc.2017.32",
@@ -426,7 +464,8 @@
    "method": "crossref",
    "result": "verified"
   },
-  "year": 2017
+  "year": 2017,
+  "year_source": "record"
  },
  "escobar-meeker-2006": {
   "doi": "10.1214/088342306000000321",
@@ -437,7 +476,8 @@
    "method": "crossref",
    "result": "verified"
   },
-  "year": 2006
+  "year": 2006,
+  "year_source": "record"
  },
  "fisher-tippett-1928": {
   "doi": "10.1017/s0305004100015681",
@@ -448,7 +488,8 @@
    "method": "crossref",
    "result": "verified"
   },
-  "year": 1928
+  "year": 1928,
+  "year_source": "record"
  },
  "gentleman-geyer-1994": {
   "doi": "10.1093/biomet/81.3.618",
@@ -459,7 +500,8 @@
    "method": "crossref",
    "result": "verified"
   },
-  "year": 1994
+  "year": 1994,
+  "year_source": "record"
  },
  "georges-2007": {
   "doi": "10.1145/1297027.1297033",
@@ -470,7 +512,8 @@
    "method": "crossref",
    "result": "verified"
   },
-  "year": 2007
+  "year": 2007,
+  "year_source": "record"
  },
  "glasserman-2000": {
   "doi": "10.1287/mnsc.46.10.1349.12274",
@@ -481,7 +524,8 @@
    "method": "crossref",
    "result": "verified"
   },
-  "year": 2000
+  "year": 2000,
+  "year_source": "record"
  },
  "gnedenko-1943": {
   "doi": "10.2307/1968974",
@@ -492,7 +536,8 @@
    "method": "crossref",
    "result": "verified"
   },
-  "year": 1943
+  "year": 1943,
+  "year_source": "record"
  },
  "grimshaw-1993": {
   "doi": "10.1080/00401706.1993.10485040",
@@ -503,7 +548,8 @@
    "method": "crossref",
    "result": "verified"
   },
-  "year": 1993
+  "year": 1993,
+  "year_source": "record"
  },
  "gumbel-1958": {
   "doi": "10.7312/gumb92958",
@@ -514,7 +560,8 @@
    "method": "crossref",
    "result": "verified"
   },
-  "year": 1958
+  "year": 1958,
+  "year_source": "record"
  },
  "gunawi-2014": {
   "doi": "10.1145/2670979.2670986",
@@ -525,7 +572,8 @@
    "method": "crossref",
    "result": "verified"
   },
-  "year": 2014
+  "year": 2014,
+  "year_source": "record"
  },
  "halfin-whitt-1981": {
   "doi": "10.1287/opre.29.3.567",
@@ -536,7 +584,8 @@
    "method": "crossref",
    "result": "verified"
   },
-  "year": 1981
+  "year": 1981,
+  "year_source": "record"
  },
  "hall-1986": {
   "doi": "10.1214/aos/1176350169",
@@ -547,7 +596,8 @@
    "method": "crossref",
    "result": "verified"
   },
-  "year": 1986
+  "year": 1986,
+  "year_source": "record"
  },
  "harchol-balter-2013": {
   "doi": "10.1017/cbo9781139226424",
@@ -558,7 +608,8 @@
    "method": "crossref",
    "result": "verified"
   },
-  "year": 2013
+  "year": 2013,
+  "year_source": "record"
  },
  "heidelberger-1981": {
   "doi": "10.1145/358598.358630",
@@ -569,7 +620,8 @@
    "method": "crossref",
    "result": "verified"
   },
-  "year": 1981
+  "year": 1981,
+  "year_source": "record"
  },
  "heitjan-rubin-1991": {
   "doi": "10.1214/aos/1176348396",
@@ -580,7 +632,8 @@
    "method": "crossref",
    "result": "verified"
   },
-  "year": 1991
+  "year": 1991,
+  "year_source": "record"
  },
  "hellerstein-serverless-2019": {
   "doi": null,
@@ -591,7 +644,8 @@
    "method": "arxiv",
    "result": "verified"
   },
-  "year": 2018
+  "year": 2018,
+  "year_source": "record"
  },
  "hoeffding-1963": {
   "doi": "10.1080/01621459.1963.10500830",
@@ -602,7 +656,8 @@
    "method": "crossref",
    "result": "verified"
   },
-  "year": 1963
+  "year": 1963,
+  "year_source": "record"
  },
  "hoefler-belli-2015": {
   "doi": "10.1145/2807591.2807644",
@@ -613,7 +668,8 @@
    "method": "crossref",
    "result": "verified"
   },
-  "year": 2015
+  "year": 2015,
+  "year_source": "record"
  },
  "horowitz-manski-2000": {
   "doi": "10.1080/01621459.2000.10473902",
@@ -624,7 +680,8 @@
    "method": "crossref",
    "result": "verified"
   },
-  "year": 2000
+  "year": 2000,
+  "year_source": "record"
  },
  "hosking-1990": {
   "doi": "10.1111/j.2517-6161.1990.tb01775.x",
@@ -635,7 +692,8 @@
    "method": "crossref",
    "result": "verified"
   },
-  "year": 1990
+  "year": 1990,
+  "year_source": "record"
  },
  "hosking-wallis-1987": {
   "doi": "10.1080/00401706.1987.10488243",
@@ -646,7 +704,8 @@
    "method": "crossref",
    "result": "verified"
   },
-  "year": 1987
+  "year": 1987,
+  "year_source": "record"
  },
  "imbens-manski-2004": {
   "doi": "10.1920/wp.cem.2003.0903",
@@ -657,7 +716,8 @@
    "method": "crossref",
    "result": "verified"
   },
-  "year": 2003
+  "year": 2003,
+  "year_source": "record"
  },
  "iosup-cloud-2011": {
   "doi": "10.1109/tpds.2011.66",
@@ -668,7 +728,8 @@
    "method": "crossref",
    "result": "verified"
   },
-  "year": 2011
+  "year": 2011,
+  "year_source": "record"
  },
  "jonas-berkeley-serverless-2019": {
   "doi": null,
@@ -679,7 +740,8 @@
    "method": "arxiv",
    "result": "verified"
   },
-  "year": 2019
+  "year": 2019,
+  "year_source": "record"
  },
  "kalbfleisch-prentice-2002": {
   "doi": "10.1002/9781118032985",
@@ -690,7 +752,8 @@
    "method": "crossref",
    "result": "verified"
   },
-  "year": 2002
+  "year": 2002,
+  "year_source": "record"
  },
  "kanev-2015": {
   "doi": "10.1145/2872887.2750392",
@@ -701,7 +764,8 @@
    "method": "crossref",
    "result": "verified"
   },
-  "year": 2015
+  "year": 2015,
+  "year_source": "record"
  },
  "kaplan-meier-1958": {
   "doi": "10.1080/01621459.1958.10501452",
@@ -712,7 +776,8 @@
    "method": "crossref",
    "result": "verified"
   },
-  "year": 1958
+  "year": 1958,
+  "year_source": "record"
  },
  "katz-2002": {
   "doi": "10.1016/s0309-1708(02)00056-8",
@@ -723,7 +788,8 @@
    "method": "crossref",
    "result": "verified"
   },
-  "year": 2002
+  "year": 2002,
+  "year_source": "record"
  },
  "kingman-1961": {
   "doi": "10.1017/s0305004100036094",
@@ -734,7 +800,8 @@
    "method": "crossref",
    "result": "verified"
   },
-  "year": 1961
+  "year": 1961,
+  "year_source": "record"
  },
  "kingman-1962": {
   "doi": "10.1111/j.2517-6161.1962.tb00465.x",
@@ -745,7 +812,8 @@
    "method": "crossref",
    "result": "verified"
   },
-  "year": 1962
+  "year": 1962,
+  "year_source": "record"
  },
  "koenker-bassett-1978": {
   "doi": "10.2307/1913643",
@@ -756,7 +824,8 @@
    "method": "crossref",
    "result": "verified"
   },
-  "year": 1978
+  "year": 1978,
+  "year_source": "record"
  },
  "kohavi-online-2013": {
   "doi": "10.1145/2487575.2488217",
@@ -767,7 +836,8 @@
    "method": "crossref",
    "result": "verified"
   },
-  "year": 2013
+  "year": 2013,
+  "year_source": "record"
  },
  "lagakos-1979": {
   "doi": "10.2307/2529941",
@@ -778,7 +848,8 @@
    "method": "crossref",
    "result": "verified"
   },
-  "year": 1979
+  "year": 1979,
+  "year_source": "record"
  },
  "lawless-2003": {
   "doi": "10.1002/9781118033005",
@@ -789,7 +860,8 @@
    "method": "crossref",
    "result": "verified"
   },
-  "year": 2002
+  "year": 2002,
+  "year_source": "record"
  },
  "lehmann-casella-1998": {
   "doi": "10.1007/b98854",
@@ -800,7 +872,8 @@
    "method": "crossref",
    "result": "verified"
   },
-  "year": 1998
+  "year": 1998,
+  "year_source": "record"
  },
  "leitner-chaos-2016": {
   "doi": "10.1145/2885497",
@@ -811,7 +884,8 @@
    "method": "crossref",
    "result": "verified"
   },
-  "year": 2016
+  "year": 2016,
+  "year_source": "record"
  },
  "lenk-iaas-2011": {
   "doi": "10.1109/cloud.2011.80",
@@ -822,7 +896,8 @@
    "method": "crossref",
    "result": "verified"
   },
-  "year": 2011
+  "year": 2011,
+  "year_source": "record"
  },
  "lin-wei-1989": {
   "doi": "10.1080/01621459.1989.10478874",
@@ -833,7 +908,8 @@
    "method": "crossref",
    "result": "verified"
   },
-  "year": 1989
+  "year": 1989,
+  "year_source": "record"
  },
  "lloyd-2018": {
   "doi": "10.1109/ic2e.2018.00039",
@@ -844,7 +920,8 @@
    "method": "crossref",
    "result": "verified"
   },
-  "year": 2018
+  "year": 2018,
+  "year_source": "record"
  },
  "manski-2003": {
   "doi": "10.1007/b97478",
@@ -855,7 +932,8 @@
    "method": "crossref",
    "result": "verified"
   },
-  "year": 2003
+  "year": 2003,
+  "year_source": "record"
  },
  "manski-2007": {
   "doi": "10.1111/j.1468-2354.2007.00467.x",
@@ -866,7 +944,8 @@
    "method": "crossref",
    "result": "verified"
   },
-  "year": 2007
+  "year": 2007,
+  "year_source": "record"
  },
  "martinussen-scheike-2006": {
   "doi": "10.1007/0-387-33960-4",
@@ -877,7 +956,8 @@
    "method": "crossref",
    "result": "verified"
   },
-  "year": 2006
+  "year": 2006,
+  "year_source": "record"
  },
  "massart-1990": {
   "doi": "10.1214/aop/1176990746",
@@ -888,7 +968,8 @@
    "method": "crossref",
    "result": "verified"
   },
-  "year": 1990
+  "year": 1990,
+  "year_source": "record"
  },
  "mcgrath-2017": {
   "doi": "10.1109/icdcsw.2017.36",
@@ -899,7 +980,8 @@
    "method": "crossref",
    "result": "verified"
   },
-  "year": 2017
+  "year": 2017,
+  "year_source": "record"
  },
  "molinari-2020": {
   "doi": "10.1016/bs.hoe.2020.05.002",
@@ -910,7 +992,8 @@
    "method": "crossref",
    "result": "verified"
   },
-  "year": 2020
+  "year": 2020,
+  "year_source": "record"
  },
  "mosteller-1946": {
   "doi": "10.1214/aoms/1177730881",
@@ -921,7 +1004,8 @@
    "method": "crossref",
    "result": "verified"
   },
-  "year": 1946
+  "year": 1946,
+  "year_source": "record"
  },
  "mytkowicz-2009": {
   "doi": "10.1145/1508284.1508275",
@@ -932,7 +1016,8 @@
    "method": "crossref",
    "result": "verified"
   },
-  "year": 2009
+  "year": 2009,
+  "year_source": "record"
  },
  "nelson-applied-life-1982": {
   "doi": "10.1002/0471725234",
@@ -943,7 +1028,8 @@
    "method": "crossref",
    "result": "verified"
   },
-  "year": 1982
+  "year": 1982,
+  "year_source": "record"
  },
  "newcombe-1998": {
   "doi": "10.1002/(sici)1097-0258(19980430)17:8<857::aid-sim777>3.0.co;2-e",
@@ -954,7 +1040,8 @@
    "method": "crossref",
    "result": "verified"
   },
-  "year": 1998
+  "year": 1998,
+  "year_source": "record"
  },
  "newey-mcfadden-1994": {
   "doi": "10.1016/s1573-4412(05)80005-4",
@@ -965,7 +1052,8 @@
    "method": "crossref",
    "result": "verified"
   },
-  "year": 1994
+  "year": 1994,
+  "year_source": "record"
  },
  "ousterhout-ramcloud-2015": {
   "doi": "10.1145/2806887",
@@ -976,7 +1064,8 @@
    "method": "crossref",
    "result": "verified"
   },
-  "year": 2015
+  "year": 2015,
+  "year_source": "record"
  },
  "ousterhout-ramcloud-case-2011": {
   "doi": "10.1145/1965724.1965751",
@@ -987,7 +1076,8 @@
    "method": "crossref",
    "result": "verified"
   },
-  "year": 2011
+  "year": 2011,
+  "year_source": "record"
  },
  "pickands-1975": {
   "doi": "10.1214/aos/1176343003",
@@ -998,7 +1088,8 @@
    "method": "crossref",
    "result": "verified"
   },
-  "year": 1975
+  "year": 1975,
+  "year_source": "record"
  },
  "prentice-1978": {
   "doi": "10.2307/2530374",
@@ -1009,7 +1100,8 @@
    "method": "crossref",
    "result": "verified"
   },
-  "year": 1978
+  "year": 1978,
+  "year_source": "record"
  },
  "rao-linear-inference-1973": {
   "doi": "10.1002/9780470316436",
@@ -1020,7 +1112,8 @@
    "method": "crossref",
    "result": "verified"
   },
-  "year": 1973
+  "year": 1973,
+  "year_source": "record"
  },
  "reiman-1984": {
   "doi": "10.1287/moor.9.3.441",
@@ -1031,7 +1124,8 @@
    "method": "crossref",
    "result": "verified"
   },
-  "year": 1984
+  "year": 1984,
+  "year_source": "record"
  },
  "reiss-1989": {
   "doi": "10.1007/978-1-4613-9620-8",
@@ -1042,7 +1136,8 @@
    "method": "crossref",
    "result": "verified"
   },
-  "year": 1989
+  "year": 1989,
+  "year_source": "record"
  },
  "romano-shaikh-2008": {
   "doi": "10.1016/j.jspi.2008.03.015",
@@ -1053,7 +1148,8 @@
    "method": "crossref",
    "result": "verified"
   },
-  "year": 2008
+  "year": 2008,
+  "year_source": "record"
  },
  "rosenbaum-2002": {
   "doi": "10.1007/978-1-4757-3692-2",
@@ -1064,7 +1160,8 @@
    "method": "crossref",
    "result": "verified"
   },
-  "year": 2002
+  "year": 2002,
+  "year_source": "record"
  },
  "rubin-1976": {
   "doi": "10.1093/biomet/63.3.581",
@@ -1075,7 +1172,8 @@
    "method": "crossref",
    "result": "verified"
   },
-  "year": 1976
+  "year": 1976,
+  "year_source": "record"
  },
  "rubino-rare-event-2009": {
   "doi": "10.1002/9780470745403",
@@ -1086,7 +1184,8 @@
    "method": "crossref",
    "result": "verified"
   },
-  "year": 2009
+  "year": 2009,
+  "year_source": "record"
  },
  "serfling-1980": {
   "doi": "10.1002/9780470316481",
@@ -1097,7 +1196,8 @@
    "method": "crossref",
    "result": "verified"
   },
-  "year": 1980
+  "year": 1980,
+  "year_source": "record"
  },
  "shahrad-serverless-wild-2020": {
   "doi": null,
@@ -1108,7 +1208,8 @@
    "method": "arxiv",
    "result": "verified"
   },
-  "year": 2020
+  "year": 2020,
+  "year_source": "record"
  },
  "singh-1981": {
   "doi": "10.1214/aos/1176345636",
@@ -1119,7 +1220,8 @@
    "method": "crossref",
    "result": "verified"
   },
-  "year": 1981
+  "year": 1981,
+  "year_source": "record"
  },
  "smith-1987": {
   "doi": "10.1214/aos/1176350499",
@@ -1130,7 +1232,8 @@
    "method": "crossref",
    "result": "verified"
   },
-  "year": 1987
+  "year": 1987,
+  "year_source": "record"
  },
  "smith-1990": {
   "doi": "10.1007/0-306-48738-1_16",
@@ -1141,7 +1244,8 @@
    "method": "crossref",
    "result": "verified"
   },
-  "year": 1990
+  "year": 1990,
+  "year_source": "seed"
  },
  "stigler-1973": {
   "doi": "10.1214/aos/1176342412",
@@ -1152,7 +1256,8 @@
    "method": "crossref",
    "result": "verified"
   },
-  "year": 1973
+  "year": 1973,
+  "year_source": "record"
  },
  "tamer-2010": {
   "doi": "10.1057/9780230226203.1251",
@@ -1163,7 +1268,8 @@
    "method": "crossref",
    "result": "verified"
   },
-  "year": 2010
+  "year": 2010,
+  "year_source": "seed"
  },
  "tille-2006": {
   "doi": "10.1007/0-387-34240-0",
@@ -1174,7 +1280,8 @@
    "method": "crossref",
    "result": "verified"
   },
-  "year": 2006
+  "year": 2006,
+  "year_source": "record"
  },
  "tsiatis-2006": {
   "doi": "10.1007/0-387-37345-4",
@@ -1185,7 +1292,8 @@
    "method": "crossref",
    "result": "verified"
   },
-  "year": 2006
+  "year": 2006,
+  "year_source": "record"
  },
  "tukey-1962": {
   "doi": "10.1214/aoms/1177704711",
@@ -1196,7 +1304,8 @@
    "method": "crossref",
    "result": "verified"
   },
-  "year": 1962
+  "year": 1962,
+  "year_source": "record"
  },
  "turnbull-1976": {
   "doi": "10.1111/j.2517-6161.1976.tb01597.x",
@@ -1207,7 +1316,8 @@
    "method": "crossref",
    "result": "verified"
   },
-  "year": 1976
+  "year": 1976,
+  "year_source": "record"
  },
  "vandervaart-wellner-1996": {
   "doi": "10.1007/978-1-4757-2545-2",
@@ -1218,7 +1328,8 @@
    "method": "crossref",
    "result": "verified"
   },
-  "year": 1996
+  "year": 1996,
+  "year_source": "record"
  },
  "verma-borg-2015": {
   "doi": "10.1145/2741948.2741964",
@@ -1229,7 +1340,8 @@
    "method": "crossref",
    "result": "verified"
   },
-  "year": 2015
+  "year": 2015,
+  "year_source": "record"
  },
  "wald-1943": {
   "doi": "10.1214/aoms/1177731491",
@@ -1240,7 +1352,8 @@
    "method": "crossref",
    "result": "verified"
   },
-  "year": 1943
+  "year": 1943,
+  "year_source": "record"
  },
  "welch-1983": {
   "doi": "10.1287/opre.31.6.983",
@@ -1251,7 +1364,8 @@
    "method": "crossref",
    "result": "verified"
   },
-  "year": 1983
+  "year": 1983,
+  "year_source": "record"
  },
  "whitt-1993": {
   "doi": "10.1111/j.1937-5956.1993.tb00094.x",
@@ -1262,7 +1376,8 @@
    "method": "crossref",
    "result": "verified"
   },
-  "year": 1993
+  "year": 1993,
+  "year_source": "record"
  },
  "wilks-1941": {
   "doi": "10.1214/aoms/1177731788",
@@ -1273,7 +1388,8 @@
    "method": "crossref",
    "result": "verified"
   },
-  "year": 1941
+  "year": 1941,
+  "year_source": "record"
  },
  "wilks-1948": {
   "doi": "10.1007/springerreference_65446",
@@ -1284,7 +1400,8 @@
    "method": "crossref",
    "result": "verified"
   },
-  "year": 1948
+  "year": 1948,
+  "year_source": "seed"
  },
  "wilson-1927": {
   "doi": "10.1080/01621459.1927.10502953",
@@ -1295,7 +1412,8 @@
    "method": "crossref",
    "result": "verified"
   },
-  "year": 1927
+  "year": 1927,
+  "year_source": "record"
  },
  "woodroofe-1985": {
   "doi": "10.1214/aos/1176346584",
@@ -1306,7 +1424,8 @@
    "method": "crossref",
    "result": "verified"
   },
-  "year": 1985
+  "year": 1985,
+  "year_source": "record"
  },
  "woodside-2007": {
   "doi": "10.1109/fose.2007.32",
@@ -1317,6 +1436,7 @@
    "method": "crossref",
    "result": "verified"
   },
-  "year": 2007
+  "year": 2007,
+  "year_source": "record"
  }
 }

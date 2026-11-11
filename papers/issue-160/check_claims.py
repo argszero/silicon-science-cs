@@ -436,6 +436,53 @@ def identities(art):
     return out
 
 
+def reference_provenance(refs=None, report_text=None):
+    """The report names a year rule the code applies conditionally; this makes the count an
+    assertion rather than a sentence. Four things must be one thing: the set `refs.json` records,
+    the set derived from the stored entries, the set the report names, and the number it states.
+    Every argument defaults to the committed file, and the selftest passes mutated copies, so the
+    gate is exercised on the same construction the real run uses.
+    """
+    import build_refs as br
+    if refs is None:
+        refs = json.load(open("refs.json", encoding="utf-8"))
+    if report_text is None:
+        report_text = open("reference-check.md", encoding="utf-8").read()
+    derived = br.year_provenance(refs)
+    recorded = sorted(sl for sl, r in (refs or {}).items()
+                      if (r or {}).get("year_source") == "seed")
+    out = []
+    sources = sorted({(r or {}).get("year_source") for r in refs.values()})
+    out.append(("every entry records which field its printed year came from",
+                all(s in ("record", "seed", "carried") for s in sources),
+                "%d entries, sources=%s" % (len(refs), sources)))
+    out.append(("the recorded provenance equals the provenance derived from the stored entries",
+                recorded == derived, "recorded %d vs derived %d (%s)"
+                % (len(recorded), len(derived), ", ".join(derived[:6]))))
+    m = re.search(r"could not fire on (\d+) of the (\d+) rows", report_text)
+    out.append(("the report states how many rows the year bound could not fire on",
+                m is not None, m.group(0) if m else "no counted sentence in reference-check.md"))
+    if m:
+        out.append(("the number the report states is the number the artefact holds",
+                    int(m.group(1)) == len(derived),
+                    "report says %s, artefact holds %d" % (m.group(1), len(derived))))
+        named = re.search(r"seed asserts: ([^.]+)\.", report_text)
+        named_set = set(re.findall(r"`([^`]+)`", named.group(1))) if named else set()
+        out.append(("the report names exactly the rows it counted",
+                    named_set == set(derived), "%d named, %d held, symmetric difference %s"
+                    % (len(named_set), len(derived), sorted(named_set ^ set(derived))[:4])))
+    col = {}
+    for row in report_text.split("\n"):
+        mm = re.match(r"^\| `([^`]+)` \|.*\|\s*(record|seed|carried|-)\s*\|\s*$", row)
+        if mm:
+            col[mm.group(1)] = mm.group(2)
+    out.append(("every table row's last column matches the provenance in refs.json",
+                {k: v for k, v in col.items() if v == "seed"} == {k: "seed" for k in recorded},
+                "%d rows parse, %d recorded seed, %d columns say seed"
+                % (len(col), len(recorded), sum(1 for v in col.values() if v == "seed"))))
+    return out
+
+
 def evaluate(art, provenance=PROVENANCE):
     """(claims, identities, failures). Pure: same artefact in, same verdicts out."""
     claims = []
@@ -451,7 +498,7 @@ def evaluate(art, provenance=PROVENANCE):
         if got != c["registered"]:
             fails.append("%s moved: registered %s, artefact now says %s (value %s)"
                          % (c["id"], c["registered"], got, v))
-    ids = identities(art)
+    ids = identities(art) + reference_provenance()
     for name, ok, detail in ids:
         if not ok:
             fails.append("identity broken: %s (%s)" % (name, detail))
@@ -477,6 +524,7 @@ def report(art):
     print("\nidentities (%d):" % len(ids))
     for name, ok, detail in ids:
         print("  [%s] %s -- %s" % ("ok" if ok else "FAIL", name, detail))
+
     return fails
 
 
@@ -547,6 +595,30 @@ def selftest():
         both4, names4, first4, _ = verdict_line_states_the_pair(swapped, law, chk)
         expect("a verdict line that prints the two counts in the wrong order is refused",
                both4 and names4 and not first4, "law_first=%s" % first4)
+
+    # The year-provenance gate, planted both ways, on the same function the real run calls.
+    refs = json.load(open("refs.json", encoding="utf-8"))
+    rtext = open("reference-check.md", encoding="utf-8").read()
+    base = reference_provenance(refs, rtext)
+    expect("the committed provenance record satisfies every provenance check",
+           all(ok for _, ok, _ in base),
+           "; ".join(d for _, ok, d in base if not ok)[:140])
+    m = re.search(r"could not fire on (\d+) of the (\d+) rows", rtext)
+    if m:
+        under = rtext.replace(m.group(0), "could not fire on %d of the %s rows"
+                              % (int(m.group(1)) - 1, m.group(2)))
+        legs = reference_provenance(refs, under)
+        fired = [name for name, ok, _ in legs if not ok]
+        expect("a report that understates the count by one is refused", bool(fired),
+               ", ".join(fired)[:140])
+    seed_slugs = [sl for sl, r in refs.items() if (r or {}).get("year_source") == "seed"]
+    if seed_slugs:
+        mut = json.loads(json.dumps(refs))
+        mut[seed_slugs[0]]["year_source"] = "record"
+        legs = reference_provenance(mut, rtext)
+        fired = [name for name, ok, _ in legs if not ok]
+        expect("a row whose provenance is relabelled is refused", bool(fired),
+               ", ".join(fired)[:140])
 
     print("SELFTEST: %s" % ("PASS" if fails == 0 else "%d FAILED" % fails))
     return 0 if fails == 0 else 1
