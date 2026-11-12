@@ -24,8 +24,10 @@ Usage:
     python3 make_figures.py              # write figures/decay-curve.svg, print FIGURE: ...
     python3 make_figures.py --table      # print the rates table (markdown) to stdout
     python3 make_figures.py --check-table  # compare manuscript.md's table block to the render
+    python3 make_figures.py --check-prose  # check every number the manuscript's prose prints
 """
 
+import contextlib
 import io
 import json
 import os
@@ -115,8 +117,14 @@ def render_table(rates):
     return "\n".join(out)
 
 
-def check_table(rates, depth2=None):
-    text = open(MANUSCRIPT, encoding="utf-8").read()
+# TWO OBJECTS, TWO LEGS, TWO SENTENCES. This was one function with one exit code, and
+# `reproduce.sh` turned that code into one sentence: *the manuscript's table block is not the
+# render of rates.json*. A doctored NUMBER in the body -- a failure that never looked at the
+# table -- came out under that sentence, so the reader was sent to the wrong object. The verdict
+# was right and the attribution was wrong, which is the class this correction round repairs: a
+# message that names one object for a failure about another.
+def table_leg(text, rates):
+    """Is the manuscript's table block the render of rates.json? One object, one verdict."""
     if text.count(OPEN_MARK) != 1 or text.count(CLOSE_MARK) != 1:
         print("  [FAIL] manuscript.md carries %d open and %d close table markers, expected 1 and 1"
               % (text.count(OPEN_MARK), text.count(CLOSE_MARK)))
@@ -126,7 +134,7 @@ def check_table(rates, depth2=None):
     got = text[start:end]
     want = render_table(rates)
     if got != want:
-        print("  [FAIL] the manuscript's table is not the one the artifacts render")
+        print("  [FAIL] the manuscript's TABLE BLOCK is not the render of rates.json")
         for a, b in zip(got.split("\n"), want.split("\n")):
             if a != b:
                 print("         manuscript: %s" % a)
@@ -134,7 +142,127 @@ def check_table(rates, depth2=None):
         return 1
     print("  [ok]   TABLE: IN SYNC (%d rows, every cell a count, a share and an interval from rates.json)"
           % (len(want.split("\n")) - 4))
-    return check_prose_rates(text, rates, depth2)
+    return 0
+
+
+def without_table(text, rates):
+    """The prose leg's unit: every byte of the manuscript OUTSIDE the rendered table block.
+
+    The block is cut by its MARKERS, not by matching the render. Cutting it by the render tied
+    this leg's INPUT to the other leg's VERDICT: asked about a manuscript whose table is wrong,
+    the replacement matches nothing, the table stays in the body, and its rows are then read as
+    prose -- one bad table producing a second, misattributed finding. While both legs shared one
+    exit code that could not happen, because the table was verified first and the function
+    returned before the prose ran; now that either leg can be asked on its own, the cut has to be
+    independent of the block's content.
+    """
+    if text.count(OPEN_MARK) == 1 and text.count(CLOSE_MARK) == 1:
+        a = text.index(OPEN_MARK)
+        b = text.index(CLOSE_MARK) + len(CLOSE_MARK)
+        return text[:a] + text[b:]
+    return text.replace(render_table(rates), "")
+
+
+def prose_leg(text, rates, depth2=None, plant=True):
+    """Is every number the prose prints one the artifacts hold? The other object, its own verdict.
+
+    `plant=False` exists so the separability plant can ask this leg a question without the leg
+    planting the same plant inside itself: the plant runs both legs on doctored copies, and a leg
+    that ran its own plant would recurse.
+    """
+    rc = check_prose_rates(text, rates, depth2)
+    if plant and not plant_legs_are_separable(text, rates, depth2):
+        rc = 1
+    return rc
+
+
+def legs_on(text, rates, depth2=None):
+    """Run both legs on one text, capturing each leg's own output: (table rc, prose rc, t, p)."""
+    tbuf, pbuf = io.StringIO(), io.StringIO()
+    with contextlib.redirect_stdout(tbuf):
+        trc = table_leg(text, rates)
+    with contextlib.redirect_stdout(pbuf):
+        prc = prose_leg(text, rates, depth2, plant=False)
+    return trc, prc, tbuf.getvalue(), pbuf.getvalue()
+
+
+def plant_legs_are_separable(text, rates, depth2=None):
+    """Each failure gets named by its own leg, and each leg MISSES the other's defect.
+
+    A plant that only asserted "a doctored body is refused" would pass under the conflated form
+    too -- the old single leg refused it, and said the wrong sentence about it. What is planted is
+    the PAIR, under each of the two doctorings: the leg that goes RED, and the other leg's verdict
+    staying UNCHANGED. The second half is what costs the defect its hiding place.
+
+    The claim is a RELATION BETWEEN THE TWO LEGS, so it is stated as one: doctoring the prose must
+    not move the table verdict, and doctoring the table must not move the prose verdict. It is
+    deliberately NOT "both legs are green" -- that is a claim about the manuscript, and a plant
+    that made it would turn a genuine defect in the manuscript into a failing plant, printing its
+    own noise over the message that names the defect (this package has recorded that shape before).
+    """
+    ok = True
+    block = text[text.index(OPEN_MARK): text.index(CLOSE_MARK) + len(CLOSE_MARK)]
+    body = without_table(text, rates)
+
+    t0, p0, _, _ = legs_on(text, rates, depth2)
+    print("  [plant] baseline on the text as given: table rc=%d, prose rc=%d (not asserted -- the "
+          "legs' own verdict lines say whether the manuscript is green)" % (t0, p0))
+
+    st = [x for x in rate_statements(body) if x["form"] == "adjacent"]
+    if not st:
+        print("  [FAIL] no adjacent-form statement exists in the prose, so this plant is unproven")
+        return False
+    first = st[0]
+    wrong = round(first["triple"][0] + 0.3, 1)
+    doctored_body = (body[:first["span"][0]]
+                     + first["raw"].replace("%.1f" % first["triple"][0], "%.1f" % wrong, 1)
+                     + body[first["span"][1]:])
+    number_doc = doctored_body + "\n\n" + block + "\n"
+    if number_doc == text:
+        print("  [FAIL] the prose doctor changed nothing, so the first leg would be untested")
+        return False
+
+    # a CELL is doctored, not the block's wording: the first decimal in the block, its integer part
+    # moved by one, so the table is what a hand edit to a number looks like.
+    i = block.index(OPEN_MARK) + len(OPEN_MARK)
+    m = re.search(r"(\d+)\.(\d+)", block[i:])
+    if not m:
+        print("  [FAIL] the table block carries no decimal cell to doctor, so the second leg is "
+              "untested")
+        return False
+    a = i + m.start()
+    b = i + m.end()
+    bad_block = block[:a] + "%d.%s" % ((int(m.group(1)) + 1) % 10, m.group(2)) + block[b:]
+    table_doc = body + "\n\n" + bad_block + "\n"
+    if bad_block == block:
+        print("  [FAIL] the table doctor changed nothing, so the second leg would be untested")
+        return False
+
+    tn, pn, tn_out, pn_out = legs_on(number_doc, rates, depth2)
+    named = (tn == t0 and pn == 1 and "[FAIL]" in pn_out
+             and "table block" not in pn_out.lower())
+    print("  [plant %s] a doctored number in the PROSE moves the prose verdict to red (rc=%d) and "
+          "leaves the table verdict where it was (rc=%d, was %d); the prose leg never mentions the "
+          "table" % ("ok" if named else "FAIL", pn, tn, t0))
+    ok = ok and named
+
+    tt, pt, tt_out, pt_out = legs_on(table_doc, rates, depth2)
+    named2 = (tt == 1 and "TABLE BLOCK" in tt_out and pt == p0)
+    print("  [plant %s] a doctored TABLE BLOCK moves the table verdict to red (rc=%d) and leaves "
+          "the prose verdict where it was (rc=%d, was %d)"
+          % ("ok" if named2 else "FAIL", tt, pt, p0))
+    ok = ok and named2
+    return ok
+
+
+def check_table(rates):
+    """`--check-table`: the table block and nothing else."""
+    return table_leg(open(MANUSCRIPT, encoding="utf-8").read(), rates)
+
+
+def check_prose(rates, depth2=None):
+    """`--check-prose`: the numbers the prose prints and nothing else."""
+    return prose_leg(open(MANUSCRIPT, encoding="utf-8").read(), rates, depth2)
 
 
 # The two forms the body writes a rate-with-interval in, and why both are needed.
@@ -210,26 +338,37 @@ def interval_census(body):
     a finding -- it was absent. An interval token is the visible unit here, not a match: each one is
     either inside a rate-with-interval statement (and therefore value-checked) or it is declared
     below with its reason. Anything else is reported by position and text.
+
+    THE UNIT IS THE OCCURRENCE, NOT THE DISTINCT TOKEN, and the first version of this census got that
+    wrong in the one place it is hardest to see: the total was `len(used)`, the set of declared
+    tokens, so quoting a declared interval a second time added a token to the body and left the
+    printed total where it was. The body now writes the declared token twice -- once quoting the
+    superseded bound and once naming what is declared -- and the printed denominator has to count
+    both or it reports 19 tokens over a body that writes 20. `declared` stays a set, because the
+    stale check asks which declarations matched at all; `declared_occurrences` is what the total
+    counts.
     """
     st = rate_statements(body)
     spans = [x["span"] for x in st]
     declared = dict(DECLARED_UNPAIRED_INTERVALS)
-    read, orphans, used = 0, [], set()
+    read, orphans, used, declared_hits = 0, [], set(), 0
     for m in INTERVAL.finditer(body):
         token = " ".join(m.group(0).split())
         if any(a <= m.start() < b for a, b in spans):
             read += 1
         elif token in declared:
             used.add(token)
+            declared_hits += 1
         else:
             orphans.append({"token": token, "at": m.start()})
-    return {"statements": len(st), "tokens": read + len(orphans) + len(used),
+    return {"statements": len(st), "tokens": read + len(orphans) + declared_hits,
             "read": read, "orphans": orphans, "declared": used,
+            "declared_occurrences": declared_hits,
             "stale_declarations": sorted(set(declared) - used)}
 
 
 def plant_census(body):
-    """Two legs, because the census has two ways to be wrong.
+    """Five legs, because the census has more than one way to be wrong.
 
     (1) The defect this repairs: a statement whose interval closes past any character window must be
     READ, not skipped. The doctor puts a share no artifact holds 174 characters from its own
@@ -239,8 +378,18 @@ def plant_census(body):
     (2) The other direction: an interval with no rate before it in its sentence must be NAMED by the
     census rather than counted as explained. A rule that reports only what it paired cannot fail
     here, and this leg is what shows the census is a census.
+    (3) A declaration whose token has LEFT the body must be a finding, or an exemption outlives the
+    sentence that needed it and the census goes on explaining an interval nobody writes. This is the
+    direction that separates a declaration from an allowlist, and the manuscript now states it to a
+    reader, so it is planted rather than asserted.
+    (4)-(5) The unit: the occurrence, not the distinct token. A third quotation of a declared
+    interval must move the printed total by exactly one, and the form this package published --
+    which counted the set of declared tokens -- must NOT move, and is carried here as the negative
+    leg. Without that leg, leg (4) would pass just as well if the mutant and the original were the
+    same object.
     """
     ok = True
+    base = interval_census(body)
     gap = " of the instances that can refute the identity and are counted in this population" * 3
     far = round(44.9, 1)
     doctored = body + ("\n\nA planted statement reads %.1f%%%s[33.1, 54.6].\n" % (far, gap))
@@ -255,6 +404,36 @@ def plant_census(body):
     print("  [plant %s] an interval with no rate before it is reported by the census (%d orphan(s))"
           % ("ok" if named else "FAIL", len(cens2["orphans"])))
     ok = ok and bool(named)
+    # (3) every occurrence of the declared token removed: the declaration must go stale. Removing the
+    # text rather than doctoring it keeps the two findings apart -- a replaced interval would also be
+    # reported as an orphan, and this leg is about the declaration alone.
+    retired = body.replace("[11.3, 21.0]", "the superseded bound")
+    cens3 = interval_census(retired)
+    stale_ok = (cens3["stale_declarations"] == ["[11.3, 21.0]"]
+                and not cens3["orphans"] and cens3["declared_occurrences"] == 0)
+    print("  [plant %s] a declaration that stops occurring is STALE, and reported: %s"
+          % ("ok" if stale_ok else "FAIL", cens3["stale_declarations"]))
+    ok = ok and stale_ok
+    # (4)-(5) the occurrence is the unit, and the published set-counting form cannot see a repeat
+    repeated = body + "\n\nThe superseded bound [11.3, 21.0] is quoted once more here.\n"
+    cens4 = interval_census(repeated)
+
+    def distinct_token_form(b):
+        """The form this package published: a declared token counted once, however often written."""
+        c = interval_census(b)
+        return c["read"] + len(c["orphans"]) + len(c["declared"])
+
+    moved = (cens4["tokens"] == base["tokens"] + 1
+             and cens4["declared_occurrences"] == base["declared_occurrences"] + 1)
+    print("  [plant %s] one more quotation of a declared interval adds one to the total (%d -> %d, "
+          "%d declared occurrence(s))"
+          % ("ok" if moved else "FAIL", base["tokens"], cens4["tokens"],
+             cens4["declared_occurrences"]))
+    ok = ok and moved
+    blind = distinct_token_form(repeated) == distinct_token_form(body)
+    print("  [plant %s] the published distinct-token form reports the same total (%d) for that body "
+          "and is refused as the unit" % ("ok" if blind else "FAIL", distinct_token_form(repeated)))
+    ok = ok and blind
     return ok
 
 
@@ -364,7 +543,7 @@ def check_prose_rates(text, rates, depth2=None):
                     pins_pct.add(round(100.0 * b["pins_certificate"] / b["pins_pin_everything"], 1))
             if isinstance(v.get("price_delta_points"), float):
                 pins_pct.add(v["price_delta_points"])
-    body = text.replace(render_table(rates), "")        # the table is checked above
+    body = without_table(text, rates)        # the table is the OTHER leg's object, not this one's
     total, bad = 0, 0
     spans = sentence_spans(body)
     for st in rate_statements(body):
@@ -447,10 +626,11 @@ def check_prose_rates(text, rates, depth2=None):
     for st in rate_statements(body):
         forms[st["form"]] = forms.get(st["form"], 0) + 1
     print("  [ok]   PROSE: IN SYNC (%d rate-with-interval statements -- %d adjacent, %d distant -- "
-          "%d of %d interval tokens read as statements, %d declared: %s -- and %d pin-price integers "
-          "across the whole body, all of them the artifacts' own numbers)"
+          "%d of %d interval occurrences read as statements, %d declared occurrence(s) of %d "
+          "token(s): %s -- and %d pin-price integers across the whole body, all of them the "
+          "artifacts' own numbers)"
           % (total, forms.get("adjacent", 0), forms.get("distant", 0),
-             cens["read"], cens["tokens"], len(cens["declared"]),
+             cens["read"], cens["tokens"], cens["declared_occurrences"], len(cens["declared"]),
              ", ".join(sorted(cens["declared"])) or "none", ints))
     return 0
 
@@ -603,9 +783,11 @@ def main(argv):
         print("  [ok]   wrote the table block from rates.json")
         return 0
     if "--check-table" in argv:
+        return check_table(rates)
+    if "--check-prose" in argv:
         d2path = os.path.join(HERE, "depth2.json")
         depth2 = json.load(open(d2path, encoding="utf-8")) if os.path.exists(d2path) else None
-        return check_table(rates, depth2)
+        return check_prose(rates, depth2)
     return render_figure(decay)
 
 

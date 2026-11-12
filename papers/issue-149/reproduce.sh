@@ -16,8 +16,9 @@
 #                          the corpus
 #   8  figure               make_figures.py -> figures/decay-curve.svg, and asserts the ordering
 #                          §7.3 claims before writing it
-#   9  rates table          the manuscript's table block is compared against the render of
-#                          rates.json, so a hand-edited cell fails here rather than ageing
+#   9  table and prose      two objects, two sentences: the manuscript's table block against the
+#                          render of rates.json, and every number the prose prints against the
+#                          artifacts -- asked separately so each failure names its own object
 #
 # usage: sh reproduce.sh [--fast]      --fast skips the depth-2 enumeration (step 4 reports NOT RUN)
 #
@@ -267,12 +268,22 @@ else
   bad "make_figures.py refused to write the figure (assertion failed)"
 fi
 
-# ---------------------------------------------------------------- 9 rates table
-step "9 rates table"
+# ---------------------------------------------------------------- 9 table and prose
+# TWO OBJECTS, TWO SENTENCES. This step used to run one command and print one sentence for it --
+# "the manuscript's table block is not the render of rates.json" -- while that command checked the
+# table AND every number in the body. A doctored number in the body therefore came out under a
+# sentence about the table: the reader was sent to the object that was fine. Both legs are now
+# asked separately, and each names the object it actually read.
+step "9 table and prose"
 if "$PY" make_figures.py --check-table; then
   :
 else
-  bad "the manuscript's table block is not the render of rates.json"
+  bad "manuscript.md's table block vs the rates.json render"
+fi
+if "$PY" make_figures.py --check-prose; then
+  :
+else
+  bad "manuscript.md's prose numbers vs the artifacts"
 fi
 
 # ---------------------------------------------------------------- step list

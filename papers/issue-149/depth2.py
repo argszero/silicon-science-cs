@@ -273,7 +273,12 @@ def wilson(k, n, z=1.96):
     den = 1.0 + z * z / n
     c = (p + z * z / (2 * n)) / den
     h = z * math.sqrt(p * (1 - p) / n + z * z / (4.0 * n * n)) / den
-    return [max(0.0, c - h), min(1.0, c + h)]
+    # k = 0 is an upper bound whose lower end is 0 EXACTLY, by construction: no observed event places
+    # any mass below it.  Computing that end instead of stating it leaves a floating-point residue on
+    # some denominators and not others -- in this very artefact the exceptions cell with n = 63 printed
+    # a clean 0.0 while the one with n = 27 printed 6.94e-18, same function, same k -- so the residue is
+    # a property of the denominator rather than of the measurement, and no carrier could see it.
+    return [0.0 if k == 0 else max(0.0, c - h), min(1.0, c + h)]
 
 
 def worked_example(eco, declaring):
@@ -552,6 +557,29 @@ def check():
     dn, _ = determiners(n2, s2, p2)
     silent = not any(v for v in dn.values())
     plant("control determiner detector silent on the independent closure", silent, " (%s)" % dn)
+
+    # THE k = 0 LEG: an interval at a zero count is an upper bound whose LOWER END IS EXACTLY 0.  The
+    # published artefact carried a residue there, and the reason no carrier saw it is inside this plant:
+    # the same function returned a clean 0.0 on the n = 63 denominator in that file and 6.94e-18 on the
+    # n = 27 one.  Both directions are planted, because a plant that passes when the mutant equals the
+    # original has tested nothing -- the negative leg asserts the published form is REFUSED by the very
+    # predicate the shipped function passes.
+    def lower_is_exact_zero(fn, ns=range(1, 200)):
+        """True only if every n in the sweep gives a lower end that IS 0.0, not a residue printing as one."""
+        return all(repr(fn(0, n)[0]) == "0.0" for n in ns)
+
+    def residue_form(k, n, z=1.96):
+        """The form this package published, kept here as the plant's negative leg."""
+        p = float(k) / n
+        den = 1.0 + z * z / n
+        c = (p + z * z / (2 * n)) / den
+        h = z * math.sqrt(p * (1 - p) / n + z * z / (4.0 * n * n)) / den
+        return [max(0.0, c - h), min(1.0, c + h)]
+
+    plant("plant the k=0 lower end is exactly 0.0 on every denominator", lower_is_exact_zero(wilson))
+    plant("plant the residue the published form leaves at k=0 is refused",
+          not lower_is_exact_zero(residue_form) and repr(residue_form(0, 27)[0]) != "0.0",
+          " (n=27 gives %r)" % residue_form(0, 27)[0])
 
     print("PLANTS: %d/%d %s" % (sum(1 for x in seen if x), len(seen),
                                "ALL PASS" if all(seen) else "FAILED"))
