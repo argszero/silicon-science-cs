@@ -2,8 +2,11 @@
 
 The per-request yield of citation expansion, and the price at which allocation would change.
 
-**Status: package core complete and reproducible; the reference list is not yet assembled, so this is
-not a submittable manuscript.** `manuscript.md` says so in its own header and its §References.
+**Status: package core complete and reproducible, with the reference list assembled and generated.**
+`manuscript.md` carries **102** entries under §References, rendered by `make_manuscript.py` from the
+`{{c:…}}` markers in their order of first appearance and drawn from `refs/records.json` — the records
+`build_refs.py` queried and verified against the registry. `reference-check.md` reports every entry
+against the record it was checked against.
 
 ## Reproduce in one command
 
@@ -11,8 +14,9 @@ not a submittable manuscript.** `manuscript.md` says so in its own header and it
 ./reproduce.sh
 ```
 
-Expected output on a machine with `bash` and a `python3` (matplotlib is needed only for the figures,
-and the script finds an interpreter that has it):
+Expected output on a machine with `bash` and a `python3`, plus **matplotlib 3.9.4** for the figures
+only — the version under which the committed PNGs reproduce byte for byte. The script finds an
+interpreter that has matplotlib and reports which one it used:
 
 ```
 [1] committed arm digests                        ok
@@ -30,11 +34,14 @@ declared NOT RUN, never to be read as a pass) · `N` N steps disagreed.
 
 **Tolerance: none.** Steps 2–6 compare bytes, not values: `results.json` and `manuscript.md` are
 regenerated from the committed arms and the committed template and must match the committed copies
-exactly; the two PNGs are redrawn into a temporary directory and compared byte for byte. A reader on a
-different matplotlib version may get a different PNG *encoding* (same numbers, same picture) — that is
-the one place bytes are not portable, and step 4 will say so loudly rather than pass quietly. The
-numbers themselves have no version dependence: `analysis.py`, `make_manuscript.py` and
-`check_numbers.py` import nothing outside the Python standard library.
+exactly; the two PNGs are redrawn into a temporary directory and compared byte for byte. That byte
+comparison is portable on one rasterizer only: under matplotlib **3.9.4** the committed figures
+reproduce exactly — 719×347 and 703×316 pixels — while a different version draws the same picture at
+slightly different raster geometry (a triage read at 3.11.2 measured 346×724 and 315×711), so step 4
+fails and prints both byte counts rather than passing quietly; a difference of a pixel or two is that
+rasterizer, not a changed picture. The numbers themselves have no version dependence: `analysis.py`,
+`make_manuscript.py` and `check_numbers.py` import nothing outside the Python standard library, and
+each figure program asserts its values against `results.json` before it draws.
 
 ## What each step proves
 
@@ -76,6 +83,8 @@ request caps that the cost model rests on — a breadth page returns at most 200
 accepts at most 100 values — are recorded as data in `results.json` (`arms.*.cost_constants`) and are
 not re-probed.
 
-The **reference list** is not yet assembled; `manuscript.md` carries a placeholder section and the
-paper is marked non-submittable for that reason. When it lands, `reference-check.md` will record, per
-entry, the verification method and the real record found.
+The **reference list** is assembled and generated. `make_manuscript.py` renders §References from the
+`{{c:…}}` markers in order of first appearance, taking each entry from `refs/records.json` — records
+`build_refs.py` queried and verified against the registry — and `reference-check.md` records, per
+entry, the verification method and the real record found. `refgate` reads **102** entries from that
+section with all **102** in-text citations covered (100.0 %).
