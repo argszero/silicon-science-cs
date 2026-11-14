@@ -1,0 +1,867 @@
+{
+ "caveat": "Crossref bibliographic totals are fuzzy-match candidate counts, not counts of relevant works; the arXiv `abs:` conjunctions are filters. The records actually READ are the retrieved top-N per query per index, and their number is in the ledger.",
+ "claim": "The recall literature does not ask what decides whether the identified set of a recall@k measurement has any width.",
+ "hand_review": {
+  "records": [
+   {
+    "asks_width": false,
+    "id": "10.1007/s00184-025-00994-4",
+    "query": "q5",
+    "source": "crossref",
+    "title": "Retrieval from mixed sampling frequency: generic identifiability in the unit root VAR",
+    "why": "the journal version of the VAR identifiability record above",
+    "year": "2025"
+   },
+   {
+    "asks_width": false,
+    "id": "10.1609/aaai.v32i1.12138",
+    "query": "q4",
+    "source": "crossref",
+    "title": "Fast Approximate Nearest Neighbor Search via k-Diverse Nearest Neighbor Graph",
+    "why": "builds a graph to search faster; mentions ties as a feature of the graph, not as a question about what a recall number can mean",
+    "year": "2018"
+   },
+   {
+    "asks_width": false,
+    "id": "10.22564/brjg.v40i1.2157",
+    "query": "q1",
+    "source": "crossref",
+    "title": "Seismic Well Tie using Geophysical Logs obtained from K-Nearest Neighbor Regression Algorithm",
+    "why": "a 'well tie' in geophysics: a borehole log correlated to a seismic trace, not a distance tie",
+    "year": "2022"
+   },
+   {
+    "asks_width": false,
+    "id": "10.33369/jsds.v3i1.32381",
+    "query": "q1",
+    "source": "crossref",
+    "title": "Classification of Hypertension Patients in Palembang by K-Nearest Neighbor and Local Mean K-Nearest Neighbor",
+    "why": "k-NN used as a classifier on clinical records; no notion of an undetermined metric",
+    "year": "2024"
+   },
+   {
+    "asks_width": false,
+    "id": "10.3390/rs18203568",
+    "query": "q5",
+    "source": "crossref",
+    "title": "From Spectral Fidelity to LAI Identifiability: A PROSAIL\u2013LESS\u2013GEDI Assessment of Forest Overstory LAI Retrieval",
+    "why": "identifiability of leaf-area index from remote sensing; 'spectral fidelity' is a retrieval error, not an identified set",
+    "year": "2026"
+   },
+   {
+    "asks_width": false,
+    "id": "http://arxiv.org/abs/2003.00894v2",
+    "query": "q3",
+    "source": "arxiv",
+    "title": "Universal consistency of the $k$-NN rule in metric spaces and Nagata dimension",
+    "why": "consistency of the k-NN RULE (does it converge to the Bayes boundary), not whether a recall figure is determined; the nearest neighbour is assumed uniquely defined",
+    "year": "2020"
+   },
+   {
+    "asks_width": false,
+    "id": "http://arxiv.org/abs/2007.03937v4",
+    "query": "q4",
+    "source": "arxiv",
+    "title": "A Nearest Neighbor Characterization of Lebesgue Points in Metric Measure Spaces",
+    "why": "a characterisation of Lebesgue points via nearest neighbours; a theorem about measure, no metric is being evaluated",
+    "year": "2020"
+   },
+   {
+    "asks_width": false,
+    "id": "http://arxiv.org/abs/2102.08515v1",
+    "query": "q5",
+    "source": "arxiv",
+    "title": "A Novel Bayesian Approach for the Two-Dimensional Harmonic Retrieval Problem",
+    "why": "identifiability of harmonic retrieval; a signal-processing object",
+    "year": "2021"
+   },
+   {
+    "asks_width": false,
+    "id": "http://arxiv.org/abs/2204.05952v2",
+    "query": "q5",
+    "source": "arxiv",
+    "title": "Retrieval from Mixed Sampling Frequency: Generic Identifiability in the Unit Root VAR",
+    "why": "'identifiability' of VAR parameters under mixed sampling; a time-series object",
+    "year": "2022"
+   },
+   {
+    "asks_width": false,
+    "id": "http://arxiv.org/abs/2310.18904v1",
+    "query": "q5",
+    "source": "arxiv",
+    "title": "Identifiable Contrastive Learning with Automatic Feature Importance Discovery",
+    "why": "identifiability of latent factors in contrastive learning; a representation-learning object",
+    "year": "2023"
+   },
+   {
+    "asks_width": false,
+    "id": "http://arxiv.org/abs/2403.05168v3",
+    "query": "q6",
+    "source": "arxiv",
+    "title": "Enhancing Multimodal Unified Representations for Cross Modal Generalization",
+    "why": "representation learning across modalities; no metric-identification content",
+    "year": "2024"
+   },
+   {
+    "asks_width": false,
+    "id": "http://arxiv.org/abs/2504.13172v1",
+    "query": "q5",
+    "source": "arxiv",
+    "title": "SemCORE: A Semantic-Enhanced Generative Cross-Modal Retrieval Framework with MLLMs",
+    "why": "a cross-modal retrieval architecture; reports recall, does not question what it identifies",
+    "year": "2025"
+   },
+   {
+    "asks_width": false,
+    "id": "http://arxiv.org/abs/2511.01458v2",
+    "query": "q2",
+    "source": "arxiv",
+    "title": "When to Trust the Answer: Question-Aligned Semantic Nearest Neighbor Entropy for Safer Surgical VQA",
+    "why": "nearest-neighbour retrieval used to decide when to trust an answer; the metric is an input",
+    "year": "2025"
+   },
+   {
+    "asks_width": false,
+    "id": "http://arxiv.org/abs/2603.25030v1",
+    "query": "q6",
+    "source": "arxiv",
+    "title": "Information-Theoretic Limits of Node Localization under Hybrid Graph Positional Encodings",
+    "why": "information-theoretic limits on node localisation; limits of an estimator, not of a metric's reading",
+    "year": "2026"
+   },
+   {
+    "asks_width": false,
+    "id": "http://arxiv.org/abs/2606.28327v1",
+    "query": "q5",
+    "source": "arxiv",
+    "title": "The Interference Gap: Comparing Retrieval Bounds in Human Memory and RAG Systems",
+    "why": "compares retrieval bounds across two systems; 'interference' is a bound on recall, not the identification of it",
+    "year": "2026"
+   }
+  ],
+  "rule": "recorded by the author, one line per screened survivor, after reading the title and abstract; keyed by the record's own id"
+ },
+ "indices": {
+  "arxiv": "arXiv API, all fields via `abs:` clauses, full-text abstracts",
+  "crossref": "Crossref REST API, journal-article type, bibliographic query"
+ },
+ "ledger": {
+  "n_asks_width": 0,
+  "n_stale": 0,
+  "n_unreviewed": 0,
+  "read_by_hand": 15,
+  "records_deduped": 83,
+  "records_retrieved": 92,
+  "sources_not_run": [],
+  "survived_screen": 15
+ },
+ "queries": [
+  {
+   "arxiv": {
+    "hits": 0,
+    "query": "abs:\"recall\" AND abs:\"tie\" AND abs:\"nearest neighbor\" AND submittedDate:[201601010000 TO 202611092359]",
+    "retrieved": [],
+    "status": "ok",
+    "url": "http://export.arxiv.org/api/query?search_query=abs%3A%22recall%22+AND+abs%3A%22tie%22+AND+abs%3A%22nearest+neighbor%22+AND+submittedDate%3A%5B201601010000+TO+202611092359%5D&start=0&max_results=10&sortBy=relevance&sortOrder=descending"
+   },
+   "crossref": {
+    "hits": 927716,
+    "query": "recall at k tie nearest neighbor evaluation",
+    "retrieved": [
+     {
+      "abstract": "<jats:p>Sistem analisis sentimen merupakan suatu sistem yang dibangun untuk menganalisis sentimen dalam bahasa Indonesia pada data yang diambil dari microblog, yaitu Twitter, Facebook, dan YouTube. Data tersebut diklasifikasikan menggunakan K-Nearest Neighbor (KNN) dan Neighbor-Weighted K-Nearest Neighbor (NW-KNN). Sistem analisis sentimen dibagi menjadi 4 (empat) tahap, yaitu tahap microblog crawling, tahap pra-pemrosesan data, tahap ekstraksi fitur, dan tahap klasifikasi sentimen. Data yang ada akan diklasifikasikan ke dalam 5 (lima) kelas, yaitu sangat positif, positif, netral, negatif, dan sangat negatif. Data tersebut kemudian akan dievaluasi menggunakan confusion matrix. Pengujian dilakukan dengan 50 data uji. NW-KNN memiliki akurasi yang paling tinggi di antara seluruh pengklasifikasi, yaitu 86% pada saat K = 9. Sedangkan untuk KNN, akurasi dari pengklasifikasi tersebut sebesar 82% pada saat K = 3. Kesimpulannya adalah NW-KNN berhasil mengatasi data latih dengan komposisi kelas yang tidak seimbang. Kata kunci: KNN, NW-KNN, Analisis Sentimen, Data Microblog</jats:p>",
+      "id": "10.36412/frontiers/001035e1/april201801.08",
+      "title": "PERBANDINGAN PENGKLASIFIKASI K-NEAREST NEIGHBOR DAN NEIGHBOR-WEIGHTED K-NEAREST NEIGHBOR PADA SISTEM ANALISIS SENTIMEN DENGAN DATA MICROBLOG",
+      "year": "2018"
+     },
+     {
+      "abstract": "<jats:p>This paper aims to verify if the seismic slowness log estimated through the supervised machine learning K-nearest neighbor (KNN) algorithm can be a feasible alternative to replace the sonic well log as input for the seismic well tie in a dataset from the Rec\u00f4ncavo Basin. The training and optimization of the regression were performed in a dataset composed of 17 well logs with petrophysical information of gamma-ray, deep and shallow resistivities, and the geological formation, e.g, Pojuca, Marfim, Maracangalha, Candeias, S\u00e3o Sebasti\u00e3o, \u00c1gua Grande, and Sergi Formations. The metric to evaluate the regressions was the mean absolute error of the measured property and the prediction. The holdout cross-validation technique was applied to avoid overfitting, and a well log was separated as a blind test to verify the prediction in an unknown dataset. Furthermore, synthetic seismic traces were generated from the slowness log and the prediction using the KNN. The comparison between them shows outstanding results in the visual analysis of the peaks and amplitudes of the main seismic events. In addition, the comparison between the seismic traces close to the synthetic seismic traces reve",
+      "id": "10.22564/brjg.v40i1.2157",
+      "title": "Seismic Well Tie using Geophysical Logs obtained from K-Nearest Neighbor Regression Algorithm",
+      "year": "2022"
+     },
+     {
+      "abstract": "<jats:p>&lt;p dir=\"ltr\"&gt;&lt;span&gt;Bank is a business entity that collects public funds in the form of savings and also distributes them to the public in the form of credit or other forms. Credit risk analysis can be done in various ways such as marketing analysis and big data using machine learning. One example of a machine learning algorithm is K-Nearest Neighbor (KNN) and the development of the K-Nearest Neighbor algorithm is Neighbor Weighted KNearest Neighbor (NWKNN). The K-Nearest Neighbor (KNN) algorithm is one of the machine learning methods that can be used to facilitate the classification of complex data. The purpose of this study is to determine the results of the application of the algorithm and the comparison of the use of the KNN and NWKNN algorithms in banking credit. The results obtained are that NWKNN is able to predict credit risk better, especially in classifying potential customers with potential losses compared to KNN.&lt;/span&gt;&lt;span&gt; &lt;/span&gt;&lt;/p&gt;&lt;span id=\"docs-internal-guid-3225d0b5-7fff-da27-d883-e71a565d51af\"&gt;&lt;span&gt;&lt;strong&gt;Keywords&lt;/strong&gt;: &lt;/span&gt;&lt;span&gt;Machine learning, KNN, NWKNN&lt;/span&gt;&lt;",
+      "id": "10.13057/ijas.v5i2.58426",
+      "title": "Analisis Risiko Kredit Perbankan Menggunakan Algoritma K-Nearest Neighbor dan Nearest Weighted K-Nearest Neighbor",
+      "year": "2023"
+     },
+     {
+      "abstract": "<jats:p>Approximate Nearest Neighbor Search (ANNS) presents an inherent tradeoff between performance and recall (i.e., result quality). Each ANNS algorithm provides its own algorithm-dependent parameters to allow applications to influence the recall/performance tradeoff of their searches. This situation is doubly problematic. First, the application developers have to experiment with these algorithm-dependent parameters to fine-tune the parameters that produce the desired recall for each use case. This process usually takes a lot of effort. Even worse, the chosen parameters may produce good recall for some queries, but bad recall for hard queries. To solve these problems, we present DARTH, a method that uses target declarative recall. DARTH uses a novel method for providing target declarative recall on top of an ANNS index by employing an adaptive early termination strategy integrated into the search algorithm. Through a wide range of experiments, we demonstrate that DARTH effectively meets user-defined recall targets while achieving significant speedups, up to 14.6x (average: 6.8x; median: 5.7x) faster than the search without early termination for HNSW and up to 41.8x (average: 13.",
+      "id": "10.1145/3749160",
+      "title": "DARTH: Declarative Recall Through Early Termination for Approximate Nearest Neighbor Search",
+      "year": "2025"
+     },
+     {
+      "abstract": "<jats:p>Forestry work involves scientific management and the effective utilization of forest land resources, and finding economical, efficient and accurate acquisition methods for forest land resource information. In previous land-use classification research, machine learning algorithms have achieved good results, and Sentinel public data have been used in various remote sensing applications. However, there is a paucity of research using these data to evaluate the performance of machine learning algorithms in the extracting of complex forest land resource information. Using the Sentinel-2 satellite multispectral image data, the spectral reflectance, vegetation index characteristics and image texture characteristics of different forest land resources in the study area were calculated and compared. Then, based on three groups of features, the performances of the Support Vector Machine (SVM), K-Nearest Neighbor (KNN), Random Forest (RF), decision trees (DT) and Multi-layer Perceptron (MLP) were examined and compared to identify and classify forest land resource types. The research indicates the following: (1) The SVM algorithm achieved the highest OA (95.8%). The average accuracy of t",
+      "id": "10.3390/f14020254",
+      "title": "Forest Land Resource Information Acquisition with Sentinel-2 Image Utilizing Support Vector Machine, K-Nearest Neighbor, Random Forest, Decision Trees and Multi-Layer Perceptron",
+      "year": "2023"
+     },
+     {
+      "abstract": "",
+      "id": "10.1016/j.asoc.2017.02.020",
+      "title": "A novel version of k nearest neighbor: Dependent nearest neighbor",
+      "year": "2017"
+     },
+     {
+      "abstract": "<jats:p>U-statistics are fundamental in modeling statistical measures that involve responses from multiple subjects. They generalize the concept of the empirical mean of a random variable X to include summations over each m-tuple of distinct observations of X. W. Stute introduced conditional U-statistics, extending the Nadaraya\u2013Watson estimates for regression functions. Stute demonstrated their strong pointwise consistency with the conditional expectation r(m)(\u03c6,t), defined as E[\u03c6(Y1,\u2026,Ym)|(X1,\u2026,Xm)=t] for t\u2208Xm. This paper focuses on estimating functional single index (FSI) conditional U-processes for regular time series data. We propose a novel, automatic, and location-adaptive procedure for estimating these processes based on k-Nearest Neighbor (kNN) principles. Our asymptotic analysis includes data-driven neighbor selection, making the method highly practical. The local nature of the kNN approach improves predictive power compared to traditional kernel estimates. Additionally, we establish new uniform results in bandwidth selection for kernel estimates in FSI conditional U-processes, including almost complete convergence rates and weak convergence under general conditions. These",
+      "id": "10.3390/sym16121576",
+      "title": "Uniform in Number of Neighbor Consistency and Weak Convergence of k-Nearest Neighbor Single Index Conditional Processes and k-Nearest Neighbor Single Index Conditional U-Processes Involving Functional Mixing Data",
+      "year": "2024"
+     },
+     {
+      "abstract": "",
+      "id": "10.21275/art20164631",
+      "title": "A Survey on Nearest Neighbor Search with Keywords",
+      "year": "2017"
+     },
+     {
+      "abstract": "<jats:p>Classification is a multivariate technique for separating different data sets from an object and allocating new objects into predefined groups. Several methods that can be used to classify include the k-Nearest Neighbor (KNN) and Local Mean k-Nearest Neighbor (LMKNN) methods. The KNN method classifies objects based on the majority voting principle, while LMKNN classifies objects based on the local average vector of the k nearest neighbors in each class. In this study, a comparison was made on the results of classifying hypertensive patient data at the Merdeka Health Center in Palembang City with the KNN and LMKNN methods by looking at the accuracy and the smallest APER value produced. The results showed that by using the same proportion of training and testing data and choosing different k values, the results of classifying hypertension patient data at the Merdeka Health Center in Palembang City with the KNN and LMKNN methods resulted in the APER value or the same error rate and accuracy, namely sequentially equal to 0.0303 and 96.97%.</jats:p>",
+      "id": "10.33369/jsds.v3i1.32381",
+      "title": "Classification of Hypertension Patients in Palembang by K-Nearest Neighbor and Local Mean K-Nearest Neighbor",
+      "year": "2024"
+     },
+     {
+      "abstract": "<jats:p>Corona Virus Disease 2019 (covid-19) merupakan pandemi dunia yang menimbulkan berbagai kerugian di dunia. Diagnosis covid-19 yang valid memerlukan waktu yang cukup lama dan hasil ini tidak sepenuhnya akurat. Salah satu cara untuk meningkatkan hasil akurasi adalah dengan menggunakan image classification. k-Nearest Neighbor (kNN) adalah salah satu Teknik klasifikasi yang paling banyak digunakan untuk melakukan pekerjaan tersebut, hanya saja kNN masih memiliki kelemahan. Untuk mengatasi kelemahan pada kNN, maka dilakukan modifikasi dengan menambahkan local mean dan distance weight, di mana varian kNN ini dikenal dengan nama Local Mean Distance Weight k-Nearest Neighbor (LMDWkNN). Oleh sebab itu, penelitian kali mencoba membandingkan kinerja kedua algoritma ini untuk melakukan image classification pada citra covid-19. Kinerja diukur berdasarkan nilai akurasi, precision, dan recall, di mana dari hasil pengujian terbukti bahwa kinerja LMDWkNN lebih baik dari pada kinerja kNN. Algoritma LMDWkNN mengalami peningkatan rata-rata sebesar 3.5% untuk nilai akurasi, 2.89% untuk precision, dan 3.54% untuk recall. Meskipun begitu kNN tetap mampu menghasilkan kinerja yang sama baiknya yang ",
+      "id": "10.35143/jkt.v9i1.6019",
+      "title": "Perbandingan Kinerja k-Nearest Neighbor dan Local Mean Distance k-Nearest Neighbor Pada Data Citra Covid-19",
+      "year": "2023"
+     }
+    ],
+    "status": "ok",
+    "url": "https://api.crossref.org/works?query.bibliographic=recall+at+k+tie+nearest+neighbor+evaluation&filter=from-pub-date%3A2016-01-01%2Cuntil-pub-date%3A2026-11-09%2Ctype%3Ajournal-article&rows=10&select=DOI%2Ctitle%2Cissued%2Cabstract"
+   },
+   "id": "q1",
+   "statement": "recall@k evaluated against a ground truth that several points share"
+  },
+  {
+   "arxiv": {
+    "hits": 1,
+    "query": "abs:\"ground truth\" AND abs:\"ambiguity\" AND abs:\"nearest neighbor\" AND submittedDate:[201601010000 TO 202611092359]",
+    "retrieved": [
+     {
+      "abstract": "Safety and reliability are critical for deploying visual question answering (VQA) systems in surgery, where incorrect or ambiguous responses can cause patient harm. A key limitation of existing uncertainty estimation methods, such as Semantic Nearest Neighbor Entropy (SNNE), is that they do not explicitly account for the conditioning question. As a result, they may assign high confidence to answers that are semantically consistent yet misaligned with the clinical question, especially under variation in question phrasing. We propose Question-Aligned Semantic Nearest Neighbor Entropy (QA-SNNE), a black-box uncertainty estimator that incorporates question-answer alignment into semantic entropy through bilateral gating. QA-SNNE measures uncertainty by weighting pairwise semantic similarities among sampled answers according to their relevance to the question, using embedding-based, entailment-based, or cross-encoder alignment strategies. To assess robustness to language variation, we construct an out-of-template rephrased version of a benchmark surgical VQA dataset, where only the question wording is modified while images and ground-truth answers remain unchanged. We evaluate QA-SNNE on",
+      "id": "http://arxiv.org/abs/2511.01458v2",
+      "title": "When to Trust the Answer: Question-Aligned Semantic Nearest Neighbor Entropy for Safer Surgical VQA",
+      "year": "2025"
+     }
+    ],
+    "status": "ok",
+    "url": "http://export.arxiv.org/api/query?search_query=abs%3A%22ground+truth%22+AND+abs%3A%22ambiguity%22+AND+abs%3A%22nearest+neighbor%22+AND+submittedDate%3A%5B201601010000+TO+202611092359%5D&start=0&max_results=10&sortBy=relevance&sortOrder=descending"
+   },
+   "crossref": {
+    "hits": 1024737,
+    "query": "ground truth ambiguity nearest neighbor benchmark evaluation",
+    "retrieved": [
+     {
+      "abstract": "<jats:p>Cluster analyses are often conducted with the goal to characterize an underlying probability density, for which the data-point density serves as an estimate for this probability density. We here test and benchmark the common nearest neighbor (CNN) cluster algorithm. This algorithm assigns a spherical neighborhood R to each data point and estimates the data-point density between two data points as the number of data points N in the overlapping region of their neighborhoods (step 1). The main principle in the CNN cluster algorithm is cluster growing. This grows the clusters by sequentially adding data points and thereby effectively positions the border of the clusters along an iso-surface of the underlying probability density. This yields a strict partitioning with outliers, for which the cluster represents peaks in the underlying probability density\u2014termed core sets (step 2). The removal of the outliers on the basis of a threshold criterion is optional (step 3). The benchmark datasets address a series of typical challenges, including datasets with a very high dimensional state space and datasets in which the cluster centroids are aligned along an underlying structure (Birch ",
+      "id": "10.3390/a11020019",
+      "title": "Common Nearest Neighbor Clustering\u2014A Benchmark",
+      "year": "2018"
+     },
+     {
+      "abstract": "<jats:p>High scalability and low running costs have made fuzz testing the de facto standard for discovering software bugs. Fuzzing techniques are constantly being improved in a race to build the ultimate bug-finding tool. However, while fuzzing excels at finding bugs in the wild, evaluating and comparing fuzzer performance is challenging due to the lack of metrics and benchmarks. For example, crash count---perhaps the most commonly-used performance metric---is inaccurate due to imperfections in deduplication techniques. Additionally, the lack of a unified set of targets results in ad hoc evaluations that hinder fair comparison.</jats:p> <jats:p>We tackle these problems by developing Magma, a ground-truth fuzzing benchmark that enables uniform fuzzer evaluation and comparison. By introducing real bugs into real software, Magma allows for the realistic evaluation of fuzzers against a broad set of targets. By instrumenting these bugs, Magma also enables the collection of bug-centric performance metrics independent of the fuzzer. Magma is an open benchmark consisting of seven targets that perform a variety of input manipulations and complex computations, presenting a challenge to state",
+      "id": "10.1145/3543516.3456276",
+      "title": "Magma: A Ground-Truth Fuzzing Benchmark",
+      "year": "2021"
+     },
+     {
+      "abstract": "",
+      "id": "10.7566/jpsj.95.084705",
+      "title": "Ground-State Phase Diagram of the Effective Model with Antiferromagnetic Nearest-Neighbor and Ferromagnetic Next-Nearest-Neighbor Interactions in 1/1 Periodic Approximants to Icosahedral Quasicrystals",
+      "year": "2026"
+     },
+     {
+      "abstract": "",
+      "id": "10.1016/j.inffus.2021.11.008",
+      "title": "CLEVR-XAI: A benchmark dataset for the ground truth evaluation of neural network explanations",
+      "year": "2022"
+     },
+     {
+      "abstract": "<jats:p>Sistem analisis sentimen merupakan suatu sistem yang dibangun untuk menganalisis sentimen dalam bahasa Indonesia pada data yang diambil dari microblog, yaitu Twitter, Facebook, dan YouTube. Data tersebut diklasifikasikan menggunakan K-Nearest Neighbor (KNN) dan Neighbor-Weighted K-Nearest Neighbor (NW-KNN). Sistem analisis sentimen dibagi menjadi 4 (empat) tahap, yaitu tahap microblog crawling, tahap pra-pemrosesan data, tahap ekstraksi fitur, dan tahap klasifikasi sentimen. Data yang ada akan diklasifikasikan ke dalam 5 (lima) kelas, yaitu sangat positif, positif, netral, negatif, dan sangat negatif. Data tersebut kemudian akan dievaluasi menggunakan confusion matrix. Pengujian dilakukan dengan 50 data uji. NW-KNN memiliki akurasi yang paling tinggi di antara seluruh pengklasifikasi, yaitu 86% pada saat K = 9. Sedangkan untuk KNN, akurasi dari pengklasifikasi tersebut sebesar 82% pada saat K = 3. Kesimpulannya adalah NW-KNN berhasil mengatasi data latih dengan komposisi kelas yang tidak seimbang. Kata kunci: KNN, NW-KNN, Analisis Sentimen, Data Microblog</jats:p>",
+      "id": "10.36412/frontiers/001035e1/april201801.08",
+      "title": "PERBANDINGAN PENGKLASIFIKASI K-NEAREST NEIGHBOR DAN NEIGHBOR-WEIGHTED K-NEAREST NEIGHBOR PADA SISTEM ANALISIS SENTIMEN DENGAN DATA MICROBLOG",
+      "year": "2018"
+     },
+     {
+      "abstract": "<jats:title>Abstract</jats:title><jats:p>Sun and Ma (J. Differ. Equ. 255:2534\u20132563, 2013) proved the existence of a nonzero <jats:italic>T</jats:italic>-periodic solution for a class of one-dimensional lattice dynamical systems, <jats:disp-formula><jats:alternatives><jats:tex-math> $$\\begin{aligned} \\ddot{q_{i}}=\\varPhi _{i-1}'(q_{i-1}-q_{i})- \\varPhi _{i}'(q_{i}-q_{i+1}),\\quad i\\in \\mathbb{Z}, \\end{aligned}$$ </jats:tex-math><mml:math xmlns:mml=\"http://www.w3.org/1998/Math/MathML\"> <mml:mover> <mml:msub> <mml:mi>q</mml:mi> <mml:mi>i</mml:mi> </mml:msub> <mml:mo>\u00a8</mml:mo> </mml:mover> <mml:mo>=</mml:mo> <mml:msubsup> <mml:mi>\u03a6</mml:mi> <mml:mrow> <mml:mi>i</mml:mi> <mml:mo>\u2212</mml:mo> <mml:mn>1</mml:mn> </mml:mrow> <mml:mo>\u2032</mml:mo> </mml:msubsup> <mml:mo>(</mml:mo> <mml:msub> <mml:mi>q</mml:mi> <mml:mrow> <mml:mi>i</mml:mi> <mml:mo>\u2212</mml:mo> <mml:mn>1</mml:mn> </mml:mrow> </mml:msub> <mml:mo>\u2212</mml:mo> <mml:msub> <mml:mi>q</mml:mi> <mml:mi>i</mml:mi> </mml:msub> <mml:mo>)</mml:mo> <mml:mo>\u2212</mml:mo> <mml:msubsup> <mml:mi>\u03a6</mml:mi> <mml:mi>i</mml:mi> <mml:mo>\u2032</mml:mo> </mml:msubsup> <mml:mo>(</mml:mo> <mml:msub> <mml:mi>q</mml:mi> <mml:mi>i</mml:mi> </mml:msub> <mml:mo>\u2212</mml:m",
+      "id": "10.1186/s13661-020-01440-2",
+      "title": "Ground states for infinite lattices with nearest neighbor interaction",
+      "year": "2020"
+     },
+     {
+      "abstract": "<jats:p>&lt;p dir=\"ltr\"&gt;&lt;span&gt;Bank is a business entity that collects public funds in the form of savings and also distributes them to the public in the form of credit or other forms. Credit risk analysis can be done in various ways such as marketing analysis and big data using machine learning. One example of a machine learning algorithm is K-Nearest Neighbor (KNN) and the development of the K-Nearest Neighbor algorithm is Neighbor Weighted KNearest Neighbor (NWKNN). The K-Nearest Neighbor (KNN) algorithm is one of the machine learning methods that can be used to facilitate the classification of complex data. The purpose of this study is to determine the results of the application of the algorithm and the comparison of the use of the KNN and NWKNN algorithms in banking credit. The results obtained are that NWKNN is able to predict credit risk better, especially in classifying potential customers with potential losses compared to KNN.&lt;/span&gt;&lt;span&gt; &lt;/span&gt;&lt;/p&gt;&lt;span id=\"docs-internal-guid-3225d0b5-7fff-da27-d883-e71a565d51af\"&gt;&lt;span&gt;&lt;strong&gt;Keywords&lt;/strong&gt;: &lt;/span&gt;&lt;span&gt;Machine learning, KNN, NWKNN&lt;/span&gt;&lt;",
+      "id": "10.13057/ijas.v5i2.58426",
+      "title": "Analisis Risiko Kredit Perbankan Menggunakan Algoritma K-Nearest Neighbor dan Nearest Weighted K-Nearest Neighbor",
+      "year": "2023"
+     },
+     {
+      "abstract": "",
+      "id": "10.1016/j.asoc.2017.02.020",
+      "title": "A novel version of k nearest neighbor: Dependent nearest neighbor",
+      "year": "2017"
+     },
+     {
+      "abstract": "<jats:p>U-statistics are fundamental in modeling statistical measures that involve responses from multiple subjects. They generalize the concept of the empirical mean of a random variable X to include summations over each m-tuple of distinct observations of X. W. Stute introduced conditional U-statistics, extending the Nadaraya\u2013Watson estimates for regression functions. Stute demonstrated their strong pointwise consistency with the conditional expectation r(m)(\u03c6,t), defined as E[\u03c6(Y1,\u2026,Ym)|(X1,\u2026,Xm)=t] for t\u2208Xm. This paper focuses on estimating functional single index (FSI) conditional U-processes for regular time series data. We propose a novel, automatic, and location-adaptive procedure for estimating these processes based on k-Nearest Neighbor (kNN) principles. Our asymptotic analysis includes data-driven neighbor selection, making the method highly practical. The local nature of the kNN approach improves predictive power compared to traditional kernel estimates. Additionally, we establish new uniform results in bandwidth selection for kernel estimates in FSI conditional U-processes, including almost complete convergence rates and weak convergence under general conditions. These",
+      "id": "10.3390/sym16121576",
+      "title": "Uniform in Number of Neighbor Consistency and Weak Convergence of k-Nearest Neighbor Single Index Conditional Processes and k-Nearest Neighbor Single Index Conditional U-Processes Involving Functional Mixing Data",
+      "year": "2024"
+     },
+     {
+      "abstract": "",
+      "id": "10.21275/art20164631",
+      "title": "A Survey on Nearest Neighbor Search with Keywords",
+      "year": "2017"
+     }
+    ],
+    "status": "ok",
+    "url": "https://api.crossref.org/works?query.bibliographic=ground+truth+ambiguity+nearest+neighbor+benchmark+evaluation&filter=from-pub-date%3A2016-01-01%2Cuntil-pub-date%3A2026-11-09%2Ctype%3Ajournal-article&rows=10&select=DOI%2Ctitle%2Cissued%2Cabstract"
+   },
+   "id": "q2",
+   "statement": "ambiguity or non-uniqueness in the ground truth of a nearest-neighbour benchmark"
+  },
+  {
+   "arxiv": {
+    "hits": 21,
+    "query": "abs:\"identical distances\" OR abs:\"distance ties\" AND submittedDate:[201601010000 TO 202611092359]",
+    "retrieved": [
+     {
+      "abstract": "The $k$ nearest neighbour learning rule (under the uniform distance tie breaking) is universally consistent in every metric space $X$ that is sigma-finite dimensional in the sense of Nagata. This was pointed out by C\u00e9rou and Guyader (2006) as a consequence of the main result by those authors, combined with a theorem in real analysis sketched by D. Preiss (1971) (and elaborated in detail by Assouad and Quentin de Gromard (2006)). We show that it is possible to give a direct proof along the same lines as the original theorem of Charles J. Stone (1977) about the universal consistency of the $k$-NN classifier in the finite dimensional Euclidean space. The generalization is non-trivial because of the distance ties being more prevalent in the non-euclidean setting, and on the way we investigate the relevant geometric properties of the metrics and the limitations of the Stone argument, by constructing various examples.",
+      "id": "http://arxiv.org/abs/2003.00894v2",
+      "title": "Universal consistency of the $k$-NN rule in metric spaces and Nagata dimension",
+      "year": "2020"
+     },
+     {
+      "abstract": "The dominance of online social media data as a source of population-scale social network studies has recently been challenged by networks constructed from government-curated register data. In this paper, we investigate how the two compare, focusing on aggregations of the Dutch online social network (OSN) Hyves and a register-based social network (RSN) of the Netherlands. First and foremost, we find that the connectivity of the two population-scale networks is strikingly similar, especially between closeby municipalities, with more long-distance ties captured by the OSN. This result holds when correcting for population density and geographical distance, notwithstanding that these two patterns appear to be the main drivers of connectivity. Second, we show that the community structure of neither network follows strict administrative geographical delineations (e.g., provinces). Instead, communities appear to either center around large metropolitan areas or, outside of the country's most urbanized area, are comprised of large blocks of interdependent municipalities. Interestingly, beyond population and distance-related patterns, communities also highlight the persistence of deeply roote",
+      "id": "http://arxiv.org/abs/2406.17752v1",
+      "title": "Connectivity and Community Structure of Online and Register-based Social Networks",
+      "year": "2024"
+     },
+     {
+      "abstract": "We develop two sampling algorithms for constructing extensible designs with mesh ratio at most two on finite unions of full-dimensional rational convex polytopes. Starting from a rational initial point, both algorithms produce rational coordinates and perform the geometric comparisons governing point selection exactly. This ensures that distance ties and geometric degeneracies are handled without rounding ambiguity, preserving the prescribed selection rules and mesh-ratio guarantee at every stage. The first algorithm, Local Exact Farthest-Point Sampling (LEFPS), implements a prescribed farthest-point rule by local updates of the restricted Voronoi diagram. The second algorithm, Arithmetic-Aware Admissible Sampling (AAS), minimizes the representation length of reduced rational coordinates over admissible fragment vertices and edge midpoints. Since the cost of exact arithmetic depends on coordinate lengths, we analyze both operation counts and bit complexity. For fixed dimension and input, each sampling rule admits an $O(N\\log N)$ unit-cost implementation and a separate implementation with $\\widetilde O(L_N)$ bit complexity, where $L_N$ is the total length of the output coordinates. ",
+      "id": "http://arxiv.org/abs/2610.41592v1",
+      "title": "Exact construction of quasi-uniform designs over polytopal domains",
+      "year": "2026"
+     },
+     {
+      "abstract": "Proxima and Alpha Centauri AB have almost identical distances and proper motions with respect to the Sun. Although the probability of such similar parameters is in principle very low, the question as to whether they actually form a single gravitationally bound triple system has been open since the discovery of Proxima one century ago. Owing to HARPS high precision absolute radial velocity measurements and the recent revision of the parameters of the Alpha Cen pair, we show that Proxima and Alpha Cen are gravitationally bound with a high degree of confidence. The orbital period of Proxima is approximately 550 000 years. With an excentricity of 0.50 (+0.08 -0.09), Proxima comes within 4.3 (+1.1 -0.9) kau of Alpha Cen at periastron. Its orbital phase is currently close to apastron (13.0 +0.3 -0.1 kau). This orbital motion may have influenced the formation or evolution of the recently discovered planet orbiting Proxima as well as circumbinary planet formation around Alpha Cen.",
+      "id": "http://arxiv.org/abs/1611.03495v3",
+      "title": "Proxima's orbit around Alpha Centauri",
+      "year": "2016"
+     },
+     {
+      "abstract": "We study exclusion zones for instant-runoff voting (IRV) on connected, unweighted graphs. Each vertex hosts one voter and may host a candidate. Voters rank candidates by shortest-path distance and cast one whole vote in each round. Distance ties favour the smaller identifier in a common fixed vertex ordering, and equal-score elimination ties remove the larger identifier in that ordering. A nonempty vertex set $S$ is an exclusion zone if every election with at least one participating candidate in $S$ elects a winner in $S$. In this setting, we consider three computational problems: deciding whether a target candidate can lose against some nonempty subset of a given set of allowed opponents, deciding whether a given vertex subset is an exclusion zone, and computing the unique minimum exclusion zone. We establish that all three are polynomial-time solvable on trees, outerplanar graphs and, more generally, planar graphs. For an n-vertex tree, the first problem (candidate loss) can be decided in O(n) time. The planar algorithm uses the structure of an inclusion-minimal candidate set that eliminates the target in the first round: contracting the candidates' voter cells makes the target c",
+      "id": "http://arxiv.org/abs/2603.10290v4",
+      "title": "A Tractability Boundary for Exclusion Zones in Instant-Runoff Voting: Planar Versus One-Apex Graphs",
+      "year": "2026"
+     },
+     {
+      "abstract": "The class of 2-distance-transitive graphs naturally generalizes distance-transitive graphs and plays a central role in algebraic graph theory. Classifying such graphs for a prescribed underlying group is a key open problem. A vertex-transitive graph $\u0393$ is said to be $2$-distance-transitive if, for each $i\\in \\{1,2\\}$, any two pairs of vertices with identical distance $i$ in $\u0393$ can be mapped to each other via some automorphism of the graph. In this paper, we present a complete classification of all $2$-distance-transitive Cayley graphs of the semi-dihedral groups.",
+      "id": "http://arxiv.org/abs/2607.19668v1",
+      "title": "Classification of two-distance-transitive Cayley graphs of the semi-dihedral groups",
+      "year": "2026"
+     },
+     {
+      "abstract": "We consider extended starlike networks where the hub node is coupled with several chains of nodes representing star rays. Assuming that nodes of the network are occupied by nonidentical self-oscillators we study various forms of their cluster synchronization. Radial cluster emerges when the nodes are synchronized along a ray, while circular cluster is formed by nodes without immediate connections but located on identical distances to the hub. By its nature the circular synchronization is a new manifestation of so called remote synchronization [Phys. Rev. E 85 (2012), 026208]. We report its long-range form when the synchronized nodes interact through at least three intermediate nodes. Forms of long-range remote synchronization are elements of scenario of transition to the total synchronization of the network. We observe that the far ends of rays synchronize first. Then more circular clusters appear involving closer to hub nodes. Subsequently the clusters merge and, finally, all network become synchronous. Behavior of the extended starlike networks is found to be strongly determined by the ray length, while varying the number of rays basically affects fine details of a dynamical pict",
+      "id": "http://arxiv.org/abs/1703.01914v1",
+      "title": "Radial and circular synchronization clusters in extended starlike network of van der Pol oscillators",
+      "year": "2017"
+     },
+     {
+      "abstract": "We consider the problem of determining the proportion of edges that are discovered in an Erdos-Renyi graph when one constructs all shortest paths from a given source node to all other nodes. This problem is equivalent to the one of determining the proportion of edges connecting nodes that are at identical distance from the source node. The evolution of this quantity with the probability of existence of the edges exhibits intriguing oscillatory behavior. In order to perform our analysis, we introduce a new way of computing the distribution of distances between nodes. Our method outperforms previous similar analyses and leads to estimates that coincide remarkably well with numerical simulations. It allows us to characterize the phase transitions appearing when the connectivity probability varies.",
+      "id": "http://arxiv.org/abs/0706.3322v2",
+      "title": "Distance distribution in random graphs and application to networks exploration",
+      "year": "2007"
+     },
+     {
+      "abstract": "We demonstrate that planet occurrence does not depend on stellar galactocentric velocity in the Solar neighborhood. Using Gaia DR2 astrometry and radial velocity data, we calculate 3D galactocentric velocities for 197,090 Kepler field stars, 1647 of which are confirmed planet hosts. When we compare the galactocentric velocities of planet hosts to those of the entire field star sample, we observe a statistically significant (KS p-value = $10^{-70}$) distinction, with planet hosts being apparently slower than field stars by $\\sim$40 km/s. We explore some potential explanations for this difference and conclude that it is not a consequence of the planet-metallicity relation or distinctions in the samples' thin/thick disk membership, but rather an artefact of Kepler's selection function. Non Kepler-host stars that have nearly identical distances, temperatures, surface gravities, and Kepler magnitudes to the confirmed planet hosts also have nearly identical velocity distributions. Using one of these identical non-host samples, we consider that the probability of a star with velocity $v_{\\mathrm{tot}}$ hosting a planet can be described by an exponential function proportional to $e^{(-v_{\\",
+      "id": "http://arxiv.org/abs/1906.02663v2",
+      "title": "Not Gone with the Wind: Planet Occurrence is Independent of Stellar Galactocentric Velocity",
+      "year": "2019"
+     },
+     {
+      "abstract": "In physics, two systems that radically differ at short scales can exhibit strikingly similar macroscopic behaviour: they are part of the same long-distance universality class. Here we apply this viewpoint to geometry and initiate a program of classifying homogeneous metrics on group manifolds by their long-distance properties. We show that many metrics on low-dimensional Lie groups have markedly different short-distance properties but nearly identical distance functions at long distances, and provide evidence that this phenomenon is even more robust in high dimensions. An application of these ideas of particular interest to physics and computer science is complexity geometry--the study of quantum computational complexity using Riemannian geometry. We argue for the existence of a large universality class of definitions of quantum complexity, each linearly related to the other, a much finer-grained equivalence than typically considered. We conjecture that a new effective metric emerges at larger complexities that describes a broad class of complexity geometries, insensitive to various choices of microscopic penalty factors. We discuss the implications for recent conjectures in quantu",
+      "id": "http://arxiv.org/abs/2111.12700v2",
+      "title": "Universality in long-distance geometry and quantum complexity",
+      "year": "2021"
+     }
+    ],
+    "status": "ok",
+    "url": "http://export.arxiv.org/api/query?search_query=abs%3A%22identical+distances%22+OR+abs%3A%22distance+ties%22+AND+submittedDate%3A%5B201601010000+TO+202611092359%5D&start=0&max_results=10&sortBy=relevance&sortOrder=descending"
+   },
+   "crossref": {
+    "hits": 52626,
+    "query": "identical distances k-th nearest neighbor tie",
+    "retrieved": [
+     {
+      "abstract": "",
+      "id": "10.2326/osj.19.107",
+      "title": "Nearest-Neighbor Distances Change Over Short Time Intervals in Foraging Flocks of Shorebirds",
+      "year": "2020"
+     },
+     {
+      "abstract": "<jats:title>Abstract</jats:title> <jats:p>Theorems on the limit distributions of the minimal and maximal distances to the nearest neighbor in a sample of random independent points having a uniform distribution on a metric space are proved. As examples of such spaces a multidimensional torus and a binary cube are considered.</jats:p>",
+      "id": "10.1515/dma-2018-0018",
+      "title": "Limit distributions of extremal distances to the nearest neighbor",
+      "year": "2018"
+     },
+     {
+      "abstract": "",
+      "id": "10.7153/mia-2020-23-54",
+      "title": "Exact upper bound on the sum of squared nearest-neighbor distances between points in a rectangle",
+      "year": "2020"
+     },
+     {
+      "abstract": "",
+      "id": "10.1016/j.comgeo.2016.04.001",
+      "title": "Approximating the minimum closest pair distance and nearest neighbor distances of linearly moving points",
+      "year": "2017"
+     },
+     {
+      "abstract": "<jats:p>Sistem analisis sentimen merupakan suatu sistem yang dibangun untuk menganalisis sentimen dalam bahasa Indonesia pada data yang diambil dari microblog, yaitu Twitter, Facebook, dan YouTube. Data tersebut diklasifikasikan menggunakan K-Nearest Neighbor (KNN) dan Neighbor-Weighted K-Nearest Neighbor (NW-KNN). Sistem analisis sentimen dibagi menjadi 4 (empat) tahap, yaitu tahap microblog crawling, tahap pra-pemrosesan data, tahap ekstraksi fitur, dan tahap klasifikasi sentimen. Data yang ada akan diklasifikasikan ke dalam 5 (lima) kelas, yaitu sangat positif, positif, netral, negatif, dan sangat negatif. Data tersebut kemudian akan dievaluasi menggunakan confusion matrix. Pengujian dilakukan dengan 50 data uji. NW-KNN memiliki akurasi yang paling tinggi di antara seluruh pengklasifikasi, yaitu 86% pada saat K = 9. Sedangkan untuk KNN, akurasi dari pengklasifikasi tersebut sebesar 82% pada saat K = 3. Kesimpulannya adalah NW-KNN berhasil mengatasi data latih dengan komposisi kelas yang tidak seimbang. Kata kunci: KNN, NW-KNN, Analisis Sentimen, Data Microblog</jats:p>",
+      "id": "10.36412/frontiers/001035e1/april201801.08",
+      "title": "PERBANDINGAN PENGKLASIFIKASI K-NEAREST NEIGHBOR DAN NEIGHBOR-WEIGHTED K-NEAREST NEIGHBOR PADA SISTEM ANALISIS SENTIMEN DENGAN DATA MICROBLOG",
+      "year": "2018"
+     },
+     {
+      "abstract": "<jats:title>Abstract</jats:title><jats:p>Let <jats:inline-formula><jats:alternatives><jats:inline-graphic xmlns:xlink=\"http://www.w3.org/1999/xlink\" mime-subtype=\"png\" xlink:href=\"S0021900221000929_inline2.png\"/><jats:tex-math> $X_1,X_2, \\ldots, X_n$ </jats:tex-math></jats:alternatives></jats:inline-formula> be a sequence of independent random points in <jats:inline-formula><jats:alternatives><jats:inline-graphic xmlns:xlink=\"http://www.w3.org/1999/xlink\" mime-subtype=\"png\" xlink:href=\"S0021900221000929_inline3.png\"/><jats:tex-math> $\\mathbb{R}^d$ </jats:tex-math></jats:alternatives></jats:inline-formula> with common Lebesgue density <jats:italic>f</jats:italic>. Under some conditions on <jats:italic>f</jats:italic>, we obtain a Poisson limit theorem, as <jats:inline-formula><jats:alternatives><jats:inline-graphic xmlns:xlink=\"http://www.w3.org/1999/xlink\" mime-subtype=\"png\" xlink:href=\"S0021900221000929_inline4.png\"/><jats:tex-math> $n \\to \\infty$ </jats:tex-math></jats:alternatives></jats:inline-formula>, for the number of large probability <jats:italic>k</jats:italic>th-nearest neighbor balls of <jats:inline-formula><jats:alternatives><jats:inline-graphic xmlns:xlink=\"http://www",
+      "id": "10.1017/jpr.2021.92",
+      "title": "Limit laws for large th-nearest neighbor balls",
+      "year": "2022"
+     },
+     {
+      "abstract": "",
+      "id": "10.1016/j.jmva.2017.12.009",
+      "title": "Multivariate goodness-of-fit on flat and curved spaces via nearest neighbor distances",
+      "year": "2018"
+     },
+     {
+      "abstract": "",
+      "id": "10.1186/s41313-025-00068-y",
+      "title": "A stochastic tiling model of mean nearest-neighbor distances in three-dimensional uniform random distributions",
+      "year": "2025"
+     },
+     {
+      "abstract": "<jats:p>This paper aims to verify if the seismic slowness log estimated through the supervised machine learning K-nearest neighbor (KNN) algorithm can be a feasible alternative to replace the sonic well log as input for the seismic well tie in a dataset from the Rec\u00f4ncavo Basin. The training and optimization of the regression were performed in a dataset composed of 17 well logs with petrophysical information of gamma-ray, deep and shallow resistivities, and the geological formation, e.g, Pojuca, Marfim, Maracangalha, Candeias, S\u00e3o Sebasti\u00e3o, \u00c1gua Grande, and Sergi Formations. The metric to evaluate the regressions was the mean absolute error of the measured property and the prediction. The holdout cross-validation technique was applied to avoid overfitting, and a well log was separated as a blind test to verify the prediction in an unknown dataset. Furthermore, synthetic seismic traces were generated from the slowness log and the prediction using the KNN. The comparison between them shows outstanding results in the visual analysis of the peaks and amplitudes of the main seismic events. In addition, the comparison between the seismic traces close to the synthetic seismic traces reve",
+      "id": "10.22564/brjg.v40i1.2157",
+      "title": "Seismic Well Tie using Geophysical Logs obtained from K-Nearest Neighbor Regression Algorithm",
+      "year": "2022"
+     },
+     {
+      "abstract": "",
+      "id": "10.1016/j.patrec.2016.01.018",
+      "title": "High dimensional nearest neighbor classification based on mean absolute differences of inter-point distances",
+      "year": "2016"
+     }
+    ],
+    "status": "ok",
+    "url": "https://api.crossref.org/works?query.bibliographic=identical+distances+k-th+nearest+neighbor+tie&filter=from-pub-date%3A2016-01-01%2Cuntil-pub-date%3A2026-11-09%2Ctype%3Ajournal-article&rows=10&select=DOI%2Ctitle%2Cissued%2Cabstract"
+   },
+   "id": "q3",
+   "statement": "identical distances at the k-th position and what they do to a reported metric"
+  },
+  {
+   "arxiv": {
+    "hits": 1,
+    "query": "abs:\"tie-breaking\" AND abs:\"nearest neighbor\" AND submittedDate:[201601010000 TO 202611092359]",
+    "retrieved": [
+     {
+      "abstract": "The property of almost every point being a Lebesgue point has proven to be crucial for the consistency of several classification algorithms based on nearest neighbors. We characterize Lebesgue points in terms of a 1-Nearest Neighbor regression algorithm for pointwise estimation, fleshing out the role played by tie-breaking rules in the corresponding convergence problem. We then give an application of our results, proving the convergence of the risk of a large class of 1-Nearest Neighbor classification algorithms in general metric spaces where almost every point is a Lebesgue point.",
+      "id": "http://arxiv.org/abs/2007.03937v4",
+      "title": "A Nearest Neighbor Characterization of Lebesgue Points in Metric Measure Spaces",
+      "year": "2020"
+     }
+    ],
+    "status": "ok",
+    "url": "http://export.arxiv.org/api/query?search_query=abs%3A%22tie-breaking%22+AND+abs%3A%22nearest+neighbor%22+AND+submittedDate%3A%5B201601010000+TO+202611092359%5D&start=0&max_results=10&sortBy=relevance&sortOrder=descending"
+   },
+   "crossref": {
+    "hits": 139745,
+    "query": "tie-breaking nearest neighbor search recall",
+    "retrieved": [
+     {
+      "abstract": "",
+      "id": "10.21275/art20164631",
+      "title": "A Survey on Nearest Neighbor Search with Keywords",
+      "year": "2017"
+     },
+     {
+      "abstract": "<jats:p>Approximate Nearest Neighbor Search (ANNS) presents an inherent tradeoff between performance and recall (i.e., result quality). Each ANNS algorithm provides its own algorithm-dependent parameters to allow applications to influence the recall/performance tradeoff of their searches. This situation is doubly problematic. First, the application developers have to experiment with these algorithm-dependent parameters to fine-tune the parameters that produce the desired recall for each use case. This process usually takes a lot of effort. Even worse, the chosen parameters may produce good recall for some queries, but bad recall for hard queries. To solve these problems, we present DARTH, a method that uses target declarative recall. DARTH uses a novel method for providing target declarative recall on top of an ANNS index by employing an adaptive early termination strategy integrated into the search algorithm. Through a wide range of experiments, we demonstrate that DARTH effectively meets user-defined recall targets while achieving significant speedups, up to 14.6x (average: 6.8x; median: 5.7x) faster than the search without early termination for HNSW and up to 41.8x (average: 13.",
+      "id": "10.1145/3749160",
+      "title": "DARTH: Declarative Recall Through Early Termination for Approximate Nearest Neighbor Search",
+      "year": "2025"
+     },
+     {
+      "abstract": "<jats:p> Approximate nearest neighbor search is a fundamental problem and has been studied for a few decades. Recently graph-based indexing methods have demonstrated their great efficiency, whose main idea is to construct neighborhood graph offline and perform a greedy search starting from some sampled points of the graph online. Most existing graph-based methods focus on either the precise k-nearest neighbor (k-NN) graph which has good exploitation ability, or the diverse graph which has good exploration ability. In this paper, we propose the k-diverse nearest neighbor (k-DNN) graph, which balances the precision and diversity of the graph, leading to good exploitation and exploration abilities simultaneously. We introduce an efficient indexing algorithm for the construction of the k-DNN graph inspired by a well-known diverse ranking algorithm in information retrieval (IR). Experimental results show that our method can outperform both state-of-the-art precise graph and diverse graph methods. </jats:p>",
+      "id": "10.1609/aaai.v32i1.12138",
+      "title": "Fast Approximate Nearest Neighbor Search via k-Diverse Nearest Neighbor Graph",
+      "year": "2018"
+     },
+     {
+      "abstract": "",
+      "id": "10.18535/ijecs/v5i5.42",
+      "title": "Nearest Neighbor Browsing and Search with Keywords in Spatial Databases",
+      "year": "2016"
+     },
+     {
+      "abstract": "<jats:p>INTRODUCTION: Gene expression data analysis is a critical aspect of disease prediction and classification, playing a pivotal role in the field of bioinformatics and biomedical research. High-dimensional gene expression datasets hold a wealth of information, but their effective utilization is hindered by the presence of irrelevant dimensions and noise. The challenge lies in extracting meaningful features from these datasets to enhance the accuracy of disease prediction and classification while maintaining computational efficiency. Feature selection is a crucial step in addressing these challenges, as it aims to identify and retain only the most informative characteristics from large high-dimensional microarray datasets. In the context of microarray gene expression data, characterized by its substantial dimensionality, selecting relevant features is essential for efficient nearest neighbor search, a fundamental component of various analytical tasks in bioinformatics and data mining. Existing feature selection methods in high-dimensional data often face issues related to the trade-off between search accuracy and computational efficiency. This paper introduces a novel approach,",
+      "id": "10.4108/eetpht.9.3910",
+      "title": "NNFSRR: Nearest Neighbor Feature Selection and Redundancy Removal Method for Nearest Neighbor Search in Microarray Gene Expression Data",
+      "year": "2023"
+     },
+     {
+      "abstract": "",
+      "id": "10.17706/jcp.12.2.105-115",
+      "title": "k-Expected Nearest Neighbor Search over Gaussian Objects",
+      "year": "2017"
+     },
+     {
+      "abstract": "",
+      "id": "10.1016/j.is.2016.03.003",
+      "title": "Singleton indexes for nearest neighbor search",
+      "year": "2016"
+     },
+     {
+      "abstract": "",
+      "id": "10.1007/s10044-020-00946-w",
+      "title": "A scalable solution to the nearest neighbor search problem through local-search methods on neighbor graphs",
+      "year": "2021"
+     },
+     {
+      "abstract": "",
+      "id": "10.1109/access.2025.3559478",
+      "title": "Enhancing SR-Tree for Nearest Neighbor Search",
+      "year": "2025"
+     },
+     {
+      "abstract": "",
+      "id": "10.1016/j.neucom.2015.08.115",
+      "title": "Self-representation nearest neighbor search for classification",
+      "year": "2016"
+     }
+    ],
+    "status": "ok",
+    "url": "https://api.crossref.org/works?query.bibliographic=tie-breaking+nearest+neighbor+search+recall&filter=from-pub-date%3A2016-01-01%2Cuntil-pub-date%3A2026-11-09%2Ctype%3Ajournal-article&rows=10&select=DOI%2Ctitle%2Cissued%2Cabstract"
+   },
+   "id": "q4",
+   "statement": "tie-breaking as the thing that decides a reported recall"
+  },
+  {
+   "arxiv": {
+    "hits": 5824,
+    "query": "abs:\"identifiability\" AND abs:\"retrieval\" AND submittedDate:[201601010000 TO 202611092359]",
+    "retrieved": [
+     {
+      "abstract": "How do retrieval bounds compare between human episodic memory and Retrieval-Augmented Generation (RAG) systems under semantic interference? We present a unified signal detection theory (SDT) framework that applies to both, and use it to fit behavioral and computational data in matched paradigms. Both systems show logarithmic accuracy decline with association count (fan), but humans exhibit lower interference sensitivity ($\u03b1/\u03c3= 0.41$) than dense passage retrieval ($\u03b1/\u03c3= 0.67$), with cognitively-inspired HippoRAG falling between the two ($\u03b1/\u03c3= 0.44$). Behavioral experiments ($N = 112$) and simulations validate the framework; parameter recovery confirms identifiability ($r \\geq .93$) and model comparison favors the logarithmic specification over a power-law alternative ($\u0394$BIC $&gt; 15$). We discuss encoding specificity, temporal context binding, and retrieval gating as candidate mechanisms whose causal role remains to be established. Six falsifiable predictions connect cognitive memory research with AI retrieval evaluation.",
+      "id": "http://arxiv.org/abs/2606.28327v1",
+      "title": "The Interference Gap: Comparing Retrieval Bounds in Human Memory and RAG Systems",
+      "year": "2026"
+     },
+     {
+      "abstract": "The \"REtrieval from MIxed Sampling\" (REMIS) approach based on blocking developed in Anderson et al. (2016a) is concerned with retrieving an underlying high frequency model from mixed frequency observations. In this paper we investigate parameter-identifiability in the Johansen (1995) vector error correction model for mixed frequency data. We prove that from the second moments of the blocked process after taking differences at lag N (N is the slow sampling rate), the parameters of the high frequency system are generically identified. We treat the stock and the flow case as well as deterministic terms.",
+      "id": "http://arxiv.org/abs/2204.05952v2",
+      "title": "Retrieval from Mixed Sampling Frequency: Generic Identifiability in the Unit Root VAR",
+      "year": "2022"
+     },
+     {
+      "abstract": "Variations in individuals' perceptions of vaccination and decision-making processes can give rise to poor vaccination coverage. The future vaccination promotion programs will benefit from understanding this heterogeneity amongst groups within a population and, accordingly, tailoring the communication strategies. Motivated by this, we developed a mechanistic model consisting of a system of ordinary differential equations that categorizes individuals based on two factors: (i) perceived payoff gains for vaccination and (ii} decision-making strategies where we assumed that individuals may behave as either myopic rationalists, going for a dose of vaccine if doing so maximizes their perceived payoff gain, or success-based learners, waiting to observe feedback on vaccination before deciding. We then investigated the global identifiability of group proportions and perceived payoff gains, that is, the possibility of globally retrieving these parameters by observing the error-free cumulative proportion of vaccinated individuals over time. To do so, for each group, we assumed a piecewise constant payoff gain and, for each time interval, obtained the so-called generalized input-output equation",
+      "id": "http://arxiv.org/abs/2411.01080v1",
+      "title": "Identifiability analysis of vaccination decision-making dynamics",
+      "year": "2024"
+     },
+     {
+      "abstract": "Sparse signal recovery algorithms like sparse Bayesian learning work well but the complexity quickly grows when tackling higher dimensional parametric dictionaries. In this work we propose a novel Bayesian strategy to address the two dimensional harmonic retrieval problem, through remodeling and reparameterization of the standard data model. This new model allows us to introduce a block sparsity structure in a manner that enables a natural pairing of the parameters in the two dimensions. The numerical simulations demonstrate that the inference algorithm developed (H-MSBL) does not suffer from source identifiability issues and is capable of estimating the harmonic components in challenging scenarios, while maintaining a low computational complexity.",
+      "id": "http://arxiv.org/abs/2102.08515v1",
+      "title": "A Novel Bayesian Approach for the Two-Dimensional Harmonic Retrieval Problem",
+      "year": "2021"
+     },
+     {
+      "abstract": "Generative Information Retrieval is an emerging retrieval paradigm that exhibits remarkable performance in monolingual scenarios.However, applying these methods to multilingual retrieval still encounters two primary challenges, cross-lingual identifier misalignment and identifier inflation. To address these limitations, we propose Multilingual Generative Retrieval via Cross-lingual Semantic Compression (MGR-CSC), a novel framework that unifies semantically equivalent multilingual keywords into shared atoms to align semantics and compresses the identifier space, and we propose a dynamic multi-step constrained decoding strategy during retrieval. MGR-CSC improves cross-lingual alignment by assigning consistent identifiers and enhances decoding efficiency by reducing redundancy. Experiments demonstrate that MGR-CSC achieves outstanding retrieval accuracy, improving by 6.83% on mMarco100k and 4.77% on mNQ320k, while reducing document identifiers length by 74.51% and 78.2%, respectively.",
+      "id": "http://arxiv.org/abs/2510.07812v1",
+      "title": "Multilingual Generative Retrieval via Cross-lingual Semantic Compression",
+      "year": "2025"
+     },
+     {
+      "abstract": "Generative retrieval generates identifiers of relevant documents in an end-to-end manner using a sequence-to-sequence architecture for a given query. The relation between generative retrieval and other retrieval methods, especially those based on matching within dense retrieval models, is not yet fully comprehended. Prior work has demonstrated that generative retrieval with atomic identifiers is equivalent to single-vector dense retrieval. Accordingly, generative retrieval exhibits behavior analogous to hierarchical search within a tree index in dense retrieval when using hierarchical semantic identifiers. However, prior work focuses solely on the retrieval stage without considering the deep interactions within the decoder of generative retrieval. In this paper, we fill this gap by demonstrating that generative retrieval and multi-vector dense retrieval share the same framework for measuring the relevance to a query of a document. Specifically, we examine the attention layer and prediction head of generative retrieval, revealing that generative retrieval can be understood as a special case of multi-vector dense retrieval. Both methods compute relevance as a sum of products of query",
+      "id": "http://arxiv.org/abs/2404.00684v1",
+      "title": "Generative Retrieval as Multi-Vector Dense Retrieval",
+      "year": "2024"
+     },
+     {
+      "abstract": "Cross-modal retrieval (CMR) is a fundamental task in multimedia research, focused on retrieving semantically relevant targets across different modalities. While traditional CMR methods match text and image via embedding-based similarity calculations, recent advancements in pre-trained generative models have established generative retrieval as a promising alternative. This paradigm assigns each target a unique identifier and leverages a generative model to directly predict identifiers corresponding to input queries without explicit indexing. Despite its great potential, current generative CMR approaches still face semantic information insufficiency in both identifier construction and generation processes. To address these limitations, we propose a novel unified Semantic-enhanced generative Cross-mOdal REtrieval framework (SemCORE), designed to unleash the semantic understanding capabilities in generative cross-modal retrieval task. Specifically, we first construct a Structured natural language IDentifier (SID) that effectively aligns target identifiers with generative models optimized for natural language comprehension and generation. Furthermore, we introduce a Generative Semantic ",
+      "id": "http://arxiv.org/abs/2504.13172v1",
+      "title": "SemCORE: A Semantic-Enhanced Generative Cross-Modal Retrieval Framework with MLLMs",
+      "year": "2025"
+     },
+     {
+      "abstract": "Existing contrastive learning methods rely on pairwise sample contrast $z_x^\\top z_{x'}$ to learn data representations, but the learned features often lack clear interpretability from a human perspective. Theoretically, it lacks feature identifiability and different initialization may lead to totally different features. In this paper, we study a new method named tri-factor contrastive learning (triCL) that involves a 3-factor contrast in the form of $z_x^\\top S z_{x'}$, where $S=\\text{diag}(s_1,\\dots,s_k)$ is a learnable diagonal matrix that automatically captures the importance of each feature. We show that by this simple extension, triCL can not only obtain identifiable features that eliminate randomness but also obtain more interpretable features that are ordered according to the importance matrix $S$. We show that features with high importance have nice interpretability by capturing common classwise features, and obtain superior performance when evaluated for image retrieval using a few features. The proposed triCL objective is general and can be applied to different contrastive learning methods like SimCLR and CLIP. We believe that it is a better alternative to existing 2-fact",
+      "id": "http://arxiv.org/abs/2310.18904v1",
+      "title": "Identifiable Contrastive Learning with Automatic Feature Importance Discovery",
+      "year": "2023"
+     },
+     {
+      "abstract": "Generative retrieval uses differentiable search indexes to directly generate relevant document identifiers in response to a query. Recent studies have highlighted the potential of a strong generative retrieval model, trained with carefully crafted pre-training tasks, to enhance downstream retrieval tasks via fine-tuning. However, the full power of pre-training for generative retrieval remains underexploited due to its reliance on pre-defined static document identifiers, which may not align with evolving model parameters. In this work, we introduce BootRet, a bootstrapped pre-training method for generative retrieval that dynamically adjusts document identifiers during pre-training to accommodate the continuing memorization of the corpus. BootRet involves three key training phases: (i) initial identifier generation, (ii) pre-training via corpus indexing and relevance prediction tasks, and (iii) bootstrapping for identifier updates. To facilitate the pre-training phase, we further introduce noisy documents and pseudo-queries, generated by large language models, to resemble semantic connections in both indexing and retrieval tasks. Experimental results demonstrate that BootRet signific",
+      "id": "http://arxiv.org/abs/2407.11504v1",
+      "title": "Bootstrapped Pre-training with Dynamic Identifier Prediction for Generative Retrieval",
+      "year": "2024"
+     },
+     {
+      "abstract": "Instead of simply matching a query to pre-existing passages, generative retrieval generates identifier strings of passages as the retrieval target. At a cost, the identifier must be distinctive enough to represent a passage. Current approaches use either a numeric ID or a text piece (such as a title or substrings) as the identifier. However, these identifiers cannot cover a passage's content well. As such, we are motivated to propose a new type of identifier, synthetic identifiers, that are generated based on the content of a passage and could integrate contextualized information that text pieces lack. Furthermore, we simultaneously consider multiview identifiers, including synthetic identifiers, titles, and substrings. These views of identifiers complement each other and facilitate the holistic ranking of passages from multiple perspectives. We conduct a series of experiments on three public datasets, and the results indicate that our proposed approach performs the best in generative retrieval, demonstrating its effectiveness and robustness.",
+      "id": "http://arxiv.org/abs/2305.16675v1",
+      "title": "Multiview Identifiers Enhanced Generative Retrieval",
+      "year": "2023"
+     }
+    ],
+    "status": "ok",
+    "url": "http://export.arxiv.org/api/query?search_query=abs%3A%22identifiability%22+AND+abs%3A%22retrieval%22+AND+submittedDate%3A%5B201601010000+TO+202611092359%5D&start=0&max_results=10&sortBy=relevance&sortOrder=descending"
+   },
+   "crossref": {
+    "hits": 961877,
+    "query": "identifiability retrieval metric evaluation",
+    "retrieved": [
+     {
+      "abstract": "<jats:p> The integration of large language models (LLMs) into healthcare is hindered by their tendency to generate hallucinations, a critical issue in medical question answering (MedQA). Retrieval-Augmented Generation (RAG) frameworks address this limitation by grounding LLM outputs in external, verifiable knowledge sources. In this study, RAG pipeline implemented without fine-tuning the base model is evaluated to enhance factual fidelity in MedQA. GPT-4 is integrated with a dense passage retrieval module based on Facebook AI Similarity Search (FAISS) and the BAAI/bge-small-en embedding model, and compared against a non-retrieval GPT-4 baseline.Evaluation is conducted on a held-out set of 1,000 questions from the MedQuAD dataset using widely adopted computational evaluation metrics, including BLEU-1 to BLEU-4, ROUGE-L, METEOR, text-level F1, Exact Match (EM), and embedding-based semantic similarity metrics such as BERTScore and SBERT. The RAG-enhanced configuration consistently outperforms the baseline across all evaluation metrics, with notable improvements including an increase in BLEU-4 from 0.3015 to 0.4224 and BERTScore from 0.8487 to 0.8691, indicating improved contextual coh",
+      "id": "10.7717/peerj-cs.4053",
+      "title": "Retrieval-augmented generation for medical question answering: a multi-metric performance evaluation",
+      "year": "2026"
+     },
+     {
+      "abstract": "<jats:p>(1) Background: The development of Generative Artificial Intelligence (GenAI) is transforming knowledge-intensive domains such as Education. However, Large Language Models (LLMs), which serve as the foundational components for GenAI tools, are trained on static datasets, often producing misleading, factually incorrect, or outdated responses. Our study explores the performance gains of Retrieval-Augmented LLMs over baseline LLMs while also identifying the trade-off opportunity between smaller-parameter LLMs augmented with user-specific data to larger parameter LLMs. (2) Methods: We experimented with four different LLMs, each with a different number of parameters, to generate outputs. These outputs were then evaluated across seven lexical and semantic metrics to identify performance trends in Retrieval-Augmented Generation (RAG)-Augmented LLMs and analyze the impact of parameter size on LLM performance. (3) Results and Discussions: We have synthesized 968 different combinations to identify this trend with the help of different LLM sizes/parameters: TinyLlama 1.1B, Mistral 7B, Llama 3.1 8B, and Llama 1 13 B. These studies were grouped into two themes: RAG-Augmented LLM percent",
+      "id": "10.3390/info16090766",
+      "title": "Retrieval-Augmented Generation vs. Baseline LLMs: A Multi-Metric Evaluation for Knowledge-Intensive Content",
+      "year": "2025"
+     },
+     {
+      "abstract": "",
+      "id": "10.1016/j.jbi.2026.105019",
+      "title": "PlainQAFact: Retrieval-augmented factual consistency evaluation metric for biomedical plain language summarization",
+      "year": "2026"
+     },
+     {
+      "abstract": "",
+      "id": "10.14569/ijacsa.2024.0150261",
+      "title": "Image Retrieval Evaluation Metric for Songket Motif",
+      "year": "2024"
+     },
+     {
+      "abstract": "",
+      "id": "10.1038/s41598-026-46610-x",
+      "title": "Structural identifiability in crystalline molecular networks using strong metric dimension",
+      "year": "2026"
+     },
+     {
+      "abstract": "",
+      "id": "10.1007/s10208-024-09652-z",
+      "title": "Identifiability, the KL Property in Metric Spaces, and Subgradient Curves",
+      "year": "2024"
+     },
+     {
+      "abstract": "<jats:title>Abstract</jats:title> <jats:p> The \u201cretrieval from mixed frequency sampling\u201d approach based on blocking\u2014described e.g., in Anderson et al. (Econom Theory 32:793\u2013826, 2016a)\u2014is concerned with retrieving an underlying high frequency model from mixed frequency observations. In this paper, we investigate parameter-identifiability in the Johansen (Likelihood-based inference in cointegrated vector autoregressive models. Oxford University Press, Oxford, 1995) vector error correction model for mixed frequency data. We prove that from the second moments of the blocked process after taking differences at lag <jats:italic>N</jats:italic> ( <jats:italic>N</jats:italic> is the slow sampling rate), the parameters of the high frequency system are generically identified. We treat the stock and the flow case. </jats:p>",
+      "id": "10.1007/s00184-025-00994-4",
+      "title": "Retrieval from mixed sampling frequency: generic identifiability in the unit root VAR",
+      "year": "2025"
+     },
+     {
+      "abstract": "<jats:p>One-dimensional canopy radiative transfer models are widely used for leaf area index (LAI) retrieval, but their horizontally homogeneous representation can inadequately describe crown clumping, canopy gaps, woody elements, and shadowing in structurally complex forests. Explicit three-dimensional (3D) models offer greater structural realism, but their computational cost limits direct application at regional-to-continental scales. This study evaluates whether a residual correction distilled from the LargE-Scale remote sensing data and image simulation framework (LESS) 3.x into a PROSPECT + SAIL (PROSAIL) emulator improves forest overstory LAI identifiability when the inversion already has Global Ecosystem Dynamics Investigation (GEDI) relative-height metrics, canopy cover, and vertical-shape descriptors. The high-fidelity simulation library contains 3980 LESS scenes with explicit crowns and trunks (excluding understory and branches). Recomputing PROSAIL at the same Sentinel-2 band-center wavelengths yields a near-infrared 1D\u20133D reflectance residual of about \u22120.17, confirming a substantial structural discrepancy not attributable to spectral-response-function mismatch. On a str",
+      "id": "10.3390/rs18203568",
+      "title": "From Spectral Fidelity to LAI Identifiability: A PROSAIL\u2013LESS\u2013GEDI Assessment of Forest Overstory LAI Retrieval",
+      "year": "2026"
+     },
+     {
+      "abstract": "<jats:p> Evaluating the performance of Content-Based Image Retrieval (CBIR) systems is a challenging and intricate task, even for experts in the field. The literature presents a vast array of CBIR systems, each applied to various image databases. Traditionally, automatic metrics employed for CBIR evaluation have been borrowed from the Text Retrieval (TR) domain, primarily precision and recall metrics. However, this paper introduces a novel quantitative metric specifically designed to address the unique characteristics of CBIR. The proposed metric revolves around the concept of grouping relevant images and utilizes the entropy of the retrieved relevant images. Grouping together relevant images holds great value from a user perspective, as it enables more coherent and meaningful results. Consequently, the metric effectively captures and incorporates the grouping of the most relevant outcomes, making it highly advantageous for CBIR evaluation. Additionally, the proposed CBIR metric excels in differentiating between results that might appear similar when assessed using other metrics. It exhibits a superior ability to discern subtle distinctions among retrieval outcomes. This enhanced d",
+      "id": "10.3233/jifs-223623",
+      "title": "An evaluation metric for image retrieval systems, using entropy for grouped precision of relevant retrievals",
+      "year": "2023"
+     },
+     {
+      "abstract": "",
+      "id": "10.1016/j.neucom.2016.01.032",
+      "title": "Metric learning based object recognition and retrieval",
+      "year": "2016"
+     }
+    ],
+    "status": "ok",
+    "url": "https://api.crossref.org/works?query.bibliographic=identifiability+retrieval+metric+evaluation&filter=from-pub-date%3A2016-01-01%2Cuntil-pub-date%3A2026-11-09%2Ctype%3Ajournal-article&rows=10&select=DOI%2Ctitle%2Cissued%2Cabstract"
+   },
+   "id": "q5",
+   "statement": "whether a retrieval metric is even identified by the data it is computed on"
+  },
+  {
+   "arxiv": {
+    "hits": 22,
+    "query": "abs:\"quantization\" AND abs:\"distinct\" AND abs:\"distance\" AND submittedDate:[201601010000 TO 202611092359]",
+    "retrieved": [
+     {
+      "abstract": "Given a compact quantum metric space (A, L), we prove that the domain of L coincides with A if and only if A is finite dimensional. We then show how one can explicitly build many quantum metrics with distinct domains on infinite-dimensional AF algebras. In the last section, we provide a strategy for calculating the distance between certain states in these quantum metrics, which allow us to calculate the distance between pure states in these quantum metrics on the quantized interval and on the Cantor space.",
+      "id": "http://arxiv.org/abs/2402.05520v1",
+      "title": "Domains of quantum metrics on AF algebras",
+      "year": "2024"
+     },
+     {
+      "abstract": "Under limited data setting, GANs often struggle to navigate and effectively exploit the input latent space. Consequently, images generated from adjacent variables in a sparse input latent space may exhibit significant discrepancies in realism, leading to suboptimal consistency regularization (CR) outcomes. To address this, we propose \\textit{SQ-GAN}, a novel approach that enhances CR by introducing a style space quantization scheme. This method transforms the sparse, continuous input latent space into a compact, structured discrete proxy space, allowing each element to correspond to a specific real data point, thereby improving CR performance. Instead of direct quantization, we first map the input latent variables into a less entangled ``style'' space and apply quantization using a learnable codebook. This enables each quantized code to control distinct factors of variation. Additionally, we optimize the optimal transport distance to align the codebook codes with features extracted from the training data by a foundation model, embedding external knowledge into the codebook and establishing a semantically rich vocabulary that properly describes the training dataset. Extensive experi",
+      "id": "http://arxiv.org/abs/2503.24282v1",
+      "title": "Style Quantization for Data-Efficient GAN Training",
+      "year": "2025"
+     },
+     {
+      "abstract": "Self-healing -- the ability of a structured beam to reconstruct its transverse profile after partial obstruction -- has been demonstrated for diffraction-free beams, where the recovery distance varies continuously with obstruction size. Here, we investigate self-healing in the Montgomery pattern, a self-imaging of tightly localized optical fields. Using Babinet's principle, we show theoretically that the recovery distance is quantized in integer multiples of the self-imaging period -- a qualitative distinction from all previously studied self-healing beams. We confirm these predictions experimentally using a programmable holographic setup with circular disk obstructions of size up to $20\\times$ of the spot size of the Montgomery pattern at the self-imaging plane, establishing the robustness of the Montgomery pattern against scatterers and obstructions in the beam path.",
+      "id": "http://arxiv.org/abs/2605.18318v1",
+      "title": "Self-healing of the Montgomery pattern",
+      "year": "2026"
+     },
+     {
+      "abstract": "To enhance the interpretability of multimodal unified representations, many studies have focused on discrete unified representations. These efforts typically start with contrastive learning and gradually extend to the disentanglement of modal information, achieving solid multimodal discrete unified representations. However, existing research often overlooks two critical issues: 1) The use of Euclidean distance for quantization in discrete representations often overlooks the important distinctions among different dimensions of features, resulting in redundant representations after quantization; 2) Different modalities have unique characteristics, and a uniform alignment approach does not fully exploit these traits. To address these issues, we propose Training-free Optimization of Codebook (TOC) and Fine and Coarse cross-modal Information Disentangling (FCID). These methods refine the unified discrete representations from pretraining and perform fine- and coarse-grained information disentanglement tailored to the specific characteristics of each modality, achieving significant performance improvements over previous state-of-the-art models. The code is available at https://github.com/",
+      "id": "http://arxiv.org/abs/2403.05168v3",
+      "title": "Enhancing Multimodal Unified Representations for Cross Modal Generalization",
+      "year": "2024"
+     },
+     {
+      "abstract": "Positional encoding has become a standard component in graph learning, especially for graph Transformers and other models that must distinguish structurally similar nodes, yet its fundamental identifiability remains poorly understood. In this work, we study node localization under a hybrid positional encoding that combines anchor-distance profiles with quantized low-frequency spectral features. We cast localization as an observation-map problem whose difficulty is controlled by the number of distinct codes induced by the encoding and establish an information-theoretic converse identifying an impossibility regime jointly governed by the anchor number, spectral dimension, and quantization level. Experiments further support this picture: on random $3$-regular graphs, the empirical crossover is well organized by the predicted scaling, while on two real-world DDI graphs identifiability is strongly graph-dependent, with DrugBank remaining highly redundant under the tested encodings and the Decagon-derived graph becoming nearly injective under sufficiently rich spectral information. Overall, these results suggest that positional encoding should be understood not merely as a heuristic arch",
+      "id": "http://arxiv.org/abs/2603.25030v1",
+      "title": "Information-Theoretic Limits of Node Localization under Hybrid Graph Positional Encodings",
+      "year": "2026"
+     },
+     {
+      "abstract": "We systematically investigate the ground state phase diagram and the finite temperature phase transitions for a Rydberg-dressed Fermi gas loaded in a bilayer optical lattice. When an effective finite-ranged attraction is induced, our self-consistent mean-field calculation shows that the gapped topological ( $p$-wave) superfluids in each layer are coupled together by the $s$-wave pairing in an intermediate inter-layer distance with a spontaneously modulated phases between these two order parameters. The obtained ground state is a gapless topological superfluid with quantized topological charges characterizing the gapless points, leading to a zero energy flat band at the edges. Finally, we calculate the finite temperature phase diagrams of this two-dimensional gapless superfluid and observe two distinct critical temperatures, demonstrating the fruitful many-body effects on a paired topological superfluids.",
+      "id": "http://arxiv.org/abs/2208.00243v1",
+      "title": "2D Gapless Topological Superfluids Generated by Pairing Phases",
+      "year": "2022"
+     },
+     {
+      "abstract": "Synchronization and swarming are canonical manifestations of self-organization, observable across scales from cellular processes to animal flocks. This study investigates the collective dynamics of a novel agent-based model where individuals exhibit both spatial mobility and internal, two-mode stochastic oscillatory states. By introducing a local, distance-dependent coupling between the agents' spatial configuration and their internal state transitions, we establish a mutual feedback loop that drives complex pattern formation. Through large-scale numerical simulations, we identify seven distinct morphological configurations, ranging from stationary \\textit{Filled-disk} states to highly disordered \\textit{Intense-motion} regimes. By performing a rigorous quantitative analysis of the rotational energy and radial dispersion, we transcend simple morphological classification and demonstrate that the system organizes into discrete, quantized topological attractors. We derive a macroscopic scaling law, $\u03a9\\propto r^{-1/2}$, which proves that the emerging rotating states are not rigid-body rotations, but rather composite differential vortex structures characterized by spontaneous chiral sym",
+      "id": "http://arxiv.org/abs/2607.00179v1",
+      "title": "Synchronization and Swarming of Two-Mode Stochastic Oscillators",
+      "year": "2026"
+     },
+     {
+      "abstract": "Generative AutoEncoders require a chosen probability distribution in latent space, usually multivariate Gaussian. The original Variational AutoEncoder (VAE) uses randomness in encoder - causing problematic distortion, and overlaps in latent space for distinct inputs. It turned out unnecessary: we can instead use deterministic encoder with additional regularizer to ensure that sample distribution in latent space is close to the required. The original approach (WAE) uses Wasserstein metric, what required comparing with random sample and using an arbitrarily chosen kernel. Later CWAE finally derived a non-random analytic formula by averaging $L_2$ distance of Gaussian-smoothened sample over all 1D projections. However, these arbitrarily chosen regularizers do not lead to Gaussian distribution. This article proposes approach for regularizers directly optimizing agreement between empirical distribution function and its desired CDF for chosen properties, for example radii and distances for Gaussian distribution, or coordinate-wise, to directly attract this distribution in latent space of AutoEncoder. We can also attract different distributions with this general approach, for example late",
+      "id": "http://arxiv.org/abs/1811.04751v4",
+      "title": "Gaussian AutoEncoder",
+      "year": "2018"
+     },
+     {
+      "abstract": "Free space optical (FSO) communication can exploit mode-division multiplexing using orthogonal spatial modes of Laguerre Gaussian beams, such as orbital angular momentum (OAM) modes, wherein OAM multiplexing offers potentially infinite information capacity due to the arbitrary quantization of OAM. Combined with polarization-division multiplexing and wavelength-division multiplexing, OAM multiplexing is a promising solution for future capacity demands. However, the practically addressable number of spatial subchannels is severely limited by the receiver size and the rapid beam expansion with increasing mode order and communication distance. Based on the intrinsic and distinctive property that the divergent degree of the innermost ring of a Laguerre-Gaussian beam is significantly slower than that of the beam cross-section during propagation, here we propose theoretically and demonstrate experimentally a novel communication strategy innermost ring dominated OAM (IRD-OAM) multiplexingn that can overcome these limits and achieve up to 1238% capacity of conventional OAM multiplexing in a canonical FSO link system without any additional hardware modifications. Alternatively, our strategy ",
+      "id": "http://arxiv.org/abs/2305.12208v1",
+      "title": "New orbital angular momentum multiplexing strategy: beyond the capacity limit of free-space optical communication",
+      "year": "2023"
+     },
+     {
+      "abstract": "With an increasing demand for assistive technologies that promote the independence and mobility of visually impaired people, this study suggests an innovative real-time system that gives audio descriptions of a user's surroundings to improve situational awareness. The system acquires live video input and processes it with a quantized and fine-tuned Florence-2 big model, adjusted to 4-bit accuracy for efficient operation on low-power edge devices such as the NVIDIA Jetson Orin Nano. By transforming the video signal into frames with a 5-frame latency, the model provides rapid and contextually pertinent descriptions of objects, pedestrians, and barriers, together with their estimated distances. The system employs Parler TTS Mini, a lightweight and adaptable Text-to-Speech (TTS) solution, for efficient audio feedback. It accommodates 34 distinct speaker types and enables customization of speech tone, pace, and style to suit user requirements. This study examines the quantization and fine-tuning techniques utilized to modify the Florence-2 model for this application, illustrating how the integration of a compact model architecture with a versatile TTS component improves real-time perfor",
+      "id": "http://arxiv.org/abs/2503.16488v1",
+      "title": "VocalEyes: Enhancing Environmental Perception for the Visually Impaired through Vision-Language Models and Distance-Aware Object Detection",
+      "year": "2025"
+     }
+    ],
+    "status": "ok",
+    "url": "http://export.arxiv.org/api/query?search_query=abs%3A%22quantization%22+AND+abs%3A%22distinct%22+AND+abs%3A%22distance%22+AND+submittedDate%3A%5B201601010000+TO+202611092359%5D&start=0&max_results=10&sortBy=relevance&sortOrder=descending"
+   },
+   "crossref": {
+    "hits": 230766,
+    "query": "quantization distinct distance values recall",
+    "retrieved": [
+     {
+      "abstract": "",
+      "id": "10.1016/j.ijresmar.2018.11.006",
+      "title": "The distinct influence of power distance perception and power distance values on customer satisfaction in response to loyalty programs",
+      "year": "2019"
+     },
+     {
+      "abstract": "<jats:title>Abstract</jats:title> <jats:p>This study explored how collaborative writing, an often-used instructional strategy in second language (L2) learning, intersects with large-group dynamics, and investigated their potential impact on the quality of writing outcomes in an online distance learning course. Using a mixed-methods approach, the research scrutinized intra-group interaction processes in two large groups undertaking a computer-assisted language learning writing assignment and evaluated the impact of these interaction processes on their writing products. Data from discussions in both a public online forum and a private social communication platform (WeChat) were collected, systematically coded, and analysed quantitatively and qualitatively based on language functions. Data collection also included an assessment of the written products and follow-up group interviews. The findings indicate distinct interaction patterns between high-performing and low-performing groups, characterised by an expert/participant pattern and a dominant/passive pattern, respectively. Additionally, insights from the interviews shed light on these interaction patterns and the potential impact on",
+      "id": "10.1017/s0958344024000211",
+      "title": "Exploring collaborative writing among large groups in online distance learning through a public forum and private chat tool",
+      "year": "2024"
+     },
+     {
+      "abstract": "<jats:p>Although apparently paradoxical, sad music has been effective in coping with sad life experiences. The underpinning brain neural correlates of this are not well explored. We performed Electroencephalography (EEG) source-level analysis for the brain during a sad autobiographical recall (SAR) and upon exposure to sad music. We specifically investigated the Cingulate cortex complex and Parahippocampus (PHC) regions, areas prominently involved in emotion and memory processing. Results show enhanced alpha band lag phase-synchronization in the brain during sad music listening, especially within and between the Posterior cingulate cortex (PCC) and (PHC) compared to SAR. This enhancement was lateralized for alpha1 and alpha2 bands in the left and right hemispheres, respectively. We also observed a significant increase in alpha2 brain current source density (CSD) during sad music listening compared to SAR and baseline resting state in the region of interest (ROI). Brain during SAR condition had enhanced right hemisphere lateralized functional connectivity and CSD in gamma band compared to sad music listening and baseline resting state. Our findings show that the brain during the SAR",
+      "id": "10.1371/journal.pone.0279814",
+      "title": "Neural response to sad autobiographical recall and sad music listening post recall reveals distinct brain activation in alpha and gamma bands",
+      "year": "2023"
+     },
+     {
+      "abstract": "",
+      "id": "10.1371/journal.pbio.3003328",
+      "title": "How does the brain remember? Distinct pathways for voluntary and involuntary recall",
+      "year": "2025"
+     },
+     {
+      "abstract": "",
+      "id": "10.1016/j.nlm.2022.107685",
+      "title": "Memory recall: New behavioral protocols for examining distinct forms of context specific recall in animals",
+      "year": "2022"
+     },
+     {
+      "abstract": "",
+      "id": "10.47904/ijskit.10.1.2020.10-15",
+      "title": "Enhancement over Learning Vector Quantization through Distance Function",
+      "year": "2020"
+     },
+     {
+      "abstract": "",
+      "id": "10.1016/j.physleta.2025.131226",
+      "title": "Sharp values for all dynamical variables via Anti-Wick quantization",
+      "year": "2026"
+     },
+     {
+      "abstract": "<jats:p>This study examined the instructional supervision needs of private higher education institutions engaged in online distance learning to develop a unique framework for managing online distance learning effectively. Employing a sequential explanatory mixed-methods design, quantitative data were collected from 301 teachers via surveys, followed by qualitative insights from five purposively selected school leaders through focus group discussion. Thematic analysis of qualitative data involved coding, theme development, and cross-referencing with existing literature to identify key supervisory practices. Results indicated that teachers demonstrated strong competencies in management, institutional, social, and communication skills, while pedagogical, design, and content skills were adequate. Technological skills, however, were the weakest and required focused improvement. In response, school leaders implemented tailored instructional supervision strategies addressing these needs. Based on these findings, the study proposes a distinct distance learning management framework comprising initiatives across six categories: pedagogical, technological, management and institutional, social",
+      "id": "10.58887/ijodel.v11i1.297",
+      "title": "Instructional Supervision Needs of Private Higher Education Institutions: Towards a Distinct Distance Learning Management Framework",
+      "year": "2025"
+     },
+     {
+      "abstract": "<jats:p>We establish conditions to characterize probability measures by their $L^{p}$-quantization error functions in both $\\mathbb{R}^{d}$ and Hilbert settings. This characterization is two-fold: static (identity of two distributions) and dynamic (convergence for the $L^{p}$-Wasserstein distance). We first propose a criterion on the quantization level $N$, valid for any norm on $\\mathbb{R}^{d}$ and any order $p$ based on a geometrical approach involving the Vorono\u00ef diagram. Then, we prove that in the $L^{2}$-case on a (separable) Hilbert space, the condition on the level $N$ can be reduced to $N=2$, which is optimal. More quantization based characterization cases in dimension 1 and a discussion of the completeness of a distance defined by the quantization error function can be found at the end of this paper.</jats:p>",
+      "id": "10.3150/19-bej1146",
+      "title": "Characterization of probability distribution convergence in Wasserstein distance by $L^{p}$-quantization error function",
+      "year": "2020"
+     },
+     {
+      "abstract": "",
+      "id": "10.1007/s00222-020-00970-x",
+      "title": "Multiple zeta values in deformation quantization",
+      "year": "2020"
+     }
+    ],
+    "status": "ok",
+    "url": "https://api.crossref.org/works?query.bibliographic=quantization+distinct+distance+values+recall&filter=from-pub-date%3A2016-01-01%2Cuntil-pub-date%3A2026-11-09%2Ctype%3Ajournal-article&rows=10&select=DOI%2Ctitle%2Cissued%2Cabstract"
+   },
+   "id": "q6",
+   "statement": "quantiser resolution, the number of distinct distances, and recall"
+  }
+ ],
+ "screen": {
+  "mechanism": [
+   "tie",
+   "ties",
+   "identical distance",
+   "distinct distance",
+   "resolution",
+   "ambiguity",
+   "non-unique",
+   "nonunique",
+   "identified set",
+   "identifiability"
+  ],
+  "setting": [
+   "recall",
+   "nearest neighbor",
+   "nearest neighbour",
+   "retrieval",
+   "ground truth",
+   "k-nn",
+   "knn",
+   "quantiz",
+   "quantis"
+  ]
+ },
+ "top_n_per_query_per_index": 10,
+ "window": {
+  "date_field": {
+   "arxiv": "submittedDate",
+   "crossref": "issued date (from-pub-date / until-pub-date)"
+  },
+  "from": "2016-01-01",
+  "note": "closed interval; both endpoints inclusive",
+  "to": "2026-11-09"
+ },
+ "written_at": "2026-11-09T17:19:46Z"
+}

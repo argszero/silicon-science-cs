@@ -1,0 +1,148 @@
+{
+ "axes": {
+  "scale": "log-log",
+  "x": "median_atoms (distinct distance values, configuration mean)",
+  "y": "median_t (boundary tie group, configuration mean)"
+ },
+ "bytes": 109744,
+ "excluded": "the two endpoint controls: neither is a quantiser family, so neither is a configuration in the correlation this figure draws",
+ "figure": "figures/resolution_axis.png",
+ "image_sha256": "e8ccf8ac4a07952ae21596603cf5917d52d29fe7e4f4867797064286fccd075f",
+ "scales": {
+  "A": {
+   "label": "20 000 descriptors",
+   "mde_printed": 0.8491,
+   "n_configs": 8,
+   "points": [
+    {
+     "config": "Hamming/128bit",
+     "mean_atoms": 13.333333,
+     "mean_t": 7.333333
+    },
+    {
+     "config": "Hamming/256bit",
+     "mean_atoms": 23.333333,
+     "mean_t": 4.5
+    },
+    {
+     "config": "Hamming/32bit",
+     "mean_atoms": 5.0,
+     "mean_t": 23.666667
+    },
+    {
+     "config": "Hamming/64bit",
+     "mean_atoms": 8.333333,
+     "mean_t": 12.666667
+    },
+    {
+     "config": "PQ/32bit",
+     "mean_atoms": 964.333333,
+     "mean_t": 1.0
+    },
+    {
+     "config": "PQ/64bit",
+     "mean_atoms": 983.666667,
+     "mean_t": 1.0
+    },
+    {
+     "config": "SQ/2bit-per-component",
+     "mean_atoms": 473.0,
+     "mean_t": 1.0
+    },
+    {
+     "config": "SQ/4bit-per-component",
+     "mean_atoms": 820.0,
+     "mean_t": 1.0
+    }
+   ],
+   "r_printed": -0.9795
+  },
+  "B": {
+   "label": "1 000 000 descriptors",
+   "mde_printed": 0.8855,
+   "n_configs": 7,
+   "points": [
+    {
+     "config": "Hamming/256bit",
+     "mean_atoms": 15.0,
+     "mean_t": 6.0
+    },
+    {
+     "config": "Hamming/32bit",
+     "mean_atoms": 3.0,
+     "mean_t": 52.333333
+    },
+    {
+     "config": "Hamming/64bit",
+     "mean_atoms": 6.0,
+     "mean_t": 18.5
+    },
+    {
+     "config": "PQ/32bit",
+     "mean_atoms": 701.666667,
+     "mean_t": 1.333333
+    },
+    {
+     "config": "PQ/64bit",
+     "mean_atoms": 940.333333,
+     "mean_t": 1.0
+    },
+    {
+     "config": "SQ/2bit-per-component",
+     "mean_atoms": 261.0,
+     "mean_t": 1.0
+    },
+    {
+     "config": "SQ/4bit-per-component",
+     "mean_atoms": 622.666667,
+     "mean_t": 1.0
+    }
+   ],
+   "r_printed": -0.9631
+  },
+  "M": {
+   "label": "200 000 descriptors",
+   "mde_printed": 0.8855,
+   "n_configs": 7,
+   "points": [
+    {
+     "config": "Hamming/256bit",
+     "mean_atoms": 17.0,
+     "mean_t": 5.333333
+    },
+    {
+     "config": "Hamming/32bit",
+     "mean_atoms": 4.0,
+     "mean_t": 34.166667
+    },
+    {
+     "config": "Hamming/64bit",
+     "mean_atoms": 6.0,
+     "mean_t": 16.0
+    },
+    {
+     "config": "PQ/32bit",
+     "mean_atoms": 870.0,
+     "mean_t": 1.0
+    },
+    {
+     "config": "PQ/64bit",
+     "mean_atoms": 966.666667,
+     "mean_t": 1.0
+    },
+    {
+     "config": "SQ/2bit-per-component",
+     "mean_atoms": 324.0,
+     "mean_t": 1.0
+    },
+    {
+     "config": "SQ/4bit-per-component",
+     "mean_atoms": 701.666667,
+     "mean_t": 1.0
+    }
+   ],
+   "r_printed": -0.9724
+  }
+ },
+ "unit": "one point per (family, budget) configuration, composed by axis.config_means"
+}
