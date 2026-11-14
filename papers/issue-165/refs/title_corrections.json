@@ -1,0 +1,30 @@
+[
+ {
+  "key": "hicks2015",
+  "was": "The Leiden Manifesto for research metrics",
+  "now": "Bibliometrics: The Leiden Manifesto for research metrics",
+  "why": "Nature's record title carries the subject label 'Bibliometrics:'",
+  "on": "2026-11-04"
+ },
+ {
+  "key": "altman1995",
+  "was": "Absence of evidence is not evidence of absence",
+  "now": "Statistics notes: Absence of evidence is not evidence of absence",
+  "why": "the BMJ record's own title carries the 'Statistics notes:' series prefix that my statement of the title left out",
+  "on": "2026-11-04"
+ },
+ {
+  "key": "hastie2009",
+  "was": "The elements of statistical learning: data mining, inference, and prediction",
+  "now": "The Elements of Statistical Learning: Data Mining, Inference, and Prediction, Second Edition",
+  "why": "the registry record is the second edition, which adds 'Second Edition' to the title",
+  "on": "2026-11-04"
+ },
+ {
+  "key": "shull2008",
+  "was": "The role of replications in empirical software engineering",
+  "now": "The role of replications in empirical software engineering: a word of warning",
+  "why": "the published title has a subtitle my statement of it left out",
+  "on": "2026-11-04"
+ }
+]
