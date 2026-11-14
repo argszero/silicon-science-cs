@@ -99,7 +99,11 @@ numbers_check () { "$PY" check_numbers.py; }
 refs_check () { "$PY" ref_check.py --check; }
 
 echo "issue-165 reproduce -- $(pwd)"
-echo "  numbers: $PY$( [ "$PY" = "$FIGPY" ] && echo "" || echo "   figures: $FIGPY" )"
+FIGVER=$("$FIGPY" -c 'import matplotlib;print(matplotlib.__version__)' 2>/dev/null || echo absent)
+# The step-4 comparison is byte-exact, and PNG bytes are a function of the rasterizer, so the
+# version that produced them is a coordinate a reader needs: without it a red step 4 cannot be
+# told apart from a changed picture. Printed on every run, not only on a mismatch.
+echo "  numbers: $PY$( [ "$PY" = "$FIGPY" ] && echo "" || echo "   figures: $FIGPY" )   matplotlib: $FIGVER"
 echo
 step "committed arm digests"            digests
 step "results.json recomputed"         analysis_check
