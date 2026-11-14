@@ -1,0 +1,5 @@
+# SHA-256 of the files this package derives. Sealed by seal_artefacts.py --seal.
+# Verification is reproduce.sh step 4: it recomputes these and names any that differ.
+16b64a2c28ccd306cccefd46c6ba8f978e730f25443e1271e693b26d5d364f52  nines_findings.json
+6391206a457eb18a80f56f46859955b07e24dbd3bded43e07f5bc0731fb59d84  manuscript.md
+3f089608508e946cf906414bb163a8b43adae20dee0bd0358f729419e613e7f5  reference-check.md
