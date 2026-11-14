@@ -20,6 +20,7 @@ Usage:
 import collections
 import html
 import json
+import re
 import os
 import sys
 
@@ -30,6 +31,7 @@ CORRECTIONS = os.path.join(HERE, "refs", "title_corrections.json")
 REQUEST_FAILED = "REGISTRY UNAVAILABLE"   # about the request, never about the work
 MANUSCRIPT = os.path.join(HERE, "manuscript.md")
 OUT = os.path.join(HERE, "reference-check.md")
+README = os.path.join(HERE, "README.md")
 
 
 def load():
@@ -173,8 +175,119 @@ def build(rec):
     return "\n".join(lines) + "\n", len(accepted), len(rejected), len(not_run), declared, accounted
 
 
+
+# ---- the front page's status claims, checked against the head -------------------------------
+#
+# `refgate` reads the manuscript, `stepgate` reads the step names, `envgate` reads the declared
+# dependency lines -- and no journal gate reads the README's status paragraph. That is why the
+# round that assembled the bibliography could leave the front page saying it was not assembled:
+# the paragraph was not wrong about a number, it was wrong about a state, and nothing counted it.
+# A front page that says "not assembled" while the manuscript carries entries generated from the
+# records is one document contradicting another in the paragraph a reader meets first.
+
+REF_FLOOR = 100
+
+# The forms that assert the references are NOT there. Each is a phrase a reader takes as status,
+# not a number, so no member-counting gate can see it.
+NOT_ASSEMBLED = [
+    (r"reference list is not (?:yet )?assembled", "the reference list is not assembled"),
+    (r"reference list.{0,30}not yet assembled", "the reference list is not yet assembled"),
+    (r"references are not (?:yet )?assembled", "the references are not assembled"),
+    (r"not a submittable manuscript", "the paper is not a submittable manuscript"),
+    (r"not yet submittable", "the paper is not yet submittable"),
+    (r"marked non-submittable", "the paper is marked non-submittable"),
+    (r"carries a placeholder", "the bibliography is a placeholder"),
+    (r"placeholder section", "the bibliography is a placeholder section"),
+]
+
+
+def entry_count(manuscript):
+    """How many numbered entries the manuscript's §References actually carries, read from the
+    file a reader has -- not from a note about it, and not from the corpus."""
+    text = open(manuscript, encoding="utf-8").read()
+    cut = text.rfind("## References")
+    if cut < 0:
+        return 0
+    return len(re.findall(r"^\[(\d+)\]", text[cut:], re.M))
+
+
+def status_claims(readme_text, n_entries, n_accepted, name="README.md"):
+    """Every way the front page can disagree with the head about the reference list. Returns
+    (failures, checked) with every failure naming the file, the line and the sentence."""
+    fails, checked = [], 0
+    lines = readme_text.splitlines()
+    for i, line in enumerate(lines, 1):
+        low = line.lower()
+        hit = [what for pat, what in NOT_ASSEMBLED if re.search(pat, low)]
+        if not hit:
+            continue
+        checked += 1
+        # the claim is stale only while the facts contradict it -- a package that really has no
+        # bibliography may say so, and that sentence is then true
+        if n_entries >= REF_FLOOR and n_accepted >= REF_FLOOR:
+            # one sentence can carry two stale claims; it is one contradicted line, and the count
+            # a reader sees must be of lines, not of overlapping patterns
+            fails.append("%s:%d claims %s -- contradicted by manuscript.md's %d entries under "
+                         "§References and refs/records.json's %d accepted records: %r"
+                         % (name, i, " and ".join(hit), n_entries, n_accepted,
+                            line.strip()[:180]))
+    # a count typed about the head must be the count at the head
+    for i, line in enumerate(lines, 1):
+        m = re.search(r"\*\*(\d+)\*\* entries under ", line)
+        if m:
+            checked += 1
+            if int(m.group(1)) != n_entries:
+                fails.append("%s:%d states %s entries under §References; the manuscript carries %d: %r"
+                             % (name, i, m.group(1), n_entries, line.strip()[:180]))
+    return fails, checked
+
+
+def selftest_status():
+    """The gate must be seen to refuse the sentences it exists for, and to accept the head.
+    Every plant runs through the same `status_claims` the real run calls."""
+    fails = 0
+    def expect(name, ok, detail=""):
+        nonlocal fails
+        print("  [%s] %s%s" % ("ok" if ok else "FAIL", name, (" -- " + detail) if detail else ""))
+        if not ok:
+            fails += 1
+
+    readme = open(README, encoding="utf-8").read()
+    n = entry_count(MANUSCRIPT)
+    acc = len(load()["accepted"])
+    real, _ = status_claims(readme, n, acc)
+    expect("the committed front page agrees with the head (%d entries, %d accepted)" % (n, acc),
+           not real, "; ".join(real)[:200])
+
+    stale = ("**Status: package core complete and reproducible; the reference list is not yet "
+             "assembled, so this is not a submittable manuscript.**")
+    planted = stale + "\n" + readme
+    bad, _ = status_claims(planted, n, acc)
+    expect("the round-1 sentence, put back, is refused", len(bad) >= 1, "; ".join(bad)[:200])
+    expect("the refusal names the file and the line",
+           any(re.match(r"README\.md:\d+ ", b) for b in bad), "; ".join(bad)[:120])
+    expect("the refusal quotes the sentence it refused",
+           any("**Status: package core complete and reproducible; the reference list is not yet"
+               in b for b in bad), "; ".join(bad)[:120])
+
+    drifted = readme.replace("**%d** entries" % n, "**%d** entries" % (n - 1))
+    assert drifted != readme, "the count plant did not change the readme"
+    bad2, _ = status_claims(drifted, n, acc)
+    expect("a count about the head that is not the head's count is refused",
+           any("states %d entries" % (n - 1) in b for b in bad2), "; ".join(bad2)[:200])
+
+    # the gate must not fire on a package that genuinely has no bibliography
+    bad3, _ = status_claims(stale, 0, 0)
+    expect("a package with no bibliography may say so: the same sentence is not a lie there",
+           not bad3, "; ".join(bad3)[:160])
+    print("SELFTEST: %s" % ("PASS" if fails == 0 else "%d FAILED" % fails))
+    return 0 if fails == 0 else 1
+
+
 def main():
     rec = load()
+    if "--selftest" in sys.argv:
+        return selftest_status()
     text, n_acc, n_rej, n_notrun, n_decl, n_acc2 = build(rec)
     if "--check" in sys.argv:
         committed = open(OUT).read() if os.path.exists(OUT) else ""
@@ -188,6 +301,18 @@ def main():
             print("  REFUSED: the accounting does not close -- %d declared, %d accounted"
                   % (n_decl, n_acc2), file=sys.stderr)
             return 1
+        # the front page is a carrier too: it is the paragraph a triage reader meets first
+        n_entries = entry_count(MANUSCRIPT)
+        status_bad, status_checked = status_claims(
+            open(README, encoding="utf-8").read(), n_entries, n_acc)
+        if status_bad:
+            print("CHECK FAILED: the front page disagrees with the head about the reference list "
+                  "-- %d claim(s) contradicted by the package" % len(status_bad), file=sys.stderr)
+            for b in status_bad:
+                print("   - %s" % b, file=sys.stderr)
+            return 1
+        print("  front page agrees with the head: %d status claim(s) read against %d entries and "
+              "%d accepted records" % (status_checked, n_entries, n_acc))
         return 0
     with open(OUT, "w") as fh:
         fh.write(text)
