@@ -189,6 +189,20 @@ def build_values(A, B, M, S):
     v["B.pq64.floor"] = agg(cellsB, "PQ/64bit", "mean_floor", mean)
     v["B.sq2.floor"] = agg(cellsB, "SQ/2bit", "mean_floor", mean)
 
+    # R2 of the decision of 2026-11-14: the sentence "product and scalar quantisation ... floors
+    # 0.899 to 0.991" names FOUR configurations and bounded them with two keys, both of them
+    # product quantisation -- so the stated ceiling was not the maximum of the set its own sentence
+    # named. SQ/4-bit sits at 0.9968, above it. The endpoints are COMPOSED over the family cells
+    # here, so a cell added later widens the range instead of leaving a sentence quoting a bound
+    # the data has outgrown, and the count of cells is bound beside them for the same reason.
+    tieless = sorted({c["tag"] for c in cellsB if c["tag"].startswith(("PQ/", "SQ/"))})
+    if not tieless:
+        raise KeyError("no product- or scalar-quantisation cells in the tier-B artefact")
+    tieless_floor = [agg(cellsB, tag, "mean_floor", mean) for tag in tieless]
+    v["B.pqsq.floor_min"] = min(tieless_floor)
+    v["B.pqsq.floor_max"] = max(tieless_floor)
+    v["B.pqsq.n_cells"] = len(tieless)
+
     # ---- M3: what section 3 promises, printed instead of promised ---------------------------
     # A proportion with a score interval, a difference between families with its two-sample
     # interval, the spread across the three seeds rather than only their mean, and the denominator

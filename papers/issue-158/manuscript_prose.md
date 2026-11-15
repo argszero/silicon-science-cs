@@ -30,7 +30,7 @@ scale at `r = {{n:A.r_configs}}` over {{n:A.n_configs}} configuration means agai
 attains only `b+1` values for a `b`-bit code and ties badly — the boundary tie group is
 {{n:B.hamming32.median_t}} at the shortest budget, mean floor {{n:B.hamming32.floor}} — while
 product and scalar quantisation, which attain hundreds of values, tie barely: a tie group of
-{{n:B.pq32.median_t}} and floors {{n:B.pq32.floor}} to {{n:B.pq64.floor}}. Every per-configuration
+{{n:B.pq32.median_t}} and floors {{n:B.pqsq.floor_min}} to {{n:B.pqsq.floor_max}}. Every per-configuration
 figure in this paper is the mean, over that configuration's three seeds, of a per-seed median taken
 over queries, so a tie group quoted here is a mean of medians rather than a median; the tier-A
 scalar-quantisation cells are seedless and carry their single measurement. The families most widely deployed at billion scale — product and scalar
@@ -260,7 +260,7 @@ is not a preregistration but a wish {{c:munafo-manifesto-2017}}.
 
 **The registered headline is refuted.** Two further families — product and scalar quantisation —
 put the boundary tie group far outside the interval established for random hyperplanes, and at the
-largest scale their floors are {{n:B.pq32.floor}}, {{n:B.pq64.floor}} and {{n:B.sq2.floor}}. A claim
+largest scale their floors run from {{n:B.pqsq.floor_min}} to {{n:B.pqsq.floor_max}} across the {{n:B.pqsq.n_cells}} configurations. A claim
 that compact codes are undetermined cannot survive families whose median query has no tie at all.
 
 **P1, that the tie group is invariant in corpus size, is refuted** by the scaling measurement: the

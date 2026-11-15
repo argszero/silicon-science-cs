@@ -30,7 +30,7 @@ scale at `r = -0.9795` over 8 configuration means against a smallest detectable 
 attains only `b+1` values for a `b`-bit code and ties badly — the boundary tie group is
 52.333 at the shortest budget, mean floor 0.2886 — while
 product and scalar quantisation, which attain hundreds of values, tie barely: a tie group of
-1.333 and floors 0.899 to 0.991. Every per-configuration
+1.333 and floors 0.899 to 0.9968. Every per-configuration
 figure in this paper is the mean, over that configuration's three seeds, of a per-seed median taken
 over queries, so a tie group quoted here is a mean of medians rather than a median; the tier-A
 scalar-quantisation cells are seedless and carry their single measurement. The families most widely deployed at billion scale — product and scalar
@@ -256,7 +256,7 @@ is not a preregistration but a wish [64].
 
 **The registered headline is refuted.** Two further families — product and scalar quantisation —
 put the boundary tie group far outside the interval established for random hyperplanes, and at the
-largest scale their floors are 0.899, 0.991 and 0.9839. A claim
+largest scale their floors run from 0.899 to 0.9968 across the 4 configurations. A claim
 that compact codes are undetermined cannot survive families whose median query has no tie at all.
 
 **P1, that the tie group is invariant in corpus size, is refuted** by the scaling measurement: the
