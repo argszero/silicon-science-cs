@@ -215,9 +215,10 @@ Hamming at the short budget a correct index can be graded **{{n:B.hamming32.floo
 {{f:B.hamming32.frac_ci|cipct1}}% score interval over the {{n:B.hamming32.n_queries}} queries of the
 {{n:B.hamming32.n_seeds}} seeds; product quantisation gives **{{n:B.pq32.floor}}** with
 {{f:B.pq32.frac_pct|pct1}}% ({{f:B.pq32.frac_ci|cipct1}}%) and scalar quantisation
-**{{n:B.sq2.floor}}**. The gap between product and scalar quantisation is {{f:B.frac_gap_pp|pct1}} points,
-{{f:B.frac_gap_ci|cipct1}}, and the interval excludes zero — so at this sample the ordering of the
-families is not a sampling artefact of the query set.
+**{{n:B.sq2.floor}}** with {{f:B.sq2.frac_pct|pct1}}% ({{f:B.sq2.frac_ci|cipct1}}%). Product
+quantisation's determined fraction therefore sits {{f:B.frac_gap_pq_minus_sq2_pp|pct1}} points above
+scalar quantisation's, {{f:B.frac_gap_pq_minus_sq2_ci|cipct1}}, and the interval excludes zero — so at
+this sample the ordering of the tie-light families is not a sampling artefact of the query set.
 
 The axis is read at a third scale as well, and that one a reader can recompute without the corpus:
 at {{n:M.fixture.n}} descriptors from the same source, with {{n:M.fixture.n_queries}} queries per

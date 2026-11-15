@@ -188,3 +188,14 @@ BOOK_SEEDS = {
     "vershynin-highdim-probability-2018", "wainwright-highdim-statistics-2019",
     "h5py-collette",
 }
+
+# Seeds that supply an AUTHOR, for the records whose registry entry carries no `author` at all.
+# This is the year seed's twin and it exists for the same reason: Crossref returns a correct title
+# and `authors: ABSENT` for some DOIs, so no assembly rule can recover a name the registry does not
+# have. A seeded author is an assertion about the work, not a corroboration, and it is recorded as
+# `author_source: "seed"` and counted in the report exactly as a seeded year is. A row whose entry
+# carries no author and which no seed answers is REFUSED by name rather than printed bare.
+AUTHOR_SEEDS = {
+    "guttman-r-tree-1984": "Guttman, A.",
+    "muja-flann-2009": "Muja, M.; Lowe, D. G.",
+}

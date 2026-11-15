@@ -356,6 +356,41 @@ def main():
           "%d rows carry a provenance; %d say seed, %d are recorded seed"
           % (len(prov_col), sum(1 for v in prov_col.values() if v == "seed"), len(recorded)))
 
+    # ---- the AUTHOR slot: the registry has no name for two works, and that is COUNTED too ------
+    # R3 of the decision of 2026-11-14. The defect was not a count in a file: it was that a READER
+    # met an entry with no author on the page, and no gate looked at the page. So the checks below
+    # run the year pair one field over AND then read the rendered list, which is where a reader is.
+    derived_a = br.author_provenance(refs)
+    recorded_a = sorted(sl for sl, r in refs.items() if (r or {}).get("author_source") == "seed")
+    check("every entry records which field its printed author came from",
+          all((r or {}).get("author_source") in ("record", "seed") for r in refs.values()),
+          "%d entries, sources=%s" % (len(refs),
+                                      sorted({(r or {}).get("author_source")
+                                              for r in refs.values()})))
+    check("the recorded author provenance equals the provenance derived from the stored entries",
+          recorded_a == derived_a, "recorded %d vs derived %d (%s)"
+          % (len(recorded_a), len(derived_a), ", ".join(derived_a[:6])))
+    an = _re.search(r"(\d+) of the (\d+) entries carry no author", report_text)
+    check("the report states how many entries the registry gave no author for",
+          an is not None, an.group(0) if an else "no counted author sentence in reference-check.md")
+    if an:
+        check("the number the report states for authors is the number the artefact holds",
+              int(an.group(1)) == len(derived_a),
+              "report says %s, artefact holds %d" % (an.group(1), len(derived_a)))
+        anamed = _re.search(r"no author in their registry record.*?seed asserts: ([^.]+)\.",
+                            report_text, _re.S)
+        anamed_set = set(_re.findall(r"`([^`]+)`", anamed.group(1))) if anamed else set()
+        check("the report names exactly the author rows it counted",
+              anamed_set == set(derived_a),
+              "%d named, %d held, symmetric difference %s"
+              % (len(anamed_set), len(derived_a), sorted(anamed_set ^ set(derived_a))[:4]))
+    man_text = open("manuscript.md", encoding="utf-8").read()
+    bare_printed = _re.findall(r"^\[(\d+)\] \(\s*\d{4}\s*\)", man_text, _re.M)
+    check("no printed reference opens with a year where its author belongs",
+          not bare_printed, "%d entr%s print no author: %s"
+          % (len(bare_printed), "y" if len(bare_printed) == 1 else "ies",
+             ", ".join("[%s]" % n for n in bare_printed[:8])))
+
     print("CLAIMS: %s" % ("PASS" if FAILED == 0 else "%d FAILED" % FAILED))
     return 0 if FAILED == 0 else 1
 

@@ -34,7 +34,7 @@ import urllib.parse
 import urllib.request
 import xml.etree.ElementTree as ET
 
-from refs_seeds import SEEDS, BOOK_SEEDS
+from refs_seeds import SEEDS, BOOK_SEEDS, AUTHOR_SEEDS
 
 UA = "silicon-science-cs issue-158 (mailto:noreply@example.org)"
 CROSSREF = "https://api.crossref.org/works"
@@ -344,6 +344,21 @@ def selftest():
     expect("the count over a mixed set is the sum of its parts (%d)"
            % len(year_provenance(dict(noneyear, **hasyear, **noauthor, **undated))),
            len(year_provenance(dict(noneyear, **hasyear, **noauthor, **undated))) == 2)
+    # The author slot has the same two homes as the year slot, and the same obligation to say
+    # which. These legs are the year legs one field over, and the second is the one that matters:
+    # a rule that counted every entry would report 123 seed-sourced authors and be believed.
+    authored = {"e": {"entry": "Hunter, J. D. (2007). Matplotlib. Computing in Science."}}
+    bareauth = {"f": {"entry": "(1984). R-Trees - A Dynamic Index Structure. SpringerReference."}}
+    undateda = {"g": {"entry": "(n.d.). PAC nearest neighbor queries. ICDE."}}
+    expect("an entry whose author segment is absent is counted (%s)" % author_provenance(bareauth),
+           author_provenance(bareauth) == ["f"])
+    expect("an explicitly undated authorless entry is counted too (%s)" % author_provenance(undateda),
+           author_provenance(undateda) == ["g"])
+    expect("an entry that prints an author is not counted (%s)" % author_provenance(authored),
+           author_provenance(authored) == [])
+    expect("the author count over a mixed set is the sum of its parts (%d)"
+           % len(author_provenance(dict(authored, **bareauth, **undateda))),
+           len(author_provenance(dict(authored, **bareauth, **undateda))) == 2)
     return 0 if fails == 0 else 1
 
 REPORT_PREAMBLE = (
@@ -392,6 +407,26 @@ def year_provenance(refs):
     return sorted(out)
 
 
+# An entry whose AUTHOR segment is absent begins at its year slot, because `entry_of` prints the
+# author first whenever the record has one. Two of the 123 entries therefore read `(1984). R-Trees
+# - ...`: Crossref returns the correct title and `authors: ABSENT` for those DOIs, so the name is
+# missing from the registry, not from the assembly. The domain of the rule is exactly that shape,
+# and it is stated because a rule that silently covers more than it can see is how the year count
+# came to be wrong once already.
+NO_AUTHOR_SLOT = re.compile(r"^\(\s*(?:\d{4}|n\.\s?d\.|None|null|NULL|N/A|nan|NaN)\s*\)\s*[.,;:]?\s*")
+
+
+def author_provenance(refs):
+    """Which rows print an author the registry did NOT supply, derived from the stored entry.
+
+    Derived from the committed bytes and nothing else, for the same reason `year_provenance` is:
+    the answer is already there, and a registry call between the report and a fact the report is
+    about is how a thin run becomes a wrong count.
+    """
+    return sorted(slug for slug, rec in (refs or {}).items()
+                  if NO_AUTHOR_SLOT.match(((rec or {}).get("entry") or "").strip()))
+
+
 def write_report(path, report):
     """Emit the authenticity report. No `%` formatting: a percent sign in the prose of a
     report about percentages is how the date printed as a literal %Y-%m-%d."""
@@ -426,6 +461,23 @@ def write_report(path, report):
         else:
             f.write("\n**The two-year bound fired on every row**: every record supplied an issued "
                     "year, and the table's last column reads `record` throughout.\n\n")
+        bare = report.get("author_unchecked")
+        if bare is None:
+            f.write("\n**Author provenance is not recorded in this cache.** The list prints an "
+                    "author on every entry, but this file cannot say on which rows that author "
+                    "came from the registry rather than from a seed. Re-run `build_refs.py` to "
+                    "record it.\n\n")
+        elif bare:
+            f.write("\n**%d of the %d entries carry no author in their registry record** -- "
+                    "Crossref returns the work's title with an absent `author` field for them, so "
+                    "the entry prints an author this package's seed asserts: %s. That author is an "
+                    "assertion about the work, not a registry corroboration, and `refs.json` "
+                    "records `author_source: seed` on exactly these rows.\n\n"
+                    % (len(bare), report["verified"],
+                       ", ".join("`%s`" % sl for sl in bare)))
+        else:
+            f.write("\n**Every entry's author came from its registry record**: no row needed a "
+                    "seeded author.\n\n")
         f.write("The journal's floor is 100 references, all cited in the body; this file and "
                 "`refs.json` together are what that count is read from, and "
                 "`make_manuscript.py` refuses to render while the count is short or while a "
@@ -553,12 +605,15 @@ def main(argv):
     # reference. The cache is the input to `--report-only`, and byte-equality between the two
     # paths is asserted below.
     unchecked = sorted(sl for sl, r in out.items() if r.get("year_source") == "seed")
+    bare_authors = author_provenance(out)
     json.dump(dict(date=time.strftime("%Y-%m-%d"), rows=report, verified=len(out),
-                   seeds=len(SEEDS), why=why, year_unchecked=unchecked),
+                   seeds=len(SEEDS), why=why, year_unchecked=unchecked,
+                   author_unchecked=bare_authors),
               open("refs_report.json", "w"), indent=1, sort_keys=True)
     write_report("reference-check.md", dict(date=time.strftime("%Y-%m-%d"), rows=report,
                                             verified=len(out), seeds=len(SEEDS), why=why,
-                                            year_unchecked=unchecked))
+                                            year_unchecked=unchecked,
+                                            author_unchecked=bare_authors))
     if machine:
         print(json.dumps(dict(seeds=len(SEEDS), verified=len(out), rejected=why), indent=1))
     n_carried = sum(1 for r in out.values() if "carried" in r.get("verification", {}))
@@ -611,9 +666,55 @@ def annotate_years():
     return 0
 
 
+def annotate_authors():
+    """Record `author_source` in refs.json and the count in the cached report.
+
+    The year pass's twin, offline for the same reason. It does NOT rewrite any entry: `refs.json`
+    keeps exactly what the registry returned, and the render inserts the seeded author where the
+    record supplied none, exactly as it fills a year slot the record left null. Two refusals, both
+    by name, because both shapes would otherwise be silent: an authorless row no seed answers for
+    would print bare forever with a count that agrees with it, and a seed answering for a row that
+    already prints an author would never be used and would never say so.
+    """
+    refs = json.load(open("refs.json", encoding="utf-8"))
+    before = {k: dict(v) for k, v in refs.items()}
+    bare = set(author_provenance(refs))
+    unanswered = sorted(bare - set(AUTHOR_SEEDS))
+    unused = sorted(set(AUTHOR_SEEDS) - bare)
+    if unanswered:
+        print("REFUSED: %d entr%s print no author and no seed answers for them: %s"
+              % (len(unanswered), "y" if len(unanswered) == 1 else "ies",
+                 ", ".join(unanswered)))
+        return 1
+    if unused:
+        print("REFUSED: %d seed(s) answer for a row whose entry already prints an author, so the "
+              "seed would never be used: %s" % (len(unused), ", ".join(unused)))
+        return 1
+    for slug in refs:
+        if slug in bare:
+            refs[slug]["authors"] = AUTHOR_SEEDS[slug]
+            refs[slug]["author_source"] = "seed"
+        else:
+            refs[slug]["author_source"] = "record"
+    for slug, rec in refs.items():
+        for key, val in before[slug].items():
+            assert rec[key] == val, "annotate_authors changed existing field %s.%s" % (slug, key)
+    json.dump(refs, open("refs.json", "w", encoding="utf-8"), indent=1, sort_keys=True)
+
+    cache = json.load(open("refs_report.json", encoding="utf-8"))
+    cache["author_unchecked"] = sorted(bare)
+    json.dump(cache, open("refs_report.json", "w", encoding="utf-8"), indent=1, sort_keys=True)
+    write_report("reference-check.md", cache)
+    print("annotated: %d entries, %d with a seed-sourced author (%s)"
+          % (len(refs), len(bare), ", ".join(sorted(bare))))
+    return 0
+
+
 if __name__ == "__main__":
     if "--annotate-years" in sys.argv:
         sys.exit(annotate_years())
+    if "--annotate-authors" in sys.argv:
+        sys.exit(annotate_authors())
     if "--selftest" in sys.argv:
         sys.exit(selftest())
     sys.exit(main(sys.argv))

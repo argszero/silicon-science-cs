@@ -160,4 +160,7 @@ Two slugs that resolve to one work are refused as duplicates: the bibliography m
 
 **The two-year bound could not fire on 5 of the 123 rows** -- their records carry no issued year, so each was identified on title and DOI alone and its entry prints the year this package's seed asserts: `broder-minhash-1997`, `ciaccia-pac-2000`, `dalal-hog-2005`, `guttman-r-tree-1984`, `nister-vocab-tree-2006`. Their year is an assertion about the work, not a registry corroboration, and the table's last column marks every such row `seed`.
 
+
+**2 of the 123 entries carry no author in their registry record** -- Crossref returns the work's title with an absent `author` field for them, so the entry prints an author this package's seed asserts: `guttman-r-tree-1984`, `muja-flann-2009`. That author is an assertion about the work, not a registry corroboration, and `refs.json` records `author_source: seed` on exactly these rows.
+
 The journal's floor is 100 references, all cited in the body; this file and `refs.json` together are what that count is read from, and `make_manuscript.py` refuses to render while the count is short or while a held reference is never cited.

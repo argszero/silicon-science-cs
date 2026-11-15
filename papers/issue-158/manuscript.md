@@ -214,9 +214,10 @@ Hamming at the short budget a correct index can be graded **0.2886** on average
 [95.7, 97.5]% score interval over the 1,536 queries of the
 3 seeds; product quantisation gives **0.899** with
 34.8% ([32.5, 37.2]%) and scalar quantisation
-**0.9839**. The gap between product and scalar quantisation is 61.8 points,
-[59.2, 64.3], and the interval excludes zero — so at this sample the ordering of the
-families is not a sampling artefact of the query set.
+**0.9839** with 12.4% ([10.8, 14.1]%). Product
+quantisation's determined fraction therefore sits 22.5 points above
+scalar quantisation's, [19.5, 25.3], and the interval excludes zero — so at
+this sample the ordering of the tie-light families is not a sampling artefact of the query set.
 
 The axis is read at a third scale as well, and that one a reader can recompute without the corpus:
 at 200,000 descriptors from the same source, with 512 queries per

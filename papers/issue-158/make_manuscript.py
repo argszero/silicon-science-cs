@@ -202,7 +202,8 @@ def build_values(A, B, M, S):
         n = sum(c["n_queries"] for c in cs)
         return cs, k, n
 
-    for label, prefix in (("hamming32", "Hamming/32bit"), ("pq32", "PQ/32bit")):
+    for label, prefix in (("hamming32", "Hamming/32bit"), ("pq32", "PQ/32bit"),
+                          ("sq2", "SQ/2bit")):
         cs, k, n = pooled(prefix)
         v["B.%s.frac_pct" % label] = k / float(n)
         v["B.%s.frac_ci" % label] = axis.wilson(k, n)
@@ -213,10 +214,16 @@ def build_values(A, B, M, S):
         v["B.%s.floor_seed_lo" % label] = min(c["mean_floor"] for c in cs)
         v["B.%s.floor_seed_hi" % label] = max(c["mean_floor"] for c in cs)
 
-    cs_h, k_h, n_h = pooled("Hamming/32bit")
+    # R1 of the decision of 2026-11-14: the sentence this difference sits in names PRODUCT against
+    # SCALAR, and the marker computed Hamming/32bit against PQ/32bit -- a real difference, over a
+    # pair the sentence does not name, and nearly three times the one it does (61.8 points printed
+    # where product-versus-scalar is 22.5). The key carries the pair AND the subtraction's order in
+    # its own name, so the two cannot come apart by editing prose alone: a sentence that re-pairs
+    # them has to name a key that does not exist, and the render raises rather than printing.
+    cs_s, k_s, n_s = pooled("SQ/2bit")
     cs_p, k_p, n_p = pooled("PQ/32bit")
-    v["B.frac_gap_pp"] = (k_h / float(n_h)) - (k_p / float(n_p))
-    v["B.frac_gap_ci"] = axis.wilson_diff(k_h, n_h, k_p, n_p)
+    v["B.frac_gap_pq_minus_sq2_pp"] = (k_p / float(n_p)) - (k_s / float(n_s))
+    v["B.frac_gap_pq_minus_sq2_ci"] = axis.wilson_diff(k_p, n_p, k_s, n_s)
     v["B.float.floor"] = agg(cellsB, "float", "mean_floor", mean)
     v["B.hamming32.atoms"] = agg(cellsB, "Hamming/32bit", "median_atoms", mean)
     v["B.pq32.atoms"] = agg(cellsB, "PQ/32bit", "median_atoms", mean)
