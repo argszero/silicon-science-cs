@@ -604,7 +604,7 @@ a program, and a reference that does not resolve stops the manuscript from being
 
 [72] Pan, J. J.; Wang, J.; Li, G. (2024). Survey of vector database management systems. The VLDB Journal. vol. 33. pp. 1591-1615. https://doi.org/10.1007/s00778-024-00864-x
 
-[73] (1984). R-Trees - A Dynamic Index Structure for Spatial Searching. SpringerReference. https://doi.org/10.1007/springerreference_62807
+[73] Guttman, A. (1984). R-Trees - A Dynamic Index Structure for Spatial Searching. SpringerReference. https://doi.org/10.1007/springerreference_62807
 
 [74] Beckmann, N.; Kriegel, H. P.; Schneider, R.; et al. (1990). The R*-tree: an efficient and robust access method for points and rectangles. Proceedings of the 1990 ACM SIGMOD international conference on Management of data. pp. 322-331. https://doi.org/10.1145/93597.98741
 
@@ -618,7 +618,7 @@ a program, and a reference that does not resolve stops the manuscript from being
 
 [79] Ciaccia, P.; Patella, M. (2000). PAC nearest neighbor queries: Approximate and controlled search in high-dimensional and metric spaces. Proceedings of 16th International Conference on Data Engineering (Cat. No.00CB37073). pp. 244-255. https://doi.org/10.1109/icde.2000.839417
 
-[80] (2009). Fast approximate nearest neighbors with automatic algorithm configuration. Proceedings of the Fourth International Conference on Computer Vision Theory and Applications. pp. 331-340. https://doi.org/10.5220/0001787803310340
+[80] Muja, M.; Lowe, D. G. (2009). Fast approximate nearest neighbors with automatic algorithm configuration. Proceedings of the Fourth International Conference on Computer Vision Theory and Applications. pp. 331-340. https://doi.org/10.5220/0001787803310340
 
 [81] Muja, M.; Lowe, D. G. (2014). Scalable Nearest Neighbor Algorithms for High Dimensional Data. IEEE Transactions on Pattern Analysis and Machine Intelligence. vol. 36. pp. 2227-2240. https://doi.org/10.1109/tpami.2014.2321376
 

@@ -386,10 +386,17 @@ def main():
               % (len(anamed_set), len(derived_a), sorted(anamed_set ^ set(derived_a))[:4]))
     man_text = open("manuscript.md", encoding="utf-8").read()
     bare_printed = _re.findall(r"^\[(\d+)\] \(\s*\d{4}\s*\)", man_text, _re.M)
+    # The message is a product: at one entry it must not read "1 entry print no author", and at zero
+    # there is nothing to name, so it does not open a list it will not fill.
+    if bare_printed:
+        detail = "%d entr%s print%s no author: %s" % (
+            len(bare_printed), "y" if len(bare_printed) == 1 else "ies",
+            "s" if len(bare_printed) == 1 else "",
+            ", ".join("[%s]" % n for n in bare_printed[:8]))
+    else:
+        detail = "0 of the printed entries open with a year"
     check("no printed reference opens with a year where its author belongs",
-          not bare_printed, "%d entr%s print no author: %s"
-          % (len(bare_printed), "y" if len(bare_printed) == 1 else "ies",
-             ", ".join("[%s]" % n for n in bare_printed[:8])))
+          not bare_printed, detail)
 
     print("CLAIMS: %s" % ("PASS" if FAILED == 0 else "%d FAILED" % FAILED))
     return 0 if FAILED == 0 else 1

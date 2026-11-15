@@ -458,7 +458,8 @@ def null_slot_census(entries, render=None):
     """
     if render is None:
         def render(ref):
-            return house_entry(ref.get("entry") or "", year=ref.get("year"))
+            return house_entry(ref.get("entry") or "", year=ref.get("year"),
+                               authors=ref.get("authors"))
     in_record, repaired, survives = [], [], []
     for slug in sorted(entries):
         ref = entries[slug] or {}
@@ -496,7 +497,16 @@ def bare_correlations(prose):
     return out
 
 
-def house_entry(entry, year=None):
+# An entry whose author segment is absent begins at its year slot, because `entry_of` prints the
+# author first whenever the record has one. Two entries here are of that shape because Crossref
+# returns `authors: ABSENT` for their DOIs, and `refs.json` carries a seeded author for exactly
+# those rows (R3 of the decision of 2026-11-14). The seed is inserted HERE, in the render, and not
+# written into the stored entry: `refs.json` keeps what the registry returned, the same way a null
+# year slot is filled at render time rather than overwritten in the record.
+NO_AUTHOR_ENTRY = re.compile(r"^\(\s*(?:\d{4}|n\.\s?d\.|None|null|NULL|N/A|nan|NaN)\s*\)\s*[.,;:]?\s*")
+
+
+def house_entry(entry, year=None, authors=None):
     """One line per entry, one period per full stop, one convention for the whole list.
 
     * `thorne-fever-2018` arrived from the registry hard-wrapped -- CR/LF plus the registry's own
@@ -517,6 +527,8 @@ def house_entry(entry, year=None):
     stray-number gate reads the prose before this substitution.
     """
     line = " ".join(entry.split())
+    if authors and NO_AUTHOR_ENTRY.match(line):
+        line = authors + " " + line
     if year:
         line = YEAR_SLOT_NULL.sub("(%s)" % year, line, count=1)
     line = strip_null_slots(line)
@@ -742,6 +754,14 @@ def selftest():
            house_entry(nul, year=1984)[:40])
     expect("and without a record year the same slot prints as absent",
            house_entry(nul).startswith("R-Trees -"), house_entry(nul)[:40])
+    # R3 of the decision of 2026-11-14: the author slot has the same two homes as the year slot.
+    expect("a seeded author fills an entry whose record carries none",
+           house_entry(nul, year=1984, authors="Guttman, A.").startswith("Guttman, A. (1984). R-Trees -"),
+           house_entry(nul, year=1984, authors="Guttman, A.")[:60])
+    expect("and a seed never displaces an author the record already prints",
+           house_entry("Hunter, J. D. (2007). Matplotlib.", authors="Guttman, A.")
+           .startswith("Hunter, J. D. (2007)"),
+           house_entry("Hunter, J. D. (2007). Matplotlib.", authors="Guttman, A.")[:50])
     # plant: a render that does NOT repair. Without this the guard could only be tested against a
     # world in which it never has to fire, which is the shape of a guard that has never been seen to
     # work -- and the review asks for a refusal, not a crash, when one gets through.
@@ -892,7 +912,7 @@ def main():
     repaired = 0
     for i, slug in enumerate(order, 1):
         r = refs[slug]
-        printed = house_entry(r["entry"], year=r.get("year"))
+        printed = house_entry(r["entry"], year=r.get("year"), authors=r.get("authors"))
         if printed != r["entry"]:
             repaired += 1
         entries.append("[%d] %s" % (i, printed))
