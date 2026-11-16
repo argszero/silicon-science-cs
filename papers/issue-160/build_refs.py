@@ -431,15 +431,32 @@ def write_report(path, report):
                     "unavailable. Re-run `build_refs.py` to record it.\n\n")
         elif unchecked:
             f.write("\n**The two-year bound could not fire on %d of the %d rows** -- their records "
-                    "carry no issued year, so each was identified on title and DOI alone and its "
-                    "entry prints the year this package's seed asserts: %s. Their year is an "
-                    "assertion about the work, not a registry corroboration, and the table's last "
-                    "column marks every such row `seed`.\n\n"
+                    "carry no issued year, so each was identified on title and DOI alone: %s. Their "
+                    "year is an assertion about the work, not a registry corroboration, and the "
+                    "table's last column marks every such row `seed`. `refs.json` keeps what the "
+                    "registry returned, so the seed year is inserted where the entry is PRINTED "
+                    "rather than written into the stored entry, and the page carries it for every "
+                    "one of these rows.\n\n"
                     % (len(unchecked), report["verified"],
                        ", ".join("`%s`" % sl for sl in unchecked)))
         else:
             f.write("\n**The two-year bound fired on every row**: every record supplied an issued "
                     "year, and the table's last column reads `record` throughout.\n\n")
+        # Decision items 1 and 3. Item 1 asks for the printed-year count to be a receipt rather than a
+        # sentence, so this file names the count and the gate behind it: `make_manuscript.py` prints
+        # how many entries carry a four-digit year and refuses to write when a row whose record or
+        # seed supplies a year prints none. Item 3 asks for the casing policy and the override count,
+        # so both are here -- the list reproduces the record's casing by default, and the strings the
+        # record gets WRONG about the work are named overrides, counted on every run.
+        f.write("**Every entry on the page prints a four-digit year**: the renderer prints that count "
+                "on every run and refuses to write when a row whose record or seed supplies a year "
+                "prints none, so this sentence and the page cannot drift apart.\n")
+        f.write("The list reproduces the casing the registry stores, which is a policy rather than an "
+                "oversight: no casing rule can tell a proper noun from a word, and the rule that "
+                "corrects `google` also turns `eBPF` into `Ebpf`. Where the record is demonstrably "
+                "wrong about the work itself, the string is a **named override** listed with its "
+                "reason in `make_manuscript.py`'s `RECORD_OVERRIDES`, and the number applied is "
+                "printed beside the seed count on every run.\n\n")
         f.write("The journal's floor is 100 references, all cited in the body; this file and "
                 "`refs.json` together are what that count is read from, and "
                 "`make_manuscript.py` refuses to render while the count is short or while a "

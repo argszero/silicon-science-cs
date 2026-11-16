@@ -205,6 +205,9 @@ Two slugs that resolve to one work are refused as duplicates: the bibliography m
 **120 of 187 seeds verified.** Rejections by reason: EXCLUDED (relevance) x5, NO RECORD x60, NOT RUN x2. A refusal is not a failure to look: every refused seed is named with its reason, because a silently dropped citation is a lie of omission.
 
 
-**The two-year bound could not fire on 3 of the 120 rows** -- their records carry no issued year, so each was identified on title and DOI alone and its entry prints the year this package's seed asserts: `smith-1990`, `tamer-2010`, `wilks-1948`. Their year is an assertion about the work, not a registry corroboration, and the table's last column marks every such row `seed`.
+**The two-year bound could not fire on 3 of the 120 rows** -- their records carry no issued year, so each was identified on title and DOI alone: `smith-1990`, `tamer-2010`, `wilks-1948`. Their year is an assertion about the work, not a registry corroboration, and the table's last column marks every such row `seed`. `refs.json` keeps what the registry returned, so the seed year is inserted where the entry is PRINTED rather than written into the stored entry, and the page carries it for every one of these rows.
+
+**Every entry on the page prints a four-digit year**: the renderer prints that count on every run and refuses to write when a row whose record or seed supplies a year prints none, so this sentence and the page cannot drift apart.
+The list reproduces the casing the registry stores, which is a policy rather than an oversight: no casing rule can tell a proper noun from a word, and the rule that corrects `google` also turns `eBPF` into `Ebpf`. Where the record is demonstrably wrong about the work itself, the string is a **named override** listed with its reason in `make_manuscript.py`'s `RECORD_OVERRIDES`, and the number applied is printed beside the seed count on every run.
 
 The journal's floor is 100 references, all cited in the body; this file and `refs.json` together are what that count is read from, and `make_manuscript.py` refuses to render while the count is short or while a held reference is never cited.

@@ -50,12 +50,27 @@ def pct(x):
 # deposited. Printing the stored field is faithful and wrong: the work is indexed under a suffix
 # rather than under its author. Normalisation happens HERE, at render, so `refs.json` keeps the
 # registry's form and a reader can always see what was actually deposited.
-AUTHOR_FIXUPS = {
-    # A suffix cannot be re-cased into a surname: no rule recovers "Pickands" from "III", so this one
-    # is an explicit override and the only place in the package where a name is asserted rather than
-    # derived. The published work is Pickands (1975), Annals of Statistics 3:119-131.
-    "pickands-1975": ("III, J. P.", "Pickands, J."),
-}
+# Strings the registry stores wrongly about the work itself, applied at render time and COUNTED.
+# Decision item 3 (issue #160): an override nobody can count is one that can be added in silence, so
+# each row here says what the record stores, what the work itself says, and why it is an override.
+# A blanket re-casing rule cannot live here instead: it cannot tell a proper noun from a word, and
+# the same rule that fixes `google` turns `eBPF` into `Ebpf` and `R-Trees` into `R-trees`.
+RECORD_OVERRIDES = [
+    # A suffix cannot be re-cased into a surname: no rule recovers "Pickands" from "III". The
+    # published work is Pickands (1975), Annals of Statistics 3:119-131.
+    ("pickands-1975", "III, J. P.", "Pickands, J.",
+     "a suffix is not a family name"),
+    # Both of these are checkable against the work itself, which is what separates them from a
+    # house-style choice: the cluster paper is Google's, and the author's name carries an umlaut.
+    ("barroso-2003", "Holzle", "H\u00f6lzle",
+     "the record drops the author's umlaut"),
+    ("barroso-2003", "the google cluster architecture", "the Google cluster architecture",
+     "the work capitalises the company name in its own title"),
+    # Every other title in this list opens with a capital; this record stores none.
+    ("tamer-2010", "partial identification in econometrics",
+     "Partial identification in econometrics",
+     "the record stores the title with no initial capital"),
+]
 # An all-caps family name is a deposited-form artefact: at least three capitals followed by a comma.
 # Deliberately narrow -- an ALL-CAPS TITLE must not be touched (titles sit after the year, and the
 # normaliser only ever sees the author segment), and a single initial (`J.`) is not a name.
@@ -100,13 +115,59 @@ def strip_null_slots(entry):
     return re.sub(r"\s{2,}", " ", cleaned).strip(), n
 
 
-def rendered_entry(ref, slug=""):
+def apply_record_overrides(entry, slug, trace=None):
+    """The entry with its named record overrides applied, each one counted.
+
+    Decision item 3. An override asserts something about the work rather than deriving it from the
+    record, so it is named here with its reason and every one that fires is appended to `trace`; the
+    run prints that count beside the seed count, which is what stops one being added in silence.
+    """
+    for o_slug, old, new, _why in RECORD_OVERRIDES:
+        if o_slug == slug and old in entry:
+            entry = entry.replace(old, new, 1)
+            if trace is not None:
+                trace.append(("override", slug, old, new))
+    return entry
+
+
+def insert_seed_year(entry, ref, slug="", trace=None):
+    """A seeded year, printed on the page at render time, for rows whose record supplies none.
+
+    Decision item 1. `refs.json` keeps exactly what the registry returned, so a seeded year lives in
+    the record's `year` field while the stored `entry` still carries the `(None)` placeholder that
+    `strip_null_slots` removes before the page is written -- which is why the page printed no year for
+    the three seeded rows while `reference-check.md` said it printed the seed's. The insertion happens
+    here; the stored entry is never rewritten.
+    """
+    if not isinstance(ref, dict) or str(ref.get("year_source")) != "seed":
+        return entry
+    if _YEAR.search(entry):                     # the record already supplied a year
+        return entry
+    year = ref.get("year")
+    if not year:
+        return entry
+    stamp = "(%d)" % int(year)
+    title = (ref.get("title") or "").strip()
+    if title and entry.startswith(title):
+        out = "%s. %s" % (stamp, entry)
+    elif title and title in entry:
+        out = entry.replace(title, "%s. %s" % (stamp, title), 1)
+    else:
+        # Refuse rather than guess: a year printed in the wrong slot is the defect this repair
+        # removes, and it would read as fixed.
+        raise KeyError("seed row %r prints no year and its stored title %r is not in its entry; "
+                       "cannot place the year without guessing" % (slug, title[:60]))
+    if trace is not None:
+        trace.append(("seed-year", slug, "(no year)", stamp))
+    return out
+
+
+def rendered_entry(ref, slug="", trace=None):
     """The entry as it is printed: the registry's stored form in, house form out."""
     entry = ref["entry"] if isinstance(ref, dict) else str(ref)
     entry, _dropped = strip_null_slots(entry)
-    old, new = AUTHOR_FIXUPS.get(slug, (None, None))
-    if old:
-        entry = entry.replace(old, new, 1)
+    entry = insert_seed_year(entry, ref, slug, trace)
+    entry = apply_record_overrides(entry, slug, trace)
     head, year, tail = _split_at_year(entry)
 
     def _recase(m):
@@ -450,12 +511,31 @@ def main():
                        % (len(order), REF_FLOOR))
 
     entries = []
+    entry_slugs = []
+    trace = []
     dropped_year = 0
     for i, slug in enumerate(order, 1):
         _clean, _n = strip_null_slots(refs[slug]["entry"] if isinstance(refs[slug], dict)
                                       else str(refs[slug]))
         dropped_year += 1 if _n else 0
-        entries.append("[%d] %s" % (i, rendered_entry(refs[slug], slug)))
+        entries.append("[%d] %s" % (i, rendered_entry(refs[slug], slug, trace)))
+        entry_slugs.append(slug)
+
+    # Decision item 1: the printed-year count is MEASURED and printed, and it gates the write. The
+    # report's sentence and the page disagreed for three rows because the only thing checking the
+    # sentence was the sentence; a count that the run prints is what a reader can hold it against.
+    printed_years = sum(1 for e in entries if _YEAR.search(e))
+    seed_years = sum(1 for t in trace if t[0] == "seed-year")
+    overrides = sum(1 for t in trace if t[0] == "override")
+    no_year_available = set(s for s in order
+                            if not (isinstance(refs[s], dict) and refs[s].get("year")))
+    missing_year = [(s, e) for s, e in zip(entry_slugs, entries)
+                    if not _YEAR.search(e) and s not in no_year_available]
+    if missing_year:
+        print("NO YEAR ON THE PAGE for %d entr(ies): [%s] %r"
+              % (len(missing_year), missing_year[0][0], missing_year[0][1][:80]))
+        print("  -> a row whose record or seed supplies a year must print one; refusing to write.")
+        return 1
 
     # A null that reaches the page has to be a decision, not a slot. `strip_null_slots` is the
     # decision; this is what makes it one -- an entry that still carries a null sentinel after the
@@ -474,6 +554,10 @@ def main():
     print("manuscript.md written: %d characters" % len(body))
     print("  markers bound: %d numbers, %d citations" % (len(bound), len(order)))
     print("  references: %d held, %d cited (floor %d)" % (len(refs), len(order), REF_FLOOR))
+    print("  printed years: %d of %d entries print a four-digit year (%d printed from a seed)"
+          % (printed_years, len(entries), seed_years))
+    print("  record overrides: %d applied, each named with its reason in RECORD_OVERRIDES"
+          % overrides)
     print("  stray-number scan: clean")
     print("  null slots: %d entry(ies) printed without the field their record stored as null"
           % dropped_year)

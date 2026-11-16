@@ -34,7 +34,7 @@ CLAIMS = [
     dict(id="P2' limb 2", path="cells.4.binds_frac", op="<", threshold=0.10,
          registered="UNMET",
          text="censoring binds on under a tenth of the rows at a 32x-median timeout"),
-    dict(id="P3", path="cost.K_at_5.median", op=">=", threshold=20,
+    dict(id="P3", path="cost_check.by_eps.eps_5.at_K_plus_1.levels_median", op=">=", threshold=20,
          registered="MET",
          text="the median workload needs at least 20 timeout levels to certify within 5%"),
 ]
@@ -185,6 +185,16 @@ def identities(art):
         out.append(("the cost law's check is present and states its residual", False,
                     "no cost_check block: criterion (ii) would again be unverified"))
     else:
+        # Decision item 4. The P3 claim above binds the CHECKED PRICE, in timeout levels, because that
+        # is the unit its criterion is written in. The law's own quantity is a count of gaps and is one
+        # below that price on every row, so it keeps its own line here: two units, two lines, neither
+        # able to stand in for the other. Exchanging them was the defect, and it was invisible.
+        law_gap_count = art["cost"]["K_at_5"]["median"]
+        price_levels = cc["by_eps"]["eps_5"]["at_K_plus_1"]["levels_median"]
+        out.append(("the law's gap count is bound on its own line, in gaps",
+                    price_levels == law_gap_count + 1,
+                    "law's gap count %d gaps; checked price %d levels (one level above the gap count)"
+                    % (law_gap_count, price_levels)))
         eps_tags = sorted(cc["by_eps"])
         out.append(("every precision in the registered ladder has a residual, at K-1, K and K+1",
                     eps_tags == ["eps_10", "eps_20", "eps_5"]
@@ -322,11 +332,14 @@ def identities(art):
                         "%d of %d entries: %s"
                         % (len(offenders), len(refs), ", ".join(offenders[:4]) or "none")))
 
-            nulls, noauth = [], 0
+            nulls, noauth, no_year, no_year_slugs = [], 0, 0, []
             for slug in sorted(refs):
                 printed = make_manuscript_mod.rendered_entry(refs[slug], slug)
                 if "None" in printed:
                     nulls.append(slug)
+                if not re.search(r"\(\d{4}\)", printed):
+                    no_year += 1
+                    no_year_slugs.append(slug)
                 title = (refs[slug].get("title") if isinstance(refs[slug], dict) else "") or ""
                 head = printed.split(title, 1)[0] if (title and title in printed) else printed
                 head, _year, _tail = make_manuscript_mod._split_at_year(head)
@@ -367,8 +380,25 @@ def identities(art):
                         not nulls,
                         "%d of %d entries: %s"
                         % (len(nulls), len(refs), ", ".join(nulls[:4]) or "none")))
-            out.append(("the entries that print no year are counted rather than rendered", True,
-                        "%d of %d entries carry no author segment" % (noauth, len(refs))))
+            # Decision item 2. The line here printed "%d ... carry no author segment" under a label
+            # about the YEAR: ten was the author count, three was the year count, and it was green on
+            # a claim it never measured. Each label now stands on its own accumulator, and each is
+            # asserted against something derived elsewhere rather than against itself:
+            #   - a year is owed wherever the record or the seed supplies one (item 1 prints it), so
+            #     the count of yearless entries must equal the count of rows that supply no year;
+            #   - an author is not owed at all, so the authorless census is asserted for COMPLETENESS
+            #     against the other loop's count: the two must partition the list.
+            year_owed = [sl for sl in refs if isinstance(refs[sl], dict) and refs[sl].get("year")]
+            out.append(("the entries that print no year are counted rather than rendered",
+                        no_year == len(refs) - len(year_owed),
+                        "%d of %d entries print no year: %s (a year is supplied on %d rows)"
+                        % (no_year, len(refs), ", ".join(no_year_slugs[:4]) or "none",
+                           len(year_owed))))
+            out.append(("the entries that print no author are counted rather than rendered",
+                        noauth + with_auth == len(refs),
+                        "%d of %d entries carry no author segment, %d carry one "
+                        "(the two censuses must partition the list)"
+                        % (noauth, len(refs), with_auth)))
         else:
             out.append(("refs.json is present so author form can be checked", False, "missing"))
 
@@ -466,8 +496,15 @@ def reference_provenance(refs=None, report_text=None):
         out.append(("the number the report states is the number the artefact holds",
                     int(m.group(1)) == len(derived),
                     "report says %s, artefact holds %d" % (m.group(1), len(derived))))
-        named = re.search(r"seed asserts: ([^.]+)\.", report_text)
-        named_set = set(re.findall(r"`([^`]+)`", named.group(1))) if named else set()
+        # The named rows are read out of the SAME SENTENCE the count comes from, rather than out of a
+        # fixed phrase inside it. It was `seed asserts: ([^.]+)` until this revision round, and
+        # restating that sentence to state the render-time insertion -- which decision item 1 requires
+        # -- silently emptied the set: the line named all three rows and the gate read none. A parser
+        # keyed to wording makes the wording unfixable; keyed to the sentence's extent it does not.
+        _tail = report_text[m.end():]
+        _stop = _tail.find(". ")
+        _span = _tail if _stop < 0 else _tail[:_stop]
+        named_set = set(re.findall(r"`([^`]+)`", _span))
         out.append(("the report names exactly the rows it counted",
                     named_set == set(derived), "%d named, %d held, symmetric difference %s"
                     % (len(named_set), len(derived), sorted(named_set ^ set(derived))[:4])))
@@ -595,6 +632,41 @@ def selftest():
         both4, names4, first4, _ = verdict_line_states_the_pair(swapped, law, chk)
         expect("a verdict line that prints the two counts in the wrong order is refused",
                both4 and names4 and not first4, "law_first=%s" % first4)
+
+    # Decision item 2, planted in the direction the decision names: the year line must fire on a YEAR
+    # disagreement rather than pass on the author count. The defect planted is a regression of item 1
+    # (the seed year stops reaching the page), and the assertion requires the AUTHOR line to stay green
+    # at the same time -- so a line that merely echoes the other accumulator cannot satisfy this.
+    refs_path_plant = os.path.join(HERE, "refs.json")
+    if os.path.exists(refs_path_plant):
+        import make_manuscript as _mm
+        _rj = json.load(open(refs_path_plant, encoding="utf-8"))
+        _rrefs = _rj.get("refs", _rj)
+        _seeded = [sl for sl, r in _rrefs.items()
+                   if isinstance(r, dict) and str(r.get("year_source")) == "seed"]
+        if _seeded:
+            _real = _mm.rendered_entry
+
+            def _drop_seed(ref, slug="", trace=None):
+                if isinstance(ref, dict) and str(ref.get("year_source")) == "seed":
+                    ref = dict(ref)
+                    ref["year_source"] = "record"
+                return _real(ref, slug, trace)
+
+            _mm.rendered_entry = _drop_seed
+            try:
+                _planted_legs = identities(base)
+            finally:
+                _mm.rendered_entry = _real
+            _yr = [ok for name, ok, _ in _planted_legs
+                   if name.startswith("the entries that print no year")]
+            _au = [ok for name, ok, _ in _planted_legs
+                   if name.startswith("the entries that print no author")]
+            expect("a page whose seed years stopped printing is refused by the YEAR line, not the "
+                   "author line",
+                   bool(_yr) and not _yr[0] and bool(_au) and _au[0],
+                   "year_line_ok=%s author_line_ok=%s over %d seeded rows"
+                   % (_yr, _au, len(_seeded)))
 
     # The year-provenance gate, planted both ways, on the same function the real run calls.
     refs = json.load(open("refs.json", encoding="utf-8"))
