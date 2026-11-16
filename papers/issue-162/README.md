@@ -13,15 +13,21 @@ is the only part assembled from outside, and it is committed.
 ./reproduce.sh
 ```
 
-Stdlib-only Python 3 (developed under CPython 3.9.6): `argparse json math os sys fractions hashlib re
-time unicodedata urllib`. There is nothing to install and nothing to fetch.
+Stdlib-only Python 3 (developed under CPython 3.9.6): `argparse ast fractions hashlib html io json
+math os re sys time unicodedata urllib`. There is nothing to install and nothing to fetch. That list
+is a claim about the build, so it is read on every run by `check_declared_env.py`, which compares it
+with the modules the package's own files import and refuses a list that is narrower than the code —
+or wider than it. It is there because the list *was* narrower: `gate_citations.py` imports `html` and
+the sentence did not name it, and no journal gate could see that, because `envgate` asks only whether
+every third-party name is declared and never asserts a standard-library one.
 
 `reproduce.sh` runs, in order: the instrument's self-test; the reading, emitted to
 `nines_findings.json`; the citation gate, which renders `manuscript.md` and rewrites
-`reference-check.md`; and a comparison of those three artefacts against the SHA-256 digests sealed in
-`artefacts.sha256`.
+`reference-check.md`; a comparison of those three artefacts against the SHA-256 digests sealed in
+`artefacts.sha256`; and the declaration check, which reads the module list above against the modules
+the code imports.
 
-**That last step deliberately does not use git.** It used to: `git diff --quiet` and `git ls-files`
+**That digest step deliberately does not use git.** It used to: `git diff --quiet` and `git ls-files`
 decide nothing in a `git archive` export, which carries no `.git` — so for every reader following
 this file, three steps reported NOT RUN while the author saw `[ok]`. A check only the author can run
 is not a check. The manifest travels inside the package and the comparison needs no git and no
@@ -34,8 +40,10 @@ reproduce.sh -- issue #162
 == 1 instrument self-test (controls + one plant each)
    [ok]   instrument self-test (controls + one plant each)
 ...
-STEPS RUN: 4   NOT RUN: 0
-REPRODUCE: ALL GREEN (4 steps)
+== 5 declared module list matches the modules the code imports
+   [ok]   declared module list matches the modules the code imports
+STEPS RUN: 5   NOT RUN: 0
+REPRODUCE: ALL GREEN (5 steps)
 ```
 
 The step count and the control/plant counts are printed by the programs, not asserted here: a count
@@ -62,6 +70,7 @@ see the third state.
 | file | authored or derived | what it holds |
 |------|--------------------|---------------|
 | `nines.py` | authored | the instrument: identified set, both attainment routes, the stated-dependence family and its closed-form inverse, controls with one plant each |
+| `check_declared_env.py` | authored | the declaration check: reads the module list above against the modules the package imports, and refuses a list narrower than the code or wider than it |
 | `nines_findings.json` | derived (`--grid --emit`) | the 20-cell reading: quoted figure, identified-set endpoints in probability and in nines, the span, whether the set reaches total loss, and `rho_one_decade` |
 | `harvest_refs.py` | authored | assembles the reference corpus from registry responses and verifies each record by DOI |
 | `refs/references.json` | derived (network) | the corpus with its stored verification state; committed so reproduction stays offline |

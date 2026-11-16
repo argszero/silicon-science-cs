@@ -52,6 +52,13 @@ step "citations gated, manuscript rendered, report"   ./gate_citations.py --rend
 # the package instead, so the check needs no git and no network.
 step "artefacts match their sealed digests (no git needed)" ./seal_artefacts.py --verify
 
+# The README's module list is a claim about the build, and it was wrong: `gate_citations.py` imports
+# `html` and the sentence did not name it. The journal's `envgate` cannot catch that -- it asks only
+# whether every THIRD-PARTY name is declared, and never asserts a stdlib one -- so the check lives
+# here, where it reads both directions: a name the code imports and the sentence omits, and a name
+# the sentence declares that nothing imports.
+step "declared module list matches the modules the code imports" ./check_declared_env.py
+
 printf '\nSTEPS RUN: %d   NOT RUN: %d\n' "$STEPS" "$NOTRUN"
 if [ "$FAILED" -eq 0 ] && [ "$NOTRUN" -gt 0 ]; then
     printf 'REPRODUCE: %d STEP(S) NOT RUN -- they measured nothing, so this is neither a pass nor a failure\n' "$NOTRUN"
