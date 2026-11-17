@@ -1,0 +1,438 @@
+{
+ "cells": [
+  {
+   "T_rule": "k * row median",
+   "binds": 27325,
+   "binds_frac": 0.5752,
+   "c_max": 0.499991,
+   "c_median": 0.147195,
+   "c_p10": 0.0,
+   "c_p90": 0.40573,
+   "identified_frac": 0.4248,
+   "k": 2,
+   "rows": 47502,
+   "understated_by_max": 28556.9588,
+   "understated_by_median": 4.2446,
+   "understated_by_p90": 61.5711
+  },
+  {
+   "T_rule": "k * row median",
+   "binds": 19580,
+   "binds_frac": 0.4122,
+   "c_max": 0.499973,
+   "c_median": 0.0,
+   "c_p10": 0.0,
+   "c_p90": 0.249194,
+   "identified_frac": 0.5878,
+   "k": 4,
+   "rows": 47502,
+   "understated_by_max": 27305.6667,
+   "understated_by_median": 3.8295,
+   "understated_by_p90": 69.5399
+  },
+  {
+   "T_rule": "k * row median",
+   "binds": 13519,
+   "binds_frac": 0.2846,
+   "c_max": 0.499936,
+   "c_median": 0.0,
+   "c_p10": 0.0,
+   "c_p90": 0.23139,
+   "identified_frac": 0.7154,
+   "k": 8,
+   "rows": 47502,
+   "understated_by_max": 27305.6667,
+   "understated_by_median": 3.4502,
+   "understated_by_p90": 69.6144
+  },
+  {
+   "T_rule": "k * row median",
+   "binds": 8981,
+   "binds_frac": 0.1891,
+   "c_max": 0.499863,
+   "c_median": 0.0,
+   "c_p10": 0.0,
+   "c_p90": 0.184234,
+   "identified_frac": 0.8109,
+   "k": 16,
+   "rows": 47502,
+   "understated_by_max": 27305.6667,
+   "understated_by_median": 3.2588,
+   "understated_by_p90": 58.3243
+  },
+  {
+   "T_rule": "k * row median",
+   "binds": 5815,
+   "binds_frac": 0.1224,
+   "c_max": 0.499716,
+   "c_median": 0.0,
+   "c_p10": 0.0,
+   "c_p90": 0.084725,
+   "identified_frac": 0.8776,
+   "k": 32,
+   "rows": 47502,
+   "understated_by_max": 27305.6667,
+   "understated_by_median": 3.0599,
+   "understated_by_p90": 35.3825
+  }
+ ],
+ "controls": {
+  "flat_rows_R_eq_1": 11972,
+  "flat_rows_R_eq_1_frac": 0.252,
+  "no_censoring_identified_and_exact_frac": 1.0,
+  "no_censoring_rows": 5000,
+  "note": "flat_rows_R_eq_1 counts rows whose ladder has no range at all (p100 == p50); rows_needing_one_level_at_eps_5 counts rows the cost law certifies with a single level, which is R <= 1.05 and is the larger set. A timeout above the maximum prints the truth, which is what the no-censoring control checks.",
+  "rows_needing_one_level_at_eps_5": 12664
+ },
+ "cost": {
+  "K_at_10": {
+   "frac_at_one": 0.2781,
+   "max": 133,
+   "median": 13,
+   "p90": 50
+  },
+  "K_at_20": {
+   "frac_at_one": 0.2988,
+   "max": 70,
+   "median": 7,
+   "p90": 26
+  },
+  "K_at_5": {
+   "frac_at_one": 0.2666,
+   "max": 259,
+   "median": 25,
+   "p90": 98
+  },
+  "R_max": 300241.0,
+  "R_median": 3.325,
+  "R_min": 1.0,
+  "R_p90": 114.0824,
+  "rule": "K = ceil(log R / log(1+eps)), R = p100/p50 (same-space, interval means)"
+ },
+ "cost_check": {
+  "by_eps": {
+   "eps_10": {
+    "at_K": {
+     "achieved_max": 0.209877,
+     "achieved_median": 0.101267,
+     "achieved_p90": 0.10966,
+     "extra_levels": 0,
+     "levels_max": 133,
+     "levels_median": 13,
+     "levels_p90": 50,
+     "residual_max": 2.0988,
+     "residual_median": 1.0127,
+     "rows": 47502,
+     "rows_over_eps": 34292,
+     "rows_over_eps_frac": 0.7219
+    },
+    "at_K_minus_1": {
+     "achieved_max": 0.330961,
+     "achieved_median": 0.104714,
+     "achieved_p90": 0.134121,
+     "extra_levels": -1,
+     "levels_max": 132,
+     "levels_median": 12,
+     "levels_p90": 49,
+     "residual_max": 3.3096,
+     "residual_median": 1.0471,
+     "rows": 47502,
+     "rows_over_eps": 34292,
+     "rows_over_eps_frac": 0.7219
+    },
+    "at_K_plus_1": {
+     "achieved_max": 0.1,
+     "achieved_median": 0.096232,
+     "achieved_p90": 0.099455,
+     "extra_levels": 1,
+     "levels_max": 134,
+     "levels_median": 14,
+     "levels_p90": 51,
+     "residual_max": 1.0,
+     "residual_median": 0.9623,
+     "rows": 47502,
+     "rows_over_eps": 0,
+     "rows_over_eps_frac": 0.0
+    },
+    "eps": 0.1,
+    "grids": {
+     "identity_cases": 3552,
+     "identity_dev_max": 3.331e-16,
+     "identity_quantiles": [
+      0.5,
+      0.55,
+      0.7,
+      0.9,
+      0.99,
+      1.0
+     ],
+     "identity_rows": 238,
+     "linear": {
+      "cap": 2000,
+      "levels_max": 2000,
+      "levels_median": 9,
+      "levels_p90": 36,
+      "ratio_to_geometric_median": 0.5,
+      "rows": 47502,
+      "rows_off_the_geometric_price": 44352,
+      "uncertified_frac": 0.0028,
+      "uncertified_rows": 135
+     },
+     "residual_at_K_from_closed_form": 2.0988,
+     "rows_in_tolerance_band": 0,
+     "rows_over_eps_from_closed_form": 34292,
+     "rows_with_range": 34292,
+     "rows_without_range": 13210,
+     "rule": "levels spaced geometrically (the law's rule) vs uniformly in latency (a second rule)",
+     "tolerance_band_max_excess": 0.0
+    }
+   },
+   "eps_20": {
+    "at_K": {
+     "achieved_max": 0.439868,
+     "achieved_median": 0.204518,
+     "achieved_p90": 0.235115,
+     "extra_levels": 0,
+     "levels_max": 70,
+     "levels_median": 7,
+     "levels_p90": 26,
+     "residual_max": 2.1993,
+     "residual_median": 1.0226,
+     "rows": 47502,
+     "rows_over_eps": 33305,
+     "rows_over_eps_frac": 0.7011
+    },
+    "at_K_minus_1": {
+     "achieved_max": 0.727845,
+     "achieved_median": 0.218266,
+     "achieved_p90": 0.330836,
+     "extra_levels": -1,
+     "levels_max": 69,
+     "levels_median": 6,
+     "levels_p90": 25,
+     "residual_max": 3.6392,
+     "residual_median": 1.0913,
+     "rows": 47502,
+     "rows_over_eps": 33307,
+     "rows_over_eps_frac": 0.7012
+    },
+    "at_K_plus_1": {
+     "achieved_max": 0.2,
+     "achieved_median": 0.185435,
+     "achieved_p90": 0.197898,
+     "extra_levels": 1,
+     "levels_max": 71,
+     "levels_median": 8,
+     "levels_p90": 27,
+     "residual_max": 1.0,
+     "residual_median": 0.9272,
+     "rows": 47502,
+     "rows_over_eps": 0,
+     "rows_over_eps_frac": 0.0
+    },
+    "eps": 0.2,
+    "grids": {
+     "identity_cases": 3462,
+     "identity_dev_max": 3.886e-16,
+     "identity_quantiles": [
+      0.5,
+      0.55,
+      0.7,
+      0.9,
+      0.99,
+      1.0
+     ],
+     "identity_rows": 238,
+     "linear": {
+      "cap": 2000,
+      "levels_max": 2000,
+      "levels_median": 6,
+      "levels_p90": 19,
+      "ratio_to_geometric_median": 0.5,
+      "rows": 47502,
+      "rows_off_the_geometric_price": 43344,
+      "uncertified_frac": 0.0012,
+      "uncertified_rows": 55
+     },
+     "residual_at_K_from_closed_form": 2.1993,
+     "rows_in_tolerance_band": 2,
+     "rows_over_eps_from_closed_form": 33305,
+     "rows_with_range": 33307,
+     "rows_without_range": 14195,
+     "rule": "levels spaced geometrically (the law's rule) vs uniformly in latency (a second rule)",
+     "tolerance_band_max_excess": 0.0
+    }
+   },
+   "eps_5": {
+    "at_K": {
+     "achieved_max": 0.102167,
+     "achieved_median": 0.050321,
+     "achieved_p90": 0.052594,
+     "extra_levels": 0,
+     "levels_max": 259,
+     "levels_median": 25,
+     "levels_p90": 98,
+     "residual_max": 2.0433,
+     "residual_median": 1.0064,
+     "rows": 47502,
+     "rows_over_eps": 34838,
+     "rows_over_eps_frac": 0.7334
+    },
+    "at_K_minus_1": {
+     "achieved_max": 0.157282,
+     "achieved_median": 0.051187,
+     "achieved_p90": 0.058594,
+     "extra_levels": -1,
+     "levels_max": 258,
+     "levels_median": 24,
+     "levels_p90": 97,
+     "residual_max": 3.1456,
+     "residual_median": 1.0237,
+     "rows": 47502,
+     "rows_over_eps": 34838,
+     "rows_over_eps_frac": 0.7334
+    },
+    "at_K_plus_1": {
+     "achieved_max": 0.05,
+     "achieved_median": 0.049034,
+     "achieved_p90": 0.049861,
+     "extra_levels": 1,
+     "levels_max": 260,
+     "levels_median": 26,
+     "levels_p90": 99,
+     "residual_max": 1.0,
+     "residual_median": 0.9807,
+     "rows": 47502,
+     "rows_over_eps": 0,
+     "rows_over_eps_frac": 0.0
+    },
+    "eps": 0.05,
+    "grids": {
+     "identity_cases": 3582,
+     "identity_dev_max": 2.845e-16,
+     "identity_quantiles": [
+      0.5,
+      0.55,
+      0.7,
+      0.9,
+      0.99,
+      1.0
+     ],
+     "identity_rows": 238,
+     "linear": {
+      "cap": 2000,
+      "levels_max": 2000,
+      "levels_median": 17,
+      "levels_p90": 69,
+      "ratio_to_geometric_median": 0.5,
+      "rows": 47502,
+      "rows_off_the_geometric_price": 45237,
+      "uncertified_frac": 0.006,
+      "uncertified_rows": 285
+     },
+     "residual_at_K_from_closed_form": 2.0433,
+     "rows_in_tolerance_band": 0,
+     "rows_over_eps_from_closed_form": 34838,
+     "rows_with_range": 34838,
+     "rows_without_range": 12664,
+     "rule": "levels spaced geometrically (the law's rule) vs uniformly in latency (a second rule)",
+     "tolerance_band_max_excess": 0.0
+    }
+   }
+  },
+  "construction": "levels placed geometrically across each row's own [p50, p100], the range R = p100/p50 the law prices; achieved precision = relative width of the level interval bracketing the row's own q-quantile. On this grid the width is R**(1/(m-1))-1 for every row and every quantile position, so what the at_K / at_K_plus_1 blocks establish is a theorem; the `grids` block checks that identity against the rows and re-prices the certification under a second rule, levels uniform in latency, where the width does depend on position and the two rules disagree",
+  "criterion": "registered success criterion (ii): the cost law's prediction checked against the empirical distributions, with the residual stated",
+  "holds_at": {
+   "eps_10": "at_K_plus_1",
+   "eps_20": "at_K_plus_1",
+   "eps_5": "at_K_plus_1"
+  },
+  "reconstruction": {
+   "draws_per_row": 512,
+   "note": "draw-based check of the piecewise-linear reconstruction: how far the empirical q-quantile of drawn invocations sits from the ladder's own quantile. Sampling error at this draw count is the floor here; this limb tests the interpolation, NOT the cost law.",
+   "rel_err_max": 3.09887,
+   "rel_err_median": 0.000901,
+   "rel_err_p90": 0.06616,
+   "rows": 200,
+   "seed": 20261110
+  },
+  "residual_definition": "achieved relative bracket width / eps; <= 1 means the law's price buys the precision it claims",
+  "unit": "interval mean (30-s average), NOT single invocations -- trace footnote 7"
+ },
+ "count_limit": {
+  "below_100": 31185,
+  "below_1000": 40993,
+  "below_1000_frac": 0.863,
+  "below_100_frac": 0.6565,
+  "n_obs_median": 0.24,
+  "q": 0.99,
+  "refused": {
+   "crossing_ladder": 0,
+   "unparseable": 7,
+   "zero_median": 2219
+  },
+  "resolvable": 16317,
+  "resolvable_frac": 0.3435,
+  "rows": 49728,
+  "unit": "interval mean (30-s average), NOT single invocations -- trace footnote 7",
+  "unresolvable_frac": 0.6565,
+  "usable": 47502
+ },
+ "eps": [
+  0.05,
+  0.1,
+  0.2
+ ],
+ "input": {
+  "fixture": "fixture/function_durations_percentiles.anon.d01.csv.xz",
+  "interval_note": "the trace aggregates every 30 seconds and publishes percentiles of the per-interval MEAN (dataset footnote 7); this is the unit of every range in this artefact",
+  "interval_seconds": 30,
+  "member": "function_durations_percentiles.anon.d01.csv",
+  "sha256_of_decompressed_bytes": "6bb4e9a918dff8bf021158cbb9470107b47f0a2003412f789d03cb23dce3a5d2"
+ },
+ "kgrid": [
+  2,
+  4,
+  8,
+  16,
+  32
+ ],
+ "knot_sweep": {
+  "family": "piecewise-linear in the probability scale (family held fixed)",
+  "full_knots": 7,
+  "k": 32,
+  "note": "same rows, coarser reconstruction: how much of the fraction that binds at the widest grid point is the ladder's shape rather than the workload",
+  "sets": [
+   {
+    "binds": 9513,
+    "binds_frac": 0.2003,
+    "knots": 3,
+    "label": "coarsest",
+    "rows": 47502
+   },
+   {
+    "binds": 5815,
+    "binds_frac": 0.1224,
+    "knots": 5,
+    "label": "median kept",
+    "rows": 47502
+   },
+   {
+    "binds": 5815,
+    "binds_frac": 0.1224,
+    "knots": 6,
+    "label": "quartiles",
+    "rows": 47502
+   },
+   {
+    "binds": 5815,
+    "binds_frac": 0.1224,
+    "knots": 7,
+    "label": "all seven published knots",
+    "rows": 47502
+   }
+  ]
+ },
+ "q": 0.99,
+ "source": "function_durations_percentiles.anon.d01.csv"
+}

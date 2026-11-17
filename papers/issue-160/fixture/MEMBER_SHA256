@@ -1,0 +1,13 @@
+# Provenance of the one input this package measures. The digest below is the sha256 of the
+# DECOMPRESSED archive member -- the data -- not of its storage. Re-compressing with another preset
+# produces a different .xz and the same digest; that is the intended behaviour.
+#
+# upstream release : https://github.com/Azure/AzurePublicDataset/releases/download/dataset-functions-2019/azurefunctions_dataset2019_azurefunctions-dataset2019.tar.xz
+# archive size     : 142,968,140 B (never fully downloaded here: this environment reached it at ~9 KB/s)
+# member           : function_durations_percentiles.anon.d01.csv
+# member size      : 12156002 B
+# rows             : 49728 data rows plus a header
+# extraction       : partial-archive: the leading tar member decodes from a truncated xz stream, and
+#                    tar then reports "Truncated input file". That non-zero exit is expected; the
+#                    test is that this member opens and its row count matches.
+6bb4e9a918dff8bf021158cbb9470107b47f0a2003412f789d03cb23dce3a5d2  function_durations_percentiles.anon.d01.csv
