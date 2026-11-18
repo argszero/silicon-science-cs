@@ -38,6 +38,20 @@
     "id": "17"
    },
    "n_seeds": 30,
+   "oracle": {
+    "bootstrap_draws": 4000,
+    "bootstrap_seed": 20261104,
+    "budget": 10,
+    "ci95": [
+     0.6611374407582938,
+     1.3155080213903743
+    ],
+    "definition": "equal budget of 10 requests; breadth's ex-ante expected yield is B * mean page yield; the oracle buys the B best batches in hindsight",
+    "halfwidth": 0.3271852903160402,
+    "interval_includes_one": true,
+    "note": "the bootstrap resamples seeds and re-selects the best batches inside each resample, so the interval is an UPPER bound on the oracle's advantage",
+    "point": 0.9802325581395348
+   },
    "per_seed": [
     {
      "cited_by_count": 41,
@@ -1457,6 +1471,35 @@
     "sample_seed": 7
    },
    "seeds_batch_beats_page": 4,
+   "selectability": {
+    "max_abs_rho": 0.09673482200001346,
+    "max_abs_rho_predictor": "cited_by_count",
+    "note": "rank correlations, ties averaged; a predictor with few distinct values cannot carry a control on its own",
+    "outcome": "hop-2 excess share of the seed (the depth yield the allocation leans on)",
+    "rows": [
+     {
+      "distinct_values": 17,
+      "modal_share": 0.1,
+      "n": 30,
+      "predictor": "cited_by_count",
+      "rho": 0.09673482200001346
+     },
+     {
+      "distinct_values": 17,
+      "modal_share": 0.1,
+      "n": 30,
+      "predictor": "citer_works",
+      "rho": 0.09140584540442871
+     },
+     {
+      "distinct_values": 3,
+      "modal_share": 0.6666666666666666,
+      "n": 30,
+      "predictor": "depth_works",
+      "rho": 0.04353863491053687
+     }
+    ]
+   },
    "w_star": {
     "attainable": false,
     "bootstrap_draws": 4000,
@@ -1507,6 +1550,20 @@
     "id": "33"
    },
    "n_seeds": 30,
+   "oracle": {
+    "bootstrap_draws": 4000,
+    "bootstrap_seed": 20261104,
+    "budget": 10,
+    "ci95": [
+     0.5994787141615986,
+     0.9818799546998868
+    ],
+    "definition": "equal budget of 10 requests; breadth's ex-ante expected yield is B * mean page yield; the oracle buys the B best batches in hindsight",
+    "halfwidth": 0.19120062026914408,
+    "interval_includes_one": false,
+    "note": "the bootstrap resamples seeds and re-selects the best batches inside each resample, so the interval is an UPPER bound on the oracle's advantage",
+    "point": 0.7755946225439503
+   },
    "per_seed": [
     {
      "cited_by_count": 47,
@@ -2637,6 +2694,35 @@
     "sample_seed": 7
    },
    "seeds_batch_beats_page": 3,
+   "selectability": {
+    "max_abs_rho": 0.22266619858843742,
+    "max_abs_rho_predictor": "depth_works",
+    "note": "rank correlations, ties averaged; a predictor with few distinct values cannot carry a control on its own",
+    "outcome": "hop-2 excess share of the seed (the depth yield the allocation leans on)",
+    "rows": [
+     {
+      "distinct_values": 17,
+      "modal_share": 0.16666666666666666,
+      "n": 30,
+      "predictor": "cited_by_count",
+      "rho": -0.09837043587497588
+     },
+     {
+      "distinct_values": 19,
+      "modal_share": 0.13333333333333333,
+      "n": 30,
+      "predictor": "citer_works",
+      "rho": -0.10120551405415401
+     },
+     {
+      "distinct_values": 5,
+      "modal_share": 0.43333333333333335,
+      "n": 30,
+      "predictor": "depth_works",
+      "rho": -0.22266619858843742
+     }
+    ]
+   },
    "w_star": {
     "attainable": false,
     "bootstrap_draws": 4000,

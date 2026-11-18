@@ -35,6 +35,10 @@ BINS = [(1, 9), (10, 49), (50, 99), (100, 10 ** 9)]
 MIN_NULL_PER_BIN = 10          # below this the bin is NOT RUN, never a zero
 BOOTSTRAP_DRAWS = 4000
 BOOTSTRAP_SEED = 20261104
+ORACLE_BUDGET = 10              # equal budget for the breadth/depth comparison, in requests
+SELECTORS = [("cited_by_count", "cited_by_count"),
+             ("citer_works", "citer_works"),
+             ("depth_works", "depth_works")]
 CI_LO, CI_HI = 0.025, 0.975     # the interval level is a property of the analysis, so the
                                 # manuscript reads it back from here rather than typing "95%".
 ARMS = {"cs": ("cs_arm.json.gz", "Computer Science", "17"),
@@ -119,6 +123,34 @@ def wilson(k, n, z=1.96):
     return [max(0.0, c - h), min(1.0, c + h)]
 
 
+def _ranks(values):
+    """Average ranks for ties, so a correlation cannot come from the input's order."""
+    order = sorted(range(len(values)), key=lambda i: values[i])
+    ranks = [0.0] * len(values)
+    i = 0
+    while i < len(order):
+        j = i
+        while j + 1 < len(order) and values[order[j + 1]] == values[order[i]]:
+            j += 1
+        for k in range(i, j + 1):
+            ranks[order[k]] = (i + j) / 2.0 + 1.0
+        i = j + 1
+    return ranks
+
+
+def spearman(x, y):
+    """Rank correlation with ties averaged; None when either side cannot vary."""
+    if len(x) != len(y) or len(x) < 3:
+        return None
+    rx, ry = _ranks(x), _ranks(y)
+    mx, my = sum(rx) / len(rx), sum(ry) / len(ry)
+    sx = sum((a - mx) ** 2 for a in rx) ** 0.5
+    sy = sum((b - my) ** 2 for b in ry) ** 0.5
+    if sx == 0 or sy == 0:
+        return None
+    return sum((a - mx) * (b - my) for a, b in zip(rx, ry)) / (sx * sy)
+
+
 def analyse_arm(name):
     arm = load(name)
     rows, pool = arm["rows"], arm["pool"]
@@ -176,6 +208,63 @@ def analyse_arm(name):
                    "page_worth_in_batches": (mean_c1 / mean_b1) if mean_b1 else None}
     out["construction_zeros"] = [r["seed"] for r in rows if r["c1"] == 0]
     out["seeds_batch_beats_page"] = sum(1 for a, b in zip(c1s, b1s) if b > a)
+
+    # --- selectability: can a seed's depth yield be recognised BEFORE the batches are paid for? ---
+    # The outcome is the seed's hop-2 excess share -- the depth yield the allocation would lean on.
+    # Ties are averaged and each row carries its own n and the spread of its predictor, because a
+    # predictor that is nearly constant (depth_works takes five values in 60 seeds) cannot carry a
+    # control on its own however small its correlation comes out.
+    sel_rows = []
+    for label, key in SELECTORS:
+        xs, ys = [], []
+        for r in per_seed:
+            h2 = r.get("hop2")
+            if not h2:
+                continue
+            xs.append(r[key])
+            ys.append(h2["excess_share"])
+        counts = {}
+        for v in xs:
+            counts[v] = counts.get(v, 0) + 1
+        sel_rows.append({"predictor": label, "rho": spearman(xs, ys), "n": len(xs),
+                         "distinct_values": len(counts),
+                         "modal_share": (max(counts.values()) / float(len(xs))) if xs else None})
+    ranked = [r for r in sel_rows if r["rho"] is not None]
+    worst = max(ranked, key=lambda r: abs(r["rho"])) if ranked else None
+    out["selectability"] = {
+        "outcome": "hop-2 excess share of the seed (the depth yield the allocation leans on)",
+        "rows": sel_rows,
+        "max_abs_rho": abs(worst["rho"]) if worst else None,
+        "max_abs_rho_predictor": worst["predictor"] if worst else None,
+        "note": "rank correlations, ties averaged; a predictor with few distinct values cannot "
+                "carry a control on its own"}
+
+    # --- the hindsight oracle: does PERFECT selection beat plain breadth at equal budget? ---
+    # Budget B requests. Breadth buys B pages and cannot see the answers, so its ex-ante expected
+    # yield is B * mean page yield. The oracle knows every seed's batch yield and spends the whole
+    # budget on the B best batches. The ratio is what a perfect selector would have to beat; if its
+    # interval includes 1.0, no selection rule can rescue the depth-wins branch.
+    nn = len(per_seed)
+    B = min(ORACLE_BUDGET, nn)
+    top_b = sorted(b1s, reverse=True)[:B]
+    or_point = (sum(top_b) / (B * mean_c1)) if (B and mean_c1) else None
+    rng_o = random.Random(BOOTSTRAP_SEED)
+    or_boot = []
+    for _ in range(BOOTSTRAP_DRAWS):
+        idx = [rng_o.randrange(nn) for _ in range(nn)]
+        mc = statistics.mean(c1s[i] for i in idx)
+        if mc:
+            or_boot.append(sum(sorted((b1s[i] for i in idx), reverse=True)[:B]) / (B * mc))
+    or_ci = percentile_ci(or_boot) if or_boot else None
+    out["oracle"] = {
+        "definition": "equal budget of %d requests; breadth's ex-ante expected yield is B * mean "
+                      "page yield; the oracle buys the B best batches in hindsight" % B,
+        "budget": B, "point": or_point, "ci95": or_ci,
+        "halfwidth": ((or_ci[1] - or_ci[0]) / 2.0) if or_ci else None,
+        "interval_includes_one": bool(or_ci and or_ci[0] <= 1.0 <= or_ci[1]),
+        "bootstrap_draws": BOOTSTRAP_DRAWS, "bootstrap_seed": BOOTSTRAP_SEED,
+        "note": "the bootstrap resamples seeds and re-selects the best batches inside each resample, "
+                "so the interval is an UPPER bound on the oracle's advantage"}
 
     rng = random.Random(BOOTSTRAP_SEED)
     n = len(rows)
@@ -242,6 +331,15 @@ def analyse_arm(name):
              out["decay"]["seeds_d_lt_0"], out["decay"]["n_seeds_with_d"],
              out["seeds_batch_beats_page"], n, out["construction_zeros"] or "none"))
     print("[%s] decay verdict: %s" % (arm["field"]["display_name"], out["decay"]["verdict"]))
+    print("[%s] selectability: max |rho| = %.3f (%s) over %s"
+          % (arm["field"]["display_name"], out["selectability"]["max_abs_rho"] or float("nan"),
+             out["selectability"]["max_abs_rho_predictor"],
+             ", ".join("%s %.3f (n=%d)" % (r["predictor"], r["rho"], r["n"])
+                       for r in out["selectability"]["rows"] if r["rho"] is not None)))
+    print("[%s] oracle vs breadth at B=%d: %.4f CI %s (includes 1.0: %s)"
+          % (arm["field"]["display_name"], out["oracle"]["budget"], out["oracle"]["point"],
+             [round(x, 4) for x in out["oracle"]["ci95"]] if out["oracle"]["ci95"] else None,
+             out["oracle"]["interval_includes_one"]))
     return out
 
 

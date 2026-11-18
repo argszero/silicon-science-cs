@@ -18,8 +18,9 @@ Science and {{n:arms.social_sciences.n_seeds}} in Social Sciences, the per-reque
 depth: the excess is {{f:arms.cs.pooled.hop1.excess|signed_pct1}} points at hop 1 and
 {{f:arms.cs.pooled.hop2.excess|signed_pct1}} at hop 2 in the first field
 ({{f:arms.social_sciences.pooled.hop1.excess|signed_pct1}} and
-{{f:arms.social_sciences.pooled.hop2.excess|signed_pct1}} in the second), against a null whose chance
-coupling is about {{f:arms.cs.pooled.hop1.null_share|pct1}} percent. The decay is structural, not an
+{{f:arms.social_sciences.pooled.hop2.excess|signed_pct1}} in the second), against a length-matched null whose chance
+coupling is {{f:arms.cs.pooled.hop1.null_share|pct1}} percent in Computer Science and
+{{f:arms.social_sciences.pooled.hop1.null_share|pct1}} percent in Social Sciences. The decay is structural, not an
 artefact of how long the reference lists are. The allocation then has a price: depth wins only if one
 depth batch costs less than **{{f:arms.cs.w_star.point|f3}}** of a breadth page in Computer Science and
 **{{f:arms.social_sciences.w_star.point|f3}}** in Social Sciences, with intervals
@@ -174,7 +175,9 @@ works (one more is refused), and an id filter accepts at most
 {{f:arms.cs.cost_constants.depth_batch_ids_max|int}} values (more is refused with *"Maximum number of values exceeded"*).
 One page therefore sells twice the works of one batch for the same one request. The cost ratio `w` is
 defined as *the price of one depth batch divided by the price of one breadth page*; the API's own
-accounting is `w = 1`, and a batch can never cost less than zero, so the admissible range is `w ≥ 1`.
+accounting is `w = 1`, and what sets the range is that the price is a count of whole requests — the
+smallest count a request can have is one — so a batch costs at least one request and the admissible
+range is `w ≥ 1`.
 
 Both constants are measured rather than chosen, and that is a design commitment rather than a
 formality: case-study research has to state its design and the inferences it licenses
@@ -212,7 +215,7 @@ Figure 1 (`figures/fig1_decay.png`) draws the same distribution seed by seed, an
 carries that field's own count of negative seeds rather than a summary word — the law is a statement
 about the mean, and the figure is drawn so that a reader can see how much of it the seeds carry.
 
-Between the two fields the difference of the mean `d` is
+Between the two fields the difference of the mean `d` — Social Sciences minus Computer Science — is
 {{f:between_fields.difference_ss_minus_cs|f4}} with a {{n:ci_level}}% interval
 {{f:between_fields.ci95|ci3}}: indistinguishable at this sample size, which is what a replication looks
 like. **The fields are deliberately not pooled** — the between-field variation is the claim under test,
@@ -257,11 +260,26 @@ coupled yield would open it again, and that is the falsifier a reader should tes
 
 Two analyses are reported because they are the ones an allocation claim would have leaned on, and both
 came out negative. First, selecting seeds on a statistic already paid for does not raise the yield:
-rank correlations between a seed's depth yield and its cited-by count, citer count and candidate-pool
-size were all below about a quarter in absolute value (registered on the issue thread, reproduced in
-`results.json`). Second, even a hindsight oracle — the seeds whose actual combined yield is highest —
-beats pure breadth by an interval that includes one. The depth-wins branch is not merely hard to select;
-in this sample it is barely worth selecting.
+the rank correlation between a seed's depth yield and each statistic already in hand is small, and it
+is computed on the committed arms: {{f:arms.cs.selectability.rows.0.rho|f3}} for the cited-by count,
+{{f:arms.cs.selectability.rows.1.rho|f3}} for the citer count and
+{{f:arms.cs.selectability.rows.2.rho|f3}} for the candidate-pool size over
+{{n:arms.cs.selectability.rows.0.n}} seeds in Computer Science, and
+{{f:arms.social_sciences.selectability.rows.0.rho|f3}},
+{{f:arms.social_sciences.selectability.rows.1.rho|f3}} and
+{{f:arms.social_sciences.selectability.rows.2.rho|f3}} over
+{{n:arms.social_sciences.selectability.rows.0.n}} in Social Sciences; the largest absolute value is
+{{f:arms.social_sciences.selectability.max_abs_rho|f3}}. That last predictor is the weakest control of
+the three rather than the strongest, and the number says why: it takes
+{{n:arms.cs.selectability.rows.2.distinct_values}} distinct values across those seeds, so its
+correlation rests on the few seeds that are not tied at the top. Second, even a hindsight oracle does
+not beat plain breadth. At an equal budget of {{n:arms.cs.oracle.budget}} requests, an oracle that
+knows every seed's batch yield and spends the whole budget on the best batches reaches
+{{f:arms.cs.oracle.point|f3}} times the breadth portfolio in Computer Science
+{{f:arms.cs.oracle.ci95|ci3}} — an interval that includes one — and
+{{f:arms.social_sciences.oracle.point|f3}} times in Social Sciences
+{{f:arms.social_sciences.oracle.ci95|ci3}}, an interval that lies entirely below one. The depth-wins
+branch is not merely hard to select; in this sample it is not worth selecting even with hindsight.
 
 Both analyses are controls of one kind: they hold the budget fixed and change only the rule. A control
 earns the name when the effect it is meant to remove is known in advance, the way a named interference
@@ -294,8 +312,10 @@ The level this paper claims is **`theory+empirics`**, on the evidence it actuall
 where that evidence narrows it. The theory is the price bound derived from the cost model in §5.2: depth
 wins only if one depth batch costs less than `w*` breadth pages. The empirics are a decay law judged
 against a length-matched null, measured in two independent fields, the second chosen by a rule fixed
-before it was measured, with two controls — an arm that follows the opposite rule, and a hindsight
-oracle. The universal claim stops at the registry: the bound is a statement about this API's documented
+before it was measured, with two controls a reader can open in the package: a hindsight oracle that
+spends the same budget on the batches it would have wanted (`arms.*.oracle`), and a selectability
+analysis that asks whether the seeds that oracle picked could have been recognised beforehand
+(`arms.*.selectability`). The universal claim stops at the registry: the bound is a statement about this API's documented
 request caps, not about citation networks in general.
 
 **How small the theory is, stated plainly.** It is one inequality with a one-line derivation, and §5.2

@@ -18,8 +18,9 @@ Science and 30 in Social Sciences, the per-request yield falls with hop
 depth: the excess is +54.6 points at hop 1 and
 +14.0 at hop 2 in the first field
 (+61.1 and
-+17.9 in the second), against a null whose chance
-coupling is about 1.0 percent. The decay is structural, not an
++17.9 in the second), against a length-matched null whose chance
+coupling is 1.0 percent in Computer Science and
+1.5 percent in Social Sciences. The decay is structural, not an
 artefact of how long the reference lists are. The allocation then has a price: depth wins only if one
 depth batch costs less than **0.473** of a breadth page in Computer Science and
 **0.401** in Social Sciences, with intervals
@@ -174,7 +175,9 @@ works (one more is refused), and an id filter accepts at most
 100 values (more is refused with *"Maximum number of values exceeded"*).
 One page therefore sells twice the works of one batch for the same one request. The cost ratio `w` is
 defined as *the price of one depth batch divided by the price of one breadth page*; the API's own
-accounting is `w = 1`, and a batch can never cost less than zero, so the admissible range is `w ≥ 1`.
+accounting is `w = 1`, and what sets the range is that the price is a count of whole requests — the
+smallest count a request can have is one — so a batch costs at least one request and the admissible
+range is `w ≥ 1`.
 
 Both constants are measured rather than chosen, and that is a design commitment rather than a
 formality: case-study research has to state its design and the inferences it licenses
@@ -212,7 +215,7 @@ Figure 1 (`figures/fig1_decay.png`) draws the same distribution seed by seed, an
 carries that field's own count of negative seeds rather than a summary word — the law is a statement
 about the mean, and the figure is drawn so that a reader can see how much of it the seeds carry.
 
-Between the two fields the difference of the mean `d` is
+Between the two fields the difference of the mean `d` — Social Sciences minus Computer Science — is
 -0.0209 with a 95% interval
 [-0.131, 0.088]: indistinguishable at this sample size, which is what a replication looks
 like. **The fields are deliberately not pooled** — the between-field variation is the claim under test,
@@ -257,11 +260,26 @@ coupled yield would open it again, and that is the falsifier a reader should tes
 
 Two analyses are reported because they are the ones an allocation claim would have leaned on, and both
 came out negative. First, selecting seeds on a statistic already paid for does not raise the yield:
-rank correlations between a seed's depth yield and its cited-by count, citer count and candidate-pool
-size were all below about a quarter in absolute value (registered on the issue thread, reproduced in
-`results.json`). Second, even a hindsight oracle — the seeds whose actual combined yield is highest —
-beats pure breadth by an interval that includes one. The depth-wins branch is not merely hard to select;
-in this sample it is barely worth selecting.
+the rank correlation between a seed's depth yield and each statistic already in hand is small, and it
+is computed on the committed arms: 0.097 for the cited-by count,
+0.091 for the citer count and
+0.044 for the candidate-pool size over
+30 seeds in Computer Science, and
+-0.098,
+-0.101 and
+-0.223 over
+30 in Social Sciences; the largest absolute value is
+0.223. That last predictor is the weakest control of
+the three rather than the strongest, and the number says why: it takes
+3 distinct values across those seeds, so its
+correlation rests on the few seeds that are not tied at the top. Second, even a hindsight oracle does
+not beat plain breadth. At an equal budget of 10 requests, an oracle that
+knows every seed's batch yield and spends the whole budget on the best batches reaches
+0.980 times the breadth portfolio in Computer Science
+[0.661, 1.316] — an interval that includes one — and
+0.776 times in Social Sciences
+[0.599, 0.982], an interval that lies entirely below one. The depth-wins
+branch is not merely hard to select; in this sample it is not worth selecting even with hindsight.
 
 Both analyses are controls of one kind: they hold the budget fixed and change only the rule. A control
 earns the name when the effect it is meant to remove is known in advance, the way a named interference
@@ -294,8 +312,10 @@ The level this paper claims is **`theory+empirics`**, on the evidence it actuall
 where that evidence narrows it. The theory is the price bound derived from the cost model in §5.2: depth
 wins only if one depth batch costs less than `w*` breadth pages. The empirics are a decay law judged
 against a length-matched null, measured in two independent fields, the second chosen by a rule fixed
-before it was measured, with two controls — an arm that follows the opposite rule, and a hindsight
-oracle. The universal claim stops at the registry: the bound is a statement about this API's documented
+before it was measured, with two controls a reader can open in the package: a hindsight oracle that
+spends the same budget on the batches it would have wanted (`arms.*.oracle`), and a selectability
+analysis that asks whether the seeds that oracle picked could have been recognised beforehand
+(`arms.*.selectability`). The universal claim stops at the registry: the bound is a statement about this API's documented
 request caps, not about citation networks in general.
 
 **How small the theory is, stated plainly.** It is one inequality with a one-line derivation, and §5.2
@@ -452,11 +472,11 @@ them: it fetches nothing and imports nothing outside the standard library.
 
 [32] Burrell, Quentin L. The nth-citation distribution and obsolescence. Scientometrics, 2002. doi:10.1023/a:1014816911511
 
-[33] Newman, M. E. J. Scientific collaboration networks.  I. Network construction and fundamental results. Physical Review E, 2001. doi:10.1103/physreve.64.016131
+[33] Newman, M. E. J. Scientific collaboration networks. I. Network construction and fundamental results. Physical Review E, 2001. doi:10.1103/physreve.64.016131
 
 [34] Newman, M. E. J. Mixing patterns in networks. Physical Review E, 2003. doi:10.1103/physreve.67.026126
 
-[35] Ronald Fagin; Ravi Kumar; D. Sivakumar. Comparing top k lists. 2003. doi:10.5555/644108.644113
+[35] Ronald Fagin; Ravi Kumar; D. Sivakumar. Comparing top k lists. SIAM Journal on Discrete Mathematics, 2003. doi:10.1137/s0895480102412856
 
 [36] Järvelin, Kalervo; Kekäläinen, Jaana. Cumulated gain-based evaluation of IR techniques. ACM Transactions on Information Systems, 2002. doi:10.1145/582415.582418
 
@@ -522,14 +542,13 @@ them: it fetches nothing and imports nothing outside the standard library.
 
 [67] Mongeon, Philippe; Paul-Hus, Adèle. The journal coverage of Web of Science and Scopus: a comparative analysis. Scientometrics, 2016. doi:10.1007/s11192-015-1765-5
 
-[68] Visser, Martijn; van Eck, Nees Jan; Waltman, Ludo. Large-scale comparison of bibliographic data sources: Scopus, Web of
-                    Science, Dimensions, Crossref, and Microsoft Academic. Quantitative Science Studies, 2021. doi:10.1162/qss_a_00112
+[68] Visser, Martijn; van Eck, Nees Jan; Waltman, Ludo. Large-scale comparison of bibliographic data sources: Scopus, Web of Science, Dimensions, Crossref, and Microsoft Academic. Quantitative Science Studies, 2021. doi:10.1162/qss_a_00112
 
 [69] Freeman, Linton C.; Kish, Leslie. Survey Sampling. Social Forces, 1966. doi:10.2307/2575802
 
 [70] Waltman, Ludo; van Eck, Nees Jan. A new methodology for constructing a publication‐level classification system of science. Journal of the American Society for Information Science and Technology, 2012. doi:10.1002/asi.22748
 
-[71] Klavans, Richard; Boyack, Kevin W. Which Type of Citation Analysis Generates the Most Accurate Taxonomy of Scientific and Technical Knowledge?. Journal of the Association for Information Science and Technology, 2017. doi:10.1002/asi.23734
+[71] Klavans, Richard; Boyack, Kevin W. Which Type of Citation Analysis Generates the Most Accurate Taxonomy of Scientific and Technical Knowledge? Journal of the Association for Information Science and Technology, 2017. doi:10.1002/asi.23734
 
 [72] Waltman, Ludo; van Eck, Nees Jan; van Leeuwen, Thed N.; et al. Towards a new crown indicator: an empirical analysis. Scientometrics, 2011. doi:10.1007/s11192-011-0354-5
 
@@ -561,9 +580,7 @@ them: it fetches nothing and imports nothing outside the standard library.
 
 [86] Waltman, Ludo; van Eck, Nees Jan. The inconsistency of the h‐index. Journal of the American Society for Information Science and Technology, 2012. doi:10.1002/asi.21678
 
-[87] Bornmann, Lutz; Daniel, Hans‐Dieter. What do we know about the
-                    <i>h</i>
-                    index?. Journal of the American Society for Information Science and Technology, 2007. doi:10.1002/asi.20609
+[87] Bornmann, Lutz; Daniel, Hans‐Dieter. What do we know about the <i>h</i> index? Journal of the American Society for Information Science and Technology, 2007. doi:10.1002/asi.20609
 
 [88] Amrhein, Valentin; Greenland, Sander; McShane, Blake. Scientists rise up against statistical significance. Nature, 2019. doi:10.1038/d41586-019-00857-9
 
@@ -571,13 +588,13 @@ them: it fetches nothing and imports nothing outside the standard library.
 
 [90] King, Gary; Zeng, Langche. Logistic Regression in Rare Events Data. Political Analysis, 2001. doi:10.1093/oxfordjournals.pan.a004868
 
-[91] Lakens, Daniel. Equivalence Tests:  A Practical Primer for t-Tests, Correlations, and Meta-Analyses. 2016. doi:10.31234/osf.io/97gpc_v1
+[91] Lakens, Daniel. Equivalence Tests: A Practical Primer for t-Tests, Correlations, and Meta-Analyses. 2016. doi:10.31234/osf.io/97gpc_v1
 
 [92] Tversky, Amos; Kahneman, Daniel. Judgment under Uncertainty: Heuristics and Biases. 1973. doi:10.21236/ad0767426
 
 [93] Nosek, Brian A.; Ebersole, Charles R.; DeHaven, Alexander Carl; et al. The Preregistration Revolution. 2017. doi:10.31219/osf.io/2dxu5
 
-[94] Chambers, Christopher D. Registered Reports: A new publishing initiative at Cortex. Cortex, 2013. doi:10.1016/j.cortex.2012.12.016
+[94] Chambers, Christopher D. Registered Reports: A new publishing initiative at Cortex. Cortex, 2013. doi:10.1016/j.cortex.2012.12.016
 
 [95] Andrew Gelman; Eric Loken. The Statistical Crisis in Science. American Scientist, 2014. doi:10.1511/2014.111.460
 

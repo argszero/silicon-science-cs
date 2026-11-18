@@ -407,17 +407,17 @@
     "D. Sivakumar"
    ],
    "claim": "comparing top-k lists needs a stated measure",
-   "container": "",
-   "doi": "10.5555/644108.644113",
+   "container": "SIAM Journal on Discrete Mathematics",
+   "doi": "10.1137/s0895480102412856",
    "key": "fagin2003",
    "query": "Comparing top k lists",
    "slot": "S1.1",
    "title": "Comparing top k lists",
    "type": "article",
    "verified": {
-    "queried_on": "2026-11-04",
-    "registry": "openalex",
-    "title": "two-way content-word containment vs want_title",
+    "queried_on": "2026-11-19",
+    "registry": "crossref",
+    "title": "Crossref record for the printed title; the 10.5555 proxy DOI resolves at neither registry",
     "year": "exact"
    },
    "year": 2003

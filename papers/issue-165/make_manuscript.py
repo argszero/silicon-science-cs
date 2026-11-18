@@ -59,22 +59,37 @@ def load_accepted():
 def fmt_entry(r):
     """One bibliography entry. No URL wrapping around the DOI: a bare `doi:` cannot be mistaken
     for a hyperlink that a reader's tool would then try to resolve."""
-    names = [html.unescape(n) for n in (r.get("authors") or [])]
+    def flat(s):
+        """One line, single-spaced. A newline or a run of spaces inside a record becomes a forced
+        <br> or a doubled gap once GFM renders it, and the record is not the place to carry that."""
+        return " ".join(html.unescape(s or "").split())
+
+    names = [flat(n) for n in (r.get("authors") or [])]
     if len(names) > 3:
         who = "; ".join(names[:3]) + "; et al."
     else:
         who = "; ".join(names)
-    bits = [b for b in (who, html.unescape((r.get("title") or "").strip())) if b]
+    bits = [b for b in (who, flat(r.get("title"))) if b]
     tail = []
     if r.get("container"):
-        tail.append(html.unescape(r["container"].strip()))
+        tail.append(flat(r["container"]))
     if r.get("year"):
         tail.append(str(r["year"]))
     bits = [b.rstrip(".") for b in bits]          # "Lee, T." + ". " would print a double stop
-    body = ". ".join(bits)
+
+    def join_str(acc, nxt, sep):
+        """Join with `sep` unless the left side already ends a sentence -- a title that ends in "?"
+        must not print "?.", and the stop belongs to the title, not to the punctuation after it."""
+        if not acc:
+            return nxt
+        return acc + (sep if not acc.endswith((".", "?", "!")) else " ") + nxt
+
+    body = ""
+    for b in bits:
+        body = join_str(body, b, ". ")
     if tail:
-        body += ". " + ", ".join(tail)
-    if not body.endswith("."):
+        body = join_str(body, ", ".join(tail), ". ")
+    if not body.endswith((".", "?", "!")):
         body += "."
     return "%s doi:%s" % (body, r["doi"])
 

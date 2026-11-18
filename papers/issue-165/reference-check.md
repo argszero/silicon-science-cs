@@ -29,7 +29,7 @@ with the entry the manuscript prints.
 | 17 | `efron1993` | Crossref /works?query.bibliographic | verified | An Introduction to the Bootstrap / 10.1201/9780429246593 / 1994 |
 | 18 | `egghe2006` | Crossref /works?query.bibliographic | verified | Theory and practise of the g-index / 10.1007/s11192-006-0144-7 / 2006 |
 | 19 | `evans2008` | Crossref /works?query.bibliographic | verified | Electronic Publication and the Narrowing of Science and Scholarship / 10.1126/science.1150473 / 2008 |
-| 20 | `fagin2003` | openalex | verified | Comparing top k lists / 10.5555/644108.644113 / 2003 |
+| 20 | `fagin2003` | crossref | verified | Comparing top k lists / 10.1137/s0895480102412856 / 2003 |
 | 21 | `fanelli2010` | Crossref /works?query.bibliographic | verified | “Positive” Results Increase Down the Hierarchy of the Sciences / 10.1371/journal.pone.0010068 / 2010 |
 | 22 | `fu2007` | crossref | verified | SNIF-ACT: A Cognitive Model of User Navigation on the World Wide Web / 10.21236/ada462156 / 2007 |
 | 23 | `garfield1979` | Crossref /works?query.bibliographic | verified | Citation Indexing-Its Theory and Application in Science, Technology, and Humanities / 10.2307/3104125 / 1980 |
