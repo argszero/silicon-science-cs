@@ -1474,6 +1474,13 @@
    "selectability": {
     "max_abs_rho": 0.09673482200001346,
     "max_abs_rho_predictor": "cited_by_count",
+    "max_abs_rho_row": {
+     "distinct_values": 17,
+     "modal_share": 0.1,
+     "n": 30,
+     "predictor": "cited_by_count",
+     "rho": 0.09673482200001346
+    },
     "note": "rank correlations, ties averaged; a predictor with few distinct values cannot carry a control on its own",
     "outcome": "hop-2 excess share of the seed (the depth yield the allocation leans on)",
     "rows": [
@@ -2697,6 +2704,13 @@
    "selectability": {
     "max_abs_rho": 0.22266619858843742,
     "max_abs_rho_predictor": "depth_works",
+    "max_abs_rho_row": {
+     "distinct_values": 5,
+     "modal_share": 0.43333333333333335,
+     "n": 30,
+     "predictor": "depth_works",
+     "rho": -0.22266619858843742
+    },
     "note": "rank correlations, ties averaged; a predictor with few distinct values cannot carry a control on its own",
     "outcome": "hop-2 excess share of the seed (the depth yield the allocation leans on)",
     "rows": [

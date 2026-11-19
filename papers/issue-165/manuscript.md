@@ -269,9 +269,10 @@ is computed on the committed arms: 0.097 for the cited-by count,
 -0.101 and
 -0.223 over
 30 in Social Sciences; the largest absolute value is
-0.223. That last predictor is the weakest control of
-the three rather than the strongest, and the number says why: it takes
-3 distinct values across those seeds, so its
+0.223, in Social Sciences. That predictor is the
+weakest control of the three rather than the strongest, and its own row says why: over those
+30 seeds it takes
+5 distinct values, so its
 correlation rests on the few seeds that are not tied at the top. Second, even a hindsight oracle does
 not beat plain breadth. At an equal budget of 10 requests, an oracle that
 knows every seed's batch yield and spends the whole budget on the best batches reaches

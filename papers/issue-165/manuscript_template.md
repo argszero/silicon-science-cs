@@ -269,9 +269,10 @@ is computed on the committed arms: {{f:arms.cs.selectability.rows.0.rho|f3}} for
 {{f:arms.social_sciences.selectability.rows.1.rho|f3}} and
 {{f:arms.social_sciences.selectability.rows.2.rho|f3}} over
 {{n:arms.social_sciences.selectability.rows.0.n}} in Social Sciences; the largest absolute value is
-{{f:arms.social_sciences.selectability.max_abs_rho|f3}}. That last predictor is the weakest control of
-the three rather than the strongest, and the number says why: it takes
-{{n:arms.cs.selectability.rows.2.distinct_values}} distinct values across those seeds, so its
+{{f:arms.social_sciences.selectability.max_abs_rho|f3}}, in Social Sciences. That predictor is the
+weakest control of the three rather than the strongest, and its own row says why: over those
+{{n:arms.social_sciences.selectability.max_abs_rho_row.n}} seeds it takes
+{{n:arms.social_sciences.selectability.max_abs_rho_row.distinct_values}} distinct values, so its
 correlation rests on the few seeds that are not tied at the top. Second, even a hindsight oracle does
 not beat plain breadth. At an equal budget of {{n:arms.cs.oracle.budget}} requests, an oracle that
 knows every seed's batch yield and spends the whole budget on the best batches reaches

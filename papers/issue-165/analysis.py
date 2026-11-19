@@ -236,8 +236,19 @@ def analyse_arm(name):
         "rows": sel_rows,
         "max_abs_rho": abs(worst["rho"]) if worst else None,
         "max_abs_rho_predictor": worst["predictor"] if worst else None,
+        "max_abs_rho_row": worst,     # the very row the maximum came from, so a sentence quoting
+                                      # the maximum can take that row's tie structure instead of
+                                      # reaching into another arm's row that happens to be nearby
         "note": "rank correlations, ties averaged; a predictor with few distinct values cannot "
                 "carry a control on its own"}
+
+    # The derived row and the maximum it came from are two records of one fact; if they ever
+    # disagree, whichever the manuscript quotes is unbacked.
+    if worst is not None:
+        sel = out["selectability"]
+        assert any(r is worst for r in sel["rows"]), "max_abs_rho_row is not one of the rows"
+        assert abs(sel["max_abs_rho_row"]["rho"]) == sel["max_abs_rho"], "max row disagrees with max"
+        assert max(abs(r["rho"]) for r in sel["rows"]) == sel["max_abs_rho"], "max is not the max"
 
     # --- the hindsight oracle: does PERFECT selection beat plain breadth at equal budget? ---
     # Budget B requests. Breadth buys B pages and cannot see the answers, so its ex-ante expected
