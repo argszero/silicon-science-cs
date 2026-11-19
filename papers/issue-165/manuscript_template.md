@@ -252,9 +252,10 @@ conclusion standing, and a future measurement of (H2) can move `w*` only inside 
 
 `w*` is the largest batch price at which buying depth beats spending the same request budget on
 breadth; Figure 2 (`figures/fig2_price_bound.png`) places both intervals against the floor. Since `w ≥ 1` always, an interval entirely below one is not a near miss but a closed
-direction **for this registrant**: no plausible client pays a tenth of a request for a batch. A
-registry whose batch carried more than {{f:arms.cs.cost.page_worth_in_batches|f2}} times a page's
-coupled yield would open it again, and that is the falsifier a reader should test.
+direction **for this registrant**: no plausible client pays a tenth of a request for a batch. What
+would open it again is a batch that carried more coupled works than a page: this batch would have to
+return {{f:arms.cs.cost.page_worth_in_batches|f2}} times as many, and that is the falsifier a reader
+should test.
 
 ### 5.3 What would have made depth look good, and did not
 
@@ -398,8 +399,9 @@ failed to hold {{c:ioannidis2005}}, that failure has been made measurable rather
 arms in one command, which is what the reproduction section sets out.
 
 **Why it is still worth publishing.** The bound is falsifiable in one step and it tells a tool builder
-where to look: a batch-shaped endpoint would have to beat a page by more than
-{{f:arms.cs.cost.page_worth_in_batches|f2}} before depth deserves any of the budget.
+where to look: a batch-shaped endpoint has to return more coupled works than a page — for this one,
+{{f:arms.cs.cost.page_worth_in_batches|f2}} times as many as it returns today — before depth deserves
+any of the budget.
 
 ## 10. Reproduction
 
