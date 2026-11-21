@@ -69,10 +69,16 @@ def load(name):
         citers = {k: set(v) for k, v in r["citers"].items()}
         depth = {k: set(v) for k, v in r["depth_works"].items()}
         batches = r.get("depth_batches") or []
-        b1 = sum(1 for k in batches[0] if k in depth and depth[k] & R) if batches else 0
+        # Every stored batch, counted the same way. `b1` stays the FIRST one -- the batch of record --
+        # and the others are kept so that the choice is a quantity in the artefact rather than a line
+        # of code a reader has to find and a reviewer has to re-derive.
+        b1_per_batch = [sum(1 for k in b if k in depth and depth[k] & R) for b in batches]
+        b1 = b1_per_batch[0] if b1_per_batch else 0
         rows.append({"seed": r["seed"], "cited_by": r.get("cited_by_count") or 0,
                      "citer_works": len(citers), "depth_works": len(depth),
                      "c1": sum(1 for v in citers.values() if v & R), "b1": b1,
+                     "b1_per_batch": b1_per_batch,
+                     "b_sizes": [len(b) for b in batches],
                      "citers": citers, "depth": depth, "R": R})
     return {"field": d["field"], "seed_frame": d.get("seed_frame"),
             "cost_constants": d.get("cost_constants"), "pool": pool, "rows": rows,
@@ -209,6 +215,82 @@ def analyse_arm(name):
     out["construction_zeros"] = [r["seed"] for r in rows if r["c1"] == 0]
     out["seeds_batch_beats_page"] = sum(1 for a, b in zip(c1s, b1s) if b > a)
 
+    # --- the batch choice, and the per-seed spread the two means conceal ---------------------
+    # Each arm carries two depth batches per seed and the reported w* reads the first. Which one is
+    # read is a decision, so it is printed three ways: the batch of record, the mean over both pages,
+    # and the last page alone. A reader can then see that the choice moves the number, and by how much.
+    per_batch = [r["b1_per_batch"] for r in rows if r["b1_per_batch"]]
+    sizes_per_seed = [r["b_sizes"] for r in rows if r["b_sizes"]]
+    readings = []
+    for label, vals in (("batches[0] (the batch of record)", [b[0] for b in per_batch]),
+                        ("mean over both batches", [sum(b) / float(len(b)) for b in per_batch]),
+                        ("last batch only", [b[-1] for b in per_batch])):
+        mb = statistics.mean(vals) if vals else None
+        readings.append({"reading": label,
+                         "mean_coupled_per_batch": mb,
+                         "page_worth_in_batches": (mean_c1 / mb) if mb else None,
+                         "w_star": (mb / mean_c1) if mean_c1 else None})
+    w_stars = [x["w_star"] for x in readings if x["w_star"] is not None]
+    record_w = readings[0]["w_star"]
+    out["batch_choice"] = {
+        "batch_of_record": "batches[0]",
+        "why": ("the first page of depth-2 identifiers returned for that seed -- the one batch a "
+                "client's first depth request buys -- and its position is fixed by the capture "
+                "order, not by the outcome"),
+        # Two different counts live here and they are easy to confuse: how many batches each seed
+        # carries, and how many identifiers each batch carries. The sentence in 5.2 names the second,
+        # so the artefact must hold the second -- a key that counts batches and a sentence that says
+        # "identifiers" is the defect this pair of keys exists to make impossible.
+        "n_batches_per_seed": {"min": min(len(b) for b in per_batch) if per_batch else None,
+                               "max": max(len(b) for b in per_batch) if per_batch else None},
+        "batch_size": {"min": min([x for sizes in sizes_per_seed for x in sizes]) if sizes_per_seed else None,
+                       "max": max([x for sizes in sizes_per_seed for x in sizes]) if sizes_per_seed else None},
+        "readings": readings,
+        "w_star_swing": (max(w_stars) - min(w_stars)) if w_stars else None,
+        "swing_relative": ((max(w_stars) - min(w_stars)) / record_w) if (w_stars and record_w) else None,
+        "all_readings_below_floor": all(w < 1.0 for w in w_stars) if w_stars else None}
+
+    # The mean of a per-seed difference is not the difference of the means, and the count that shows
+    # the spread is the one a reader cannot recover from Table 3.
+    diffs = [a - b for a, b in zip(c1s, b1s)]
+    out["per_seed_spread"] = {
+        "n": len(diffs),
+        "page_beats_batch": sum(1 for x in diffs if x > 0),
+        "batch_beats_page": sum(1 for x in diffs if x < 0),
+        "ties": sum(1 for x in diffs if x == 0),
+        "page_beats_batch_share": (sum(1 for x in diffs if x > 0) / float(len(diffs))) if diffs else None,
+        "diff_median": statistics.median(diffs) if diffs else None,
+        "diff_min": min(diffs) if diffs else None,
+        "diff_max": max(diffs) if diffs else None,
+        "note": "per-seed coupled-per-page minus coupled-per-batch, in coupled works"}
+
+    # Why the breadth count is ONE request's yield: no seed's citer set reaches the page cap. That is
+    # a premise of the cost model, so it is measured and refused if it ever stops holding.
+    n_citers = [r["citer_works"] for r in rows]
+    cap = (arm.get("cost_constants") or {}).get("breadth_page_works_max")
+    out["citer_set"] = {"n_seeds": len(n_citers),
+                        "min": min(n_citers) if n_citers else None,
+                        "median": statistics.median(n_citers) if n_citers else None,
+                        "max": max(n_citers) if n_citers else None,
+                        "page_cap": cap,
+                        "all_within_one_page": bool(cap is not None and n_citers and max(n_citers) <= cap)}
+    if not out["citer_set"]["all_within_one_page"]:
+        raise SystemExit("CITER SET EXCEEDS THE PAGE CAP in %s (max %s vs cap %s): the breadth count "
+                         "is no longer one request's yield, so the sentence that says so is false"
+                         % (arm["field"]["display_name"], out["citer_set"]["max"], cap))
+
+    # The sampling frame, read from the arm rather than typed into the prose: the abstract and 7 bound
+    # the claim to it, and a frame copied by hand is the first thing to drift.
+    frame_filter = (arm.get("seed_frame") or {}).get("filter") or ""
+    terms = {}
+    for part in [p for p in frame_filter.split(",") if p]:
+        k, _, v = part.partition(":")
+        if k and v and k != "primary_topic.field.id":
+            terms[k.strip()] = v.strip()
+    out["frame"] = {"filter": frame_filter, "terms": terms,
+                    "n_terms": len(terms),
+                    "field_term_present": "primary_topic.field.id:" in frame_filter}
+
     # --- selectability: can a seed's depth yield be recognised BEFORE the batches are paid for? ---
     # The outcome is the seed's hop-2 excess share -- the depth yield the allocation would lean on.
     # Ties are averaged and each row carries its own n and the spread of its predictor, because a
@@ -342,6 +424,15 @@ def analyse_arm(name):
              out["decay"]["seeds_d_lt_0"], out["decay"]["n_seeds_with_d"],
              out["seeds_batch_beats_page"], n, out["construction_zeros"] or "none"))
     print("[%s] decay verdict: %s" % (arm["field"]["display_name"], out["decay"]["verdict"]))
+    print("[%s] batch choice: %s" % (arm["field"]["display_name"],
+          "; ".join("%s w*=%.4f" % (x["reading"], x["w_star"]) for x in out["batch_choice"]["readings"])))
+    print("[%s] per-seed: page beats batch %d/%d (median diff %+.1f, range [%+d,%+d])"
+          % (arm["field"]["display_name"], out["per_seed_spread"]["page_beats_batch"],
+             out["per_seed_spread"]["n"], out["per_seed_spread"]["diff_median"],
+             out["per_seed_spread"]["diff_min"], out["per_seed_spread"]["diff_max"]))
+    print("[%s] citer sets %d..%d, page cap %s, all inside one page: %s"
+          % (arm["field"]["display_name"], out["citer_set"]["min"], out["citer_set"]["max"],
+             out["citer_set"]["page_cap"], out["citer_set"]["all_within_one_page"]))
     print("[%s] selectability: max |rho| = %.3f (%s) over %s"
           % (arm["field"]["display_name"], out["selectability"]["max_abs_rho"] or float("nan"),
              out["selectability"]["max_abs_rho_predictor"],

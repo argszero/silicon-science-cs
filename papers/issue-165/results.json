@@ -1,6 +1,49 @@
 {
  "arms": {
   "cs": {
+   "batch_choice": {
+    "all_readings_below_floor": true,
+    "batch_of_record": "batches[0]",
+    "batch_size": {
+     "max": 100,
+     "min": 98
+    },
+    "n_batches_per_seed": {
+     "max": 2,
+     "min": 2
+    },
+    "readings": [
+     {
+      "mean_coupled_per_batch": 13.566666666666666,
+      "page_worth_in_batches": 2.113022113022113,
+      "reading": "batches[0] (the batch of record)",
+      "w_star": 0.47325581395348837
+     },
+     {
+      "mean_coupled_per_batch": 13.633333333333333,
+      "page_worth_in_batches": 2.1026894865525674,
+      "reading": "mean over both batches",
+      "w_star": 0.4755813953488372
+     },
+     {
+      "mean_coupled_per_batch": 13.7,
+      "page_worth_in_batches": 2.0924574209245743,
+      "reading": "last batch only",
+      "w_star": 0.47790697674418603
+     }
+    ],
+    "swing_relative": 0.009828009828009798,
+    "w_star_swing": 0.0046511627906976605,
+    "why": "the first page of depth-2 identifiers returned for that seed -- the one batch a client's first depth request buys -- and its position is fixed by the capture order, not by the outcome"
+   },
+   "citer_set": {
+    "all_within_one_page": true,
+    "max": 62,
+    "median": 52.5,
+    "min": 40,
+    "n_seeds": 30,
+    "page_cap": 200
+   },
    "construction_zeros": [
     "W2907281321"
    ],
@@ -36,6 +79,17 @@
    "field": {
     "display_name": "Computer Science",
     "id": "17"
+   },
+   "frame": {
+    "field_term_present": true,
+    "filter": "primary_topic.field.id:17,publication_year:2019,cited_by_count:40-70,type:article,has_references:true",
+    "n_terms": 4,
+    "terms": {
+     "cited_by_count": "40-70",
+     "has_references": "true",
+     "publication_year": "2019",
+     "type": "article"
+    }
    },
    "n_seeds": 30,
    "oracle": {
@@ -1438,6 +1492,17 @@
      "seed": "W2910092530"
     }
    ],
+   "per_seed_spread": {
+    "batch_beats_page": 4,
+    "diff_max": 46,
+    "diff_median": 16.5,
+    "diff_min": -29,
+    "n": 30,
+    "note": "per-seed coupled-per-page minus coupled-per-batch, in coupled works",
+    "page_beats_batch": 24,
+    "page_beats_batch_share": 0.8,
+    "ties": 2
+   },
    "pooled": {
     "hop1": {
      "coupled": 783,
@@ -1522,6 +1587,49 @@
    }
   },
   "social_sciences": {
+   "batch_choice": {
+    "all_readings_below_floor": true,
+    "batch_of_record": "batches[0]",
+    "batch_size": {
+     "max": 100,
+     "min": 95
+    },
+    "n_batches_per_seed": {
+     "max": 2,
+     "min": 2
+    },
+    "readings": [
+     {
+      "mean_coupled_per_batch": 12.933333333333334,
+      "page_worth_in_batches": 2.4922680412371134,
+      "reading": "batches[0] (the batch of record)",
+      "w_star": 0.4012409513960703
+     },
+     {
+      "mean_coupled_per_batch": 13.75,
+      "page_worth_in_batches": 2.3442424242424242,
+      "reading": "mean over both batches",
+      "w_star": 0.4265770423991727
+     },
+     {
+      "mean_coupled_per_batch": 14.566666666666666,
+      "page_worth_in_batches": 2.212814645308925,
+      "reading": "last batch only",
+      "w_star": 0.45191313340227507
+     }
+    ],
+    "swing_relative": 0.12628865979381446,
+    "w_star_swing": 0.05067218200620477,
+    "why": "the first page of depth-2 identifiers returned for that seed -- the one batch a client's first depth request buys -- and its position is fixed by the capture order, not by the outcome"
+   },
+   "citer_set": {
+    "all_within_one_page": true,
+    "max": 69,
+    "median": 47.5,
+    "min": 41,
+    "n_seeds": 30,
+    "page_cap": 200
+   },
    "construction_zeros": [],
    "cost": {
     "mean_coupled_per_batch": 12.933333333333334,
@@ -1555,6 +1663,17 @@
    "field": {
     "display_name": "Social Sciences",
     "id": "33"
+   },
+   "frame": {
+    "field_term_present": true,
+    "filter": "primary_topic.field.id:33,publication_year:2019,cited_by_count:40-70,type:article,has_references:true",
+    "n_terms": 4,
+    "terms": {
+     "cited_by_count": "40-70",
+     "has_references": "true",
+     "publication_year": "2019",
+     "type": "article"
+    }
    },
    "n_seeds": 30,
    "oracle": {
@@ -2668,6 +2787,17 @@
      "seed": "W2945597131"
     }
    ],
+   "per_seed_spread": {
+    "batch_beats_page": 3,
+    "diff_max": 50,
+    "diff_median": 21.0,
+    "diff_min": -11,
+    "n": 30,
+    "note": "per-seed coupled-per-page minus coupled-per-batch, in coupled works",
+    "page_beats_batch": 27,
+    "page_beats_batch_share": 0.9,
+    "ties": 0
+   },
    "pooled": {
     "hop1": {
      "coupled": 967,

@@ -26,7 +26,10 @@ depth batch costs less than **0.473** of a breadth page in Computer Science and
 **0.401** in Social Sciences, with intervals
 [0.326, 0.643] and [0.301, 0.515]. Both lie entirely below
 the floor of one request per batch, so **at this API's documented request cost breadth-first is the
-only allocation the price allows**, in both fields measured.
+only allocation the price allows**, in both fields measured. The scope of that conclusion is the frame both arms share — publication year
+2019, 40-70 citations,
+`article` items carrying references — and the registry's documented caps, not
+citation networks at large.
 
 ## 1. What is being estimated, and what is not
 
@@ -148,7 +151,8 @@ with fewer than 10 null works is reported NOT RUN and is never read as a zero.
 The sample is drawn from OpenAlex [66], and coverage in any bibliographic database is uneven
 by region and language [67,68] — a different database would let a different study
 see different things [68] — while the sampling design is part of the estimator rather than a
-preliminary to it [69]. Field assignment is the same kind of commitment: publication-level
+preliminary to it [69] — that entry is the review of Kish's *Survey Sampling*, not the book,
+which no registry record this package could verify. Field assignment is the same kind of commitment: publication-level
 classifications differ and the choice moves the answer [70,71], normalisation
 methods for cross-field comparison rest on different assumptions [72,73], and
 fields differ in reporting behaviour in ways normalisation does not remove [74]. It is also
@@ -178,6 +182,14 @@ defined as *the price of one depth batch divided by the price of one breadth pag
 accounting is `w = 1`, and what sets the range is that the price is a count of whole requests — the
 smallest count a request can have is one — so a batch costs at least one request and the admissible
 range is `w ≥ 1`.
+
+**One page per seed, and no page truncated.** The same cap is why the breadth count is one request's
+yield rather than a sample of a longer list: every seed's citer set holds
+40 to 62 works in Computer Science and
+41 to 69 in Social Sciences,
+all of them inside the 200-work page, so no seed's page was cut short by
+the cap that the cost model charges for. `analysis.py` refuses to write the artefact if that ever stops
+holding.
 
 Both constants are measured rather than chosen, and that is a design commitment rather than a
 formality: case-study research has to state its design and the inferences it licenses
@@ -257,6 +269,39 @@ would open it again is a batch that carried more coupled works than a page: this
 return 2.11 times as many, and that is the falsifier a reader
 should test.
 
+**Two batches per seed, and which one is the batch of record.** Each seed's arm carries
+2 depth batches, each holding
+98 to 100 identifiers in
+Computer Science and 95 to
+100 in Social Sciences — and Table 3 reads the first
+of them. That one is the batch of record because it is the page of depth-2 identifiers a client's first
+depth request buys, and because its position is fixed by the capture order rather than by the outcome —
+no reading of the result selected it. The other two readings are printed here so that the choice is
+visible rather than buried in a line of code. Taking the mean over both batches gives `w*`
+0.476 in Computer Science and
+0.427 in Social Sciences; taking the last batch
+only gives 0.478 and
+0.452. That is a relative swing of
+1.0 percent in the first field and
+12.6 percent in the second — wider than a rounding
+difference, which is why it belongs in the paper. All three readings lie below the floor of one request
+per batch, so the choice moves the number and does not move the conclusion.
+
+**The two means conceal the per-seed spread, and the count that shows it is printed here.** Breadth
+returns more coupled works than one batch of depth in
+24 of 30 Computer Science seeds
+and 27 of
+30 Social Sciences seeds —
+80.0 and
+90.0 percent — with a median per-seed
+difference of 16.5 and
+21.0 coupled works, and a range from
+-29 to 46 in the first field. The
+batch wins outright in 4 Computer Science seeds and
+3 Social Sciences seeds, with the remainder
+tied. Breadth therefore wins per seed in most cases rather than in every one, and the two means in
+Table 3 would have hidden that.
+
 ### 5.3 What would have made depth look good, and did not
 
 Two analyses are reported because they are the ones an allocation claim would have leaned on, and both
@@ -317,8 +362,11 @@ against a length-matched null, measured in two independent fields, the second ch
 before it was measured, with two controls a reader can open in the package: a hindsight oracle that
 spends the same budget on the batches it would have wanted (`arms.*.oracle`), and a selectability
 analysis that asks whether the seeds that oracle picked could have been recognised beforehand
-(`arms.*.selectability`). The universal claim stops at the registry: the bound is a statement about this API's documented
-request caps, not about citation networks in general.
+(`arms.*.selectability`). The universal claim stops at the registry and at the sampling frame the two arms share: the bound is a
+statement about this API's documented request caps — publication year
+2019, 40-70 citations,
+`article` items carrying references — and not about citation networks in
+general.
 
 **How small the theory is, stated plainly.** It is one inequality with a one-line derivation, and §5.2
 prints that derivation together with the two hypotheses it needs and which of them the arms actually
@@ -383,6 +431,12 @@ who wants the second line of evidence has to re-issue the query.
 
 **One registry.** The price bound is a statement about this API's documented request caps. A registry
 whose page-to-batch payload ratio differed would move `w*`; the formula is given so it can be recomputed.
+
+**The batch of record is one of two per seed, and it is chosen by position rather than by outcome.** The
+sensitivity is printed in §5.2 and stored under `arms.*.batch_choice`; the widest of the other two
+readings moves `w*` by 12.6 percent, and every
+reading stays below the floor of one request per batch. A reader who would price the second page in can
+recompute `w*` from the reading printed there instead of re-running the capture.
 
 **A construction zero bounds the domain.** One Computer Science seed had no coupled citers at all
 (W2907281321); its contribution is a labelled zero, not a measurement, and it
@@ -455,7 +509,7 @@ them: it fetches nothing and imports nothing outside the standard library.
 
 [22] Nigel Gilbert, G. Referencing as Persuasion. Social Studies of Science, 1977. doi:10.1177/030631277700700112
 
-[23] Robert Κ. Merton. The Matthew Effect in Science. Science, 1968. doi:10.1126/science.159.3810.56
+[23] Robert K. Merton. The Matthew Effect in Science. Science, 1968. doi:10.1126/science.159.3810.56
 
 [24] Peritz, Bluma C. A classification of citation roles for the social sciences and related fields. Scientometrics, 1983. doi:10.1007/bf02147226
 
