@@ -137,7 +137,8 @@ Section 8 used to carry a hedge. The hedge is now a search with a record behind 
 
 | field | value |
 |---|---|
-| window | `1960-01-01..2026-11-21` |
+| **issued at (UTC)** | `2026-11-21T16:07:19Z` |
+| publication window searched | `1960-01-01..2026-11-21` |
 | source | Crossref /works?query.bibliographic (title+abstract index), rows=8 per query |
 | queries declared / run | 10 / 10 |
 | records returned | 76 |

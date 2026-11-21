@@ -27,6 +27,7 @@ a corpus matched to a claim by vocabulary produces support that does not exist.
 from __future__ import annotations
 
 import argparse
+import datetime
 import json
 import os
 import re
@@ -187,6 +188,12 @@ def harvest():
         uniq.append(h)
     doc = {
         "instrument": "price_search.py",
+        # WHEN the search was issued, which is not the `window` below: the window is the span of
+        # publication dates searched, the timestamp is when the index was asked. Without it a reader
+        # cannot tell whether a paper published last month was available to the search, and a later
+        # re-run has no baseline to be compared against. `refs/references.json` records `scan_date`
+        # for the same reason; this file did not, which made "the search was run" an undated claim.
+        "ran_at": datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
         "question": ("is the price of a dependence assumption -- the dependence that moves the quoted "
                      "figure by one decade, rho ~ 9 p^(r-1) -- stated as such anywhere in the "
                      "reliability or sensitivity literature?"),
@@ -208,6 +215,18 @@ def verdict(verbose=True):
         return 3, "price_search.json absent: the search has never been run, so nothing can be reported"
     d = json.load(open(OUT, encoding="utf-8"))
     fails = []
+    # An undated search record is refused, so the class cannot come back the way it arrived.
+    if not d.get("ran_at"):
+        fails.append("the stored search carries no ran_at: a search record that cannot say when it "
+                     "ran is an undated claim, and a later re-run has no baseline")
+    # The decisions live in VERDICTS, in this file. A copy in the artefact is a second copy that
+    # nothing reads and that goes stale the moment a verdict is edited -- the first harvest wrote an
+    # EMPTY one because it ran before any verdict was authored, so the artefact said "no verdicts"
+    # while the report printed 42. Refusing the key keeps the one-copy rule mechanical.
+    if "verdicts" in d:
+        fails.append("the stored search carries a `verdicts` copy (%d entries); the decisions live in "
+                     "price_search.VERDICTS and a copy in the artefact is a second copy that nothing "
+                     "reads" % len(d.get("verdicts") or {}))
     if d.get("window") != WINDOW:
         fails.append("stored window %r != declared %r" % (d.get("window"), WINDOW))
     stored = d.get("queries", {})
@@ -247,7 +266,8 @@ def verdict(verbose=True):
             print("FAIL %s" % f, file=sys.stderr)
         return 1, "%d failure(s)" % len(fails)
     if verbose:
-        print("PRICE SEARCH -- window %s, source %s" % (d["window"], d.get("source")))
+        print("PRICE SEARCH -- run at %s, window %s, source %s"
+              % (d.get("ran_at"), d["window"], d.get("source")))
         print("  queries declared %d / ran %d" % (len(QUERIES), len(stored)))
         print("  records stored %d, refused by the screen %d, read %d (every one carries a verdict)"
               % (len(d.get("records", [])), excluded, read))

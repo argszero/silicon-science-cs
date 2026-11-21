@@ -1,5 +1,5 @@
 {
- "caveat": "a title screen cannot establish an absence; the verdict is about the records it did read",
+ "caveat": "a title screen cannot establish an absence, and a title is not an abstract: the verdict is about the records this file read, at the depth its own tally reports",
  "instrument": "price_search.py",
  "queries": {
   "Fr\u00e9chet bounds availability reliability partially specified marginals": {
@@ -54,6 +54,7 @@
   }
  },
  "question": "is the price of a dependence assumption -- the dependence that moves the quoted figure by one decade, rho ~ 9 p^(r-1) -- stated as such anywhere in the reliability or sensitivity literature?",
+ "ran_at": "2026-11-21T16:07:19Z",
  "records": [
   {
    "abstract": "",
@@ -101,8 +102,7 @@
    "year": 2026
   },
   {
-   "abstract": "This paper describes some developments in the field of Frechet bounds since the last report given at the Rome conference in 1990.At first a review is given on product type representations of distributions with given marginals and their relations to the solution of Schr\u03b4dinger type equations.The iterative proportional fitting procedure allows an approximate construction.Its convergence has been shown recently.We give a convergence proof of a modified algorithm under alternative assumptions.In the next part of the paper several sufficient and necessary conditions are given for the explicit construction of optimal multivariate couplings or, equivalently, tranportation plans.These results allow to calculate several multivariate examples, in particular examples for minimal \u00a3 pmetrics.In the final part we consider some recent examples of optimal couplings under additional or relaxed restrictions.We discuss a problem involving order restrictions, the case of fixed difference of the marginals, the application of a duality principle for Monge functions and Frechet bounds for marginal classes majorized by a finite measure.",
-   "abstract_source": "openalex",
+   "abstract": "",
    "doi": "10.1214/lnms/1215452625",
    "query": "Fr\u00e9chet bounds availability reliability partially specified marginals",
    "title": "Developments on Fr\u00e9chet-bounds",
@@ -156,8 +156,7 @@
    "year": 2016
   },
   {
-   "abstract": "This paper introduces a statistical reliability model for common-cause failure data from the nuclear industry. To achieve target reliability, many components in power plants are placed in parallel systems. The benefits of redundancy can be negated if multiple component failures occur due to a common external event. To model the possibility of multiple failures, a mixture-model based on the binomial failure-rate model is derived using reasonable assumptions of multiple failure events at a nuclear power plant (NPP). In many applications, the original binomial failure-rate model fits failure data poorly, and the model has not typically been applied to probabilistic risk assessments in the nuclear industry. This mixture-model fits better. This paper presents a least-squares solution to the mixture-model parameters and the model fit is investigated. Methods developed here are motivated by, and illustrated with, discrete failure data collected from several US NPP since about 1980.",
-   "abstract_source": "openalex",
+   "abstract": "",
    "doi": "10.1109/24.690894",
    "query": "beta factor parametric model common cause failure unavailability redundant group",
    "title": "A parametric mixture-model for common-cause failure data [of nuclear power plants]",
@@ -229,8 +228,7 @@
    "year": 2021
   },
   {
-   "abstract": "This report is a revision of the original report, INL/LTD-17-43723. Distribution of the original report was to the Nuclear Regulatory Commission (NRC) only, and the report was not made available to the public. The original report was revised as this report for public distribution. This report presents the latest update of generic prior distributions for common cause failure (CCF) alpha factors, as well as the development of new generic prior distributions for CCF causal alpha factors. The history of CCF treatment and parameter estimations is reviewed. The existing process for developing generic prior distributions is reviewed and used to develop new priors for CCF alpha factors and causal alpha factors. For causal alpha factors, different priors are developed for the five different CCF cause groups: Component (GC), Design (GD), Environment (GE), Human (GH), and Other (GO). These generic prior distributions could be used in the Standardized Plant Analysis Risk (SPAR) models for CCF parameter estimation. The issues and preliminary thoughts regarding prior distribution development are documented. Potential future work is then proposed for improving the process of developing priors.",
-   "abstract_source": "openalex",
+   "abstract": "",
    "doi": "10.2172/1835896",
    "query": "common cause failure probability estimate alpha beta factor multiple unit",
    "title": "Developing Generic Prior Distributions for Common Cause Failure Alpha Factors and Causal Alpha Factors",
@@ -365,8 +363,7 @@
    "year": 2008
   },
   {
-   "abstract": "Blackouts in the power system are rare events that can have large consequences for society. Successful preparation and prevention of such events calls for models capable of predicting their occurrence. The simultaneous outage of multiple components is of special interest in an N-l secure transmission grid. Spatio-temporal correlation in probability of failure for components can cause blackouts to occur more often than anticipated. This paper demonstrates a new method of calculating time-series of component unavailability due to external threats based on historical data. The time-series of unavailability can be used to predict the expected occurrence of contingencies throughout the year. A test case is presented where an hourly time series of wind dependent failure probabilities and historical outage durations of transmission lines are combined to illustrate the proposed method. The results show that the simultaneous unavailability of multiple transmission lines may be significantly larger than estimated using traditional reliability analysis.",
-   "abstract_source": "openalex",
+   "abstract": "",
    "doi": "10.1109/ptc.2019.8810845",
    "query": "correlated failure availability replication bound unavailability",
    "title": "Transmission line unavailability due to correlated threat exposure",
@@ -447,8 +444,7 @@
    "year": 2021
   },
   {
-   "abstract": "Both the reliability-wise system structure and the multivariate component lifetime distributions are required for accurately predicting a complex system\u2019s reliability. Most of existing research work either assumes these components\u2019 lifetime distributions are statistically independent or they are subject to a well-defined multivariate joint distribution, such as a multivariate Gaussian distribution. However, oftentimes the independence assumption does not match engineering practice since components usually have interactions with each other due to common manufacturing defects and shared environmental conditions, etc. On the other hand, a multivariate joint Gaussian distribution may not be adequate, because it cannot describe distribution skewness or upper/lower tail dependency among multivariate lifetime data that are often observed in real data sets. As a result, the system reliability assessment may be biased.In this study, we present a data-centric multivariate distribution construction framework that is based on a sequence of copula functions. Under this framework, historical degradation data from different components within a system are utilized to derive the multivariate degradation model, and various types of dependency among these components are explicitly scrutinized and used for either component or system level performance prediction. Our contributions include that 1) we apply the pair copula construction (PCC) method on more than two degradation processes to explicitly model the association of these processes; 2) we connect the system structure and system failure prior information to the PCC structure to simplify the construction of multivariate distribution; and 3) we demonstrate the biasness in system reliability prediction if the dependencies existed in component failure processes are ignored. This study highlights the applicability and flexibility of the pair copula construction method for conducting multivariate reliability analysis for complex systems. A case study of degradation analysis of optical materials is used to demonstrate our proposed approach.",
-   "abstract_source": "openalex",
+   "abstract": "",
    "doi": "10.1109/rams48097.2021.9605735",
    "query": "cost of dependence assumption in system reliability prediction",
    "title": "Dependence Modeling for Multivariate System Reliability Prediction",
@@ -457,8 +453,7 @@
    "year": 2021
   },
   {
-   "abstract": "In this paper, we consider two types of series-parallel systems with the following specifications: (a) subsystems having identical parallel components (b) subsystems having non-identical parallel components. Assume that s repairmen are available at each of the parallel subsystems. The time to failure and time to repair are assumed to be exponentially distributed. In this work, we introduce the repair dependence function that facilitates the s repairmen to provide service individually or together with respect to the number of failed components. The continuous time Markov model is used to study the effect of repair dependence function on the reliability and availability of the respective systems. The cost analysis and cost-benefit analysis based on mean time to failure and steady state availability are also presented. Finally, we illustrate our results through MATLAB programming by considering some examples.",
-   "abstract_source": "openalex",
+   "abstract": "",
    "doi": "10.1504/ijrs.2016.076345",
    "query": "cost of dependence assumption in system reliability prediction",
    "title": "System reliability estimation and cost analysis of series-parallel systems in the presence of repair dependence function",
@@ -530,8 +525,7 @@
    "year": 1993
   },
   {
-   "abstract": "The concept of Equivalent time is introduced to find the hazard rates of elements in a parallel redundant systems which is subject to dependent failures. True acceleration is defined as an adjunct to this concept.",
-   "abstract_source": "openalex",
+   "abstract": "",
    "doi": "10.1109/tr.1974.5215278",
    "query": "dependent failures quantification reliability redundant systems",
    "title": "A Reliability Model for Dependent Failures in Parallel Redundant Systems",
@@ -541,12 +535,12 @@
   },
   {
    "abstract": "",
-   "doi": "10.1002/0470023554.ch2",
+   "doi": "10.1002/9780470541609.ch4",
    "query": "durability nines quoted reliability figure independence assumption",
-   "title": "The Conditional Independence Assumption",
+   "title": "Accelerated Reliability and Durability Testing Methodology",
    "type": "other",
-   "venue": "Statistical Matching",
-   "year": 2006
+   "venue": "Accelerated Reliability and Durability Testing Technology",
+   "year": 2011
   },
   {
    "abstract": "",
@@ -738,8 +732,7 @@
    "year": 1982
   },
   {
-   "abstract": "Nuclear accidents and incidents such as Three Mile Island (TMI-2) accident (1979), Chernobyl disaster (1986) and the recent Fukushima nuclear disaster (2011) have caused people to be suspicious of the safety of nuclear energy, and have reduced the level of trust among public. Common cause failure (CCF) has been a major element of such accidents in terrestrial nuclear power reactors because of high redundancy built into the systems and susceptibility of these redundant systems to CCF mechanisms. For this purpose, ad hoc approaches used to be taken to address vulnerabilities to CCF by operating staff of the plants. A CCF event is a result of simultaneous failure of two or more individual components. Such an event can significantly affect the availability of safety systems and has long been recognized as an important issue in the probabilistic safety assessment (PSA). So a complicated and unresolved problem in the subject of safety and reliability is to model CCF in PSA. To overcome this problem the present research highlights a mathematical model to estimate system unavailability in nuclear power plants (NPPs) as well as in other industries. This mathematical model is based on Beta Factor parametric model. The motivation for development of this model lays in the fact that one of the most widespread software such as for fault tree (FT) and event tree (ET) modeling as part of the PSA does not comprise the option for simultaneous assignment of single failure event to multiple CCF groups. A significant finding from such modeling is that, in contrast to common expectations, a too early nuclear phase-out will not serve the deployment of renewable energy sources and rational use of energy. The proposed method can be seen as an advantage of the explicit modeling of CCF.",
-   "abstract_source": "openalex",
+   "abstract": "",
    "doi": "10.1109/icesp.2014.7347004",
    "query": "sensitivity of availability to common cause failures beta factor replication",
    "title": "Modeling of common cause failures (CCFs) by using beta factor parametric model",
@@ -750,6 +743,5 @@
  ],
  "screen": "title must name a dependence AND a reliability object; correction-type records refused",
  "source": "Crossref /works?query.bibliographic (title+abstract index), rows=8 per query",
- "verdicts": {},
  "window": "1960-01-01..2026-11-21"
 }

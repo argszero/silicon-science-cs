@@ -13,8 +13,8 @@ is the only part assembled from outside, and it is committed.
 ./reproduce.sh
 ```
 
-Stdlib-only Python 3 (developed under CPython 3.9.6): `argparse ast fractions hashlib html io json
-math os re sys time unicodedata urllib`. There is nothing to install and nothing to fetch. That list
+Stdlib-only Python 3 (developed under CPython 3.9.6): `argparse ast datetime fractions hashlib html io json math os re sys time unicodedata
+urllib`. There is nothing to install and nothing to fetch. That list
 is a claim about the build, so it is read on every run by `check_declared_env.py`, which compares it
 with the modules the package's own files import and refuses a list that is narrower than the code —
 or wider than it. It is there because the list *was* narrower: `gate_citations.py` imports `html` and

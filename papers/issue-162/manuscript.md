@@ -272,8 +272,7 @@ being wrong is `~9 p^(r-1)` in the quote's own unit.
 **That last claim was a hedge, and it has been searched.** Whether the price of a dependence assumption
 is stated anywhere as such is a fact about the literature, not a matter of judgement, so it was turned
 into a search with a record behind it (`price_search.py`, `price_search.json`): ten Crossref queries
-inside the window `1960-01-01..2026-11-21`, 76 records returned, 34 refused by a title screen (24
-naming no dependence, 9 naming no reliability object, 1 a correction-type record), and all 42 survivors
+issued on 2026-11-21, inside the publication window `1960-01-01..2026-11-21`, 76 records returned, 34 refused by a title screen (25 naming no dependence, 8 naming no reliability object, 1 a correction-type record), and all 42 survivors
 read -- 12 at abstract level, 30 at title level, that depth being the ceiling Crossref and OpenAlex
 together allowed. **No record read states the price.** What the literature does state falls into two
 classes, and neither is this paper's claim:
