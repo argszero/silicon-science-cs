@@ -14,8 +14,12 @@ Operators quote durability in nines. For an `r`-replica store with per-device an
 `p`, the quoted figure is `p^r`, the probability that all `r` replicas fail **under independence**.
 Given only the per-device marginals — which is all such a figure is ever computed from — the
 probability that all replicas fail is not identified: it lies in an interval whose upper end is `p`
-and whose lower end is `max(0, rp - (r-1))`. The quoted figure is the *rare* end of that interval,
-and at every realistic quote the interval reaches the other end as well, where loss is certain.
+and whose lower end is `max(0, rp - (r-1))`. The two ends have names, used throughout this paper. The
+upper end is the **catastrophic end**: all `r` replicas fail as often as a single device does, so
+nothing the replication is paid for survives there. The lower end is `0` at every realistic quote, and
+it is the **zero end**: the marginals permit a coupling under which the store never loses all its
+replicas. The quoted figure lies strictly between the two, so the quote is not merely unidentified --
+it is identified to be *worse* than the zero end and better than the catastrophic one.
 
 Two consequences are exact and mechanically verified. First, the interval does not narrow as
 replication improves the quote: each added replica multiplies the quote by `p` — buying `-log10 p`
@@ -26,7 +30,8 @@ grid whose widest cell (`p = 1e-5`, `r = 5`) spans 20.0. Second, stating a depen
 the gap symmetrically. The natural family — a fraction `rho` of replication groups failing together —
 spans `[p^r, p]` and never reaches the lower end, because reaching it would require negative
 dependence, which is not a coupling. So **a stated `rho >= 0` is a statement that the quoted figure
-is the best case**, and it costs one decade of the quote to buy `rho = 9e-16` at `p = 1e-4, r = 5`.
+is the best case a non-negative dependence can produce** -- the identified set reaches below it, but
+only through negative dependence -- and it costs one decade of the quote to buy `rho = 9e-16` at `p = 1e-4, r = 5`.
 Read backwards: "eleven nines" asserts a bound `rho < ~9 p^(r-1)` on a quantity nobody measures.
 `rho` is *declared* throughout this paper and never estimated; the paper contains **no data at all**,
 and its empirical component is an exhaustive check that both bounds are attained, not a measurement
@@ -71,7 +76,16 @@ quoted number {{c:bounds-stated-not-attained}}.
 The further fact this paper adds is that the bounds are **attained**, on a finite space, with every
 marginal exactly `p`. A bound that no coupling attains would be a statement about nothing: every
 coupling satisfies it, so it separates none of them. Attainment is what converts "the figure is in an
-interval" into "the figure is at the *best* end of an interval whose other end is reachable".
+interval" into "both ends of that interval are reachable, so a figure inside it is a statement about an
+assumption rather than about a store".
+
+Two ends of the set are named once, here, and referred to by those names everywhere after. The upper
+end `p` is the **catastrophic end**: all `r` replicas fail as often as a single device does, so the
+redundancy the quote is paid for survives nothing. The lower end is `max(0, rp-(r-1))`, which is
+exactly `0` whenever `p <= (r-1)/r` -- every realistic quote -- and that end is the **zero end**: the
+marginals permit a coupling under which the store never loses all its replicas. The artefact's flag is
+named `contains_zero` because it records the zero end; nothing in this package records the catastrophic
+end under that name, and the two must not be read for one another.
 
 ## 3. Correlation is measured, not hypothetical
 
@@ -128,7 +142,8 @@ a quoted failure probability inherits its assumptions and treats the question as
 {{c:assumption-sensitivity}}, and outside engineering the same arithmetic has a name: diversification
 computed under one coupling fails under another, and zero correlation is not independence
 {{c:diversification-fallacy}}. What is missing in both places is the specific object this paper
-supplies: the *identified set* of the quoted quantity, with the quote located at a named end of it.
+supplies: the *identified set* of the quoted quantity, both ends of that set named, and the quote read
+as a member of the set rather than as the object itself.
 
 **Therefore `rho` is a declared parameter in everything that follows.** No value of `rho` in this
 paper is fitted, and any sentence in which `rho` appears is conditional: *if* the dependence were
@@ -150,17 +165,21 @@ widens the unidentified span by exactly the same amount. The figure improves exa
 identification degrades — which is the paper's first registered prior, and it is met in every
 non-boundary cell.
 
-**The rare end.** The quote is not in the middle of the set; it is at the end that assumes
-independence. At `p = 1e-4, r = 5` the quote is 20.0 nines and the worst identified value is 4.0:
-16.0 decades apart. Reading only the quote, a store looks 16 decades safer than the marginals can
-establish.
+**Where the quote sits.** The quote is the rare end of the family a non-negative dependence can
+express, and an *interior* point of the identified set: the set runs from `0` to `p`, and `p^r` is
+strictly inside it. At `p = 1e-4, r = 5` the quote is 20.0 nines and the catastrophic end is 4.0 --
+16.0 decades apart -- while the zero end is unbounded in nines. So the quote is neither the worst
+case nor the best one: a store that quotes it looks 16 decades safer than the marginals can
+establish as its *worst* case, and the same marginals cannot rule out a store that never loses data
+at all.
 
-**The catastrophic end.** Total loss is excluded by the marginals exactly when
-`p > (r-1)/r`, decided in exact rational arithmetic so that the boundary case
-`p = (r-1)/r` (for example `p = 1/2, r = 2`) closes *at* zero rather than above it. Since a
-per-device annual loss probability is small and `r >= 2`, that condition never holds at a realistic
-quote: the set always contains total loss. In the grid, 16 of the 20 cells reach it; the four that do
-not are the four boundary cells.
+**The zero end.** The set reaches `0` exactly when `p <= (r-1)/r`, decided in exact rational
+arithmetic so that the boundary case `p = (r-1)/r` (for example `p = 1/2, r = 2`) closes *at* zero
+rather than above it. Since a per-device annual loss probability is small and `r >= 2`, that condition
+holds at every realistic quote: the marginals never force a total loss, and they permit a store that
+never loses all its replicas. In the grid, 16 of
+the 20 cells contain `0`; the four that do not are exactly the `r = 1` row, where the set is the single
+point `p` and there is no zero end to reach.
 
 **The boundary.** At `r = 1` there is no coupling to choose: the set is the single point `p`, the span
 is exactly 0, and the quote equals the truth. That row is why the widest-cell selector must exclude
@@ -218,15 +237,47 @@ additional input.
 
 **The bounds are classical.** Fréchet (1935) and the Bonferroni/inclusion–exclusion inequality are
 not new, and a reviewer may fairly say the mathematical content is a re-derivation. The paper's claim
-is deliberately thinner than novelty in the mathematics: it is that the *published* quantity sits at a
-named end of its own identified set, that the set's other end is reachable, and — the part we have not
-seen stated — that the price of being wrong is `9 p^(r-1)` in the quote's own unit. If that pricing is
-standard somewhere, this paper is a restatement and should be judged as one.
+is deliberately thinner than novelty in the mathematics: it is that the *published* quantity sits at the
+rare end of the family a non-negative dependence can express, that both ends of the identified set
+are named and reachable -- the catastrophic end, where all replicas fail as often as one device does,
+and the zero end, where the marginals permit a store that never loses data -- and that the price of
+being wrong is `~9 p^(r-1)` in the quote's own unit.
+
+**That last claim was a hedge, and it has been searched.** Whether the price of a dependence assumption
+is stated anywhere as such is a fact about the literature, not a matter of judgement, so it was turned
+into a search with a record behind it (`price_search.py`, `price_search.json`): ten Crossref queries
+inside the window `1960-01-01..2026-11-21`, 76 records returned, 34 refused by a title screen (24
+naming no dependence, 9 naming no reliability object, 1 a correction-type record), and all 42 survivors
+read -- 12 at abstract level, 30 at title level, that depth being the ceiling Crossref and OpenAlex
+together allowed. **No record read states the price.** What the literature does state falls into two
+classes, and neither is this paper's claim:
+
+- **the direction without a magnitude.** A study of simultaneous transmission-line unavailability under
+  correlated threat exposure reports it "significantly larger than estimated using traditional
+  reliability analysis", and a multivariate reliability framework takes as its premise that the
+  independence assumption "does not match engineering practice", so the assessment "may be biased".
+  Both say the independence figure comes out too low. Neither says by how much, in what unit, or as a
+  function of `r`.
+- **the parameter without the price.** 31 records parameterise the dependence -- the beta-factor and
+  alpha-factor families of common-cause analysis, copula lifetime models, Markov models with dependent
+  repair -- and compute a figure *under* that parameter. The nearest thing to a pricing statement is a
+  study of the beta-factor model's applicability that reports how the computed unavailability moves
+  with the model's own parameter: a sensitivity of a model's output to its own input, not a statement
+  of what the assumption costs relative to the quoted figure, in the quote's own unit.
+
+So the claim this paper makes about the literature is bounded, and it is narrower than "nobody has
+thought about dependence", which would be false. It is that the price in the quote's own unit is not
+stated in the records a ten-query search of the reliability literature returns, and that the
+identification statement -- the quote inside a set, with both ends reachable -- is what turns that price
+into arithmetic. The limit of the claim is the limit of its instrument: a title screen cannot establish
+an absence, and 30 of the 42 records were read at title level because neither index carries an abstract
+for them. The corpus this paper already harvested is screened the same way and returns nothing either.
+Every record the search read, with its DOI and the verdict on it, is printed in `reference-check.md`.
 
 **The dependence family is one family.** `rho` as a fraction of groups failing together is a modelling
 choice, not a canonical one. Its two endpoints are canonical (independence, comonotonicity); its
 interior is a convention. The results that do not depend on the convention are the identified set,
-the span law, the total-loss condition, and the fact that the family's floor is `p^r` — the last of
+the span law, the zero-end condition, and the fact that the family's floor is `p^r` — the last of
 which is a statement about *any* coupling family parameterised by non-negative dependence.
 
 **No sensitivity figure is reported, because there is no measurement.** The minimum detectable effect
@@ -236,7 +287,8 @@ the strongest form of the result.
 
 **Why it is still worth publishing.** The failure mode is not that someone computed `p^r`; it is that
 a design review treats `p^r` as a property of a store while the number is a property of an assumption.
-Naming the assumption, locating the quote at an end of the identified set, and pricing the missing
+Naming the assumption, naming both ends of the identified set and saying which member of it the quote
+is, and pricing the missing
 input in the unit the promise is made in turns a rhetorical question into an arithmetic one.
 
 ## 9. Registered priors, and how they fared
@@ -251,9 +303,10 @@ Three priors were registered before the instrument ran.
   the span is exactly 0 and the quote equals the truth. *Met*, and the prior was written so that a
   failure would indict the instrument rather than the world; the boundary row is in the table, and its
   exclusion from the widest-cell selector is itself controlled.
-- **B3 — the identified set contains total loss at every realistic quote**: `p <= (r-1)/r`. *Met*, and
-  sharpened during the work: the condition is now decided in exact rationals for *every* quote rather
-  than counted over a grid, with the boundary case shown to close at zero.
+- **B3 — the identified set contains 0 at every realistic quote**: the set reaches the zero end exactly
+  when `p <= (r-1)/r`. *Met*, and sharpened during the work: the condition is now decided in exact
+  rationals for *every* quote rather than counted over a grid, with the boundary case shown to close at
+  zero, which is the end it decides.
 
 Two facts the registration did not anticipate. The stated-dependence family spans only `[p^r, p]`, so
 the half-interval below the quote is unreachable without negative dependence — which converts a

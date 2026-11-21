@@ -1,0 +1,755 @@
+{
+ "caveat": "a title screen cannot establish an absence; the verdict is about the records it did read",
+ "instrument": "price_search.py",
+ "queries": {
+  "Fr\u00e9chet bounds availability reliability partially specified marginals": {
+   "group": "bounds",
+   "returned": 8,
+   "status": "ran"
+  },
+  "beta factor parametric model common cause failure unavailability redundant group": {
+   "group": "beta",
+   "returned": 8,
+   "status": "ran"
+  },
+  "common cause failure probability estimate alpha beta factor multiple unit": {
+   "group": "beta",
+   "returned": 8,
+   "status": "ran"
+  },
+  "copyset correlated failure replica placement availability": {
+   "group": "bounds",
+   "returned": 8,
+   "status": "ran"
+  },
+  "correlated failure availability replication bound unavailability": {
+   "group": "bounds",
+   "returned": 8,
+   "status": "ran"
+  },
+  "cost of dependence assumption in system reliability prediction": {
+   "group": "price",
+   "returned": 8,
+   "status": "ran"
+  },
+  "dependent failures quantification reliability redundant systems": {
+   "group": "bounds",
+   "returned": 8,
+   "status": "ran"
+  },
+  "durability nines quoted reliability figure independence assumption": {
+   "group": "nines",
+   "returned": 8,
+   "status": "ran"
+  },
+  "effect of assuming independence on predicted unavailability redundant system": {
+   "group": "price",
+   "returned": 8,
+   "status": "ran"
+  },
+  "sensitivity of availability to common cause failures beta factor replication": {
+   "group": "price",
+   "returned": 8,
+   "status": "ran"
+  }
+ },
+ "question": "is the price of a dependence assumption -- the dependence that moves the quoted figure by one decade, rho ~ 9 p^(r-1) -- stated as such anywhere in the reliability or sensitivity literature?",
+ "records": [
+  {
+   "abstract": "",
+   "doi": "10.1007/978-94-011-3466-8_9",
+   "query": "Fr\u00e9chet bounds availability reliability partially specified marginals",
+   "title": "Fr\u00e9Chet-Bounds and Their Applications",
+   "type": "book-chapter",
+   "venue": "Advances in Probability Distributions with Given Marginals",
+   "year": 1991
+  },
+  {
+   "abstract": "",
+   "doi": "10.1016/0026-2714(71)90022-9",
+   "query": "Fr\u00e9chet bounds availability reliability partially specified marginals",
+   "title": "Some bounds for the reliability of a system with specified failure rate characteristics",
+   "type": "journal-article",
+   "venue": "Microelectronics Reliability",
+   "year": 1971
+  },
+  {
+   "abstract": "",
+   "doi": "10.1016/0026-2714(92)90331-e",
+   "query": "Fr\u00e9chet bounds availability reliability partially specified marginals",
+   "title": "Availability of systems with partially observable failures",
+   "type": "journal-article",
+   "venue": "Microelectronics Reliability",
+   "year": 1992
+  },
+  {
+   "abstract": "",
+   "doi": "10.1017/9781009367189.014",
+   "query": "Fr\u00e9chet bounds availability reliability partially specified marginals",
+   "title": "Partially Specified Risk Factor Models",
+   "type": "book-chapter",
+   "venue": "Model Risk Management",
+   "year": 2023
+  },
+  {
+   "abstract": "A bivariate lifetime model is proposed by coupling odd Fr\u00e9chet half\u2010logistic (OFHL) marginals with the Farlie\u2013Gumbel\u2013Morgenstern (FGM) copula under a unified hybrid censoring (UHC) scheme introducing UHC for bivariate lifetime models for the first time. We derive closed\u2010form joint, marginal, and conditional distributions, product moments, the moment\u2010generating function, and joint reliability and hazard functions. Inference for reliability is developed under both maximum likelihood and Bayesian paradigms, including point estimation and interval estimation for the joint reliability and hazard. Dependence is quantified via Kendall\u2019s tau, Pearson\u2019s copula correlation, and a copula\u2010based median regression. A Monte Carlo study under UHC designs shows consistent estimators and that Bayesian procedures typically achieve lower bias, smaller mean squared error, and shorter intervals than classical methods. Five real data applications from medical and reliability/engineering domains demonstrate superior or competitive fits compared with established alternatives.",
+   "doi": "10.1155/jom/4466462",
+   "query": "Fr\u00e9chet bounds availability reliability partially specified marginals",
+   "title": "Reliability Inference for Bivariate Lifetimes With Odd Fr\u00e9chet Half\u2010Logistic Marginals Under Unified Hybrid Censoring",
+   "type": "journal-article",
+   "venue": "Journal of Mathematics",
+   "year": 2026
+  },
+  {
+   "abstract": "This paper describes some developments in the field of Frechet bounds since the last report given at the Rome conference in 1990.At first a review is given on product type representations of distributions with given marginals and their relations to the solution of Schr\u03b4dinger type equations.The iterative proportional fitting procedure allows an approximate construction.Its convergence has been shown recently.We give a convergence proof of a modified algorithm under alternative assumptions.In the next part of the paper several sufficient and necessary conditions are given for the explicit construction of optimal multivariate couplings or, equivalently, tranportation plans.These results allow to calculate several multivariate examples, in particular examples for minimal \u00a3 pmetrics.In the final part we consider some recent examples of optimal couplings under additional or relaxed restrictions.We discuss a problem involving order restrictions, the case of fixed difference of the marginals, the application of a duality principle for Monge functions and Frechet bounds for marginal classes majorized by a finite measure.",
+   "abstract_source": "openalex",
+   "doi": "10.1214/lnms/1215452625",
+   "query": "Fr\u00e9chet bounds availability reliability partially specified marginals",
+   "title": "Developments on Fr\u00e9chet-bounds",
+   "type": "book-chapter",
+   "venue": "Institute of Mathematical Statistics Lecture Notes - Monograph Series",
+   "year": 1996
+  },
+  {
+   "abstract": "",
+   "doi": "10.2139/ssrn.3412158",
+   "query": "Fr\u00e9chet bounds availability reliability partially specified marginals",
+   "title": "Risk Bounds for Partially Specified Unimodal Distributions",
+   "type": "journal-article",
+   "venue": "SSRN Electronic Journal",
+   "year": 2019
+  },
+  {
+   "abstract": "",
+   "doi": "10.2172/7103063",
+   "query": "Fr\u00e9chet bounds availability reliability partially specified marginals",
+   "title": "Bivariate distribution system with specified marginals",
+   "type": "report",
+   "venue": "",
+   "year": 1977
+  },
+  {
+   "abstract": "",
+   "doi": "10.1007/978-94-017-0629-2_11",
+   "query": "beta factor parametric model common cause failure unavailability redundant group",
+   "title": "Parametric Models for Common Cause Failure Analysis",
+   "type": "book-chapter",
+   "venue": "Advanced Seminar on Common Cause Failure Analysis in Probabilistic Safety Assessment",
+   "year": 1989
+  },
+  {
+   "abstract": "",
+   "doi": "10.1016/0026-2714(87)90004-7",
+   "query": "beta factor parametric model common cause failure unavailability redundant group",
+   "title": "A reliability model for a k-out-of-N:G redundant system with multiple failure modes and common cause failures",
+   "type": "journal-article",
+   "venue": "Microelectronics Reliability",
+   "year": 1987
+  },
+  {
+   "abstract": "",
+   "doi": "10.1016/j.anucene.2015.12.004",
+   "query": "beta factor parametric model common cause failure unavailability redundant group",
+   "title": "Calculation and updating of Common Cause Failure unavailability by using alpha factor model",
+   "type": "journal-article",
+   "venue": "Annals of Nuclear Energy",
+   "year": 2016
+  },
+  {
+   "abstract": "This paper introduces a statistical reliability model for common-cause failure data from the nuclear industry. To achieve target reliability, many components in power plants are placed in parallel systems. The benefits of redundancy can be negated if multiple component failures occur due to a common external event. To model the possibility of multiple failures, a mixture-model based on the binomial failure-rate model is derived using reasonable assumptions of multiple failure events at a nuclear power plant (NPP). In many applications, the original binomial failure-rate model fits failure data poorly, and the model has not typically been applied to probabilistic risk assessments in the nuclear industry. This mixture-model fits better. This paper presents a least-squares solution to the mixture-model parameters and the model fit is investigated. Methods developed here are motivated by, and illustrated with, discrete failure data collected from several US NPP since about 1980.",
+   "abstract_source": "openalex",
+   "doi": "10.1109/24.690894",
+   "query": "beta factor parametric model common cause failure unavailability redundant group",
+   "title": "A parametric mixture-model for common-cause failure data [of nuclear power plants]",
+   "type": "journal-article",
+   "venue": "IEEE Transactions on Reliability",
+   "year": 1998
+  },
+  {
+   "abstract": "Aim.   Common cause failures (CCFs) are dependent failures of groups of certain elements that occur simultaneously or within a short period of time (i.e. almost simultaneously) due to a single common cause (e.g. a sudden change of climatic operating conditions, flooding of premises, etc.). A dependent failure is a multiple failure of several elements of a system, whose probability cannot be expressed as a simple product of the probabilities of unconditional failures of individual elements. \u0421\u0421\u0410   probabilities calculation uses a number of common models, i.e. the Greek letter model, alpha, beta factor and their variants. The beta-factor model is the most simple in terms of simulation of dependent failures and further dependability calculations. Other models, when used in simulation, involve combinatorial enumeration of dependent events in a group of n events that becomes labour-intensive if the number n is high. For the selected structure diagrams of dependability, the paper analyzes the calculation method of system failure probability with CCF taken into account for the beta-factor model.     The   Aim   of the paper is to thoroughly analyze the beta-factor method for three structure diagrams of dependability, research the effects of the model parameters on the final result, find the limitations of beta-factor model applicability.     Methods.   The calculations were performed using numerical methods of solution of equations, analytical methods of function studies.     Conclusions.   The paper features an in-depth study of the method of undependability calculation for three structure diagrams that accounts for CCF and uses the beta-factor model. In the first example, for the selected structure diagram out of n parallel elements with identical dependability, it is analytically shown that accounting for CCF does not necessarily cause increased undependability. In the second example of primary junction of n elements with identical dependability, it is shown that accounting for CCF subject to parameter values causes both increased and decreased undependability. A number of beta factor model parameter values was identified that cause unacceptable values of system failure probability. These sets of values correspond to relatively high model parameter values and are hardly practically attainable as part of engineering of real systems with highly dependable component",
+   "doi": "10.21683/1729-2646-2019-19-2-9-17",
+   "query": "beta factor parametric model common cause failure unavailability redundant group",
+   "title": "Study of the beta-factor model application for common cause failure modeling",
+   "type": "journal-article",
+   "venue": "Dependability",
+   "year": 2019
+  },
+  {
+   "abstract": "&lt;div class=\"htmlview paragraph\"&gt;Studies of operating experiences over the last two decades have shown an increase in the number of operating incidents attributed to multiple failures as opposed to the classical case of single failures.&lt;/div&gt;\n&lt;div class=\"htmlview paragraph\"&gt;This paper presents an overview of a unique approach that has recently been developed to address susceptibility of electrical control systems to combined multiple failures of components and operators. The philosophical requirement for the approach will be discussed, and insight into the evolution of the technique will be provided. The approach will be described in terms of system safety and reliability tools in an integrated mix coupled with a logical process of identifying possible causative factors for the multiple failures. The technique also identifies specific points of system susceptibility to the causative mechanisms and suggests the capability for design avoidance considerations. An example will be given to illustrate the type of electrical problems addressed.&lt;/div&gt;",
+   "doi": "10.4271/800631",
+   "query": "beta factor parametric model common cause failure unavailability redundant group",
+   "title": "Common Cause Failure Analysis\u2014Why Interlocked Redundant Systems Fail",
+   "type": "proceedings-article",
+   "venue": "SAE Technical Paper Series",
+   "year": 1980
+  },
+  {
+   "abstract": "",
+   "doi": "10.1007/978-94-017-0629-2_6",
+   "query": "common cause failure probability estimate alpha beta factor multiple unit",
+   "title": "Design Defences Against Common Cause/Multiple Related Failure",
+   "type": "book-chapter",
+   "venue": "Advanced Seminar on Common Cause Failure Analysis in Probabilistic Safety Assessment",
+   "year": 1989
+  },
+  {
+   "abstract": "",
+   "doi": "10.1016/0026-2714(94)90111-2",
+   "query": "common cause failure probability estimate alpha beta factor multiple unit",
+   "title": "Probability analysis of a 2-out-of-n: F system with common cause failure, multiple failure and dependent failure",
+   "type": "journal-article",
+   "venue": "Microelectronics Reliability",
+   "year": 1994
+  },
+  {
+   "abstract": "",
+   "doi": "10.1016/j.anucene.2013.07.053",
+   "query": "common cause failure probability estimate alpha beta factor multiple unit",
+   "title": "A pragmatic approach to estimate alpha factors for common cause failure analysis",
+   "type": "journal-article",
+   "venue": "Annals of Nuclear Energy",
+   "year": 2014
+  },
+  {
+   "abstract": "",
+   "doi": "10.1016/j.ress.2021.107802",
+   "query": "common cause failure probability estimate alpha beta factor multiple unit",
+   "title": "A systematic approach to estimate an inter-unit common-cause failure probability",
+   "type": "journal-article",
+   "venue": "Reliability Engineering &amp; System Safety",
+   "year": 2021
+  },
+  {
+   "abstract": "",
+   "doi": "10.1115/1.0000449v",
+   "query": "common cause failure probability estimate alpha beta factor multiple unit",
+   "title": "Inter-Unit Common Cause Failure Analysis Based on Data From Intra-Unit Cases",
+   "type": "posted-content",
+   "venue": "",
+   "year": 2021
+  },
+  {
+   "abstract": "This report is a revision of the original report, INL/LTD-17-43723. Distribution of the original report was to the Nuclear Regulatory Commission (NRC) only, and the report was not made available to the public. The original report was revised as this report for public distribution. This report presents the latest update of generic prior distributions for common cause failure (CCF) alpha factors, as well as the development of new generic prior distributions for CCF causal alpha factors. The history of CCF treatment and parameter estimations is reviewed. The existing process for developing generic prior distributions is reviewed and used to develop new priors for CCF alpha factors and causal alpha factors. For causal alpha factors, different priors are developed for the five different CCF cause groups: Component (GC), Design (GD), Environment (GE), Human (GH), and Other (GO). These generic prior distributions could be used in the Standardized Plant Analysis Risk (SPAR) models for CCF parameter estimation. The issues and preliminary thoughts regarding prior distribution development are documented. Potential future work is then proposed for improving the process of developing priors.",
+   "abstract_source": "openalex",
+   "doi": "10.2172/1835896",
+   "query": "common cause failure probability estimate alpha beta factor multiple unit",
+   "title": "Developing Generic Prior Distributions for Common Cause Failure Alpha Factors and Causal Alpha Factors",
+   "type": "report",
+   "venue": "",
+   "year": 2021
+  },
+  {
+   "abstract": "Common cause failures occur when multiple components fail simultaneously due to a shared cause, and can significantly increase the overall probability of system failure. Therefore, it is essential to consider them in reliability and safety assessments, particularly for redundant systems in which components often share design, operational, or maintenance characteristics. The main objective of this work is to develop an advanced Alpha Factor method to enhance the assessment of common cause failures. One of the main drawbacks of the existing Alpha Factor method is that each component is limited to a single common cause failure group. The proposed method overcomes this limitation by allowing components to be assigned to multiple groups. The new method is applied to a simplified, yet representative, redundant safety system, and the corresponding results highlight the significant impact of common cause failures on system failure probability when analyzed through the proposed approach.",
+   "doi": "10.31224/6621",
+   "query": "common cause failure probability estimate alpha beta factor multiple unit",
+   "title": "An extension to the Alpha Factor method for enhanced common cause failure analysis",
+   "type": "posted-content",
+   "venue": "",
+   "year": 2026
+  },
+  {
+   "abstract": "",
+   "doi": "10.1007/978-3-319-26626-8_26",
+   "query": "copyset correlated failure replica placement availability",
+   "title": "On Replica Placement in High-Availability Storage Under Correlated Failure",
+   "type": "book-chapter",
+   "venue": "Lecture Notes in Computer Science",
+   "year": 2015
+  },
+  {
+   "abstract": "",
+   "doi": "10.1007/978-3-319-26626-8_60",
+   "query": "copyset correlated failure replica placement availability",
+   "title": "Erratum to: On Replica Placement in High-Availability Storage Under Correlated Failure",
+   "type": "book-chapter",
+   "venue": "Lecture Notes in Computer Science",
+   "year": 2016
+  },
+  {
+   "abstract": "",
+   "doi": "10.1007/s11227-013-1036-2",
+   "query": "copyset correlated failure replica placement availability",
+   "title": "Distributed replica placement algorithms for correlated data",
+   "type": "journal-article",
+   "venue": "The Journal of Supercomputing",
+   "year": 2013
+  },
+  {
+   "abstract": "",
+   "doi": "10.1016/j.tcs.2020.01.004",
+   "query": "copyset correlated failure replica placement availability",
+   "title": "Algorithms for optimal replica placement under correlated failure in hierarchical failure domains",
+   "type": "journal-article",
+   "venue": "Theoretical Computer Science",
+   "year": 2020
+  },
+  {
+   "abstract": "",
+   "doi": "10.1109/icdcs.2015.67",
+   "query": "copyset correlated failure replica placement availability",
+   "title": "Replica Placement for Availability in the Worst Case",
+   "type": "proceedings-article",
+   "venue": "2015 IEEE 35th International Conference on Distributed Computing Systems",
+   "year": 2015
+  },
+  {
+   "abstract": "",
+   "doi": "10.1109/icpads67057.2025.11323126",
+   "query": "copyset correlated failure replica placement availability",
+   "title": "Improving Overall Data Availability in Decentralized Storage via an Availability-Balanced Replica Placement Strategy",
+   "type": "proceedings-article",
+   "venue": "2025 IEEE 31th International Conference on Parallel and Distributed Systems (ICPADS)",
+   "year": 2025
+  },
+  {
+   "abstract": "",
+   "doi": "10.1109/tr.2021.3105675",
+   "query": "copyset correlated failure replica placement availability",
+   "title": "Random Versus Copyset Placement: Data-Loss Models for Proactive-Tolerance Replica-Based Data Storage",
+   "type": "journal-article",
+   "venue": "IEEE Transactions on Reliability",
+   "year": 2022
+  },
+  {
+   "abstract": "",
+   "doi": "10.1145/1385989.1386012",
+   "query": "copyset correlated failure replica placement availability",
+   "title": "Replica placement for high availability in distributed stream processing systems",
+   "type": "proceedings-article",
+   "venue": "Proceedings of the second international conference on Distributed event-based systems",
+   "year": 2008
+  },
+  {
+   "abstract": "",
+   "doi": "10.1016/0951-8320(92)90004-5",
+   "query": "correlated failure availability replication bound unavailability",
+   "title": "Finding the exact top event unavailability mean and variance expressions of fault trees having correlated jointly lognormal component failure probabilities",
+   "type": "journal-article",
+   "venue": "Reliability Engineering &amp; System Safety",
+   "year": 1992
+  },
+  {
+   "abstract": "",
+   "doi": "10.1016/j.engfailanal.2022.106104",
+   "query": "correlated failure availability replication bound unavailability",
+   "title": "Reliability and availability assessment of railway locomotive bogies under correlated failures",
+   "type": "journal-article",
+   "venue": "Engineering Failure Analysis",
+   "year": 2022
+  },
+  {
+   "abstract": "",
+   "doi": "10.1021/bk-1976-0029.ch022",
+   "query": "correlated failure availability replication bound unavailability",
+   "title": "Biological Unavailability of Bound Paraquat Residues in Soil",
+   "type": "book-chapter",
+   "venue": "ACS Symposium Series",
+   "year": 1976
+  },
+  {
+   "abstract": "",
+   "doi": "10.1109/edcc.2014.22",
+   "query": "correlated failure availability replication bound unavailability",
+   "title": "Markov Modeling of Availability and Unavailability Data",
+   "type": "proceedings-article",
+   "venue": "2014 Tenth European Dependable Computing Conference",
+   "year": 2014
+  },
+  {
+   "abstract": "",
+   "doi": "10.1109/issre.2008.52",
+   "query": "correlated failure availability replication bound unavailability",
+   "title": "Replication vs. Failure Prevention - How to Boost Service Availability?",
+   "type": "proceedings-article",
+   "venue": "2008 19th International Symposium on Software Reliability Engineering (ISSRE)",
+   "year": 2008
+  },
+  {
+   "abstract": "Blackouts in the power system are rare events that can have large consequences for society. Successful preparation and prevention of such events calls for models capable of predicting their occurrence. The simultaneous outage of multiple components is of special interest in an N-l secure transmission grid. Spatio-temporal correlation in probability of failure for components can cause blackouts to occur more often than anticipated. This paper demonstrates a new method of calculating time-series of component unavailability due to external threats based on historical data. The time-series of unavailability can be used to predict the expected occurrence of contingencies throughout the year. A test case is presented where an hourly time series of wind dependent failure probabilities and historical outage durations of transmission lines are combined to illustrate the proposed method. The results show that the simultaneous unavailability of multiple transmission lines may be significantly larger than estimated using traditional reliability analysis.",
+   "abstract_source": "openalex",
+   "doi": "10.1109/ptc.2019.8810845",
+   "query": "correlated failure availability replication bound unavailability",
+   "title": "Transmission line unavailability due to correlated threat exposure",
+   "type": "proceedings-article",
+   "venue": "2019 IEEE Milan PowerTech",
+   "year": 2019
+  },
+  {
+   "abstract": "",
+   "doi": "10.1201/9781315169620-9",
+   "query": "correlated failure availability replication bound unavailability",
+   "title": "Continuous Availability and Replication",
+   "type": "book-chapter",
+   "venue": "Data Protection",
+   "year": 2017
+  },
+  {
+   "abstract": "",
+   "doi": "10.4324/9781315169620-10",
+   "query": "correlated failure availability replication bound unavailability",
+   "title": "Continuous Availability and Replication",
+   "type": "book-chapter",
+   "venue": "Data Protection",
+   "year": 2017
+  },
+  {
+   "abstract": "",
+   "doi": "10.1002/9781394210961.ch1",
+   "query": "cost of dependence assumption in system reliability prediction",
+   "title": "Conventional Electronic System Reliability Prediction",
+   "type": "other",
+   "venue": "Reliability Prediction for Microelectronics",
+   "year": 2024
+  },
+  {
+   "abstract": "",
+   "doi": "10.1016/0026-2714(77)90342-0",
+   "query": "cost of dependence assumption in system reliability prediction",
+   "title": "System performance and its dependence upon sub-system failure modes",
+   "type": "journal-article",
+   "venue": "Microelectronics Reliability",
+   "year": 1977
+  },
+  {
+   "abstract": "",
+   "doi": "10.1016/0026-2714(87)90376-3",
+   "query": "cost of dependence assumption in system reliability prediction",
+   "title": "The independence assumption for a series or parallel system when component lifetimes are exponential",
+   "type": "journal-article",
+   "venue": "Microelectronics Reliability",
+   "year": 1987
+  },
+  {
+   "abstract": "",
+   "doi": "10.1016/0026-2714(88)90060-1",
+   "query": "cost of dependence assumption in system reliability prediction",
+   "title": "On reliability of a large system with Markov dependence",
+   "type": "journal-article",
+   "venue": "Microelectronics Reliability",
+   "year": 1988
+  },
+  {
+   "abstract": "",
+   "doi": "10.1016/j.ress.2017.01.018",
+   "query": "cost of dependence assumption in system reliability prediction",
+   "title": "Incorporating assumption deviation risk in quantitative risk assessments: A semi-quantitative approach",
+   "type": "journal-article",
+   "venue": "Reliability Engineering &amp; System Safety",
+   "year": 2017
+  },
+  {
+   "abstract": "",
+   "doi": "10.1016/j.ress.2021.107560",
+   "query": "cost of dependence assumption in system reliability prediction",
+   "title": "Remaining useful life prediction and predictive maintenance strategies for multi-state manufacturing systems considering functional dependence",
+   "type": "journal-article",
+   "venue": "Reliability Engineering &amp; System Safety",
+   "year": 2021
+  },
+  {
+   "abstract": "Both the reliability-wise system structure and the multivariate component lifetime distributions are required for accurately predicting a complex system\u2019s reliability. Most of existing research work either assumes these components\u2019 lifetime distributions are statistically independent or they are subject to a well-defined multivariate joint distribution, such as a multivariate Gaussian distribution. However, oftentimes the independence assumption does not match engineering practice since components usually have interactions with each other due to common manufacturing defects and shared environmental conditions, etc. On the other hand, a multivariate joint Gaussian distribution may not be adequate, because it cannot describe distribution skewness or upper/lower tail dependency among multivariate lifetime data that are often observed in real data sets. As a result, the system reliability assessment may be biased.In this study, we present a data-centric multivariate distribution construction framework that is based on a sequence of copula functions. Under this framework, historical degradation data from different components within a system are utilized to derive the multivariate degradation model, and various types of dependency among these components are explicitly scrutinized and used for either component or system level performance prediction. Our contributions include that 1) we apply the pair copula construction (PCC) method on more than two degradation processes to explicitly model the association of these processes; 2) we connect the system structure and system failure prior information to the PCC structure to simplify the construction of multivariate distribution; and 3) we demonstrate the biasness in system reliability prediction if the dependencies existed in component failure processes are ignored. This study highlights the applicability and flexibility of the pair copula construction method for conducting multivariate reliability analysis for complex systems. A case study of degradation analysis of optical materials is used to demonstrate our proposed approach.",
+   "abstract_source": "openalex",
+   "doi": "10.1109/rams48097.2021.9605735",
+   "query": "cost of dependence assumption in system reliability prediction",
+   "title": "Dependence Modeling for Multivariate System Reliability Prediction",
+   "type": "proceedings-article",
+   "venue": "2021 Annual Reliability and Maintainability Symposium (RAMS)",
+   "year": 2021
+  },
+  {
+   "abstract": "In this paper, we consider two types of series-parallel systems with the following specifications: (a) subsystems having identical parallel components (b) subsystems having non-identical parallel components. Assume that s repairmen are available at each of the parallel subsystems. The time to failure and time to repair are assumed to be exponentially distributed. In this work, we introduce the repair dependence function that facilitates the s repairmen to provide service individually or together with respect to the number of failed components. The continuous time Markov model is used to study the effect of repair dependence function on the reliability and availability of the respective systems. The cost analysis and cost-benefit analysis based on mean time to failure and steady state availability are also presented. Finally, we illustrate our results through MATLAB programming by considering some examples.",
+   "abstract_source": "openalex",
+   "doi": "10.1504/ijrs.2016.076345",
+   "query": "cost of dependence assumption in system reliability prediction",
+   "title": "System reliability estimation and cost analysis of series-parallel systems in the presence of repair dependence function",
+   "type": "journal-article",
+   "venue": "International Journal of Reliability and Safety",
+   "year": 2016
+  },
+  {
+   "abstract": "",
+   "doi": "10.1016/0026-2714(72)90054-6",
+   "query": "dependent failures quantification reliability redundant systems",
+   "title": "Reliability of redundant systems with dependent failures",
+   "type": "journal-article",
+   "venue": "Microelectronics Reliability",
+   "year": 1972
+  },
+  {
+   "abstract": "",
+   "doi": "10.1016/0026-2714(74)90488-0",
+   "query": "dependent failures quantification reliability redundant systems",
+   "title": "Reliability of redundant systems with dependent failures",
+   "type": "journal-article",
+   "venue": "Microelectronics Reliability",
+   "year": 1974
+  },
+  {
+   "abstract": "",
+   "doi": "10.1016/0026-2714(81)90294-8",
+   "query": "dependent failures quantification reliability redundant systems",
+   "title": "Multistate device redundant systems with common-cause failures and one standby unit",
+   "type": "journal-article",
+   "venue": "Microelectronics Reliability",
+   "year": 1981
+  },
+  {
+   "abstract": "",
+   "doi": "10.1016/0026-2714(87)90796-7",
+   "query": "dependent failures quantification reliability redundant systems",
+   "title": "Analysis of a repairable 2-unit parallel redundant system with dependent failures",
+   "type": "journal-article",
+   "venue": "Microelectronics Reliability",
+   "year": 1987
+  },
+  {
+   "abstract": "",
+   "doi": "10.1016/0026-2714(90)90082-x",
+   "query": "dependent failures quantification reliability redundant systems",
+   "title": "Reliability modelling of redundant computer systems with common-cause failures",
+   "type": "journal-article",
+   "venue": "Microelectronics Reliability",
+   "year": 1990
+  },
+  {
+   "abstract": "",
+   "doi": "10.1016/0026-2714(91)90077-k",
+   "query": "dependent failures quantification reliability redundant systems",
+   "title": "Reliability analysis of redundant aircraft systems with possible latent failures",
+   "type": "journal-article",
+   "venue": "Microelectronics Reliability",
+   "year": 1991
+  },
+  {
+   "abstract": "",
+   "doi": "10.1016/0951-8320(93)90018-t",
+   "query": "dependent failures quantification reliability redundant systems",
+   "title": "Second moment reliability analysis of redundant systems with dependent failures",
+   "type": "journal-article",
+   "venue": "Reliability Engineering &amp; System Safety",
+   "year": 1993
+  },
+  {
+   "abstract": "The concept of Equivalent time is introduced to find the hazard rates of elements in a parallel redundant systems which is subject to dependent failures. True acceleration is defined as an adjunct to this concept.",
+   "abstract_source": "openalex",
+   "doi": "10.1109/tr.1974.5215278",
+   "query": "dependent failures quantification reliability redundant systems",
+   "title": "A Reliability Model for Dependent Failures in Parallel Redundant Systems",
+   "type": "journal-article",
+   "venue": "IEEE Transactions on Reliability",
+   "year": 1974
+  },
+  {
+   "abstract": "",
+   "doi": "10.1002/0470023554.ch2",
+   "query": "durability nines quoted reliability figure independence assumption",
+   "title": "The Conditional Independence Assumption",
+   "type": "other",
+   "venue": "Statistical Matching",
+   "year": 2006
+  },
+  {
+   "abstract": "",
+   "doi": "10.1002/jae.2431",
+   "query": "durability nines quoted reliability figure independence assumption",
+   "title": "A Test of the Conditional Independence Assumption in Sample Selection Models",
+   "type": "journal-article",
+   "venue": "Journal of Applied Econometrics",
+   "year": 2015
+  },
+  {
+   "abstract": "",
+   "doi": "10.1017/exp.2022.13.pr1",
+   "query": "durability nines quoted reliability figure independence assumption",
+   "title": "Review 1: Relaxation of the parameter independence assumption in the bootComb R package",
+   "type": "peer-review",
+   "venue": "",
+   "year": 2022
+  },
+  {
+   "abstract": "",
+   "doi": "10.1017/exp.2022.13.pr2",
+   "query": "durability nines quoted reliability figure independence assumption",
+   "title": "Review 2: Relaxation of the parameter independence assumption in the bootComb R package",
+   "type": "peer-review",
+   "venue": "",
+   "year": 2022
+  },
+  {
+   "abstract": "",
+   "doi": "10.1109/tr.1986.4335448",
+   "query": "durability nines quoted reliability figure independence assumption",
+   "title": "The Independence Assumption for a Series or Parallel System When Component Lifetimes Are Exponential",
+   "type": "journal-article",
+   "venue": "IEEE Transactions on Reliability",
+   "year": 1986
+  },
+  {
+   "abstract": "Quality-Adjusted Life Years (QALYs) estimate the utility derived from health states by taking account of life expectancy and quality of life. In applying QALYs to situations where health varies over time, it is usual to assume that we can add the utilities from constituent health states. This assumption of additive independence has been challenged by research suggesting that people's preferences for health states are affected by the sequence in which health states occur. This paper investigates two tests of additive independence as well as a test of the consistency of preferences over time. The main test of additive independence is based on a new method using stylised health profiles of deteriorating, improving or temporarily-improving health. The advantage of this new method is that the test relies only on a comparison of health states occurring in the same time period and therefore controls for the effects of time preference. The other test of additive independence determines whether people strictly prefer one type of health profile over another and collects qualitative data on the issues considered by people in these choices. In the main test of additive independence, only one of the two cases considered detected a statistical difference. In the other test of additive independence, the sample was split almost equally between those strictly preferring one or other of the choices. The qualitative data revealed contrasting viewpoints about the benefits derived from such choices which led to this split. The paper also found that preferences were consistent over time. The tests of additive independence were, therefore, unable to conclusively reject additive independence.\r\n\r\nKey words: utility measurement, additive independence, health profiles",
+   "doi": "10.2139/ssrn.252303",
+   "query": "durability nines quoted reliability figure independence assumption",
+   "title": "Testing the Additive Independence Assumption in the Qaly Model",
+   "type": "posted-content",
+   "venue": "",
+   "year": 2001
+  },
+  {
+   "abstract": "",
+   "doi": "10.4050/jahs.48.270",
+   "query": "durability nines quoted reliability figure independence assumption",
+   "title": "From Six-Nines Expectation to Three-Nines Reality: Calculating Reliability Correctly",
+   "type": "journal-article",
+   "venue": "Journal of the American Helicopter Society",
+   "year": 2003
+  },
+  {
+   "abstract": "",
+   "doi": "10.1007/978-1-4613-9052-7_10",
+   "query": "effect of assuming independence on predicted unavailability redundant system",
+   "title": "Bayesian Inference in an Expert System without Assuming Independence",
+   "type": "book-chapter",
+   "venue": "Advances in Artificial Intelligence",
+   "year": 1990
+  },
+  {
+   "abstract": "",
+   "doi": "10.1016/0026-2714(69)90009-2",
+   "query": "effect of assuming independence on predicted unavailability redundant system",
+   "title": "Fault indicators and the unavailability of redundant circuits",
+   "type": "journal-article",
+   "venue": "Microelectronics Reliability",
+   "year": 1969
+  },
+  {
+   "abstract": "",
+   "doi": "10.1016/0143-8174(82)90008-7",
+   "query": "effect of assuming independence on predicted unavailability redundant system",
+   "title": "Unavailability of redundant diesel generators in nuclear power plants",
+   "type": "journal-article",
+   "venue": "Reliability Engineering",
+   "year": 1982
+  },
+  {
+   "abstract": "",
+   "doi": "10.1016/0143-8174(85)90041-1",
+   "query": "effect of assuming independence on predicted unavailability redundant system",
+   "title": "Analytical and numerical unavailability analysis of redundant systems with dependent human error",
+   "type": "journal-article",
+   "venue": "Reliability Engineering",
+   "year": 1985
+  },
+  {
+   "abstract": "",
+   "doi": "10.1016/j.pnucene.2020.103415",
+   "query": "effect of assuming independence on predicted unavailability redundant system",
+   "title": "Multi-state unavailability analysis of safety system redundant components with aging effect under surveillance testing",
+   "type": "journal-article",
+   "venue": "Progress in Nuclear Energy",
+   "year": 2020
+  },
+  {
+   "abstract": "",
+   "doi": "10.1016/j.ress.2017.11.011",
+   "query": "effect of assuming independence on predicted unavailability redundant system",
+   "title": "Unavailability assessment of redundant safety instrumented systems subject to process demand",
+   "type": "journal-article",
+   "venue": "Reliability Engineering &amp; System Safety",
+   "year": 2018
+  },
+  {
+   "abstract": "In this paper we investigate steady state reliability parameters of an  F  :  r \u2010out\u2010of\u2010 N  redundant repairable system with  m (1 \u2264  m  \u2264  r  \u2212 1) repair channels in light \ntraffic conditions. Such a system can also be treated as a closed queueing network of a simple kind. It includes two nodes, with infinite number of channels \nand  m  channels, respectively. Each of the  N  customers pass cyclically from one \nnode to the other; the service time distributions are of a general form for both the \nnodes.  It is an  N \u2010component system with a general distribution  A ( t ) of free\u2010of\u2010failure periods of the components is considered. Failed components are repaired by \nan  m \u2010channel queueing system with a general distribution  B ( t ) of repair times. \nThe system is assumed to be failed if and only if the number of failed \ncomponents is at least  r . (Only the rather difficult case  r  \u2265  m  + 1 is considered.)  Let  \u03bc  be the intensity of the stationary point process of the occurrences of \n(partial) busy periods within which systems failures happen at least once, and let \n Q  be the steady\u2010state unavailability of the system.  Two\u2010sided bounds are established for  Q  and  \u03bc  based on the behavior of the renewal rate of an auxiliary renewal process. The bounds are used for deriving \nsome asymptotical insensitivity properties in light traffic conditions.",
+   "doi": "10.1155/s1048953396000135",
+   "query": "effect of assuming independence on predicted unavailability redundant system",
+   "title": "A non\u2010regenerative model of a redundant repairable system: bounds for the unavailability and asymptotical insensitivity to the lifetime distribution",
+   "type": "journal-article",
+   "venue": "International Journal of Stochastic Analysis",
+   "year": 1996
+  },
+  {
+   "abstract": "",
+   "doi": "10.2172/5622009",
+   "query": "effect of assuming independence on predicted unavailability redundant system",
+   "title": "Unavailability modeling and analysis of redundant safety systems",
+   "type": "report",
+   "venue": "",
+   "year": 1979
+  },
+  {
+   "abstract": "",
+   "doi": "10.1007/978-3-642-83721-0_12",
+   "query": "sensitivity of availability to common cause failures beta factor replication",
+   "title": "Common-Cause Failures \u2014 Evidence from Sellafield",
+   "type": "book-chapter",
+   "venue": "Reliability Data Collection and Use in Risk and Availability Assessment",
+   "year": 1989
+  },
+  {
+   "abstract": "",
+   "doi": "10.1016/0026-2714(81)90291-2",
+   "query": "sensitivity of availability to common cause failures beta factor replication",
+   "title": "An availability calculation for k-out-of-N redundant system with common-cause failures and replacement",
+   "type": "journal-article",
+   "venue": "Microelectronics Reliability",
+   "year": 1981
+  },
+  {
+   "abstract": "",
+   "doi": "10.1016/0026-2714(91)90211-o",
+   "query": "sensitivity of availability to common cause failures beta factor replication",
+   "title": "Availability and frequency of failures of a system in the presence of chance common-cause shock failures",
+   "type": "journal-article",
+   "venue": "Microelectronics Reliability",
+   "year": 1991
+  },
+  {
+   "abstract": "",
+   "doi": "10.1016/0026-2714(92)90324-e",
+   "query": "sensitivity of availability to common cause failures beta factor replication",
+   "title": "Availability of a parallel system with preventive maintenance and common-cause failures",
+   "type": "journal-article",
+   "venue": "Microelectronics Reliability",
+   "year": 1992
+  },
+  {
+   "abstract": "",
+   "doi": "10.1016/0026-2714(93)90134-k",
+   "query": "sensitivity of availability to common cause failures beta factor replication",
+   "title": "Reliability and availability analysis of a system with warm standby and common cause failures",
+   "type": "journal-article",
+   "venue": "Microelectronics Reliability",
+   "year": 1993
+  },
+  {
+   "abstract": "",
+   "doi": "10.1016/0143-8174(84)90058-1",
+   "query": "sensitivity of availability to common cause failures beta factor replication",
+   "title": "A comparison of methods for calculating system unavailability due to common cause failures: The beta factor and multiple dependent failure fraction methods",
+   "type": "journal-article",
+   "venue": "Reliability Engineering",
+   "year": 1984
+  },
+  {
+   "abstract": "",
+   "doi": "10.1016/s0026-2714(82)80181-9",
+   "query": "sensitivity of availability to common cause failures beta factor replication",
+   "title": "Availability of a complex system having shelf-life of the components and common-cause failures",
+   "type": "journal-article",
+   "venue": "Microelectronics Reliability",
+   "year": 1982
+  },
+  {
+   "abstract": "Nuclear accidents and incidents such as Three Mile Island (TMI-2) accident (1979), Chernobyl disaster (1986) and the recent Fukushima nuclear disaster (2011) have caused people to be suspicious of the safety of nuclear energy, and have reduced the level of trust among public. Common cause failure (CCF) has been a major element of such accidents in terrestrial nuclear power reactors because of high redundancy built into the systems and susceptibility of these redundant systems to CCF mechanisms. For this purpose, ad hoc approaches used to be taken to address vulnerabilities to CCF by operating staff of the plants. A CCF event is a result of simultaneous failure of two or more individual components. Such an event can significantly affect the availability of safety systems and has long been recognized as an important issue in the probabilistic safety assessment (PSA). So a complicated and unresolved problem in the subject of safety and reliability is to model CCF in PSA. To overcome this problem the present research highlights a mathematical model to estimate system unavailability in nuclear power plants (NPPs) as well as in other industries. This mathematical model is based on Beta Factor parametric model. The motivation for development of this model lays in the fact that one of the most widespread software such as for fault tree (FT) and event tree (ET) modeling as part of the PSA does not comprise the option for simultaneous assignment of single failure event to multiple CCF groups. A significant finding from such modeling is that, in contrast to common expectations, a too early nuclear phase-out will not serve the deployment of renewable energy sources and rational use of energy. The proposed method can be seen as an advantage of the explicit modeling of CCF.",
+   "abstract_source": "openalex",
+   "doi": "10.1109/icesp.2014.7347004",
+   "query": "sensitivity of availability to common cause failures beta factor replication",
+   "title": "Modeling of common cause failures (CCFs) by using beta factor parametric model",
+   "type": "proceedings-article",
+   "venue": "2014 International Conference on Energy Systems and Policies (ICESP)",
+   "year": 2014
+  }
+ ],
+ "screen": "title must name a dependence AND a reliability object; correction-type records refused",
+ "source": "Crossref /works?query.bibliographic (title+abstract index), rows=8 per query",
+ "verdicts": {},
+ "window": "1960-01-01..2026-11-21"
+}

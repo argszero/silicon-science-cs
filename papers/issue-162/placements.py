@@ -17,6 +17,8 @@ report names the count and the reason each group's surplus is not cited.
 """
 from __future__ import annotations
 
+import re
+
 CLAIMS = [
     # ------------------------------------------------------------------------------------------
     # §2 — the object: a joint probability given its marginals
@@ -94,7 +96,7 @@ CLAIMS = [
         section="3",
         claim=("The copyset line answers the same worry from the design side: assume the dependence, "
                "constrain which replicas may fail together, and compute the resulting loss rate."),
-        keys=["huo2021optimal", "li2022random", "mills2015replica", "mills2016erratum",
+        keys=["huo2021optimal", "li2022random", "mills2015replica",
               "mills2020algorithms", "bansal2011dynamic", "benoit2012optimal", "amjad2010application",
               "chang2012optimal", "jingsun2010new", "lin2008list", "chaubey2015replicated"],
     ),
@@ -227,6 +229,44 @@ PRUNED = {
     "youyou2026are": "replication failures in public knowledge — 'replication' is the other sense",
     "krhmer2026update": "availability of replication materials — 'replication' is the other sense",
 }
+
+# ------------------------------------------------------------------------------------------
+# correction-type records: a notice about a work is not the work
+# ------------------------------------------------------------------------------------------
+#
+# `[135]` once bound an erratum where the sentence needed the paper. `harvest_refs.py` refuses by TYPE,
+# and that screen cannot catch this class: Crossref types "Erratum to: ..." as the same `book-chapter`
+# or `journal-article` its parent carries, so the whitelist admits it. The class is closed HERE, on the
+# title -- and the pattern is the "correction OF a work" shape, not the word. The corpus holds
+# `wang2025analysis`, "Analysis and Software Development of System Failure Probability Correction
+# Considering Common Cause Failures", which is a paper ABOUT correcting a failure probability and is
+# on-topic; a bare word match would have refused it. `LOOSE_CORRECTION` is kept so the report can print
+# what the strict pattern spared rather than asserting that it spared nothing.
+CORRECTION_TYPE = re.compile(
+    r"^\s*(erratum|corrigendum|correction|retraction|retracted|addendum)\b"
+    r"|\b(erratum|corrigendum|retraction|addendum)\s+to\b"
+    r"|\bcorrection\s+to\b", re.I)
+LOOSE_CORRECTION = re.compile(
+    r"\b(erratum|corrigendum|correction|retraction|retracted|addendum)\b", re.I)
+
+
+def correction_records(records):
+    """Records that are a correction OF another work, decided by title shape."""
+    return [r for r in records if CORRECTION_TYPE.search(r.get("title") or "")]
+
+
+def correction_violations(records, placed):
+    """Placed keys that are corrections of another work. Empty is the only clean answer."""
+    bad = set(r["key"] for r in correction_records(records))
+    return sorted(k for k in placed if k in bad)
+
+
+def loose_only(records):
+    """Records a bare-word screen would have refused and the strict pattern spares: the near-misses."""
+    strict = set(r["key"] for r in correction_records(records))
+    return [r for r in records if LOOSE_CORRECTION.search(r.get("title") or "")
+            and r["key"] not in strict]
+
 
 FLOOR = 100
 

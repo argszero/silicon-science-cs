@@ -33,7 +33,11 @@ import sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
-from placements import CLAIMS, PRUNED, FLOOR, placed_keys  # noqa: E402
+from placements import (CLAIMS, PRUNED, FLOOR, placed_keys, correction_records,  # noqa: E402
+                        correction_violations, loose_only)
+from price_search import (QUERIES, VERDICTS, WINDOW,  # noqa: E402
+                          CORPUS_VERDICTS, screen as price_screen,
+                          tally as price_tally)
 
 REFS = os.path.join(HERE, "refs", "references.json")
 MS = os.path.join(HERE, "manuscript.src.md")   # authored; manuscript.md is rendered from it
@@ -55,7 +59,7 @@ def render_grid():
         return None
     d = json.load(open(FINDINGS, encoding="utf-8"))
     head = ("| per-device p | r | quoted | worst identified | nines quoted | nines at worst | span "
-            "(decades) | set reaches total loss |")
+            "(decades) | zero end in set (loss can be ruled out) |")
     rule = "|---|---|---|---|---|---|---|---|"
     rows = [head, rule]
     for c in d["grid"]:
@@ -130,7 +134,37 @@ def write_report(path, corpus, nums):
     out.append("| records verified but not cited | %d |" % (len(recs) - len(nums)))
     out.append("| — of those, carrying a named reason in `placements.py` | %d |"
                % len([r for r in recs if r["key"] not in nums and r["key"] in PRUNED]))
+    surplus = [r for r in recs if r["key"] not in nums and r["key"] not in PRUNED]
+    out.append("| — of those, on-topic surplus: no sentence in this paper needs it | %d |"
+               % len(surplus))
     out.append("")
+    out.append("## What the uncited records are\n")
+    out.append("The uncited records are not a rejected set. Each one passed its query's term screen "
+               "and the harvest's type whitelist, and each was verified against its DOI record; they "
+               "are the RECALL the thirty declared queries bought, and the class each one falls into "
+               "is stated here so that the number above is one a reader can act on.\n")
+    out.append("| class | n | what it is |")
+    out.append("|---|---|---|")
+    out.append("| cited in the manuscript, through a claim that owns it | %d | supports a named sentence |"
+               % len(nums))
+    out.append("| excluded by name, with a reason | %d | names an adjacent construct; the reason is in "
+               "`placements.py` and repeated below |"
+               % len([r for r in recs if r["key"] not in nums and r["key"] in PRUNED]))
+    out.append("| on-topic surplus | %d | on the subject, and no sentence in this paper needs it |"
+               % len(surplus))
+    out.append("")
+    if surplus:
+        by_group = {}
+        for r in surplus:
+            by_group[r.get("group") or "(none)"] = by_group.get(r.get("group") or "(none)", 0) + 1
+        out.append("The surplus is distributed across the declared queries rather than produced by "
+                   "one bad one -- if it were concentrated, the fix would be a narrower query "
+                   "instead of a longer exclusion list:\n")
+        out.append("| query group | surplus records |")
+        out.append("|---|---|")
+        for g in sorted(by_group):
+            out.append("| `%s` | %d |" % (g, by_group[g]))
+        out.append("")
     out.append("A verified record is not a citation. The floor is met in records the manuscript "
                "actually cites, each through a claim that owns it (`{{c:<id>}}`), so an entry cannot "
                "be padding: `gate_citations.py` fails if a claim is placed and never cited, and fails "
@@ -167,6 +201,81 @@ def write_report(path, corpus, nums):
     for k in sorted(PRUNED):
         out.append("| `%s` | %s |" % (k, PRUNED[k]))
     out.append("")
+    corr = correction_records(recs)
+    near = loose_only(recs)
+    out.append("## Correction-type records: the class, and what the screen spares\n")
+    out.append("A correction-type record is a notice about a work, not the work. `harvest_refs.py` "
+               "refuses by TYPE and cannot catch the class, because Crossref types an \"Erratum to: "
+               "...\" as the same type its parent carries; the class is closed on the title in "
+               "`placements.py` instead (`CORRECTION_TYPE`), and no placed key may be a member. The "
+               "pattern matches the \"correction OF a work\" shape rather than the word, because a "
+               "paper ABOUT correcting a failure probability is on-topic and a word match would "
+               "refuse it.\n")
+    out.append("| key | year | refused by | title |")
+    out.append("|---|---|---|---|")
+    for r in corr:
+        out.append("| `%s` | %s | the strict pattern | %s |"
+                   % (r["key"], r.get("year"), (r.get("title") or "").replace("|", "/")))
+    for r in near:
+        out.append("| `%s` | %s | nothing -- spared, and named | %s |"
+                   % (r["key"], r.get("year"), (r.get("title") or "").replace("|", "/")))
+    out.append("")
+    ps = None
+    pspath = os.path.join(HERE, "price_search.json")
+    if os.path.exists(pspath):
+        ps = json.load(open(pspath, encoding="utf-8"))
+    if ps is not None:
+        t = price_tally(ps)
+        out.append("## The price search, which is what §8 answers with\n")
+        out.append("Section 8 used to carry a hedge. The hedge is now a search with a record behind "
+                   "it (`price_search.py`, `price_search.json`), and this is that record in the form "
+                   "a reader can check.\n")
+        out.append("| field | value |")
+        out.append("|---|---|")
+        out.append("| window | `%s` |" % ps.get("window"))
+        out.append("| source | %s |" % ps.get("source"))
+        out.append("| queries declared / run | %d / %d |" % (t["queries"], t["ran"]))
+        out.append("| records returned | %d |" % t["records"])
+        out.append("| refused by the title screen | %d |" % t["refused"])
+        out.append("| records read, each with a verdict | %d |" % t["read"])
+        out.append("| read at abstract level / title only | %d / %d |" % (t["abstract"], t["title"]))
+        out.append("| **statements of the price in the quote's own unit** | **%d** |" % t["price"])
+        out.append("| stating the direction, with no magnitude | %d |" % t["understatement"])
+        out.append("| parameterising the dependence and computing a figure under it | %d |"
+                   % t["model"])
+        out.append("")
+        out.append("Every query, with the number of records it returned:\n")
+        out.append("| group | query | returned |")
+        out.append("|---|---|---|")
+        for group, q in QUERIES:
+            got = ps.get("queries", {}).get(q, {})
+            out.append("| `%s` | %s | %s |" % (group, q.replace("|", "/"),
+                                               got.get("returned", "NOT RUN")))
+        out.append("")
+        out.append("Every record the screen let through, with the verdict on it (categories: `price`, "
+                   "`understatement`, `model`, `bounds`, `design`, `other`; `read at` is how much of "
+                   "the record was available to read):\n")
+        out.append("| DOI | year | read at | verdict | what it is |")
+        out.append("|---|---|---|---|---|")
+        for r in ps.get("records", []):
+            ok, _why = price_screen(r)
+            if not ok:
+                continue
+            v = VERDICTS.get(r["doi"])
+            if not v:
+                out.append("| %s | %s | - | **NO VERDICT** | %s |"
+                           % (r["doi"], r.get("year"), (r.get("title") or "").replace("|", "/")))
+                continue
+            out.append("| %s | %s | %s | `%s` | %s |"
+                       % (r["doi"], r.get("year"), v[1], v[0], v[2].replace("|", "/")))
+        out.append("")
+        out.append("The corpus this paper harvested was screened the same way, and it is reported "
+                   "separately because it is a weaker instrument: it stores titles and venues, not "
+                   "abstracts. Its %d correction-type titles and its %d title(s) whose words suggest a "
+                   "pricing statement are named above; the suggested one is a homonym -- %s.\n"
+                   % (len(corr),
+                      sum(1 for r in recs if r["key"] in CORPUS_VERDICTS),
+                      "; ".join("%s: %s" % (k, v[1]) for k, v in sorted(CORPUS_VERDICTS.items()))))
     noauthor = [r for r in recs if not (r.get("first_family") or "").strip()]
     out.append("## Entries whose record carries no author\n")
     out.append("%d of the %d cited records carry no author field on Crossref, and their entries say so "
@@ -227,6 +336,16 @@ def artefact_numbers():
                       "rho_one_decade"):
             add(c.get(field))
         add(c["r"])
+    # Section 8 quotes the price search's own counts. They are held here for the same reason the
+    # grid's numbers are: a count typed into prose has to be a count a program prints, and the print
+    # that produces these is `price_search.tally`, not a copy of it.
+    pspath = os.path.join(HERE, "price_search.json")
+    if os.path.exists(pspath):
+        t = price_tally(json.load(open(pspath, encoding="utf-8")))
+        for k in ("queries", "ran", "records", "refused", "read", "abstract", "title", "price",
+                  "understatement", "model", "bounds", "design", "other", "refused_no_dependence",
+                  "refused_no_object", "refused_correction"):
+            add(t[k])
     return held
 
 
@@ -245,6 +364,10 @@ def check_numbers(text):
     body = re.sub(r"\{\{c:[a-z0-9-]+\}\}", " ", body)
     body = re.sub(r"\{\{grid\}\}", " ", body)
     body = re.sub(r"#\d+", " ", body)          # issue numbers are identifiers, not quantities
+    # an ISO date stamp is an identifier too: `1960-01-01..2026-11-21` is a window, and its month and
+    # day fields are not quantities a reader will take as measurements. Declared rather than exempted
+    # silently, and narrowed to the ISO shape so a bare `01` in prose is still caught.
+    body = re.sub(r"\b\d{4}-\d\d-\d\d\b", " ", body)
     # structural numbers, not quantities: headings, decades-of-year, and the arithmetic of the paper's
     # own indices (r=1..5, section numbers) are declared here rather than silently exempted
     declared = set(["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "0"])
@@ -352,6 +475,15 @@ def main(argv=None):
     for k in unplaced:
         if k in PRUNED:
             continue
+    bad_corr = correction_violations(corpus["records"], placed)
+    if bad_corr:
+        fails.append("C1b placed key(s) are corrections OF another work, not the work: %s"
+                     % ", ".join(bad_corr))
+    corr = correction_records(corpus["records"])
+    near = loose_only(corpus["records"])
+    notes.append("correction-type records in the corpus: %d (%s); spared by the strict pattern: %d (%s)"
+                 % (len(corr), ", ".join(r["key"] for r in corr) or "none",
+                    len(near), ", ".join(r["key"] for r in near) or "none"))
     stray = [k for k in PRUNED if k not in corpus["by_key"]]
     if stray:
         fails.append("C1 PRUNED names %d key(s) absent from the corpus: %s"

@@ -283,6 +283,6 @@
   }
  ],
  "instrument": "nines.py",
- "note": "contains_zero means the identified set of P(all replicas fail) includes 0: a total loss is not excluded by the marginals, so that end of the set is unbounded in nines, which is why set_lo_nines is null there and not a large number",
+ "note": "contains_zero means the identified set of P(all replicas fail) includes 0, the ZERO END: the marginals permit a coupling under which the store never loses all its replicas, so a total loss is not forced. That end is unbounded in nines, which is why set_lo_nines is null there and not a large number. The other end, set_hi = p, is the CATASTROPHIC END: all replicas fail as often as a single device does, so nothing replication buys survives there",
  "unit": "nines = -log10 of a probability; span_nines = quoted_nines - worst_identified_nines, a magnitude"
 }

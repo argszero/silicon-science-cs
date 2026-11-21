@@ -373,9 +373,12 @@ def emit_json(rows, path):
         "unit": ("nines = -log10 of a probability; span_nines = quoted_nines - "
                  "worst_identified_nines, a magnitude"),
         "grid": [dict((k, conv(v)) for k, v in row.items()) for row in rows],
-        "note": ("contains_zero means the identified set of P(all replicas fail) includes 0: a "
-                 "total loss is not excluded by the marginals, so that end of the set is unbounded "
-                 "in nines, which is why set_lo_nines is null there and not a large number"),
+        "note": ("contains_zero means the identified set of P(all replicas fail) includes 0, the "
+                 "ZERO END: the marginals permit a coupling under which the store never loses all "
+                 "its replicas, so a total loss is not forced. That end is unbounded in nines, "
+                 "which is why set_lo_nines is null there and not a large number. The other end, "
+                 "set_hi = p, is the CATASTROPHIC END: all replicas fail as often as a single "
+                 "device does, so nothing replication buys survives there"),
         "dependence": ("rho is a DECLARED parameter and is never fitted in this package: no "
                        "dependence is observed anywhere, so the inverse rho = (target - p**r)/(p - "
                        "p**r) answers a conditional ('what would have to be stated'), never an "
@@ -496,10 +499,10 @@ def p_family_minimum(p, r, mutant=False):
         all(mixture(p, r, Fraction(k, 32)) >= floor for k in range(33))
 
 
-def p_total_loss_condition(p, r, mutant=False):
-    """Is total loss excluded exactly when `p > (r-1)/r`? Mutant: the condition inverted.
+def p_zero_end_reached(p, r, mutant=False):
+    """Is the zero end reached exactly when `p <= (r-1)/r`? Mutant: the condition inverted.
 
-    The grid turns this into a count ("16 of 20 cells have a set that reaches total loss"). A count
+    The grid turns this into a count ("16 of 20 cells have a set that contains zero"). A count
     of cells is a property of the grid; the condition is a property of every quote, so the instrument
     asserts the condition and lets the grid be an illustration. `p` is a Fraction here so the
     boundary `p == (r-1)/r` is decided exactly -- a float would put the boundary case on whichever
@@ -707,8 +710,8 @@ def selftest(budget):
     h.plant("the wrong span law (r*k instead of (r-1)*k) is refused",
             p_span_law("1e-4", 5, mutant=True) is False)
 
-    # ---- C9 the quote is the rare end, and the set reaches total loss ----
-    print("\nC9 the quoted figure is the rare endpoint, and the set reaches total loss")
+    # ---- C9 the quote is the rare end, and the set reaches the zero end ----
+    print("\nC9 the quoted figure is the rare endpoint, and the set reaches the zero end")
     for p_text in ("1e-3", "1e-4"):
         for r in (2, 3, 5):
             row = reading(p_text, r)
@@ -716,26 +719,26 @@ def selftest(budget):
             h.control("p=%s r=%d: quoted nines exceed the worst identified nines" % (p_text, r),
                       row["quoted_nines"] > row["set_hi_nines"],
                       "quoted %.1f vs worst %.1f" % (row["quoted_nines"], row["set_hi_nines"]))
-            h.control("p=%s r=%d: a total loss is not excluded" % (p_text, r),
+            h.control("p=%s r=%d: the zero end is reached, so a total loss is not forced" % (p_text, r),
                       row["contains_zero"] == (lo == 0),
                       "contains_zero=%r" % row["contains_zero"])
 
     # ---- C9b the condition behind the count, boundaries included ----
-    print("\nC9b total loss is excluded exactly when p > (r-1)/r, boundaries decided exactly")
+    print("\nC9b the zero end is reached exactly when p <= (r-1)/r, boundaries decided exactly")
     cases = [(Fraction(1, 2), 2), (Fraction(1, 2) + Fraction(1, 10 ** 9), 2),
              (Fraction(2, 3), 3), (Fraction(2, 3) + Fraction(1, 10 ** 9), 3),
              (Fraction(1, 10 ** 4), 2), (Fraction(1, 10 ** 4), 5),
              (Fraction(1), 4), (Fraction(0), 5)]
     for (p_frac, r) in cases:
-        h.control("p=%s r=%d: total loss excluded iff p > (r-1)/r" % (p_frac, r),
-                  p_total_loss_condition(p_frac, r),
+        h.control("p=%s r=%d: zero end reached iff p <= (r-1)/r" % (p_frac, r),
+                  p_zero_end_reached(p_frac, r),
                   "set lower end = %s" % (frechet_interval(p_frac, r)[0],))
-    h.control("the boundary case p == (r-1)/r is not excluded (the set closes at zero, not above)",
+    h.control("the boundary case p == (r-1)/r reaches the zero end (the set closes at zero, not above)",
               frechet_interval(Fraction(1, 2), 2)[0] == 0
               and frechet_interval(Fraction(2, 3), 3)[0] == 0)
     h.plant("an inverted condition is refused at the same points",
-            mutant_refused(p_total_loss_condition(Fraction(1, 10 ** 4), 3, mutant=True))
-            if False else (p_total_loss_condition(Fraction(1, 10 ** 4), 3, mutant=True) is False))
+            mutant_refused(p_zero_end_reached(Fraction(1, 10 ** 4), 3, mutant=True))
+            if False else (p_zero_end_reached(Fraction(1, 10 ** 4), 3, mutant=True) is False))
 
     # ---- C9c the family covers half the interval, and that half is the harmful one ----
     print("\nC9c the stated-dependence family covers [p**r, p] and cannot reach the lower end")
@@ -827,7 +830,7 @@ def print_grid():
                  x["quoted_nines"], x["set_hi_nines"], x["span_nines"],
                  "yes" if x["contains_zero"] else "no"))
     print("")
-    print("  cells whose identified set reaches total loss: %d / %d"
+    print("  cells whose identified set contains zero, i.e. reaches the zero end: %d / %d"
           % (sum(1 for x in rows if x["contains_zero"]), len(rows)))
     print("  cells whose set is a single point: %d (these are the r=1 boundary, and they are not "
           "readings)" % sum(1 for x in rows if x["r"] == 1))

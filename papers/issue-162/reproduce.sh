@@ -59,6 +59,12 @@ step "artefacts match their sealed digests (no git needed)" ./seal_artefacts.py 
 # the sentence declares that nothing imports.
 step "declared module list matches the modules the code imports" ./check_declared_env.py
 
+# Section 8 answers a question about the literature. A hedge there was a requirement with no
+# collector, so the collector is a step: it re-applies the declared screen to the stored search and
+# refuses the whole step if a query never ran or a record that passed the screen carries no verdict.
+# The harvest itself is a maintenance action (network), like `harvest_refs.py --harvest`.
+step "the section-8 price search, re-derived offline"  ./price_search.py
+
 printf '\nSTEPS RUN: %d   NOT RUN: %d\n' "$STEPS" "$NOTRUN"
 if [ "$FAILED" -eq 0 ] && [ "$NOTRUN" -gt 0 ]; then
     printf 'REPRODUCE: %d STEP(S) NOT RUN -- they measured nothing, so this is neither a pass nor a failure\n' "$NOTRUN"

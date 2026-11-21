@@ -28,9 +28,32 @@
 | records verified against their DOI record | 499 |
 | verified in this run / carried from an earlier run | 499 / 0 |
 | records not verified (excluded, never cited) | 0 |
-| **distinct records cited in the manuscript** | **206** (floor 100) |
-| records verified but not cited | 293 |
+| **distinct records cited in the manuscript** | **205** (floor 100) |
+| records verified but not cited | 294 |
 | — of those, carrying a named reason in `placements.py` | 29 |
+| — of those, on-topic surplus: no sentence in this paper needs it | 265 |
+
+## What the uncited records are
+
+The uncited records are not a rejected set. Each one passed its query's term screen and the harvest's type whitelist, and each was verified against its DOI record; they are the RECALL the thirty declared queries bought, and the class each one falls into is stated here so that the number above is one a reader can act on.
+
+| class | n | what it is |
+|---|---|---|
+| cited in the manuscript, through a claim that owns it | 205 | supports a named sentence |
+| excluded by name, with a reason | 29 | names an adjacent construct; the reason is in `placements.py` and repeated below |
+| on-topic surplus | 265 | on the subject, and no sentence in this paper needs it |
+
+The surplus is distributed across the declared queries rather than produced by one bad one -- if it were concentrated, the fix would be a narrower query instead of a longer exclusion list:
+
+| query group | surplus records |
+|---|---|
+| `bounds` | 38 |
+| `copula` | 29 |
+| `correlated-systems` | 79 |
+| `replication` | 62 |
+| `reporting` | 26 |
+| `sla` | 20 |
+| `tail` | 11 |
 
 A verified record is not a citation. The floor is met in records the manuscript actually cites, each through a claim that owns it (`{{c:<id>}}`), so an entry cannot be padding: `gate_citations.py` fails if a claim is placed and never cited, and fails if a citation exists with no claim behind it.
 
@@ -53,7 +76,7 @@ A verified record is not a citation. The floor is met in records the manuscript 
 | `bounds-stated-not-attained` | §2 | 17 | The literature states these bounds for dependent risks and optimises under them; what it does not do is take the quote's own figure and ask which end of the set it is. |
 | `correlation-measured` | §3 | 18 | Correlated failure is a measured property of production systems, in disks, in racks, in networks and in power, not a hypothetical. |
 | `redundancy-defeated` | §3 | 27 | Adding replicas under dependence is not a monotone improvement, and the failure-mode literature has said so for decades: common-cause models are the standard repair. |
-| `placement-under-correlation` | §3 | 12 | The copyset line answers the same worry from the design side: assume the dependence, constrain which replicas may fail together, and compute the resulting loss rate. |
+| `placement-under-correlation` | §3 | 11 | The copyset line answers the same worry from the design side: assume the dependence, constrain which replicas may fail together, and compute the resulting loss rate. |
 | `quorum-availability` | §3 | 12 | Quorum systems make the same trade in the availability direction, and their probabilistic variants exist precisely because a fixed quorum's availability is a function of which nodes fail together. |
 | `durability-models` | §4 | 16 | A durability figure is produced by an MtTDL-style model whose inputs are per-device rates and whose arithmetic is the independence product the quote repeats. |
 | `erasure-arithmetic` | §4 | 13 | Erasure coding changes the arithmetic and the engineering of that model — it does not change what the marginals identify. |
@@ -98,9 +121,100 @@ These cleared the screen and are real records; they are not cited because they n
 | `youyou2026are` | replication failures in public knowledge — 'replication' is the other sense |
 | `yusuf2021internationa` | financial reporting standards — adjacent construct |
 
+## Correction-type records: the class, and what the screen spares
+
+A correction-type record is a notice about a work, not the work. `harvest_refs.py` refuses by TYPE and cannot catch the class, because Crossref types an "Erratum to: ..." as the same type its parent carries; the class is closed on the title in `placements.py` instead (`CORRECTION_TYPE`), and no placed key may be a member. The pattern matches the "correction OF a work" shape rather than the word, because a paper ABOUT correcting a failure probability is on-topic and a word match would refuse it.
+
+| key | year | refused by | title |
+|---|---|---|---|
+| `auej2025erratum` | 2025 | the strict pattern | ERRATUM TO: NUMERICAL ANALYSIS OF ENHANCING LATENT HEAT STORAGE USING FINS AND CONDUCTIVE BARRIERS |
+| `mills2016erratum` | 2016 | the strict pattern | Erratum to: On Replica Placement in High-Availability Storage Under Correlated Failure |
+| `wang2025analysis` | 2025 | nothing -- spared, and named | Analysis and Software Development of System Failure Probability Correction Considering Common Cause Failure |
+
+## The price search, which is what §8 answers with
+
+Section 8 used to carry a hedge. The hedge is now a search with a record behind it (`price_search.py`, `price_search.json`), and this is that record in the form a reader can check.
+
+| field | value |
+|---|---|
+| window | `1960-01-01..2026-11-21` |
+| source | Crossref /works?query.bibliographic (title+abstract index), rows=8 per query |
+| queries declared / run | 10 / 10 |
+| records returned | 76 |
+| refused by the title screen | 34 |
+| records read, each with a verdict | 42 |
+| read at abstract level / title only | 12 / 30 |
+| **statements of the price in the quote's own unit** | **0** |
+| stating the direction, with no magnitude | 2 |
+| parameterising the dependence and computing a figure under it | 31 |
+
+Every query, with the number of records it returned:
+
+| group | query | returned |
+|---|---|---|
+| `price` | sensitivity of availability to common cause failures beta factor replication | 8 |
+| `price` | cost of dependence assumption in system reliability prediction | 8 |
+| `price` | effect of assuming independence on predicted unavailability redundant system | 8 |
+| `bounds` | Fréchet bounds availability reliability partially specified marginals | 8 |
+| `bounds` | correlated failure availability replication bound unavailability | 8 |
+| `bounds` | dependent failures quantification reliability redundant systems | 8 |
+| `bounds` | copyset correlated failure replica placement availability | 8 |
+| `beta` | beta factor parametric model common cause failure unavailability redundant group | 8 |
+| `beta` | common cause failure probability estimate alpha beta factor multiple unit | 8 |
+| `nines` | durability nines quoted reliability figure independence assumption | 8 |
+
+Every record the screen let through, with the verdict on it (categories: `price`, `understatement`, `model`, `bounds`, `design`, `other`; `read at` is how much of the record was available to read):
+
+| DOI | year | read at | verdict | what it is |
+|---|---|---|---|---|
+| 10.1007/978-94-011-3466-8_9 | 1991 | title | `bounds` | the Frechet bounds and their applications |
+| 10.1155/jom/4466462 | 2026 | abstract | `model` | fits a copula to bivariate lifetimes; no quoted figure priced |
+| 10.1214/lnms/1215452625 | 1996 | abstract | `bounds` | review of Frechet bounds and optimal couplings |
+| 10.1007/978-94-017-0629-2_11 | 1989 | title | `model` | parametric CCF models for PSA |
+| 10.1016/0026-2714(87)90004-7 | 1987 | title | `model` | k-out-of-N:G with CCF and multiple failure modes |
+| 10.1016/j.anucene.2015.12.004 | 2016 | title | `model` | CCF unavailability from alpha factors |
+| 10.1109/24.690894 | 1998 | abstract | `model` | mixture model fitted to CCF event data |
+| 10.21683/1729-2646-2019-19-2-9-17 | 2019 | abstract | `model` | NEAREST: how the computed unavailability moves with the beta parameter, inside the beta model |
+| 10.4271/800631 | 1980 | abstract | `other` | qualitative CCF susceptibility analysis |
+| 10.1007/978-94-017-0629-2_6 | 1989 | title | `other` | design defences against CCF |
+| 10.1016/0026-2714(94)90111-2 | 1994 | title | `model` | 2-out-of-n:F with CCF and dependent failure |
+| 10.1016/j.anucene.2013.07.053 | 2014 | title | `model` | estimating alpha factors from data |
+| 10.1016/j.ress.2021.107802 | 2021 | title | `model` | estimating an inter-unit common-cause probability |
+| 10.1115/1.0000449v | 2021 | title | `model` | inter-unit CCF from intra-unit cases |
+| 10.2172/1835896 | 2021 | abstract | `model` | generic priors for alpha factors |
+| 10.31224/6621 | 2026 | abstract | `model` | alpha-factor extension; impact stated qualitatively as significant |
+| 10.1007/978-3-319-26626-8_26 | 2015 | title | `design` | replica placement under correlated failure |
+| 10.1007/s11227-013-1036-2 | 2013 | title | `design` | replica placement for correlated data |
+| 10.1016/j.tcs.2020.01.004 | 2020 | title | `design` | optimal replica placement in failure domains |
+| 10.1016/0951-8320(92)90004-5 | 1992 | title | `model` | top-event unavailability moments under lognormal correlation |
+| 10.1016/j.engfailanal.2022.106104 | 2022 | title | `model` | availability of bogies under correlated failures |
+| 10.1109/ptc.2019.8810845 | 2019 | abstract | `understatement` | simultaneous unavailability 'significantly larger' than traditional analysis estimates |
+| 10.1016/0026-2714(77)90342-0 | 1977 | title | `other` | system performance and sub-system failure modes |
+| 10.1016/0026-2714(88)90060-1 | 1988 | title | `model` | large system under Markov dependence |
+| 10.1109/rams48097.2021.9605735 | 2021 | abstract | `understatement` | independence 'does not match engineering practice'; assessment 'may be biased' |
+| 10.1504/ijrs.2016.076345 | 2016 | abstract | `model` | Markov model with a repair-dependence function |
+| 10.1016/0026-2714(72)90054-6 | 1972 | title | `model` | redundant systems with dependent failures |
+| 10.1016/0026-2714(74)90488-0 | 1974 | title | `model` | redundant systems with dependent failures (1974) |
+| 10.1016/0026-2714(81)90294-8 | 1981 | title | `model` | multistate redundant systems with CCF and standby |
+| 10.1016/0026-2714(87)90796-7 | 1987 | title | `model` | repairable 2-unit parallel with dependent failures |
+| 10.1016/0026-2714(90)90082-x | 1990 | title | `model` | redundant computer systems with CCF |
+| 10.1016/0951-8320(93)90018-t | 1993 | title | `model` | second-moment analysis with dependent failures |
+| 10.1109/tr.1974.5215278 | 1974 | abstract | `model` | equivalent-time hazard rates for dependent failures |
+| 10.1016/0143-8174(85)90041-1 | 1985 | title | `model` | unavailability with dependent human error |
+| 10.1007/978-3-642-83721-0_12 | 1989 | title | `other` | CCF evidence from an operating plant |
+| 10.1016/0026-2714(81)90291-2 | 1981 | title | `model` | k-out-of-N availability with CCF and replacement |
+| 10.1016/0026-2714(91)90211-o | 1991 | title | `model` | availability under common-cause shock failures |
+| 10.1016/0026-2714(92)90324-e | 1992 | title | `model` | parallel system with maintenance and CCF |
+| 10.1016/0026-2714(93)90134-k | 1993 | title | `model` | warm standby with CCF |
+| 10.1016/0143-8174(84)90058-1 | 1984 | title | `model` | NEAREST: compares beta-factor against multiple-failure-fraction UNITS: the figure, not the price of the assumption |
+| 10.1016/s0026-2714(82)80181-9 | 1982 | title | `model` | complex system with shelf-life and CCF |
+| 10.1109/icesp.2014.7347004 | 2014 | abstract | `model` | beta-factor model for system unavailability in PSA |
+
+The corpus this paper harvested was screened the same way, and it is reported separately because it is a weaker instrument: it stores titles and venues, not abstracts. Its 2 correction-type titles and its 1 title(s) whose words suggest a pricing statement are named above; the suggested one is a homonym -- yeh2017cost: 'cost' is the allocation objective in money, not the price of a dependence assumption.
+
 ## Entries whose record carries no author
 
-54 of the 206 cited records carry no author field on Crossref, and their entries say so by naming the record that was read ("author not established on Crossref for this DOI") rather than by leaving the position empty or inventing an initial. The absence is a claim about a record, and it is checkable against the registry the entry names.
+54 of the 205 cited records carry no author field on Crossref, and their entries say so by naming the record that was read ("author not established on Crossref for this DOI") rather than by leaving the position empty or inventing an initial. The absence is a claim about a record, and it is checkable against the registry the entry names.
 
 | key | DOI | title |
 |---|---|---|
