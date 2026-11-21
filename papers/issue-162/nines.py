@@ -165,6 +165,7 @@ def rho_for_decades(decades, p, r):
     `9e-16`. Read forwards, a dependence nobody could rule out destroys the figure; read backwards,
     **the quote asserts a bound on a quantity (`rho < ~9 p**(r-1)`) that no one measures**, and that
     assertion is what "eleven nines" is actually buying.
+
     """
     p = Fraction(p)
     if r < 2:
@@ -172,6 +173,49 @@ def rho_for_decades(decades, p, r):
     if decades < 0:
         raise ValueError("decades must be non-negative, got %r" % (decades,))
     return rho_for_prob(Fraction(10) ** decades * p ** r, p, r)
+
+
+# ---------------------------------------------------------------------------
+# the title's number: a quote in the slogan's range has an anchor, per replica
+# ---------------------------------------------------------------------------
+#
+# The title names "eleven nines" and no cell of the grid quotes 11.0 -- the grid's quotes are
+# 2, 3, 4, 5, 6, 8, 9, 10, 12, 15, 16, 20 and 25. That is not a hole in the grid: the slogan is a
+# QUOTE, and a quote fixes its own anchor. `r` replicas quoting `t` nines means a per-device
+# probability `p = 10**(-t/r)`, because the quote is `p**r`. The anchor is therefore unique per `r`,
+# and it is worth printing because it moves the wrong way: eleven nines over two replicas is a
+# device at 3e-6, while the same eleven nines over five replicas needs a device at 6e-3 -- three
+# orders of magnitude worse, because replication multiplies the quote by `p` each time.
+
+TITLE_NINES = 11
+
+
+def p_anchor_lands(target_nines, r, per_replica=True):
+    """Does an anchor of `target_nines / r` nines per device land the quote on `target_nines`?
+
+    `per_replica=False` is the plant: it anchors on the total, which makes an `r`-replica quote land
+    on `r * target_nines`. The predicate is the control, and the plant runs through it.
+    """
+    p_nines = float(target_nines) / r if per_replica else float(target_nines)
+    p = 10.0 ** (-p_nines)
+    return abs(nines(p ** r) - target_nines) < 1e-9
+
+
+def anchored_quote(target_nines, r):
+    """The per-device `p` behind an `r`-replica quote of `target_nines`, and what it costs to state."""
+    if r < 2:
+        raise ValueError("a quote needs at least 2 replicas, got %r" % (r,))
+    p = 10.0 ** (-(float(target_nines) / r))
+    # the price comes from the same closed form the rest of this file uses; the fraction is the
+    # float rounded to the nearest dyadic the arithmetic can hold, and it is labelled as such.
+    p_frac = Fraction(p)
+    return {
+        "r": r,
+        "p": p,
+        "quoted": p ** r,
+        "quoted_nines": nines(p ** r),
+        "rho_one_decade": float(rho_for_decades(1, p_frac, r)),
+    }
 
 
 # ---------------------------------------------------------------------------
@@ -385,6 +429,15 @@ def emit_json(rows, path):
                        "estimate. rho_one_decade is the stated dependence that costs exactly one "
                        "decade of the quoted figure; it is null at r=1, where the family is a "
                        "single point and there is no dependence to state"),
+        "title_quote": {
+            "why": ("the title's number is a QUOTE and not a grid reading: an r-replica quote of t "
+                    "nines fixes a per-device p = 10**(-t/r). Anchors are listed per r rather than a "
+                    "cell being added, because the slogan denotes a family of quotes and the anchor "
+                    "is what makes each one a statement"),
+            "target_nines": TITLE_NINES,
+            "anchors": [dict((k, conv(v)) for k, v in anchored_quote(TITLE_NINES, r).items())
+                        for r in (2, 3, 4, 5)],
+        },
     }
     with open(path, "w", encoding="utf-8") as fh:
         fh.write(json.dumps(payload, indent=1, sort_keys=True) + "\n")
@@ -736,6 +789,22 @@ def selftest(budget):
     h.control("the boundary case p == (r-1)/r reaches the zero end (the set closes at zero, not above)",
               frechet_interval(Fraction(1, 2), 2)[0] == 0
               and frechet_interval(Fraction(2, 3), 3)[0] == 0)
+
+    # ---- C10 the title's number: an anchor per replica, and the price at that anchor ----
+    print("\nC10 a quote of %d nines is anchored at a per-replica probability, not at the total"
+          % TITLE_NINES)
+    for r in (2, 3, 4, 5):
+        a = anchored_quote(TITLE_NINES, r)
+        h.control("r=%d: the anchored quote lands on exactly %d nines" % (r, TITLE_NINES),
+                  p_anchor_lands(TITLE_NINES, r),
+                  "p=%.6e -> %.9f nines, price rho=%.6e"
+                  % (a["p"], a["quoted_nines"], a["rho_one_decade"]))
+    h.control("the anchors are distinct per replica, so the slogan denotes a family and not one point",
+              len(set(round(anchored_quote(TITLE_NINES, r)["p"], 18) for r in (2, 3, 4, 5))) == 4,
+              "p per r: %s" % ", ".join("%.3e" % anchored_quote(TITLE_NINES, r)["p"]
+                                        for r in (2, 3, 4, 5)))
+    h.plant("an anchor taken from the total instead of per replica is refused by the same predicate",
+            not p_anchor_lands(TITLE_NINES, 2, per_replica=False))
     h.plant("an inverted condition is refused at the same points",
             mutant_refused(p_zero_end_reached(Fraction(1, 10 ** 4), 3, mutant=True))
             if False else (p_zero_end_reached(Fraction(1, 10 ** 4), 3, mutant=True) is False))

@@ -284,5 +284,39 @@
  ],
  "instrument": "nines.py",
  "note": "contains_zero means the identified set of P(all replicas fail) includes 0, the ZERO END: the marginals permit a coupling under which the store never loses all its replicas, so a total loss is not forced. That end is unbounded in nines, which is why set_lo_nines is null there and not a large number. The other end, set_hi = p, is the CATASTROPHIC END: all replicas fail as often as a single device does, so nothing replication buys survives there",
+ "title_quote": {
+  "anchors": [
+   {
+    "p": 3.162277660168379e-06,
+    "quoted": 1e-11,
+    "quoted_nines": 11.0,
+    "r": 2,
+    "rho_one_decade": 2.8460588941800017e-05
+   },
+   {
+    "p": 0.00021544346900318845,
+    "quoted": 1.000000000000001e-11,
+    "quoted_nines": 11.0,
+    "r": 3,
+    "rho_one_decade": 4.177430144150635e-07
+   },
+   {
+    "p": 0.0017782794100389228,
+    "quoted": 1e-11,
+    "quoted_nines": 11.0,
+    "r": 4,
+    "rho_one_decade": 5.0610719551736406e-08
+   },
+   {
+    "p": 0.00630957344480193,
+    "quoted": 9.999999999999982e-12,
+    "quoted_nines": 11.0,
+    "r": 5,
+    "rho_one_decade": 1.426403875475698e-08
+   }
+  ],
+  "target_nines": 11,
+  "why": "the title's number is a QUOTE and not a grid reading: an r-replica quote of t nines fixes a per-device p = 10**(-t/r). Anchors are listed per r rather than a cell being added, because the slogan denotes a family of quotes and the anchor is what makes each one a statement"
+ },
  "unit": "nines = -log10 of a probability; span_nines = quoted_nines - worst_identified_nines, a magnitude"
 }

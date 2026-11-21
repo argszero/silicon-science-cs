@@ -32,7 +32,12 @@ spans `[p^r, p]` and never reaches the lower end, because reaching it would requ
 dependence, which is not a coupling. So **a stated `rho >= 0` is a statement that the quoted figure
 is the best case a non-negative dependence can produce** -- the identified set reaches below it, but
 only through negative dependence -- and it costs one decade of the quote to buy `rho = 9e-16` at `p = 1e-4, r = 5`.
-Read backwards: "eleven nines" asserts a bound `rho < ~9 p^(r-1)` on a quantity nobody measures.
+Read backwards: "eleven nines" asserts a bound `rho < ~9 p^(r-1)` on a quantity nobody measures. The
+slogan has no cell behind it and needs none, because a quote fixes its own anchor: `r` replicas
+quoting `t` nines is a per-device `p = 10^(-t/r)`. At `r = 2` eleven nines is `p = 3.16e-06`, where
+the bound is `rho < 2.85e-05`; at `r = 5` the same eleven nines need `p = 6.31e-03`, and the bound
+tightens to `rho < 1.43e-08`. The slogan is reachable at every `r`, and what changes with `r` is the
+device it implies, not the eleven.
 `rho` is *declared* throughout this paper and never estimated; the paper contains **no data at all**,
 and its empirical component is an exhaustive check that both bounds are attained, not a measurement
 of any system.

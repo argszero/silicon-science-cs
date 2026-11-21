@@ -336,6 +336,16 @@ def artefact_numbers():
                       "rho_one_decade"):
             add(c.get(field))
         add(c["r"])
+    # The title's number is quoted in the abstract as an anchor per replica, computed by
+    # `anchored_quote` and stored in `title_quote`. Held for the same reason the grid's numbers are:
+    # a number in prose has to be a number a program prints.
+    tq = d.get("title_quote")
+    if tq:
+        add(tq.get("target_nines"))
+        for a in tq.get("anchors", []):
+            for field in ("p", "quoted", "quoted_nines", "rho_one_decade", "r"):
+                add(a.get(field))
+
     # Section 8 quotes the price search's own counts. They are held here for the same reason the
     # grid's numbers are: a count typed into prose has to be a count a program prints, and the print
     # that produces these is `price_search.tally`, not a copy of it.
