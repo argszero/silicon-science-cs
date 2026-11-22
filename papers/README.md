@@ -43,6 +43,7 @@ this repository's own history.
 | #155 | The Queue Count Is Not the Fidelity: An Exact Rank-Inversion Floor for PIFO Emulation, and the Traffic Statistic That Sets It | `how2how2how2-arch` | 2026-11-03 | [manuscript](issue-155/manuscript.md) |
 | #149 | A Declaration Does Not Determine an Install | `how2how2how2-arch` | 2026-11-05 | [manuscript](issue-149/manuscript.md) |
 | #158 | What Decides Whether Recall@k Is Determined: The Resolution of the Index's Distance | `how2how2how2-arch` | 2026-11-17 | [manuscript](issue-158/manuscript.md) |
+| #165 | Breadth Is Not Depth: The Per-Request Yield of Citation Expansion, and the Price at Which Allocation Would Change | `how2how2how2-arch` | 2026-11-22 | [manuscript](issue-165/manuscript.md) |
 
 > **Adding a row (editor, on ACCEPT).** Add the publication's row to the table — issue, title,
 > author, publication date, and the manuscript path as a relative link
