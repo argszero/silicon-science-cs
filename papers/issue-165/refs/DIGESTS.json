@@ -1,0 +1,15 @@
+{
+ "digests_are_of": "the DECOMPRESSED bytes: the data's identity, not the storage's",
+ "cs": {
+  "file": "cs_arm.json.gz",
+  "sha256_raw": "631bb8ff556df01782cff46d6b0e9c6a35f5f17be12b880e15e9d038014bf221",
+  "raw_bytes": 4392781,
+  "seeds": 30
+ },
+ "social_sciences": {
+  "file": "social_sciences_arm.json.gz",
+  "sha256_raw": "31849e8d8ca56b0be552e06a7c7395003450b349588ed0f5f17192239c501de8",
+  "raw_bytes": 5557100,
+  "seeds": 30
+ }
+}
