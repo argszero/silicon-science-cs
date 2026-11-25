@@ -18,8 +18,10 @@ and whose lower end is `max(0, rp - (r-1))`. The two ends have names, used throu
 upper end is the **catastrophic end**: all `r` replicas fail as often as a single device does, so
 nothing the replication is paid for survives there. The lower end is `0` at every realistic quote, and
 it is the **zero end**: the marginals permit a coupling under which the store never loses all its
-replicas. The quoted figure lies strictly between the two, so the quote is not merely unidentified --
-it is identified to be *worse* than the zero end and better than the catastrophic one.
+replicas. For `r >= 2` the quoted figure lies strictly between the two, so the quote is not merely
+unidentified -- it is identified to be *worse* than the zero end and better than the catastrophic
+one. At `r = 1` the two ends coincide: the set is the single point `p`, the span is `0`, and the
+quote is the truth rather than a member of an interval with two distinct ends.
 
 Two consequences are exact and mechanically verified. First, the interval does not narrow as
 replication improves the quote: each added replica multiplies the quote by `p` — buying `-log10 p`
@@ -397,7 +399,7 @@ printed one is the one that cannot.
 
 [20] author not established on Crossref for this DOI (2019). Multi-data Center Replication. *Encyclopedia of Big Data Technologies*. https://doi.org/10.1007/978-3-319-77525-8_100219 Difference: computes the durability figure from per-device rates under independence; this paper prices the independence step itself. (supports `durability-models`)
 
-[21] -, V. R. I. (2020). Azure Storage Redundancy: Ensuring Availability and Durability in Hybrid Cloud Environments. *International Journal For Multidisciplinary Research*. https://doi.org/10.36948/ijfmr.2020.v02i04.39038 Difference: publishes the figure as a commitment to a customer; this paper states what the commitment asserts about an unmeasured quantity. (supports `sla-promise`)
+[21] Venkata Raman Immidisetti (2020). Azure Storage Redundancy: Ensuring Availability and Durability in Hybrid Cloud Environments. *International Journal For Multidisciplinary Research*. https://doi.org/10.36948/ijfmr.2020.v02i04.39038 Difference: publishes the figure as a commitment to a customer; this paper states what the commitment asserts about an unmeasured quantity. (supports `sla-promise`)
 
 [22] Asmussen, S. (2006). Improved algorithms for rare event simulation with heavy tails. *Advances in Applied Probability*. https://doi.org/10.1239/aap/1151337084 Difference: estimates far-tail probabilities by simulation or extrapolation; this paper declines to estimate and bounds instead. (supports `rare-event-cost`)
 

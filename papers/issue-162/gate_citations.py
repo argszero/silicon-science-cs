@@ -277,13 +277,37 @@ def write_report(path, corpus, nums):
                    % (len(corr),
                       sum(1 for r in recs if r["key"] in CORPUS_VERDICTS),
                       "; ".join("%s: %s" % (k, v[1]) for k, v in sorted(CORPUS_VERDICTS.items()))))
-    noauthor = [r for r in recs if not (r.get("first_family") or "").strip()]
+    # The numerator and the denominator must count the same population. They did not: the absence was
+    # collected over the whole harvested corpus while the sentence divided by the cited set, so the
+    # report read "%d of the %d cited records" out of two different populations -- true of neither.
+    noauthor_all = [r for r in recs if not (r.get("first_family") or "").strip()]
+    noauthor = [r for r in noauthor_all if r["key"] in nums]
     out.append("## Entries whose record carries no author\n")
     out.append("%d of the %d cited records carry no author field on Crossref, and their entries say so "
                "by naming the record that was read (\"author not established on Crossref for this "
                "DOI\") rather than by leaving the position empty or inventing an initial. The absence "
-               "is a claim about a record, and it is checkable against the registry the entry names.\n"
-               % (len(noauthor), len(nums)))
+               "is a claim about a record, and it is checkable against the registry the entry names. "
+               "The table below lists exactly those %d, which is the whole of what this report can "
+               "show a reader: every one of them has an entry here to check.\n"
+               % (len(noauthor), len(nums), len(noauthor)))
+    placeholder = [r for r in recs
+                   if r["key"] in nums
+                   and (r.get("first_family") or "").strip()
+                   and not HAS_LETTER.search((r.get("first_family") or "").strip())]
+    if placeholder:
+        out.append("A further %d cited record(s) store punctuation where a family name belongs, so "
+                   "their entries print the given name the same record holds and the absence is not "
+                   "claimed for them: %s. The registry value is quoted here because it is the thing "
+                   "to check -- the field holds %s, not a name.\n"
+                   % (len(placeholder),
+                      "; ".join("DOI %s (`%s`, family `%s`, given `%s`)"
+                                % (r["doi"], r["key"], r["first_family"], r.get("first_given") or "")
+                                for r in placeholder),
+                      ", ".join("`%s`" % r["first_family"] for r in placeholder)))
+    out.append("For the harvested corpus as a whole the same absence holds for %d of its %d records. "
+               "The other %d are part of the corpus this paper does not cite, so they have no entry "
+               "here and the count of them is a fact about the harvest, not about the bibliography.\n"
+               % (len(noauthor_all), len(recs), len(noauthor_all) - len(noauthor)))
     out.append("| key | DOI | title |")
     out.append("|---|---|---|")
     for r in noauthor:
@@ -399,6 +423,28 @@ def numbered(corpus):
     return dict((k, i + 1) for i, k in enumerate(order))
 
 
+HAS_LETTER = re.compile(r"[^\W\d_]", re.UNICODE)
+# A registry field can hold punctuation where a name belongs. `10.36948/ijfmr.2020.v02i04.39038`
+# stores `family: "-"` with the name in `given`, and a truthy dash was read as a family name, so the
+# entry printed `-, V. R. I.` -- an author-shaped string with no name in it. The rule is therefore
+# about the *content* of the field, not its emptiness: a family name has a letter in it. The fallback
+# is the given name, which is what the same record holds; when that is empty too, the absence is
+# named the way `reference-check.md`'s policy names it, so the two carriers say one thing.
+def author_component(rec):
+    """The name this record's entry prints, and the reason it prints it."""
+    fam = (rec.get("first_family") or "").strip()
+    given = (rec.get("first_given") or "").strip()
+    if fam and HAS_LETTER.search(fam):
+        fam = fam[:1].upper() + fam[1:].lower() if fam.isupper() or fam.islower() else fam
+        initials = ""
+        if given:
+            initials = ", " + " ".join(p[0] + "." for p in re.split(r"[\s-]+", given) if p)
+        return fam + initials
+    if given:
+        return given
+    return "author not established on Crossref for this DOI"
+
+
 def entry_line(num, rec, claim=None):
     """One bibliography entry, in this journal's house order.
 
@@ -411,15 +457,7 @@ def entry_line(num, rec, claim=None):
     than 200 restatements: the claims are what the paper distinguishes, and a per-entry sentence
     invented for a record the paper cites in a cluster would be boilerplate dressed as content.
     """
-    fam = rec.get("first_family") or ""
-    given = rec.get("first_given") or ""
-    fam = fam[:1].upper() + fam[1:].lower() if fam.isupper() or fam.islower() else fam
-    initials = ""
-    if given:
-        initials = ", " + " ".join(p[0] + "." for p in re.split(r"[\s-]+", given) if p)
-    authors = (fam + initials) if fam else ""
-    if not authors:
-        authors = "author not established on Crossref for this DOI"
+    authors = author_component(rec)
     title = html.unescape(rec["title"]).strip()
     title = title[:1].upper() + title[1:]
     bits = ["[%d]" % num, authors + " (%s)." % rec.get("year", "n.d."), title]
@@ -541,6 +579,29 @@ def main(argv=None):
     leftover = MARK.findall(rendered)
     if leftover:
         fails.append("C2 unrendered claim markers remain: %s" % ", ".join(sorted(set(leftover))))
+
+    # C4 the FAMILY position has to hold a name. A registry field holding `-` used to print as
+    # `-, V. R. I.` -- author-shaped, and no name in the family position -- and nothing failed.
+    #
+    # The rule is scoped to that position and not to the whole component, because the whole component
+    # holds letters either way: `-, V. R. I.` carries `V`, `R`, `I` in the initials, so a check asking
+    # "does this string contain a letter" passes on the very defect it was written for. Measured, not
+    # assumed: with the old rule back, that weaker version stayed green and only the digest step
+    # objected -- an indirect signal naming a different object. The family slot is the position the
+    # defect occupies, so it is the position the check reads.
+    by_key = dict((r["key"], r) for r in corpus["records"])
+    nameless = []
+    for k in sorted(nums):
+        if k not in by_key:
+            continue
+        slot = author_component(by_key[k]).split(", ")[0]
+        if not HAS_LETTER.search(slot):
+            nameless.append("%s -> %r" % (k, slot))
+    if nameless:
+        fails.append("C4 %d cited entr(ies) print no name in the family position: %s"
+                     % (len(nameless), "; ".join(nameless)))
+    else:
+        notes.append("every entry holds a name in the family position")
     rendered = rendered.replace(REFS_MARK, "## References\n\n" + render_list(corpus, nums))
     if GRID_MARK in text:
         grid = render_grid()

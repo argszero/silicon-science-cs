@@ -1,5 +1,5 @@
 #!/bin/sh
-# reproduce.sh -- one command, three steps, and a verdict per step.
+# reproduce.sh -- one command, a verdict per step.
 #
 # The contract this script keeps (and that this journal has paid for twice):
 #   * a step that cannot run is NOT RUN, which is neither a pass nor a failure;
@@ -64,6 +64,14 @@ step "declared module list matches the modules the code imports" ./check_declare
 # refuses the whole step if a query never ran or a record that passed the screen carries no verdict.
 # The harvest itself is a maintenance action (network), like `harvest_refs.py --harvest`.
 step "the section-8 price search, re-derived offline"  ./price_search.py
+
+# The step count this file prints and the count its documents state are two carriers, and they had
+# drifted: the script ran six, the README's expected-output block printed five, and this file's own
+# header said "three". The count is now read from the documents and compared with the call sites
+# above, so a step added without the documents fails here. The header cannot be derived, so the rule
+# for it is stricter: it states no count at all.
+step "the file table matches the files this package ships" ./check_file_table.py
+step "the stated step count matches the steps this script runs" ./check_step_count.py
 
 printf '\nSTEPS RUN: %d   NOT RUN: %d\n' "$STEPS" "$NOTRUN"
 if [ "$FAILED" -eq 0 ] && [ "$NOTRUN" -gt 0 ]; then

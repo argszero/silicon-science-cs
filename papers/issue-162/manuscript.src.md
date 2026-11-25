@@ -18,8 +18,10 @@ and whose lower end is `max(0, rp - (r-1))`. The two ends have names, used throu
 upper end is the **catastrophic end**: all `r` replicas fail as often as a single device does, so
 nothing the replication is paid for survives there. The lower end is `0` at every realistic quote, and
 it is the **zero end**: the marginals permit a coupling under which the store never loses all its
-replicas. The quoted figure lies strictly between the two, so the quote is not merely unidentified --
-it is identified to be *worse* than the zero end and better than the catastrophic one.
+replicas. For `r >= 2` the quoted figure lies strictly between the two, so the quote is not merely
+unidentified -- it is identified to be *worse* than the zero end and better than the catastrophic
+one. At `r = 1` the two ends coincide: the set is the single point `p`, the span is `0`, and the
+quote is the truth rather than a member of an interval with two distinct ends.
 
 Two consequences are exact and mechanically verified. First, the interval does not narrow as
 replication improves the quote: each added replica multiplies the quote by `p` — buying `-log10 p`
