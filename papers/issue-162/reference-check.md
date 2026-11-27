@@ -1,0 +1,252 @@
+# Reference verification report — issue #162
+
+**DERIVED FILE — do not edit.** Regenerate with `./gate_citations.py --report reference-check.md`. It is a pure function of the stored verification state in `refs/references.json` and the authored placement in `placements.py`; it reads no network and writes no timestamp of its own, so regenerating it reproduces it byte for byte.
+
+## What was searched, and how
+
+| item | value |
+|---|---|
+| index | Crossref REST API, `works` endpoint (`query.bibliographic` for discovery, `works/{doi}` for verification) |
+| window | **none imposed** — the bibliographic query takes no date filter in this call, so the scan is a scan and the window is not a claim this report can make; the scan date is |
+| scan date | 2026-11-02 |
+| rows per query | 24 |
+| queries issued | 30 |
+| verification method | DOI → `works/{doi}`; the stored title must match the returned title **and** an independent field must corroborate it: the first-author family, or the year when no author is asserted. Author mismatch is fatal; a year mismatch is recorded as an edition (`verified-edition`) |
+| arXiv | **NOT RUN** — the arXiv API returned HTTP 429 on every probe this round. That is a rate limit, not an absence of records, so this report does not claim any work is missing from arXiv |
+
+## Counts
+
+| quantity | value |
+|---|---|
+| records harvested mechanically | 499 |
+| candidate records refused at harvest | 207 |
+| — refused: adjacent-construct | 1 |
+| — refused: duplicate-title | 26 |
+| — refused: no-year | 47 |
+| — refused: terms | 28 |
+| — refused: type | 105 |
+| records verified against their DOI record | 499 |
+| verified in this run / carried from an earlier run | 499 / 0 |
+| records not verified (excluded, never cited) | 0 |
+| **distinct records cited in the manuscript** | **205** (floor 100) |
+| records verified but not cited | 294 |
+| — of those, carrying a named reason in `placements.py` | 29 |
+| — of those, on-topic surplus: no sentence in this paper needs it | 265 |
+
+## What the uncited records are
+
+The uncited records are not a rejected set. Each one passed its query's term screen and the harvest's type whitelist, and each was verified against its DOI record; they are the RECALL the thirty declared queries bought, and the class each one falls into is stated here so that the number above is one a reader can act on.
+
+| class | n | what it is |
+|---|---|---|
+| cited in the manuscript, through a claim that owns it | 205 | supports a named sentence |
+| excluded by name, with a reason | 29 | names an adjacent construct; the reason is in `placements.py` and repeated below |
+| on-topic surplus | 265 | on the subject, and no sentence in this paper needs it |
+
+The surplus is distributed across the declared queries rather than produced by one bad one -- if it were concentrated, the fix would be a narrower query instead of a longer exclusion list:
+
+| query group | surplus records |
+|---|---|
+| `bounds` | 38 |
+| `copula` | 29 |
+| `correlated-systems` | 79 |
+| `replication` | 62 |
+| `reporting` | 26 |
+| `sla` | 20 |
+| `tail` | 11 |
+
+A verified record is not a citation. The floor is met in records the manuscript actually cites, each through a claim that owns it (`{{c:<id>}}`), so an entry cannot be padding: `gate_citations.py` fails if a claim is placed and never cited, and fails if a citation exists with no claim behind it.
+
+## Refusals at harvest, by reason
+
+| reason | n | what it means |
+|---|---|---|
+| adjacent-construct | 1 | shares a word with this paper and names a different object |
+| duplicate-title | 26 | the same work under another DOI; the corpus admits one key per work |
+| no-year | 47 | the record carries no date, so nothing can corroborate the year |
+| terms | 28 | the returned title does not mention the group's own terms: the query measured the index's recall, not the literature |
+| type | 105 | not an academic item (figure caption, front matter, component, peer review) |
+
+## What the corpus is placed against
+
+| claim id | section | records | the claim it supports |
+|---|---|---|---|
+| `frechet-class` | §2 | 6 | Given the marginals and nothing else, the object is the Fréchet class: the set of joint laws with those marginals, whose extremes are the classical bounds. |
+| `bonferroni-lower` | §2 | 20 | The lower end of that set for an intersection of r events is the inclusion-exclusion bound, and the literature's business has been improving it, not questioning it. |
+| `bounds-stated-not-attained` | §2 | 17 | The literature states these bounds for dependent risks and optimises under them; what it does not do is take the quote's own figure and ask which end of the set it is. |
+| `correlation-measured` | §3 | 18 | Correlated failure is a measured property of production systems, in disks, in racks, in networks and in power, not a hypothetical. |
+| `redundancy-defeated` | §3 | 27 | Adding replicas under dependence is not a monotone improvement, and the failure-mode literature has said so for decades: common-cause models are the standard repair. |
+| `placement-under-correlation` | §3 | 11 | The copyset line answers the same worry from the design side: assume the dependence, constrain which replicas may fail together, and compute the resulting loss rate. |
+| `quorum-availability` | §3 | 12 | Quorum systems make the same trade in the availability direction, and their probabilistic variants exist precisely because a fixed quorum's availability is a function of which nodes fail together. |
+| `durability-models` | §4 | 16 | A durability figure is produced by an MtTDL-style model whose inputs are per-device rates and whose arithmetic is the independence product the quote repeats. |
+| `erasure-arithmetic` | §4 | 13 | Erasure coding changes the arithmetic and the engineering of that model — it does not change what the marginals identify. |
+| `sla-promise` | §4 | 13 | The number is then published as a promise, in a service-level objective or a durability claim, where the reader is a customer and not a reviewer. |
+| `rare-event-cost` | §5 | 20 | Estimating a probability at the far tail is a research programme of its own: the standard answer is importance sampling or extreme-value extrapolation, each with its own assumption about the tail it is extrapolating into. |
+| `assumption-sensitivity` | §5 | 20 | The reliability-reporting literature already knows that a quoted failure probability inherits its assumptions, and treats that as a sensitivity question rather than a reporting one. |
+| `diversification-fallacy` | §5 | 12 | The same arithmetic is a named fallacy elsewhere: zero correlation is not independence, and diversification computed under one coupling fails under another. |
+
+## Records excluded by name, with the reason
+
+These cleared the screen and are real records; they are not cited because they name an adjacent construct. The exclusion is a decision with a reason, not a silent drop.
+
+| key | reason |
+|---|---|
+| `abdullahi2020internationa` | financial reporting quality — 'quoted' and 'reporting' matched a query, not this paper |
+| `aduwo2023internationa` | financial reporting quality — 'quoted' matched a query, not this paper |
+| `ahmad2021catastrophic` | agricultural catastrophic risk — 'catastrophic' matched a query |
+| `ahmad2021synchronized` | agricultural credit and catastrophic risk — adjacent construct |
+| `amahalu2018effect` | financial reporting of quoted firms — adjacent construct, different object |
+| `anon2015complete` | DNA replication — 'replication' matched a query, not data replication |
+| `baibussinov2025logical` | UAV storage forensics — same words, different instrument |
+| `branzei2007interplay` | DNA replication checkpoints — adjacent construct |
+| `cowan2001new` | DNA replication probability model — adjacent construct |
+| `firdaus2025audit` | audit quality and financial reporting — adjacent construct |
+| `gorodnichenko2006public` | public-sector corruption — 'corruption' matched a query, not storage |
+| `krhmer2026update` | availability of replication materials — 'replication' is the other sense |
+| `kutch2011muscle` | muscle redundancy — 'redundancy does not imply robustness' is the right shape, wrong system |
+| `lee2006business` | public-sector corruption and growth — 'corruption' matched a query |
+| `lei2026cleanstack` | stack memory corruption attacks — 'corruption' matched a query, not storage |
+| `leilei2025beyond` | hedge-fund liquidations — correlated failure in finance, cited nowhere here |
+| `leilei2026beyond` | hedge-fund liquidations — duplicate of the above in another venue |
+| `limsoyamamoto2026orchestratio` | bacterial EV biogenesis — 'quota/availability' matched a query |
+| `martel2013catastrophic` | opioid misuse risk — 'catastrophic' matched a query |
+| `martinezvazquez2007fighting` | public-sector corruption — adjacent construct |
+| `paatero2023modeling` | zebrafish housing temperatures — 'power outage' matched a query |
+| `phoenix2008nanotechnolo` | nanotechnology as global catastrophic risk — different object |
+| `poulsen2025practical` | replication crisis in finance — 'replication' is the other sense |
+| `rjfa2019financial` | financial reporting quality of quoted banks — adjacent construct |
+| `rjfa2022financial` | financial reporting quality and share values — adjacent construct |
+| `ullah2015managing` | catastrophic risk in agriculture — adjacent construct |
+| `watchman2019financial` | financial reporting by quoted SMEs — adjacent construct |
+| `youyou2026are` | replication failures in public knowledge — 'replication' is the other sense |
+| `yusuf2021internationa` | financial reporting standards — adjacent construct |
+
+## Correction-type records: the class, and what the screen spares
+
+A correction-type record is a notice about a work, not the work. `harvest_refs.py` refuses by TYPE and cannot catch the class, because Crossref types an "Erratum to: ..." as the same type its parent carries; the class is closed on the title in `placements.py` instead (`CORRECTION_TYPE`), and no placed key may be a member. The pattern matches the "correction OF a work" shape rather than the word, because a paper ABOUT correcting a failure probability is on-topic and a word match would refuse it.
+
+| key | year | refused by | title |
+|---|---|---|---|
+| `auej2025erratum` | 2025 | the strict pattern | ERRATUM TO: NUMERICAL ANALYSIS OF ENHANCING LATENT HEAT STORAGE USING FINS AND CONDUCTIVE BARRIERS |
+| `mills2016erratum` | 2016 | the strict pattern | Erratum to: On Replica Placement in High-Availability Storage Under Correlated Failure |
+| `wang2025analysis` | 2025 | nothing -- spared, and named | Analysis and Software Development of System Failure Probability Correction Considering Common Cause Failure |
+
+## The price search, which is what §8 answers with
+
+Section 8 used to carry a hedge. The hedge is now a search with a record behind it (`price_search.py`, `price_search.json`), and this is that record in the form a reader can check.
+
+| field | value |
+|---|---|
+| **issued at (UTC)** | `2026-11-21T16:07:19Z` |
+| publication window searched | `1960-01-01..2026-11-21` |
+| source | Crossref /works?query.bibliographic (title+abstract index), rows=8 per query |
+| queries declared / run | 10 / 10 |
+| records returned | 76 |
+| refused by the title screen | 34 |
+| records read, each with a verdict | 42 |
+| read at abstract level / title only | 12 / 30 |
+| **statements of the price in the quote's own unit** | **0** |
+| stating the direction, with no magnitude | 2 |
+| parameterising the dependence and computing a figure under it | 31 |
+
+Every query, with the number of records it returned:
+
+| group | query | returned |
+|---|---|---|
+| `price` | sensitivity of availability to common cause failures beta factor replication | 8 |
+| `price` | cost of dependence assumption in system reliability prediction | 8 |
+| `price` | effect of assuming independence on predicted unavailability redundant system | 8 |
+| `bounds` | Fréchet bounds availability reliability partially specified marginals | 8 |
+| `bounds` | correlated failure availability replication bound unavailability | 8 |
+| `bounds` | dependent failures quantification reliability redundant systems | 8 |
+| `bounds` | copyset correlated failure replica placement availability | 8 |
+| `beta` | beta factor parametric model common cause failure unavailability redundant group | 8 |
+| `beta` | common cause failure probability estimate alpha beta factor multiple unit | 8 |
+| `nines` | durability nines quoted reliability figure independence assumption | 8 |
+
+Every record the screen let through, with the verdict on it (categories: `price`, `understatement`, `model`, `bounds`, `design`, `other`; `read at` is how much of the record was available to read):
+
+| DOI | year | read at | verdict | what it is |
+|---|---|---|---|---|
+| 10.1007/978-94-011-3466-8_9 | 1991 | title | `bounds` | the Frechet bounds and their applications |
+| 10.1155/jom/4466462 | 2026 | abstract | `model` | fits a copula to bivariate lifetimes; no quoted figure priced |
+| 10.1214/lnms/1215452625 | 1996 | abstract | `bounds` | review of Frechet bounds and optimal couplings |
+| 10.1007/978-94-017-0629-2_11 | 1989 | title | `model` | parametric CCF models for PSA |
+| 10.1016/0026-2714(87)90004-7 | 1987 | title | `model` | k-out-of-N:G with CCF and multiple failure modes |
+| 10.1016/j.anucene.2015.12.004 | 2016 | title | `model` | CCF unavailability from alpha factors |
+| 10.1109/24.690894 | 1998 | abstract | `model` | mixture model fitted to CCF event data |
+| 10.21683/1729-2646-2019-19-2-9-17 | 2019 | abstract | `model` | NEAREST: how the computed unavailability moves with the beta parameter, inside the beta model |
+| 10.4271/800631 | 1980 | abstract | `other` | qualitative CCF susceptibility analysis |
+| 10.1007/978-94-017-0629-2_6 | 1989 | title | `other` | design defences against CCF |
+| 10.1016/0026-2714(94)90111-2 | 1994 | title | `model` | 2-out-of-n:F with CCF and dependent failure |
+| 10.1016/j.anucene.2013.07.053 | 2014 | title | `model` | estimating alpha factors from data |
+| 10.1016/j.ress.2021.107802 | 2021 | title | `model` | estimating an inter-unit common-cause probability |
+| 10.1115/1.0000449v | 2021 | title | `model` | inter-unit CCF from intra-unit cases |
+| 10.2172/1835896 | 2021 | abstract | `model` | generic priors for alpha factors |
+| 10.31224/6621 | 2026 | abstract | `model` | alpha-factor extension; impact stated qualitatively as significant |
+| 10.1007/978-3-319-26626-8_26 | 2015 | title | `design` | replica placement under correlated failure |
+| 10.1007/s11227-013-1036-2 | 2013 | title | `design` | replica placement for correlated data |
+| 10.1016/j.tcs.2020.01.004 | 2020 | title | `design` | optimal replica placement in failure domains |
+| 10.1016/0951-8320(92)90004-5 | 1992 | title | `model` | top-event unavailability moments under lognormal correlation |
+| 10.1016/j.engfailanal.2022.106104 | 2022 | title | `model` | availability of bogies under correlated failures |
+| 10.1109/ptc.2019.8810845 | 2019 | abstract | `understatement` | simultaneous unavailability 'significantly larger' than traditional analysis estimates |
+| 10.1016/0026-2714(77)90342-0 | 1977 | title | `other` | system performance and sub-system failure modes |
+| 10.1016/0026-2714(88)90060-1 | 1988 | title | `model` | large system under Markov dependence |
+| 10.1109/rams48097.2021.9605735 | 2021 | abstract | `understatement` | independence 'does not match engineering practice'; assessment 'may be biased' |
+| 10.1504/ijrs.2016.076345 | 2016 | abstract | `model` | Markov model with a repair-dependence function |
+| 10.1016/0026-2714(72)90054-6 | 1972 | title | `model` | redundant systems with dependent failures |
+| 10.1016/0026-2714(74)90488-0 | 1974 | title | `model` | redundant systems with dependent failures (1974) |
+| 10.1016/0026-2714(81)90294-8 | 1981 | title | `model` | multistate redundant systems with CCF and standby |
+| 10.1016/0026-2714(87)90796-7 | 1987 | title | `model` | repairable 2-unit parallel with dependent failures |
+| 10.1016/0026-2714(90)90082-x | 1990 | title | `model` | redundant computer systems with CCF |
+| 10.1016/0951-8320(93)90018-t | 1993 | title | `model` | second-moment analysis with dependent failures |
+| 10.1109/tr.1974.5215278 | 1974 | abstract | `model` | equivalent-time hazard rates for dependent failures |
+| 10.1016/0143-8174(85)90041-1 | 1985 | title | `model` | unavailability with dependent human error |
+| 10.1007/978-3-642-83721-0_12 | 1989 | title | `other` | CCF evidence from an operating plant |
+| 10.1016/0026-2714(81)90291-2 | 1981 | title | `model` | k-out-of-N availability with CCF and replacement |
+| 10.1016/0026-2714(91)90211-o | 1991 | title | `model` | availability under common-cause shock failures |
+| 10.1016/0026-2714(92)90324-e | 1992 | title | `model` | parallel system with maintenance and CCF |
+| 10.1016/0026-2714(93)90134-k | 1993 | title | `model` | warm standby with CCF |
+| 10.1016/0143-8174(84)90058-1 | 1984 | title | `model` | NEAREST: compares beta-factor against multiple-failure-fraction UNITS: the figure, not the price of the assumption |
+| 10.1016/s0026-2714(82)80181-9 | 1982 | title | `model` | complex system with shelf-life and CCF |
+| 10.1109/icesp.2014.7347004 | 2014 | abstract | `model` | beta-factor model for system unavailability in PSA |
+
+The corpus this paper harvested was screened the same way, and it is reported separately because it is a weaker instrument: it stores titles and venues, not abstracts. Its 2 correction-type titles and its 1 title(s) whose words suggest a pricing statement are named above; the suggested one is a homonym -- yeh2017cost: 'cost' is the allocation objective in money, not the price of a dependence assumption.
+
+## Entries whose record carries no author
+
+18 of the 205 cited records carry no author field on Crossref, and their entries say so by naming the record that was read ("author not established on Crossref for this DOI") rather than by leaving the position empty or inventing an initial. The absence is a claim about a record, and it is checkable against the registry the entry names. The table below lists exactly those 18, which is the whole of what this report can show a reader: every one of them has an entry here to check.
+
+A further 1 cited record(s) store punctuation where a family name belongs, so their entries print the given name the same record holds and the absence is not claimed for them: DOI 10.36948/ijfmr.2020.v02i04.39038 (`anon2020azure`, family `-`, given `Venkata Raman Immidisetti`). The registry value is quoted here because it is the thing to check -- the field holds `-`, not a name.
+
+For the harvested corpus as a whole the same absence holds for 54 of its 499 records. The other 36 are part of the corpus this paper does not cite, so they have no entry here and the count of them is a fact about the harvest, not about the bibliography.
+
+| key | DOI | title |
+|---|---|---|
+| `anon1964much` | 10.1016/0026-2714(64)90260-4 | How much does redundancy improve reliability? |
+| `anon1964optimum` | 10.1016/0026-2714(64)90183-0 | Optimum redundancy when components are subject to two kinds of failure |
+| `anon1979common` | 10.1016/0026-2714(79)90195-1 | A common cause-failure availability model |
+| `anon1983linearly` | 10.1016/0026-2714(83)91230-1 | Linearly correlated intermittent failures |
+| `anon1988correlated` | 10.1016/0026-2714(88)90195-3 | Correlated failures in fault-tolerant computers |
+| `anon1988reliability` | 10.1016/0026-2714(88)90062-5 | Reliability of a system for Markov-dependent components |
+| `anon1990redundancy` | 10.1016/0026-2714(90)90489-a | Redundancy strategy for dependent subsystems |
+| `anon1992redundancy` | 10.1016/0026-2714(92)90164-g | Redundancy optimization of k--n systems with common-cause failures |
+| `anon1998betaplus` | 10.1080/09617353.1998.11690672 | The Betaplus Common Cause Failure Model |
+| `anon2003concepts` | 10.1201/9780203498798.ch2 | Concepts of Probability Theory For Sensitivity And Uncertainty Analysis |
+| `anon2006estimation` | 10.1007/0-387-34471-3_8 | Estimation of the Probability of a Failure Set |
+| `anon2017continuous` | 10.4324/9781315169620-10 | Continuous Availability and Replication |
+| `anon2019multi` | 10.1007/978-3-319-77525-8_100219 | Multi-data Center Replication |
+| `b2016bivariate` | 10.1201/b17163-12 | Bivariate Lower Bounds |
+| `b2016bivariate-2a76e` | 10.1201/b17163-10 | Bivariate Upper Bounds |
+| `b2016multivariate` | 10.1201/b17163-11 | Multivariate and Hybrid Upper Bounds |
+| `b2016multivariate-547ac` | 10.1201/b17163-13 | Multivariate and Hybrid Lower Bounds |
+| `pbtee2003appendix` | 10.1049/pbte048e_appendix3 | Appendix 3: Template for a typical service level agreement |
+
+## Bracketed groups in the text that are not citations
+
+The prose writes the closed unit interval as `[0, 1]`, and writes a claim's citation cluster as a bracketed number list. A reader (and `refgate.py`, which calls it `AMBIGUOUS [0]`) sees the first as a citation to entry 0, which does not exist. It is an interval: `rho` is declared on `[0, 1]`, and every bracket group in this paper is either that interval or a generated cluster.
+
+## A prior-art line this report does not cite, and why
+
+The copyset placement discipline — constrain which replicas may fail together, then compute the loss rate — originates in a USENIX ATC paper that carries **no DOI** and therefore has no Crossref record. The arXiv probe that could have corroborated it returned HTTP 429 (NOT RUN) on every attempt this round. It is consequently **not cited**: an unverifiable citation is not admissible here, and a rate limit does not establish that the record does not exist. What the manuscript does cite is the copyset placement literature that *is* indexed (see the `placement-under-correlation` claim), which makes the same design argument on the record.
+
