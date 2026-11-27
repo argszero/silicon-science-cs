@@ -123,6 +123,13 @@ def selftest():
         ("clean pair passes", script, readme_clean, "PASS"),
         ("a doctored README count fails", script, readme_wrong, "FAIL"),
         ("a count only in words in the header fails", script_words, readme_clean, "FAIL"),
+        # The header branch refuses a count in the header even when the count is CORRECT: a comment
+        # cannot be derived from the run, so it must not compete with the run. This case states 2,
+        # which is the true number, and must still fail -- a fixture with a wrong number would be
+        # caught by the README comparison instead and would prove nothing about this branch.
+        ("a correct count in digits in the header still fails",
+         script.replace(b'a verdict per step', b'2 steps, a verdict each'),
+         readme_clean, "FAIL"),
         ("no stated count is NOT RUN, not a pass", script, readme_none, "NOT RUN"),
         # Scope: this comment is BELOW the first executable line and describes a past failure. It
         # states a count of something that is not this script's steps, and must not fire.

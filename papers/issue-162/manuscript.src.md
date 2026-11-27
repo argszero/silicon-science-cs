@@ -336,4 +336,18 @@ one. The counts those programs print carry their own denominators; this section 
 none, because a count typed into a document and a count printed by a program drift apart, and the
 printed one is the one that cannot.
 
+Every entry of the list ends with `(supports `key`)`. The key names a claim: one thing this paper says
+about prior work, and the sentence it states is a sentence of this paper, so the pair is what makes
+the comparison a stated difference rather than a proximity. The markers of this source are replaced by
+numbered clusters when the manuscript is assembled, which is why the body prints numbers and the list
+prints keys; the table below is what joins them, so a reader can turn a key into the section that
+states it without the build files.
+
+{{claims:map}}
+
+Where a registry record holds a person's whole name in one field and no second field holds the rest,
+the entry prints the name as stored and the list orders it by what the entry prints, rather than
+dividing it into a family name and initials that no source we can reach states.
+{{undivided:entries}} are those entries: look them up under the word the entry opens with.
+
 {{refs}}

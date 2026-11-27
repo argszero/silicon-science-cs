@@ -14,9 +14,11 @@ Plus C4, which is what makes this file worth having: the manuscript cites a clai
 key. A citation therefore cannot be added without a claim that owns it, and the reference list cannot
 drift from the corpus because it is generated from the corpus.
 
-`--render` writes the manuscript with its `{{c:id}}` markers replaced by numbered clusters and
-`{{refs}}` replaced by the generated list. `--list` writes the list alone. Neither invents a number:
-the numbering is assigned from the placed corpus in key order, so it is stable across runs.
+`--render` writes the manuscript with its `{{c:id}}` markers replaced by numbered clusters,
+`{{refs}}` by the generated list, `{{claims:map}}` by the table that says what a claim key means and
+which section states it, and `{{undivided:entries}}` by the entries whose registry record stores a
+whole name in one field. `--list` writes the list alone. Neither invents a number: the numbering
+follows the author name as the entry prints it, so the list's order is the rule a reader can check.
 
 Usage:
   ./gate_citations.py                 # checks; exit 0 green, 1 failed, 3 nothing to check
@@ -45,6 +47,8 @@ MS = os.path.join(HERE, "manuscript.src.md")   # authored; manuscript.md is rend
 MARK = re.compile(r"\{\{c:([a-z0-9-]+)\}\}")
 REFS_MARK = "{{refs}}"
 GRID_MARK = "{{grid}}"
+CLAIMS_MARK = "{{claims:map}}"
+UNDIVIDED_MARK = "{{undivided:entries}}"
 FINDINGS = os.path.join(HERE, "nines_findings.json")
 
 
@@ -418,8 +422,19 @@ def check_numbers(text):
 
 
 def numbered(corpus):
-    """Key -> number, assigned from the placed corpus in key order (stable, not arrival order)."""
-    order = sorted(placed_keys())
+    """Key -> number, assigned in the order the list prints.
+
+    The order used to be the key order. A key is derived from the registry's author field, so it
+    agrees with the printed name only where the registry divides the name the way the list prints it.
+    Where it does not, the entry landed where no reader would look: `anon2020azure` sat inside the run
+    of records with no author while its entry printed a person's name, and two entries whose `family`
+    field holds a whole name sorted by their given name. Sorting on the printed component makes the
+    rule a reader can check -- alphabetical by the author as printed -- the rule the list obeys, and
+    leaves the key what it is: an identifier.
+    """
+    by_key = corpus.get("by_key") or {}
+    order = sorted(placed_keys(),
+                   key=lambda k: (author_component(by_key.get(k) or {}).lower(), k))
     return dict((k, i + 1) for i, k in enumerate(order))
 
 
@@ -430,11 +445,31 @@ HAS_LETTER = re.compile(r"[^\W\d_]", re.UNICODE)
 # about the *content* of the field, not its emptiness: a family name has a letter in it. The fallback
 # is the given name, which is what the same record holds; when that is empty too, the absence is
 # named the way `reference-check.md`'s policy names it, so the two carriers say one thing.
+def undivided(rec):
+    """True when the registry does not divide this name, so nothing we hold states its family name.
+
+    Two shapes, both read against the registry on 2026-11-27. `family` holds the whole name and there
+    is no `given` at all (`Chan-Ik Park`, `Jing Sun`); or `family` holds a placeholder with no letter
+    in it and the whole name sits in `given` (`-` / `Venkata Raman Immidisetti`). The publisher page
+    for the third case prints the same undivided string in its `citation_author` meta tag, so the
+    division is absent from both sources reachable from here -- the registry and the publisher -- and
+    splitting at the last token would print a surname no source states: a guess wearing the family
+    position. The entry prints the name as stored, and the list is ordered by what it prints.
+    """
+    fam = (rec.get("first_family") or "").strip()
+    given = (rec.get("first_given") or "").strip()
+    if fam and HAS_LETTER.search(fam):
+        return bool(re.search(r"\s", fam)) and not given
+    return bool(re.search(r"\s", given))
+
+
 def author_component(rec):
     """The name this record's entry prints, and the reason it prints it."""
     fam = (rec.get("first_family") or "").strip()
     given = (rec.get("first_given") or "").strip()
     if fam and HAS_LETTER.search(fam):
+        if undivided(rec):
+            return fam
         fam = fam[:1].upper() + fam[1:].lower() if fam.isupper() or fam.islower() else fam
         initials = ""
         if given:
@@ -484,6 +519,45 @@ def render_list(corpus, nums):
         lines.append(entry_line(nums[key], rec, owner.get(key)))
         lines.append("")
     return "\n".join(lines).rstrip() + "\n"
+
+
+def claim_owner():
+    """Key -> the claim that places it. One owner per key, first placement wins."""
+    owner = {}
+    for cl in CLAIMS:
+        for k in cl["keys"]:
+            owner.setdefault(k, cl)
+    return owner
+
+
+def render_claims_map(nums):
+    """The claim key -> the section and sentence it supports, rendered from the placements.
+
+    Every entry names a claim key in its author parentheses and the body carries numbers, because the
+    `{{c:id}}` markers are replaced by clusters when the manuscript is assembled. Without this table a
+    reader holds 205 keys that resolve to no sentence they can turn to -- the binding is discharged
+    over the source manuscript, which the reader does not have. Rendered rather than typed for the
+    same reason the list is: a second copy of a derived object has no producer.
+    """
+    owner = claim_owner()
+    printed = set(owner[k]["id"] for k in nums if k in owner)
+    rows = ["| claim key | section | the sentence it supports |", "|---|---|---|"]
+    for cl in sorted((c for c in CLAIMS if c["id"] in printed),
+                     key=lambda c: (int(c["section"]), c["id"])):
+        rows.append("| `%s` | %s | %s |" % (cl["id"], cl["section"],
+                                            cl["claim"].replace("|", "/")))
+    return "\n".join(rows)
+
+
+def render_undivided(nums, corpus):
+    """The printed numbers and names of the entries whose record stores a whole name in one field."""
+    by_key = corpus["by_key"]
+    out = []
+    for key in sorted(nums, key=lambda k: nums[k]):
+        rec = by_key.get(key) or {}
+        if undivided(rec):
+            out.append("[%d] %s" % (nums[key], author_component(rec)))
+    return ", ".join(out)
 
 
 def main(argv=None):
@@ -602,7 +676,61 @@ def main(argv=None):
                      % (len(nameless), "; ".join(nameless)))
     else:
         notes.append("every entry holds a name in the family position")
+    # C5 the claim keys printed on the entries have to resolve for a reader. The entries name a claim;
+    # the body carries numbers, because the markers become clusters at assembly. The table is what
+    # makes the two halves meet, and it is read in both directions: a key printed on an entry with no
+    # row, and a row for a key no entry carries, are both things a reader meets.
+    own = claim_owner()
+    printed_ids = sorted(set(own[k]["id"] for k in nums if k in own))
+    table = render_claims_map(nums)
+    table_ids = sorted(set(re.findall(r"^\| `([a-z0-9-]+)` \|", table, re.M)))
+    if CLAIMS_MARK not in text:
+        fails.append("C5 the manuscript carries no %s marker, so the claim keys printed on its "
+                     "entries resolve to no sentence a reader can turn to" % CLAIMS_MARK)
+    else:
+        for cid in printed_ids:
+            if cid not in table_ids:
+                fails.append("C5 claim key %r is printed on an entry and the table omits it" % cid)
+        for cid in table_ids:
+            if cid not in printed_ids:
+                fails.append("C5 the table names claim key %r, which no printed entry carries" % cid)
+    # A claim names the section that states it. The number is authored in placements.py, so a section
+    # renumbered without the placement would print a pointer to a section this paper does not have.
+    for cl in CLAIMS:
+        if not re.search(r"^## %s\." % re.escape(cl["section"]), text, re.M):
+            fails.append("C5 claim %r names section %r, which this manuscript does not have"
+                         % (cl["id"], cl["section"]))
+    undivided_keys = [k for k in nums if undivided(corpus["by_key"].get(k) or {})]
+    if UNDIVIDED_MARK not in text:
+        fails.append("C5 the manuscript carries no %s marker, so an entry printed as the registry "
+                     "stores it is not explained" % UNDIVIDED_MARK)
+    elif bool(undivided_keys) != bool(render_undivided(nums, corpus)):
+        fails.append("C5 the undivided-name sentence and the entries it describes disagree")
+
     rendered = rendered.replace(REFS_MARK, "## References\n\n" + render_list(corpus, nums))
+    rendered = rendered.replace(CLAIMS_MARK, table)
+    rendered = rendered.replace(UNDIVIDED_MARK, render_undivided(nums, corpus))
+    left_apparatus = [m for m in ("{{claims:", "{{undivided:") if m in rendered]
+    if left_apparatus:
+        fails.append("C5 unrendered apparatus markers remain: %s" % ", ".join(left_apparatus))
+
+    # C6 the list, as printed, is in the order the paper says it is in. This reads the rendered
+    # product rather than the numbering function, so it is a different carrier from the thing that
+    # assigns the numbers: a numbering that drifts back to the corpus key -- which is derived from the
+    # registry's author field -- puts an entry under a letter its printed name does not start with, and
+    # every count in the package still agrees. That is the shape of the defect this check exists for.
+    printed_pairs = []
+    for line in rendered.split("\n"):
+        m = re.match(r"^\[(\d+)\] (.+?) \((\d{4}|n\.d\.)\)\.", line)
+        if m:
+            printed_pairs.append((int(m.group(1)), m.group(2).lower()))
+    order_by_number = [name for _, name in sorted(printed_pairs)]
+    if order_by_number != sorted(order_by_number):
+        for i in range(1, len(order_by_number)):
+            if order_by_number[i - 1] > order_by_number[i]:
+                fails.append("C6 the printed list is out of order at %r then %r"
+                             % (order_by_number[i - 1], order_by_number[i]))
+                break
     if GRID_MARK in text:
         grid = render_grid()
         if grid is None:
@@ -623,6 +751,7 @@ def main(argv=None):
     print("  [ok]   every placed key resolves to a verified record")
     print("  [ok]   every claim cited, every citation owned by a claim")
     print("  [ok]   floor met in distinct cited records")
+    print("  [ok]   every claim key printed on an entry resolves to a section of this paper")
     if args.list:
         sys.stdout.write("\n" + render_list(corpus, nums))
     if args.report:
